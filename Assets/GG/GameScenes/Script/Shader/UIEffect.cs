@@ -17,7 +17,7 @@ public class UIEffect : MonoBehaviour
     private float m_fValue = 0.7f;
     private float m_fDestValue = 0f;
     private float m_fSourValue = 1f;
-    private int m_iShaderPass = 0;
+    
 
 
     
@@ -30,7 +30,7 @@ public class UIEffect : MonoBehaviour
 
         m_vOriginColor = new Vector4(0.6f, 0.6f, 0.6f, 0.6f);
         m_Image.material = Instantiate(m_Material);
-
+        m_fSourValue = 0f;
 
     }
 
