@@ -16,6 +16,10 @@ TagManager:
   - AI
   - stair
   - Falling
+  - Item
+  - cup
+  - tv
+  - plant
   layers:
   - Default
   - TransparentFX
@@ -31,7 +35,7 @@ TagManager:
   - Wall
   - stair
   - point
-  - 
+  - Item
   - 
   - 
   - 
