@@ -12,7 +12,7 @@ public class MazeDFS : MonoBehaviour
 
     public Vector2Int size;
     public int startPos = 0;
-    public GameObject space;
+    public GameObject[] space;
     public Vector2 offset;
 
     List<Cell> board;
@@ -33,7 +33,8 @@ public class MazeDFS : MonoBehaviour
                 Cell currentCell = board[Mathf.FloorToInt(i + j * size.x)];
                 if(currentCell.visited)
                 {
-                    var newRoom = Instantiate(space, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<SpaceState>();
+                    int randomRoom = Random.Range(0, space.Length);
+                    var newRoom = Instantiate(space[randomRoom], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<SpaceState>();
                     newRoom.UpdateRoom(currentCell.status);
                 }
                 
