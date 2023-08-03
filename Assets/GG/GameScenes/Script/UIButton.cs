@@ -42,6 +42,16 @@ public class UIButton : MonoBehaviour
         m_LocalChangeAvatar.Change_Avatar();
     }
 
+    public void Store()
+    {
+        SceneManager.LoadScene("Store");
+    }
+
+    public void Backto_Menu()
+    {
+        SceneManager.LoadScene("MenuUI");
+    }
+
     ///multi///
     public void Exit_Room()
     {
@@ -72,4 +82,5 @@ public class UIButton : MonoBehaviour
         SceneManager.LoadScene("MultiLobby");
     }
 
+   
 }

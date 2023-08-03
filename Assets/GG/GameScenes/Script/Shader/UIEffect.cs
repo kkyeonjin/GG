@@ -9,6 +9,7 @@ public class UIEffect : MonoBehaviour
     public Color m_Color;
     public Material m_Material;
 
+    public GameObject m_ConnectedModel;
 
     private float m_fRatio = 0f;
     private Vector4 m_vColor;
@@ -55,13 +56,13 @@ public class UIEffect : MonoBehaviour
     public void MousePointer_In()
     {
         m_fDestValue = 1f;
-        
+        m_ConnectedModel.SetActive(true);
     }
 
     public void MousePointer_Out()
     {
         m_fDestValue = 0f;
-        
+        m_ConnectedModel.SetActive(false);
     }
 
 }
