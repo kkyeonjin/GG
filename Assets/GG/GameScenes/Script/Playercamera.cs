@@ -9,7 +9,7 @@ public class Playercamera : MonoBehaviour
     public float m_fRotateSpeed = 250f; 
 
     private float m_fXRotate, m_fYRotate;
-    private float m_XTotalRot, m_YTotalrot;
+    private float m_XTotalRot, m_YTotalRot;
     void Start()
     {
         
@@ -33,11 +33,12 @@ public class Playercamera : MonoBehaviour
         m_fXRotate = -Input.GetAxis("Mouse Y") * Time.deltaTime * m_fRotateSpeed;
         m_fYRotate = Input.GetAxis("Mouse X") * Time.deltaTime * m_fRotateSpeed;
 
-        m_YTotalrot += m_fYRotate;
+        m_YTotalRot += m_fYRotate;
         m_XTotalRot += m_fXRotate;
 
         m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        m_YTotalRot = Mathf.Clamp(m_YTotalRot, -90, 90);
 
-        transform.eulerAngles = new Vector3(m_XTotalRot, m_YTotalrot, 0);
+        transform.eulerAngles = new Vector3(m_XTotalRot, m_YTotalRot, 0);
     }
 }
