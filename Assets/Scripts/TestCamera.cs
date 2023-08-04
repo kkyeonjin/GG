@@ -54,6 +54,7 @@ public class TestCamera : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
                     Destroy(hitInfo.transform.gameObject);
                 }
             }
@@ -65,6 +66,7 @@ public class TestCamera : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
                     Destroy(hitInfo.transform.gameObject);
                 }
             }
