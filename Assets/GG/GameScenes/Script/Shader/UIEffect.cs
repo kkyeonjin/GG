@@ -15,7 +15,7 @@ public class UIEffect : MonoBehaviour
     private Vector4 m_vColor;
     private Vector4 m_vOriginColor;
 
-    private float m_fValue = 0.7f;
+    private float m_fValue = 0.35f;
     private float m_fDestValue = 0f;
     private float m_fSourValue = 1f;
     
@@ -38,6 +38,7 @@ public class UIEffect : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
         m_fRatio = Mathf.Lerp(m_fSourValue, m_fDestValue, m_fValue);
         m_fSourValue = m_fRatio;
         
@@ -64,5 +65,4 @@ public class UIEffect : MonoBehaviour
         m_fDestValue = 0f;
         m_ConnectedModel.SetActive(false);
     }
-
 }
