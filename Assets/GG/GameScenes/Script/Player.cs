@@ -168,23 +168,23 @@ public class Player : MonoBehaviour
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
         transform.LookAt(transform.position + m_vMoveVec);
         m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed);
-        m_Rigidbody.AddForce(Physics.gravity);
+        //m_Rigidbody.AddForce(Physics.gravity);
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
         Jump_Up();
 
-        if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
-        {
-            m_Rigidbody.velocity = new Vector3(Mathf.Sign(m_Rigidbody.velocity.x) * m_fTotalSpeed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
-        }
-        else if (Mathf.Abs(m_Rigidbody.velocity.z) > m_fTotalSpeed)
-        {
-            m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, Mathf.Sign(m_Rigidbody.velocity.z) * m_fTotalSpeed);
-        }
-        else if (m_Rigidbody.velocity.y > m_fTotalSpeed)
-        {
-            m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, Mathf.Sign(m_Rigidbody.velocity.y) * m_fTotalSpeed, m_Rigidbody.velocity.z);
-        }
+    //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
+    //    {
+    //        m_Rigidbody.velocity = new Vector3(Mathf.Sign(m_Rigidbody.velocity.x) * m_fTotalSpeed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
+    //    }
+    //    else if (Mathf.Abs(m_Rigidbody.velocity.z) > m_fTotalSpeed)
+    //    {
+    //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, Mathf.Sign(m_Rigidbody.velocity.z) * m_fTotalSpeed);
+    //    }
+    //    else if (m_Rigidbody.velocity.y > m_fTotalSpeed)
+    //    {
+    //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, Mathf.Sign(m_Rigidbody.velocity.y) * m_fTotalSpeed, m_Rigidbody.velocity.z);
+    //    }
     }
 
    
