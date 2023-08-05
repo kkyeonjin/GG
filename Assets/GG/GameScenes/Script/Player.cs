@@ -6,7 +6,9 @@ using Cinemachine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public enum CHARACTER { BOY, GLASSES, REDHAIR, OLDWOMAN, WIZARD, ALIEN, ZOMBIE, ASTRONAUT, VAMPIRE, END };    
+
     public float m_fSpeed;
     public float m_fJumpScale = 100;
     public EventUI m_ClearUI;

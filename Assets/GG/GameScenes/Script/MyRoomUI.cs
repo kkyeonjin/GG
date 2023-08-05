@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class MyRoomUI : MonoBehaviour
 {
-    public GameObject m_Select;
-
-    // Start is called before the first frame update
-    void Start()
+    public MyRoomMgr m_Manager;
+    public void Change_Avatar(int iIndex)
     {
-        
+        m_Manager.Select_Avatar((Player.CHARACTER)iIndex);
     }
-
 
 }

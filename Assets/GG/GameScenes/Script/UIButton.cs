@@ -47,6 +47,11 @@ public class UIButton : MonoBehaviour
         SceneManager.LoadScene("Store");
     }
 
+    public void MyRoom()
+    {
+        SceneManager.LoadScene("MyRoom");
+    }
+
     public void Backto_Menu()
     {
         SceneManager.LoadScene("MenuUI");
