@@ -818,6 +818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &308448241
@@ -1053,6 +1055,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 0
+  m_iCharacterIndex: -1
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!1 &515249433
@@ -1571,6 +1575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!1 &649137543
@@ -1785,6 +1791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 2
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!1 &651929578
@@ -2312,6 +2320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 0}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 892224584}
   m_ItemCategory: {fileID: 1988530910}
 --- !u!114 &976053838
@@ -2549,6 +2559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1071454974
@@ -2821,6 +2833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1072892823
@@ -3242,6 +3256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1391528147
@@ -3528,6 +3544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 0}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 892224584}
   m_ItemCategory: {fileID: 1988530910}
 --- !u!114 &1441011848
@@ -3874,6 +3892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 3
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!1 &1582678431
@@ -3980,6 +4000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1709004588
@@ -4466,6 +4488,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
+  m_iCharacterIndex: 0
+  m_iItemIndex: -1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1801839853
