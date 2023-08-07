@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Samples/Cinemachine/2.8.9/Cinemachine Example Scenes/Scenes/2D/2D Zoom.unity.meta
 guid: c213658e6f9d94cc8a659682e6529958
+========
+guid: 112f6309000e3e24caff90fd0ea0c728
+>>>>>>>> Hyedam1:Assets/GG/GameScenes/MyRoom.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

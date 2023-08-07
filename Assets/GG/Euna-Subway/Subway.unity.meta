@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GG/Euna-Subway/Subway.unity.meta
 guid: 9afdc7e30954f63449400b8598b41642
+========
+guid: 5047e2a660d840849b8ee8dba0064053
+>>>>>>>> Hyedam1:Assets/GG/GameScenes/MultiLobby.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

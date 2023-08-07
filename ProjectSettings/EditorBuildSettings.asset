@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GG/GameScenes/subway.unity
     guid: dbc7fa3698e52774e8be070425b6afa4
+  - enabled: 1
+    path: Assets/GG/GameScenes/RoomCode.unity
+    guid: 1a74d40fb9e0eea449d2390e76b24994
+  - enabled: 1
+    path: Assets/GG/GameScenes/MultiLobby.unity
+    guid: 5047e2a660d840849b8ee8dba0064053
+  - enabled: 1
+    path: Assets/GG/GameScenes/Multi_Subway.unity
+    guid: a90dcb8871791654791573493a40c3ed
+  - enabled: 1
+    path: Assets/GG/GameScenes/Store.unity
+    guid: d3388285511a613438a90ade6a036a49
   m_configObjects: {}
