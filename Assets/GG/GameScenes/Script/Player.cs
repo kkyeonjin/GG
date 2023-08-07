@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     public float m_fSpeed;
     public float m_fJumpScale = 100;
-    public EventUI m_ClearUI;
+    //public EventUI m_ClearUI;
     public float m_fRotateSpeed = 250f;
     public PhotonView m_PV = null;
 
@@ -234,7 +234,8 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Goal"))
         {
-            m_ClearUI.Activate_and_Over();
+            //m_ClearUI.Activate_and_Over();
+            Application.Quit();
         }
         if( collision.gameObject.CompareTag("Ground"))
         {//땅에 닿아서 착지 애니메이션으로 이동
