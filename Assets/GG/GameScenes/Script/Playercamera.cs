@@ -68,7 +68,9 @@ public class Playercamera : MonoBehaviour
         m_YTotalrot += m_fYRotate;
         m_XTotalRot += m_fXRotate;
 
-        m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        //m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        m_XTotalRot = Mathf.Clamp(m_XTotalRot, -55, 55);
+        m_YTotalrot = Mathf.Clamp(m_YTotalrot, -55, 55);
 
         transform.eulerAngles = new Vector3(m_XTotalRot, m_YTotalrot, 0);
     }

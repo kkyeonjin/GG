@@ -96,7 +96,9 @@ public class Player : MonoBehaviour
         m_YTotalrot += m_fYRotate;
         m_XTotalRot += m_fXRotate;
 
-        m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        //m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        m_XTotalRot = Mathf.Clamp(m_XTotalRot, -55, 55);
+        m_YTotalrot = Mathf.Clamp(m_YTotalrot, -55, 55);
 
         transform.eulerAngles = new Vector3(m_XTotalRot, m_YTotalrot, 0);
     }
@@ -172,6 +174,7 @@ public class Player : MonoBehaviour
 
         Jump_Up();
 
+        /*
         if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
         {
             m_Rigidbody.velocity = new Vector3(Mathf.Sign(m_Rigidbody.velocity.x) * m_fTotalSpeed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
@@ -184,6 +187,7 @@ public class Player : MonoBehaviour
         {
             m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, Mathf.Sign(m_Rigidbody.velocity.y) * m_fTotalSpeed, m_Rigidbody.velocity.z);
         }
+        */
     }
 
    
@@ -216,8 +220,8 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsJump", m_bIsJump);
                 m_Animator.SetTrigger("Jump");
                 m_Animator.SetBool("IsGround", m_bIsGround);
+                m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
             }
-            m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
         }
     }
 
