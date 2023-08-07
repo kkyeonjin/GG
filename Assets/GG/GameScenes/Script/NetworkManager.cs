@@ -106,7 +106,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void LeaveRoom()
     {
         m_RoomCode = null;
+        SceneManager.LoadScene("RoomCode");
         PhotonNetwork.LeaveRoom();
+
     }
     public override void OnLeftRoom()
     {

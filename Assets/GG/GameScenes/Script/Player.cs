@@ -167,8 +167,9 @@ public class Player : MonoBehaviour
         Run();
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
         transform.LookAt(transform.position + m_vMoveVec);
-        m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed);
+        m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
         //m_Rigidbody.AddForce(Physics.gravity);
+        
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
         Jump_Up();

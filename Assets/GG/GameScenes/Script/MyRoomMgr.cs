@@ -15,6 +15,8 @@ public class MyRoomMgr : MonoBehaviour
     public GameObject m_Avatar9;
 
     private GameObject[] m_Avatar;
+    public Transform ItemSlotPosition;
+
     private int m_CurrAvatar;
     // Start is called before the first frame update
     void Start()

@@ -70,6 +70,11 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         
     }
 
+    public void Change_Avatar(int iIndex)
+    {
+        m_LocalPlayer.GetComponentInChildren<ChangeAvatar>().Change_Avatar(iIndex);
+    }
+
     public void OnPhotonSerializeView(PhotonStream photonstream, PhotonMessageInfo photonmessageinfo)
     {
 

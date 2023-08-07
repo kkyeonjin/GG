@@ -39,8 +39,7 @@ public class InfoHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.dataPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
+        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
 
         byte[] data = new byte[fileStream.Length];
         fileStream.Read(data, 0, data.Length);
@@ -48,6 +47,7 @@ public class InfoHandler : MonoBehaviour
         string jsondata = Encoding.UTF8.GetString(data);
         Debug.Log(jsondata);
         fileStream.Close();
+
         m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
 
         Debug.Log(m_Playerinfo.Get_Level());
@@ -88,6 +88,7 @@ public class InfoHandler : MonoBehaviour
     public void Set_CurrCharacter(int iCurrIndex)
     {
         m_Playerinfo.Set_CurrCharacter(iCurrIndex);
+        Save_Info();
     }
 
     public bool Is_Character_Available(int iIndex)
@@ -103,15 +104,16 @@ public class InfoHandler : MonoBehaviour
     public void Save_Info()
     {
         //json 파일 부분만 수정하는 방법이 뭐냐 대체
-        File.Delete(Application.dataPath + "/PlayerInfo.json");
         //json생성(FileMode.Create) & 저장(FileAccess.Write)
-        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.dataPath, "PlayerInfo"), FileMode.Create, FileAccess.Write);
+        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.dataPath, "PlayerInfo"), FileMode.Create, FileAccess.Write);
         string jsondata = JsonConvert.SerializeObject(m_Playerinfo);
         Debug.Log(jsondata);
         byte[] data = Encoding.UTF8.GetBytes(jsondata);
     
-        fileStream.Write(data, 0, data.Length);
-        fileStream.Close();
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json",jsondata);
+
+        //fileStream.Write(data, 0, data.Length);
+        //fileStream.Close();
     }
     // Update is called once per frame
     void Update()

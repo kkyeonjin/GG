@@ -7,7 +7,8 @@ public class HPBar : MonoBehaviour
 {
     public Image m_Image;
     public CharacterStatus m_Status;
-   
+    public PhotonView m_PV;
+
     Transform m_MainCamTransform;
     float m_fHPRatio;
 
@@ -20,7 +21,7 @@ public class HPBar : MonoBehaviour
     void Update()
     {
         m_fHPRatio = m_Status.Get_HP() / m_Status.Get_MaxHP();
-        m_Image.fillAmount = m_fHPRatio;   
+        m_Image.fillAmount = m_fHPRatio;
     }
     //쉐이더 변수 값 지정하는 타이밍. 만약에 일반 hlsl과 같다면 같은 쉐이더를 공유한다면 문제 발생
     //
