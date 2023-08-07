@@ -51,10 +51,12 @@ public class Playercamera : MonoBehaviour
 
     private void SingleMode()
     {
+        Debug.Log("Player Pos: " + m_TargetTransform.position);
+        Debug.Log("Cam Pos: " + transform.position);
         transform.position = m_TargetTransform.position + m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
 
-        Vector3 vLookatPosition = m_TargetTransform.position + new Vector3(0f, 10f, 0f);
-        transform.LookAt(vLookatPosition);
+        //Vector3 vLookatPosition = m_TargetTransform.position + new Vector3(0f, 10f, 0f);
+        transform.LookAt(m_TargetTransform.position);
     }
 
     private void Get_MouseMovement()
