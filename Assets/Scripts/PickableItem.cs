@@ -8,6 +8,7 @@ public class PickableItem : MonoBehaviour
     public Sprite icon;
     public int itemNum;
 
+
     // Start is called before the first frame update
 
     public void ItemPick()
@@ -23,6 +24,11 @@ public class PickableItem : MonoBehaviour
             }
             
         }
+    }
+
+    public void IconUpdate()
+    {
+        
     }
 
     void Start()

@@ -4,12 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TestCamera : MonoBehaviour
+public class ItemScan : MonoBehaviour
 {
     public TMP_Text pressText;
-    float mouseSpeed = 10;
-    float mouseY = 0;
-    float mouseX = 0;
 
     [SerializeField]
     float range;
@@ -20,14 +17,6 @@ public class TestCamera : MonoBehaviour
 
     private void Update()
     {
-        mouseY += Input.GetAxis("Mouse Y") * mouseSpeed;
-        mouseX += Input.GetAxis("Mouse X") * mouseSpeed;
-
-        mouseY = Mathf.Clamp(mouseY, -55.0f, 55.0f);
-        mouseX = Mathf.Clamp(mouseX, -55.0f, 55.0f);
-
-        transform.localEulerAngles = new Vector3(-mouseY, mouseX, 0);
-
         checkItem();
     }
 
@@ -76,7 +65,7 @@ public class TestCamera : MonoBehaviour
         {
             pressText.gameObject.SetActive(false);
         }
-            
+
     }
 
 }
