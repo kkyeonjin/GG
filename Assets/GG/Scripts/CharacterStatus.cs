@@ -46,6 +46,7 @@ public class CharacterStatus : MonoBehaviour
 
     public void Set_Damage(float fDamage)
     {
+        Debug.Log(m_fHP);
         m_fHP -= fDamage;
         if(0f >= m_fHP)
         {

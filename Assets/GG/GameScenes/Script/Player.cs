@@ -65,11 +65,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         m_Moving();
-
-        Debug.Log("IsRun:" + m_bIsRun);
-        Debug.Log("IsSprint:" + m_bIsSprint);
-        Debug.Log("IsGround:" + m_bIsGround);
-        Debug.Log("IsJump:" + m_bIsJump);
     }
 
     public void Change_Animator(Animator In_Animator)
