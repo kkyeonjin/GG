@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public float m_fJumpScale = 100;
     //public EventUI m_ClearUI;
     public float m_fRotateSpeed = 250f;
-    public PhotonView m_PV = null;
+    //public PhotonView m_PV = null;
 
     private float m_fXRotate, m_fYRotate;
     private float m_XTotalRot, m_YTotalrot;
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         m_Status = GetComponentInChildren<CharacterStatus>();
         m_Rigidbody = GetComponent<Rigidbody>();
 
+        /*
         if (m_PV != null)
         {
             if (m_PV.IsMine)
@@ -49,12 +50,12 @@ public class Player : MonoBehaviour
             }
             m_Moving = new MoveFunc(Move_MultiMode);
             
-        }
-        else
-        {
+        }*/
+        //else
+        //{
             m_Animator = GetComponentInChildren<Animator>();
             m_Moving = new MoveFunc(Move);
-        }
+        //}
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -77,12 +78,12 @@ public class Player : MonoBehaviour
 
     public void Set_Camera(CinemachineVirtualCamera In_Camera)
     {
-        if (m_PV.IsMine)
-        {
+        //if (m_PV.IsMine)
+        //{
             In_Camera.Follow = this.transform;
             In_Camera.LookAt = this.transform;
             m_CameraTransform = In_Camera.transform;
-        }
+        //}
     }
     private void Get_MouseMovement()
     {
@@ -147,15 +148,15 @@ public class Player : MonoBehaviour
     }
     private void Move_MultiMode()
     {
-        if (m_PV.IsMine)
-        {
+        //if (m_PV.IsMine)
+        //{
             Move();
 
             if (Input.GetKey(KeyCode.T))
             {
                 m_Status.Set_Damage(1f);
             }
-        }
+       // }
     }
     private void Move()
     {
@@ -235,6 +236,7 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.CompareTag("Goal"))
         {
             //m_ClearUI.Activate_and_Over();
+            Debug.Log("?");
             Application.Quit();
         }
         if( collision.gameObject.CompareTag("Ground"))
