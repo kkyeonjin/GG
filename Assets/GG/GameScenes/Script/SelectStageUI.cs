@@ -24,6 +24,7 @@ public class SelectStageUI : MonoBehaviour
 
     public void Multi_StartGame()
     {
+        //NetworkManager.Instance.StartGame("Multi_Subway");
         m_PV.RPC("StartGame", RpcTarget.All);
     }
 

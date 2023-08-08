@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using UnityEngine.UI;
 public class UIButton : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_InputField m_RoomCode;
+    public int m_iCharacterIndex=-1;
+    
+    public Button MyButton;
+    public GameObject m_ConnectedUI;
 
-    private ChangeAvatar m_LocalChangeAvatar;
 
     void Start()
     {
-        
+        if (m_iCharacterIndex > -1 && InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex) == false)
+            MyButton.interactable = false;
     }
 
     public void Lobby_Multi()
@@ -33,18 +37,25 @@ public class UIButton : MonoBehaviour
         Application.Quit();
     }
 
+    public void Activate_ConnectedUI()
+    {
+        bool bisActivate = m_ConnectedUI.activeInHierarchy;
+        m_ConnectedUI.SetActive(!bisActivate);
+    }
+
     public void Change_Avatar()
     {
-        if(null == m_LocalChangeAvatar)
-        {
-            m_LocalChangeAvatar = GameMgr.Instance.m_LocalPlayerObj.GetComponentInChildren<ChangeAvatar>();
-        }
-        m_LocalChangeAvatar.Change_Avatar();
+        GameMgr.Instance.Change_Avatar(m_iCharacterIndex);
     }
 
     public void Store()
     {
         SceneManager.LoadScene("Store");
+    }
+
+    public void MyRoom()
+    {
+        SceneManager.LoadScene("MyRoom");
     }
 
     public void Backto_Menu()

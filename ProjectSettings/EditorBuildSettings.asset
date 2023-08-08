@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GG/GameScenes/Store.unity
     guid: d3388285511a613438a90ade6a036a49
+  - enabled: 1
+    path: Assets/GG/GameScenes/MyRoom.unity
+    guid: 112f6309000e3e24caff90fd0ea0c728
   m_configObjects: {}

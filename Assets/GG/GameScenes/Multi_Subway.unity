@@ -547,6 +547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RoomCode: {fileID: 0}
+  m_iCharacterIndex: -1
+  MyButton: {fileID: 0}
+  m_ConnectedUI: {fileID: 0}
 --- !u!1 &1229018797
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b51e351a5438c43a7d63090c185ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vOffset: {x: 0, y: 36, z: -60}
+  m_vOffset: {x: 0, y: 9, z: -30}
   m_fRotateSpeed: 250
   m_CamTransform: {fileID: 1930205767}
   m_TargetTransform: {fileID: 0}
