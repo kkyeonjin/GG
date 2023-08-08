@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
     {
         m_fTotalSpeed = 0f;
         
-        Get_MouseMovement();
+        //Get_MouseMovement();
         Get_KeyInput();
         Run();
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;

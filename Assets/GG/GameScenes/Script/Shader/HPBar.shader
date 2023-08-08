@@ -45,7 +45,7 @@ Shader "UI/HPBar"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
-                if (i.uv.x > fRatio)
+                if (1.f - i.uv.x > fRatio)
                     discard;
 
                 return col;

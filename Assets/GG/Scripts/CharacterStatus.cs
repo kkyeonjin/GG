@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class CharacterStatus : MonoBehaviour
 {
     public Player m_Target;
     public EventUI m_EventUI;
     public float m_fSPRecover;
+    public PhotonView m_PV;
 
     public float m_fMaxHP;
     public float m_fMaxStamina;
@@ -46,13 +47,17 @@ public class CharacterStatus : MonoBehaviour
 
     public void Set_Damage(float fDamage)
     {
-        Debug.Log(m_fHP);
-        m_fHP -= fDamage;
-        if(0f >= m_fHP)
+        if (m_PV != null)
+            m_PV.RPC("Update_Damage", RpcTarget.All, fDamage);
+        else
         {
-            m_fHP = 0;
-            m_Target.Set_Dead();
-            m_EventUI.Activate_and_Over();
+            m_fHP -= fDamage;
+            if (0f >= m_fHP)
+            {
+                m_fHP = 0;
+                m_Target.Set_Dead();
+                m_EventUI.Activate_and_Over();
+            }
         }
     }
     public bool Is_Usable()
@@ -69,6 +74,19 @@ public class CharacterStatus : MonoBehaviour
         }
     }
 
+    public void Recover_HP(float fHP)
+    {
+        if (m_PV != null)
+            m_PV.RPC("Update_HP", RpcTarget.All, fHP);
+        else
+        {
+            m_fHP += fHP;
+            if (m_fHP > m_fMaxHP)
+            {
+                m_fHP = m_fMaxHP;
+            }
+        }
+    }
     private void Recover_Stamina()
     {
         m_fStamina += m_fSPRecover*Time.deltaTime;
@@ -77,5 +95,25 @@ public class CharacterStatus : MonoBehaviour
 
         if (m_fStamina > m_fMaxStamina)
             m_fStamina = m_fMaxStamina;
+    }
+
+    [PunRPC]
+    void Update_Damage(float fDamage)
+    {
+        m_fHP -= fDamage;
+        if (0f >= m_fHP)
+        {
+            m_fHP = 0;
+            m_Target.Set_Dead();
+            m_EventUI.Activate_and_Over();
+        }
+    }
+    void Update_HP(float fHP)
+    {
+        m_fHP += fHP;
+        if (m_fHP > m_fMaxHP)
+        {
+            m_fHP = m_fMaxHP;
+        }
     }
 }

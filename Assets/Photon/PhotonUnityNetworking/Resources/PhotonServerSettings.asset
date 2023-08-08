@@ -42,6 +42,7 @@ MonoBehaviour:
   - Changing
   - StartGame
   - Update_HPBar
+  - Update_Damage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

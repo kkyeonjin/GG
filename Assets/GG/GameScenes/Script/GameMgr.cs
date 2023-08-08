@@ -66,8 +66,7 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
         CinemachineVirtualCamera Temp = FindObjectOfType<CinemachineVirtualCamera>();
         if(null!=Temp && null != m_LocalPlayer)
-            m_LocalPlayer.Set_Camera(Temp);
-        
+            m_LocalPlayer.Set_Camera(Temp);        
     }
 
     public void Change_Avatar(int iIndex)
