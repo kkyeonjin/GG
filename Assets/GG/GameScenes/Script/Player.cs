@@ -86,15 +86,23 @@ public class Player : MonoBehaviour
         // m_fXRotate += -Input.GetAxis("Mouse Y") * Time.deltaTime * 0.1f;
         // m_fYRotate += Input.GetAxis("Mouse X") * Time.deltaTime * 0.1f;
 
-        m_fXRotate = -Input.GetAxis("Mouse Y") * Time.deltaTime * m_fRotateSpeed;
-        m_fYRotate = Input.GetAxis("Mouse X") * Time.deltaTime * m_fRotateSpeed;
+        //m_fXRotate = -Input.GetAxis("Mouse Y") * Time.deltaTime * m_fRotateSpeed;
+        //m_fYRotate = Input.GetAxis("Mouse X") * Time.deltaTime * m_fRotateSpeed;
 
-        m_YTotalrot += m_fYRotate;
-        m_XTotalRot += m_fXRotate;
+        //m_YTotalrot += m_fYRotate;
+        //m_XTotalRot += m_fXRotate;
 
-        m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
+        //m_XTotalRot = Mathf.Clamp(m_XTotalRot, -90, 90);
 
-        transform.eulerAngles = new Vector3(m_XTotalRot, m_YTotalrot, 0);
+        //transform.eulerAngles = new Vector3(0, m_YTotalrot, 0);
+
+        Vector3 CamLook = m_CameraTransform.forward;
+        Vector3 Right = Vector3.Cross(Vector3.up, CamLook).normalized;
+        Vector3 Look = Vector3.Cross(Right, Vector3.up);
+
+        transform.forward = Look;
+        transform.right = Right;
+
     }
     private void Get_KeyInput()
     {
@@ -157,7 +165,8 @@ public class Player : MonoBehaviour
     private void Move()
     {
         m_fTotalSpeed = 0f;
-       // Get_MouseMovement();
+        
+        Get_MouseMovement();
         Get_KeyInput();
         Run();
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
