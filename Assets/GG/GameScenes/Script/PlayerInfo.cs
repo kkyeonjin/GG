@@ -14,7 +14,7 @@ public class PlayerInfo
      public int CurrCharacter;
      public bool[] AvailableCharacter;
 
-     
+     public int[][] CurrItem;
 
     public PlayerInfo()
     {
