@@ -47,15 +47,14 @@ public class StoreUI : MonoBehaviour
 
     public void Select_Yse()
     {
-        Debug.Log("Character : " + m_iCharacterIndex);
-        Debug.Log("Item : " + m_iItemIndex);
-        //구매 하는 코드
+       
         if (m_iCharacterIndex > -1)
-            m_SelectBuy.GetComponent<StoreUI>().Buy_Character();
+            /*m_SelectBuy.GetComponent<StoreUI>().*/Buy_Character();
         else if (m_iItemIndex > -1)
-            m_SelectBuy.GetComponent<StoreUI>().Buy_Item();
+            /*m_SelectBuy.GetComponent<StoreUI>().*/Buy_Item();
 
-        m_SelectBuy.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
+    
     }
 
     public void Select_No()
@@ -67,6 +66,9 @@ public class StoreUI : MonoBehaviour
 
     public void Buy_Character()
     {
+        Debug.Log("Character : " + m_iCharacterIndex);
+        Debug.Log("Item : " + m_iItemIndex);
+        //구매 하는 코드
         if (false == InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex))
         {
             InfoHandler.Instance.Set_Character_Available(m_iCharacterIndex);
@@ -78,7 +80,14 @@ public class StoreUI : MonoBehaviour
     }
     public void Buy_Item()
     {
+        Debug.Log("Character : " + m_iCharacterIndex);
+        Debug.Log("Item : " + m_iItemIndex);
+        //구매 하는 코드
         Debug.Log("아이템"+m_iItemIndex + " 구매 완료!");
+        InfoHandler.Instance.Buy_Item(m_iItemIndex, 1);
+        InfoHandler.Instance.Save_Info();
+        Debug.Log(InfoHandler.Instance.Get_Item_Num(m_iItemIndex));
+
     }
 
 

@@ -12,6 +12,7 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject m_LocalPlayerObj;
     public string m_szPlayerPrefab = "Local_Player";
 
+    private int[,] m_HoldingItem;
 
     void Awake()
     {
@@ -34,7 +35,7 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
     void start()
     {
-
+        m_HoldingItem = new int[2, 2];
     }
     public static GameMgr Instance
     {
@@ -46,6 +47,15 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
             }
             return m_Instance;
         }
+    }
+    public void Set_HoldingItem(int iSlotIndex, int iItemIndex, int iNum)
+    {
+        m_HoldingItem[iSlotIndex,0] = iItemIndex;
+        m_HoldingItem[iSlotIndex,1] = iNum;
+    }
+    public int[,] Get_HoldingItem()
+    {
+        return m_HoldingItem;
     }
     public void Set_PlayerPos()
     {

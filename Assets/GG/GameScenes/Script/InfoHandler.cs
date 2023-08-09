@@ -39,6 +39,16 @@ public class InfoHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //저장
+        //m_Playerinfo = new PlayerInfo();
+        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
+        //fileStream.Close();
+        //string jsondata = JsonConvert.SerializeObject(m_Playerinfo);
+        //Debug.Log(jsondata);
+        //byte[] data = Encoding.UTF8.GetBytes(jsondata);
+
+        //File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json", jsondata);
+
         FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
 
         byte[] data = new byte[fileStream.Length];
@@ -101,6 +111,16 @@ public class InfoHandler : MonoBehaviour
         m_Playerinfo.Set_Character_Available(iIndex);
     }
 
+    public void Buy_Item(int iIndex, int iNum)
+    {
+        m_Playerinfo.Buy_Item(iIndex, iNum);
+    }
+
+    public int Get_Item_Num(int iIndex)
+    {
+        return m_Playerinfo.Get_Item_Num(iIndex);
+    }
+
     public void Save_Info()
     {
         //json 파일 부분만 수정하는 방법이 뭐냐 대체
@@ -110,7 +130,7 @@ public class InfoHandler : MonoBehaviour
         Debug.Log(jsondata);
         byte[] data = Encoding.UTF8.GetBytes(jsondata);
     
-        File.WriteAllText(Application.dataPath + "/PlayerInfo.json",jsondata);
+        File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json",jsondata);
 
         //fileStream.Write(data, 0, data.Length);
         //fileStream.Close();

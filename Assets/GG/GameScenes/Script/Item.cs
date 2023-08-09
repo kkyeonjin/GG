@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public enum ITEM { RESUME, DEATH, ADRENALINE, POSTION, INVINCIBLE};
+    public enum ITEM { RESUME, DEATH, ADRENALINE, POSTION, INVINCIBLE,END};
 
     public ITEM m_eIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,10 @@ public class Item : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int Get_Index()
+    {
+        return (int)m_eIndex;
     }
 }

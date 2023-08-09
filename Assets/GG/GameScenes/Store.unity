@@ -818,8 +818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
+  m_iCharacterIndex: -1
+  m_iItemIndex: 3
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &308448241
@@ -1342,6 +1342,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RoomCode: {fileID: 0}
+  m_iCharacterIndex: -1
+  MyButton: {fileID: 0}
+  m_ConnectedUI: {fileID: 0}
 --- !u!1 &585950559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1441,6 @@ GameObject:
   - component: {fileID: 609696804}
   - component: {fileID: 609696803}
   - component: {fileID: 609696802}
-  - component: {fileID: 609696805}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Untagged
@@ -1511,7 +1513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 609696805}
+      - m_Target: {fileID: 500640410}
         m_TargetAssemblyTypeName: StoreUI, Assembly-CSharp
         m_MethodName: Select_Yse
         m_Mode: 1
@@ -1561,24 +1563,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609696800}
   m_CullTransparentMesh: 1
---- !u!114 &609696805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609696800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f986afa209911c4aa70cef1530ba635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SelectBuy: {fileID: 500640408}
-  m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
-  m_CharacterCategory: {fileID: 0}
-  m_ItemCategory: {fileID: 0}
 --- !u!1 &649137543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,8 +2543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
+  m_iCharacterIndex: -1
+  m_iItemIndex: 2
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1071454974
@@ -2833,8 +2817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
+  m_iCharacterIndex: -1
+  m_iItemIndex: 0
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1072892823
@@ -3213,7 +3197,6 @@ GameObject:
   - component: {fileID: 1391528149}
   - component: {fileID: 1391528148}
   - component: {fileID: 1391528147}
-  - component: {fileID: 1391528146}
   m_Layer: 5
   m_Name: No
   m_TagString: Untagged
@@ -3242,24 +3225,6 @@ RectTransform:
   m_AnchoredPosition: {x: 55, y: -40}
   m_SizeDelta: {x: 90, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1391528146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391528144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f986afa209911c4aa70cef1530ba635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SelectBuy: {fileID: 500640408}
-  m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
-  m_CharacterCategory: {fileID: 0}
-  m_ItemCategory: {fileID: 0}
 --- !u!114 &1391528147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,7 +3269,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1391528146}
+      - m_Target: {fileID: 500640410}
         m_TargetAssemblyTypeName: StoreUI, Assembly-CSharp
         m_MethodName: Select_No
         m_Mode: 1
@@ -4000,8 +3965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
+  m_iCharacterIndex: -1
+  m_iItemIndex: 4
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1709004588
@@ -4488,8 +4453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectBuy: {fileID: 500640408}
   m_bStartEnable: 1
-  m_iCharacterIndex: 0
-  m_iItemIndex: -1
+  m_iCharacterIndex: -1
+  m_iItemIndex: 1
   m_CharacterCategory: {fileID: 0}
   m_ItemCategory: {fileID: 0}
 --- !u!114 &1801839853
