@@ -166,7 +166,9 @@ public class Player : MonoBehaviour
 
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
+        Throw();
         PushLever();
+        Picking_Up();
         Pushing();
         Jump_Up();
 
@@ -264,6 +266,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Throw()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+            m_Animator.SetTrigger("Throw");
+    }
+
+    private void Picking_Up()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            m_Animator.SetTrigger("PickingUp");
+    }
 
 
     private void OnCollisionEnter(Collision collision)
