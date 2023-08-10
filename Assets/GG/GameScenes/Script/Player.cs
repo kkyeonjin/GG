@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     private MoveFunc m_Moving;
 
+
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
     }
 
     // Update is called once per frame
