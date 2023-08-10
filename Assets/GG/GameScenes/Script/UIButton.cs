@@ -16,8 +16,11 @@ public class UIButton : MonoBehaviour
 
     void Start()
     {
-        if (m_iCharacterIndex > -1 && InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex) == false)
-            MyButton.interactable = false;
+        if (m_iCharacterIndex > -1)
+        {
+            if(InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex) == false)
+                MyButton.interactable = false;
+        }
     }
 
     public void Lobby_Multi()
@@ -43,9 +46,9 @@ public class UIButton : MonoBehaviour
         m_ConnectedUI.SetActive(!bisActivate);
     }
 
-    public void Change_Avatar()
+    public void Change_Avatar_Single()
     {
-        GameMgr.Instance.Change_Avatar(m_iCharacterIndex);
+        InfoHandler.Instance.Set_CurrCharacter(m_iCharacterIndex);
     }
 
     public void Store()
@@ -64,6 +67,10 @@ public class UIButton : MonoBehaviour
     }
 
     ///multi///
+    public void Change_Avatar()
+    {
+        GameMgr.Instance.Change_Avatar(m_iCharacterIndex);
+    }
     public void Exit_Room()
     {
         NetworkManager.Instance.LeaveRoom();

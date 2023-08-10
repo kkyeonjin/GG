@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MyRoomMgr : MonoBehaviour
 {
     public GameObject m_Avatar1;
@@ -15,7 +15,12 @@ public class MyRoomMgr : MonoBehaviour
     public GameObject m_Avatar9;
 
     private GameObject[] m_Avatar;
-    public Transform ItemSlotPosition;
+
+    public Transform[] ItemSlotPos;
+
+    public GameObject[] Items;
+
+
 
     private int m_CurrAvatar;
     // Start is called before the first frame update
@@ -33,13 +38,18 @@ public class MyRoomMgr : MonoBehaviour
         m_Avatar[7] = m_Avatar8;
         m_Avatar[8] = m_Avatar9;
 
-       for(int i=0;i< (int)Player.CHARACTER.END;++i)
-       {
-            m_Avatar[i].SetActive(false);
-       }
-
-        m_CurrAvatar = 0;
+        m_CurrAvatar = InfoHandler.Instance.Get_CurrCharacter();
         m_Avatar[m_CurrAvatar].SetActive(true);
+
+        int iSlotIndex = 0;
+        for(int i=0;i<(int)Item.ITEM.END;++i)
+        {
+            if(InfoHandler.Instance.Get_Item_Num(i) >0)
+            {
+                Items[i].SetActive(true);
+                Items[i].transform.position = ItemSlotPos[iSlotIndex++].position;
+            }
+        }
     }
 
     public void Select_Avatar(Player.CHARACTER eIndex)
@@ -49,5 +59,7 @@ public class MyRoomMgr : MonoBehaviour
 
         m_CurrAvatar = (int)eIndex;
         //뒤에 현재 캐릭터 인덱스 정보 파일 수정
+        InfoHandler.Instance.Set_CurrCharacter(m_CurrAvatar);
+        InfoHandler.Instance.Save_Info();
     }
 }
