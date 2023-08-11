@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     private bool m_bIsRun = false;
     private bool m_bIsSprint = false;
     private bool m_bIsJump = false;
-    private bool m_bIsGround = true;
+    private bool m_bIsGround = false;
     private bool m_bIsCrouch = false;
     private bool m_bStartPush = false;
     private bool m_bIsPushing = false;
@@ -173,9 +173,9 @@ public class Player : MonoBehaviour
 
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
+        Falling();
         Throw();
         PushLever();
-        Picking_Up();
         Pushing();
         Jump_Up();
 
@@ -230,22 +230,22 @@ public class Player : MonoBehaviour
 
         if (m_bIsJump == true && m_bIsGround == false)
         {//+: y+방향, -: y-방향
-            m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x , transform.position.y + m_fJumpForce, transform.position.z);
+            m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude*Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
         }
     }
     private void Crouch()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl))//키가 뭐엿지
+        if (Input.GetKeyDown(KeyCode.LeftControl))//키가 뭐엿지
         {
-            if(m_bIsGround && !m_bIsJump)
+            if (m_bIsGround && !m_bIsJump)
             {
                 m_bIsCrouch = true;
                 m_Animator.SetBool("IsCrouch", m_bIsCrouch);
 
             }
         }
-        else if(Input.GetKeyUp(KeyCode.LeftControl))
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             m_bIsCrouch = false;
             m_Animator.SetBool("IsCrouch", m_bIsCrouch);
@@ -254,7 +254,7 @@ public class Player : MonoBehaviour
     }
     private void PushLever()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (m_bIsGround && Input.GetKeyDown(KeyCode.E))
         {
             m_Animator.SetTrigger("PushLever");
         }
@@ -262,7 +262,7 @@ public class Player : MonoBehaviour
 
     private void Pushing()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (m_bIsGround && Input.GetKeyDown(KeyCode.R))
         {
             if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
             {
@@ -270,7 +270,7 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("StartPush", m_bStartPush);
             }
         }
-        else if(Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetKeyUp(KeyCode.R))
         {
             m_bStartPush = false;
             m_bIsPushing = false;
@@ -281,14 +281,15 @@ public class Player : MonoBehaviour
 
     private void Throw()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if (m_bIsGround && Input.GetKeyDown(KeyCode.F))
             m_Animator.SetTrigger("Throw");
     }
-
-    private void Picking_Up()
+    private void Falling()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-            m_Animator.SetTrigger("PickingUp");
+        if(m_bIsJump == false && m_bIsGround == false)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - Physics.gravity.magnitude * Time.deltaTime*Time.deltaTime, transform.position.z);
+        }
     }
 
 
@@ -307,14 +308,38 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
-        if( collision.gameObject.CompareTag("Ground"))
+        else if( collision.gameObject.CompareTag("Ground"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
+            //collision.gameObject
             m_Animator.SetBool("IsJump", m_bIsJump);
             m_Animator.SetBool("IsGround",m_bIsGround);
             
         }
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {//땅에 닿아서 착지 애니메이션으로 이동
+            m_bIsGround = true;
+            m_Animator.SetBool("IsGround", m_bIsGround);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {//땅에 닿아서 착지 애니메이션으로 이동
+            m_bIsGround = false;
+            if (m_bIsJump == false)
+            {
+                m_Animator.SetTrigger("Falling");
+                m_Animator.SetBool("IsGround", m_bIsGround);
+            }
+        }
+    }
+
 
 }

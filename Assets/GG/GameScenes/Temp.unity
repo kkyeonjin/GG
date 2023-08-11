@@ -3394,7 +3394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fSpeed: 20
-  m_fJumpScale: 10
+  m_fJumpScale: 20
   m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 0}
