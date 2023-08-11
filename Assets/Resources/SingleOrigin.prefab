@@ -3203,8 +3203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e086e23d1fb7d4fb84d9ba7c424be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fSpeed: 1
-  m_fJumpScale: 10
+  m_fSpeed: 2
+  m_fJumpScale: 1
   m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 0}
@@ -25235,7 +25235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b51e351a5438c43a7d63090c185ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vOffset: {x: 0, y: 9, z: -30}
+  m_vOffset: {x: 0, y: 0.7, z: -2}
   m_fRotateSpeed: 250
   m_CamTransform: {fileID: 0}
   m_TargetTransform: {fileID: 802668056538480367}

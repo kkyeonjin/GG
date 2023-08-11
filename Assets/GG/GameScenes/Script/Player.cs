@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private bool m_bIsPushing = false;
 
     private float m_fTotalSpeed;
+    private float m_fJumpForce;
 
     private CharacterStatus m_Status;
     public Transform m_CameraTransform;
@@ -166,8 +167,9 @@ public class Player : MonoBehaviour
         Run();
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
         transform.LookAt(transform.position + m_vMoveVec);
-        m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
+        //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
         //m_Rigidbody.AddForce(Physics.gravity);
+        m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
@@ -221,11 +223,17 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsJump", m_bIsJump);
                 m_Animator.SetTrigger("Jump");
                 m_Animator.SetBool("IsGround", m_bIsGround);
-                m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
+                //m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
+                m_fJumpForce = m_fJumpScale;
             }
         }
-    }
 
+        if (m_bIsJump == true && m_bIsGround == false)
+        {//+: y+방향, -: y-방향
+            m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce, transform.position.z);
+        }
+    }
     private void Crouch()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))//키가 뭐엿지
