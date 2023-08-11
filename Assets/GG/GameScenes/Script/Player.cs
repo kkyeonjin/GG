@@ -92,16 +92,21 @@ public class Player : MonoBehaviour
         m_vMoveVec = Vector3.zero;
         m_bIsRun = false;
         m_bIsPushing = false;
+
+        Vector3 CamFoward = m_CameraTransform.forward;
+        Vector3 vRight = Vector3.Cross(Vector3.up, CamFoward);
+        CamFoward = Vector3.Cross(vRight, Vector3.up);
+
         if (Input.GetKey(KeyCode.W))
         {
-            m_vMoveVec += m_CameraTransform.forward;
+            m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
             m_bIsPushing = true;
         }
         else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
         {
-            m_vMoveVec -= m_CameraTransform.forward;
+            m_vMoveVec -= CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 

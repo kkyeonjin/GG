@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -11,9 +12,6 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
     public Player m_LocalPlayer;
     public GameObject m_LocalPlayerObj;
     public string m_szPlayerPrefab = "Local_Player";
-
-    public GameObject[] m_SelectItemSlots;
-    public GameObject[] m_HoldItemSlots;
 
     private int[,] m_HoldingItem;
 
@@ -33,11 +31,11 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
             m_Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        m_HoldingItem = new int[2, 2];
     }
 
     void start()
     {
+        m_HoldingItem = new int[2, 2];
         
     }
     public static GameMgr Instance
@@ -52,10 +50,6 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void Load_SelectItems()
-    {
-        
-    }
     public void Set_HoldingItem(int iSlotIndex, int iItemIndex, int iNum)
     {
         m_HoldingItem[iSlotIndex,0] = iItemIndex;

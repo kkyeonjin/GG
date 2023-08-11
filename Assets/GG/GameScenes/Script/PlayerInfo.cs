@@ -15,6 +15,7 @@ public class PlayerInfo
     public bool[] AvailableCharacter;
 
     public int[] ItemsInfo;
+    public int[,] HoldingItems;
 
     public PlayerInfo()
     {
@@ -33,6 +34,12 @@ public class PlayerInfo
         //ItemsInfo = new int[(int)Item.ITEM.END];
         //for (int i = 0; i < (int)Item.ITEM.END; ++i)
         //    ItemsInfo[i] = 0;
+
+        //HoldingItems = new int[2, 2];
+        //for (int i = 0; i < 2; ++i)
+        //    for (int j = 0; j < 2; ++j)
+        //        HoldingItems[i,j] = -1;
+
     }
 
     void Start()
@@ -97,9 +104,12 @@ public class PlayerInfo
         return ItemsInfo[iIndex];
     }
 
-    // Update is called once per frame
-    void Update()
+    public int[,] Get_HoldingItems()
     {
-        
+        return HoldingItems;
+    }
+    public void Set_HoldingItems(int[,] SetItems)
+    {
+        HoldingItems = SetItems;
     }
 }

@@ -24,4 +24,8 @@ public class Item : MonoBehaviour
     {
         return (int)m_eIndex;
     }
+    public void Set_Index(int iIndex)
+    {
+        m_eIndex = (ITEM)iIndex;
+    }
 }

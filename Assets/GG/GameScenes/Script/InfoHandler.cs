@@ -4,11 +4,14 @@ using UnityEngine;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 public class InfoHandler : MonoBehaviour
 {
     private PlayerInfo m_Playerinfo;
     private static InfoHandler m_Instance = null;
+
+    public Image[] m_ItemIcons;
 
     void Awake()
     {
@@ -62,6 +65,11 @@ public class InfoHandler : MonoBehaviour
 
         Debug.Log(m_Playerinfo.Get_Level());
 
+    }
+
+    public Image Get_ItemIcon(int iIndex)
+    {
+        return m_ItemIcons[iIndex];
     }
     public int Get_Level()
     {
@@ -119,6 +127,16 @@ public class InfoHandler : MonoBehaviour
     public int Get_Item_Num(int iIndex)
     {
         return m_Playerinfo.Get_Item_Num(iIndex);
+    }
+
+    public int[,] Get_HoldingItems()
+    {
+        return m_Playerinfo.Get_HoldingItems();
+    }
+
+    public void Set_HoldingItems(int[,] SetItems)
+    {
+        m_Playerinfo.Set_HoldingItems(SetItems);
     }
 
     public void Save_Info()

@@ -13,7 +13,6 @@ public class UIButton : MonoBehaviour
     public Button MyButton;
     public GameObject m_ConnectedUI;
 
-
     void Start()
     {
         if (m_iCharacterIndex > -1)

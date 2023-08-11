@@ -31,7 +31,7 @@ public class Playercamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Get_MouseMovement();
         m_CameraFunc();
