@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
 
     private MoveFunc m_Moving;
 
-
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -63,7 +62,6 @@ public class Player : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-
     }
 
     // Update is called once per frame
@@ -94,16 +92,21 @@ public class Player : MonoBehaviour
         m_vMoveVec = Vector3.zero;
         m_bIsRun = false;
         m_bIsPushing = false;
+
+        Vector3 CamFoward = m_CameraTransform.forward;
+        Vector3 vRight = Vector3.Cross(Vector3.up, CamFoward);
+        CamFoward = Vector3.Cross(vRight, Vector3.up);
+
         if (Input.GetKey(KeyCode.W))
         {
-            m_vMoveVec += m_CameraTransform.forward;
+            m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
             m_bIsPushing = true;
         }
         else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
         {
-            m_vMoveVec -= m_CameraTransform.forward;
+            m_vMoveVec -= CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
@@ -168,7 +171,9 @@ public class Player : MonoBehaviour
 
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
+        Throw();
         PushLever();
+        Picking_Up();
         Pushing();
         Jump_Up();
 
@@ -223,16 +228,16 @@ public class Player : MonoBehaviour
 
     private void Crouch()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl))//키가 뭐엿지
+        if (Input.GetKeyDown(KeyCode.LeftControl))//키가 뭐엿지
         {
-            if(m_bIsGround && !m_bIsJump)
+            if (m_bIsGround && !m_bIsJump)
             {
                 m_bIsCrouch = true;
                 m_Animator.SetBool("IsCrouch", m_bIsCrouch);
 
             }
         }
-        else if(Input.GetKeyUp(KeyCode.LeftControl))
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             m_bIsCrouch = false;
             m_Animator.SetBool("IsCrouch", m_bIsCrouch);
@@ -241,7 +246,7 @@ public class Player : MonoBehaviour
     }
     private void PushLever()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             m_Animator.SetTrigger("PushLever");
         }
@@ -257,7 +262,7 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("StartPush", m_bStartPush);
             }
         }
-        else if(Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetKeyUp(KeyCode.R))
         {
             m_bStartPush = false;
             m_bIsPushing = false;
@@ -266,6 +271,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Throw()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+            m_Animator.SetTrigger("Throw");
+    }
+
+    private void Picking_Up()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            m_Animator.SetTrigger("PickingUp");
+    }
 
 
     private void OnCollisionEnter(Collision collision)
@@ -283,13 +299,13 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
-        if( collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
             m_Animator.SetBool("IsJump", m_bIsJump);
-            m_Animator.SetBool("IsGround",m_bIsGround);
-            
+            m_Animator.SetBool("IsGround", m_bIsGround);
+
         }
     }
 

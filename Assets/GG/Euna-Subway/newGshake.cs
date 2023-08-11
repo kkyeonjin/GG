@@ -20,9 +20,9 @@ public class newGshake : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(transform.localPosition);
-        Vector2 randomPos = Random.insideUnitCircle * magnitude * 40;
+        Vector2 randomPos = Random.insideUnitCircle * magnitude * 50;
 
-        float randomY = Random.Range(-1f, 1f) * magnitude * 40;
+        float randomY = Random.Range(-1f, 1f) * magnitude * 50;
 
         float randomX = Mathf.Lerp(transform.localPosition.x, randomPos.x, Time.deltaTime * slowDownFactor);
         float randomZ = Mathf.Lerp(transform.localPosition.z, randomPos.x, Time.deltaTime * slowDownFactor);
@@ -36,7 +36,7 @@ public class newGshake : MonoBehaviour
         transform.rotation = Quaternion.Euler(moveVecR);
    
     }
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -45,5 +45,5 @@ public class newGshake : MonoBehaviour
             collision.rigidbody.AddForce(randomForce, ForceMode.Impulse);
         }
 
-    }
+    }*/
 }
