@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 204544028}
   - component: {fileID: 204544030}
   - component: {fileID: 204544029}
+  - component: {fileID: 204544031}
   m_Layer: 5
   m_Name: ItemSelect
   m_TagString: Untagged
@@ -739,6 +740,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204544027}
   m_CullTransparentMesh: 1
+--- !u!114 &204544031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204544027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyImage: {fileID: 204544029}
+  isSlotsParent: 1
+  m_Slots:
+  - {fileID: 452251980}
+  - {fileID: 303109381}
+  - {fileID: 2062509763}
+  - {fileID: 1400916608}
+  - {fileID: 281834724}
 --- !u!1 &281834718
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,11 +771,14 @@ GameObject:
   - component: {fileID: 281834719}
   - component: {fileID: 281834721}
   - component: {fileID: 281834720}
+  - component: {fileID: 281834727}
   - component: {fileID: 281834723}
-  - component: {fileID: 281834722}
+  - component: {fileID: 281834724}
+  - component: {fileID: 281834725}
+  - component: {fileID: 281834726}
   m_Layer: 5
   m_Name: Slot5
-  m_TagString: Untagged
+  m_TagString: UISelectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,19 +841,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281834718}
   m_CullTransparentMesh: 1
---- !u!114 &281834722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281834718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 281834719}
 --- !u!114 &281834723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,35 +857,117 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 281834722}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 281834722}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+--- !u!114 &281834724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281834718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyImage: {fileID: 281834720}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &281834725
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281834718}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &281834726
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281834718}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &281834727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281834718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 281834720}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &303109375
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,11 +979,14 @@ GameObject:
   - component: {fileID: 303109376}
   - component: {fileID: 303109378}
   - component: {fileID: 303109377}
-  - component: {fileID: 303109380}
+  - component: {fileID: 303109384}
   - component: {fileID: 303109379}
+  - component: {fileID: 303109381}
+  - component: {fileID: 303109382}
+  - component: {fileID: 303109383}
   m_Layer: 5
   m_Name: Slot2
-  m_TagString: Untagged
+  m_TagString: UISelectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,36 +1065,12 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 303109380}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 303109380}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &303109380
+        m_Calls: []
+--- !u!114 &303109381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1007,10 +1079,103 @@ MonoBehaviour:
   m_GameObject: {fileID: 303109375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 303109376}
+  m_MyImage: {fileID: 303109377}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &303109382
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303109375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &303109383
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303109375}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &303109384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303109375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 303109377}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &397100116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,11 +1322,14 @@ GameObject:
   - component: {fileID: 452251975}
   - component: {fileID: 452251977}
   - component: {fileID: 452251976}
-  - component: {fileID: 452251979}
+  - component: {fileID: 452251983}
   - component: {fileID: 452251978}
+  - component: {fileID: 452251980}
+  - component: {fileID: 452251981}
+  - component: {fileID: 452251982}
   m_Layer: 5
   m_Name: Slot1
-  m_TagString: Untagged
+  m_TagString: UISelectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,36 +1408,12 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 452251979}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 452251979}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &452251979
+        m_Calls: []
+--- !u!114 &452251980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1278,10 +1422,103 @@ MonoBehaviour:
   m_GameObject: {fileID: 452251974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 452251975}
+  m_MyImage: {fileID: 452251976}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &452251981
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452251974}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &452251982
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452251974}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &452251983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452251974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 452251976}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &536428208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,11 +2211,13 @@ GameObject:
   - component: {fileID: 801589358}
   - component: {fileID: 801589360}
   - component: {fileID: 801589359}
-  - component: {fileID: 801589362}
   - component: {fileID: 801589361}
+  - component: {fileID: 801589363}
+  - component: {fileID: 801589364}
+  - component: {fileID: 801589365}
   m_Layer: 5
   m_Name: Slot2
-  m_TagString: Untagged
+  m_TagString: UIHoldingItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2057,36 +2296,12 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 801589362}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 801589362}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &801589362
+        m_Calls: []
+--- !u!114 &801589363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2095,10 +2310,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 801589357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 801589358}
+  m_MyImage: {fileID: 801589359}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &801589364
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801589357}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &801589365
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801589357}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &802444110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,10 +2662,12 @@ GameObject:
   - component: {fileID: 960697749}
   - component: {fileID: 960697748}
   - component: {fileID: 960697750}
-  - component: {fileID: 960697751}
+  - component: {fileID: 960697752}
+  - component: {fileID: 960697753}
+  - component: {fileID: 960697754}
   m_Layer: 5
   m_Name: Slot1
-  m_TagString: Untagged
+  m_TagString: UIHoldingItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2480,36 +2746,12 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 960697751}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 960697751}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &960697751
+        m_Calls: []
+--- !u!114 &960697752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2518,10 +2760,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 960697746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 960697747}
+  m_MyImage: {fileID: 960697748}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &960697753
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960697746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &960697754
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960697746}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &983127641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,11 +3431,14 @@ GameObject:
   - component: {fileID: 1400916603}
   - component: {fileID: 1400916605}
   - component: {fileID: 1400916604}
+  - component: {fileID: 1400916611}
   - component: {fileID: 1400916607}
-  - component: {fileID: 1400916606}
+  - component: {fileID: 1400916608}
+  - component: {fileID: 1400916609}
+  - component: {fileID: 1400916610}
   m_Layer: 5
   m_Name: Slot4
-  m_TagString: Untagged
+  m_TagString: UISelectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3207,19 +3501,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400916602}
   m_CullTransparentMesh: 1
---- !u!114 &1400916606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400916602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 1400916603}
 --- !u!114 &1400916607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3236,35 +3517,117 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1400916606}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1400916606}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+--- !u!114 &1400916608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400916602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyImage: {fileID: 1400916604}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &1400916609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400916602}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &1400916610
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400916602}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1400916611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400916602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1400916604}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1430343105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,15 +4953,6 @@ MonoBehaviour:
   m_LocalPlayer: {fileID: 0}
   m_LocalPlayerObj: {fileID: 0}
   m_szPlayerPrefab: Local_Player
-  m_SelectItemSlots:
-  - {fileID: 452251974}
-  - {fileID: 303109375}
-  - {fileID: 2062509757}
-  - {fileID: 1400916602}
-  - {fileID: 281834718}
-  m_HoldItemSlots:
-  - {fileID: 960697746}
-  - {fileID: 801589357}
 --- !u!4 &1889427164
 Transform:
   m_ObjectHideFlags: 0
@@ -5452,11 +5806,14 @@ GameObject:
   - component: {fileID: 2062509758}
   - component: {fileID: 2062509760}
   - component: {fileID: 2062509759}
+  - component: {fileID: 2062509766}
   - component: {fileID: 2062509762}
-  - component: {fileID: 2062509761}
+  - component: {fileID: 2062509763}
+  - component: {fileID: 2062509764}
+  - component: {fileID: 2062509765}
   m_Layer: 5
   m_Name: Slot3
-  m_TagString: Untagged
+  m_TagString: UISelectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5519,19 +5876,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062509757}
   m_CullTransparentMesh: 1
---- !u!114 &2062509761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062509757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d167aabcaaf76409cae77fc427f688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MyRect: {fileID: 2062509758}
 --- !u!114 &2062509762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,35 +5892,117 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2062509761}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtondown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2062509761}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnButtonUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+--- !u!114 &2062509763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062509757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyImage: {fileID: 2062509759}
+  isSlotsParent: 0
+  m_Slots: []
+--- !u!61 &2062509764
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062509757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02924347, y: 0.050613403}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64.93237, y: 64.74362}
+  m_EdgeRadius: 0
+--- !u!50 &2062509765
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062509757}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &2062509766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062509757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2062509759}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2112319066
 GameObject:
   m_ObjectHideFlags: 0

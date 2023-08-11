@@ -16,6 +16,9 @@ TagManager:
   - AI
   - stair
   - Falling
+  - FollowCam
+  - UIHoldingItem
+  - UISelectItem
   layers:
   - Default
   - TransparentFX
