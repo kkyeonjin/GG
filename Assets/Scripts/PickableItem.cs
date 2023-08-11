@@ -8,6 +8,9 @@ public class PickableItem : MonoBehaviour
     public Sprite icon;
     public int itemNum;
 
+    Material outline;
+    Renderer renderers;
+    List<Material> materials = new List<Material>();
 
     // Start is called before the first frame update
 
@@ -26,6 +29,17 @@ public class PickableItem : MonoBehaviour
         }
     }
 
+    public void OutlineOn()
+    {
+        renderers = this.GetComponent<Renderer>();
+
+        materials.Clear();
+        materials.AddRange(renderers.sharedMaterials);
+        materials.Add(outline);
+
+        renderers.materials = materials.ToArray();
+    }
+
     public void IconUpdate()
     {
         
@@ -33,7 +47,7 @@ public class PickableItem : MonoBehaviour
 
     void Start()
     {
-        
+        outline = new Material(Shader.Find("Draw/OutlineShader"));
     }
 
     // Update is called once per frame

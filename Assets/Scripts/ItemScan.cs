@@ -24,6 +24,12 @@ public class ItemScan : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
         {
+
+            //+++
+
+
+            hitInfo.transform.gameObject.GetComponent<PickableItem>().OutlineOn();
+
             if (hitInfo.transform.tag == "cup")
             {
                 Debug.Log("cup detected");
