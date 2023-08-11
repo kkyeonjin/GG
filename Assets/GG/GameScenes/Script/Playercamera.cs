@@ -16,7 +16,7 @@ public class Playercamera : MonoBehaviour
     private delegate void CamFunc();
     private CamFunc m_CameraFunc;
 
-    Quaternion tempRot;
+    //Quaternion tempRot;
 
 
     void Start()
@@ -31,7 +31,7 @@ public class Playercamera : MonoBehaviour
         else
             m_CameraFunc = new CamFunc(MultiMode);
 
-        tempRot = transform.localRotation;
+        //tempRot = transform.localRotation;
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class Playercamera : MonoBehaviour
         Get_MouseMovement();
         m_CameraFunc();
 
-
+        /*
         Quaternion newRot = transform.localRotation;
         if (tempRot == newRot) return;
         else
@@ -48,6 +48,7 @@ public class Playercamera : MonoBehaviour
             Debug.Log(newRot);
             tempRot = newRot;
         }
+        */
     }
 
     private void MultiMode()
