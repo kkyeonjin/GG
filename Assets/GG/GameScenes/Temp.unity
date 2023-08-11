@@ -3393,8 +3393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e086e23d1fb7d4fb84d9ba7c424be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fSpeed: 0.1
-  m_fJumpScale: 30
+  m_fSpeed: 20
+  m_fJumpScale: 10
   m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 0}
@@ -3406,7 +3406,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802668056370051210}
-  m_Material: {fileID: 13400000, guid: 2ebb2df8cde11324a93255d8cdf1cf15, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
