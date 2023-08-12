@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class ItemSelectUI : MonoBehaviour
 {
     public Image m_MyImage;
-    
+
     Sprite m_ItemEmage;
     Sprite m_EmptyImage;
 
     Color m_Emptycolor;
     Color m_Itemcolor;
 
+    public int iSlotIndex;
 
     Item.ITEM m_eIndex = Item.ITEM.END;
 
@@ -21,20 +22,20 @@ public class ItemSelectUI : MonoBehaviour
 
     private void Awake()
     {
-        m_EmptyImage= m_MyImage.sprite;
+        m_EmptyImage = m_MyImage.sprite;
         m_Emptycolor = m_MyImage.color;
 
         m_Itemcolor = new Color(1f, 1f, 1f, 1f);
     }
     void Start()
     {
-        
-        if(isSlotsParent)
+
+        if (isSlotsParent)
         {
             int iSlotIndex = 0;
-            for(int i=0;i<5;++i)
+            for (int i = 0; i < 5; ++i)
             {
-                if(InfoHandler.Instance.Get_Item_Num(i) > 0)
+                if (InfoHandler.Instance.Get_Item_Num(i) > 0)
                 {
                     m_Slots[iSlotIndex].Set_Image(InfoHandler.Instance.Get_ItemIcon(i));
                     m_Slots[iSlotIndex].Have_Items(true);
@@ -42,7 +43,7 @@ public class ItemSelectUI : MonoBehaviour
                 }
             }
         }
-    
+
     }
 
     public void Set_Image(Image InstantiateImage)
@@ -52,6 +53,21 @@ public class ItemSelectUI : MonoBehaviour
     public void Set_Index(int iIndex)
     {
         m_eIndex = (Item.ITEM)iIndex;
+    }
+
+    public void Item_Selected()
+    {
+        if (GameMgr.Instance.Set_HoldingItem(this) == true)
+        {
+            //highlighted
+        }
+
+    }
+
+    public void Item_UnSelected()
+    {
+        GameMgr.Instance.Set_Unholding(iSlotIndex);
+        Have_Items(false);
     }
 
     public void Have_Items(bool isHave)
@@ -76,23 +92,5 @@ public class ItemSelectUI : MonoBehaviour
     public int Get_Index()
     {
         return (int)m_eIndex;
-    }
-
-    private void OnCollisionEnter2D(Collision collision)
-    {
-        Debug.Log("함수 돎?");
-        if (this.gameObject.tag == "UISelectItem")
-        {
-            if (collision.gameObject.tag == "UIHoldingItem")
-            {
-                //아이템 슬롯 설정
-                ItemSelectUI HoldingSlot = collision.gameObject.GetComponent<ItemSelectUI>();
-                HoldingSlot.Set_Image(this.m_MyImage);
-                HoldingSlot.Set_Index((int)this.m_eIndex);
-                HoldingSlot.Have_Items(true);
-                Debug.Log("충돌 함?");
-            }
-        }
-   
     }
 }

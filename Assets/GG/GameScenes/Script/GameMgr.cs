@@ -13,6 +13,8 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject m_LocalPlayerObj;
     public string m_szPlayerPrefab = "Local_Player";
 
+    public ItemSelectUI[] m_HoldingItemUI;
+
     private int[,] m_HoldingItem;
 
     void Awake()
@@ -31,13 +33,14 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
             m_Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        m_HoldingItem = new int[2,2];
+        m_HoldingItem[0, 0] = -1;
+        m_HoldingItem[1, 0] = -1;
+        m_HoldingItem[0, 1] = -1;
+        m_HoldingItem[1, 1] = -1;
+
     }
 
-    void start()
-    {
-        m_HoldingItem = new int[2, 2];
-        
-    }
     public static GameMgr Instance
     {
         get
@@ -50,10 +53,25 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void Set_HoldingItem(int iSlotIndex, int iItemIndex, int iNum)
+    public bool Set_HoldingItem(ItemSelectUI iInput)
     {
-        m_HoldingItem[iSlotIndex,0] = iItemIndex;
-        m_HoldingItem[iSlotIndex,1] = iNum;
+        for(int i=0;i<2;++i)
+        {   
+            if(m_HoldingItem[i,0] == -1)
+            {
+                m_HoldingItem[i, 0] = iInput.Get_Index();
+                m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
+                m_HoldingItemUI[i].Have_Items(true);
+                //개수 설정
+                return true;
+            }
+        }
+        return false;//빈자리 없음
+    }
+    public void Set_Unholding(int iIndex)
+    {
+        m_HoldingItem[iIndex, 0] = -1;
+        m_HoldingItem[iIndex, 1] = -1;
     }
     public int[,] Get_HoldingItem()
     {
