@@ -676,7 +676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &204544028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,6 +755,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 204544029}
   iSlotIndex: 0
   isSlotsParent: 1
+  isSelectSlotParent: 0
   m_Slots:
   - {fileID: 452251980}
   - {fileID: 303109381}
@@ -876,6 +877,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 281834720}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &281834727
 MonoBehaviour:
@@ -1048,6 +1050,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 303109377}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &303109384
 MonoBehaviour:
@@ -1355,6 +1358,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 452251976}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &452251983
 MonoBehaviour:
@@ -2208,6 +2212,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 801589359}
   iSlotIndex: 1
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &801589364
 MonoBehaviour:
@@ -2485,6 +2490,7 @@ GameObject:
   - component: {fileID: 928088219}
   - component: {fileID: 928088221}
   - component: {fileID: 928088220}
+  - component: {fileID: 928088222}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -2552,6 +2558,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928088218}
   m_CullTransparentMesh: 1
+--- !u!114 &928088222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928088218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ee4c6025c71554b96ecc51ee53acf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyImage: {fileID: 928088220}
+  iSlotIndex: 0
+  isSlotsParent: 0
+  isSelectSlotParent: 1
+  m_Slots:
+  - {fileID: 960697752}
+  - {fileID: 801589363}
 --- !u!1 &960697746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2692,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 960697748}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &960697753
 MonoBehaviour:
@@ -3446,6 +3472,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 1400916604}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &1400916611
 MonoBehaviour:
@@ -4828,9 +4855,6 @@ MonoBehaviour:
   m_LocalPlayer: {fileID: 0}
   m_LocalPlayerObj: {fileID: 0}
   m_szPlayerPrefab: Local_Player
-  m_HoldingItemUI:
-  - {fileID: 960697752}
-  - {fileID: 801589363}
 --- !u!4 &1889427164
 Transform:
   m_ObjectHideFlags: 0
@@ -5788,6 +5812,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 2062509759}
   iSlotIndex: 0
   isSlotsParent: 0
+  isSelectSlotParent: 0
   m_Slots: []
 --- !u!114 &2062509766
 MonoBehaviour:

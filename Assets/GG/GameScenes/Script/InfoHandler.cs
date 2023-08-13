@@ -13,6 +13,10 @@ public class InfoHandler : MonoBehaviour
 
     public Image[] m_ItemIcons;
 
+    public ItemSelectUI[] m_HoldingItemUI;
+
+    private int[,] m_HoldingItem;
+
     void Awake()
     {
         var duplicated = FindObjectsOfType<InfoHandler>();
@@ -26,6 +30,12 @@ public class InfoHandler : MonoBehaviour
             m_Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        m_HoldingItem = new int[2, 2];
+        m_HoldingItem[0, 0] = -1;
+        m_HoldingItem[1, 0] = -1;
+        m_HoldingItem[0, 1] = -1;
+        m_HoldingItem[1, 1] = -1;
+
     }
     public static InfoHandler Instance
     {
@@ -66,7 +76,36 @@ public class InfoHandler : MonoBehaviour
         Debug.Log(m_Playerinfo.Get_Level());
 
     }
-
+    public void Set_HoldingItemSlots(ItemSelectUI[] Input)
+    {
+        m_HoldingItemUI = Input;
+        Debug.Log("ΩΩ∑‘ ∫∏≥ª¡‹");
+        Debug.Log(m_HoldingItemUI);
+    }
+    public bool Set_HoldingItem(ItemSelectUI iInput)
+    {
+        for (int i = 0; i < 2; ++i)
+        {
+            if (m_HoldingItem[i, 0] == -1)
+            {
+                m_HoldingItem[i, 0] = iInput.Get_Index();
+                m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
+                m_HoldingItemUI[i].Have_Items(true);
+                //∞≥ºˆ º≥¡§
+                return true;
+            }
+        }
+        return false;//∫Û¿⁄∏Æ æ¯¿Ω
+    }
+    public void Set_Unholding(int iIndex)
+    {
+        m_HoldingItem[iIndex, 0] = -1;
+        m_HoldingItem[iIndex, 1] = -1;
+    }
+    public int[,] Get_HoldingItem()
+    {
+        return m_HoldingItem;
+    }
     public Image Get_ItemIcon(int iIndex)
     {
         return m_ItemIcons[iIndex];

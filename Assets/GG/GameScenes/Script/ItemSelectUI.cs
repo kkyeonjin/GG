@@ -18,6 +18,7 @@ public class ItemSelectUI : MonoBehaviour
     Item.ITEM m_eIndex = Item.ITEM.END;
 
     public bool isSlotsParent = false;
+    public bool isSelectSlotParent = false;
     public ItemSelectUI[] m_Slots;
 
     private void Awake()
@@ -30,7 +31,7 @@ public class ItemSelectUI : MonoBehaviour
     void Start()
     {
 
-        if (isSlotsParent)
+        if (isSlotsParent == true)
         {
             int iSlotIndex = 0;
             for (int i = 0; i < 5; ++i)
@@ -42,6 +43,20 @@ public class ItemSelectUI : MonoBehaviour
                     m_Slots[iSlotIndex++].Set_Index(i);
                 }
             }
+        }
+        else if(isSelectSlotParent == true)
+        {
+            int[,] SlotsInfo = InfoHandler.Instance.Get_HoldingItem();
+            for(int i=0;i<2;++i)
+            {
+                if(SlotsInfo[i,0] > -1)
+                {
+                    m_Slots[iSlotIndex].Set_Image(InfoHandler.Instance.Get_ItemIcon(SlotsInfo[i, 0]));
+                    m_Slots[iSlotIndex].Have_Items(true);
+                    m_Slots[iSlotIndex++].Set_Index(i);
+                }
+            }
+            InfoHandler.Instance.Set_HoldingItemSlots(m_Slots);
         }
 
     }
@@ -57,7 +72,7 @@ public class ItemSelectUI : MonoBehaviour
 
     public void Item_Selected()
     {
-        if (GameMgr.Instance.Set_HoldingItem(this) == true)
+        if (InfoHandler.Instance.Set_HoldingItem(this) == true)
         {
             //highlighted
         }
@@ -66,7 +81,7 @@ public class ItemSelectUI : MonoBehaviour
 
     public void Item_UnSelected()
     {
-        GameMgr.Instance.Set_Unholding(iSlotIndex);
+        InfoHandler.Instance.Set_Unholding(iSlotIndex);
         Have_Items(false);
     }
 
