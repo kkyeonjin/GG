@@ -27,6 +27,12 @@ public class CharacterStatus : MonoBehaviour
         Recover_Stamina();
     }
 
+    public void Change_Status(float fHP, float fStamina)
+    {
+        m_fMaxHP = fHP;
+        m_fMaxStamina = fStamina;
+    }
+
     public float Get_HP()
     {
         return m_fHP;

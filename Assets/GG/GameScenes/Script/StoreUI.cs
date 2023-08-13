@@ -11,24 +11,12 @@ public class StoreUI : MonoBehaviour
     //구매할 캐릭터 인덱스
     public int m_iCharacterIndex;
     public int m_iItemIndex;
-
-    //category
-    public GameObject m_CharacterCategory;
-    public GameObject m_ItemCategory;
-
-
-    private GameObject m_CurrCategory;
     
 
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.SetActive(m_bStartEnable);
-
-        if (m_CharacterCategory)
-            m_CharacterCategory.SetActive(false);
-        if (m_ItemCategory)
-            m_ItemCategory.SetActive(false);
 
     }
 
@@ -49,9 +37,9 @@ public class StoreUI : MonoBehaviour
     {
        
         if (m_iCharacterIndex > -1)
-            /*m_SelectBuy.GetComponent<StoreUI>().*/Buy_Character();
+            Buy_Character();
         else if (m_iItemIndex > -1)
-            /*m_SelectBuy.GetComponent<StoreUI>().*/Buy_Item();
+            Buy_Item();
 
         this.gameObject.SetActive(false);
     
@@ -90,15 +78,4 @@ public class StoreUI : MonoBehaviour
 
     }
 
-
-    public void Select_Character()
-    {
-        m_CharacterCategory.SetActive(true);
-        m_ItemCategory.SetActive(false);
-    }
-    public void Select_Item()
-    {
-        m_ItemCategory.SetActive(true);
-        m_CharacterCategory.SetActive(false);
-    }
 }

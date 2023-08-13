@@ -13,13 +13,17 @@ public class ItemSelectUI : MonoBehaviour
     Color m_Emptycolor;
     Color m_Itemcolor;
 
-    public int iSlotIndex;
+    public int iHoldingSlotIndex;
 
     Item.ITEM m_eIndex = Item.ITEM.END;
 
     public bool isSlotsParent = false;
-    public bool isSelectSlotParent = false;
+    public bool isHoldingSlotParent = false;
     public ItemSelectUI[] m_Slots;
+
+    //select slot ¿ë
+    bool m_bSelected = false;
+    public int m_iSelectSlotIndex = -1;
 
     private void Awake()
     {
@@ -30,7 +34,6 @@ public class ItemSelectUI : MonoBehaviour
     }
     void Start()
     {
-
         if (isSlotsParent == true)
         {
             int iSlotIndex = 0;
@@ -43,22 +46,11 @@ public class ItemSelectUI : MonoBehaviour
                     m_Slots[iSlotIndex++].Set_Index(i);
                 }
             }
-        }
-        else if(isSelectSlotParent == true)
-        {
-            int[,] SlotsInfo = InfoHandler.Instance.Get_HoldingItem();
-            for(int i=0;i<2;++i)
-            {
-                if(SlotsInfo[i,0] > -1)
-                {
-                    m_Slots[iSlotIndex].Set_Image(InfoHandler.Instance.Get_ItemIcon(SlotsInfo[i, 0]));
-                    m_Slots[iSlotIndex].Have_Items(true);
-                    m_Slots[iSlotIndex++].Set_Index(i);
-                }
-            }
-            InfoHandler.Instance.Set_HoldingItemSlots(m_Slots);
+            InfoHandler.Instance.Set_SelectItemSlots(m_Slots);
         }
 
+        if (isHoldingSlotParent == true)
+            InfoHandler.Instance.Set_HoldingItemSlots(m_Slots);
     }
 
     public void Set_Image(Image InstantiateImage)
@@ -72,17 +64,26 @@ public class ItemSelectUI : MonoBehaviour
 
     public void Item_Selected()
     {
+        if (m_bSelected)
+            return;
+
         if (InfoHandler.Instance.Set_HoldingItem(this) == true)
         {
+            m_bSelected = true;
             //highlighted
         }
 
     }
 
-    public void Item_UnSelected()
+    public void Item_UnSelected()//HoldingSlot¿ë
     {
-        InfoHandler.Instance.Set_Unholding(iSlotIndex);
+        InfoHandler.Instance.Set_Unholding(iHoldingSlotIndex);
         Have_Items(false);
+    }
+
+    public void Slot_UnSelected()
+    {
+        m_bSelected = false;
     }
 
     public void Have_Items(bool isHave)
@@ -98,7 +99,10 @@ public class ItemSelectUI : MonoBehaviour
             m_MyImage.color = m_Emptycolor;
         }
     }
-
+    public int Get_SlotIndex()
+    {
+        return m_iSelectSlotIndex;//Select¿ë
+    }
     public Image Get_Image()
     {
         return m_MyImage;

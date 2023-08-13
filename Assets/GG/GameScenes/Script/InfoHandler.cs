@@ -14,8 +14,10 @@ public class InfoHandler : MonoBehaviour
     public Image[] m_ItemIcons;
 
     public ItemSelectUI[] m_HoldingItemUI;
+    public ItemSelectUI[] m_SelectItemUI;
 
     private int[,] m_HoldingItem;
+    private int[] m_SlotIndex;
 
     void Awake()
     {
@@ -35,6 +37,8 @@ public class InfoHandler : MonoBehaviour
         m_HoldingItem[1, 0] = -1;
         m_HoldingItem[0, 1] = -1;
         m_HoldingItem[1, 1] = -1;
+
+        m_SlotIndex = new int[2];
 
     }
     public static InfoHandler Instance
@@ -82,6 +86,10 @@ public class InfoHandler : MonoBehaviour
         Debug.Log("ΩΩ∑‘ ∫∏≥ª¡‹");
         Debug.Log(m_HoldingItemUI);
     }
+    public void Set_SelectItemSlots(ItemSelectUI[] Input)
+    {
+        m_SelectItemUI = Input;
+    }
     public bool Set_HoldingItem(ItemSelectUI iInput)
     {
         for (int i = 0; i < 2; ++i)
@@ -91,6 +99,7 @@ public class InfoHandler : MonoBehaviour
                 m_HoldingItem[i, 0] = iInput.Get_Index();
                 m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
                 m_HoldingItemUI[i].Have_Items(true);
+                m_SlotIndex[i] = iInput.Get_SlotIndex();
                 //∞≥ºˆ º≥¡§
                 return true;
             }
@@ -101,7 +110,18 @@ public class InfoHandler : MonoBehaviour
     {
         m_HoldingItem[iIndex, 0] = -1;
         m_HoldingItem[iIndex, 1] = -1;
+
+        m_SelectItemUI[m_SlotIndex[iIndex]].Slot_UnSelected();
     }
+
+    public void Clear_HoldingItem()
+    {
+        m_HoldingItem[0, 0] = -1;
+        m_HoldingItem[1, 0] = -1;
+        m_HoldingItem[0, 1] = -1;
+        m_HoldingItem[1, 1] = -1;
+    }
+
     public int[,] Get_HoldingItem()
     {
         return m_HoldingItem;

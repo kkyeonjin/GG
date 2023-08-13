@@ -63,6 +63,7 @@ public class UIButton : MonoBehaviour
     public void Backto_Menu()
     {
         SceneManager.LoadScene("MenuUI");
+        InfoHandler.Instance.Clear_HoldingItem();
     }
 
     ///multi///

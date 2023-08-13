@@ -753,15 +753,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 204544029}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 1
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots:
   - {fileID: 452251980}
   - {fileID: 303109381}
   - {fileID: 2062509763}
   - {fileID: 1400916608}
   - {fileID: 281834724}
+  m_iSelectSlotIndex: -1
 --- !u!1 &281834718
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,10 +876,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 281834720}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 4
 --- !u!114 &281834727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,10 +1050,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 303109377}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 1
 --- !u!114 &303109384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,10 +1359,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 452251976}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 0
 --- !u!114 &452251983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,10 +2214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 801589359}
-  iSlotIndex: 1
+  iHoldingSlotIndex: 1
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: -1
 --- !u!114 &801589364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2571,12 +2576,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 928088220}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 1
+  isHoldingSlotParent: 1
   m_Slots:
   - {fileID: 960697752}
   - {fileID: 801589363}
+  m_iSelectSlotIndex: -1
 --- !u!1 &960697746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,10 +2696,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 960697748}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: -1
 --- !u!114 &960697753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,10 +3477,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1400916604}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 3
 --- !u!114 &1400916611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5810,10 +5818,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 2062509759}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 2
 --- !u!114 &2062509766
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class MyRoomMgr : MonoBehaviour
 {
     public GameObject m_Avatar1;
@@ -20,9 +22,12 @@ public class MyRoomMgr : MonoBehaviour
 
     public GameObject[] Items;
 
+    public TextMeshProUGUI m_PlayerInfo;
+    public TextMeshProUGUI m_AvatarStatus;
 
 
     private int m_CurrAvatar;
+    private AvatarStatus m_CurrStatus;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +46,8 @@ public class MyRoomMgr : MonoBehaviour
         m_CurrAvatar = InfoHandler.Instance.Get_CurrCharacter();
         m_Avatar[m_CurrAvatar].SetActive(true);
 
+        m_CurrStatus = m_Avatar[m_CurrAvatar].GetComponent<AvatarStatus>();
+
         int iSlotIndex = 0;
         for(int i=0;i<(int)Item.ITEM.END;++i)
         {
@@ -50,6 +57,9 @@ public class MyRoomMgr : MonoBehaviour
                 Items[i].transform.position = ItemSlotPos[iSlotIndex++].position;
             }
         }
+
+        Show_PlayerInfo();
+        Show_CurrStatus();
     }
 
     public void Select_Avatar(Player.CHARACTER eIndex)
@@ -58,8 +68,23 @@ public class MyRoomMgr : MonoBehaviour
         m_Avatar[(int)eIndex].SetActive(true);
 
         m_CurrAvatar = (int)eIndex;
+        m_CurrStatus = m_Avatar[m_CurrAvatar].GetComponent<AvatarStatus>();
+        Show_CurrStatus();
         //뒤에 현재 캐릭터 인덱스 정보 파일 수정
         InfoHandler.Instance.Set_CurrCharacter(m_CurrAvatar);
         InfoHandler.Instance.Save_Info();
     }
+
+    public void Show_CurrStatus()
+    {
+        string speed = "Speed : " + m_CurrStatus.Get_Speed() + "\nhp : " + m_CurrStatus.Get_HP() + "\nstamina: " + m_CurrStatus.Get_Stamina();
+        m_AvatarStatus.text = speed;
+    }
+
+    public void Show_PlayerInfo()
+    {
+        string text = "Level : " + InfoHandler.Instance.Get_Level();
+        m_PlayerInfo.text = text;
+    }
+
 }

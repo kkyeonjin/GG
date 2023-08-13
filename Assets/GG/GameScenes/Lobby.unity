@@ -328,10 +328,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 61724230}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: -1
 --- !u!114 &61724228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,10 +1217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 341488241}
-  iSlotIndex: 1
+  iHoldingSlotIndex: 1
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: -1
 --- !u!114 &341488240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,10 +1789,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 453382756}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 3
 --- !u!114 &453382754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2954,10 +2957,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1062536869}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 1
 --- !u!114 &1062536867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3278,10 +3282,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1091725134}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 0
 --- !u!114 &1091725132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3451,10 +3456,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1203185605}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 2
 --- !u!114 &1203185603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3910,12 +3916,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1364705621}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 1
+  isHoldingSlotParent: 1
   m_Slots:
   - {fileID: 61724227}
   - {fileID: 341488239}
+  m_iSelectSlotIndex: -1
 --- !u!114 &1364705621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4980,10 +4987,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1673772897}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 0
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots: []
+  m_iSelectSlotIndex: 4
 --- !u!114 &1673772895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5503,15 +5511,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1789727201}
-  iSlotIndex: 0
+  iHoldingSlotIndex: 0
   isSlotsParent: 1
-  isSelectSlotParent: 0
+  isHoldingSlotParent: 0
   m_Slots:
   - {fileID: 1091725131}
   - {fileID: 1062536866}
   - {fileID: 1203185602}
   - {fileID: 453382753}
   - {fileID: 1673772894}
+  m_iSelectSlotIndex: -1
 --- !u!114 &1789727201
 MonoBehaviour:
   m_ObjectHideFlags: 0

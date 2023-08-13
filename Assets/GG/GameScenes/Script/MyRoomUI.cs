@@ -10,6 +10,8 @@ public class MyRoomUI : MonoBehaviour
     public int m_iCharacterIndex;
     public Button MyButton;
 
+    AvatarStatus AvatarStatus;
+
     private void Start()
     {
         if (m_iCharacterIndex > -1 && false == InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex))
@@ -20,8 +22,5 @@ public class MyRoomUI : MonoBehaviour
     {
         m_Manager.Select_Avatar((Player.CHARACTER)iIndex);
     }
-
-
-
 
 }

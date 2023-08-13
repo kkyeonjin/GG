@@ -76,6 +76,12 @@ public class Player : MonoBehaviour
         m_Animator = In_Animator;
     }
 
+    public void Change_Status(AvatarStatus Input)
+    {
+        m_fSpeed = Input.Get_Speed();
+        m_Status.Change_Status(Input.Get_HP(), Input.Get_Stamina());
+    }
+
     public void Set_Camera(CinemachineVirtualCamera In_Camera)
     {
         if (m_PV.IsMine)

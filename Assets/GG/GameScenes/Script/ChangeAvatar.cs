@@ -61,6 +61,7 @@ public class ChangeAvatar : MonoBehaviour
             InfoHandler.Instance.Set_CurrCharacter(CurrIndex);
 
             m_OwnPlayer.Change_Animator(m_ActiveAvatar.GetComponent<Animator>());
+            m_OwnPlayer.Change_Status(m_ActiveAvatar.GetComponent<AvatarStatus>());
         }
     }
 
