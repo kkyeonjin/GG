@@ -111,7 +111,7 @@ public class InfoHandler : MonoBehaviour
         m_HoldingItem[iIndex, 0] = -1;
         m_HoldingItem[iIndex, 1] = -1;
 
-        m_SelectItemUI[m_SlotIndex[iIndex]].Slot_UnSelected();
+        m_SelectItemUI[m_SlotIndex[iIndex]].Slot_Selected(false);
     }
 
     public void Clear_HoldingItem()

@@ -27,6 +27,7 @@ public class MyRoomMgr : MonoBehaviour
 
 
     private int m_CurrAvatar;
+    private MyRoomUI m_CurrCharacterUI;
     private AvatarStatus m_CurrStatus;
     // Start is called before the first frame update
     void Start()
@@ -62,12 +63,15 @@ public class MyRoomMgr : MonoBehaviour
         Show_CurrStatus();
     }
 
-    public void Select_Avatar(Player.CHARACTER eIndex)
+    public void Select_Avatar(MyRoomUI Input)
     {
+        m_CurrCharacterUI.Avatar_Selected(false);
         m_Avatar[m_CurrAvatar].SetActive(false);
-        m_Avatar[(int)eIndex].SetActive(true);
+        m_Avatar[Input.Get_CharacterIndex()].SetActive(true);
 
-        m_CurrAvatar = (int)eIndex;
+        m_CurrCharacterUI = Input;
+        m_CurrCharacterUI.Avatar_Selected(true);
+        m_CurrAvatar = Input.Get_CharacterIndex();
         m_CurrStatus = m_Avatar[m_CurrAvatar].GetComponent<AvatarStatus>();
         Show_CurrStatus();
         //뒤에 현재 캐릭터 인덱스 정보 파일 수정
@@ -75,6 +79,10 @@ public class MyRoomMgr : MonoBehaviour
         InfoHandler.Instance.Save_Info();
     }
 
+    public void Set_CurrAvatarUI(MyRoomUI Input)
+    {
+        m_CurrCharacterUI = Input;
+    }
     public void Show_CurrStatus()
     {
         string speed = "Speed : " + m_CurrStatus.Get_Speed() + "\nhp : " + m_CurrStatus.Get_HP() + "\nstamina: " + m_CurrStatus.Get_Stamina();

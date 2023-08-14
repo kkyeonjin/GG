@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemSelectUI : MonoBehaviour
 {
     public Image m_MyImage;
+    public Button m_MyButton;
 
     Sprite m_ItemEmage;
     Sprite m_EmptyImage;
@@ -50,7 +51,10 @@ public class ItemSelectUI : MonoBehaviour
         }
 
         if (isHoldingSlotParent == true)
+        {
+
             InfoHandler.Instance.Set_HoldingItemSlots(m_Slots);
+        }
     }
 
     public void Set_Image(Image InstantiateImage)
@@ -69,7 +73,7 @@ public class ItemSelectUI : MonoBehaviour
 
         if (InfoHandler.Instance.Set_HoldingItem(this) == true)
         {
-            m_bSelected = true;
+            Slot_Selected(true);
             //highlighted
         }
 
@@ -81,9 +85,9 @@ public class ItemSelectUI : MonoBehaviour
         Have_Items(false);
     }
 
-    public void Slot_UnSelected()
+    public void Slot_Selected(bool bSelected)
     {
-        m_bSelected = false;
+        m_bSelected = bSelected;
     }
 
     public void Have_Items(bool isHave)
@@ -92,11 +96,14 @@ public class ItemSelectUI : MonoBehaviour
         {
             m_MyImage.sprite = m_ItemEmage;
             m_MyImage.color = m_Itemcolor;
+            m_MyButton.interactable = true;
         }
         else
         {
             m_MyImage.sprite = m_EmptyImage;
             m_MyImage.color = m_Emptycolor;
+            m_MyButton.interactable = false;
+
         }
     }
     public int Get_SlotIndex()

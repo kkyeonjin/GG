@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 61724230}
+  m_MyButton: {fileID: 61724228}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 61724230}
   m_OnClick:
     m_PersistentCalls:
@@ -1187,7 +1188,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 341488241}
   m_OnClick:
     m_PersistentCalls:
@@ -1217,6 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 341488241}
+  m_MyButton: {fileID: 341488238}
   iHoldingSlotIndex: 1
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -1789,6 +1791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 453382756}
+  m_MyButton: {fileID: 453382755}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -1854,7 +1857,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 453382756}
   m_OnClick:
     m_PersistentCalls:
@@ -2957,6 +2960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1062536869}
+  m_MyButton: {fileID: 1062536868}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -3022,7 +3026,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1062536869}
   m_OnClick:
     m_PersistentCalls:
@@ -3282,6 +3286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1091725134}
+  m_MyButton: {fileID: 1091725133}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -3347,7 +3352,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1091725134}
   m_OnClick:
     m_PersistentCalls:
@@ -3456,6 +3461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1203185605}
+  m_MyButton: {fileID: 1203185604}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -3521,7 +3527,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1203185605}
   m_OnClick:
     m_PersistentCalls:
@@ -3916,6 +3922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1364705621}
+  m_MyButton: {fileID: 0}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 1
@@ -4987,6 +4994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1673772897}
+  m_MyButton: {fileID: 1673772896}
   iHoldingSlotIndex: 0
   isSlotsParent: 0
   isHoldingSlotParent: 0
@@ -5052,7 +5060,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1673772897}
   m_OnClick:
     m_PersistentCalls:
@@ -5168,7 +5176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RoomCode: {fileID: 0}
-  m_iCharacterIndex: 0
+  m_iCharacterIndex: -1
   MyButton: {fileID: 0}
   m_ConnectedUI: {fileID: 0}
 --- !u!114 &1679838055
@@ -5511,6 +5519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyImage: {fileID: 1789727201}
+  m_MyButton: {fileID: 0}
   iHoldingSlotIndex: 0
   isSlotsParent: 1
   isHoldingSlotParent: 0

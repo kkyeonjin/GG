@@ -9,15 +9,16 @@ public class UIEffect : MonoBehaviour
     public Color m_Color;
     public Material m_Material;
 
+    public float m_fScaleDest= 0f;
+    public float m_fScaleSour= 1f;
+    public float m_fLerpRatio= 0.35f;
+
     public GameObject m_ConnectedModel;
 
     private float m_fRatio = 0f;
     private Vector4 m_vColor;
     private Vector4 m_vOriginColor;
 
-    private float m_fValue = 0.35f;
-    private float m_fDestValue = 0f;
-    private float m_fSourValue = 1f;
     
 
 
@@ -31,7 +32,7 @@ public class UIEffect : MonoBehaviour
 
         m_vOriginColor = new Vector4(0.6f, 0.6f, 0.6f, 0.6f);
         m_Image.material = Instantiate(m_Material);
-        m_fSourValue = 0f;
+        m_fScaleSour = 0f;
 
     }
 
@@ -39,8 +40,8 @@ public class UIEffect : MonoBehaviour
     private void Update()
     {
         
-        m_fRatio = Mathf.Lerp(m_fSourValue, m_fDestValue, m_fValue);
-        m_fSourValue = m_fRatio;
+        m_fRatio = Mathf.Lerp(m_fScaleSour, m_fScaleDest, m_fLerpRatio);
+        m_fScaleSour = m_fRatio;
         
         m_Image.material.SetFloat("g_fLerpRatio", m_fRatio);
         m_Image.material.SetVector("g_vColor", m_vColor);
@@ -56,13 +57,13 @@ public class UIEffect : MonoBehaviour
 
     public void MousePointer_In()
     {
-        m_fDestValue = 1f;
+        m_fScaleDest = 1f;
         m_ConnectedModel.SetActive(true);
     }
 
     public void MousePointer_Out()
     {
-        m_fDestValue = 0f;
+        m_fScaleDest = 0f;
         m_ConnectedModel.SetActive(false);
     }
 }

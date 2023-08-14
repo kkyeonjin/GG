@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class StoreUI : MonoBehaviour
 {
+
+    public TextMeshProUGUI Money;
+    public StoreUI MoneyUI;
 
     public Image m_SelectBuy;
     public bool m_bStartEnable = true;
@@ -17,7 +21,8 @@ public class StoreUI : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(m_bStartEnable);
-
+        if (Money != null)
+            Update_Money(0);
     }
 
     public void Click_Object()
@@ -31,6 +36,13 @@ public class StoreUI : MonoBehaviour
     {
         m_iCharacterIndex = CharacterIndex;
         m_iItemIndex = ItemIndex;
+    }
+
+    public void Update_Money(int iMoney)
+    {
+        InfoHandler.Instance.Set_Money(-iMoney);
+        string text = "Money: " + InfoHandler.Instance.Get_Money();
+        Money.text = text;
     }
 
     public void Select_Yse()
@@ -62,6 +74,7 @@ public class StoreUI : MonoBehaviour
             InfoHandler.Instance.Set_Character_Available(m_iCharacterIndex);
             Debug.Log("캐릭터" + m_iCharacterIndex + " 구매 완료!");
             InfoHandler.Instance.Save_Info();
+            MoneyUI.Update_Money(10);
         }
         else
             Debug.Log("이미 보유중입니다!");
@@ -75,6 +88,7 @@ public class StoreUI : MonoBehaviour
         InfoHandler.Instance.Buy_Item(m_iItemIndex, 1);
         InfoHandler.Instance.Save_Info();
         Debug.Log(InfoHandler.Instance.Get_Item_Num(m_iItemIndex));
+        MoneyUI.Update_Money(10);
 
     }
 
