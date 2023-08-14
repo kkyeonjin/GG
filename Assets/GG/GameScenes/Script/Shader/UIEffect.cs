@@ -19,10 +19,6 @@ public class UIEffect : MonoBehaviour
     private Vector4 m_vColor;
     private Vector4 m_vOriginColor;
 
-    
-
-
-    
     void Start()
     {
         m_vColor.x = m_Color.r;

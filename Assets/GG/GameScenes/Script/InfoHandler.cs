@@ -13,11 +13,12 @@ public class InfoHandler : MonoBehaviour
 
     public Image[] m_ItemIcons;
 
+    //로비에서 아이템 선택창
     public ItemSelectUI[] m_HoldingItemUI;
     public ItemSelectUI[] m_SelectItemUI;
+    private int[] m_SlotIndex;
 
     private int[,] m_HoldingItem;
-    private int[] m_SlotIndex;
 
     void Awake()
     {

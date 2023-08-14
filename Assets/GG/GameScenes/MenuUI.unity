@@ -402,6 +402,7 @@ MonoBehaviour:
   - {fileID: 902083030}
   - {fileID: 1962730059}
   m_HoldingItemUI: []
+  m_SelectItemUI: []
 --- !u!1 &450719982
 GameObject:
   m_ObjectHideFlags: 0
