@@ -5994,7 +5994,7 @@ Canvas:
   m_GameObject: {fileID: 303722298}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -13613,14 +13613,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65b0f404bb4a184b8d82a9eacb957f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Image: {fileID: 777431552}
+  m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
+  m_Color: {r: 0.7529412, g: 0.4745098, b: 0.60784316, a: 1}
+  m_vOriginColor: {r: 0, g: 0, b: 0, a: 0}
+  m_fTotalTime: 1
+  m_fScale: 0.1
+  m_eLerpType: 11
+  m_ConnectedModel: {fileID: 0}
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
-  m_bIsStatbar: 1
-  m_MyImage: {fileID: 777431552}
-  m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
-    type: 2}
   m_fTotalLength: 150
-  m_Color: {r: 0.7529412, g: 0.4745098, b: 0.60784316, a: 1}
+  m_bIsStatbar: 1
 --- !u!1 &777753860
 GameObject:
   m_ObjectHideFlags: 0
@@ -22423,14 +22427,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65b0f404bb4a184b8d82a9eacb957f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Image: {fileID: 1298182552}
+  m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
+  m_Color: {r: 0.39607844, g: 0.53333336, b: 0.8509804, a: 1}
+  m_vOriginColor: {r: 0, g: 0, b: 0, a: 0}
+  m_fTotalTime: 1
+  m_fScale: 0.1
+  m_eLerpType: 11
+  m_ConnectedModel: {fileID: 0}
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
-  m_bIsStatbar: 1
-  m_MyImage: {fileID: 1298182552}
-  m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
-    type: 2}
   m_fTotalLength: 10
-  m_Color: {r: 0.39607844, g: 0.53333336, b: 0.8509804, a: 1}
+  m_bIsStatbar: 1
 --- !u!1 &1300536212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27163,14 +27171,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65b0f404bb4a184b8d82a9eacb957f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Image: {fileID: 1596198864}
+  m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
+  m_Color: {r: 0.90588236, g: 0.79607844, b: 0.34509805, a: 1}
+  m_vOriginColor: {r: 0, g: 0, b: 0, a: 0}
+  m_fTotalTime: 1
+  m_fScale: 0.1
+  m_eLerpType: 11
+  m_ConnectedModel: {fileID: 0}
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
-  m_bIsStatbar: 1
-  m_MyImage: {fileID: 1596198864}
-  m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
-    type: 2}
   m_fTotalLength: 150
-  m_Color: {r: 0.90588236, g: 0.79607844, b: 0.34509805, a: 1}
+  m_bIsStatbar: 1
 --- !u!1 &1597654809
 GameObject:
   m_ObjectHideFlags: 0

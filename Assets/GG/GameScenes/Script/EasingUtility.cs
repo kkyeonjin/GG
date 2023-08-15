@@ -123,6 +123,117 @@ public class EasingUtility : MonoBehaviour
 		return Linear(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
 	}
 
+	static public float LerpToType(float vStartPoint, float vTargetPoint, float fPassedTime, float fTotalTime, EASING_TYPE eType)
+	{
+		switch (eType)
+		{
+			case EASING_TYPE.LINEAR:
+				return Linear(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.QUAD_IN:
+				return QuadIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUAD_OUT:
+				return QuadInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.QUAD_INOUT:
+				return QuadInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CUBIC_IN:
+				return CubicIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CUBIC_OUT:
+				return CubicOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CUBIC_INOUT:
+				return CubicInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.QUART_IN:
+				return QuartIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUART_OUT:
+				return QuartOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUART_INOUT:
+				return QuartInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUINT_IN:
+				return QuintIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUINT_OUT:
+				return QuintOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.QUINT_INOUT:
+				return QuintInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.SINE_IN:
+				return SineIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.SINE_OUT:
+				return SineOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.SINE_INOUT:
+				return SineInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.EXPO_IN:
+				return ExpoIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.EXPO_OUT:
+				return ExpoOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+
+				break;
+			case EASING_TYPE.EXPO_INOUT:
+				return ExpoInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CIRC_IN:
+				return CircIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CIRC_OUT:
+				return CircOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.CIRC_INOUT:
+				return CircInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.ELASTIC_IN:
+				return ElasticIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.ELASTIC_OUT:
+				return ElasticOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.ELASTIC_INOUT:
+				return ElasticInOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.BOUNCE_IN:
+				return BounceIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.BOUNCE_OUT:
+				return BounceOut(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.OUT_BACK:
+				return OutBack(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.INOUT_BACK:
+				return InOutBack(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+				break;
+			case EASING_TYPE.TYPE_END:
+				break;
+			default:
+				break;
+		}
+
+		return Linear(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
+	}
+
 	static public Vector4  Linear(Vector4 vStartPoint, Vector4 vTargetPoint, float fPassedTime, float fTotalTime)
 	{
 		return (Vector4)((vTargetPoint - vStartPoint) * fPassedTime / fTotalTime + vStartPoint);
@@ -139,20 +250,12 @@ public class EasingUtility : MonoBehaviour
 		return (Vector4)((vTargetPoint - vStartPoint) * fPassedTime * fPassedTime + vStartPoint);
 	}
 
-	static public Vector4 QuadIn(float fStartPoint, float fTargetPoint, float fPassedTime, float fTotalTime)
-	{
-		fPassedTime /= fTotalTime;
-		Vector4 vStartPoint = new Vector4(fStartPoint, fStartPoint, fStartPoint, fStartPoint);
-		Vector4 vTargetPoint = new Vector4(fTargetPoint, fTargetPoint, fTargetPoint, fTargetPoint);
-
-		return QuadIn(vStartPoint, vTargetPoint, fPassedTime, fTotalTime);
-	}
-
-	static public float QuadInfloat(float fStartPoint, float fTargetPoint, float fPassedTime, float fTotalTime)
+	static public float QuadIn(float fStartPoint, float fTargetPoint, float fPassedTime, float fTotalTime)
 	{
 		fPassedTime /= fTotalTime;
 		return (float)((fTargetPoint - fStartPoint) * fPassedTime * fPassedTime + fStartPoint);
 	}
+
 
 	static public Vector4 QuadOut(Vector4 vStartPoint, Vector4 vTargetPoint, float fPassedTime, float fTotalTime)
 	{
@@ -522,6 +625,14 @@ public class EasingUtility : MonoBehaviour
 		return (vTargetPoint - vStartPoint) * (1f + c3 * Mathf.Pow(fPassedTime / fTotalTime - 1f, 3f) + c1 * Mathf.Pow(fPassedTime / fTotalTime - 1f, 2f)) + vStartPoint;
 	}
 
+	static public float OutBack(float vStartPoint, float vTargetPoint, float fPassedTime, float fTotalTime)
+	{
+		const float c1 = 1.70158f;
+		const float c3 = c1 + 1f;
+
+		return (vTargetPoint - vStartPoint) * (1f + c3 * Mathf.Pow(fPassedTime / fTotalTime - 1f, 3f) + c1 * Mathf.Pow(fPassedTime / fTotalTime - 1f, 2f)) + vStartPoint;
+	}
+
 	static public Vector4 InOutBack(Vector4 vStartPoint, Vector4 vTargetPoint, float fPassedTime, float fTotalTime)
 	{
 		const float c1 = 1.70158f;
@@ -534,7 +645,18 @@ public class EasingUtility : MonoBehaviour
 			: (vTargetPoint - vStartPoint) * ((Mathf.Pow(2f * x - 2f, 2f) * ((c2 + 1f) * (x * 2f - 2f) + c2) + 2f) / 2f) + vStartPoint;
 
 	}
+	static public float InOutBack(float vStartPoint, float vTargetPoint, float fPassedTime, float fTotalTime)
+	{
+		const float c1 = 1.70158f;
+		const float c2 = c1 * 1.525f;
 
+		float x = fPassedTime / fTotalTime;
+
+		return x < 0.5f
+			? (vTargetPoint - vStartPoint) * ((Mathf.Pow(2f * x, 2f) * ((c2 + 1f) * 2f * x - c2)) / 2f) + vStartPoint
+			: (vTargetPoint - vStartPoint) * ((Mathf.Pow(2f * x - 2f, 2f) * ((c2 + 1f) * (x * 2f - 2f) + c2) + 2f) / 2f) + vStartPoint;
+
+	}
 
 	static public Vector4 BounceIn(Vector4 vStartPoint, Vector4 vTargetPoint, float fPassedTime, float fTotalTime)
 	{

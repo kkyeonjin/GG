@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class IconEffect : MonoBehaviour
+public class IconEffect : UIEffect
 {
  
     public bool m_bIsFloating;
     public RectTransform m_MyRectTransform;
 
-    //stat effect
-    public bool m_bIsStatbar;
-    public Image m_MyImage;
-    public Material m_InstantiateMaterial;
     public float m_fTotalLength;
-    public Color m_Color;
-    private float m_fRatioSour;
-    private float m_fRatioDest;
+    public bool m_bIsStatbar;
 
-    private float m_fTotalTime =0;
     private float m_fStartYPos;
     // Start is called before the first frame update
     void Start()
@@ -27,8 +20,8 @@ public class IconEffect : MonoBehaviour
 
         if(m_bIsStatbar)
         {
-            m_MyImage.material = Instantiate(m_InstantiateMaterial);
-            
+            m_Image.material = Instantiate(m_Material);
+            m_fTotalTime = 1f;
         }
     }
 
@@ -37,19 +30,19 @@ public class IconEffect : MonoBehaviour
         m_fTotalTime = 0;
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(m_bIsFloating)
         {
-            m_fTotalTime += 2f*Time.deltaTime;
-            m_MyRectTransform.position = new Vector3(m_MyRectTransform.position.x, m_fStartYPos + 8f*Mathf.Sin(m_fTotalTime), m_MyRectTransform.position.z);
+            m_fPassedTime += 2f*Time.deltaTime;
+            m_MyRectTransform.position = new Vector3(m_MyRectTransform.position.x, m_fStartYPos + 8f*Mathf.Sin(m_fPassedTime), m_MyRectTransform.position.z);
         }
         if(m_bIsStatbar)
         {
-            m_fTotalTime = Mathf.Min(m_fTotalTime + Time.deltaTime,1f);
+            m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
 
-            m_MyImage.material.SetFloat("g_fLerpRatio", EasingUtility.CubicOut(m_fRatioSour, m_fRatioDest, m_fTotalTime, 1f));
-            m_MyImage.material.SetVector("g_vColor", m_Color);
+            m_Image.material.SetFloat("g_fLerpRatio", EasingUtility.CubicOut(m_fRatioSour, m_fRatioDest, m_fPassedTime, m_fTotalTime));
+            m_Image.material.SetVector("g_vColor", m_Color);
         }
     }
 
@@ -58,6 +51,6 @@ public class IconEffect : MonoBehaviour
         m_fRatioDest = fRatio/ m_fTotalLength;
         Debug.Log(fRatio + " "+ m_fRatioDest);
         m_fRatioSour = 0f;
-        m_fTotalTime = 0f;
+        m_fPassedTime = 0f;
     }
 }

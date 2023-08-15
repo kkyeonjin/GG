@@ -560,6 +560,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 242709341}
+  m_bIsStatbar: 0
+  m_MyImage: {fileID: 0}
+  m_InstantiateMaterial: {fileID: 0}
+  m_fTotalLength: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &261415013
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,10 +840,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 308448242}
   m_Color: {r: 0.9843137, g: 0.9843137, b: 0.9843137, a: 0}
+  m_vOriginColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 347108316}
 --- !u!114 &308448240
 MonoBehaviour:
@@ -1088,6 +1094,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 347108317}
+  m_bIsStatbar: 0
+  m_MyImage: {fileID: 0}
+  m_InstantiateMaterial: {fileID: 0}
+  m_fTotalLength: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &500640406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,10 +1852,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 649137546}
   m_Color: {r: 0.7264151, g: 0.29810432, b: 0.6948745, a: 1}
+  m_vOriginColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 904847105}
 --- !u!114 &649137549
 MonoBehaviour:
@@ -2070,7 +2082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724102099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 333.9, y: 270.96716, z: -11.812622}
+  m_LocalPosition: {x: 334.96, y: 270.96716, z: -11.812622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2545,6 +2557,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 996770184}
+  m_bIsStatbar: 0
+  m_MyImage: {fileID: 0}
+  m_InstantiateMaterial: {fileID: 0}
+  m_fTotalLength: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1016060763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,10 +2687,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1071454975}
   m_Color: {r: 0.9843137, g: 0.9843137, b: 0.9843137, a: 0}
+  m_vOriginColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 996770183}
 --- !u!114 &1071454973
 MonoBehaviour:
@@ -2981,10 +2999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1072892825}
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 0}
+  m_vOriginColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 1238571893}
 --- !u!114 &1072892824
 MonoBehaviour:
@@ -3216,6 +3235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 1238571894}
+  m_bIsStatbar: 0
+  m_MyImage: {fileID: 0}
+  m_InstantiateMaterial: {fileID: 0}
+  m_fTotalLength: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1308844042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,10 +4023,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1556348683}
   m_Color: {r: 0.37126204, g: 0.48426872, b: 0.764151, a: 0}
+  m_vOriginColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 1900010844}
 --- !u!114 &1556348686
 MonoBehaviour:
@@ -4165,10 +4190,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1709004589}
   m_Color: {r: 0.9843137, g: 0.9843137, b: 0.9843137, a: 0}
+  m_vOriginColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 242709340}
 --- !u!114 &1709004587
 MonoBehaviour:
@@ -4521,10 +4547,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1801839854}
   m_Color: {r: 0.9843137, g: 0.9843137, b: 0.9843137, a: 1}
+  m_vOriginColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
-  m_fScaleDest: 0
-  m_fScaleSour: 1
-  m_fLerpRatio: 0.35
+  m_fTotalTime: 0.3
+  m_fScale: 0.1
+  m_eLerpType: 5
   m_ConnectedModel: {fileID: 2081122875}
 --- !u!114 &1801839852
 MonoBehaviour:
@@ -5118,6 +5145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 2081122876}
+  m_bIsStatbar: 0
+  m_MyImage: {fileID: 0}
+  m_InstantiateMaterial: {fileID: 0}
+  m_fTotalLength: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2139255778
 GameObject:
   m_ObjectHideFlags: 0
