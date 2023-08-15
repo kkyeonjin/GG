@@ -16,7 +16,6 @@ public class newGshake : MonoBehaviour
     float randomX;
     float randomZ;
 
-
     void Start()
     {
         originalPosition = transform.localPosition;
@@ -46,6 +45,7 @@ public class newGshake : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         if (collision.collider.CompareTag("Player"))
         {
             Vector3 movePVecR = new Vector3(randomX * 1.8f, randomY * 1.8f, randomZ * 1.8f);
@@ -53,6 +53,16 @@ public class newGshake : MonoBehaviour
             collision.gameObject.transform.rotation = Quaternion.Euler(movePVecR);
             //collision.gameObject.transform.Find("Camera").transform.rotation = Quaternion.Euler(movePVecR);
             Debug.Log("Player On EQ");
+        }
+        */
+
+        if (collision.collider.CompareTag("Player"))
+        {
+            GameObject player = collision.gameObject;
+            Debug.Log("Player Found");
+            GameObject subCam = player.transform.Find("Cams").Find("SubCamera").gameObject;
+
+
         }
     }
 }
