@@ -10,6 +10,13 @@ public class newGshake : MonoBehaviour
 
     private Vector3 originalPosition;
 
+    Vector2 randomPos;
+
+    float randomY;
+    float randomX;
+    float randomZ;
+
+
     void Start()
     {
         originalPosition = transform.localPosition;
@@ -20,12 +27,12 @@ public class newGshake : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(transform.localPosition);
-        Vector2 randomPos = Random.insideUnitCircle * magnitude * 50;
+        randomPos = Random.insideUnitCircle * magnitude * 50;
 
-        float randomY = Random.Range(-1f, 1f) * magnitude * 50;
+        randomY = Random.Range(-1f, 1f) * magnitude * 50;
 
-        float randomX = Mathf.Lerp(transform.localPosition.x, randomPos.x, Time.deltaTime * slowDownFactor);
-        float randomZ = Mathf.Lerp(transform.localPosition.z, randomPos.x, Time.deltaTime * slowDownFactor);
+        randomX = Mathf.Lerp(transform.localPosition.x, randomPos.x, Time.deltaTime * slowDownFactor);
+        randomZ = Mathf.Lerp(transform.localPosition.z, randomPos.x, Time.deltaTime * slowDownFactor);
 
         randomY = Mathf.Lerp(transform.localPosition.y, randomY, Time.deltaTime * slowDownFactor * 0.1f);
 
@@ -34,16 +41,18 @@ public class newGshake : MonoBehaviour
 
         //transform.localPosition = originalPosition + moveVec;
         transform.rotation = Quaternion.Euler(moveVecR);
-   
+        
     }
-    /*
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Vector3 randomForce = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)) * magnitude;
-            collision.rigidbody.AddForce(randomForce, ForceMode.Impulse);
-        }
+            Vector3 movePVecR = new Vector3(randomX * 1.8f, randomY * 1.8f, randomZ * 1.8f);
 
-    }*/
+            collision.gameObject.transform.rotation = Quaternion.Euler(movePVecR);
+            //collision.gameObject.transform.Find("Camera").transform.rotation = Quaternion.Euler(movePVecR);
+            Debug.Log("Player On EQ");
+        }
+    }
 }
