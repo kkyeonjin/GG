@@ -9428,7 +9428,10 @@ MonoBehaviour:
   - {fileID: 1514515285}
   - {fileID: 1707483447}
   m_PlayerInfo: {fileID: 1227156819}
-  m_AvatarStatus: {fileID: 1800717409}
+  m_StatusBar:
+  - {fileID: 777431554}
+  - {fileID: 1596198866}
+  - {fileID: 1298182554}
 --- !u!4 &526852634
 Transform:
   m_ObjectHideFlags: 0
@@ -13616,7 +13619,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 777431552}
   m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
     type: 2}
-  m_fLengthRatio: 100
+  m_fTotalLength: 150
   m_Color: {r: 0.7529412, g: 0.4745098, b: 0.60784316, a: 1}
 --- !u!1 &777753860
 GameObject:
@@ -22426,7 +22429,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 1298182552}
   m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
     type: 2}
-  m_fLengthRatio: 90
+  m_fTotalLength: 10
   m_Color: {r: 0.39607844, g: 0.53333336, b: 0.8509804, a: 1}
 --- !u!1 &1300536212
 GameObject:
@@ -27166,7 +27169,7 @@ MonoBehaviour:
   m_MyImage: {fileID: 1596198864}
   m_InstantiateMaterial: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356,
     type: 2}
-  m_fLengthRatio: 150
+  m_fTotalLength: 150
   m_Color: {r: 0.90588236, g: 0.79607844, b: 0.34509805, a: 1}
 --- !u!1 &1597654809
 GameObject:

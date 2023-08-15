@@ -12,9 +12,10 @@ public class IconEffect : MonoBehaviour
     public bool m_bIsStatbar;
     public Image m_MyImage;
     public Material m_InstantiateMaterial;
-    public float m_fLengthRatio;
+    public float m_fTotalLength;
     public Color m_Color;
     private float m_fRatioSour;
+    private float m_fRatioDest;
 
     private float m_fTotalTime =0;
     private float m_fStartYPos;
@@ -27,7 +28,7 @@ public class IconEffect : MonoBehaviour
         if(m_bIsStatbar)
         {
             m_MyImage.material = Instantiate(m_InstantiateMaterial);
-            m_fLengthRatio = m_fLengthRatio / 150f;
+            
         }
     }
 
@@ -45,10 +46,18 @@ public class IconEffect : MonoBehaviour
         }
         if(m_bIsStatbar)
         {
-            m_fRatioSour = Mathf.Lerp(m_fRatioSour, m_fLengthRatio, 0.3f);
-            
-            m_MyImage.material.SetFloat("g_fLerpRatio", m_fRatioSour);
+            m_fTotalTime = Mathf.Min(m_fTotalTime + Time.deltaTime,1f);
+
+            m_MyImage.material.SetFloat("g_fLerpRatio", EasingUtility.CubicOut(m_fRatioSour, m_fRatioDest, m_fTotalTime, 1f));
             m_MyImage.material.SetVector("g_vColor", m_Color);
         }
+    }
+
+    public void Set_LengthRatio(float fRatio)
+    {
+        m_fRatioDest = fRatio/ m_fTotalLength;
+        Debug.Log(fRatio + " "+ m_fRatioDest);
+        m_fRatioSour = 0f;
+        m_fTotalTime = 0f;
     }
 }

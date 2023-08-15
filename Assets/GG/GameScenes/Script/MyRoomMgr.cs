@@ -23,7 +23,8 @@ public class MyRoomMgr : MonoBehaviour
     public GameObject[] Items;
 
     public TextMeshProUGUI m_PlayerInfo;
-    public TextMeshProUGUI m_AvatarStatus;
+
+    public IconEffect[] m_StatusBar;
 
 
     private int m_CurrAvatar;
@@ -85,8 +86,10 @@ public class MyRoomMgr : MonoBehaviour
     }
     public void Show_CurrStatus()
     {
-        string speed = "Speed : " + m_CurrStatus.Get_Speed() + "\nhp : " + m_CurrStatus.Get_HP() + "\nstamina: " + m_CurrStatus.Get_Stamina();
-        m_AvatarStatus.text = speed;
+        m_StatusBar[0].Set_LengthRatio(m_CurrStatus.Get_HP());
+        m_StatusBar[1].Set_LengthRatio(m_CurrStatus.Get_Stamina());
+        m_StatusBar[2].Set_LengthRatio(m_CurrStatus.Get_Speed());
+        Debug.Log(m_CurrStatus.Get_HP() + " " + m_CurrStatus.Get_Stamina() + " " + m_CurrStatus.Get_Speed());
     }
 
     public void Show_PlayerInfo()
