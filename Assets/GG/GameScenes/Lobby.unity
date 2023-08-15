@@ -180,6 +180,7 @@ MonoBehaviour:
   m_iCharacterIndex: 0
   MyButton: {fileID: 56693136}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &56693136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,6 +1015,7 @@ MonoBehaviour:
   m_iCharacterIndex: -1
   MyButton: {fileID: 0}
   m_ConnectedUI: {fileID: 1789727198}
+  TransitionImg: {fileID: 0}
 --- !u!114 &310253722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +1494,7 @@ MonoBehaviour:
   m_iCharacterIndex: -1
   MyButton: {fileID: 0}
   m_ConnectedUI: {fileID: 1679838052}
+  TransitionImg: {fileID: 0}
 --- !u!114 &404684789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,6 +1646,7 @@ MonoBehaviour:
   m_iCharacterIndex: 5
   MyButton: {fileID: 420673172}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &420673172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2452,6 +2456,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835278339}
   m_CullTransparentMesh: 1
+--- !u!1 &877018801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877018802}
+  - component: {fileID: 877018805}
+  - component: {fileID: 877018804}
+  - component: {fileID: 877018803}
+  m_Layer: 5
+  m_Name: LoadingImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &877018802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877018801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9993523, y: 0.9993523, z: 0.9993523}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1791182190}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &877018803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877018801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63409211a0841a469d2d9b0dc533338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Image: {fileID: 877018804}
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_vOriginColor: {r: 0, g: 0.16104908, b: 0.6226415, a: 0}
+  m_fTotalTime: 0.5
+  m_fScale: 0.1
+  m_eLerpType: 0
+  m_ConnectedModel: {fileID: 0}
+--- !u!114 &877018804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877018801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: aada311562994ce4d94c2e302879891b, type: 2}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b3921ca3b2059d548aa090d39b9de160, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &877018805
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877018801}
+  m_CullTransparentMesh: 1
 --- !u!1 &898041220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2610,7 @@ MonoBehaviour:
   m_iCharacterIndex: 2
   MyButton: {fileID: 898041223}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &898041223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2660,6 +2762,7 @@ MonoBehaviour:
   m_iCharacterIndex: 6
   MyButton: {fileID: 925348260}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &925348260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3138,6 +3241,7 @@ MonoBehaviour:
   m_iCharacterIndex: 3
   MyButton: {fileID: 1063360728}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &1063360728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,6 +3878,7 @@ MonoBehaviour:
   m_iCharacterIndex: 7
   MyButton: {fileID: 1322552305}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &1322552305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4711,6 +4816,7 @@ MonoBehaviour:
   m_iCharacterIndex: 4
   MyButton: {fileID: 1578283510}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &1578283510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5179,6 +5285,7 @@ MonoBehaviour:
   m_iCharacterIndex: -1
   MyButton: {fileID: 0}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &1679838055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,6 +5381,7 @@ MonoBehaviour:
   m_iCharacterIndex: -1
   MyButton: {fileID: 0}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 877018803}
 --- !u!114 &1736692078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5608,6 +5716,7 @@ RectTransform:
   - {fileID: 310253720}
   - {fileID: 1364705619}
   - {fileID: 1789727199}
+  - {fileID: 877018802}
   m_Father: {fileID: 270224224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5711,6 +5820,7 @@ MonoBehaviour:
   m_iCharacterIndex: 8
   MyButton: {fileID: 1830338488}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &1830338488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6081,6 +6191,7 @@ MonoBehaviour:
   m_iCharacterIndex: 1
   MyButton: {fileID: 2098313823}
   m_ConnectedUI: {fileID: 0}
+  TransitionImg: {fileID: 0}
 --- !u!114 &2098313823
 MonoBehaviour:
   m_ObjectHideFlags: 0

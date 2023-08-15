@@ -20,7 +20,7 @@ public class UIEffect : MonoBehaviour
     protected float m_fPassedTime = 0f;
     protected float m_fOriginScale = 1f;
 
-    private float m_fCurrRatio = 0f;
+    protected float m_fCurrRatio = 0f;
 
 
     void Start()

@@ -13,6 +13,8 @@ public class UIButton : MonoBehaviour
     public Button MyButton;
     public GameObject m_ConnectedUI;
 
+    public ScreenTransition TransitionImg;
+
     private Image ButtonImage;
     private bool m_bIsSelected = false;
 
@@ -67,18 +69,30 @@ public class UIButton : MonoBehaviour
         Avatar_Selected(true);
     }
 
-    
     /// //////////////////////////////////////////////////
     /// </summary>
     public void Lobby_Multi()
     {
-        Debug.Log("Multi Playing Mode");
-        NetworkManager.Instance.ConnectToServer();
+        TransitionImg.EndScreen();
+        Invoke("MultiLobby", TransitionImg.Get_TransitionTime());
     }
     public void Lobby_Single()
     {
+        TransitionImg.EndScreen();
+        Invoke("SingleLobby", TransitionImg.Get_TransitionTime());
+        //Debug.Log("Single Playing Mode");
+        //SceneManager.LoadScene("Lobby");
+    }
+
+    void SingleLobby()
+    {
         Debug.Log("Single Playing Mode");
         SceneManager.LoadScene("Lobby");
+    }
+    void MultiLobby()
+    {
+        Debug.Log("Multi Playing Mode");
+        NetworkManager.Instance.ConnectToServer();
     }
     public void Exit_Game()
     {
@@ -95,15 +109,28 @@ public class UIButton : MonoBehaviour
 
     public void Store()
     {
+        TransitionImg.EndScreen();
+        Invoke("LoadStore", TransitionImg.Get_TransitionTime());
+    }
+    void LoadStore()
+    {
         SceneManager.LoadScene("Store");
     }
-
     public void MyRoom()
+    {
+        TransitionImg.EndScreen();
+        Invoke("LoadMyRoom", TransitionImg.Get_TransitionTime());
+    }
+    void LoadMyRoom()
     {
         SceneManager.LoadScene("MyRoom");
     }
-
     public void Backto_Menu()
+    {
+        TransitionImg.EndScreen();
+        Invoke("LoadMenu", TransitionImg.Get_TransitionTime());
+    }
+    void LoadMenu()
     {
         SceneManager.LoadScene("MenuUI");
         InfoHandler.Instance.Clear_HoldingItem();
@@ -120,9 +147,15 @@ public class UIButton : MonoBehaviour
 
     public void Exit_RoomCode()
     {
+        TransitionImg.EndScreen();
+        Invoke("LoadMenu", TransitionImg.Get_TransitionTime());
+    }
+    void ExitRoomCode()
+    {
         Debug.Log("Exit_Multi");
         NetworkManager.Instance.LeaveLobby();
     }
+
  
     public void Multi_EnterCode()
     {
