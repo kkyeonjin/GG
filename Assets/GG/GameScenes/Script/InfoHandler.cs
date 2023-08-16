@@ -16,8 +16,8 @@ public class InfoHandler : MonoBehaviour
     //로비에서 아이템 선택창
     public ItemSelectUI[] m_HoldingItemUI;
     public ItemSelectUI[] m_SelectItemUI;
-    private int[] m_SlotIndex;
 
+    private int[] m_SlotIndex;
     private int[,] m_HoldingItem;
 
     void Awake()
@@ -40,6 +40,8 @@ public class InfoHandler : MonoBehaviour
         m_HoldingItem[1, 1] = -1;
 
         m_SlotIndex = new int[2];
+        m_SlotIndex[0] = -1;
+        m_SlotIndex[1] = -1;
 
     }
     public static InfoHandler Instance
@@ -81,23 +83,50 @@ public class InfoHandler : MonoBehaviour
         Debug.Log(m_Playerinfo.Get_Level());
 
     }
+    public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴
+    {
+        for(int i=0;i<2;++i)
+        {
+            if (m_SlotIndex[i] > -1)
+            {
+                if (Get_Item_Num(m_HoldingItem[i, 0]) > 0)
+                {
+                    m_HoldingItemUI[i].Set_Image(Get_ItemIcon(m_HoldingItem[i, 0]));
+                    m_HoldingItemUI[i].Have_Items(true);
+                    //m_SelectItemUI[m_SlotIndex[i]].Item_Selected();
+                }
+                else
+                {//다 써서 비어있음
+                    m_HoldingItem[i, 0] = -1;
+                    m_HoldingItem[i, 1] = -1;
+                    m_SlotIndex[i] = -1;
+                }
+            }
+        }
+    }
     public void Set_HoldingItemSlots(ItemSelectUI[] Input)
     {
         m_HoldingItemUI = Input;
-        Debug.Log("슬롯 보내줌");
-        Debug.Log(m_HoldingItemUI);
+
     }
     public void Set_SelectItemSlots(ItemSelectUI[] Input)
     {
         m_SelectItemUI = Input;
     }
+    public int[] HoldingSlotIndex()
+    {
+        return m_SlotIndex;
+    }
     public bool Set_HoldingItem(ItemSelectUI iInput)
     {
+        if (iInput.Is_Selected())
+            return false;
+
         for (int i = 0; i < 2; ++i)
         {
             if (m_HoldingItem[i, 0] == -1)
             {
-                m_HoldingItem[i, 0] = iInput.Get_Index();
+                m_HoldingItem[i, 0] = iInput.Get_Index();//아이템 타입 enum저장
                 m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
                 m_HoldingItemUI[i].Have_Items(true);
                 m_SlotIndex[i] = iInput.Get_SlotIndex();
@@ -113,6 +142,8 @@ public class InfoHandler : MonoBehaviour
         m_HoldingItem[iIndex, 1] = -1;
 
         m_SelectItemUI[m_SlotIndex[iIndex]].Slot_Selected(false);
+        m_SlotIndex[iIndex] = -1;
+
     }
 
     public void Clear_HoldingItem()
@@ -121,6 +152,9 @@ public class InfoHandler : MonoBehaviour
         m_HoldingItem[1, 0] = -1;
         m_HoldingItem[0, 1] = -1;
         m_HoldingItem[1, 1] = -1;
+
+        m_SlotIndex[0] = -1;
+        m_SlotIndex[1] = -1;
     }
 
     public int[,] Get_HoldingItem()

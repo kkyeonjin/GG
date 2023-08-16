@@ -5,7 +5,7 @@ using Photon.Pun;
 public class CharacterStatus : MonoBehaviour
 {
     public Player m_Target;
-    public EventUI m_EventUI;
+
     public float m_fSPRecover;
     public PhotonView m_PV;
 
@@ -62,7 +62,7 @@ public class CharacterStatus : MonoBehaviour
             {
                 m_fHP = 0;
                 m_Target.Set_Dead();
-                m_EventUI.Activate_and_Over();
+               //GameMgr 등에서 결과 창 불러오게
             }
         }
     }
@@ -93,6 +93,7 @@ public class CharacterStatus : MonoBehaviour
             }
         }
     }
+
     private void Recover_Stamina()
     {
         m_fStamina += m_fSPRecover*Time.deltaTime;
@@ -103,6 +104,11 @@ public class CharacterStatus : MonoBehaviour
             m_fStamina = m_fMaxStamina;
     }
 
+    public void PV_Reset()
+    {
+        m_PV.RPC("Reset_Status", RpcTarget.All);
+    }
+
     [PunRPC]
     void Update_Damage(float fDamage)
     {
@@ -111,7 +117,7 @@ public class CharacterStatus : MonoBehaviour
         {
             m_fHP = 0;
             m_Target.Set_Dead();
-            m_EventUI.Activate_and_Over();
+            //m_EventUI.Activate_and_Over();
         }
     }
     void Update_HP(float fHP)
@@ -121,5 +127,11 @@ public class CharacterStatus : MonoBehaviour
         {
             m_fHP = m_fMaxHP;
         }
+    }
+    [PunRPC]
+    void Reset_Status()
+    {
+        m_fHP = m_fMaxHP;
+        m_fStamina = m_fMaxStamina;
     }
 }

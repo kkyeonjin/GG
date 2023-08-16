@@ -23324,7 +23324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 6569317394469516547}
-  m_EventUI: {fileID: 0}
   m_fSPRecover: 10
   m_PV: {fileID: 6569317393157197813}
   m_fMaxHP: 100

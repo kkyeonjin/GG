@@ -16,19 +16,23 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
     void Awake()
     {
-        Debug.LogWarning("호출");
-        PhotonNetwork.Instantiate(m_szPlayerPrefab, Vector3.zero, Quaternion.identity);
+        
 
         var duplicated = FindObjectsOfType<GameMgr>();
 
         if (duplicated.Length > 1)
-        {
+        {//이미 생성해서 플레이어 있음
             Destroy(this.gameObject);
         }
-        else if (null == m_Instance)
-        {
-            m_Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+        else
+        {//처음 생성
+            if (null == m_Instance)
+            {
+                m_Instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            Debug.LogWarning("호출");
+            PhotonNetwork.Instantiate(m_szPlayerPrefab, Vector3.zero, Quaternion.identity);
         }
 
 
@@ -79,6 +83,12 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
     }
 
+    public void Reward_ResetPlayer()
+    {
+        m_LocalPlayer.Reset_Player();
+        //사용한 아이템 개수 Info에 업데이트
+        //보상 등 여기서 주면 될듯
+    }
 
     // Start is called before the first frame update
     void Start()

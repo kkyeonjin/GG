@@ -154,7 +154,7 @@ public class UIButton : MonoBehaviour
     public void Exit_RoomCode()
     {
         TransitionImg.EndScreen();
-        Invoke("LoadMenu", TransitionImg.Get_TransitionTime());
+        Invoke("ExitRoomCode", TransitionImg.Get_TransitionTime());
     }
     void ExitRoomCode()
     {
@@ -180,6 +180,7 @@ public class UIButton : MonoBehaviour
     {
         Debug.Log("Multi_ExitGame");
         SceneManager.LoadScene("MultiLobby");
+        GameMgr.Instance.Reward_ResetPlayer();
     }
 
    

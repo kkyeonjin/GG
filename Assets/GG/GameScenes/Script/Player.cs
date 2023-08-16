@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
                 GameMgr.Instance.m_LocalPlayerObj = this.gameObject;
                 GameMgr.Instance.m_LocalPlayer = this;
                 GameMgr.Instance.Set_Camera();
+                DontDestroyOnLoad(this.gameObject);
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
@@ -62,7 +63,6 @@ public class Player : MonoBehaviour
             m_Moving = new MoveFunc(Move);
         }
 
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -347,5 +347,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    ////게임 끝난후 리셋
+    ///
+    public void Reset_Player()
+    {
+        m_Animator.Play("char_000_a011_idle_stand");
+        m_Status.PV_Reset();
+    }
 
 }

@@ -32,11 +32,13 @@ public class ItemSelectUI : MonoBehaviour
         m_Emptycolor = m_MyImage.color;
 
         m_Itemcolor = new Color(1f, 1f, 1f, 1f);
+
     }
     void Start()
     {
         if (isSlotsParent == true)
         {
+            int[] ConnectedIndex = InfoHandler.Instance.HoldingSlotIndex();
             int iSlotIndex = 0;
             for (int i = 0; i < 5; ++i)
             {
@@ -44,7 +46,12 @@ public class ItemSelectUI : MonoBehaviour
                 {
                     m_Slots[iSlotIndex].Set_Image(InfoHandler.Instance.Get_ItemIcon(i));
                     m_Slots[iSlotIndex].Have_Items(true);
-                    m_Slots[iSlotIndex++].Set_Index(i);
+                    m_Slots[iSlotIndex].Set_Index(i);
+
+                    //이미 장착한 아이템 슬롯과 비교해야함
+                    if (ConnectedIndex[0] == iSlotIndex || ConnectedIndex[1] == iSlotIndex)
+                        m_Slots[iSlotIndex].Slot_Selected(true);
+                    ++iSlotIndex;
                 }
             }
             InfoHandler.Instance.Set_SelectItemSlots(m_Slots);
@@ -52,8 +59,8 @@ public class ItemSelectUI : MonoBehaviour
 
         if (isHoldingSlotParent == true)
         {
-
             InfoHandler.Instance.Set_HoldingItemSlots(m_Slots);
+            InfoHandler.Instance.Reload_HoldingSlots();
         }
     }
 
@@ -68,15 +75,16 @@ public class ItemSelectUI : MonoBehaviour
 
     public void Item_Selected()
     {
-        if (m_bSelected)
-            return;
-
         if (InfoHandler.Instance.Set_HoldingItem(this) == true)
         {
             Slot_Selected(true);
             //highlighted
         }
 
+    }
+    public bool Is_Selected()
+    {
+        return m_bSelected;
     }
 
     public void Item_UnSelected()//HoldingSlot용

@@ -50,6 +50,7 @@ public class ChangeAvatar : MonoBehaviour
         {
             m_arrAvatar[i].SetActive(false);
         }
+
         if(m_PV != null)
             Change_Avatar(CurrIndex);
         else
@@ -80,6 +81,7 @@ public class ChangeAvatar : MonoBehaviour
         InfoHandler.Instance.Set_CurrCharacter(iIndex);
 
         m_OwnPlayer.Change_Animator(m_ActiveAvatar.GetComponent<Animator>());
+        m_OwnPlayer.Change_Status(m_ActiveAvatar.GetComponent<AvatarStatus>());
     }
 
 }
