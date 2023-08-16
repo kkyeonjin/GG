@@ -11,9 +11,10 @@ public class IconEffect : UIEffect
     public float m_fTotalLength;
     public bool m_bIsStatbar;
 
+
     private float m_fStartYPos;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(m_bIsFloating)
             m_fStartYPos = m_MyRectTransform.position.y;
@@ -22,6 +23,7 @@ public class IconEffect : UIEffect
         {
             m_Image.material = Instantiate(m_Material);
             m_fTotalTime = 1f;
+
         }
     }
 
@@ -43,6 +45,7 @@ public class IconEffect : UIEffect
 
             m_Image.material.SetFloat("g_fLerpRatio", EasingUtility.CubicOut(m_fRatioSour, m_fRatioDest, m_fPassedTime, m_fTotalTime));
             m_Image.material.SetVector("g_vColor", m_Color);
+            m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
         }
     }
 
@@ -52,5 +55,10 @@ public class IconEffect : UIEffect
         Debug.Log(fRatio + " "+ m_fRatioDest);
         m_fRatioSour = 0f;
         m_fPassedTime = 0f;
+    }
+
+    public void Set_TotalLength(float fLength)
+    {
+        m_fTotalLength = fLength;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreenTransition : UIEffect
 {
-
+    public bool m_bStartScreen = true;
     bool m_bEndScreen;
 
     delegate void Updating();
@@ -13,11 +13,13 @@ public class ScreenTransition : UIEffect
     public delegate void PerformFunc();//효과 끝난후 해야하는 함수
     public PerformFunc m_PerformFunc;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
-
-        StartScreen();
+        if (m_bStartScreen)
+            StartScreen();
+        else
+            gameObject.SetActive(false);
         
     }
 
@@ -29,6 +31,7 @@ public class ScreenTransition : UIEffect
 
     public void StartScreen()
     {
+        Debug.Log("스크린호출!");
         m_fRatioSour = 1f;
         m_fRatioDest = 0f;
 

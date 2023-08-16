@@ -3,6 +3,7 @@ Shader "UI/StatBarEffect"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _MaskingTex("Texture",2D) = "white" {}
     }
 
 
@@ -34,15 +35,17 @@ Shader "UI/StatBarEffect"
     }
 
     sampler2D _MainTex;
+    sampler2D _MaskingTex;
 
     fixed4 frag(v2f i) : SV_Target
     {
         fixed4 col = tex2D(_MainTex, i.uv);
 
-        col *= g_vColor;
+        col = g_vColor;
         if (i.uv.x > g_fLerpRatio)
-            discard;
-        
+        {
+            col = g_vOriginColor;
+        }
 
         return col;
     }

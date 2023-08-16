@@ -23,7 +23,7 @@ public class UIEffect : MonoBehaviour
     protected float m_fCurrRatio = 0f;
 
 
-    void Start()
+    void Awake()
     {
 
         m_Image.material = Instantiate(m_Material);

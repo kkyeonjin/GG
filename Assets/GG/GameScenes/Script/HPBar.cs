@@ -13,7 +13,7 @@ public class HPBar : MonoBehaviour
     Transform m_MainCamTransform;
     float m_fHPRatio;
 
-    void Start()
+    void Awake()
     {
         m_MainCamTransform = Camera.main.transform;
 

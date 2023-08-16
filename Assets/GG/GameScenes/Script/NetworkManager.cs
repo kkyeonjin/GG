@@ -105,9 +105,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void LeaveRoom()
     {
+        Debug.Log("방 나가는중!");
         m_RoomCode = null;
-        SceneManager.LoadScene("RoomCode");
         PhotonNetwork.LeaveRoom();
+        //SceneManager.LoadScene("RoomCode");
 
     }
     public override void OnLeftRoom()

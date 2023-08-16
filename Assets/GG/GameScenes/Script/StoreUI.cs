@@ -9,6 +9,7 @@ public class StoreUI : MonoBehaviour
     public TextMeshProUGUI Money;
     public StoreUI MoneyUI;
 
+    public GameObject Panel; 
     public Image m_SelectBuy;
     public bool m_bStartEnable = true;
 
@@ -27,7 +28,7 @@ public class StoreUI : MonoBehaviour
 
     public void Click_Object()
     {
-        
+        Panel.SetActive(true);
         m_SelectBuy.gameObject.SetActive(true);
         m_SelectBuy.GetComponent<StoreUI>().Send_SelectObj(m_iCharacterIndex,m_iItemIndex);
     }
@@ -54,12 +55,13 @@ public class StoreUI : MonoBehaviour
             Buy_Item();
 
         this.gameObject.SetActive(false);
-    
+        Panel.SetActive(false);
     }
 
     public void Select_No()
     {
         m_SelectBuy.gameObject.SetActive(false);
+        Panel.SetActive(true);
         m_iCharacterIndex = -1;
         m_iItemIndex = -1;
     }

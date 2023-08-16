@@ -23,6 +23,8 @@ public class MyRoomMgr : MonoBehaviour
     public GameObject[] Items;
 
     public TextMeshProUGUI m_PlayerInfo;
+    public TextMeshProUGUI m_PlayerExp;
+    public IconEffect m_PlayerExpImage;
 
     public IconEffect[] m_StatusBar;
 
@@ -94,8 +96,15 @@ public class MyRoomMgr : MonoBehaviour
 
     public void Show_PlayerInfo()
     {
-        string text = "Level : " + InfoHandler.Instance.Get_Level();
+        string text = "Lv. " + InfoHandler.Instance.Get_Level();
         m_PlayerInfo.text = text;
+
+        float ExpRatio = InfoHandler.Instance.Get_Exp() / InfoHandler.Instance.Get_ExpMax();
+        string Exptext = ExpRatio.ToString("F1") + "%";
+        m_PlayerExp.text = Exptext;
+
+        m_PlayerExpImage.Set_TotalLength(InfoHandler.Instance.Get_ExpMax());
+        m_PlayerExpImage.Set_LengthRatio(InfoHandler.Instance.Get_Exp());
     }
 
 }

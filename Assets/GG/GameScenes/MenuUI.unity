@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_vOriginColor: {r: 0, g: 0.16104908, b: 0.6226415, a: 0}
-  m_fTotalTime: 5
+  m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 0
   m_ConnectedModel: {fileID: 0}

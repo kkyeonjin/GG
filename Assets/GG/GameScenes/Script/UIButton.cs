@@ -139,10 +139,16 @@ public class UIButton : MonoBehaviour
     ///multi///
     public void Exit_Room()
     {
-        NetworkManager.Instance.LeaveRoom();
-        GameMgr.Instance.Destroy_Player();
-        GameMgr.Instance.Destroy_Myself();
+        TransitionImg.EndScreen();
+        Invoke("ExitRoom", TransitionImg.Get_TransitionTime());
+    }
+
+    void ExitRoom()
+    {
         InfoHandler.Instance.Clear_HoldingItem();
+        GameMgr.Instance.Destroy_Myself();
+        NetworkManager.Instance.LeaveRoom();
+        //GameMgr.Instance.Destroy_Player(); // NetwordManager에서 방 나갈때 autoCleanUp으로 player를 삭제, 전에 player 삭제하면 문제 생겨서 방 못나감
     }
 
     public void Exit_RoomCode()
