@@ -443,6 +443,7 @@ MonoBehaviour:
   m_fScale: 0.1
   m_eLerpType: 0
   m_ConnectedModel: {fileID: 0}
+  m_bStartScreen: 1
 --- !u!1 &441185958
 GameObject:
   m_ObjectHideFlags: 0

@@ -166,11 +166,14 @@ public class UIButton : MonoBehaviour
     public void Multi_EnterCode()
     {
         NetworkManager.Instance.JoinRoom(m_RoomCode);
+        m_ConnectedUI.SetActive(true);
+
     }
 
     public void Multi_CreateRoom()
     {//나중에 초대 코드로
         NetworkManager.Instance.CreateRoom(m_RoomCode);
+        m_ConnectedUI.SetActive(true);
     }
 
     public void Multi_ExitGame()

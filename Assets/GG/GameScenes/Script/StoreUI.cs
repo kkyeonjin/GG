@@ -21,7 +21,7 @@ public class StoreUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.SetActive(m_bStartEnable);
+        //this.gameObject.SetActive(m_bStartEnable);
         if (Money != null)
             Update_Money(0);
     }
@@ -54,14 +54,14 @@ public class StoreUI : MonoBehaviour
         else if (m_iItemIndex > -1)
             Buy_Item();
 
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
         Panel.SetActive(false);
     }
 
     public void Select_No()
     {
-        m_SelectBuy.gameObject.SetActive(false);
-        Panel.SetActive(true);
+       // m_SelectBuy.gameObject.SetActive(false);
+        Panel.SetActive(false);
         m_iCharacterIndex = -1;
         m_iItemIndex = -1;
     }
