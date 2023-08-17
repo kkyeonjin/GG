@@ -39,27 +39,30 @@ public class Player : MonoBehaviour
     private delegate void MoveFunc();
 
     private MoveFunc m_Moving;
-
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_Animator = GetComponentInChildren<Animator>();
 
         if (m_PV != null)
         {
+            
             if (m_PV.IsMine)
-            {
+            {//멀티모드일때만 
+                
                 GameMgr.Instance.m_LocalPlayerObj = this.gameObject;
                 GameMgr.Instance.m_LocalPlayer = this;
                 GameMgr.Instance.Set_Camera();
-                DontDestroyOnLoad(this.gameObject);
+                
+
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
         }
         else
         {
-            m_Animator = GetComponentInChildren<Animator>();
+            
             m_Moving = new MoveFunc(Move);
         }
 
@@ -319,9 +322,11 @@ public class Player : MonoBehaviour
             m_bIsJump = false;
             m_bIsGround = true;
             //collision.gameObject
-            m_Animator.SetBool("IsJump", m_bIsJump);
-            m_Animator.SetBool("IsGround",m_bIsGround);
-            
+            if (m_Animator != null)
+            {
+                m_Animator.SetBool("IsJump", m_bIsJump);
+                m_Animator.SetBool("IsGround", m_bIsGround);
+            }
         }
     }
 
@@ -345,14 +350,6 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
-    }
-
-    ////게임 끝난후 리셋
-    ///
-    public void Reset_Player()
-    {
-        m_Animator.Play("char_000_a011_idle_stand");
-        m_Status.PV_Reset();
     }
 
 }

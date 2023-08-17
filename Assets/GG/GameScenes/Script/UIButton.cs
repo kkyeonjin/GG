@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+
 public class UIButton : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +18,8 @@ public class UIButton : MonoBehaviour
 
     private Image ButtonImage;
     private bool m_bIsSelected = false;
+
+    public 
 
     void Start()
     {
@@ -133,7 +136,7 @@ public class UIButton : MonoBehaviour
     void LoadMenu()
     {
         SceneManager.LoadScene("MenuUI");
-        InfoHandler.Instance.Clear_HoldingItem();
+        //InfoHandler.Instance.Clear_HoldingItem();
     }
 
     ///multi///
@@ -145,9 +148,10 @@ public class UIButton : MonoBehaviour
 
     void ExitRoom()
     {
-        InfoHandler.Instance.Clear_HoldingItem();
-        GameMgr.Instance.Destroy_Myself();
+        //InfoHandler.Instance.Clear_HoldingItem();
         NetworkManager.Instance.LeaveRoom();
+        GameMgr.Instance.Destroy_Myself();
+       
         //GameMgr.Instance.Destroy_Player(); // NetwordManager에서 방 나갈때 autoCleanUp으로 player를 삭제, 전에 player 삭제하면 문제 생겨서 방 못나감
     }
 
@@ -175,13 +179,5 @@ public class UIButton : MonoBehaviour
         NetworkManager.Instance.CreateRoom(m_RoomCode);
         m_ConnectedUI.SetActive(true);
     }
-
-    public void Multi_ExitGame()
-    {
-        Debug.Log("Multi_ExitGame");
-        SceneManager.LoadScene("MultiLobby");
-        GameMgr.Instance.Reward_ResetPlayer();
-    }
-
    
 }

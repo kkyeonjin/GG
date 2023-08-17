@@ -52,14 +52,14 @@ public class ChangeAvatar : MonoBehaviour
         }
 
         if(m_PV != null)
-            Change_Avatar(CurrIndex);
+            m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
         else
         {
             m_ActiveAvatar.SetActive(false);
             m_ActiveAvatar = m_arrAvatar[CurrIndex];
             m_ActiveAvatar.SetActive(true);
 
-            InfoHandler.Instance.Set_CurrCharacter(CurrIndex);
+            //InfoHandler.Instance.Set_CurrCharacter(CurrIndex);
 
             m_OwnPlayer.Change_Animator(m_ActiveAvatar.GetComponent<Animator>());
             m_OwnPlayer.Change_Status(m_ActiveAvatar.GetComponent<AvatarStatus>());

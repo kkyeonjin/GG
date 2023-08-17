@@ -28,14 +28,19 @@ public class SelectStageUI : MonoBehaviour
         m_PV.RPC("StartGame", RpcTarget.All);
     }
 
-    public void Game_Start()
+    public void Game_Start()//single mode
     {
         SceneManager.LoadScene(SelectedStage.text);
     }
 
-    public void Exit_Stage()
+    public void Exit_Stage()//싱글모드
     {
         SceneManager.LoadScene("Lobby");
+    }
+
+    public void Multi_ExitStage()//멀티 스테이지 나가기
+    {
+        m_PV.RPC("BacktoLobby", RpcTarget.All);
     }
 
     public void Change_Stage()
@@ -62,4 +67,11 @@ public class SelectStageUI : MonoBehaviour
     {
         NetworkManager.Instance.StartGame("Multi_Subway");
     }
+    [PunRPC]
+    void BacktoLobby()
+    {
+        NetworkManager.Instance.StartGame("MultiLobby");
+    }
+
+
 }

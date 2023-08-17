@@ -17,7 +17,6 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
     void Awake()
     {
         
-
         var duplicated = FindObjectsOfType<GameMgr>();
 
         if (duplicated.Length > 1)
@@ -31,11 +30,13 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
                 m_Instance = this;
                 DontDestroyOnLoad(this.gameObject);
             }
-            Debug.LogWarning("호출");
-            PhotonNetwork.Instantiate(m_szPlayerPrefab, Vector3.zero, Quaternion.identity);
         }
 
 
+    }
+    void Start()
+    {
+       
     }
 
     public static GameMgr Instance
@@ -50,17 +51,16 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-
+    public void Load_LocalPlayer()
+    {
+        Debug.LogWarning("호출");
+        NetworkManager.Instance.Instantiate_Player(m_szPlayerPrefab);
+    }
     public void Set_PlayerPos()
     {
         if (null != m_LocalPlayerObj)
             m_LocalPlayerObj.transform.position = Vector3.zero;
     }
-    public void Destroy_Player()
-    {
-        Destroy(m_LocalPlayerObj);
-    }
-
     public void Destroy_Myself()
     {
         Destroy(this.gameObject);
@@ -83,22 +83,11 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
     }
 
-    public void Reward_ResetPlayer()
+    public void Reward_Player()//게임 끝난후 로비로 돌아감(멀티)
     {
-        m_LocalPlayer.Reset_Player();
         //사용한 아이템 개수 Info에 업데이트
         //보상 등 여기서 주면 될듯
+
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -10,6 +10,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     private static NetworkManager m_Instance = null;
     public const int m_iMaxPlayer = 8;
+    private string PlayerName = "HiHi";
 
 
     public TMP_InputField m_RoomCode, m_NickNameInput;
@@ -51,6 +52,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
        // Debug.Log(PhotonNetwork.NetworkClientState.ToString());
     }
     //////////////////////////////////////////////////////////////
+    public void Instantiate_Player(string szName)
+    {
+        PhotonNetwork.Instantiate(szName, Vector3.zero, Quaternion.identity);
+    }
 
     public void ConnectToServer()
     {
@@ -61,7 +66,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("서버접속완료");
-        PhotonNetwork.LocalPlayer.NickName = "";//플레이어 이름 임의로
+        PhotonNetwork.LocalPlayer.NickName = PlayerName;//플레이어 이름 임의로
         JoinLobby();
     }
 
@@ -108,14 +113,27 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("방 나가는중!");
         m_RoomCode = null;
         PhotonNetwork.LeaveRoom();
+        PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
         //SceneManager.LoadScene("RoomCode");
-
+        
     }
     public override void OnLeftRoom()
     {
         Debug.Log("방 나감");
     }
-//======================================================
+
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
+    {
+        Debug.Log("플레이어 나감!" + otherPlayer.NickName);
+        
+    }
+
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    {
+        Debug.Log("플레이어 들어옴!" + newPlayer.NickName);
+    }
+
+    //======================================================
     public void LeaveLobby()
     {
         Debug.Log("로비 나가는 중");

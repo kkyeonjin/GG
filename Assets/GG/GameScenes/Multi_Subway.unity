@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 569183289}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 857716281}
   - component: {fileID: 857716280}
   - component: {fileID: 857716279}
+  - component: {fileID: 857716283}
   - component: {fileID: 857716282}
   m_Layer: 5
   m_Name: Exit
@@ -484,9 +485,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 857716282}
-        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
-        m_MethodName: Multi_ExitGame
+      - m_Target: {fileID: 857716283}
+        m_TargetAssemblyTypeName: SelectStageUI, Assembly-CSharp
+        m_MethodName: Multi_ExitStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -543,14 +544,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 857716277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a7a3df95ffd5c499d52f1c6b04dc52, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RoomCode: {fileID: 0}
-  m_iCharacterIndex: -1
-  MyButton: {fileID: 0}
-  m_ConnectedUI: {fileID: 0}
-  TransitionImg: {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &857716283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857716277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01c470191acc8f4c829e501cd45c65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PV: {fileID: 857716282}
+  SelectedStage: {fileID: 0}
+  mapImage: {fileID: 0}
+  subway: {fileID: 0}
+  apart: {fileID: 0}
 --- !u!1 &1031349833
 GameObject:
   m_ObjectHideFlags: 0
