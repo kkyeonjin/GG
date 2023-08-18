@@ -6,7 +6,8 @@ using TMPro;
 
 public class ItemScan : MonoBehaviour
 {
-    public TMP_Text pressText;
+    //public TMP_Text pressText;
+    public Image ItemInfo;
 
     [SerializeField]
     float range;
@@ -25,51 +26,19 @@ public class ItemScan : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
         {
 
-            //+++
+            ItemInfo.sprite = hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemInfo;
+            ItemInfo.gameObject.SetActive(true);
 
-
-            hitInfo.transform.gameObject.GetComponent<PickableItem>().OutlineOn();
-
-            if (hitInfo.transform.tag == "cup")
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("cup detected");
-                pressText.gameObject.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                    Destroy(hitInfo.transform.gameObject);
-                }
+                hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
+                Destroy(hitInfo.transform.gameObject);
             }
-
-            else if (hitInfo.transform.tag == "tv")
-            {
-                Debug.Log("tv detected");
-                pressText.gameObject.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                    Destroy(hitInfo.transform.gameObject);
-                }
-            }
-
-            else if (hitInfo.transform.tag == "plant")
-            {
-                Debug.Log("plant detected");
-                pressText.gameObject.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                    Destroy(hitInfo.transform.gameObject);
-                }
-            }
-
         }
+
         else
         {
-            pressText.gameObject.SetActive(false);
+            ItemInfo.gameObject.SetActive(false);
         }
 
     }

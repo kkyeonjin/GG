@@ -5,12 +5,9 @@ using UnityEngine;
 public class PickableItem : MonoBehaviour
 {
 
-    public Sprite icon;
-    public int itemNum;
-
-    Material outline;
-    Renderer renderers;
-    List<Material> materials = new List<Material>();
+    public Sprite icon; // 획득 시 인벤토리 창에 띄울 아이콘
+    public Sprite ItemInfo;
+    public int itemNum; // 아이템 고유 번호 부여(1부터)
 
     // Start is called before the first frame update
 
@@ -25,31 +22,21 @@ public class PickableItem : MonoBehaviour
 
                 break;
             }
-            
         }
     }
-
-    public void OutlineOn()
+    
+    public void ItemUse()
     {
-        renderers = this.GetComponent<Renderer>();
-
-        materials.Clear();
-        materials.AddRange(renderers.sharedMaterials);
-        materials.Add(outline);
-
-        renderers.materials = materials.ToArray();
+        switch(itemNum)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
     }
-
-    public void IconUpdate()
-    {
-        
-    }
-
-    void Start()
-    {
-        outline = new Material(Shader.Find("Draw/OutlineShader"));
-    }
-
     // Update is called once per frame
     void Update()
     {

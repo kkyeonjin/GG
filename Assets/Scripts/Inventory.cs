@@ -48,14 +48,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void ItemUse()
+    public void IconUse()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
             if(inventory.Count > 0 )
             {
                 Debug.Log("use");
-                invIcons[activeNum].sprite = null;
 
                 
                 switch (activeNum)
@@ -69,6 +68,9 @@ public class Inventory : MonoBehaviour
                         invIcons[1].sprite = invIcons[2].sprite;
                         invIcons[2].sprite = null;
                         break;
+                    default:
+                        invIcons[activeNum].sprite = null;
+                        break;
 
                 }
                 
@@ -77,11 +79,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void ItemUse()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         ItemChange();
-        ItemUse();
+        IconUse();
     }
 }
