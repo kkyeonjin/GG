@@ -11,8 +11,8 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
 
     public Player m_LocalPlayer;
     public GameObject m_LocalPlayerObj;
-    public string m_szPlayerPrefab = "Local_Player";
 
+    private bool[] IsOccupied;
 
     void Awake()
     {
@@ -51,15 +51,15 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void Load_LocalPlayer()
+    public void Load_LocalPlayer(Vector3 vStartPoint)
     {
         Debug.LogWarning("호출");
-        NetworkManager.Instance.Instantiate_Player(m_szPlayerPrefab);
+        NetworkManager.Instance.Instantiate_Player(vStartPoint);
     }
-    public void Set_PlayerPos()
-    {
+    public void Set_PlayerPos(Vector3 PlayerPoint)
+    {//임시
         if (null != m_LocalPlayerObj)
-            m_LocalPlayerObj.transform.position = Vector3.zero;
+            m_LocalPlayerObj.transform.position = PlayerPoint;
     }
     public void Destroy_Myself()
     {

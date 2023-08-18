@@ -9,8 +9,10 @@ using UnityEngine.SceneManagement;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     private static NetworkManager m_Instance = null;
+
     public const int m_iMaxPlayer = 8;
     private string PlayerName = "HiHi";
+    public string m_szPlayerPrefab = "Local_Player";
 
     public GameObject StartButton { get; set; }
 
@@ -58,9 +60,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         StartButton = button;
     }
-    public void Instantiate_Player(string szName)
+    public void Instantiate_Player(Vector3 vStartPoint)
     {
-        PhotonNetwork.Instantiate(szName, Vector3.zero, Quaternion.identity);
+        PhotonNetwork.Instantiate(m_szPlayerPrefab, vStartPoint, Quaternion.identity);
     }
 
     public void ConnectToServer()
@@ -144,7 +146,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (true == PhotonNetwork.IsMasterClient)
         {
             if(PhotonNetwork.PlayerListOthers.Length >0)
-                PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerListOthers[0]);
+                PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerListOthers[0]);//이 플레이어 리스트가 방에 있는 사람들 리스트인지 아니면 전체 접속자 리스트인지
+
         }
     }
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
@@ -153,7 +156,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (newMasterClient == PhotonNetwork.LocalPlayer)
             StartButton.SetActive(true);
     }
-
+    //마스터 클라이언트가 다른 클라이언트 위치 지정
     //======================================================
     public void LeaveLobby()
     {
@@ -181,6 +184,25 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("방입장실패");
         JoinLobby();
+    }
+    public void Initialize_Players_InMap(List<GameObject> StartPoints)
+    {//얘는 게임 시작할 때 단체로 위치 배정
+       
+            Photon.Realtime.Player[] Playerlist = PhotonNetwork.PlayerListOthers;
+            int iLength = Playerlist.Length;
+
+            for (int i = 0; i < iLength; ++i)
+            {
+                int idx = Random.Range(0, StartPoints.Count);
+                photonView.RPC("Load_LocalPlayer", Playerlist[i], StartPoints[idx].transform.position);
+                StartPoints.RemoveAt(idx);
+            } 
+        
+    }
+    [PunRPC]
+    void Load_LocalPlayer(Vector3 StartPoint)
+    {
+        Instantiate_Player(StartPoint);
     }
 
     [ContextMenu("정보")]
