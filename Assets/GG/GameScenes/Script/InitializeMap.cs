@@ -19,11 +19,12 @@ public class InitializeMap : MonoBehaviour
             int idx = Random.Range(0, StartPoints.Count);
             GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
             NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
+
         }
-        else
+        else//로비에서 설정
         {
-            int idx = Random.Range(0, StartPoints.Count);
-            GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
+            //int idx = Random.Range(0, StartPoints.Count);
+            //GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
         }
     }
 

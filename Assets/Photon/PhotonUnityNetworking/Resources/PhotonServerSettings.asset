@@ -48,6 +48,7 @@ MonoBehaviour:
   - LoadLobby
   - BacktoLobby
   - Load_LocalPlayer
+  - ReturnOccupied_ToMaster
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
