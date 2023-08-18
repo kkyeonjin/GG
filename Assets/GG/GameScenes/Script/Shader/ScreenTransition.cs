@@ -16,6 +16,7 @@ public class ScreenTransition : UIEffect
     void Awake()
     {
         m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
+        m_Image.material.SetVector("g_vColor", m_Color);
         if (m_bStartScreen)
             StartScreen();
         else

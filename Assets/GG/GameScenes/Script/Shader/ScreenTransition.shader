@@ -37,20 +37,23 @@ Shader "UI/ScreenTransition"
 
     half g_fRatio;
     half4 g_vOriginColor;
+    half4 g_vColor;
 
     fixed4 frag(v2f i) : SV_Target
     {
         float2 TexUV = i.uv;
 
-        TexUV.y *= 4.f;
+        //TexUV.y *= 10.f;
 
         fixed4 col = tex2D(_MainTex, i.uv);
         half masking = _MaskTex.Sample(my_point_mirror_sampler, TexUV).x;
         
         if (masking > g_fRatio)
             discard;
-        col *= g_vOriginColor;
-        col.a = 1.f;
+
+        col.a = (g_fRatio - masking) / 0.2f;
+        col.rgb = lerp(g_vColor.rgb, g_vOriginColor.rgb,col.a);//끝에 색 넣고 싶을 때
+
 
         return col;
     }
