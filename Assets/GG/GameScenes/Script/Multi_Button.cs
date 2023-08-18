@@ -9,7 +9,8 @@ public class Multi_Button : MonoBehaviour
     
     void Start()
     {
-        if(false == PhotonNetwork.IsMasterClient)
+        NetworkManager.Instance.Set_StartButton(this.gameObject);
+        if (false == PhotonNetwork.IsMasterClient)
         {
             gameObject.SetActive(false);
         }
@@ -18,6 +19,9 @@ public class Multi_Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (PhotonNetwork.IsMasterClient == true)
+            gameObject.SetActive(true);
+        else
+            gameObject.SetActive(false);
     }
 }

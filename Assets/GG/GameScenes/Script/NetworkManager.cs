@@ -12,6 +12,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public const int m_iMaxPlayer = 8;
     private string PlayerName = "HiHi";
 
+    public GameObject StartButton { get; set; }
+
 
     public TMP_InputField m_RoomCode, m_NickNameInput;
 
@@ -52,6 +54,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
        // Debug.Log(PhotonNetwork.NetworkClientState.ToString());
     }
     //////////////////////////////////////////////////////////////
+    public void Set_StartButton(GameObject button)
+    {
+        StartButton = button;
+    }
     public void Instantiate_Player(string szName)
     {
         PhotonNetwork.Instantiate(szName, Vector3.zero, Quaternion.identity);
@@ -112,6 +118,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("방 나가는중!");
         m_RoomCode = null;
+        ChangeMasterClient();
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
         //SceneManager.LoadScene("RoomCode");
@@ -125,12 +132,26 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         Debug.Log("플레이어 나감!" + otherPlayer.NickName);
-        
     }
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
-        Debug.Log("플레이어 들어옴!" + newPlayer.NickName);
+        Debug.Log("플레이어 들어옴!" + newPlayer.NickName + "ActiveNum : "+newPlayer.ActorNumber);
+    }
+
+    public void ChangeMasterClient()
+    {
+        if (true == PhotonNetwork.IsMasterClient)
+        {
+            if(PhotonNetwork.PlayerListOthers.Length >0)
+                PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerListOthers[0]);
+        }
+    }
+    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
+    {
+        Debug.Log("방장 바뀜!!");
+        if (newMasterClient == PhotonNetwork.LocalPlayer)
+            StartButton.SetActive(true);
     }
 
     //======================================================

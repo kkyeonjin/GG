@@ -96,6 +96,7 @@ public class Player : MonoBehaviour
     }
     private void Get_KeyInput()
     {
+
         if (m_bIsCrouch)
             return;
 
@@ -112,7 +113,7 @@ public class Player : MonoBehaviour
             m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
-            m_bIsPushing = true;
+            m_bIsPushing = true;        
         }
         else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
         {
