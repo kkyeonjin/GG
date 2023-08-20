@@ -7,6 +7,8 @@ public class InitializeMap : MonoBehaviour
 {
     public List<GameObject> StartPoints;
     public bool bInGame = false;
+
+    public PhotonView m_PV;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,18 +20,36 @@ public class InitializeMap : MonoBehaviour
         {
             int idx = Random.Range(0, StartPoints.Count);
             GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
-            NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
+            StartPoints.RemoveAt(idx);
+            //NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
+            Initialize_Players_InMap();
         }
-        else
+        else if( bInGame == false)
         {
             int idx = Random.Range(0, StartPoints.Count);
             GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize_Players_InMap()
+    {//얘는 게임 시작할 때 단체로 위치 배정
+
+        Photon.Realtime.Player[] Playerlist = PhotonNetwork.PlayerListOthers;
+        int iLength = Playerlist.Length;
+
+        for (int i = 0; i < iLength; ++i)
+        {
+            int idx = Random.Range(0, StartPoints.Count);
+
+            m_PV.RPC("Load_LocalPlayer", Playerlist[i], StartPoints[idx].transform.position);
+            StartPoints.RemoveAt(idx);
+        }
+
+    }
+    [PunRPC]
+    void Load_LocalPlayer(Vector3 StartPoint)
     {
-        
+        Debug.Log("생성!");
+        NetworkManager.Instance.Instantiate_Player(StartPoint);
     }
 }

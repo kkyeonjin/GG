@@ -329,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963eae192f3f80d4e92f8c503e040838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_szPlayerPrefab: Local_Player
   m_RoomCode: {fileID: 0}
   m_NickNameInput: {fileID: 0}
 --- !u!4 &207264092

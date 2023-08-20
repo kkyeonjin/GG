@@ -185,25 +185,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("방입장실패");
         JoinLobby();
     }
-    public void Initialize_Players_InMap(List<GameObject> StartPoints)
-    {//얘는 게임 시작할 때 단체로 위치 배정
-       
-            Photon.Realtime.Player[] Playerlist = PhotonNetwork.PlayerListOthers;
-            int iLength = Playerlist.Length;
 
-            for (int i = 0; i < iLength; ++i)
-            {
-                int idx = Random.Range(0, StartPoints.Count);
-                photonView.RPC("Load_LocalPlayer", Playerlist[i], StartPoints[idx].transform.position);
-                StartPoints.RemoveAt(idx);
-            } 
-        
-    }
-    [PunRPC]
-    void Load_LocalPlayer(Vector3 StartPoint)
-    {
-        Instantiate_Player(StartPoint);
-    }
 
     [ContextMenu("정보")]
     void Info()
