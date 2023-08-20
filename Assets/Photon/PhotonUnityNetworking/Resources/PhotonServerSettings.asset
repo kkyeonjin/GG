@@ -48,6 +48,10 @@ MonoBehaviour:
   - LoadLobby
   - BacktoLobby
   - Load_LocalPlayer
+  - Assign_SpawnPosition
+  - Update_SpawnPosSlot
+  - Add_SpawnPosIndex
+  - Remove_SpawnPosIndex
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
