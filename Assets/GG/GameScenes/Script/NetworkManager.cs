@@ -14,11 +14,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private string PlayerName = "HiHi";
     public string m_szPlayerPrefab = "Local_Player";
 
-    //로비 위치 할당
-    public GameObject[] SpawnPoint;
-    private List<int> ListIsOccupied;
-    private int iMyLobbyPosIndex;
-
     public GameObject StartButton { get; set; }
 
 
@@ -113,10 +108,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //모든 접속하는 플레이어에 대해서 실행
         Debug.Log("방 입장");
         PhotonNetwork.LoadLevel("MultiLobby");
-        if(PhotonNetwork.IsMasterClient)
-        {
-            //ListIsOccupied ={ 0,1,2,3,4,5,6,7};//리스트로 하나 없애고 반납하면 push하기
-        }
         
     }
     
@@ -143,11 +134,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         Debug.Log("플레이어 나감!" + otherPlayer.NickName);
-        photonView.RPC("ReturnOccupied_ToMaster", PhotonNetwork.MasterClient, iMyLobbyPosIndex);
-        //대기실 스폰 지점 마스터에게 반납
     }
-
-    
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
@@ -217,11 +204,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Instantiate_Player(StartPoint);
     }
-    [PunRPC]
-    void ReturnOccupied_ToMaster(int ReturnIndex)
-    {
-        //bIsOccupied[ReturnIndex] = false;//마스터클라이언트한테 반납햇을 때 인덱스 추가
-    }
+
     [ContextMenu("정보")]
     void Info()
     {
