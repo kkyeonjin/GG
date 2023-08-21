@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameItem : MonoBehaviour
+public class SubwayItems : MonoBehaviour
 {
     public enum ItemType
     {

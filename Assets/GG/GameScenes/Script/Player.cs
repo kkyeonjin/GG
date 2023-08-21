@@ -94,6 +94,15 @@ public class Player : MonoBehaviour
         m_bIsRun = false;
         m_bIsPushing = false;
 
+        /*
+        if (newGshake.isShake)
+        {
+            Debug.Log("Gshake");
+            m_vMoveVec -= newGshake.moveVecR_q;
+            
+        }
+        */
+
         Vector3 CamFoward = m_CameraTransform.forward;
         Vector3 vRight = Vector3.Cross(Vector3.up, CamFoward);
         CamFoward = Vector3.Cross(vRight, Vector3.up);
@@ -161,22 +170,24 @@ public class Player : MonoBehaviour
     private void Move()
     {
         m_fTotalSpeed = 0f;
+        if (m_bIsGround)
+        {
+            Crouch();
+            Get_KeyInput();
+            Run();
+            //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
+            transform.LookAt(transform.position + m_vMoveVec);
+            //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
+            //m_Rigidbody.AddForce(Physics.gravity);
+            m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
-        Crouch();
-        Get_KeyInput();
-        Run();
-        //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
-        transform.LookAt(transform.position + m_vMoveVec);
-        //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
-        //m_Rigidbody.AddForce(Physics.gravity);
-        m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
+            m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-        m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
-
-        Throw();
-        PushLever();
-        Picking_Up();
-        Pushing();
+            Throw();
+            PushLever();
+            Picking_Up();
+            Pushing();
+        }
         Jump_Up();
 
         //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
@@ -307,14 +318,19 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
             m_Animator.SetBool("IsJump", m_bIsJump);
             m_Animator.SetBool("IsGround", m_bIsGround);
-
+            Debug.Log(collision.gameObject.name);
         }
+    }
+
+    void OnCollsionExit(Collision collision)
+    {
+        Debug.Log(collision.transform.name + "와 떨어짐");
     }
 
 }

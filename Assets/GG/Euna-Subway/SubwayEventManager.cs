@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SubwayEventManager : MonoBehaviour
 {
-    //게임 phase 관리
-    int phase; //현재 구간 숫자
+    enum EventType
+    {
+        earthquake,
+        blackout,
+
+    }
 
     //phase별 랜덤 지진 이벤트 관리
 
