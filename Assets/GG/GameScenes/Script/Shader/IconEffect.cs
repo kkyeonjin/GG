@@ -52,7 +52,7 @@ public class IconEffect : UIEffect
     public void Set_LengthRatio(float fRatio)
     {
         m_fRatioDest = fRatio/ m_fTotalLength;
-        Debug.Log(fRatio + " "+ m_fRatioDest);
+
         m_fRatioSour = 0f;
         m_fPassedTime = 0f;
     }

@@ -32,7 +32,14 @@ public class CharacterStatus : MonoBehaviour
         m_fMaxHP = fHP;
         m_fMaxStamina = fStamina;
     }
-
+    public void Reset_HP()
+    {
+        m_fHP = m_fMaxHP * 0.5f;
+    }
+    public void Reset_Stamina()
+    {
+        m_fStamina = m_fMaxStamina;
+    }
     public float Get_HP()
     {
         return m_fHP;
@@ -62,7 +69,7 @@ public class CharacterStatus : MonoBehaviour
             {
                 m_fHP = 0;
                 m_Target.Set_Dead();
-               //GameMgr 등에서 결과 창 불러오게
+               //GameMgr 등에서 리스폰 창 불러오게
             }
         }
     }
@@ -117,9 +124,11 @@ public class CharacterStatus : MonoBehaviour
         {
             m_fHP = 0;
             m_Target.Set_Dead();
-            //m_EventUI.Activate_and_Over();
+            //SceneUIMgr에서 부활 관련 함수 호출
+            
         }
     }
+    [PunRPC]
     void Update_HP(float fHP)
     {
         m_fHP += fHP;

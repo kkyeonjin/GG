@@ -5746,6 +5746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889427164}
   - component: {fileID: 1889427163}
+  - component: {fileID: 1889427165}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5767,6 +5768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LocalPlayer: {fileID: 0}
   m_LocalPlayerObj: {fileID: 0}
+  m_bInGame: 0
+  m_PV: {fileID: 1889427165}
 --- !u!4 &1889427164
 Transform:
   m_ObjectHideFlags: 0
@@ -5782,6 +5785,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1889427165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889427162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1889427163}
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1891355818
 GameObject:
   m_ObjectHideFlags: 0

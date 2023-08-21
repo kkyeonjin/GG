@@ -16,7 +16,7 @@ public class ItemSelectUI : MonoBehaviour
 
     public int iHoldingSlotIndex;
 
-    Item.ITEM m_eIndex = Item.ITEM.END;
+    StoreItem.ITEM m_eIndex = StoreItem.ITEM.END;
 
     public bool isSlotsParent = false;
     public bool isHoldingSlotParent = false;
@@ -70,7 +70,7 @@ public class ItemSelectUI : MonoBehaviour
     }
     public void Set_Index(int iIndex)
     {
-        m_eIndex = (Item.ITEM)iIndex;
+        m_eIndex = (StoreItem.ITEM)iIndex;
     }
 
     public void Item_Selected()

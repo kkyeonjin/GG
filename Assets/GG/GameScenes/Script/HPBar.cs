@@ -26,11 +26,10 @@ public class HPBar : MonoBehaviour
         if(m_PV)
             m_PV.RPC("Update_HPBar", RpcTarget.All);
     }
-    //쉐이더 변수 값 지정하는 타이밍. 만약에 일반 hlsl과 같다면 같은 쉐이더를 공유한다면 문제 발생
-    //
+
     private void OnPreRender()
     {
-        //m_Image.material.SetFloat("g_fRatio", m_fHPRatio);
+
     }
 
     [PunRPC]

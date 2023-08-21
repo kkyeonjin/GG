@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     private bool m_bStartPush = false;
     private bool m_bIsPushing = false;
 
+    private bool m_bAdrenaline = false;
+    private bool m_bInvincible = false;
+
     private float m_fTotalSpeed;
     private float m_fJumpForce;
 
@@ -311,14 +314,17 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))//낙하물 충돌
         {
-            float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
-            m_Status.Set_Damage(fDamage);
+            if (m_bInvincible == false)
+            {
+                float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
+                m_Status.Set_Damage(fDamage);
+            }
         }
         else if (collision.gameObject.CompareTag("Goal"))
         {
             m_ClearUI.Activate_and_Over();
         }
-        else if( collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("Ground"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
@@ -351,6 +357,42 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
+    }
+
+    public void Resume()
+    {
+        m_Animator.Play("Idle");
+        m_Status.PV_Reset();
+        //아이템 리셋은 X
+    }
+    //아이템 관련
+    //즉부, 즉사, 무적, 포션, 아드레날린
+    public void Immediate_Resume()//GameMgr에서 실행 하면 해당 함수 불러서 체력 등 다시 세팅
+    {
+        m_Animator.Play("Idle");
+        m_Status.Reset_HP();
+        m_Status.Reset_Stamina();
+    }
+
+    public void Immediate_Death()//죽는게 바로 옴 + 무적 상태를 카운터로 하는게 좋을 것 같다는 생각이 든다.
+    {//다른 플레이어가 이 함수를 실행해서 바로 죽는걸로
+        m_Status.Set_Damage(m_Status.Get_MaxHP());
+    }
+ 
+
+    public void Recover_Potion()
+    {
+        m_Status.Recover_HP(m_Status.Get_MaxHP());
+    }
+    //일정 시간동안 유지. true false로 껐다 키는 기능으로
+    public void Adrenaline(bool OnAdrenaline)//일단 달리기 빨라지는걸로
+    {
+        m_bAdrenaline = OnAdrenaline;
+    }
+
+    public void Invincible(bool bInvincible)//무적 상태(그냥 상처만 안받는 상태인가?)
+    {
+        m_bInvincible = bInvincible;
     }
 
 }

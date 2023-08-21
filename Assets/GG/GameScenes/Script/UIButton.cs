@@ -150,7 +150,6 @@ public class UIButton : MonoBehaviour
     {
         //InfoHandler.Instance.Clear_HoldingItem();
         NetworkManager.Instance.LeaveRoom();
-        GameMgr.Instance.Destroy_Myself();
        
         //GameMgr.Instance.Destroy_Player(); // NetwordManager에서 방 나갈때 autoCleanUp으로 player를 삭제, 전에 player 삭제하면 문제 생겨서 방 못나감
     }

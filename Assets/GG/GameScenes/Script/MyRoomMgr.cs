@@ -53,7 +53,7 @@ public class MyRoomMgr : MonoBehaviour
         m_CurrStatus = m_Avatar[m_CurrAvatar].GetComponent<AvatarStatus>();
 
         int iSlotIndex = 0;
-        for(int i=0;i<(int)Item.ITEM.END;++i)
+        for(int i=0;i<(int)StoreItem.ITEM.END;++i)
         {
             if(InfoHandler.Instance.Get_Item_Num(i) >0)
             {
