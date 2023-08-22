@@ -55,9 +55,20 @@ public class InGameUIMgr : MonoBehaviour
     {
         
     }
+    public void Set_PlayerStatus(Player LocalPlayer)
+    {
+        m_StatusUI.m_PlayerStatus =LocalPlayer.GetComponentInChildren<CharacterStatus>();
+
+    }
     public void Set_Item(int iIndex, StoreItem iInput)
     {
         m_StoreItemSlots[iIndex].Set_Item(iInput);
+
+        if(iInput.Get_ItemIndex() != (int)StoreItem.ITEM.END)
+        {
+            Debug.Log("ºÒ·ÁÁü!" + iInput.Get_ItemIndex());
+            m_StoreItemSlots[iIndex].Set_IconImage(InfoHandler.Instance.Get_ItemIcon(iInput.Get_ItemIndex()));
+        }
     }
-    
+     
 }

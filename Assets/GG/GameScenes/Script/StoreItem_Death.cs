@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class StoreItem_Death : StoreItem
 {
+
+    public StoreItem_Death() : base()
+    {
+        m_eIndex = ITEM.DEATH;
+        Debug.Log("Death!");
+    }
+    ~StoreItem_Death()
+    {
+        Debug.Log("»ç¶óÁü!");
+    }
     // Start is called before the first frame update
     void Start()
     {

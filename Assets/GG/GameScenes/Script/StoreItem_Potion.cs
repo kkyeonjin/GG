@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class StoreItem_Potion: StoreItem
 {
+
+    public StoreItem_Potion() : base()
+    {
+        m_eIndex = ITEM.POSTION;
+        Debug.Log("Potion!");
+
+    }
+    ~StoreItem_Potion()
+    {
+        Debug.Log("»ç¶óÁü!");
+    }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         m_eIndex = ITEM.POSTION;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         
     }

@@ -53,9 +53,8 @@ public class Player : MonoBehaviour
             
             if (m_PV.IsMine)
             {//멀티모드일때만 
-                
-                GameMgr.Instance.m_LocalPlayerObj = this.gameObject;
-                GameMgr.Instance.m_LocalPlayer = this;
+
+                GameMgr.Instance.Set_LocalPlayer(this);
                 GameMgr.Instance.Set_Camera();
                 
 

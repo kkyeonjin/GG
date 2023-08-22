@@ -4,9 +4,10 @@ using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
 using UnityEngine.UI;
-using Photon.Pun;
-public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
-{
+
+
+public class GameMgr : MonoBehaviour
+{    
     public static GameMgr m_Instance = null;
 
     public Player m_LocalPlayer;
@@ -42,39 +43,58 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         {
             //인게임일 때 아이템들 아이콘, 인스턴스 등 생성
             int[,] HoldingItem = InfoHandler.Instance.Get_HoldingItem();
+            m_ItemSlot = new StoreItem[2];    
             
-            for(int i=0;i<2;++i)
+            for (int i=0;i<2;++i)
             {
-                m_ItemSlot[i] = Create_ItemInstance(HoldingItem[i, 0]);
+                int itemIndex = HoldingItem[i, 0];
+
+                switch (itemIndex)
+                {
+                    case 0:
+                        {
+                            m_ItemSlot[i] = Get_Instance<StoreItem_Resume>();
+                            Debug.Log(m_ItemSlot[i]);
+                            break;
+                        }
+                    case 1:
+                        {
+                            m_ItemSlot[i] = Get_Instance<StoreItem_Death>();
+                            Debug.Log(m_ItemSlot[i]);
+                            break;
+                        }
+                    case 2:
+                        {
+                            m_ItemSlot[i] = Get_Instance<StoreItem_Adrenaline>();
+                            Debug.Log(m_ItemSlot[i]);
+                            break;
+                        }
+                    case 3:
+                        {
+                            m_ItemSlot[i] = Get_Instance<StoreItem_Potion>();
+                            Debug.Log(m_ItemSlot[i]);
+
+                            break;
+                        }
+                    case 4:
+                        {
+                            m_ItemSlot[i] = Get_Instance<StoreItem_Invincible>();
+                            Debug.Log(m_ItemSlot[i]);
+                            break;
+                        }
+
+                }
+
+                if (m_ItemSlot[i] == null)
+                    m_ItemSlot[i] = Get_Instance<StoreItem>();
+
                 m_ItemSlot[i].Set_Num(HoldingItem[i, 1]);
+
                 InGameUIMgr.Instance.Set_Item(i, m_ItemSlot[i]);
-                Debug.Log("불렸다!");
+               
             }
+            Debug.Log(m_ItemSlot[0] + " " + m_ItemSlot[1]);
         }
-    }
-    private StoreItem Create_ItemInstance(int itemIndex)
-    {
-        StoreItem Temp;
-        
-        switch(itemIndex)
-        {
-            case 0:
-                Temp = new StoreItem_Resume();
-                return Temp;
-            case 1:
-                Temp = new StoreItem_Death();
-                return Temp;
-            case 2:
-                Temp = new StoreItem_Adrenaline();
-                return Temp;
-            case 3:
-                Temp = new StoreItem_Potion();
-                return Temp;
-            case 4:
-                Temp = new StoreItem_Invincible();
-                return Temp;
-        }
-        return new StoreItem();
     }
 
     public static GameMgr Instance
@@ -88,13 +108,19 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
             return m_Instance;
         }
     }
-
+//////////////////////멀티 버전에서 사용하는 함수//////////////////////////////////////////////////
     public void Load_LocalPlayer(Vector3 vStartPoint)
     {
         Debug.LogWarning("호출");
         NetworkManager.Instance.Instantiate_Player(vStartPoint);
     }
-
+    public void Set_LocalPlayer(Player LocalPlayer)
+    {
+        m_LocalPlayer = LocalPlayer;
+        m_LocalPlayerObj = LocalPlayer.gameObject;
+        if (m_bInGame)
+            InGameUIMgr.Instance.Set_PlayerStatus(m_LocalPlayer);
+    }
     public void Set_Camera()
     {
 
@@ -102,16 +128,23 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         if(null!=Temp && null != m_LocalPlayer)
             m_LocalPlayer.Set_Camera(Temp);        
     }
-
+    
     public void Change_Avatar(int iIndex)
     {
         m_LocalPlayer.GetComponentInChildren<ChangeAvatar>().Change_Avatar(iIndex);
     }
-
-    public void OnPhotonSerializeView(PhotonStream photonstream, PhotonMessageInfo photonmessageinfo)
+    public void BroadCast_Death()//아이템 쓴 당사자가 부를 함수
     {
-
+        m_PV.RPC("MakeLocalPlayer_Die", RpcTarget.Others);
     }
+    
+    [PunRPC]
+    void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
+    {
+        m_LocalPlayer.Immediate_Death();    
+    }
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////
 
     public void Reward_Player()//게임 끝난후 로비로 돌아감(멀티)
     {
@@ -144,15 +177,14 @@ public class GameMgr : MonoBehaviourPunCallbacks, IPunObservable
         //        m_ItemSlot[2].Use_Item();
         //}
     }
-
-    public void BroadCast_Death()//아이템 쓴 당사자가 부를 함수
-    {
-        m_PV.RPC("MakeLocalPlayer_Die", RpcTarget.Others);
-    }
     
-    [PunRPC]
-    void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
+    public T Get_Instance<T>()
     {
-        m_LocalPlayer.Immediate_Death();    
+        GameObject gameobject = new GameObject();
+        gameobject.AddComponent(typeof(T));
+
+        T Instance = gameobject.GetComponent<T>();
+
+        return Instance;
     }
 }

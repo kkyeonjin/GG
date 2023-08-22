@@ -34,9 +34,9 @@ public class InfoHandler : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         m_HoldingItem = new int[2, 2];
-        m_HoldingItem[0, 0] = -1;
-        m_HoldingItem[1, 0] = -1;
+        m_HoldingItem[0, 0] = (int)StoreItem.ITEM.END;
         m_HoldingItem[0, 1] = -1;
+        m_HoldingItem[1, 0] = (int)StoreItem.ITEM.END;
         m_HoldingItem[1, 1] = -1;
 
         m_SlotIndex = new int[2];
@@ -89,7 +89,7 @@ public class InfoHandler : MonoBehaviour
         {
             if (m_SlotIndex[i] > -1)
             {
-                if (Get_Item_Num(m_HoldingItem[i, 0]) > 0)
+                if (Get_Item_Num(m_HoldingItem[i, 0]) != (int)StoreItem.ITEM.END)
                 {
                     m_HoldingItemUI[i].Set_Image(Get_ItemIcon(m_HoldingItem[i, 0]));
                     m_HoldingItemUI[i].Have_Items(true);
@@ -97,7 +97,7 @@ public class InfoHandler : MonoBehaviour
                 }
                 else
                 {//다 써서 비어있음
-                    m_HoldingItem[i, 0] = -1;
+                    m_HoldingItem[i, 0] = (int)StoreItem.ITEM.END;
                     m_HoldingItem[i, 1] = -1;
                     m_SlotIndex[i] = -1;
                 }
@@ -124,7 +124,7 @@ public class InfoHandler : MonoBehaviour
 
         for (int i = 0; i < 2; ++i)
         {
-            if (m_HoldingItem[i, 0] == -1)
+            if (m_HoldingItem[i, 0] == (int)StoreItem.ITEM.END)
             {
                 m_HoldingItem[i, 0] = iInput.Get_Index();//아이템 타입 enum저장
                 m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
@@ -138,7 +138,7 @@ public class InfoHandler : MonoBehaviour
     }
     public void Set_Unholding(int iIndex)
     {
-        m_HoldingItem[iIndex, 0] = -1;
+        m_HoldingItem[iIndex, 0] = (int)StoreItem.ITEM.END;
         m_HoldingItem[iIndex, 1] = -1;
 
         m_SelectItemUI[m_SlotIndex[iIndex]].Slot_Selected(false);
@@ -148,9 +148,9 @@ public class InfoHandler : MonoBehaviour
 
     public void Clear_HoldingItem()
     {
-        m_HoldingItem[0, 0] = -1;
-        m_HoldingItem[1, 0] = -1;
+        m_HoldingItem[0, 0] = (int)StoreItem.ITEM.END;
         m_HoldingItem[0, 1] = -1;
+        m_HoldingItem[1, 0] = (int)StoreItem.ITEM.END;
         m_HoldingItem[1, 1] = -1;
 
         m_SlotIndex[0] = -1;

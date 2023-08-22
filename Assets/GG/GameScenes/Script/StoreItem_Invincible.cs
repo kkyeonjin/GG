@@ -6,14 +6,25 @@ public class StoreItem_Invincible : StoreItem
 {
     private float m_fDuration;
     private float m_fDurationTimer;
+
+    public StoreItem_Invincible() : base()
+    {
+        m_eIndex = ITEM.INVINCIBLE;
+        Debug.Log("Invincible!");
+
+    }
+    ~StoreItem_Invincible()
+    {
+        Debug.Log("»ç¶óÁü!");
+    }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         m_eIndex = ITEM.INVINCIBLE;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         m_fDurationTimer += Time.deltaTime;
         if (m_fDurationTimer >= m_fDuration)

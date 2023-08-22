@@ -7,7 +7,17 @@ public class StoreItem_Adrenaline : StoreItem
     private float m_fDuration;
     private float m_fDurationTimer;
     // Start is called before the first frame update
-    void Start()
+    public StoreItem_Adrenaline() : base()
+    {
+        m_eIndex = ITEM.ADRENALINE;
+        Debug.Log("Adrenaline!");
+
+    }
+    ~StoreItem_Adrenaline()
+    {
+        Debug.Log("»ç¶óÁü!");
+    }
+    protected override void Start()
     {
         m_eIndex = ITEM.ADRENALINE;
     }

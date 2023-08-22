@@ -7,19 +7,25 @@ public class StoreItem : MonoBehaviour
     public enum ITEM { RESUME, DEATH, ADRENALINE, POSTION, INVINCIBLE, END };
 
     private int m_iNum;
-    protected ITEM m_eIndex = ITEM.END;
+    protected ITEM m_eIndex;
 
-    protected float m_fCoolTime;
-    protected float m_fTimer;
+    protected float m_fCoolTime=1f;
+    protected float m_fTimer=1f;
 
     protected bool m_bUsable;
 
-    void Start()
+    public StoreItem()
     {
-        
+        Debug.Log("storeItem 생성!");
+        m_eIndex = ITEM.END;
+    }
+
+    protected virtual void Start()
+    {
+       
     }
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
@@ -49,6 +55,7 @@ public class StoreItem : MonoBehaviour
 
     public virtual void Use_Item()
     {
+        Debug.Log("호출! " + m_eIndex);
         m_bUsable = false;
         m_fTimer = 0f;
     }

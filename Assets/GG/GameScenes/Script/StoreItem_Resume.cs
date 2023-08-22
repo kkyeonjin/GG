@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class StoreItem_Resume : StoreItem
 {
+
+    public StoreItem_Resume() : base()
+    {
+        m_eIndex = ITEM.RESUME;
+        Debug.Log("Resume!");
+
+    }
+    ~StoreItem_Resume()
+    {
+        Debug.Log("»ç¶óÁü!");
+    }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         m_eIndex = ITEM.RESUME;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         
     }
