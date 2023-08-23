@@ -18,13 +18,14 @@ public class StoreItem_Resume : StoreItem
     // Start is called before the first frame update
     protected override void Start()
     {
+    
         m_eIndex = ITEM.RESUME;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
     public override void Use_Item()
     {

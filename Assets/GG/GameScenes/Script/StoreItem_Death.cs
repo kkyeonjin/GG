@@ -15,15 +15,15 @@ public class StoreItem_Death : StoreItem
         Debug.Log("»ç¶óÁü!");
     }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         m_eIndex = ITEM.DEATH;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
     }
 
     public override void Use_Item()

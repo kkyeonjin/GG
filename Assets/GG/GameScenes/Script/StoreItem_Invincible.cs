@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StoreItem_Invincible : StoreItem
 {
-    private float m_fDuration;
-    private float m_fDurationTimer;
 
     public StoreItem_Invincible() : base()
     {
@@ -21,19 +19,40 @@ public class StoreItem_Invincible : StoreItem
     protected override void Start()
     {
         m_eIndex = ITEM.INVINCIBLE;
+        m_fDuration = 1f;
+        m_fDurationTimer = 0f;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        m_fDurationTimer += Time.deltaTime;
-        if (m_fDurationTimer >= m_fDuration)
-            GameMgr.Instance.m_LocalPlayer.Invincible(false);
+        if (m_bActivate)
+        {
+            m_fDurationTimer += Time.deltaTime;
+
+            if (m_fDurationTimer >= m_fDuration)
+            {
+                GameMgr.Instance.m_LocalPlayer.Invincible(false);
+                m_bActivate = false;
+                StartUpdate_Cooltime();
+            } 
+        }
+        else 
+        { 
+            base.Update();
+        }
     }
 
     public override void Use_Item()
     {
-        base.Use_Item();
+       
         GameMgr.Instance.m_LocalPlayer.Invincible(true);
+        m_bActivate = true;
+        m_fDurationTimer = 0f;
+
+    }
+    private void StartUpdate_Cooltime()
+    {
+        base.Use_Item();
     }
 }

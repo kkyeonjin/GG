@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1371648909}
-  m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
+  m_Material: {fileID: 2100000, guid: 38f2f0a893f30b641ad283add97c07f3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 1}
   m_fTotalTime: 1
@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 2036067040}
-  m_Material: {fileID: 2100000, guid: a17a0e31f2c180144bc3eb5b57177a01, type: 2}
+  m_Material: {fileID: 2100000, guid: 38f2f0a893f30b641ad283add97c07f3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 1}
   m_fTotalTime: 1

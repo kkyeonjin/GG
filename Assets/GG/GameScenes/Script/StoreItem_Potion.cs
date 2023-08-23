@@ -24,7 +24,7 @@ public class StoreItem_Potion: StoreItem
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
 
     public override void Use_Item()

@@ -12,7 +12,12 @@ public class StoreItem : MonoBehaviour
     protected float m_fCoolTime=1f;
     protected float m_fTimer=1f;
 
-    protected bool m_bUsable;
+    protected bool m_bUsable = true;
+
+    protected float m_fDuration;
+    protected float m_fDurationTimer;
+
+    protected bool m_bActivate = false;
 
     public StoreItem()
     {
@@ -27,11 +32,19 @@ public class StoreItem : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        if (m_bUsable==false && m_fCoolTime > m_fTimer)
+            m_fTimer += Time.deltaTime;
+        else
+            m_bUsable = true;
     }
     public float Get_CoolTime_Ratio()//ui 쿨타임 표시용
     {
         return m_fTimer / m_fCoolTime;
+    }
+
+    public bool Get_Activated()
+    {
+        return m_bActivate;
     }
 
     public void Set_Num(int iNum)

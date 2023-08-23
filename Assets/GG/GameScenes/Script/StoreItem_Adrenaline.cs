@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class StoreItem_Adrenaline : StoreItem
 {
-    private float m_fDuration;
-    private float m_fDurationTimer;
+  
     // Start is called before the first frame update
     public StoreItem_Adrenaline() : base()
     {
@@ -20,19 +19,38 @@ public class StoreItem_Adrenaline : StoreItem
     protected override void Start()
     {
         m_eIndex = ITEM.ADRENALINE;
+        m_fDuration = 1f;
+        m_fDurationTimer = 0f;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        m_fDurationTimer += Time.deltaTime;
-        if (m_fDurationTimer >= m_fDuration)
-            GameMgr.Instance.m_LocalPlayer.Adrenaline(false);
+        if (m_bActivate)
+        {
+            m_fDurationTimer += Time.deltaTime;
+
+            if (m_fDurationTimer >= m_fDuration)
+            {
+                GameMgr.Instance.m_LocalPlayer.Adrenaline(false);
+                m_bActivate = false;
+                StartUpdate_Cooltime();
+            }
+        }
+        else
+        {
+            base.Update();
+        }
     }
 
     public override void Use_Item()
     {
-        base.Use_Item();
         GameMgr.Instance.m_LocalPlayer.Adrenaline(true);
+        m_bActivate = true;
+        m_fDurationTimer = 0f;
+    }
+    private void StartUpdate_Cooltime()
+    {
+        base.Use_Item();
     }
 }
