@@ -16,6 +16,7 @@ public class GameMgr : MonoBehaviour
     
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
+    public List<ParticipantInfo> Ranking;//인게임에서 랭킹용으로
     private StoreItem[] m_ItemSlot;
 
     void Awake()
@@ -155,7 +156,11 @@ public class GameMgr : MonoBehaviour
 
     //////////인게임에서 쓰일 함수들//././///////
     void Update()
-    {//임시로 키 만들어놓음
+    {
+        if (false == m_bInGame)
+            return;
+
+        //임시로 키 만들어놓음
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (m_ItemSlot[0].Is_Usable())

@@ -54,6 +54,11 @@ MonoBehaviour:
   - Remove_SpawnPosIndex
   - Update_HP
   - MakeLocalPlayer_Die
+  - Update_Slot
+  - Ready
+  - Player_Exit
+  - Player_Join
+  - Update_PlayerList
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

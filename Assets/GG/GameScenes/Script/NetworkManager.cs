@@ -151,10 +151,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
-    {
+    {//대기실에서만 사용되는 함수이기 때문에
         Debug.Log("방장 바뀜!!");
         if (newMasterClient == PhotonNetwork.LocalPlayer)
+        {
             StartButton.SetActive(true);
+            WaitingRoomMgr.Instance.Change_MasterClient();
+        }
     }
     //마스터 클라이언트가 다른 클라이언트 위치 지정
     //======================================================
