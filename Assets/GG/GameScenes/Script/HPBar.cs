@@ -17,22 +17,28 @@ public class HPBar : MonoBehaviour
     {
         if (GameMgr.Instance.m_bInGame == true)
         {
-            if (m_PV != null)
+
+            if (!m_PV.IsMine)
             {
-                if (!m_PV.IsMine)
-                {
-                    m_MainCamTransform = Camera.main.transform;
-                    m_Image.material = Instantiate(InstanceMaterial);
-                }
-                else
-                    gameObject.SetActive(false);
+                m_MainCamTransform = Camera.main.transform;
+                m_Image.material = Instantiate(InstanceMaterial);
             }
+            else
+                gameObject.SetActive(false);
+
         }
+        else
+            gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 vLocalPlayerPos = GameMgr.Instance.m_LocalPlayer.transform.position;
+        Vector3 vThisPos = transform.position;
+
+        
+
         if(m_PV)
             m_PV.RPC("Update_HPBar", RpcTarget.All);
     }
