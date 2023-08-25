@@ -32,7 +32,7 @@ public class ItemScan : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                Destroy(hitInfo.transform.gameObject);
+                //Destroy(hitInfo.transform.gameObject);
             }
         }
 

@@ -17,6 +17,7 @@ public class PickableItem : MonoBehaviour
         {
             if(Inventory.instance.inventory[i] == 0)
             {
+                Inventory.instance.inv[i] = this.gameObject;
                 Inventory.instance.inventory[i] = itemNum;
                 Inventory.instance.invIcons[i].sprite = icon;
 
@@ -27,15 +28,7 @@ public class PickableItem : MonoBehaviour
     
     public void ItemUse()
     {
-        switch(itemNum)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                break;
-        }
+        Debug.Log("sssssss");
     }
     // Update is called once per frame
     void Update()
