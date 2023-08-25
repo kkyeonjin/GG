@@ -56,21 +56,7 @@ public class WaitingRoomMgr : MonoBehaviour
         for (int i = 0; i < NetworkManager.m_iMaxPlayer; ++i)
             PosAssignable.Add(i);
 
-        //if (PhotonNetwork.IsMasterClient == true)
-        //{
-        //    int RandomValue = Random.Range(0, PosAssignable.Count);
-        //    iSpawnPosIndex = PosAssignable[RandomValue];
-
-        //    GameMgr.Instance.Load_LocalPlayer(StartPoints[iSpawnPosIndex].transform.position);
-        //    PosAssignable.RemoveAt(RandomValue);
-
-        //    PlayerList.Add(PhotonNetwork.LocalPlayer, InfoHandler.Instance.Get_Level());
-        //    Update_PlayerList();
-        //}
-        //else
-        //{
-            m_PV.RPC("Assign_SpawnPosition", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer,InfoHandler.Instance.Get_Level());
-        //}
+        m_PV.RPC("Assign_SpawnPosition", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer,InfoHandler.Instance.Get_Level());       
     }
 
     public void Return_PosIndex()//플레이어가 나감
@@ -91,10 +77,9 @@ public class WaitingRoomMgr : MonoBehaviour
     {
         int RandomValue = Random.Range(0, PosAssignable.Count);
         int PosIdx = PosAssignable[RandomValue];
-        PosAssignable.RemoveAt(RandomValue);
 
         m_PV.RPC("Load_LocalPlayer", newPlayer, StartPoints[PosIdx].transform.position, PosIdx);
-        m_PV.RPC("Player_Join", RpcTarget.Others, RandomValue,Level);
+        m_PV.RPC("Player_Join", RpcTarget.All, RandomValue,newPlayer,Level);
 
         Update_PlayerList();
 
