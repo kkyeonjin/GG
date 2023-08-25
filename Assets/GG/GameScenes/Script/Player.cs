@@ -328,9 +328,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollsionExit(Collision collision)
+    public void OnCollsionExit(Collision col)
     {
-        Debug.Log(collision.transform.name + "와 떨어짐");
+        Debug.Log(col.gameObject.name + "와 떨어짐");
     }
 
 }

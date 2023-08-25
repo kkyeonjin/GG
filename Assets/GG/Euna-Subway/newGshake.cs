@@ -62,16 +62,17 @@ public class newGshake : MonoBehaviour
         }
         */
 
-        /*
+        
         if (collision.rigidbody != null)
         {
             moveVecR_q = moveVecR * 50;
-            Debug.Log(moveVecR_q);
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(moveVecR_q);
+            //Debug.Log(collision.gameObject.name);
             collision.rigidbody.AddForce(moveVecR_q);
         }
-        */
+        
 
+        /*
         if (collision.collider.CompareTag("Player"))
         {
             GameObject player = collision.gameObject;
@@ -80,7 +81,7 @@ public class newGshake : MonoBehaviour
 
 
         }
-
+        */
 
     }
 }
