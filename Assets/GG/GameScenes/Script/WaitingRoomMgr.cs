@@ -11,10 +11,15 @@ public class WaitingRoomMgr : MonoBehaviour
     public List<GameObject> StartPoints;
 
     public List<ParticipantInfo> WaitingList;
-
     private Dictionary<Photon.Realtime.Player,int> PlayerList;
+    private Dictionary<Photon.Realtime.Player, bool> PlayerCheckReady;
+
+    public UIButton ExitButton;
+
     private List<int> PosAssignable;
     private int iSpawnPosIndex;
+
+    private int iListSlotIndex = -1;
 
     void Awake()
     {
@@ -51,6 +56,7 @@ public class WaitingRoomMgr : MonoBehaviour
     void Start()
     {
         PlayerList = new Dictionary<Photon.Realtime.Player, int>();
+        PlayerCheckReady = new Dictionary<Photon.Realtime.Player, bool>();
 
         PosAssignable = new List<int>();
         for (int i = 0; i < NetworkManager.m_iMaxPlayer; ++i)
@@ -61,15 +67,25 @@ public class WaitingRoomMgr : MonoBehaviour
 
     public void Return_PosIndex()//플레이어가 나감
     {
-        PosAssignable.Add(iSpawnPosIndex);
-        m_PV.RPC("Player_Exit", RpcTarget.Others, iSpawnPosIndex,PhotonNetwork.LocalPlayer);
-        m_PV.RPC("Update_PlayerList", RpcTarget.MasterClient);
-    }
+        if (PlayerList.Count > 1)
+        {
+            //플레이어가 룸을 나간 후에 해당 rpc 수행
+            m_PV.RPC("Player_Exit", RpcTarget.Others, iSpawnPosIndex, PhotonNetwork.LocalPlayer);
+        }
 
+        ExitButton.Exit_Room();
+    }
+   
     public void Change_MasterClient()//방장이 바뀌었을 때
     {
         Debug.Log("바뀌어서 불림!");
         Update_PlayerList();
+    }
+
+    public void Set_Ready()
+    {
+        WaitingList[iListSlotIndex].SetReady();
+        m_PV.RPC("PlayerReady", RpcTarget.All, PhotonNetwork.LocalPlayer);
     }
 
     [PunRPC]
@@ -94,22 +110,27 @@ public class WaitingRoomMgr : MonoBehaviour
         if (iSpawnIndex > -1)
             iSpawnPosIndex = iSpawnIndex;
     }
-    [PunRPC]
-    void Player_Exit(int iIndex, Photon.Realtime.Player ExitPlayer)//참가자 나갈 때
-    {
-        PosAssignable.Add(iIndex);
-        PlayerList.Remove(ExitPlayer);
-        Debug.Log("대기실 총 인원: " + PlayerList.Count);
-    }
+   
     [PunRPC]
     void Player_Join(int iIndex,Photon.Realtime.Player newPlayer, int Level)//참가자 들어올 때
     {
-        PosAssignable.RemoveAt(iIndex);
         PlayerList.Add(newPlayer, Level);
+        PlayerCheckReady.Add(newPlayer, false);
+
+        PosAssignable.RemoveAt(iIndex);
+    }
+    [PunRPC]
+    public void Player_Exit(int iIndex, Photon.Realtime.Player ExitPlayer)//참가자 나갈 때
+    {
+        PosAssignable.Add(iIndex);
+        PlayerList.Remove(ExitPlayer);
+        PlayerCheckReady.Remove(ExitPlayer);
+
+        Debug.Log("대기실 총 인원: " + PlayerList.Count);
     }
 
     [PunRPC]
-    void Update_PlayerList()//방장만 정리하면 됨
+    public void Update_PlayerList()//방장만 정리하면 됨
     {
 
         int num = PlayerList.Count;
@@ -118,14 +139,27 @@ public class WaitingRoomMgr : MonoBehaviour
             return;
 
         int iIndex = 0;
-
+        Photon.Realtime.Player MasterClient = PhotonNetwork.MasterClient;
+        
         foreach(Photon.Realtime.Player Key in PlayerList.Keys)
         {
             string name = Key.NickName;
             int level = PlayerList[Key];
-            WaitingList[iIndex++].Update_Participant(name, level, false, false);
+            WaitingList[iIndex].Update_Participant(name, level, false, (MasterClient == Key), PlayerCheckReady[Key]);
+            m_PV.RPC("Get_ListSlot_Index", Key, iIndex++);
         }
         for (int i = iIndex; i < 8; ++i)
             WaitingList[i].Vacate_Slot();
+    }
+    [PunRPC]
+    void PlayerReady(Photon.Realtime.Player ReadyPlayer)
+    {
+        bool State = PlayerCheckReady[ReadyPlayer];
+        PlayerCheckReady[ReadyPlayer] = !State;
+    }
+    [PunRPC]
+    void Get_ListSlot_Index(int iIndex)//ready 버튼 연결해야해서
+    {
+        iListSlotIndex = iIndex;
     }
 }

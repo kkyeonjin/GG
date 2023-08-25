@@ -13,10 +13,11 @@ public class SelectStageUI : MonoBehaviour
     public TextMeshProUGUI SelectedStage;
     public Image mapImage;
     public Sprite subway, apart;
-    
+    public SelectStageUI SelectingButton;
     // Start is called before the first frame update
 
     private int m_iStageIndex = 0;
+
     void Start()
     {
        
@@ -25,7 +26,15 @@ public class SelectStageUI : MonoBehaviour
     public void Multi_StartGame()
     {
         //NetworkManager.Instance.StartGame("Multi_Subway");
-        m_PV.RPC("StartGame", RpcTarget.All);
+        string SceneName = "";
+        m_iStageIndex = SelectingButton.Get_Index();
+        switch (m_iStageIndex)
+        {
+            case 0:
+                SceneName = "Multi_Subway";
+                break;
+        }
+        m_PV.RPC("StartGame", RpcTarget.All, SceneName);
     }
 
     public void Game_Start()//single mode
@@ -60,12 +69,28 @@ public class SelectStageUI : MonoBehaviour
         }
         //SelectedStage.text = sz_SelectedStage;
     }
+    public void ChangeStage_Multi()
+    {
+        m_iStageIndex = (m_iStageIndex + 1) % 1;
+        switch (m_iStageIndex)
+        {
+            case 0:
+                SelectedStage.text = "Subway";//잠깐 멀티로
+               // mapImage.sprite = subway;
 
+                break;
+        }
+    }
+    public int Get_Index()
+    {
+        return m_iStageIndex;
+    }
     //멀티 게임 임시
     [PunRPC]
-    void StartGame()
+    void StartGame(string SceneName)
     {
-        NetworkManager.Instance.StartGame("Multi_Subway");
+        
+        NetworkManager.Instance.StartGame(SceneName);
     }
     [PunRPC]
     void BacktoLobby()

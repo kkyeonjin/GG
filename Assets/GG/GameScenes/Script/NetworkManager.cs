@@ -105,9 +105,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        //모든 접속하는 플레이어에 대해서 실행
         Debug.Log("방 입장");
         PhotonNetwork.LoadLevel("MultiLobby");
+        //레벨을 로드 할 때 접속한 플레이어도 함께 불러옴, 그냥 loadscene하면 자기자신 들어오기 전 플레이어 못 불러옴
         
     }
     
@@ -121,19 +121,23 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("방 나가는중!");
         m_RoomCode = null;
         ChangeMasterClient();
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
-        //SceneManager.LoadScene("RoomCode");
+        PhotonNetwork.LeaveRoom();//연결이 모두 끊기면 알아서 photonNetwork.LoadLevel로 한 씬 모두 벗어남
+        //PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
+        SceneManager.LoadScene("RoomCode");
         
     }
     public override void OnLeftRoom()
     {
         Debug.Log("방 나감");
+        //SceneManager.LoadScene("RoomCode");
+
     }
 
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         Debug.Log("플레이어 나감!" + otherPlayer.NickName);
+        if (PhotonNetwork.IsMasterClient)
+            WaitingRoomMgr.Instance.Update_PlayerList();
     }
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
@@ -161,6 +165,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     //마스터 클라이언트가 다른 클라이언트 위치 지정
     //======================================================
+
+    public void OnPlayerDisconnected(Photon.Realtime.Player player)
+    {
+
+    }
     public void LeaveLobby()
     {
         Debug.Log("로비 나가는 중");
