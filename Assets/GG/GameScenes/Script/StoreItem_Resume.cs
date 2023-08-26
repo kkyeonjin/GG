@@ -29,7 +29,11 @@ public class StoreItem_Resume : StoreItem
     }
     public override void Use_Item()
     {
-        //죽었을 때만 실행되도록
+       
+    }
+
+    public void Consume_Item()//실제 사용
+    {
         base.Use_Item();
         GameMgr.Instance.m_LocalPlayer.Immediate_Resume();
     }

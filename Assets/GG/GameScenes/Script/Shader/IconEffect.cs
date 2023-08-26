@@ -10,7 +10,7 @@ public class IconEffect : UIEffect
 
     public float m_fTotalLength;
     public bool m_bIsStatbar;
-
+    public float m_fRatio=0;
 
     private float m_fStartYPos;
     // Start is called before the first frame update
@@ -22,14 +22,17 @@ public class IconEffect : UIEffect
         if(m_bIsStatbar)
         {
             m_Image.material = Instantiate(m_Material);
-            m_fTotalTime = 1f;
+            m_fRatioDest = m_fRatio / m_fTotalLength;
 
+            m_fPassedTime = 0;
+            m_fRatioSour = 0;
         }
     }
 
     private void OnDisable()
     {
-        m_fTotalTime = 0;
+        m_fPassedTime = 0;
+        m_fRatioSour = 0;
     }
     // Update is called once per frame
     private void Update()

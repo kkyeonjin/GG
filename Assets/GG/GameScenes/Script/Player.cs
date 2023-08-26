@@ -358,7 +358,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Resume()
+    public void Resume()//거점 부활 햇을 때
     {
         m_Animator.Play("Idle");
         m_Status.PV_Reset();

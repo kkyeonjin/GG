@@ -166,7 +166,6 @@ public class GameMgr : MonoBehaviour
             if (m_ItemSlot[0].Is_Usable())
             {
                 m_ItemSlot[0].Use_Item();
-                //InGameUIMgr.Instance.Use_Item();
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
