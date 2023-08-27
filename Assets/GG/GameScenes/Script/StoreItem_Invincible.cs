@@ -49,6 +49,7 @@ public class StoreItem_Invincible : StoreItem
         GameMgr.Instance.m_LocalPlayer.Invincible(true);
         m_bActivate = true;
         m_fDurationTimer = 0f;
+        m_Effect.Activate_Item();
 
     }
     private void StartUpdate_Cooltime()

@@ -13,13 +13,14 @@ public class ItemSlotEffect : UIEffect
     private delegate void CalculateEffectValue();
     CalculateEffectValue m_CalcValue;
 
-    private float m_fHighlighting;
+    private float m_fHighlighting=0;
     
     // Start is called before the first frame update
     void Start()
     {
         m_CalcValue = Empty;
         m_fCurrRatio = 1f;
+        ActivateParticle.SetActive(false);
     }
 
     public void Set_Item(StoreItem iInput)
