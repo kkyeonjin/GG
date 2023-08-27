@@ -25,6 +25,7 @@ public class MyRoomMgr : MonoBehaviour
     public TextMeshProUGUI m_PlayerInfo;
     public TextMeshProUGUI m_PlayerExp;
     public IconEffect m_PlayerExpImage;
+    public TextMeshProUGUI m_PlayerMoney;
 
     public IconEffect[] m_StatusBar;
 
@@ -105,6 +106,8 @@ public class MyRoomMgr : MonoBehaviour
 
         m_PlayerExpImage.Set_TotalLength(InfoHandler.Instance.Get_ExpMax());
         m_PlayerExpImage.Set_LengthRatio(InfoHandler.Instance.Get_Exp());
+
+        m_PlayerMoney.text = "" + InfoHandler.Instance.Get_Money();
     }
 
 }

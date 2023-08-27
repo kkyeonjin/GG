@@ -41,7 +41,9 @@ Shader "UI/UIEffect"
             if (col.a < 0.5f)
                 discard;
            
-            col.rgb = lerp(g_vOriginColor,g_vColor,g_fLerpRatio);
+            half4 LerpColor = lerp(g_vOriginColor,g_vColor,g_fLerpRatio);
+
+            col.rgb *= LerpColor;
             return col;
         }
 
