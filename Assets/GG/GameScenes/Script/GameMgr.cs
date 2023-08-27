@@ -163,12 +163,12 @@ public class GameMgr : MonoBehaviour
         //임시로 키 만들어놓음
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (m_ItemSlot[0].Is_Usable())
+            if (m_ItemSlot[0].Is_Usable() && (false == m_ItemSlot[0].Get_Activated()))
             {
                 m_ItemSlot[0].Use_Item();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2)&&(false == m_ItemSlot[1].Get_Activated()))
         {
             if (m_ItemSlot[1].Is_Usable())
             {

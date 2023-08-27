@@ -8,9 +8,10 @@ Shader "UI/ItemIconEffect"
         CGINCLUDE            
     #include "UnityCG.cginc"
 
-            sampler2D _MainTex;
-    sampler2D _MaskingTex;
+    sampler2D _MainTex;
+    sampler2D _CoolTimeMaskingTex;
     float g_fLerpRatio;
+    float g_fHighlightingRatio;
     float4 g_vOriginColor;
     float4 g_vColor;
 
@@ -39,9 +40,10 @@ Shader "UI/ItemIconEffect"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-            //half4 Masking = tex2D(_MaskingTex, i.uv);
+                half CoolTimeMasking = tex2D(_CoolTimeMaskingTex, i.uv).r;
                 
-                col.rgb *= (i.uv.x > g_fLerpRatio ? 0.5f : 1.f);
+                col.rgb *= (CoolTimeMasking > g_fLerpRatio ? 0.5f : 1.f);
+                col.rgb = col.rgb + 0.5f * g_fHighlightingRatio;
 
                 return col;
             }
