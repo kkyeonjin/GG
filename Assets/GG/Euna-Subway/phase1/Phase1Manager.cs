@@ -25,6 +25,7 @@ public class Phase1Manager : MonoBehaviour
     /// (2) 열차 문 비상 개방 : 비상 콕크 
     /// 
     /// </summary>
+    /// 
     public enum ClearCondtion
     {
         lever, //비상핸들 돌리기
@@ -36,6 +37,13 @@ public class Phase1Manager : MonoBehaviour
     private void Awake()
     {
 
+    }
+
+    public GameObject B2;
+
+    private void Start()
+    {
+        //B2.GetComponent<subwayRunning>();
     }
 
     private void Update()
