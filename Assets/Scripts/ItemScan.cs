@@ -8,6 +8,7 @@ public class ItemScan : MonoBehaviour
 {
     //public TMP_Text pressText;
     public Image ItemInfo;
+    public GameObject pickedItem;
 
     [SerializeField]
     float range;
@@ -32,7 +33,8 @@ public class ItemScan : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                //Destroy(hitInfo.transform.gameObject);
+                hitInfo.transform.gameObject.transform.SetParent(pickedItem.transform);
+                hitInfo.transform.gameObject.SetActive(false);
             }
         }
 

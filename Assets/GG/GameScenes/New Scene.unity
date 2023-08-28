@@ -2558,6 +2558,20 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 8ed5c6769b2beef40b47619a2c4818e7, type: 3}
   ItemInfo: {fileID: 0}
   itemNum: 4
+  disposable: 0
+--- !u!114 &200608738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200608732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3b8f7a8999a9349acca8bea758d6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireParticle: {fileID: 346896624}
 --- !u!1001 &206748109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4445,7 +4459,7 @@ GameObject:
   - component: {fileID: 346896625}
   - component: {fileID: 346896628}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: FireExParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15428,6 +15442,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f7be86ca5888ec043a0cbb77bf19669d, type: 3}
   ItemInfo: {fileID: 0}
   itemNum: 2
+  disposable: 0
 --- !u!4 &772308177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7057576510747632375, guid: 63a4bfb3db6788443be409fdf3d242e1,
@@ -17990,6 +18005,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 0f27137b606d11b48ab55dcdbf4c9170, type: 3}
   ItemInfo: {fileID: 0}
   itemNum: 3
+  disposable: 0
 --- !u!4 &1034392298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7260812257964592436, guid: 8743a8f691c5173469472e7daad546ea,
@@ -19290,6 +19306,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2054707807}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1144070448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144070449}
+  m_Layer: 0
+  m_Name: PickedItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1144070449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144070448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4214121, y: -8.807167, z: 21.2556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1145248247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8748298838005491691, guid: c5046647cb43dda40aa80ee5e1a82335,
@@ -23106,7 +23153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemInfo: {fileID: 2101818989}
-  range: 15
+  pickedItem: {fileID: 1144070448}
+  range: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -28619,6 +28667,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 8e200a40ec3c70148a147f87c796390d, type: 3}
   ItemInfo: {fileID: 0}
   itemNum: 1
+  disposable: 0
 --- !u!4 &1545971763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483320327343210486, guid: 1a8020f03cae4bd4f9c0b9e2f73f651e,

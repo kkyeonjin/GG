@@ -8,12 +8,13 @@ public class Inventory : MonoBehaviour
 {
 
     public static Inventory instance;
-    public List<int> inventory = new List<int>() { 0, 0, 0 }; //item고유 number가 있어 숫자를 배열에 저장
-    public List<GameObject> inv = new List<GameObject>(new GameObject[3]);
+    public List<int> invNums = new List<int>() { 0, 0, 0 }; //item고유 number가 있어 숫자를 배열에 저장
+    public List<PickableItem> invScripts = new List<PickableItem>(new PickableItem[3]);
     public List<Image> invIcons = new List<Image>(new Image[3]);
     public int activeNum = 0;
     public int activeItem;
 
+    
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -45,7 +46,7 @@ public class Inventory : MonoBehaviour
 
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
             invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            activeItem = inventory[activeNum];
+            activeItem = invNums[activeNum];
 
             
         }
@@ -55,11 +56,8 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if(inventory.Count > 0 )
+            if( invScripts[activeNum].disposable )
             {
-                Debug.Log("use");
-
-                
                 switch (activeNum)
                 {
                     case 0:
@@ -68,23 +66,23 @@ public class Inventory : MonoBehaviour
                         invIcons[1].sprite = invIcons[2].sprite;
                         invIcons[2].sprite = null;
                         //inventory rearrange
-                        inventory[0] = inventory[1];
-                        inventory[1] = inventory[2];
-                        inventory[2] = 0;
+                        invNums[0] = invNums[1];
+                        invNums[1] = invNums[2];
+                        invNums[2] = 0;
                         break;
                     case 1:
                         //icon rearrange
                         invIcons[1].sprite = invIcons[2].sprite;
                         invIcons[2].sprite = null;
                         //inventory rearrange
-                        inventory[1] = inventory[2];
-                        inventory[2] = 0;
+                        invNums[1] = invNums[2];
+                        invNums[2] = 0;
                         break;
                     default:
                         //icon rearrange
                         invIcons[activeNum].sprite = null;
                         //inventory rearrange
-                        inventory[activeNum] = 0;
+                        invNums[activeNum] = 0;
                         break;
 
                 }
@@ -94,9 +92,17 @@ public class Inventory : MonoBehaviour
 
     public void ItemUse()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(activeItem != 0 )
         {
-            inv[activeNum].GetComponent<PickableItem>().ItemUse();
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                //아이템 별로 switch문 작성해서...
+                invScripts[activeNum].ItemUse();
+            }
+            else if (Input.GetKeyUp(KeyCode.C))
+            {
+                invScripts[activeNum].ItemPause();
+            }
         }
     }
 

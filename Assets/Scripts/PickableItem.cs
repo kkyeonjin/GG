@@ -8,6 +8,7 @@ public class PickableItem : MonoBehaviour
     public Sprite icon; // 획득 시 인벤토리 창에 띄울 아이콘
     public Sprite ItemInfo;
     public int itemNum; // 아이템 고유 번호 부여(1부터)
+    public bool disposable;
 
     // Start is called before the first frame update
 
@@ -15,10 +16,10 @@ public class PickableItem : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            if(Inventory.instance.inventory[i] == 0)
+            if(Inventory.instance.invNums[i] == 0)
             {
-                Inventory.instance.inv[i] = this.gameObject;
-                Inventory.instance.inventory[i] = itemNum;
+                Inventory.instance.invScripts[i] = this.gameObject.GetComponent<PickableItem>();
+                Inventory.instance.invNums[i] = itemNum;
                 Inventory.instance.invIcons[i].sprite = icon;
 
                 break;
@@ -28,7 +29,26 @@ public class PickableItem : MonoBehaviour
     
     public void ItemUse()
     {
-        Debug.Log("sssssss");
+        switch(itemNum)
+        {
+            case 4:
+                this.gameObject.GetComponent<FireEX>().Jet();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void ItemPause() //아이템 효과 해제(사용중지)
+    {
+        switch(itemNum)
+        {
+            case 4:
+                this.gameObject.GetComponent<FireEX>().Pause();
+                break;
+            default:
+                break;
+        }
     }
     // Update is called once per frame
     void Update()
