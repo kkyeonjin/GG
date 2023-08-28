@@ -8,7 +8,6 @@ public class Inventory : MonoBehaviour
 {
 
     public static Inventory instance;
-    public List<int> invNums = new List<int>() { 0, 0, 0 }; //item고유 number가 있어 숫자를 배열에 저장
     public List<PickableItem> invScripts = new List<PickableItem>(new PickableItem[3]);
     public List<Image> invIcons = new List<Image>(new Image[3]);
     public int activeNum = 0;
@@ -46,7 +45,7 @@ public class Inventory : MonoBehaviour
 
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
             invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            activeItem = invNums[activeNum];
+            activeItem = invScripts[activeNum].itemNum;
 
             
         }
@@ -54,40 +53,39 @@ public class Inventory : MonoBehaviour
 
     public void ReArrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        
+        if( invScripts[activeNum].disposable )
         {
-            if( invScripts[activeNum].disposable )
+            switch (activeNum)
             {
-                switch (activeNum)
-                {
-                    case 0:
-                        //icon rearrange
-                        invIcons[0].sprite = invIcons[1].sprite;
-                        invIcons[1].sprite = invIcons[2].sprite;
-                        invIcons[2].sprite = null;
-                        //inventory rearrange
-                        invNums[0] = invNums[1];
-                        invNums[1] = invNums[2];
-                        invNums[2] = 0;
-                        break;
-                    case 1:
-                        //icon rearrange
-                        invIcons[1].sprite = invIcons[2].sprite;
-                        invIcons[2].sprite = null;
-                        //inventory rearrange
-                        invNums[1] = invNums[2];
-                        invNums[2] = 0;
-                        break;
-                    default:
-                        //icon rearrange
-                        invIcons[activeNum].sprite = null;
-                        //inventory rearrange
-                        invNums[activeNum] = 0;
-                        break;
+                case 0:
+                    //icon rearrange
+                    invIcons[0].sprite = invIcons[1].sprite;
+                    invIcons[1].sprite = invIcons[2].sprite;
+                    invIcons[2].sprite = null;
+                    //inventory rearrange
+                    invScripts[0] = invScripts[1];
+                    invScripts[1] = invScripts[2];
+                    invScripts[2] = null;
+                    break;
+                case 1:
+                    //icon rearrange
+                    invIcons[1].sprite = invIcons[2].sprite;
+                    invIcons[2].sprite = null;
+                    //inventory rearrange
+                    invScripts[1] = invScripts[2];
+                    invScripts[2] = null;
+                    break;
+                default:
+                    //icon rearrange
+                    invIcons[activeNum].sprite = null;
+                    //inventory rearrange
+                    invScripts[activeNum] = null;
+                    break;
 
-                }
             }
         }
+        
     }
 
     public void ItemUse()
@@ -97,6 +95,7 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 //아이템 별로 switch문 작성해서...
+                ReArrange();
                 invScripts[activeNum].ItemUse();
             }
             else if (Input.GetKeyUp(KeyCode.C))
@@ -110,7 +109,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         ItemChange();
-        ReArrange();
+        //ReArrange();
         ItemUse();
     }
 }

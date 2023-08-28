@@ -16,10 +16,10 @@ public class PickableItem : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            if(Inventory.instance.invNums[i] == 0)
+            if(Inventory.instance.invScripts[i] == null)
             {
+                Debug.Log("Pick");
                 Inventory.instance.invScripts[i] = this.gameObject.GetComponent<PickableItem>();
-                Inventory.instance.invNums[i] = itemNum;
                 Inventory.instance.invIcons[i].sprite = icon;
 
                 break;
@@ -51,8 +51,5 @@ public class PickableItem : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

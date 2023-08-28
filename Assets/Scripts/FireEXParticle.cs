@@ -25,8 +25,8 @@ public class FireEXParticle : MonoBehaviour
             em.rateOverTime = Mathf.Lerp(100.0f, 0.0f, t * 5f);
         } 
 
-        
     }
 
+    
 
 }
