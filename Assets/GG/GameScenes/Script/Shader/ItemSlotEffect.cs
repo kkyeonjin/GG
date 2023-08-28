@@ -7,6 +7,7 @@ public class ItemSlotEffect : UIEffect
 {
     public Sprite m_MaskingImage;
     public GameObject ActivateParticle;
+    public SpriteRenderer m_IconImage;
 
     private StoreItem m_Item;
 
@@ -14,7 +15,15 @@ public class ItemSlotEffect : UIEffect
     CalculateEffectValue m_CalcValue;
 
     private float m_fHighlighting=0;
-    
+
+    private void Awake()
+    {
+        m_IconImage.material = Instantiate(m_Material);
+        m_fRatioSour = 0f;
+
+       // m_fOriginScale = m_Image.transform.localScale.x;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +39,7 @@ public class ItemSlotEffect : UIEffect
     }
     public void Set_IconImage(Image IconImage)
     {
-        m_Image.sprite = IconImage.sprite;
+        m_IconImage.sprite = IconImage.sprite;
     }
 
     // Update is called once per frame
@@ -38,12 +47,12 @@ public class ItemSlotEffect : UIEffect
     {       
         m_CalcValue();
 
-        m_Image.material.SetTexture("_CoolTimeMaskingTex", m_MaskingImage.texture);
-        m_Image.material.SetTexture("_MainTex", m_Image.mainTexture);
-        m_Image.material.SetFloat("g_fLerpRatio", m_fCurrRatio);
-        m_Image.material.SetFloat("g_fHighlightingRatio", m_fHighlighting/0.3f);
-        m_Image.material.SetVector("g_vColor", m_Color);
-        m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
+        m_IconImage.material.SetTexture("_CoolTimeMaskingTex", m_MaskingImage.texture);
+        m_IconImage.material.SetTexture("_MainTex", m_IconImage.sprite.texture);
+        m_IconImage.material.SetFloat("g_fLerpRatio", m_fCurrRatio);
+        m_IconImage.material.SetFloat("g_fHighlightingRatio", m_fHighlighting/0.3f);
+        m_IconImage.material.SetVector("g_vColor", m_Color);
+        m_IconImage.material.SetVector("g_vOriginColor", m_vOriginColor);
         //대충 마스킹 관련 코드 적어두기
     }
 
