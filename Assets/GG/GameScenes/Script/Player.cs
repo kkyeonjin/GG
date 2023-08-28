@@ -324,13 +324,8 @@ public class Player : MonoBehaviour
             m_bIsGround = true;
             m_Animator.SetBool("IsJump", m_bIsJump);
             m_Animator.SetBool("IsGround", m_bIsGround);
-            Debug.Log(collision.gameObject.name);
+            ///Debug.Log("on " + collision.gameObject.name);
         }
-    }
-
-    public void OnCollsionExit(Collision col)
-    {
-        Debug.Log(col.gameObject.name + "와 떨어짐");
     }
 
 }
