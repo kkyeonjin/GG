@@ -37,7 +37,7 @@ Shader "UI/DefaultShader"
     fixed4 frag(v2f i) : SV_Target
     {
         fixed4 col = tex2D(_MainTex, i.uv);
-        col.a = _Alpha;
+        col.a *= _Alpha;
         return col;
     }
 
