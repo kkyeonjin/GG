@@ -23,6 +23,8 @@ public class UIButton : MonoBehaviour
 
     void Start()
     {
+        TransitionImg = ScreenTransition.Instance;
+
         if (m_iCharacterIndex > -1)
         {
             ButtonImage = MyButton.image;
@@ -83,19 +85,19 @@ public class UIButton : MonoBehaviour
     {
         TransitionImg.EndScreen();
         Invoke("SingleLobby", TransitionImg.Get_TransitionTime());
-        //Debug.Log("Single Playing Mode");
-        //SceneManager.LoadScene("Lobby");
     }
 
     void SingleLobby()
     {
         Debug.Log("Single Playing Mode");
         SceneManager.LoadScene("Lobby");
+        SceneManager.sceneLoaded += TransitionImg.StartScreen;
     }
     void MultiLobby()
     {
         Debug.Log("Multi Playing Mode");
         NetworkManager.Instance.ConnectToServer();
+
     }
     public void Exit_Game()
     {
@@ -118,6 +120,8 @@ public class UIButton : MonoBehaviour
     void LoadStore()
     {
         SceneManager.LoadScene("Store");
+        SceneManager.sceneLoaded += TransitionImg.StartScreen;
+
     }
     public void MyRoom()
     {
@@ -127,6 +131,8 @@ public class UIButton : MonoBehaviour
     void LoadMyRoom()
     {
         SceneManager.LoadScene("MyRoom");
+        SceneManager.sceneLoaded += TransitionImg.StartScreen;
+
     }
     public void Backto_Menu()
     {
@@ -136,7 +142,7 @@ public class UIButton : MonoBehaviour
     void LoadMenu()
     {
         SceneManager.LoadScene("MenuUI");
-        //InfoHandler.Instance.Clear_HoldingItem();
+        SceneManager.sceneLoaded += TransitionImg.StartScreen;
     }
 
     ///multi///
@@ -150,7 +156,7 @@ public class UIButton : MonoBehaviour
     {
         //InfoHandler.Instance.Clear_HoldingItem();
         NetworkManager.Instance.LeaveRoom();
-       
+        
         //GameMgr.Instance.Destroy_Player(); // NetwordManager에서 방 나갈때 autoCleanUp으로 player를 삭제, 전에 player 삭제하면 문제 생겨서 방 못나감
     }
 
@@ -163,20 +169,20 @@ public class UIButton : MonoBehaviour
     {
         Debug.Log("Exit_Multi");
         NetworkManager.Instance.LeaveLobby();
+        Debug.Log("ExitRoomCode StartScreen");
+        SceneManager.sceneLoaded += TransitionImg.StartScreen;
     }
 
- 
+
     public void Multi_EnterCode()
     {
         NetworkManager.Instance.JoinRoom(m_RoomCode);
-        m_ConnectedUI.SetActive(true);
 
     }
 
     public void Multi_CreateRoom()
     {//나중에 초대 코드로
         NetworkManager.Instance.CreateRoom(m_RoomCode);
-        m_ConnectedUI.SetActive(true);
     }
    
 }

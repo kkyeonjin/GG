@@ -83,6 +83,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("로비접속완료");
         SceneManager.LoadScene("RoomCode");
+
+        Debug.Log("OnJoinedLobby StartScreen");
+        SceneManager.sceneLoaded += ScreenTransition.Instance.StartScreen;
+
     }
 
 
@@ -122,15 +126,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         m_RoomCode = null;
         ChangeMasterClient();
         PhotonNetwork.LeaveRoom();//연결이 모두 끊기면 알아서 photonNetwork.LoadLevel로 한 씬 모두 벗어남
-        //PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
         SceneManager.LoadScene("RoomCode");
-        
     }
     public override void OnLeftRoom()
     {
         Debug.Log("방 나감");
         //SceneManager.LoadScene("RoomCode");
-
     }
 
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)

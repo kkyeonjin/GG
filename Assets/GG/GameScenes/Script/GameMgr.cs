@@ -13,6 +13,7 @@ public class GameMgr : MonoBehaviour
     public Player m_LocalPlayer;
     public GameObject m_LocalPlayerObj;
     public bool m_bInGame = false;
+    public bool m_bMulti = false;
     
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
@@ -40,7 +41,7 @@ public class GameMgr : MonoBehaviour
     }
     void Start()
     {
-       if(m_bInGame)
+       if(m_bInGame && m_bMulti)
         {
             //인게임일 때 아이템들 아이콘, 인스턴스 등 생성
             int[,] HoldingItem = InfoHandler.Instance.Get_HoldingItem();
@@ -145,19 +146,12 @@ public class GameMgr : MonoBehaviour
         m_LocalPlayer.Immediate_Death();    
     }
 
- ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    public void Reward_Player()//게임 끝난후 로비로 돌아감(멀티)
-    {
-        //사용한 아이템 개수 Info에 업데이트
-        //보상 등 여기서 주면 될듯
-
-    }
+ 
 
     //////////인게임에서 쓰일 함수들//././///////
     void Update()
     {
-        if (false == m_bInGame)
+        if (false == m_bInGame && m_bMulti)
             return;
 
         //임시로 키 만들어놓음
@@ -191,4 +185,12 @@ public class GameMgr : MonoBehaviour
 
         return Instance;
     }
+///////////////////////////////////////////////////////////////////////////////////////////////
+    public void Reward_Player()//게임 끝난후 로비로 돌아감
+    {
+        //사용한 아이템 개수 Info에 업데이트
+        //보상 등 여기서 주면 될듯
+
+    }
+
 }

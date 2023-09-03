@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
   m_Color: {r: 0.76470596, g: 0, b: 0, a: 1}
   m_vOriginColor: {r: 0.76470596, g: 0, b: 0, a: 0}
-  m_fTotalTime: 1
+  m_fTotalTime: 0.1
   m_fScale: 0
   m_eLerpType: 0
   m_ConnectedModel: {fileID: 0}
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
   m_Color: {r: 0.9607844, g: 0.854902, b: 0, a: 1}
   m_vOriginColor: {r: 0.9607844, g: 0.854902, b: 0, a: 0}
-  m_fTotalTime: 1
+  m_fTotalTime: 0.1
   m_fScale: 0
   m_eLerpType: 0
   m_ConnectedModel: {fileID: 0}
@@ -12389,6 +12389,7 @@ MonoBehaviour:
   m_LocalPlayer: {fileID: 0}
   m_LocalPlayerObj: {fileID: 0}
   m_bInGame: 1
+  m_bMulti: 1
   m_PV: {fileID: 1921670562}
   Ranking: []
 --- !u!114 &1921670562
