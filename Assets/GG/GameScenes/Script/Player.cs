@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     private bool m_bIsJump = false;
     private bool m_bIsGround = false;
     private bool m_bIsCrouch = false;
+
+    private bool m_bInteract_Push= false;
+    private bool m_bInteract_Lever = false;
+    private bool m_bInteract_EnterCode = false;
+
     private bool m_bStartPush = false;
     private bool m_bIsPushing = false;
 
@@ -186,10 +191,13 @@ public class Player : MonoBehaviour
         m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
         Falling();
-        Throw();
-        PushLever();
-        Pushing();
         Jump_Up();
+
+        Throw();
+        
+        PushLever();
+        Entering_Code();
+        Pushing();
 
         //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
         //    {
@@ -264,36 +272,53 @@ public class Player : MonoBehaviour
         }
 
     }
+    private void Entering_Code()
+    {
+        if(m_bInteract_EnterCode)
+        {
+            if(m_bIsGround && Input.GetKeyDown(KeyCode.E))
+            {
+                m_Animator.SetTrigger("EnteringCode");
+            }
+        }
+    }
     private void PushLever()
     {
-        if (m_bIsGround && Input.GetKeyDown(KeyCode.E))
+        if (m_bInteract_Lever)
         {
-            m_Animator.SetTrigger("PushLever");
+            if (m_bIsGround && Input.GetKeyDown(KeyCode.E))
+            {
+                m_Animator.SetTrigger("PushLever");
+            }
         }
     }
 
     private void Pushing()
     {
-        if (m_bIsGround && Input.GetKeyDown(KeyCode.R))
+        if (m_bInteract_Push)
         {
-            if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
+            if (m_bIsGround && Input.GetKeyDown(KeyCode.R))
             {
-                m_bStartPush = true;
+                if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
+                {
+                    m_bStartPush = true;
+                    m_Animator.SetBool("StartPush", m_bStartPush);
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.R))
+            {
+                m_bStartPush = false;
+                m_bIsPushing = false;
+                m_Animator.SetBool("IsPushing", m_bIsPushing);
                 m_Animator.SetBool("StartPush", m_bStartPush);
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.R))
-        {
-            m_bStartPush = false;
-            m_bIsPushing = false;
-            m_Animator.SetBool("IsPushing", m_bIsPushing);
-            m_Animator.SetBool("StartPush", m_bStartPush);
         }
     }
 
     private void Throw()
     {
-        if (m_bIsGround && Input.GetKeyDown(KeyCode.F))
+  
+        if (m_bIsGround && Input.GetKeyDown(KeyCode.C))
             m_Animator.SetTrigger("Throw");
     }
     private void Falling()
@@ -334,6 +359,14 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
+        //else if(collision.gameObject.CompareTag("Pushable"))
+        //{
+        //    m_bInteract_Push = true;
+        //}
+        //else if(collision.gameObject.CompareTag("Lever"))
+        //{
+        //    m_bInteract_Lever = true;
+        //}
     }
 
     private void OnCollisionStay(Collision collision)
@@ -356,6 +389,35 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
+        //else if (collision.gameObject.CompareTag("Pushable"))
+        //{
+        //    m_bInteract_Push = false;
+        //}
+        //else if (collision.gameObject.CompareTag("Lever"))
+        //{
+        //    m_bInteract_Lever = false;
+        //}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("EndPoint"))
+        {
+            Player_GoalIn();
+        }
+        else if(other.gameObject.CompareTag("NextPhase"))
+        {
+            Player_NextPhase();
+        }
+    }
+
+    public void Player_GoalIn()
+    {
+        GameMgr.Instance.Player_GoalIn();
+    }
+    public void Player_NextPhase()
+    {
+        GameMgr.Instance.Next_Phase();
     }
 
     public void Resume()//거점 부활 햇을 때
@@ -375,7 +437,9 @@ public class Player : MonoBehaviour
 
     public void Immediate_Death()//죽는게 바로 옴 + 무적 상태를 카운터로 하는게 좋을 것 같다는 생각이 든다.
     {//다른 플레이어가 이 함수를 실행해서 바로 죽는걸로
-        m_Status.Set_Damage(m_Status.Get_MaxHP());
+        
+        if(!m_bInvincible)
+            m_Status.Set_Damage(m_Status.Get_MaxHP());
     }
  
 
