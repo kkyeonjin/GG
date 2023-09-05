@@ -413,11 +413,11 @@ public class Player : MonoBehaviour
 
     public void Player_GoalIn()
     {
-        GameMgr.Instance.Player_GoalIn();
+       
     }
     public void Player_NextPhase()
     {
-        GameMgr.Instance.Next_Phase();
+        
     }
 
     public void Resume()//거점 부활 햇을 때
