@@ -58,13 +58,9 @@ public class SelectStageUI : MonoBehaviour
         switch(m_iStageIndex)
         {
             case 0:
-                SelectedStage.text = "Multi_Subway";//잠깐 멀티로
+                SelectedStage.text = "Apartment";//잠깐 멀티로
                 mapImage.sprite = subway;
 
-                break;
-            case 1:
-                SelectedStage.text = "Apartment";
-                mapImage.sprite = apart;
                 break;
         }
         //SelectedStage.text = sz_SelectedStage;

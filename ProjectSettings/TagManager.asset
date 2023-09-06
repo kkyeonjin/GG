@@ -19,6 +19,8 @@ TagManager:
   - FollowCam
   - UIHoldingItem
   - UISelectItem
+  - EndPoint
+  - NextPhase
   layers:
   - Default
   - TransparentFX

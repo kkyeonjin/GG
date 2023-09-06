@@ -4,11 +4,17 @@ using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class GameMgr : MonoBehaviour
 {    
     public static GameMgr m_Instance = null;
+
+    public float fResultScreenTime=10f;
+    public float fCeremonyTime = 5f;
+
+    public GameObject ResultScreen;
+    public GameObject GameScreen;
 
     public Player m_LocalPlayer;
     public GameObject m_LocalPlayerObj;
@@ -147,6 +153,16 @@ public class GameMgr : MonoBehaviour
     }
 
  
+    public void Player_GoalIn()
+    {
+        Debug.Log("Player GoalIn!");
+        Invoke("Show_ResultScreen", fCeremonyTime);
+        
+    }
+    public void Player_NextPhase()
+    {
+        Debug.Log("Go to NextPhase!");
+    }
 
     //////////인게임에서 쓰일 함수들//././///////
     void Update()
@@ -192,5 +208,16 @@ public class GameMgr : MonoBehaviour
         //보상 등 여기서 주면 될듯
 
     }
-
+    
+    void Show_ResultScreen()
+    {
+        GameScreen.SetActive(false);
+        ResultScreen.SetActive(true);
+        Invoke("BackToLobby", fResultScreenTime);
+    }
+    
+    void BackToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
 }
