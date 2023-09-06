@@ -61,6 +61,8 @@ MonoBehaviour:
   - Update_PlayerList
   - Get_ListSlot_Index
   - PlayerReady
+  - SomeOne_GoalIn
+  - Start_Game
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

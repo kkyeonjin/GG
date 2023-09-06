@@ -20,7 +20,9 @@ public class GameMgr : MonoBehaviour
     public GameObject m_LocalPlayerObj;
     public bool m_bInGame = false;
     public bool m_bMulti = false;
-    
+
+    public float fDelayStartTime = 2f;
+
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
     public List<ParticipantInfo> Ranking;//인게임에서 랭킹용으로
@@ -102,6 +104,8 @@ public class GameMgr : MonoBehaviour
                
             }
             Debug.Log(m_ItemSlot[0] + " " + m_ItemSlot[1]);
+
+            Invoke("BroadCast_StartGame", fDelayStartTime);
         }
     }
 
@@ -145,14 +149,32 @@ public class GameMgr : MonoBehaviour
     {
         m_PV.RPC("MakeLocalPlayer_Die", RpcTarget.Others);
     }
+    public void BroadCast_StartGame()
+    {
+        m_PV.RPC("Start_Game", RpcTarget.All);
+    }
+    public void BroadCast_TimeAttack()
+    {
+        m_PV.RPC("SomeOne_GoalIn", RpcTarget.Others);
+    }
     
     [PunRPC]
     void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
     {
         m_LocalPlayer.Immediate_Death();    
     }
+    [PunRPC]
+    void Start_Game()
+    {
+        InGameUIMgr.Instance.Start_Game();
+    }
+    [PunRPC]
+    void SomeOne_GoalIn()
+    {
+        InGameUIMgr.Instance.Start_GoalTimer();
+    }
 
- 
+
     public void Player_GoalIn()
     {
         Debug.Log("Player GoalIn!");
@@ -218,6 +240,9 @@ public class GameMgr : MonoBehaviour
     
     void BackToLobby()
     {
-        SceneManager.LoadScene("Lobby");
+        string SceneName="Lobby";
+        if (m_bMulti)
+            SceneName = "MultiLobby";
+        SceneManager.LoadScene(SceneName);
     }
 }

@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
     public Transform m_CameraTransform;
 
     private delegate void MoveFunc();
-
     private MoveFunc m_Moving;
     void Start()
     {
