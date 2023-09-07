@@ -178,7 +178,10 @@ public class GameMgr : MonoBehaviour
     public void Player_GoalIn()
     {
         Debug.Log("Player GoalIn!");
-        Invoke("Show_ResultScreen", fCeremonyTime);
+        if (m_bMulti)
+            BroadCast_TimeAttack();
+        else
+            Invoke("Show_ResultScreen", fCeremonyTime);
         
     }
     public void Player_NextPhase()
