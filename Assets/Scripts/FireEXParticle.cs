@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireEXParticle : MonoBehaviour
 {
-    ParticleSystem fire;
+    public ParticleSystem fire, smoke;
     public int count;
 
     // Start is called before the first frame update
@@ -16,13 +16,17 @@ public class FireEXParticle : MonoBehaviour
         Debug.Log(other.gameObject.GetComponent<FireParticle>().count);
         //Debug.Log("!!!");
         fire = other.gameObject.GetComponentInChildren<ParticleSystem>();
-        var em = fire.emission;
-        em.enabled = true;
+        smoke = fire.gameObject.GetComponentInChildren<ParticleSystem>();
+        var fire_em = fire.emission;
+        var smoek_em = smoke.emission;
+        fire_em.enabled = true;
+        smoek_em.enabled = true;
 
         if(t >= 110)
         {
             Debug.Log("!!!");
-            em.rateOverTime = Mathf.Lerp(100.0f, 0.0f, t * 5f);
+            fire_em.rateOverTime = Mathf.Lerp(100.0f, 0.0f, t * 5f);
+            smoek_em.rateOverTime = Mathf.Lerp(5.0f, 0.0f, t * 5f);
         } 
 
     }

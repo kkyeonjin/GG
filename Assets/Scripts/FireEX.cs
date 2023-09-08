@@ -28,11 +28,12 @@ public class FireEX : MonoBehaviour
 
     private void Update()
     {
-        if (remainder <= 0)
+        if (remainder == 0 && Inventory.instance.invScripts[Inventory.instance.activeNum] != null)
         {
             Pause();
             Inventory.instance.invScripts[Inventory.instance.activeNum].disposable = true;
             Inventory.instance.ReArrange();
+            
         }
     }
 }

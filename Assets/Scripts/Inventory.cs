@@ -10,8 +10,8 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public List<PickableItem> invScripts = new List<PickableItem>(new PickableItem[3]);
     public List<Image> invIcons = new List<Image>(new Image[3]);
-    public int activeNum = 0;
-    public int activeItem;
+    public int activeNum = 0; // 활성화 인벤토리 인덱스
+    public int activeItem; // 활성화 아이템 고유번호
 
     
     private void Awake()
@@ -31,7 +31,7 @@ public class Inventory : MonoBehaviour
     {
         int prevNum;
 
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             prevNum = activeNum;
             if(prevNum != 2)
@@ -45,9 +45,18 @@ public class Inventory : MonoBehaviour
 
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
             invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            activeItem = invScripts[activeNum].itemNum;
-
-            
+            activeItem = invScripts[activeNum].itemNum;  
+        }
+        else
+        {
+            if(invScripts[activeNum] != null)
+            {
+                activeItem = invScripts[activeNum].itemNum;
+            }
+            else
+            {
+                activeItem = 0;
+            }
         }
     }
 
@@ -95,8 +104,8 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 //아이템 별로 switch문 작성해서...
-                ReArrange();
                 invScripts[activeNum].ItemUse();
+                ReArrange();
             }
             else if (Input.GetKeyUp(KeyCode.C))
             {
