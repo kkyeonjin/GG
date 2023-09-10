@@ -63,6 +63,7 @@ MonoBehaviour:
   - PlayerReady
   - SomeOne_GoalIn
   - Start_Game
+  - BacktoMultiLobby
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

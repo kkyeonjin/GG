@@ -23,6 +23,10 @@ public class GameMgr : MonoBehaviour
 
     public float fDelayStartTime = 2f;
 
+    private bool m_bSomeOneFirst = false;
+    private bool m_bIamTheFirst = false;
+    
+
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
     public List<ParticipantInfo> Ranking;//인게임에서 랭킹용으로
@@ -155,7 +159,7 @@ public class GameMgr : MonoBehaviour
     }
     public void BroadCast_TimeAttack()
     {
-        m_PV.RPC("SomeOne_GoalIn", RpcTarget.Others);
+        m_PV.RPC("SomeOne_GoalIn", RpcTarget.All);
     }
     
     [PunRPC]
@@ -171,19 +175,35 @@ public class GameMgr : MonoBehaviour
     [PunRPC]
     void SomeOne_GoalIn()
     {
+        m_bSomeOneFirst = true;
         InGameUIMgr.Instance.Start_GoalTimer();
     }
+    public void Game_Over()
+    {
+        Invoke("Show_ResultScreen", fCeremonyTime);
+    }
 
-
-    public void Player_GoalIn()
+    public void Player_GoalIn()//싱글 모드
     {
         Debug.Log("Player GoalIn!");
-        if (m_bMulti)
-            BroadCast_TimeAttack();
-        else
-            Invoke("Show_ResultScreen", fCeremonyTime);
+  
+        Invoke("Show_ResultScreen", fCeremonyTime);
         
     }
+
+    public void Player_GoalIn(bool IsMine)//멀티 모드
+    {
+        if (IsMine)
+        {
+            InGameUIMgr.Instance.Player_GoalIn();
+            if (m_bSomeOneFirst == false)
+            {
+                BroadCast_TimeAttack();
+                m_bIamTheFirst = true;
+            }
+        }
+    }
+
     public void Player_NextPhase()
     {
         Debug.Log("Go to NextPhase!");
@@ -243,9 +263,20 @@ public class GameMgr : MonoBehaviour
     
     void BackToLobby()
     {
-        string SceneName="Lobby";
         if (m_bMulti)
-            SceneName = "MultiLobby";
-        SceneManager.LoadScene(SceneName);
+        {
+             if(m_bIamTheFirst)//1등이 부르기
+               m_PV.RPC("BacktoMultiLobby", RpcTarget.All);
+        }
+        else
+        {
+            SceneManager.LoadScene("Lobby");
+        }
+    }
+
+    [PunRPC]
+    void BacktoMultiLobby()
+    {
+        NetworkManager.Instance.StartGame("MultiLobby");
     }
 }

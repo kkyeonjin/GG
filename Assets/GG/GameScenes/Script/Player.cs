@@ -224,11 +224,9 @@ public class Player : MonoBehaviour
                 m_fTotalSpeed *= 1.5f;
                 m_Status.Use_Stamina(25f);
             }
-            if (false == m_bIsJump && m_bIsGround)
-                m_Animator.SetBool("IsSprint", m_bIsSprint);
         }
-
-
+        if (false == m_bIsJump && m_bIsGround)
+            m_Animator.SetBool("IsSprint", m_bIsSprint);
     }
 
     private void Jump_Up()//바닥 ground와 충돌하면 down으로 이어지게. 지금은 임시로 jump 하나만 작동하도록
@@ -412,7 +410,11 @@ public class Player : MonoBehaviour
 
     public void Player_GoalIn()
     {
-        GameMgr.Instance.Player_GoalIn();
+        if(m_PV == null)
+            GameMgr.Instance.Player_GoalIn();
+        else
+            GameMgr.Instance.Player_GoalIn(m_PV.IsMine);
+
     }
     public void Player_NextPhase()
     {
