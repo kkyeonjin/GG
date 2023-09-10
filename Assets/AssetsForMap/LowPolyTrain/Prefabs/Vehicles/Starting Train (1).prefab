@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &439500754523556598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 290186188735211087}
+  m_Layer: 0
+  m_Name: Starting Train (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &290186188735211087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439500754523556598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -171.50348, y: -1.25, z: 4.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3767163039455418033}
+  - {fileID: 3049823365523450849}
+  - {fileID: 4385168914219845319}
+  - {fileID: 7776674236467144363}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2708997779947609515
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 290186188735211087}
+    m_Modifications:
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393511921677724031, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SubwayTrain (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
+--- !u!4 &4385168914219845319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 2708997779947609515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3243948628620414429
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 290186188735211087}
+    m_Modifications:
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393511921677724031, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SubwayTrain (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
+--- !u!4 &3767163039455418033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 3243948628620414429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3679532108562804877
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 290186188735211087}
+    m_Modifications:
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393511921677724031, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SubwayTrain (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
+--- !u!4 &3049823365523450849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 3679532108562804877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8263886272385252807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 290186188735211087}
+    m_Modifications:
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393511921677724031, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SubwayTrain (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
+--- !u!4 &7776674236467144363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1820427059939351404, guid: d6aa52a07f736452bafe2b772224e9ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 8263886272385252807}
+  m_PrefabAsset: {fileID: 0}
