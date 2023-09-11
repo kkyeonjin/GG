@@ -49,6 +49,7 @@ public class InitializeMap : MonoBehaviour
     {
         Debug.Log("»ý¼º!");
         NetworkManager.Instance.Instantiate_Player(StartPoint);
+        GameMgr.Instance.Set_ResumePoint(StartPoint);
     }
     
 

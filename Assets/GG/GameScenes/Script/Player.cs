@@ -158,9 +158,13 @@ public class Player : MonoBehaviour
 
 
     }
-    public void Set_Dead()
-    {
+    public void Player_Die()
+    {//아 그냥 플레이어 멀티 스크립트 관련 게임 오브젝트 따로 파서 플레이어 child로 넣어줄껄
         m_Animator.SetTrigger("Death");
+        if(m_PV != null)
+        {
+            InGameUIMgr.Instance.Activate_RewpawnUI();
+        }
     }
     private void Move_MultiMode()
     {
@@ -421,10 +425,11 @@ public class Player : MonoBehaviour
         GameMgr.Instance.Player_NextPhase();
     }
 
-    public void Resume()//거점 부활 햇을 때
+    public void Resume(Vector3 vResumePoint)//거점 부활 햇을 때
     {
         m_Animator.Play("Idle");
         m_Status.PV_Reset();
+        transform.position = vResumePoint;
         //아이템 리셋은 X
     }
     //아이템 관련
@@ -432,8 +437,7 @@ public class Player : MonoBehaviour
     public void Immediate_Resume()//GameMgr에서 실행 하면 해당 함수 불러서 체력 등 다시 세팅
     {
         m_Animator.Play("Idle");
-        m_Status.Reset_HP();
-        m_Status.Reset_Stamina();
+        m_Status.Resume_Immediate();
     }
 
     public void Immediate_Death()//죽는게 바로 옴 + 무적 상태를 카운터로 하는게 좋을 것 같다는 생각이 든다.

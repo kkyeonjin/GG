@@ -11,7 +11,7 @@ public class StoreUI : MonoBehaviour
 
     public GameObject Panel; 
     public Image m_SelectBuy;
-    public bool m_bStartEnable = true;
+    public bool m_bStartEnable = false;
 
     public GameObject NoMoneyUI;
     public GameObject YouAlreadyHaveUI;

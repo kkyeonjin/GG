@@ -29,7 +29,8 @@ public class ItemSlotEffect : UIEffect
     {
         m_CalcValue = Empty;
         m_fCurrRatio = 1f;
-        ActivateParticle.SetActive(false);
+        if(ActivateParticle != null)
+            ActivateParticle.SetActive(false);
     }
 
     public void Set_Item(StoreItem iInput)

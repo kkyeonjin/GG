@@ -25,12 +25,15 @@ public class GameMgr : MonoBehaviour
 
     private bool m_bSomeOneFirst = false;
     private bool m_bIamTheFirst = false;
-    
+
+    private Vector3 vResumePoint;
 
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
     public List<ParticipantInfo> Ranking;//인게임에서 랭킹용으로
     private StoreItem[] m_ItemSlot;
+
+    private StoreItem_Resume ItemResume;
 
     void Awake()
     {
@@ -67,7 +70,8 @@ public class GameMgr : MonoBehaviour
                 {
                     case 0:
                         {
-                            m_ItemSlot[i] = Get_Instance<StoreItem_Resume>();
+                            ItemResume = Get_Instance<StoreItem_Resume>();
+                            m_ItemSlot[i] = ItemResume;
                             Debug.Log(m_ItemSlot[i]);
                             break;
                         }
@@ -160,7 +164,7 @@ public class GameMgr : MonoBehaviour
     public void BroadCast_TimeAttack()
     {
         m_PV.RPC("SomeOne_GoalIn", RpcTarget.All);
-    }
+    } 
     
     [PunRPC]
     void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
@@ -189,6 +193,22 @@ public class GameMgr : MonoBehaviour
   
         Invoke("Show_ResultScreen", fCeremonyTime);
         
+    }
+    
+    public void Use_ResumeItem()//즉부 아이템 썻을 때
+    {
+        ItemResume.Consume_Item();
+        m_LocalPlayer.Immediate_Resume();
+    }
+
+    public void Resume_Onthepoints()//거점 부활
+    {
+        m_LocalPlayer.Resume(vResumePoint);
+    }
+
+    public void Set_ResumePoint(Vector3 vPoint)//중간 골인 지점 지나면 거점 부활 지점 변경해줌
+    {
+        vResumePoint = vPoint;
     }
 
     public void Player_GoalIn(bool IsMine)//멀티 모드

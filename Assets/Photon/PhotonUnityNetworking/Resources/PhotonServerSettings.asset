@@ -64,6 +64,7 @@ MonoBehaviour:
   - SomeOne_GoalIn
   - Start_Game
   - BacktoMultiLobby
+  - Resume_Status
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -11,7 +11,15 @@ public class InGameUIMgr : MonoBehaviour
     public StatusUI m_StatusUI;
     //플레이어 아이템 슬롯
     public ItemSlotEffect[] m_StoreItemSlots;
-    //플레이어 죽었을 때 뜨는 UI들
+
+    //플레이어 죽엇을 때 뜨는 UI들
+    public GameObject RespawnUI;
+    public ItemSlotEffect ResumeSlot;
+    public UIEffect RespawnTimeBar;
+    public float m_fRespawnTime;
+    private float m_fRespawnPassTime;
+
+
 
     public int iGoalTimerSec = 15;
     //1등 골인 후 타이머
@@ -26,10 +34,6 @@ public class InGameUIMgr : MonoBehaviour
     private float m_fPassTime;
 
     private bool m_bStopUpdating = false;
-
-    bool m_bFlag = false;
-
-    //게임 끝난 후에 뜨는 Ui들
 
     void Awake()
     {
@@ -86,8 +90,40 @@ public class InGameUIMgr : MonoBehaviour
         {
             Debug.Log("불려짐!" + iInput.Get_ItemIndex());
             m_StoreItemSlots[iIndex].Set_IconImage(InfoHandler.Instance.Get_ItemIcon(iInput.Get_ItemIndex()));
+            if(iInput.Get_ItemIndex() == (int)StoreItem.ITEM.RESUME)
+                ResumeSlot = m_StoreItemSlots[iIndex];
         }
     }
+    public void Activate_RewpawnUI()
+    {
+        m_fRespawnPassTime = m_fRespawnTime;
+        RespawnUI.SetActive(true);
+        Timer += Respawn_CoolTime;
+    }
+
+    public void Player_Resume()
+    {
+        Timer -= Respawn_CoolTime;
+        RespawnUI.SetActive(false);
+    }
+
+    void Respawn_CoolTime()
+    {
+        m_fRespawnPassTime -= Time.deltaTime;
+        RespawnTimeBar.Get_PassedTime(m_fRespawnPassTime);
+        if (Input.GetKeyDown(KeyCode.F))//아이템 눌렀을 때
+        {
+            Player_Resume();
+            GameMgr.Instance.Use_ResumeItem();
+        }
+
+        if(m_fRespawnPassTime <=0f)
+        {
+            //부활
+            Player_Resume();
+        }
+    }
+
 
     void Empty()
     {
@@ -106,7 +142,6 @@ public class InGameUIMgr : MonoBehaviour
     public void Start_GoalTimer()
     {//누군가가 골에 들어왔을 때
         m_fPassTime = iGoalTimerSec;
-        m_bFlag = true;
     }
 
 
@@ -132,12 +167,6 @@ public class InGameUIMgr : MonoBehaviour
             string szMin = string.Format("{0:D2}", Min);
             string szSec = string.Format("{0:D2}", Sec);
             GeneralTimer.text = szMin + ":" + szSec;
-
-            if (m_bFlag)
-            {
-                Debug.Log(m_fPassTime + " " + Sec);
-                Debug.Log(szSec + " 초");
-            }
         }
     }
 

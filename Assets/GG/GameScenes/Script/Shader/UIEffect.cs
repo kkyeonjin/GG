@@ -13,6 +13,8 @@ public class UIEffect : MonoBehaviour
     public float m_fScale = 0.1f;
     public EasingUtility.EASING_TYPE m_eLerpType;
 
+    public bool m_bGetPassTime;
+
     public GameObject m_ConnectedModel;
 
     protected float m_fRatioDest= 0f;
@@ -36,7 +38,8 @@ public class UIEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
+        if(m_bGetPassTime == false)
+            m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
         m_fCurrRatio = EasingUtility.LerpToType(m_fRatioSour,m_fRatioDest, m_fPassedTime, m_fTotalTime,m_eLerpType);
 
 
@@ -89,5 +92,10 @@ public class UIEffect : MonoBehaviour
         m_fRatioSour = m_fCurrRatio;
         m_fRatioDest = fRatio;
         m_fPassedTime = 0f;
+    }
+
+    public void Get_PassedTime(float fTime)
+    {
+        m_fPassedTime = fTime;
     }
 }

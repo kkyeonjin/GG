@@ -32,13 +32,10 @@ public class CharacterStatus : MonoBehaviour
         m_fMaxHP = m_fHP = fHP;
         m_fMaxStamina = m_fStamina = fStamina;
     }
-    public void Reset_HP()
+  
+    public void Resume_Immediate()
     {
-        m_fHP = m_fMaxHP * 0.5f;
-    }
-    public void Reset_Stamina()
-    {
-        m_fStamina = m_fMaxStamina;
+        m_PV.RPC("Resume_Status", RpcTarget.All);
     }
     public float Get_HP()
     {
@@ -68,7 +65,7 @@ public class CharacterStatus : MonoBehaviour
             if (0f >= m_fHP)
             {
                 m_fHP = 0;
-                m_Target.Set_Dead();
+                m_Target.Player_Die();
                //GameMgr 등에서 리스폰 창 불러오게
             }
         }
@@ -123,9 +120,7 @@ public class CharacterStatus : MonoBehaviour
         if (0f >= m_fHP)
         {
             m_fHP = 0;
-            m_Target.Set_Dead();
-            //SceneUIMgr에서 부활 관련 함수 호출
-            
+            m_Target.Player_Die();
         }
     }
     [PunRPC]
@@ -141,6 +136,12 @@ public class CharacterStatus : MonoBehaviour
     void Reset_Status()
     {
         m_fHP = m_fMaxHP;
+        m_fStamina = m_fMaxStamina;
+    }
+    [PunRPC]
+    void Resume_Status()
+    {
+        m_fHP = m_fMaxHP * 0.5f;
         m_fStamina = m_fMaxStamina;
     }
 }
