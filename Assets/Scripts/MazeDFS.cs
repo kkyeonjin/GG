@@ -36,6 +36,17 @@ public class MazeDFS : MonoBehaviour
                     int randomRoom = Random.Range(0, space.Length);
                     var newRoom = Instantiate(space[randomRoom], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<SpaceState>();
                     newRoom.UpdateRoom(currentCell.status);
+
+                    newRoom.name += " " + i + " - " + j;
+                    if(i == 0 && j == 0)
+                    {
+                        newRoom.walls[0].SetActive(false);
+                    }
+                    else if(i == 9 && j == 9)
+                    {
+                        newRoom.walls[1].SetActive(false);
+                    }
+                   
                 }
                 
             }

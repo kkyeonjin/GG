@@ -9,6 +9,7 @@ public class PickableItem : MonoBehaviour
     public Sprite ItemInfo;
     public int itemNum; // 아이템 고유 번호 부여(1부터)
     public bool disposable;
+    public int remainder;
 
     // Start is called before the first frame update
 

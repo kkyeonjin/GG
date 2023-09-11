@@ -8,7 +8,8 @@ public class FireParticle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = new Vector3(Random.Range(-1.75f, -0.25f), -1.6f, Random.Range(-0.45f, 0f));
+        //localPosition -> 부모에 대한 상대적인 위치값 
+        transform.localPosition = new Vector3(Random.Range(-1.75f, -0.25f), -1.6f, Random.Range(-0.45f, 0f));
     }
 
     // Update is called once per frame

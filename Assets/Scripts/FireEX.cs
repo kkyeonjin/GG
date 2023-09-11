@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
-    public int remainder = 40; 
+    //public int remainder = 40; 
 
     public void Jet()
     {
@@ -23,12 +23,12 @@ public class FireEX : MonoBehaviour
 
     public void Using()
     {
-        remainder--;
+        this.gameObject.GetComponent<PickableItem>().remainder--;
     }
 
     private void Update()
     {
-        if (remainder == 0 && Inventory.instance.invScripts[Inventory.instance.activeNum] != null)
+        if (this.gameObject.GetComponent<PickableItem>().remainder == 0 && Inventory.instance.invScripts[Inventory.instance.activeNum] != null)
         {
             Pause();
             Inventory.instance.invScripts[Inventory.instance.activeNum].disposable = true;

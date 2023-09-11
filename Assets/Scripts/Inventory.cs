@@ -42,10 +42,12 @@ public class Inventory : MonoBehaviour
             {
                 activeNum = 0;
             }
-
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
             invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            activeItem = invScripts[activeNum].itemNum;  
+            if(invScripts[activeNum] != null)
+            {
+                activeItem = invScripts[activeNum].itemNum;
+            }
         }
         else
         {
