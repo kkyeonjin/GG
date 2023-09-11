@@ -16,7 +16,7 @@ public class FireEXParticle : MonoBehaviour
         Debug.Log(other.gameObject.GetComponent<FireParticle>().count);
         //Debug.Log("!!!");
         fire = other.gameObject.GetComponentInChildren<ParticleSystem>();
-        smoke = fire.gameObject.GetComponentInChildren<ParticleSystem>();
+        smoke = other.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
         var fire_em = fire.emission;
         var smoek_em = smoke.emission;
         fire_em.enabled = true;
