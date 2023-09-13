@@ -103,24 +103,29 @@ public class InGameUIMgr : MonoBehaviour
 
     public void Player_Resume()
     {
-        Timer -= Respawn_CoolTime;
         RespawnUI.SetActive(false);
     }
 
     void Respawn_CoolTime()
     {
         m_fRespawnPassTime -= Time.deltaTime;
+        Debug.Log(m_fRespawnPassTime);
+
         RespawnTimeBar.Get_PassedTime(m_fRespawnPassTime);
+
         if (Input.GetKeyDown(KeyCode.F))//아이템 눌렀을 때
         {
             Player_Resume();
             GameMgr.Instance.Use_ResumeItem();
+            Timer -= Respawn_CoolTime;
         }
 
         if(m_fRespawnPassTime <=0f)
         {
             //부활
             Player_Resume();
+            GameMgr.Instance.Resume_Onthepoints();
+            Timer -= Respawn_CoolTime;
         }
     }
 

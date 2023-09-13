@@ -163,7 +163,8 @@ public class Player : MonoBehaviour
         m_Animator.SetTrigger("Death");
         if(m_PV != null)
         {
-            InGameUIMgr.Instance.Activate_RewpawnUI();
+            if(m_PV.IsMine)
+                InGameUIMgr.Instance.Activate_RewpawnUI();
         }
     }
     private void Move_MultiMode()
@@ -174,7 +175,8 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.T))
             {
-                m_Status.Set_Damage(1f);
+                if(!m_Status.is_Dead())
+                    m_Status.Set_Damage(1f);
             }
         }
     }

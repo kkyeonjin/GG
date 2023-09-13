@@ -13,6 +13,7 @@ public class CharacterStatus : MonoBehaviour
     public float m_fMaxStamina;
 
     private bool m_bIsUsable = true;
+    private bool m_bDie = false;
     private float m_fHP;
     private float m_fStamina;
 
@@ -36,6 +37,7 @@ public class CharacterStatus : MonoBehaviour
     public void Resume_Immediate()
     {
         m_PV.RPC("Resume_Status", RpcTarget.All);
+        m_bDie = false;
     }
     public float Get_HP()
     {
@@ -65,10 +67,15 @@ public class CharacterStatus : MonoBehaviour
             if (0f >= m_fHP)
             {
                 m_fHP = 0;
+                m_bDie = true;
                 m_Target.Player_Die();
                //GameMgr 등에서 리스폰 창 불러오게
             }
         }
+    }
+    public bool is_Dead()
+    {
+        return m_bDie;
     }
     public bool Is_Usable()
     {
@@ -111,6 +118,7 @@ public class CharacterStatus : MonoBehaviour
     public void PV_Reset()
     {
         m_PV.RPC("Reset_Status", RpcTarget.All);
+        m_bDie = false;
     }
 
     [PunRPC]
@@ -120,6 +128,7 @@ public class CharacterStatus : MonoBehaviour
         if (0f >= m_fHP)
         {
             m_fHP = 0;
+            m_bDie = true;
             m_Target.Player_Die();
         }
     }

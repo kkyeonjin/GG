@@ -17,8 +17,8 @@ public class UIEffect : MonoBehaviour
 
     public GameObject m_ConnectedModel;
 
-    protected float m_fRatioDest= 0f;
-    protected float m_fRatioSour= 1f;
+    public float m_fRatioDest= 0f;
+    public float m_fRatioSour= 1f;
     protected float m_fPassedTime = 0f;
     protected float m_fOriginScale = 1f;
 
@@ -29,7 +29,7 @@ public class UIEffect : MonoBehaviour
     {
 
         m_Image.material = Instantiate(m_Material);
-        m_fRatioSour = 0f;
+        //m_fRatioSour = 0f;
 
         m_fOriginScale = m_Image.transform.localScale.x;
 
@@ -40,6 +40,7 @@ public class UIEffect : MonoBehaviour
     {
         if(m_bGetPassTime == false)
             m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
+
         m_fCurrRatio = EasingUtility.LerpToType(m_fRatioSour,m_fRatioDest, m_fPassedTime, m_fTotalTime,m_eLerpType);
 
 

@@ -1728,7 +1728,7 @@ MonoBehaviour:
   RespawnUI: {fileID: 1942170179}
   ResumeSlot: {fileID: 1862036785}
   RespawnTimeBar: {fileID: 1145624547}
-  m_fRespawnTime: 5
+  m_fRespawnTime: 10
   iGoalTimerSec: 15
   GeneralTimer: {fileID: 1401464530}
   iGeneralTimerMin: 3
@@ -6833,9 +6833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Image: {fileID: 1145624548}
   m_Material: {fileID: 2100000, guid: 3646f466d42c635429bcdd16d22e1356, type: 2}
-  m_Color: {r: 0.08435953, g: 1, b: 0, a: 0}
-  m_vOriginColor: {r: 0.08627451, g: 1, b: 0, a: 0}
-  m_fTotalTime: 0.01
+  m_Color: {r: 0.08435953, g: 1, b: 0, a: 1}
+  m_vOriginColor: {r: 0.060229287, g: 0.6981132, b: 0, a: 0.8627451}
+  m_fTotalTime: 10
   m_fScale: 0
   m_eLerpType: 0
   m_bGetPassTime: 1
@@ -6860,7 +6860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b3921ca3b2059d548aa090d39b9de160, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
