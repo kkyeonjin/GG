@@ -594,6 +594,8 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 0
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!1 &404936862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1389,8 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 0
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!1 &856219006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,8 +1900,8 @@ SpriteRenderer:
   m_SortingLayerID: 1266214723
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 126e2f39f57d7a84491a91f867203f0d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ae84c449fc2f7ae4e8b80596fbb18dce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -1928,9 +1932,12 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 0
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
   ActivateParticle: {fileID: 1105522400}
   m_IconImage: {fileID: 1063173013}
+  m_bInstantiateMaterial: 1
 --- !u!1 &1105522400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,6 +6847,8 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 1
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1145624548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7087,8 +7096,8 @@ SpriteRenderer:
   m_SortingLayerID: 1113341889
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 126e2f39f57d7a84491a91f867203f0d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ae84c449fc2f7ae4e8b80596fbb18dce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -7119,9 +7128,12 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 0
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
   ActivateParticle: {fileID: 1855557394}
   m_IconImage: {fileID: 1193072141}
+  m_bInstantiateMaterial: 1
 --- !u!1 &1229018797
 GameObject:
   m_ObjectHideFlags: 0
@@ -12815,8 +12827,8 @@ SpriteRenderer:
   m_SortingLayerID: 1113341889
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 126e2f39f57d7a84491a91f867203f0d, type: 3}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.49019608}
+  m_Sprite: {fileID: 21300000, guid: ae84c449fc2f7ae4e8b80596fbb18dce, type: 3}
+  m_Color: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -12847,9 +12859,12 @@ MonoBehaviour:
   m_eLerpType: 0
   m_bGetPassTime: 0
   m_ConnectedModel: {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
   ActivateParticle: {fileID: 0}
   m_IconImage: {fileID: 1862036784}
+  m_bInstantiateMaterial: 0
 --- !u!1 &1862525036
 GameObject:
   m_ObjectHideFlags: 0

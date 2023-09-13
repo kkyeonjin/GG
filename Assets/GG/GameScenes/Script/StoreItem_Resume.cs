@@ -8,18 +8,12 @@ public class StoreItem_Resume : StoreItem
     public StoreItem_Resume() : base()
     {
         m_eIndex = ITEM.RESUME;
-        Debug.Log("Resume!");
-
-    }
-    ~StoreItem_Resume()
-    {
-        Debug.Log("»ç¶óÁü!");
     }
     // Start is called before the first frame update
     protected override void Start()
     {
-    
-        m_eIndex = ITEM.RESUME;
+        m_fCoolTime = 10f;
+        m_fTimer = 10f;
     }
 
     // Update is called once per frame
