@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 2202106833521743357}
   - component: {fileID: 4536333924604717168}
   m_Layer: 0
-  m_Name: Poll
+  m_Name: Pillars
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 3829064255909304209}
   m_Layer: 0
   m_Name: Ceiling
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
