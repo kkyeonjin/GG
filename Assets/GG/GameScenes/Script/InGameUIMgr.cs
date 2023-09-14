@@ -11,6 +11,9 @@ public class InGameUIMgr : MonoBehaviour
     public StatusUI m_StatusUI;
     //플레이어 아이템 슬롯
     public ItemSlotEffect[] m_StoreItemSlots;
+    public RankSlot[] m_RankSlot;
+    public Vector3[] m_RankSlotPos;
+    private int m_iRankSlotIndex=0;
 
     //플레이어 죽엇을 때 뜨는 UI들
     public GameObject RespawnUI;
@@ -177,6 +180,22 @@ public class InGameUIMgr : MonoBehaviour
             string szSec = string.Format("{0:D2}", Sec);
             GeneralTimer.text = szMin + ":" + szSec;
         }
+    }
+
+    public void Plug_Ranking(string playerName, string playerTime)
+    {
+        if (m_iRankSlotIndex >= 3)
+            return;
+
+        m_RankSlot[m_iRankSlotIndex].Set_Position(m_RankSlotPos[m_iRankSlotIndex]);
+        m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime);
+    }
+
+    public void Reset_Ranking()
+    {
+        m_RankSlot[0].ClearSlot();
+        m_RankSlot[1].ClearSlot();
+        m_RankSlot[2].ClearSlot();
     }
 
 }
