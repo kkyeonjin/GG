@@ -55,6 +55,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
        // Debug.Log(PhotonNetwork.NetworkClientState.ToString());
     }
+
+    public string Get_Playername()
+    {
+        return PlayerName;
+    }
     //////////////////////////////////////////////////////////////
     public void Set_StartButton(GameObject button)
     {

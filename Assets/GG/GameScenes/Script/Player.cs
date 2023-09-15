@@ -161,7 +161,9 @@ public class Player : MonoBehaviour
     public void Player_Die()
     {//아 그냥 플레이어 멀티 스크립트 관련 게임 오브젝트 따로 파서 플레이어 child로 넣어줄껄
         m_Animator.SetTrigger("Death");
-        if(m_PV != null)
+        m_Animator.SetBool("IsAlive", false);
+
+        if (m_PV != null)
         {
             if(m_PV.IsMine)
                 InGameUIMgr.Instance.Activate_RewpawnUI();
@@ -408,10 +410,15 @@ public class Player : MonoBehaviour
         {
             Player_GoalIn();
         }
-        else if(other.gameObject.CompareTag("NextPhase"))
+        else if(other.gameObject.CompareTag("MiddleGoal"))
         {
             Player_NextPhase();
         }
+    }
+
+    public bool Is_MyPlayer()
+    {
+        return m_PV.IsMine;
     }
 
     public void Player_GoalIn()
@@ -424,12 +431,13 @@ public class Player : MonoBehaviour
     }
     public void Player_NextPhase()
     {
-        GameMgr.Instance.Player_NextPhase();
+        if(m_PV.IsMine)
+            GameMgr.Instance.Player_NextPhase();
     }
 
     public void Resume(Vector3 vResumePoint)//거점 부활 햇을 때
     {
-        m_Animator.Play("Idle");
+        m_Animator.SetBool("IsAlive",true);
         m_Status.PV_Reset();
         transform.position = vResumePoint;
         //아이템 리셋은 X
@@ -438,7 +446,7 @@ public class Player : MonoBehaviour
     //즉부, 즉사, 무적, 포션, 아드레날린
     public void Immediate_Resume()//GameMgr에서 실행 하면 해당 함수 불러서 체력 등 다시 세팅
     {
-        m_Animator.Play("Idle");
+        m_Animator.SetBool("IsAlive", true);
         m_Status.Resume_Immediate();
     }
 

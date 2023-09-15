@@ -20,7 +20,7 @@ TagManager:
   - UIHoldingItem
   - UISelectItem
   - EndPoint
-  - NextPhase
+  - MiddleGoal
   layers:
   - Default
   - TransparentFX

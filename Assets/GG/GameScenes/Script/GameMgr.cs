@@ -7,10 +7,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameMgr : MonoBehaviour
-{    
+{
     public static GameMgr m_Instance = null;
 
-    public float fResultScreenTime=10f;
+    public float fResultScreenTime = 10f;
     public float fCeremonyTime = 5f;
 
     public GameObject ResultScreen;
@@ -30,14 +30,15 @@ public class GameMgr : MonoBehaviour
 
     //인게임에서 상점 아이템 관련해서 많이 쓰임
     public PhotonView m_PV;
-    public List<ParticipantInfo> Ranking;//인게임에서 랭킹용으로
-    private StoreItem[] m_ItemSlot;
 
+    private StoreItem[] m_ItemSlot;
     private StoreItem_Resume ItemResume;
+
+    //점수 관련
 
     void Awake()
     {
-        
+
         var duplicated = FindObjectsOfType<GameMgr>();
 
         if (duplicated.Length > 1)
@@ -56,13 +57,13 @@ public class GameMgr : MonoBehaviour
     }
     void Start()
     {
-       if(m_bInGame && m_bMulti)
+        if (m_bInGame && m_bMulti)
         {
             //인게임일 때 아이템들 아이콘, 인스턴스 등 생성
             int[,] HoldingItem = InfoHandler.Instance.Get_HoldingItem();
-            m_ItemSlot = new StoreItem[2];    
-            
-            for (int i=0;i<2;++i)
+            m_ItemSlot = new StoreItem[2];
+
+            for (int i = 0; i < 2; ++i)
             {
                 int itemIndex = HoldingItem[i, 0];
 
@@ -109,7 +110,7 @@ public class GameMgr : MonoBehaviour
                 m_ItemSlot[i].Set_Num(HoldingItem[i, 1]);
 
                 InGameUIMgr.Instance.Set_Item(i, m_ItemSlot[i]);
-               
+
             }
             Debug.Log(m_ItemSlot[0] + " " + m_ItemSlot[1]);
 
@@ -128,7 +129,7 @@ public class GameMgr : MonoBehaviour
             return m_Instance;
         }
     }
-//////////////////////멀티 버전에서 사용하는 함수//////////////////////////////////////////////////
+    //////////////////////멀티 버전에서 사용하는 함수//////////////////////////////////////////////////
     public void Load_LocalPlayer(Vector3 vStartPoint)
     {
         Debug.LogWarning("호출");
@@ -145,10 +146,10 @@ public class GameMgr : MonoBehaviour
     {
 
         CinemachineVirtualCamera Temp = FindObjectOfType<CinemachineVirtualCamera>();
-        if(null!=Temp && null != m_LocalPlayer)
-            m_LocalPlayer.Set_Camera(Temp);        
+        if (null != Temp && null != m_LocalPlayer)
+            m_LocalPlayer.Set_Camera(Temp);
     }
-    
+
     public void Change_Avatar(int iIndex)
     {
         m_LocalPlayer.GetComponentInChildren<ChangeAvatar>().Change_Avatar(iIndex);
@@ -164,12 +165,12 @@ public class GameMgr : MonoBehaviour
     public void BroadCast_TimeAttack()
     {
         m_PV.RPC("SomeOne_GoalIn", RpcTarget.All);
-    } 
-    
+    }
+
     [PunRPC]
     void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
     {
-        m_LocalPlayer.Immediate_Death();    
+        m_LocalPlayer.Immediate_Death();
     }
     [PunRPC]
     void Start_Game()
@@ -190,11 +191,11 @@ public class GameMgr : MonoBehaviour
     public void Player_GoalIn()//싱글 모드
     {
         Debug.Log("Player GoalIn!");
-  
+
         Invoke("Show_ResultScreen", fCeremonyTime);
-        
+
     }
-    
+
     public void Use_ResumeItem()//즉부 아이템 썻을 때
     {
         ItemResume.Consume_Item();
@@ -227,6 +228,23 @@ public class GameMgr : MonoBehaviour
     public void Player_NextPhase()
     {
         Debug.Log("Go to NextPhase!");
+    }
+
+    public void Deliver_Record(bool IsMiddleGoal)
+    {//이걸 부른 사람은 골인 하고 top3안에 들어간 사람
+        string Name = NetworkManager.Instance.Get_Playername();
+        string Record = InGameUIMgr.Instance.Get_Record();
+
+        m_PV.RPC("Receive_Record", RpcTarget.All, IsMiddleGoal, Name, Record);
+    }
+
+    [PunRPC]
+    void Receive_Record(bool IsMiddleGoal, string Name, string Record)
+    {
+        if(IsMiddleGoal)
+        {
+            InGameUIMgr.Instance.Plug_Ranking(Name, Record);
+        }
     }
 
     //////////인게임에서 쓰일 함수들//././///////

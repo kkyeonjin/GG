@@ -11,6 +11,7 @@ public class InGameUIMgr : MonoBehaviour
     public StatusUI m_StatusUI;
     //플레이어 아이템 슬롯
     public ItemSlotEffect[] m_StoreItemSlots;
+    //인게임 중간 골인지점 랭크
     public RankSlot[] m_RankSlot;
     public Vector3[] m_RankSlotPos;
     private int m_iRankSlotIndex=0;
@@ -72,7 +73,7 @@ public class InGameUIMgr : MonoBehaviour
     void Start()
     {
         Timer = Empty;
-        
+        Reset_Ranking();
     }
 
     // Update is called once per frame
@@ -101,6 +102,12 @@ public class InGameUIMgr : MonoBehaviour
             }
         }
     }
+
+    public string Get_Record()
+    {
+        return GeneralTimer.text;
+    }
+
     public void Activate_RewpawnUI()
     {
         m_fRespawnPassTime = m_fRespawnTime;
