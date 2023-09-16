@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Phase1Manager : MonoBehaviour
 {
+    //카메라 전환
+    public Camera initCam;
+    public Camera plyaerCam;
+
     //게임 phase 관리
     int currentPhase; //현재 구간 숫자
 
     //phase별 랜덤 지진 이벤트 관리
 
-    //
-
     /// <summary>
-    /// - 플레이어 각자 개별씬에서 시작
     /// - 시작 7초 동안 지하철 덜컹이며 운행
     /// - 시작 7초 이후 지진 시작 + 재난 알림 문자음 사운드 + Order, HP 등 활성화
     /// (1) Holding Bar : 사운드 3초 이내에 hold 후 10초 동안 유지
