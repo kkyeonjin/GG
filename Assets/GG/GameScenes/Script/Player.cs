@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     private bool m_bInteract_Lever = false;
     private bool m_bInteract_EnterCode = false;
 
+    private Interactive Curr_InteractiveObj;
+
     private bool m_bStartPush = false;
     private bool m_bIsPushing = false;
 
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
 
     private delegate void MoveFunc();
     private MoveFunc m_Moving;
+
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -141,6 +144,10 @@ public class Player : MonoBehaviour
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
+        }
+        else if(m_bInteract_Lever && Input.GetKey(KeyCode.E))
+        {
+            Curr_InteractiveObj.Interacting(this.gameObject);
         }
 
         m_vMoveVec = m_vMoveVec.normalized;
@@ -413,6 +420,20 @@ public class Player : MonoBehaviour
         else if(other.gameObject.CompareTag("MiddleGoal"))
         {
             Player_NextPhase();
+        }
+        else if(other.gameObject.CompareTag("Interactive"))
+        {
+            m_bInteract_Lever = true;
+            Curr_InteractiveObj = other.gameObject.GetComponent<Interactive>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Interactive"))
+        {
+            m_bInteract_Lever = false;
+            Curr_InteractiveObj = null;
         }
     }
 

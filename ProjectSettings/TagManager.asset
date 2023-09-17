@@ -21,6 +21,7 @@ TagManager:
   - UISelectItem
   - EndPoint
   - MiddleGoal
+  - Interactive
   layers:
   - Default
   - TransparentFX
