@@ -7,6 +7,9 @@ public class MiddleGoalPoint1 : MonoBehaviour
 {
     public PhotonView m_PV;
 
+    public List<Transform> RespawnPos;
+    public GameObject NextGoalPoint;
+
     private int m_iTop3 = 0; 
     
     // Start is called before the first frame update
@@ -31,11 +34,20 @@ public class MiddleGoalPoint1 : MonoBehaviour
                 {
                     m_PV.RPC("Increase_Count", RpcTarget.All);
                     GameMgr.Instance.Deliver_Record(true);
+                    Allocate_Respawn();
                     //중간 지점 전달
                     this.gameObject.SetActive(false);//골인 두번 되지 않도록
+                    NextGoalPoint.SetActive(true);//다음 골인 지점 활성화
                 }
             }
         }
+    }
+
+    void Allocate_Respawn()
+    {
+        int idx = Random.Range(0, RespawnPos.Count);
+        GameMgr.Instance.Set_ResumePoint(RespawnPos[idx].position);
+        m_PV.RPC("Update_RespawnPos", RpcTarget.All, idx);
     }
 
 
@@ -43,5 +55,11 @@ public class MiddleGoalPoint1 : MonoBehaviour
     void Increase_Count()
     {
         ++m_iTop3;
+    }
+    
+    [PunRPC]
+    void Update_RespawnPos(int RemovedIndex)
+    {
+        RespawnPos.RemoveAt(RemovedIndex);
     }
 }

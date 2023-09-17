@@ -67,6 +67,7 @@ MonoBehaviour:
   - Resume_Status
   - Receive_Record
   - Increase_Count
+  - Update_RespawnPos
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

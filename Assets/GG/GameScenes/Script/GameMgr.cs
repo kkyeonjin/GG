@@ -210,6 +210,7 @@ public class GameMgr : MonoBehaviour
     public void Set_ResumePoint(Vector3 vPoint)//중간 골인 지점 지나면 거점 부활 지점 변경해줌
     {
         vResumePoint = vPoint;
+        Debug.Log(vResumePoint);
     }
 
     public void Player_GoalIn(bool IsMine)//멀티 모드
@@ -315,6 +316,7 @@ public class GameMgr : MonoBehaviour
     [PunRPC]
     void BacktoMultiLobby()
     {
+        Debug.Log("멀티 로비로 가기");
         NetworkManager.Instance.StartGame("MultiLobby");
     }
 }

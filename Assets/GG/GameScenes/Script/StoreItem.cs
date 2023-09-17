@@ -74,6 +74,9 @@ public class StoreItem : MonoBehaviour
 
     public virtual void Use_Item()
     {
+        if (m_eIndex == ITEM.END)
+            return;
+
         Debug.Log("»£√‚! " + m_eIndex);
         m_bUsable = false;
         m_fTimer = 0f;

@@ -20,8 +20,7 @@ public class InitializeMap : MonoBehaviour
         if (PhotonNetwork.IsMasterClient == true)
         {
             int idx = Random.Range(0, StartPoints.Count);
-            GameMgr.Instance.Load_LocalPlayer(StartPoints[idx].transform.position);
-            StartPoints.RemoveAt(idx);
+            Load_LocalPlayer(StartPoints[idx].transform.position);
             //NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
             Initialize_Players_InMap();
         }
