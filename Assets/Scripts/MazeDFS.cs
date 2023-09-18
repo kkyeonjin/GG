@@ -14,6 +14,7 @@ public class MazeDFS : MonoBehaviour
     public int startPos = 0;
     public GameObject[] space;
     public Vector2 offset;
+    public List<SpaceState> rooms;
 
     List<Cell> board;
 
@@ -21,6 +22,7 @@ public class MazeDFS : MonoBehaviour
     void Start()
     {
         MazeGenerator();
+        ElevatorSet();
     }
 
     void GenerateDungeon()
@@ -46,11 +48,20 @@ public class MazeDFS : MonoBehaviour
                     {
                         newRoom.walls[1].SetActive(false);
                     }
+                    rooms.Add(newRoom);
                    
                 }
                 
             }
         }
+
+    }
+
+    void ElevatorSet()
+    {
+       int select = Random.Range(4, rooms.Count);
+        Debug.Log(select);
+        rooms[select].DoorUpdate();
 
     }
 

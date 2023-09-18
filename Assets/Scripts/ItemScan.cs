@@ -7,8 +7,12 @@ using TMPro;
 public class ItemScan : MonoBehaviour
 {
     //public TMP_Text pressText;
+    //Item 용도 설명 UI
     public Image ItemInfo;
     public GameObject pickedItem;
+
+    //Press E UI
+    public TMP_Text pressE;
 
     [SerializeField]
     float range;
@@ -19,30 +23,60 @@ public class ItemScan : MonoBehaviour
 
     private void Update()
     {
-        checkItem();
+        CheckItem();
+        CheckElevator();
     }
 
-    public void checkItem()
+    public void CheckItem()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
         {
-
-            ItemInfo.sprite = hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemInfo;
-            ItemInfo.gameObject.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E))
+            if (hitInfo.transform.gameObject.CompareTag("Item"))
             {
-                hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
-                hitInfo.transform.gameObject.transform.SetParent(pickedItem.transform);
-                hitInfo.transform.gameObject.SetActive(false);
+                ItemInfo.sprite = hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemInfo;
+                ItemInfo.gameObject.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
+                    hitInfo.transform.gameObject.transform.SetParent(pickedItem.transform);
+                    hitInfo.transform.gameObject.SetActive(false);
+                }
+            }
+            else if (hitInfo.transform.gameObject.CompareTag("Elevator"))
+            {
+                pressE.gameObject.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
+                }
+            }
+            else
+            {
+                ItemInfo.gameObject.SetActive(false);
             }
         }
+    }
 
-        else
+    public void CheckElevator()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
         {
-            ItemInfo.gameObject.SetActive(false);
-        }
+            if (hitInfo.transform.gameObject.CompareTag("Elevator"))
+            {
+                pressE.gameObject.SetActive(true);
 
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
+                }
+            }
+            else
+            {
+                pressE.gameObject.SetActive(false);
+            }
+        }
     }
 
 }
