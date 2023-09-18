@@ -24,7 +24,6 @@ public class InGameUIMgr : MonoBehaviour
     private float m_fRespawnPassTime;
 
 
-
     public int iGoalTimerSec = 15;
     //1등 골인 후 타이머
     public TextMeshProUGUI GeneralTimer;
