@@ -68,6 +68,7 @@ MonoBehaviour:
   - Receive_Record
   - Increase_Count
   - Update_RespawnPos
+  - Add_RankingList
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
@@ -34,7 +35,9 @@ public class GameMgr : MonoBehaviour
     private StoreItem[] m_ItemSlot;
     private StoreItem_Resume ItemResume;
 
-    //점수 관련
+    //점수, 결과 관련
+    private List<Tuple<string, Photon.Realtime.Player>> Ranking;
+
 
     void Awake()
     {
@@ -129,6 +132,14 @@ public class GameMgr : MonoBehaviour
             return m_Instance;
         }
     }
+
+    public void Player_GoalIn()//싱글 모드
+    {
+        Debug.Log("Player GoalIn!");
+
+        Invoke("Show_ResultScreen", fCeremonyTime);
+
+    }
     //////////////////////멀티 버전에서 사용하는 함수//////////////////////////////////////////////////
     public void Load_LocalPlayer(Vector3 vStartPoint)
     {
@@ -155,7 +166,7 @@ public class GameMgr : MonoBehaviour
         m_LocalPlayer.GetComponentInChildren<ChangeAvatar>().Change_Avatar(iIndex);
     }
     public void BroadCast_Death()//아이템 쓴 당사자가 부를 함수
-    {
+    {//이거는 바꿔야함 특정 타겟 지정해서 죽이도록 해야함
         m_PV.RPC("MakeLocalPlayer_Die", RpcTarget.Others);
     }
     public void BroadCast_StartGame()
@@ -188,14 +199,6 @@ public class GameMgr : MonoBehaviour
         Invoke("Show_ResultScreen", fCeremonyTime);
     }
 
-    public void Player_GoalIn()//싱글 모드
-    {
-        Debug.Log("Player GoalIn!");
-
-        Invoke("Show_ResultScreen", fCeremonyTime);
-
-    }
-
     public void Use_ResumeItem()//즉부 아이템 썻을 때
     {
         ItemResume.Consume_Item();
@@ -218,6 +221,8 @@ public class GameMgr : MonoBehaviour
         if (IsMine)
         {
             InGameUIMgr.Instance.Player_GoalIn();
+            m_PV.RPC("Add_RankingList", RpcTarget.All, PhotonNetwork.LocalPlayer, InGameUIMgr.Instance.Get_Record());
+
             if (m_bSomeOneFirst == false)
             {
                 BroadCast_TimeAttack();
@@ -239,6 +244,11 @@ public class GameMgr : MonoBehaviour
         m_PV.RPC("Receive_Record", RpcTarget.All, IsMiddleGoal, Name, Record);
     }
 
+    private void Calculate_Ranking()
+    {//일단 들어온 시간 순서대로
+        Ranking.Sort();
+    }
+
     [PunRPC]
     void Receive_Record(bool IsMiddleGoal, string Name, string Record)
     {
@@ -246,6 +256,11 @@ public class GameMgr : MonoBehaviour
         {
             InGameUIMgr.Instance.Plug_Ranking(Name, Record);
         }
+    }
+    [PunRPC]
+    void Add_RankingList(Photon.Realtime.Player player, string record)
+    {
+        Ranking.Add(new Tuple< string, Photon.Realtime.Player>(record, player));
     }
 
     //////////인게임에서 쓰일 함수들//././///////

@@ -24,10 +24,11 @@ public class RankSlot : MonoBehaviour
         
     }
 
-    public void Get_SlotInfo(string name,string time)
+    public void Get_SlotInfo(string name,string time,int rank)
     {
         Name.text = name;
         Time.text = time;
+        Rank.text = ""+rank;
     }
     public void ClearSlot()
     {

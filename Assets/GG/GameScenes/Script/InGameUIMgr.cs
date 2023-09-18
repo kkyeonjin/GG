@@ -23,6 +23,8 @@ public class InGameUIMgr : MonoBehaviour
     public float m_fRespawnTime;
     private float m_fRespawnPassTime;
 
+    //최종 랭킹 
+    public RankSlot[] m_ResultRankSlots;
 
     public int iGoalTimerSec = 15;
     //1등 골인 후 타이머
@@ -177,6 +179,7 @@ public class InGameUIMgr : MonoBehaviour
         if (m_fPassTime <= 0f)
         {
             GameMgr.Instance.Game_Over();
+            GeneralTimer.text = "--:--";
             Timer = Empty;
         }
        
@@ -194,7 +197,7 @@ public class InGameUIMgr : MonoBehaviour
             return;
 
         m_RankSlot[m_iRankSlotIndex].Set_Position(m_RankSlotPos[m_iRankSlotIndex]);
-        m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime);
+        m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime, m_iRankSlotIndex);
     }
 
     public void Reset_Ranking()

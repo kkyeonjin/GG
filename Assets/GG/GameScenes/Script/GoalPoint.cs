@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class MiddleGoalPoint1 : MonoBehaviour
+public class GoalPoint : MonoBehaviour
 {
     public PhotonView m_PV;
 
