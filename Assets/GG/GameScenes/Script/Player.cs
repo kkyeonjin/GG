@@ -445,7 +445,7 @@ public class Player : MonoBehaviour
     public void Player_GoalIn()
     {
         if(m_PV == null)
-            GameMgr.Instance.Player_GoalIn();
+            SingleGameMgr.Instance.Player_GoalIn();
         else
             GameMgr.Instance.Player_GoalIn(m_PV.IsMine);
 

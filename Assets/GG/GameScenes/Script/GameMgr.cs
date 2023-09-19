@@ -279,7 +279,7 @@ public class GameMgr : MonoBehaviour
     //////////인게임에서 쓰일 함수들//././///////
     void Update()
     {
-        if (false == m_bInGame && m_bMulti)
+        if (false == m_bInGame )
             return;
 
         //임시로 키 만들어놓음
@@ -336,10 +336,7 @@ public class GameMgr : MonoBehaviour
              if(m_bIamTheFirst)//1등이 부르기
                m_PV.RPC("BacktoMultiLobby", RpcTarget.All);
         }
-        else
-        {
-            SceneManager.LoadScene("Lobby");
-        }
+  
     }
 
     [PunRPC]
