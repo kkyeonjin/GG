@@ -49,7 +49,7 @@ public class ItemScan : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
+                   // hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
                 }
             }
             else
@@ -69,7 +69,7 @@ public class ItemScan : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
+                  //  hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
                 }
             }
             else

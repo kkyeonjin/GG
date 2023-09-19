@@ -5,15 +5,23 @@ using UnityEngine;
 
 public class ElevatorCtr : MonoBehaviour
 {
-    public GameObject ElevRoom;
-   
-    public void ElevRoomSet()
+    public GameObject ElevRoom, BackWall;
+
+    private void OnCollisionStay(Collision other)
     {
-        ElevRoom.SetActive(true);
+        if(other.gameObject.tag == "Player")
+        {
+            ElevRoom.SetActive(true);
+            BackWall.SetActive(false);
+        }
     }
 
-    public void ElevRoomDelete()
+    private void OnCollisionExit(Collision other)
     {
-        ElevRoom.SetActive(false);
+        if(other.gameObject.tag == "Player")
+        {
+            ElevRoom.SetActive(false);
+            BackWall.SetActive(true);
+        }
     }
 }

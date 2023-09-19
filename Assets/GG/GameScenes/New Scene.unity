@@ -29661,10 +29661,10 @@ MonoBehaviour:
   size: {x: 7, y: 7}
   startPos: 0
   space:
-  - {fileID: 7166381844882111667, guid: 41c9801061861554c84b837f0dfda1e8, type: 3}
-  - {fileID: 7166381844882111667, guid: 139197e58245cd0458ce9a62ef4d1c82, type: 3}
-  - {fileID: 7166381844882111667, guid: 41c9801061861554c84b837f0dfda1e8, type: 3}
-  - {fileID: 7166381844882111667, guid: 41c9801061861554c84b837f0dfda1e8, type: 3}
+  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
+  - {fileID: 7166381844882111667, guid: ee1396b36994c474384df06873818531, type: 3}
+  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
+  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
   offset: {x: 9, y: 9}
   rooms: []
 --- !u!4 &1514466115

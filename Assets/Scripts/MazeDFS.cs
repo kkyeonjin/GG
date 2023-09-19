@@ -44,7 +44,7 @@ public class MazeDFS : MonoBehaviour
                     {
                         newRoom.walls[0].SetActive(false);
                     }
-                    else if(i == 9 && j == 9)
+                    else if(i == 6 && j == 6)
                     {
                         newRoom.walls[1].SetActive(false);
                     }
