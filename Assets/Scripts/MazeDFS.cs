@@ -15,6 +15,7 @@ public class MazeDFS : MonoBehaviour
     public GameObject[] space;
     public Vector2 offset;
     public List<SpaceState> rooms;
+    public List<SpaceState> roomsForElev;
 
     List<Cell> board;
 
@@ -40,6 +41,7 @@ public class MazeDFS : MonoBehaviour
                     newRoom.UpdateRoom(currentCell.status);
 
                     newRoom.name += " " + i + " - " + j;
+
                     if(i == 0 && j == 0)
                     {
                         newRoom.walls[0].SetActive(false);
@@ -48,20 +50,35 @@ public class MazeDFS : MonoBehaviour
                     {
                         newRoom.walls[1].SetActive(false);
                     }
+
                     rooms.Add(newRoom);
-                   
+                    
+
                 }
                 
             }
         }
 
     }
-
+   
     void ElevatorSet()
     {
-       int select = Random.Range(4, rooms.Count);
+        foreach (var room in rooms)
+        {
+            int temp;
+            temp = room.CheckWalls();
+
+            if(temp != 0)
+            {
+                roomsForElev.Add(room);
+            }
+
+        }
+
+        int select = Random.Range(4, roomsForElev.Count);
         Debug.Log(select);
-        rooms[select].DoorUpdate();
+        roomsForElev[select].DoorUpdate();
+      //rooms[select].DoorUpdate();
 
     }
 

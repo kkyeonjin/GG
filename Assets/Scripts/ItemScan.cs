@@ -24,7 +24,6 @@ public class ItemScan : MonoBehaviour
     private void Update()
     {
         CheckItem();
-        CheckElevator();
     }
 
     public void CheckItem()
@@ -49,34 +48,14 @@ public class ItemScan : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                   // hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
+
                 }
             }
-            else
-            {
-                ItemInfo.gameObject.SetActive(false);
-            }
         }
-    }
-
-    public void CheckElevator()
-    {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
+        else
         {
-            if (hitInfo.transform.gameObject.CompareTag("Elevator"))
-            {
-                pressE.gameObject.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                  //  hitInfo.transform.gameObject.GetComponent<ElevatorCtr>().ElevRoomSet();
-                }
-            }
-            else
-            {
-                pressE.gameObject.SetActive(false);
-            }
+            ItemInfo.gameObject.SetActive(false);
+            pressE.gameObject.SetActive(false);
         }
     }
-
 }
