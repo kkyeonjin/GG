@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -200,11 +201,25 @@ public class InGameUIMgr : MonoBehaviour
         m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime, m_iRankSlotIndex);
     }
 
-    public void Reset_Ranking()
+    public void Reset_Ranking()//Áß°£ °ñ Àü¿ë
     {
         m_RankSlot[0].ClearSlot();
         m_RankSlot[1].ClearSlot();
         m_RankSlot[2].ClearSlot();
     }
 
+    public void ResultRanking(List<Tuple<string, Photon.Realtime.Player>> Ranking,List<Photon.Realtime.Player> GameOut)
+    {
+        int RankingSize = Ranking.Count;
+        int iIndex = 0;
+        for (int i = 0; i < RankingSize; ++i)
+        {
+            m_ResultRankSlots[iIndex++].Get_SlotInfo(Ranking[i].Item2.NickName, Ranking[i].Item1, i+1);
+        }
+        RankingSize = GameOut.Count;
+        for(int i=0;i< RankingSize; ++i)
+        {
+            m_ResultRankSlots[iIndex++].Get_SlotInfo(GameOut[i].NickName, "--:--", i+1);
+        }
+    }
 }

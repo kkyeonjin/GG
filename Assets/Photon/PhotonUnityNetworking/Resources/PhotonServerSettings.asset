@@ -69,6 +69,7 @@ MonoBehaviour:
   - Increase_Count
   - Update_RespawnPos
   - Add_RankingList
+  - GameOut_Player
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

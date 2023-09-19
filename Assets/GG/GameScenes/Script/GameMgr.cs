@@ -26,6 +26,7 @@ public class GameMgr : MonoBehaviour
 
     private bool m_bSomeOneFirst = false;
     private bool m_bIamTheFirst = false;
+    private bool m_bLocalPlayerGoalIn = false;
 
     private Vector3 vResumePoint;
 
@@ -37,6 +38,7 @@ public class GameMgr : MonoBehaviour
 
     //점수, 결과 관련
     private List<Tuple<string, Photon.Realtime.Player>> Ranking;
+    private List<Photon.Realtime.Player> GameOut;
 
 
     void Awake()
@@ -117,6 +119,9 @@ public class GameMgr : MonoBehaviour
             }
             Debug.Log(m_ItemSlot[0] + " " + m_ItemSlot[1]);
 
+            Ranking = new List<Tuple<string, Photon.Realtime.Player>>();
+            GameOut = new List<Photon.Realtime.Player>();
+
             Invoke("BroadCast_StartGame", fDelayStartTime);
         }
     }
@@ -194,8 +199,15 @@ public class GameMgr : MonoBehaviour
         m_bSomeOneFirst = true;
         InGameUIMgr.Instance.Start_GoalTimer();
     }
+    [PunRPC]
+    void GameOut_Player(Photon.Realtime.Player player)
+    {
+        GameOut.Add(player);
+    }
+
     public void Game_Over()
     {
+        m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
         Invoke("Show_ResultScreen", fCeremonyTime);
     }
 
@@ -222,6 +234,7 @@ public class GameMgr : MonoBehaviour
         {
             InGameUIMgr.Instance.Player_GoalIn();
             m_PV.RPC("Add_RankingList", RpcTarget.All, PhotonNetwork.LocalPlayer, InGameUIMgr.Instance.Get_Record());
+            m_bLocalPlayerGoalIn = true;
 
             if (m_bSomeOneFirst == false)
             {
@@ -312,6 +325,7 @@ public class GameMgr : MonoBehaviour
     {
         GameScreen.SetActive(false);
         ResultScreen.SetActive(true);
+        InGameUIMgr.Instance.ResultRanking(Ranking, GameOut);
         Invoke("BackToLobby", fResultScreenTime);
     }
     
