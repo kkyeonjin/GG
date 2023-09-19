@@ -27,7 +27,7 @@ public class SpaceState : MonoBehaviour
                 wallCount++;
             }      
         }
-        Debug.Log(wallCount);
+      //Debug.Log(wallCount);
         return wallCount;
     }
 
