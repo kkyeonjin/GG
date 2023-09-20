@@ -14,6 +14,8 @@ public class ItemScan : MonoBehaviour
     //Press E UI
     public TMP_Text pressE;
 
+    public Animator ElevL, ElevR;
+
     [SerializeField]
     float range;
     RaycastHit hitInfo;
@@ -45,9 +47,16 @@ public class ItemScan : MonoBehaviour
             else if (hitInfo.transform.gameObject.CompareTag("Elevator"))
             {
                 pressE.gameObject.SetActive(true);
+                ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
+                ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
+                    ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
+
+                    ElevL.SetBool("Open", true);
+                    ElevR.SetBool("Open", true);
 
                 }
             }

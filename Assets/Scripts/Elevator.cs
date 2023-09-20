@@ -8,6 +8,7 @@ public class Elevator : MonoBehaviour
     {
         if(other.gameObject.tag == "Fire")
         {
+            Debug.Log("FireDetect");
             Destroy(other.gameObject);
         }
     }

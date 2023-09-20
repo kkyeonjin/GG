@@ -12107,6 +12107,7 @@ MonoBehaviour:
   - {fileID: 809451427}
   - {fileID: 1923367764}
   eleDoors: []
+  wallCount: 0
 --- !u!1001 &463157929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20525,6 +20526,7 @@ MonoBehaviour:
   - {fileID: 448513818}
   - {fileID: 2091309831}
   eleDoors: []
+  wallCount: 0
 --- !u!4 &1133823833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6490211445474703647, guid: 6a6b990bc63dca24ea8ec6dd841557a9,
@@ -21287,6 +21289,7 @@ MonoBehaviour:
   - {fileID: 1474232942}
   - {fileID: 459499950}
   eleDoors: []
+  wallCount: 0
 --- !u!4 &1179419165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1491443715697644979, guid: 5eaf850d53375b6469fc2ecbd506404f,
@@ -24599,6 +24602,7 @@ MonoBehaviour:
   - {fileID: 1034543193}
   - {fileID: 841625305}
   eleDoors: []
+  wallCount: 0
 --- !u!1 &1428717994
 GameObject:
   m_ObjectHideFlags: 0
@@ -24793,6 +24797,8 @@ MonoBehaviour:
   ItemInfo: {fileID: 2101818989}
   pickedItem: {fileID: 1144070448}
   pressE: {fileID: 358655892}
+  ElevL: {fileID: 0}
+  ElevR: {fileID: 0}
   range: 5
   layerMask:
     serializedVersion: 2
@@ -29667,6 +29673,7 @@ MonoBehaviour:
   - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
   offset: {x: 8.35, y: 8.35}
   rooms: []
+  roomsForElev: []
 --- !u!4 &1514466115
 Transform:
   m_ObjectHideFlags: 0
@@ -34790,6 +34797,7 @@ MonoBehaviour:
   - {fileID: 1756577500}
   - {fileID: 985545286}
   eleDoors: []
+  wallCount: 0
 --- !u!1 &1776782527
 GameObject:
   m_ObjectHideFlags: 0
