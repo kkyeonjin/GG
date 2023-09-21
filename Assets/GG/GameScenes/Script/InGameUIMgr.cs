@@ -28,6 +28,9 @@ public class InGameUIMgr : MonoBehaviour
     public RankSlot[] m_ResultRankSlots;
 
     public int iGoalTimerSec = 15;
+    public TextMeshProUGUI GoalTimer;
+    public float m_fGoalTime =0f;
+    private bool m_bGameOver = false;
     //1등 골인 후 타이머
     public TextMeshProUGUI GeneralTimer;
     public int iGeneralTimerMin = 3;
@@ -162,13 +165,32 @@ public class InGameUIMgr : MonoBehaviour
 
     public void Start_GoalTimer()
     {//누군가가 골에 들어왔을 때
-        m_fPassTime = iGoalTimerSec;
+        m_fGoalTime = iGoalTimerSec;
+        Timer += Calculate_GoalTimer;
+        if(m_bStopUpdating == false)
+            GoalTimer.gameObject.SetActive(true);
     }
 
+    public void Calculate_GoalTimer()
+    {
+        m_fGoalTime -= Time.deltaTime;
+        if(m_fGoalTime <=0f)
+        {
+            m_bGameOver = true;
+            Timer -= Calculate_GoalTimer;
+        }
+        int Min = Mathf.Max(0, (int)m_fGoalTime / 60);
+        int Sec = Mathf.Max(0, (int)m_fGoalTime % 60);
+
+        string szMin = string.Format("{0:D2}", Min);
+        string szSec = string.Format("{0:D2}", Sec);
+        GoalTimer.text = szMin + ":" + szSec;
+    }
 
     public void Player_GoalIn()
     {
         m_bStopUpdating = true;
+        GoalTimer.gameObject.SetActive(false); 
     }
 
     void Calculate_Time()
@@ -177,7 +199,7 @@ public class InGameUIMgr : MonoBehaviour
         int Min = Mathf.Max(0, (int)m_fPassTime / 60);
         int Sec = Mathf.Max(0, (int)m_fPassTime % 60);
 
-        if (m_fPassTime <= 0f)
+        if (m_fPassTime <= 0f || m_bGameOver)
         {
             GameMgr.Instance.Game_Over();
             GeneralTimer.text = "--:--";
@@ -198,7 +220,7 @@ public class InGameUIMgr : MonoBehaviour
             return;
 
         m_RankSlot[m_iRankSlotIndex].Set_Position(m_RankSlotPos[m_iRankSlotIndex]);
-        m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime, m_iRankSlotIndex);
+        m_RankSlot[m_iRankSlotIndex++].Get_SlotInfo(playerName, playerTime, m_iRankSlotIndex.ToString());
     }
 
     public void Reset_Ranking()//중간 골 전용
@@ -214,12 +236,12 @@ public class InGameUIMgr : MonoBehaviour
         int iIndex = 0;
         for (int i = 0; i < RankingSize; ++i)
         {
-            m_ResultRankSlots[iIndex++].Get_SlotInfo(Ranking[i].Item2.NickName, Ranking[i].Item1, i+1);
+            m_ResultRankSlots[iIndex++].Get_SlotInfo(Ranking[i].Item2.NickName, Ranking[i].Item1, (i+1).ToString());
         }
         RankingSize = GameOut.Count;
         for(int i=0;i< RankingSize; ++i)
         {
-            m_ResultRankSlots[iIndex++].Get_SlotInfo(GameOut[i].NickName, "--:--", i+1);
+            m_ResultRankSlots[iIndex++].Get_SlotInfo(GameOut[i].NickName, "--:--", "over");
         }
     }
 }

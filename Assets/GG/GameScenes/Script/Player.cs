@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private bool m_bIsGround = false;
     private bool m_bIsCrouch = false;
 
-    private bool m_bInteract_Push= false;
+    private bool m_bInteract_Column= false;
     private bool m_bInteract_Lever = false;
     private bool m_bInteract_EnterCode = false;
 
@@ -307,7 +307,7 @@ public class Player : MonoBehaviour
 
     private void Pushing()
     {
-        if (m_bInteract_Push)
+        if (m_bInteract_Column)
         {
             if (m_bIsGround && Input.GetKeyDown(KeyCode.R))
             {
@@ -423,8 +423,11 @@ public class Player : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Interactive"))
         {
-            m_bInteract_Lever = true;
             Curr_InteractiveObj = other.gameObject.GetComponent<Interactive>();
+            if(Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
+                m_bInteract_Lever = true;
+            if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
+                m_bInteract_Lever = true;
         }
     }
 

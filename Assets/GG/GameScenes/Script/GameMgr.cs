@@ -207,7 +207,10 @@ public class GameMgr : MonoBehaviour
 
     public void Game_Over()
     {
-        m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
+        if (m_bLocalPlayerGoalIn == false)
+        {
+            m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
+        }
         Invoke("Show_ResultScreen", fCeremonyTime);
     }
 
