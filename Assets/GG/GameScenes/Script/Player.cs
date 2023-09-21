@@ -318,7 +318,7 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
