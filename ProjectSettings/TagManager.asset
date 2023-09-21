@@ -15,6 +15,7 @@ TagManager:
   - AI
   - stair
   - Falling
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
