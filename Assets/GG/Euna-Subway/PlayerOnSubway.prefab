@@ -1124,7 +1124,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1832276346006439159}
-  sceneViewId: 64
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1832276346006439159
@@ -3669,7 +3669,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1393509740610130816}
-  sceneViewId: 69
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1393509740610130816
@@ -10448,7 +10448,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5503313816241418630}
-  sceneViewId: 68
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &5503313816241418630
@@ -11015,7 +11015,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8939349408829518486}
-  sceneViewId: 67
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &8939349408829518486
@@ -13348,7 +13348,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 3564974601990542521}
-  sceneViewId: 70
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &3564974601990542521
@@ -17601,7 +17601,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 21199421566667835}
-  sceneViewId: 61
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &21199421566667835
@@ -20429,7 +20429,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5195078294946452895}
-  sceneViewId: 66
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &5195078294946452895
@@ -20655,7 +20655,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4821485399040532281}
-  sceneViewId: 63
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &4821485399040532281
@@ -22858,7 +22858,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 65
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &6591030161156859177
@@ -27514,7 +27514,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1358821639312614069}
-  sceneViewId: 62
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1358821639312614069
