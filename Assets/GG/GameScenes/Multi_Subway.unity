@@ -11186,9 +11186,10 @@ GameObject:
   - component: {fileID: 1238961388}
   - component: {fileID: 1238961387}
   - component: {fileID: 1238961390}
+  - component: {fileID: 1238961391}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11219,7 +11220,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 1, z: 5}
+  m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1238961388
 MeshRenderer:
@@ -11287,6 +11288,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1238961391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238961385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d36ba3e511d8a4f90c26bf4f44e79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AdjustPosition: {fileID: 0}
 --- !u!1 &1300763917
 GameObject:
   m_ObjectHideFlags: 0
@@ -19988,8 +20002,8 @@ GameObject:
   - component: {fileID: 2056601815}
   - component: {fileID: 2056601814}
   - component: {fileID: 2056601813}
-  - component: {fileID: 2056601817}
   - component: {fileID: 2056601818}
+  - component: {fileID: 2056601819}
   m_Layer: 0
   m_Name: Object
   m_TagString: Interactive
@@ -20075,19 +20089,6 @@ Transform:
   m_Father: {fileID: 1671528203}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2056601817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056601812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef396c27f5aca140bf8b4fe97f38ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AdjustPosition: {fileID: 2009818248}
 --- !u!54 &2056601818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20104,6 +20105,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2056601819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056601812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f68354c2501fc40aafba5e4015c501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AdjustPosition: {fileID: 2009818248}
 --- !u!1 &2094295265
 GameObject:
   m_ObjectHideFlags: 0

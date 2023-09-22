@@ -34,8 +34,7 @@ public class Player : MonoBehaviour
 
     private Interactive Curr_InteractiveObj;
 
-    private bool m_bStartPush = false;
-    private bool m_bIsPushing = false;
+    private bool m_bHolding = false;
 
     private bool m_bAdrenaline = false;
     private bool m_bInvincible = false;
@@ -106,12 +105,11 @@ public class Player : MonoBehaviour
     private void Get_KeyInput()
     {
 
-        if (m_bIsCrouch)
+        if (m_bIsCrouch || m_bHolding)
             return;
 
         m_vMoveVec = Vector3.zero;
         m_bIsRun = false;
-        m_bIsPushing = false;
 
         Vector3 CamFoward = m_CameraTransform.forward;
         Vector3 vRight = Vector3.Cross(Vector3.up, CamFoward);
@@ -121,45 +119,36 @@ public class Player : MonoBehaviour
         {
             m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
-            m_bIsRun = true;
-            m_bIsPushing = true;        
+            m_bIsRun = true;      
         }
-        else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             m_vMoveVec -= CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        if (false == m_bStartPush && Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             m_vMoveVec += m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        else if (false == m_bStartPush && Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             m_vMoveVec -= m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        else if(m_bInteract_Lever && Input.GetKey(KeyCode.E))
-        {
-            Curr_InteractiveObj.Interacting(this.gameObject);
-        }
 
         m_vMoveVec = m_vMoveVec.normalized;
         Vector3 vPlayerRight = Vector3.Cross(Vector3.up, m_vMoveVec);
         m_vMoveVec = Vector3.Cross(vPlayerRight, Vector3.up).normalized;
 
-        if (m_bStartPush)
-        {
-            m_Animator.SetBool("IsPushing", m_bIsPushing);
-        }
 
-        if (m_bStartPush == false && false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
+        if (false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
             m_Animator.SetBool("IsRun", m_bIsRun);
 
 
@@ -212,19 +201,6 @@ public class Player : MonoBehaviour
         PushLever();
         Entering_Code();
         Pushing();
-
-        //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
-        //    {
-        //        m_Rigidbody.velocity = new Vector3(Mathf.Sign(m_Rigidbody.velocity.x) * m_fTotalSpeed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
-        //    }
-        //    else if (Mathf.Abs(m_Rigidbody.velocity.z) > m_fTotalSpeed)
-        //    {
-        //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, Mathf.Sign(m_Rigidbody.velocity.z) * m_fTotalSpeed);
-        //    }
-        //    else if (m_Rigidbody.velocity.y > m_fTotalSpeed)
-        //    {
-        //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, Mathf.Sign(m_Rigidbody.velocity.y) * m_fTotalSpeed, m_Rigidbody.velocity.z);
-        //    }
     }
 
 
@@ -246,7 +222,7 @@ public class Player : MonoBehaviour
 
     private void Jump_Up()//바닥 ground와 충돌하면 down으로 이어지게. 지금은 임시로 jump 하나만 작동하도록
     {
-        if (m_bStartPush == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
+        if (m_bHolding == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
         {
             if (m_bIsGround && !m_bIsJump && m_Status.Is_Usable())
             {
@@ -290,6 +266,7 @@ public class Player : MonoBehaviour
         {
             if(m_bIsGround && Input.GetKeyDown(KeyCode.E))
             {
+                Curr_InteractiveObj.Interacting(this.gameObject);
                 m_Animator.SetTrigger("EnteringCode");
             }
         }
@@ -300,6 +277,7 @@ public class Player : MonoBehaviour
         {
             if (m_bIsGround && Input.GetKeyDown(KeyCode.E))
             {
+                Curr_InteractiveObj.Interacting(this.gameObject);
                 m_Animator.SetTrigger("PushLever");
             }
         }
@@ -309,20 +287,20 @@ public class Player : MonoBehaviour
     {
         if (m_bInteract_Column)
         {
-            if (m_bIsGround && Input.GetKeyDown(KeyCode.R))
+
+            if (m_bIsGround && Input.GetKey(KeyCode.E))
             {
                 if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
                 {
-                    m_bStartPush = true;
-                    m_Animator.SetBool("StartPush", m_bStartPush);
+                    Curr_InteractiveObj.Interacting(this.gameObject);
+                    m_bHolding = true;
+                    m_Animator.SetBool("Holding", m_bHolding);
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.R))
+            else if (Input.GetKeyUp(KeyCode.E))
             {
-                m_bStartPush = false;
-                m_bIsPushing = false;
-                m_Animator.SetBool("IsPushing", m_bIsPushing);
-                m_Animator.SetBool("StartPush", m_bStartPush);
+                m_bHolding = false;
+                m_Animator.SetBool("Holding", m_bHolding);
             }
         }
     }
@@ -371,14 +349,7 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
-        //else if(collision.gameObject.CompareTag("Pushable"))
-        //{
-        //    m_bInteract_Push = true;
-        //}
-        //else if(collision.gameObject.CompareTag("Lever"))
-        //{
-        //    m_bInteract_Lever = true;
-        //}
+
     }
 
     private void OnCollisionStay(Collision collision)
@@ -401,14 +372,6 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsGround", m_bIsGround);
             }
         }
-        //else if (collision.gameObject.CompareTag("Pushable"))
-        //{
-        //    m_bInteract_Push = false;
-        //}
-        //else if (collision.gameObject.CompareTag("Lever"))
-        //{
-        //    m_bInteract_Lever = false;
-        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -427,7 +390,7 @@ public class Player : MonoBehaviour
             if(Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
                 m_bInteract_Lever = true;
             if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
-                m_bInteract_Lever = true;
+                m_bInteract_Column = true;
         }
     }
 
@@ -436,6 +399,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Interactive"))
         {
             m_bInteract_Lever = false;
+            m_bInteract_Column = false;
             Curr_InteractiveObj = null;
         }
     }
