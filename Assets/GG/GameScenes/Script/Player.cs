@@ -200,7 +200,7 @@ public class Player : MonoBehaviour
         
         PushLever();
         Entering_Code();
-        Pushing();
+        Holding();
     }
 
 
@@ -283,7 +283,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Pushing()
+    private void Holding()
     {
         if (m_bInteract_Column)
         {
