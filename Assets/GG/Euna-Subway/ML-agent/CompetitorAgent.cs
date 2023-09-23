@@ -9,10 +9,10 @@ using System;
 public class CompetitorAgent : Agent
 {
     /// <summary>
-    /// Variable : Status / Move / Avoid / Hide / Item / Environment 총 6부문별로 구분
+    /// Variable : Status / Move / Environment / Avoid / Hide / Item 총 6부문별로 구분
     /// </summary>
 
-    //1. Status : Agent 상태값
+   //1. Status : Agent 상태값
     public CompetitorAgent agent;
     public Animator animator;
 
@@ -36,7 +36,7 @@ public class CompetitorAgent : Agent
     public const float staminaRecover = 10f;
 
 
-    //2. Move : Agent의 action에 관한 변수
+   //2. Move : Agent의 action에 관한 변수
     // Rigidbody & Animator
     public Rigidbody agentRb;
     private Animator agentAnimator;
@@ -48,52 +48,25 @@ public class CompetitorAgent : Agent
     public const float rotationSpeed = 250f;
     private float smoothRotationChange = 0f; // 자연스러운 회전을 위한 계수
 
-    /// 달리기 중 여부 <see cref="Player.m_bIsRun"/>
-    private bool isRun;
-
-    public CheckpointManager checkpointManager;
-
-
-    //3. Avoid : 주변 사람들을 피하면서 
-    // 근접하다고 인식할 반경
-    public const float closeRadius = 1f;
-
-    // 충돌했다고 인식할 반경
-    public const float collideRadius = 0.5f; //AddReward(-1)
-
-    // 반경 내 Human (AI & Players)
-    public CompetitorAgent[] closeAIs;
-    public Player[] closePlayers;
-
-    // 반경 내 장애물 (Fall & Obstacle)
-    //public GameObject closeFall;
-    //public GameObject closeObstacle;
-
-
-    //4. Hide
-    // 지진 이벤트 발생 여부
-    public bool eventOccured;
-
-    // 가장 가까이 있는 bunker
-    private Bunker nearestBunker;
-
-    // bunker에 숨는 중인지 여부
-    private bool isHide;
-
-
-    //5. Environment
-    //Training Mode 여부
-    public bool trainingMode = true;
-
     //Agent가 의도적으로 움직임을 멈춘 상태인지 여부
     private bool frozen = false;
+    /// 지면 상에 있는지 여부 <see cref="Player.m_bIsGround"/>
+    private bool isGround;
+    /// 달리기 중 여부 <see cref="Player.m_bIsRun"/>
+    private bool isRun;
+    /// 점프 중인지 여부 <see cref="Player.m_bIsJump"/>
+    private bool isJump;
+
+
+   //3. Environment
+    //Training Mode 여부
+    public bool trainingMode = true;
 
     //Agent가 속해 있는 맵 영역
     public SubwayArea subwayArea;
 
-    //6. Item
-
-
+    //체크포인트 매니저
+    public CheckpointManager checkpointManager;
 
     ///<summary>
     ///<see cref="CharacterStatus"/>
@@ -262,20 +235,31 @@ public class CompetitorAgent : Agent
 
     public void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("stiar"))
+        {
+            agentRb.AddForce(transform.forward * moveForce * 0.4f, ForceMode.VelocityChange)
+        }
+        //action 및 animation 관련
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
+        {
+            isJump = false;
+            animator.SetBool("IsJump", isJump);
+            isGround = true;
+            animator.SetBool("IsGround", isGround);
+        }
+
+        //훈련 관련
         if (trainingMode)
         {
-            /*
-            //벽과 충돌시 감점 
-            if (collision.collider.CompareTag("Wall")){
-                AddReward(-0.5f);
+            if (collision.collider.CompareTag("Goal"))
+            {
+                AddReward(5f);
+            }
+            if (collision.collider.CompareTag("Checkpoint"))
+            {
+                AddReward(0.5f);
             }
 
-            //AI와 충돌시 감점
-            if (collision.collider.CompareTag("AI"))
-            {
-                AddReward(-0.2f);
-            }
-            */
             if (!collision.collider.CompareTag("Checkpoint"))
             {
                 if (collision.collider.CompareTag("Wall"))
@@ -286,7 +270,7 @@ public class CompetitorAgent : Agent
                 {
                     AddReward(-0.2f);
                 }
-                else
+                else //obstacle, falling 등 예정
                 {
                     AddReward(-0.3f);
                 }
@@ -305,6 +289,36 @@ public class CompetitorAgent : Agent
         sensor.AddObservation(diff.normalized);
     }
 
+
+
+    //Revised (9.23.)
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        // 이동 액션
+        float moveX = actions.ContinuousActions[0];
+        float moveZ = actions.ContinuousActions[1];
+ 
+        // 걷기 
+        if (actions.DiscreteActions[0] == 0)
+        {
+            agentRb.velocity = new Vector3(moveX * walkSpeed, agentRb.velocity.y, moveZ * walkSpeed);
+        }
+        // 달리기 액션
+        else
+        {
+            agentRb.velocity = new Vector3(moveX * runSpeed, agentRb.velocity.y, moveZ * runSpeed);
+            //스태미나 소모
+        }
+
+        // 점프 액션
+        if (actions.DiscreteActions[1] == 1 && !isJumping)
+        {
+            agentRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isJump = true;
+        }
+    }
+
+
     /// <summary>
     /// action 명령이 player input이나 NN으로부터 들어오면 호출됨
     /// * 일단 y 벡터 (점프) 제외
@@ -318,9 +332,11 @@ public class CompetitorAgent : Agent
     /// [0] : isRunning (1: 달리는 중, 0: 
     /// </summary>
     /// <param name="actions"></param>
+
+    /*
     public override void OnActionReceived(ActionBuffers actions)
     {
-
+      //Continuous Ver.
         //action 호출할 때마다 패널티를 부여하여
         //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
         AddReward(-0.01f);
@@ -350,8 +366,9 @@ public class CompetitorAgent : Agent
 
         //Apply the new rotation
         transform.rotation = Quaternion.Euler(0, rotation, 0f);   
-        */
 
+
+      //Discrete Ver.
         var dir = Vector3.zero;
         var rot = Vector3.zero;
         var action = actions.DiscreteActions[0];
@@ -376,8 +393,9 @@ public class CompetitorAgent : Agent
 
         //this.transform.position += transform.forward * Time.deltaTime * 5f;
         animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
-
     }
+        */
+
 
     /// <summary>
     /// <see cref="OnActionReceived(ActionBuffers)"에 NN model 대신 키보드 인풋 값을 넘겨줌/>
@@ -432,4 +450,36 @@ public class CompetitorAgent : Agent
             discreteActionsOut[0] = 3;
         }
     }
+
+
+
+    //4. Avoid : 주변 사람들을 피하면서 
+    // 근접하다고 인식할 반경
+    public const float closeRadius = 1f;
+
+    // 충돌했다고 인식할 반경
+    public const float collideRadius = 0.5f; //AddReward(-1)
+
+    // 반경 내 Human (AI & Players)
+    public CompetitorAgent[] closeAIs;
+    public Player[] closePlayers;
+
+    // 반경 내 장애물 (Fall & Obstacle)
+    //public GameObject closeFall;
+    //public GameObject closeObstacle;
+
+
+    //5. Hide
+    // 지진 이벤트 발생 여부
+    public bool eventOccured;
+
+    // 가장 가까이 있는 bunker
+    private Bunker nearestBunker;
+
+    // bunker에 숨는 중인지 여부
+    private bool isHide;
+
+    //6. Item
 }
+
+
