@@ -6,6 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerInfo
 {
+    public string Name;
+
     public int Level;
     public int Exp;
     public int ExpMax;
@@ -15,7 +17,6 @@ public class PlayerInfo
     public bool[] AvailableCharacter;
 
     public int[] ItemsInfo;
-    public int[,] HoldingItems;
 
     public PlayerInfo()
     {
@@ -46,7 +47,10 @@ public class PlayerInfo
     {
 
     }
-
+    public string Get_Name()
+    {
+        return Name;
+    }
     public int Get_Level()
     {
         return Level;
@@ -70,6 +74,11 @@ public class PlayerInfo
     {
         return CurrCharacter;
     }
+    public void Set_Name(string name)
+    {
+        Name = name;
+    }
+
     public void Set_Exp(int iExp)
     {
         Exp += iExp;
@@ -104,12 +113,4 @@ public class PlayerInfo
         return ItemsInfo[iIndex];
     }
 
-    public int[,] Get_HoldingItems()
-    {
-        return HoldingItems;
-    }
-    public void Set_HoldingItems(int[,] SetItems)
-    {
-        HoldingItems = SetItems;
-    }
 }

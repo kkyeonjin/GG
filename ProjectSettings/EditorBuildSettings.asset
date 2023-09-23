@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/GG/GameScenes/StartFirst.unity
+    guid: 57fa7ecb78abcaa45b6e5b09107b2211
+  - enabled: 1
     path: Assets/GG/GameScenes/MenuUI.unity
     guid: 5731b5b67ae5531418285fd80c83ce18
   - enabled: 1

@@ -70,18 +70,30 @@ public class InfoHandler : MonoBehaviour
         //File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json", jsondata);
 
         FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
+    
+         byte[] data = new byte[fileStream.Length];
+         fileStream.Read(data, 0, data.Length);
 
-        byte[] data = new byte[fileStream.Length];
-        fileStream.Read(data, 0, data.Length);
+         string jsondata = Encoding.UTF8.GetString(data);
+         Debug.Log(jsondata);
+         fileStream.Close();
 
-        string jsondata = Encoding.UTF8.GetString(data);
-        Debug.Log(jsondata);
+         m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
+
+         Debug.Log(m_Playerinfo.Get_Level());
+     
+    }
+    public static void Initizlize_Player(string name)//처음 게임 시작할 때
+    {
+        PlayerInfo Info = new PlayerInfo();
+        Info.Set_Name(name);
+        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
         fileStream.Close();
+        string jsondata = JsonConvert.SerializeObject(Info);
+        Debug.Log(jsondata);
+        byte[] data = Encoding.UTF8.GetBytes(jsondata);
 
-        m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
-
-        Debug.Log(m_Playerinfo.Get_Level());
-
+        File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json", jsondata);
     }
     public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴
     {
@@ -188,6 +200,14 @@ public class InfoHandler : MonoBehaviour
     {
         return m_Playerinfo.Get_CurrCharacter();
     }
+    public string Get_Name()
+    {
+        return m_Playerinfo.Get_Name();
+    }
+    public void Set_NickName(string name)
+    {
+        m_Playerinfo.Set_Name(name);
+    }
     public void Set_Exp(int iExp)
     {
         m_Playerinfo.Set_Exp(iExp);
@@ -196,6 +216,7 @@ public class InfoHandler : MonoBehaviour
     {
         m_Playerinfo.Set_Money(iMoney);
     }
+
 
     public void Set_CurrCharacter(int iCurrIndex)
     {
@@ -221,16 +242,6 @@ public class InfoHandler : MonoBehaviour
     public int Get_Item_Num(int iIndex)
     {
         return m_Playerinfo.Get_Item_Num(iIndex);
-    }
-
-    public int[,] Get_HoldingItems()
-    {
-        return m_Playerinfo.Get_HoldingItems();
-    }
-
-    public void Set_HoldingItems(int[,] SetItems)
-    {
-        m_Playerinfo.Set_HoldingItems(SetItems);
     }
 
     public void Save_Info()
