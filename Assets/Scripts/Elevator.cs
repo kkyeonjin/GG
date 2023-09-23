@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public static bool isRide;
+
+    private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Fire")
+        if(other.gameObject.tag == "Player")
         {
-            Debug.Log("FireDetect");
-            Destroy(other.gameObject);
+            Debug.Log("Ride");
+            isRide = true;  
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("off");
+            isRide = false;
         }
     }
 }

@@ -14,8 +14,6 @@ public class ItemScan : MonoBehaviour
     //Press E UI
     public TMP_Text pressE;
 
-    public Animator ElevL, ElevR;
-
     [SerializeField]
     float range;
     RaycastHit hitInfo;
@@ -44,19 +42,21 @@ public class ItemScan : MonoBehaviour
                     hitInfo.transform.gameObject.SetActive(false);
                 }
             }
-            else if (hitInfo.transform.gameObject.CompareTag("Elevator"))
+            else if (hitInfo.transform.gameObject.CompareTag("Button"))
             {
                 pressE.gameObject.SetActive(true);
-                ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
-                ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
+             //   ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
+             //   ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
-                    ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
+                    Debug.Log("Open");
+                    hitInfo.transform.gameObject.GetComponent<ElevatorBtn>().DoorOpen();
+                 //   ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
+                 //   ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
 
-                    ElevL.SetBool("Open", true);
-                    ElevR.SetBool("Open", true);
+                 //   ElevL.SetBool("Open", true);
+                 //   ElevR.SetBool("Open", true);
 
                 }
             }

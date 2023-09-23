@@ -21,6 +21,8 @@ TagManager:
   - tv
   - plant
   - Elevator
+  - Fire
+  - Button
   layers:
   - Default
   - TransparentFX

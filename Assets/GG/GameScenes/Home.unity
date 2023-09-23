@@ -24797,8 +24797,6 @@ MonoBehaviour:
   ItemInfo: {fileID: 2101818989}
   pickedItem: {fileID: 1144070448}
   pressE: {fileID: 358655892}
-  ElevL: {fileID: 0}
-  ElevR: {fileID: 0}
   range: 5
   layerMask:
     serializedVersion: 2
@@ -29667,10 +29665,10 @@ MonoBehaviour:
   size: {x: 7, y: 7}
   startPos: 0
   space:
-  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
+  - {fileID: 7166381844882111667, guid: a0e28e47731f53f4ba952102fd7a5baf, type: 3}
   - {fileID: 7166381844882111667, guid: ee1396b36994c474384df06873818531, type: 3}
-  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
-  - {fileID: 7166381844882111667, guid: fbbc7f82027166b4aba25846f8fcb100, type: 3}
+  - {fileID: 7166381844882111667, guid: a0e28e47731f53f4ba952102fd7a5baf, type: 3}
+  - {fileID: 7166381844882111667, guid: a0e28e47731f53f4ba952102fd7a5baf, type: 3}
   offset: {x: 8.35, y: 8.35}
   rooms: []
   roomsForElev: []
