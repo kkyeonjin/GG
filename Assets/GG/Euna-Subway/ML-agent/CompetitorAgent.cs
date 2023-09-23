@@ -218,6 +218,11 @@ public class CompetitorAgent : Agent
         Vector3 potentialPosition = Vector3.zero;
         //Quaternion potentialRotation = new Quaternion();
 
+        potentialPosition = subwayArea.returnRandomStartingPosition();
+        transform.position = potentialPosition;
+        Debug.Log(this.gameObject.name + " respawn");
+
+        /*
         // 시도 횟수 남아있을 동안만 safe position 탐색
         while (!safePositionFound && attemptRemaining > 0)
         {
@@ -252,6 +257,7 @@ public class CompetitorAgent : Agent
         {
             Debug.Assert(safePositionFound, "Could not find safe respawn position");
         }
+        */
     }
 
     public void OnCollisionEnter(Collision collision)
