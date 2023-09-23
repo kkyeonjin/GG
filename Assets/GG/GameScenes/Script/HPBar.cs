@@ -13,24 +13,44 @@ public class HPBar : MonoBehaviour
     Transform m_MainCamTransform;
     float m_fHPRatio;
 
-    void Start()
+    void Awake()
     {
-        m_MainCamTransform = Camera.main.transform;
+        if (GameMgr.Instance.m_bInGame == true)
+        {
 
-        m_Image.material = Instantiate(InstanceMaterial);
+            if (!m_PV.IsMine)
+            {
+                m_MainCamTransform = Camera.main.transform;
+                m_Image.material = Instantiate(InstanceMaterial);
+                gameObject.SetActive(true);
+            }
+            else
+                gameObject.SetActive(false);
+
+        }
+        else
+            gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Vector3 vLocalPlayerPos = GameMgr.Instance.m_LocalPlayer.transform.position;
+        //Vector3 vThisPos = transform.position;
+
+        //Vector3 vDistance = vLocalPlayerPos - vThisPos;
+
+        //float fLength = Vector3.Magnitude(vDistance);
+        //if()
+
+
         if(m_PV)
             m_PV.RPC("Update_HPBar", RpcTarget.All);
     }
-    //쉐이더 변수 값 지정하는 타이밍. 만약에 일반 hlsl과 같다면 같은 쉐이더를 공유한다면 문제 발생
-    //
+
     private void OnPreRender()
     {
-        //m_Image.material.SetFloat("g_fRatio", m_fHPRatio);
+
     }
 
     [PunRPC]
@@ -38,6 +58,8 @@ public class HPBar : MonoBehaviour
     {
         m_fHPRatio = m_Status.Get_HP() / m_Status.Get_MaxHP();
         m_Image.material.SetFloat("fRatio", m_fHPRatio);
+        m_Image.material.SetTexture("_MainTex", m_Image.mainTexture);
+        m_Image.material.SetVector("vColor",m_Image.color);
     }
 
 }

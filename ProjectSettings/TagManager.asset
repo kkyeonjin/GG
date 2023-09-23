@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - goal
+  - ground
   - stone
   - target
   - Ground
@@ -15,7 +16,12 @@ TagManager:
   - AI
   - stair
   - Falling
-  - Checkpoint
+  - FollowCam
+  - UIHoldingItem
+  - UISelectItem
+  - EndPoint
+  - MiddleGoal
+  - Interactive
   layers:
   - Default
   - TransparentFX
@@ -23,7 +29,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
+  - 
   - bunker
   - invisible
   - Obstacle
@@ -31,8 +37,8 @@ TagManager:
   - Wall
   - stair
   - point
-  - 
-  - 
+  - BaseUI
+  - IconUI
   - 
   - 
   - 
@@ -52,4 +58,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1113341889
+    locked: 0
+  - name: IconUI
+    uniqueID: 1266214723
     locked: 0

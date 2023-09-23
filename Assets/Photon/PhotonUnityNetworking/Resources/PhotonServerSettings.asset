@@ -43,6 +43,33 @@ MonoBehaviour:
   - StartGame
   - Update_HPBar
   - Update_Damage
+  - Reset_Status
+  - BackToLobby
+  - LoadLobby
+  - BacktoLobby
+  - Load_LocalPlayer
+  - Assign_SpawnPosition
+  - Update_SpawnPosSlot
+  - Add_SpawnPosIndex
+  - Remove_SpawnPosIndex
+  - Update_HP
+  - MakeLocalPlayer_Die
+  - Update_Slot
+  - Ready
+  - Player_Exit
+  - Player_Join
+  - Update_PlayerList
+  - Get_ListSlot_Index
+  - PlayerReady
+  - SomeOne_GoalIn
+  - Start_Game
+  - BacktoMultiLobby
+  - Resume_Status
+  - Receive_Record
+  - Increase_Count
+  - Update_RespawnPos
+  - Add_RankingList
+  - GameOut_Player
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

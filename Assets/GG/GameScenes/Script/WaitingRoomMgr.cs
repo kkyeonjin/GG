@@ -1,0 +1,165 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+public class WaitingRoomMgr : MonoBehaviour
+{
+
+    public static WaitingRoomMgr m_Instance;
+
+    public PhotonView m_PV;
+    public List<GameObject> StartPoints;
+
+    public List<ParticipantInfo> WaitingList;
+    private Dictionary<Photon.Realtime.Player,int> PlayerList;
+    private Dictionary<Photon.Realtime.Player, bool> PlayerCheckReady;
+
+    public UIButton ExitButton;
+
+    private List<int> PosAssignable;
+    private int iSpawnPosIndex;
+
+    private int iListSlotIndex = -1;
+
+    void Awake()
+    {
+
+        var duplicated = FindObjectsOfType<WaitingRoomMgr>();
+
+        if (duplicated.Length > 1)
+        {//이미 생성해서 플레이어 있음
+            Destroy(this.gameObject);
+        }
+        else
+        {//처음 생성
+            if (null == m_Instance)
+            {
+                m_Instance = this;
+            }
+        }
+
+
+    }
+
+    public static WaitingRoomMgr Instance
+    {
+        get
+        {
+            if (null == m_Instance)
+            {
+                return null;
+            }
+            return m_Instance;
+        }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        PlayerList = new Dictionary<Photon.Realtime.Player, int>();
+        PlayerCheckReady = new Dictionary<Photon.Realtime.Player, bool>();
+
+        PosAssignable = new List<int>();
+        for (int i = 0; i < NetworkManager.m_iMaxPlayer; ++i)
+            PosAssignable.Add(i);
+
+        m_PV.RPC("Assign_SpawnPosition", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer,InfoHandler.Instance.Get_Level());       
+    }
+
+    public void Return_PosIndex()//플레이어가 나감
+    {
+        if (PlayerList.Count > 1)
+        {
+            //플레이어가 룸을 나간 후에 해당 rpc 수행
+            m_PV.RPC("Player_Exit", RpcTarget.Others, iSpawnPosIndex, PhotonNetwork.LocalPlayer);
+        }
+
+        ExitButton.Exit_Room();
+    }
+   
+    public void Change_MasterClient()//방장이 바뀌었을 때
+    {
+        Debug.Log("바뀌어서 불림!");
+        Update_PlayerList();
+    }
+
+    public void Set_Ready()
+    {
+        WaitingList[iListSlotIndex].SetReady();
+        m_PV.RPC("PlayerReady", RpcTarget.All, PhotonNetwork.LocalPlayer);
+    }
+
+    [PunRPC]
+    void Assign_SpawnPosition(Photon.Realtime.Player newPlayer, int Level)//마스터 클라이언트가 다른 클라이언트로부터 부탁받으면 수행
+    {
+        int RandomValue = Random.Range(0, PosAssignable.Count);
+        int PosIdx = PosAssignable[RandomValue];
+
+        m_PV.RPC("Load_LocalPlayer", newPlayer, StartPoints[PosIdx].transform.position, PosIdx);
+        m_PV.RPC("Player_Join", RpcTarget.All, RandomValue,newPlayer,Level);
+
+        Update_PlayerList();
+
+    }
+    [PunRPC]
+    void Load_LocalPlayer(Vector3 StartPoint, int iSpawnIndex = -1)
+    {
+        Debug.Log("생성!");
+        NetworkManager.Instance.Instantiate_Player(StartPoint);
+
+
+        if (iSpawnIndex > -1)
+            iSpawnPosIndex = iSpawnIndex;
+    }
+   
+    [PunRPC]
+    void Player_Join(int iIndex,Photon.Realtime.Player newPlayer, int Level)//참가자 들어올 때
+    {
+        PlayerList.Add(newPlayer, Level);
+        PlayerCheckReady.Add(newPlayer, false);
+
+        PosAssignable.RemoveAt(iIndex);
+    }
+    [PunRPC]
+    public void Player_Exit(int iIndex, Photon.Realtime.Player ExitPlayer)//참가자 나갈 때
+    {
+        PosAssignable.Add(iIndex);
+        PlayerList.Remove(ExitPlayer);
+        PlayerCheckReady.Remove(ExitPlayer);
+
+        Debug.Log("대기실 총 인원: " + PlayerList.Count);
+    }
+
+    [PunRPC]
+    public void Update_PlayerList()//방장만 정리하면 됨
+    {
+
+        int num = PlayerList.Count;
+        Debug.Log(num);
+        if (num < 1)
+            return;
+
+        int iIndex = 0;
+        Photon.Realtime.Player MasterClient = PhotonNetwork.MasterClient;
+        
+        foreach(Photon.Realtime.Player Key in PlayerList.Keys)
+        {
+            string name = Key.NickName;
+            int level = PlayerList[Key];
+            WaitingList[iIndex].Update_Participant(name, level, false, (MasterClient == Key), PlayerCheckReady[Key]);
+            m_PV.RPC("Get_ListSlot_Index", Key, iIndex++);
+        }
+        for (int i = iIndex; i < 8; ++i)
+            WaitingList[i].Vacate_Slot();
+    }
+    [PunRPC]
+    void PlayerReady(Photon.Realtime.Player ReadyPlayer)
+    {
+        bool State = PlayerCheckReady[ReadyPlayer];
+        PlayerCheckReady[ReadyPlayer] = !State;
+    }
+    [PunRPC]
+    void Get_ListSlot_Index(int iIndex)//ready 버튼 연결해야해서
+    {
+        iListSlotIndex = iIndex;
+    }
+}
