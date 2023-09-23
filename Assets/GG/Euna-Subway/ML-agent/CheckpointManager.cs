@@ -8,7 +8,7 @@ public class CheckpointManager : MonoBehaviour
     public float MaxTimeToReachNextCheckpoint = 10f;
     public float TimeLeft = 10f;
 
-    public CompetitorAgent competitorAgent;
+    public CompetitorAgent agent;
     public Checkpoint nextCheckPointToReach;
 
     private int CurrentCheckpointIndex;
@@ -19,6 +19,7 @@ public class CheckpointManager : MonoBehaviour
 
     void Start()
     {
+        agent = GetComponentInParent<CompetitorAgent>();
         Checkpoints = FindObjectOfType<Checkpoints>().checkPoints;
         ResetCheckpoints();
     }
@@ -47,8 +48,8 @@ public class CheckpointManager : MonoBehaviour
 
         if (TimeLeft < 0f)
         {
-            competitorAgent.AddReward(-1f);
-            competitorAgent.EndEpisode();
+            agent.AddReward(-1f);
+            agent.EndEpisode();
         }
     }
 
@@ -62,13 +63,13 @@ public class CheckpointManager : MonoBehaviour
 
         if (CurrentCheckpointIndex >= Checkpoints.Count)
         {
-            competitorAgent.AddReward(3f);
-            competitorAgent.EndEpisode();
+            agent.AddReward(3f);
+            agent.EndEpisode();
         }
         else
         {
             Debug.Log("Get sub reward");
-            competitorAgent.AddReward(1f);
+            agent.AddReward(1f);
             SetNextCheckpoint();
         }
     }

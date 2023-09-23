@@ -12,7 +12,7 @@ public class CompetitorAgent : Agent
     /// Variable : Status / Move / Avoid / Hide / Item / Environment 총 6부문별로 구분
     /// </summary>
 
-  //1. Status : Agent 상태값
+    //1. Status : Agent 상태값
     public CompetitorAgent agent;
     public Animator animator;
 
@@ -36,7 +36,7 @@ public class CompetitorAgent : Agent
     public const float staminaRecover = 10f;
 
 
-  //2. Move : Agent의 action에 관한 변수
+    //2. Move : Agent의 action에 관한 변수
     // Rigidbody & Animator
     public Rigidbody agentRb;
     private Animator agentAnimator;
@@ -54,7 +54,7 @@ public class CompetitorAgent : Agent
     public CheckpointManager checkpointManager;
 
 
-  //3. Avoid : 주변 사람들을 피하면서 
+    //3. Avoid : 주변 사람들을 피하면서 
     // 근접하다고 인식할 반경
     public const float closeRadius = 1f;
 
@@ -70,7 +70,7 @@ public class CompetitorAgent : Agent
     //public GameObject closeObstacle;
 
 
-  //4. Hide
+    //4. Hide
     // 지진 이벤트 발생 여부
     public bool eventOccured;
 
@@ -81,7 +81,7 @@ public class CompetitorAgent : Agent
     private bool isHide;
 
 
-  //5. Environment
+    //5. Environment
     //Training Mode 여부
     public bool trainingMode = true;
 
@@ -91,7 +91,7 @@ public class CompetitorAgent : Agent
     //Agent가 속해 있는 맵 영역
     public SubwayArea subwayArea;
 
-  //6. Item
+    //6. Item
 
 
 
@@ -155,7 +155,7 @@ public class CompetitorAgent : Agent
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -173,8 +173,10 @@ public class CompetitorAgent : Agent
     public override void Initialize()
     {
         agentRb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        agentCamera = GetComponentInChildren<Camera>();
         subwayArea = GetComponentInParent<SubwayArea>();
+        checkpointManager = GetComponentInChildren<CheckpointManager>();
 
         //If not training mode, no max step and keep playing
         if (!trainingMode) MaxStep = 0;
@@ -235,14 +237,15 @@ public class CompetitorAgent : Agent
 
             // startingArea외 겹치는 collider 없으면 스폰위치 설정 성공
             // safePositionFound = colliders.Length == 0;
-           if (colliders.Length == 1 && colliders[0].name == "StartingPoint")
+            if (colliders.Length == 1 && colliders[0].name == "StartingPoint")
             {
                 safePositionFound = true;
                 break;
             }
         }
 
-        if (safePositionFound) {
+        if (safePositionFound)
+        {
             transform.position = potentialPosition;
         }
         else
@@ -267,7 +270,8 @@ public class CompetitorAgent : Agent
                 AddReward(-0.2f);
             }
             */
-            if (!collision.collider.CompareTag("Checkpoint")){
+            if (!collision.collider.CompareTag("Checkpoint"))
+            {
                 if (collision.collider.CompareTag("Wall"))
                 {
                     AddReward(-0.5f);
@@ -310,6 +314,7 @@ public class CompetitorAgent : Agent
     /// <param name="actions"></param>
     public override void OnActionReceived(ActionBuffers actions)
     {
+
         //action 호출할 때마다 패널티를 부여하여
         //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
         AddReward(-0.01f);
@@ -317,6 +322,7 @@ public class CompetitorAgent : Agent
         //Don't take actions if frozen
         if (frozen) return;
 
+        /*
         //Calculate movement vector
         Vector3 move = new Vector3(actions.ContinuousActions[0], 0, actions.ContinuousActions[1]);
         //bool isRunning = actions.DiscreteActions[0] == 0;
@@ -338,6 +344,33 @@ public class CompetitorAgent : Agent
 
         //Apply the new rotation
         transform.rotation = Quaternion.Euler(0, rotation, 0f);   
+        */
+
+        var dir = Vector3.zero;
+        var rot = Vector3.zero;
+        var action = actions.DiscreteActions[0];
+        switch (action)
+        {
+            case 1:
+                dir = transform.forward * 1f;
+                break;
+            case 2:
+                dir = transform.forward * -1f;
+                break;
+            case 3:
+                rot = transform.up * 1f;
+                break;
+            case 4:
+                rot = transform.up * -1f;
+                break;
+        }
+        transform.Rotate(rot, Time.deltaTime * 100f);
+
+        agentRb.AddForce(dir * 0.4f, ForceMode.VelocityChange);
+
+        //this.transform.position += transform.forward * Time.deltaTime * 5f;
+        animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
+
     }
 
     /// <summary>
@@ -346,6 +379,7 @@ public class CompetitorAgent : Agent
     /// <param name="actionsOut">Output action array</param>
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        /*
         var action = actionsOut.ContinuousActions;
 
         Vector3 fb = Vector3.zero;
@@ -371,5 +405,25 @@ public class CompetitorAgent : Agent
         action[0] = combined.x;
         action[1] = combined.z;
         action[2] = yaw;
+    }
+    */
+        var discreteActionsOut = actionsOut.DiscreteActions;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            discreteActionsOut[0] = 2;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            discreteActionsOut[0] = 4;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            discreteActionsOut[0] = 3;
+        }
     }
 }
