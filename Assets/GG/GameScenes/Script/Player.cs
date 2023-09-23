@@ -179,9 +179,15 @@ public class Player : MonoBehaviour
             transform.LookAt(transform.position + m_vMoveVec);
             //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
             //m_Rigidbody.AddForce(Physics.gravity);
+
+            /* 멘토님 수정 요청
             m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
+            */
+
+            //멘토님 수정 코드
+            m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
 
             Throw();
             PushLever();

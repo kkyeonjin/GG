@@ -43,7 +43,5 @@ public class AgentAction : Agent
 
     private void Move()
     {
-        isSprint = false;
-        if(isSprint && )
     }
 }

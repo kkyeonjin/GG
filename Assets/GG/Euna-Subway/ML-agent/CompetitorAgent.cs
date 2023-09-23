@@ -237,7 +237,7 @@ public class CompetitorAgent : Agent
     {
         if (collision.gameObject.CompareTag("stiar"))
         {
-            agentRb.AddForce(transform.forward * moveForce * 0.4f, ForceMode.VelocityChange)
+            agentRb.AddForce(transform.forward * moveForce * 0.4f, ForceMode.VelocityChange);
         }
         //action 및 animation 관련
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
@@ -298,6 +298,7 @@ public class CompetitorAgent : Agent
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
  
+        /*
         // 걷기 
         if (actions.DiscreteActions[0] == 0)
         {
@@ -316,6 +317,7 @@ public class CompetitorAgent : Agent
             agentRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJump = true;
         }
+        */
     }
 
 
