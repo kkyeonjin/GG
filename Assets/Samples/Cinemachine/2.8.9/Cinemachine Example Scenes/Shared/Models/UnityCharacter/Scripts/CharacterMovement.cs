@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
 	    input.x = Input.GetAxis("Horizontal");
 	    input.y = Input.GetAxis("Vertical");
 
-		// set speed to both vertical and horizontal inputs
+		// set currentSpeed to both vertical and horizontal inputs
         if (useCharacterForward)
             speed = Mathf.Abs(input.x) + input.y;
         else

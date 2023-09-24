@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Moves transform between minY and maxY with the specified speed.
+/// Moves transform between minY and maxY with the specified currentSpeed.
 /// </summary>
 public class SimpleElevator : MonoBehaviour
 {

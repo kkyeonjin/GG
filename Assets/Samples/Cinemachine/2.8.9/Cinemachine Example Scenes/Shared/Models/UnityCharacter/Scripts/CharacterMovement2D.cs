@@ -46,7 +46,7 @@ public class CharacterMovement2D : MonoBehaviour
         // Rotate player if direction changes
         transform.rotation = Quaternion.Lerp(transform.rotation, targetrot, Time.deltaTime * 20f);
 
-		// set speed to horizontal inputs
+		// set currentSpeed to horizontal inputs
 	    speed = Mathf.Abs(input.x);
         speed = Mathf.SmoothDamp(anim.GetFloat("Speed"), speed, ref velocity, 0.1f);
         anim.SetFloat("Speed", speed);

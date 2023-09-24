@@ -33,7 +33,7 @@ public class CompetitorAgent : Agent
     /// 스태미나 소모 속도 (달리기) <see cref="Player.Run"/>
     public const float staminaRate = 25f;
     /// 스태미나 회복속도 <see cref="CharacterStatus.m_fSPRecover"/>
-    public const float staminaRecover = 10f;
+    public const float staminaRecover = 20f;
 
 
    //2. Move : Agent의 action에 관한 변수
@@ -42,7 +42,9 @@ public class CompetitorAgent : Agent
     private Animator agentAnimator;
 
     /// 이동속도 <see cref="Player.m_fSpeed"/>
-    public float speed = 5f; //Player.m_fspeed
+    public float currentSpeed = 5f; //Player.m_fspeed
+    public const float walkSpeed = 5f;
+    public const float runSpeed = walkSpeed * 1.5f;
 
     // 점프 스케일 & 중력
     public float jumpForce = 250f;
@@ -65,10 +67,7 @@ public class CompetitorAgent : Agent
     //Agent의 훈련 시작 위치
     private Vector3 startingPoint;
 
-    ///<summary>
-    ///<see cref="CharacterStatus"/>
-    ///     Status private 변수 접근자 & HP 및 스태미나 관련 함수
-    ///</summary>
+
 
     public float Get_HP()
     {
@@ -87,24 +86,39 @@ public class CompetitorAgent : Agent
     {
         return staminaIsUsable;
     }
+
     public void Use_Stamina()
     {
-        currentStamina -= staminaRate * Time.deltaTime;
-        if (0f > currentStamina)
+        if (currentStamina <= 0f)
         {
-            currentStamina = 0;
+            currentStamina = 0f;
             staminaIsUsable = false;
+            isRun = false;
+            return;
         }
+        Debug.Log("use stamina");
+        currentStamina -= staminaRate * Time.deltaTime;
     }
 
     private void Recover_Stamina()
     {
-        currentStamina += staminaRecover * Time.deltaTime;
-        if (currentStamina > 10f)
-            staminaIsUsable = true;
-
         if (currentStamina > maxStamina)
+        {
             currentStamina = maxStamina;
+            return;
+        }
+        if (!isRun)
+        {   
+            while(currentStamina < maxStamina)
+            {
+                currentStamina += staminaRecover * Time.deltaTime;
+                Debug.Log("recover stamina");
+            }
+        }
+        if (currentStamina > 10f)
+        {
+            staminaIsUsable = true;
+        }
     }
 
     private void Damaging(float fDamage)
@@ -125,9 +139,8 @@ public class CompetitorAgent : Agent
 
     private void Update()
     {
-        Recover_Stamina();
-    }
 
+    }
 
     public override void Initialize()
     {
@@ -145,6 +158,7 @@ public class CompetitorAgent : Agent
     {
         if (trainingMode)
         {
+            Debug.Log("New Episode");
             //agent 스폰
             this.transform.position = startingPoint;
 
@@ -167,7 +181,7 @@ public class CompetitorAgent : Agent
         //actionMove 및 animation 관련
         if (collision.gameObject.CompareTag("stair"))
         {
-            agentRb.AddForce(transform.forward * speed * 0.4f, ForceMode.VelocityChange);
+            agentRb.AddForce(transform.forward * currentSpeed * 0.4f, ForceMode.VelocityChange);
         }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {
@@ -212,8 +226,6 @@ public class CompetitorAgent : Agent
         //
     }
 
-
-
     //Revised (9.24.)
     public override void OnActionReceived(ActionBuffers actions)
     {
@@ -225,9 +237,17 @@ public class CompetitorAgent : Agent
 
         //DiscreteAction[0] 앞으로 이동 여부 2
         var actionForward = actions.DiscreteActions[0];
-        if (actionForward == 1)
+        switch (actionForward)
         {
-            dir += transform.forward;
+            //Heuristic 테스트 외에는 case 0 삭제 
+            case 0:
+                frozen = true;
+                //Debug.Log("Frozen");
+                break;
+            case 1:
+                frozen = false;
+                dir += transform.forward;
+                break;
         }
 
         //DiscreteAction[1] 이동 방향 (좌:0 우:1)
@@ -235,24 +255,52 @@ public class CompetitorAgent : Agent
         switch (actionDir)
         {
             case 0:
-                dir -= transform.right;
                 break;
             case 1:
+                dir -= transform.right;
+                break;
+            case 2:
                 dir += transform.right;
                 break;
         }
 
         //DiscreteAction[2] 달리기 여부 2
         var actionRun = actions.DiscreteActions[2];
-        if(actionRun == 1 && !isRun)
+
+        
+        switch (actionRun)
         {
-            speed *= 1.5f;
-            isRun = true;
-            Use_Stamina();
+            case 0:
+                isRun = false;
+                currentSpeed = walkSpeed;
+                Debug.Log("walk");
+                break;
+            case 1:
+                if (!isRun && staminaIsUsable)
+                {
+                    currentSpeed = runSpeed;
+                    isRun = true;
+                    Debug.Log("Run");
+                }
+                break;
         }
 
         //이동 (MovePosition 적용)
-        agentRb.MovePosition(transform.position + dir * speed * Time.deltaTime);
+        agentRb.MovePosition(transform.position + dir * currentSpeed * Time.deltaTime);
+
+        //스태미나
+        if (isRun) Use_Stamina();
+        else Recover_Stamina();
+        Debug.Log("stamina : " + currentStamina);
+
+        /*
+        if (actionRun == 1 && !isRun && staminaIsUsable)
+        {
+            currentSpeed *= 1.5f;
+            isRun = true;
+            //Use_Stamina();
+        }
+        */
 
 
         //DiscreteAction[3] 점프 여부 2
@@ -265,6 +313,7 @@ public class CompetitorAgent : Agent
 
         //애니메이터?? 다시 확인
         //animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
+
     }
 
 
@@ -281,11 +330,11 @@ public class CompetitorAgent : Agent
         //1. 좌우 방향 (좌:0 우:1)
         if (Input.GetKey(KeyCode.A))
         {
-            action[1] = 0;
+            action[1] = 1;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            action[1] = 1;
+            action[1] = 2;
         }
 
         //2. 달리기
