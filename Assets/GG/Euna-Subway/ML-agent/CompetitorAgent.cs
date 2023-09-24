@@ -31,7 +31,7 @@ public class CompetitorAgent : Agent
     /// 스태미나 사용 가능 여부 <see cref="CharacterStatus.m_bIsUsable"/>
     private bool staminaIsUsable = true;
     /// 스태미나 소모 속도 (달리기) <see cref="Player.Run"/>
-    public const float runStamina = 25f;
+    public const float staminaRate = 25f;
     /// 스태미나 회복속도 <see cref="CharacterStatus.m_fSPRecover"/>
     public const float staminaRecover = 10f;
 
@@ -42,11 +42,11 @@ public class CompetitorAgent : Agent
     private Animator agentAnimator;
 
     /// 이동속도 <see cref="Player.m_fSpeed"/>
-    public const float moveForce = 50f; //Player.m_fspeed
+    public float speed = 5f; //Player.m_fspeed
 
-    /// 회전속도 <see cref="Player.m_fRotateSpeed"/>
-    public const float rotationSpeed = 250f;
-    private float smoothRotationChange = 0f; // 자연스러운 회전을 위한 계수
+    // 점프 스케일 & 중력
+    public float jumpForce = 250f;
+    public Vector3 customGravity = new Vector3(0, -19.62f, 0);
 
     //Agent가 의도적으로 움직임을 멈춘 상태인지 여부
     private bool frozen = false;
@@ -62,11 +62,8 @@ public class CompetitorAgent : Agent
     //Training Mode 여부
     public bool trainingMode = true;
 
-    //Agent가 속해 있는 맵 영역
-    public SubwayArea subwayArea;
-
-    //체크포인트 매니저
-    public CheckpointManager checkpointManager;
+    //Agent의 훈련 시작 위치
+    private Vector3 startingPoint;
 
     ///<summary>
     ///<see cref="CharacterStatus"/>
@@ -90,9 +87,9 @@ public class CompetitorAgent : Agent
     {
         return staminaIsUsable;
     }
-    public void Use_Stamina(float runStamina)
+    public void Use_Stamina()
     {
-        currentStamina -= runStamina * Time.deltaTime;
+        currentStamina -= staminaRate * Time.deltaTime;
         if (0f > currentStamina)
         {
             currentStamina = 0;
@@ -126,42 +123,30 @@ public class CompetitorAgent : Agent
         this.gameObject.SetActive(true);
     }
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         Recover_Stamina();
     }
 
 
-
-    ///<summary>
-    /// ML agent 상속 함수
-    ///</summary>
-
-    /// <summary> Initialize the agent </summary>
     public override void Initialize()
     {
         agentRb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         agentCamera = GetComponentInChildren<Camera>();
-        subwayArea = GetComponentInParent<SubwayArea>();
-        checkpointManager = GetComponentInChildren<CheckpointManager>();
+        startingPoint = this.transform.position;
+        Physics.gravity = customGravity;
 
         //If not training mode, no max step and keep playing
         if (!trainingMode) MaxStep = 0;
     }
 
-    /// <summary> Reset the agent when an episode begins </summary>
     public override void OnEpisodeBegin()
     {
         if (trainingMode)
         {
-            //agent 스폰 위치 설정
-            MoveToSafeRandomPosition();
+            //agent 스폰
+            this.transform.position = startingPoint;
 
             //낙하물, 아이템 위치 등 리셋 (Hide, Item 개발시)
             //subwayArea.ResetMap();
@@ -170,76 +155,20 @@ public class CompetitorAgent : Agent
         //Status 초기화
         currentHP = maxHP;
         currentStamina = maxStamina;
-        this.gameObject.SetActive(true);
 
         //Move 초기화
         agentRb.velocity = Vector3.zero;
         agentRb.angularVelocity = Vector3.zero;
-
-        //Checkpoint 초기화
-        checkpointManager.ResetCheckpoints();
-
     }
 
-    /// <summary> Move agent to a position
-    /// where agent does not collide with anything
-    /// </summary>
-    private void MoveToSafeRandomPosition()
-    {
-        bool safePositionFound = false;
-        int attemptRemaining = 100;
-        Vector3 potentialPosition = Vector3.zero;
-        //Quaternion potentialRotation = new Quaternion();
-
-        potentialPosition = subwayArea.returnRandomStartingPosition();
-        transform.position = potentialPosition;
-        Debug.Log(this.gameObject.name + " respawn");
-
-        /*
-        // 시도 횟수 남아있을 동안만 safe position 탐색
-        while (!safePositionFound && attemptRemaining > 0)
-        {
-            //Debug.Log(attemptRemaining);
-            attemptRemaining--;
-
-            // subwayArea로부터 스타팅 구역 내 랜덤 위치 받아오기
-            potentialPosition = subwayArea.returnRandomStartingPosition();
-            //Debug.Log("potential position: " + potentialPosition);
-
-            // 주변 오브젝트와 collider 겹치는지 (즉 충돌하는지) 확인
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 0.5f);
-            //foreach (Collider collider in colliders)
-            //{
-            //    Debug.Log("Collider found: " + collider.name);
-            //}
-
-            // startingArea외 겹치는 collider 없으면 스폰위치 설정 성공
-            // safePositionFound = colliders.Length == 0;
-            if (colliders.Length == 1 && colliders[0].name == "StartingPoint")
-            {
-                safePositionFound = true;
-                break;
-            }
-        }
-
-        if (safePositionFound)
-        {
-            transform.position = potentialPosition;
-        }
-        else
-        {
-            Debug.Assert(safePositionFound, "Could not find safe respawn position");
-        }
-        */
-    }
 
     public void OnCollisionEnter(Collision collision)
     {
+        //actionMove 및 animation 관련
         if (collision.gameObject.CompareTag("stiar"))
         {
-            agentRb.AddForce(transform.forward * moveForce * 0.4f, ForceMode.VelocityChange);
+            agentRb.AddForce(transform.forward * speed * 0.4f, ForceMode.VelocityChange);
         }
-        //action 및 animation 관련
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {
             isJump = false;
@@ -251,205 +180,124 @@ public class CompetitorAgent : Agent
         //훈련 관련
         if (trainingMode)
         {
+            Collider col = collision.collider;
+
+            if (col.CompareTag("Wall"))
+            {
+                SetReward(-1f);
+                EndEpisode();
+            }
+
+            if (col.CompareTag("AI"))
+            {
+                AddReward(-0.5f);
+            }
+
             if (collision.collider.CompareTag("Goal"))
             {
                 AddReward(5f);
             }
-            if (collision.collider.CompareTag("Checkpoint"))
-            {
-                AddReward(0.5f);
-            }
 
-            if (!collision.collider.CompareTag("Checkpoint"))
-            {
-                if (collision.collider.CompareTag("Wall"))
-                {
-                    AddReward(-0.5f);
-                }
-                else if (collision.collider.CompareTag("AI"))
-                {
-                    AddReward(-0.2f);
-                }
-                else //obstacle, falling 등 예정
-                {
-                    AddReward(-0.3f);
-                }
-            }
+            /*
+            이후 Obstacle, Falling, Item 추가
+            */
         }
     }
 
     //RaycastSensors로부터 수집되지 않는 정보를 수집함
     public override void CollectObservations(VectorSensor sensor)
     {
-        // agent의 현재 회전 방향 (SubwayArea 상에서의 상대적 방향) -> 4 observations
-        sensor.AddObservation(transform.localRotation.normalized);
+        //Goal 지점까지의 거리 (DeltaReward)
 
-        // agent와 다음 checkpoint 사이의 벡터 -> 3 observations
-        Vector3 diff = checkpointManager.nextCheckPointToReach.transform.position - transform.position;
-        sensor.AddObservation(diff.normalized);
+        //
     }
 
 
 
-    //Revised (9.23.)
+    //Revised (9.24.)
     public override void OnActionReceived(ActionBuffers actions)
     {
-        // 이동 액션
-        float moveX = actions.ContinuousActions[0];
-        float moveZ = actions.ContinuousActions[1];
- 
-        /*
-        // 걷기 
-        if (actions.DiscreteActions[0] == 0)
+        //actionMove 호출할 때마다 패널티를 부여하여
+        //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
+        AddReward(-0.01f);
+
+        var dir = Vector3.zero;
+
+        //DiscreteAction[0] 앞으로 이동 여부 2
+        var actionForward = actions.DiscreteActions[0];
+        if (actionForward == 1)
         {
-            agentRb.velocity = new Vector3(moveX * walkSpeed, agentRb.velocity.y, moveZ * walkSpeed);
-        }
-        // 달리기 액션
-        else
-        {
-            agentRb.velocity = new Vector3(moveX * runSpeed, agentRb.velocity.y, moveZ * runSpeed);
-            //스태미나 소모
+            dir += transform.forward;
         }
 
-        // 점프 액션
-        if (actions.DiscreteActions[1] == 1 && !isJumping)
+        //DiscreteAction[1] 이동 방향 (좌:0 우:1)
+        var actionDir = actions.DiscreteActions[1];
+        switch (actionDir)
+        {
+            case 0:
+                dir -= transform.right;
+                break;
+            case 1:
+                dir += transform.right;
+                break;
+        }
+
+        //DiscreteAction[2] 달리기 여부 2
+        var actionRun = actions.DiscreteActions[2];
+        if(actionRun == 1 && !isRun)
+        {
+            speed *= 1.5f;
+            isRun = true;
+            Use_Stamina();
+        }
+
+        //이동 (MovePosition 적용)
+        agentRb.MovePosition(transform.position + dir * speed * Time.deltaTime);
+
+
+        //DiscreteAction[3] 점프 여부 2
+        var actionJump = actions.DiscreteActions[3];
+        if (actionJump == 1 && !isJump)
         {
             agentRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJump = true;
         }
-        */
+
+        //애니메이터?? 다시 확인
+        //animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
     }
 
 
-    /// <summary>
-    /// action 명령이 player input이나 NN으로부터 들어오면 호출됨
-    /// * 일단 y 벡터 (점프) 제외
-    ///
-    /// 1. ContinuousActions[i]
-    /// [0] : move vector x (+1 = right, -1 = left)
-    /// [1] : move vector z (+1 = forward, -1 = backward)
-    /// [2] : yaw angle (+1 = turn right, -1 = turn left)
-    ///
-    /// 2. DiscreteActions[i]
-    /// [0] : isRunning (1: 달리는 중, 0: 
-    /// </summary>
-    /// <param name="actions"></param>
-
-    /*
-    public override void OnActionReceived(ActionBuffers actions)
-    {
-      //Continuous Ver.
-        //action 호출할 때마다 패널티를 부여하여
-        //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
-        AddReward(-0.01f);
-
-        //Don't take actions if frozen
-        if (frozen) return;
-
-        /*
-        //Calculate movement vector
-        Vector3 move = new Vector3(actions.ContinuousActions[0], 0, actions.ContinuousActions[1]);
-        //bool isRunning = actions.DiscreteActions[0] == 0;
-
-        //Add force in the direction of the move vector
-        agentRb.AddForce(move * moveForce);
-
-        //Get the current rotation
-        Vector3 rotationVector = transform.rotation.eulerAngles;
-
-        //Caculate yaw rotation
-        float rotationChange = actions.ContinuousActions[2];
-
-        //Calculate smooth rotation changes
-        smoothRotationChange = Mathf.MoveTowards(smoothRotationChange, rotationChange, 2f * Time.fixedDeltaTime);
-
-        //Calculate new yaw based on smoothed values
-        float rotation = rotationVector.y + smoothRotationChange * Time.fixedDeltaTime * rotationSpeed;
-
-        //Apply the new rotation
-        transform.rotation = Quaternion.Euler(0, rotation, 0f);   
-
-
-      //Discrete Ver.
-        var dir = Vector3.zero;
-        var rot = Vector3.zero;
-        var action = actions.DiscreteActions[0];
-        switch (action)
-        {
-            case 1:
-                dir = transform.forward * 1f;
-                break;
-            case 2:
-                dir = transform.forward * -1f;
-                break;
-            case 3:
-                rot = transform.up * 1f;
-                break;
-            case 4:
-                rot = transform.up * -1f;
-                break;
-        }
-        transform.Rotate(rot, Time.deltaTime * 100f);
-
-        agentRb.AddForce(dir * 0.4f, ForceMode.VelocityChange);
-
-        //this.transform.position += transform.forward * Time.deltaTime * 5f;
-        animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
-    }
-        */
-
-
-    /// <summary>
-    /// <see cref="OnActionReceived(ActionBuffers)"에 NN model 대신 키보드 인풋 값을 넘겨줌/>
-    /// </summary>
-    /// <param name="actionsOut">Output action array</param>
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        /*
-        var action = actionsOut.ContinuousActions;
+        var action = actionsOut.DiscreteActions;
 
-        Vector3 fb = Vector3.zero;
-        Vector3 lr = Vector3.zero;
-        float yaw = 0f;
-
-        // 전후 이동
-        if (Input.GetKey(KeyCode.W)) fb = transform.forward;
-        else if (Input.GetKey(KeyCode.S)) fb = -transform.forward;
-
-        // 좌우 이동
-        if (Input.GetKey(KeyCode.A)) lr = -transform.right;
-        else if (Input.GetKey(KeyCode.D)) lr = transform.right;
-
-        // 좌우 방향 전환
-        if (Input.GetKey(KeyCode.LeftArrow)) yaw = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow)) yaw = 1f;
-
-        // 벡터 합친 후 정규화
-        Vector3 combined = (fb + lr).normalized;
-
-        //action에 전달
-        action[0] = combined.x;
-        action[1] = combined.z;
-        action[2] = yaw;
-    }
-    */
-        var discreteActionsOut = actionsOut.DiscreteActions;
-
+        //0. 앞으로 이동 여부
         if (Input.GetKey(KeyCode.W))
         {
-            discreteActionsOut[0] = 1;
+            action[0] = 1;
         }
-        else if (Input.GetKey(KeyCode.S))
+
+        //1. 좌우 방향 (좌:0 우:1)
+        if (Input.GetKey(KeyCode.A))
         {
-            discreteActionsOut[0] = 2;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            discreteActionsOut[0] = 4;
+            action[1] = 0;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            discreteActionsOut[0] = 3;
+            action[1] = 1;
+        }
+
+        //2. 달리기
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            action[2] = 1;
+        }
+
+        //3. 점프
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            action[3] = 1;
         }
     }
 
