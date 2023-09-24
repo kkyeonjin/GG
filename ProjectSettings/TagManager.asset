@@ -16,6 +16,12 @@ TagManager:
   - AI
   - stair
   - Falling
+  - FollowCam
+  - UIHoldingItem
+  - UISelectItem
+  - EndPoint
+  - MiddleGoal
+  - Interactive
   layers:
   - Default
   - TransparentFX
@@ -31,8 +37,8 @@ TagManager:
   - Wall
   - stair
   - point
-  - 
-  - 
+  - BaseUI
+  - IconUI
   - 
   - 
   - 
@@ -52,4 +58,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1113341889
+    locked: 0
+  - name: IconUI
+    uniqueID: 1266214723
     locked: 0
