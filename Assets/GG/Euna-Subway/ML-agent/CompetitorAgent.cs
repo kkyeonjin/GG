@@ -45,7 +45,7 @@ public class CompetitorAgent : Agent
     public float speed = 5f; //Player.m_fspeed
 
     // 점프 스케일 & 중력
-    public float jumpForce = 250f;
+    public float jumpForce = 10f;
     public Vector3 customGravity = new Vector3(0, -19.62f, 0);
 
     //Agent가 의도적으로 움직임을 멈춘 상태인지 여부
@@ -56,6 +56,7 @@ public class CompetitorAgent : Agent
     private bool isRun;
     /// 점프 중인지 여부 <see cref="Player.m_bIsJump"/>
     private bool isJump;
+    public float _rotate = 40f;
 
 
    //3. Environment
@@ -69,6 +70,11 @@ public class CompetitorAgent : Agent
     ///<see cref="CharacterStatus"/>
     ///     Status private 변수 접근자 & HP 및 스태미나 관련 함수
     ///</summary>
+
+    //Delta Reward
+    private Vector3 _destination = new Vector3(-0.336f, -90.558f, -0.464f);
+    float _prevDistance;
+    float _nextDistance;
 
     public float Get_HP()
     {
@@ -143,6 +149,7 @@ public class CompetitorAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        Debug.Log("OnEpisodeBegin");
         if (trainingMode)
         {
             //agent 스폰
@@ -155,6 +162,8 @@ public class CompetitorAgent : Agent
         //Status 초기화
         currentHP = maxHP;
         currentStamina = maxStamina;
+        transform.rotation = Quaternion.Euler(0, 90, 0);
+        _prevDistance = Vector3.Distance(_destination, startingPoint);
 
         //Move 초기화
         agentRb.velocity = Vector3.zero;
@@ -207,8 +216,6 @@ public class CompetitorAgent : Agent
     //RaycastSensors로부터 수집되지 않는 정보를 수집함
     public override void CollectObservations(VectorSensor sensor)
     {
-        //Goal 지점까지의 거리 (DeltaReward)
-
         //
     }
 
@@ -217,6 +224,12 @@ public class CompetitorAgent : Agent
     //Revised (9.24.)
     public override void OnActionReceived(ActionBuffers actions)
     {
+        //Goal 지점까지의 거리 (DeltaReward)
+        _nextDistance = Vector3.Distance(transform.position, _destination);
+        Debug.Log("이전거리 : " + _prevDistance + "현재 거리 : " + _nextDistance);
+        if (_nextDistance < _prevDistance) { AddReward(0.2f); }
+        else { AddReward(-0.2f); }
+        _prevDistance = _nextDistance;
         //actionMove 호출할 때마다 패널티를 부여하여
         //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
         AddReward(-0.01f);
@@ -225,20 +238,26 @@ public class CompetitorAgent : Agent
 
         //DiscreteAction[0] 앞으로 이동 여부 2
         var actionForward = actions.DiscreteActions[0];
-        if (actionForward == 1)
+        switch (actionForward)
         {
-            dir += transform.forward;
+            case 0: break;
+            case 1:
+                dir += transform.forward;
+                break;
         }
 
         //DiscreteAction[1] 이동 방향 (좌:0 우:1)
         var actionDir = actions.DiscreteActions[1];
         switch (actionDir)
         {
-            case 0:
-                dir -= transform.right;
-                break;
+            case 0: break;
             case 1:
-                dir += transform.right;
+                transform.Rotate(Vector3.up, Time.deltaTime * -_rotate);
+                //dir -= transform.right;
+                break;
+            case 2:
+                transform.Rotate(Vector3.up, Time.deltaTime * _rotate);
+                //dir += transform.right;
                 break;
         }
 
@@ -276,28 +295,33 @@ public class CompetitorAgent : Agent
         if (Input.GetKey(KeyCode.W))
         {
             action[0] = 1;
+            Debug.Log("Forward");
         }
 
         //1. 좌우 방향 (좌:0 우:1)
         if (Input.GetKey(KeyCode.A))
         {
-            action[1] = 0;
+            action[1] = 1;
+            Debug.Log("Left");
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            action[1] = 1;
+            action[1] = 2;
+            Debug.Log("Right");
         }
 
         //2. 달리기
         if (Input.GetKey(KeyCode.LeftShift))
         {
             action[2] = 1;
+            Debug.Log("Sprint");
         }
 
         //3. 점프
         if (Input.GetKeyDown(KeyCode.Space))
         {
             action[3] = 1;
+            Debug.Log("Jump");
         }
     }
 
