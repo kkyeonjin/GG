@@ -165,7 +165,7 @@ public class CompetitorAgent : Agent
     public void OnCollisionEnter(Collision collision)
     {
         //actionMove 및 animation 관련
-        if (collision.gameObject.CompareTag("stiar"))
+        if (collision.gameObject.CompareTag("stair"))
         {
             agentRb.AddForce(transform.forward * speed * 0.4f, ForceMode.VelocityChange);
         }
