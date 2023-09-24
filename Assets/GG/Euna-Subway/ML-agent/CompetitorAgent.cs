@@ -107,14 +107,10 @@ public class CompetitorAgent : Agent
             currentStamina = maxStamina;
             return;
         }
-        if (!isRun)
-        {   
-            while(currentStamina < maxStamina)
-            {
-                currentStamina += staminaRecover * Time.deltaTime;
-                Debug.Log("recover stamina");
-            }
-        }
+
+        currentStamina += staminaRecover * Time.deltaTime;
+        Debug.Log("recover stamina");
+
         if (currentStamina > 10f)
         {
             staminaIsUsable = true;
