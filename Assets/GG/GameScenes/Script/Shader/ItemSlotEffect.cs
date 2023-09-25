@@ -74,41 +74,18 @@ public class ItemSlotEffect : UIEffect
 
     public void Use_Item()
     {
-        m_CalcValue = CoolTime;
         m_fCurrRatio = 0f;
         m_fHighlighting = 0f;
         ActivateParticle.SetActive(false);
 
     }
-    public void Activate_Item()
+    public void Activate_Item(bool activate = true)
     {
-        ActivateParticle.SetActive(true);
+        ActivateParticle.SetActive(activate);
     }
     void Empty()
     {
 
     }
-    void CoolTime()
-    {
-        m_fCurrRatio = m_Item.Get_CoolTime_Ratio();
 
-        if (m_fCurrRatio >= 1f)
-        {
-            m_fHighlighting = 0.3f;
-            m_CalcValue = HighLighting;
-        }
-        
-    }
-    void HighLighting()
-    {
-        m_fHighlighting = m_fHighlighting - Time.deltaTime;
-        
-        if(m_fHighlighting < 0f)
-        {
-            m_fHighlighting = 0f;
-
-            m_CalcValue = Empty;
-        }
-        
-    }
 }

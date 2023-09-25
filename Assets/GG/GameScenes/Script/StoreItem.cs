@@ -9,7 +9,6 @@ public class StoreItem : MonoBehaviour
     private int m_iNum;
     protected ITEM m_eIndex;
 
-    protected float m_fCoolTime=1f;
     protected float m_fTimer=1f;
 
     protected bool m_bUsable = true;
@@ -18,6 +17,7 @@ public class StoreItem : MonoBehaviour
     protected float m_fDurationTimer;
 
     protected bool m_bActivate = false;
+    protected bool m_bOnOff = false;
 
     protected ItemSlotEffect m_Effect;
 
@@ -34,13 +34,7 @@ public class StoreItem : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        m_fTimer += Time.deltaTime;
-        if (m_bUsable==false && m_fCoolTime <= m_fTimer)
-            m_bUsable = true;
-    }
-    public float Get_CoolTime_Ratio()//ui 쿨타임 표시용
-    {
-        return m_fTimer / m_fCoolTime;
+
     }
 
     public bool Get_Activated()
@@ -77,10 +71,17 @@ public class StoreItem : MonoBehaviour
         if (m_eIndex == ITEM.END)
             return;
 
-        Debug.Log("호출! " + m_eIndex);
         m_bUsable = false;
-        m_fTimer = 0f;
-        m_Effect.Use_Item();
+        //m_Effect.Use_Item();
+    }
+
+    public virtual void On_Item()
+    {
+
+    }
+    public virtual void Off_Item()
+    {
+
     }
     
     

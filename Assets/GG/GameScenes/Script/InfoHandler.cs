@@ -85,7 +85,7 @@ public class InfoHandler : MonoBehaviour
     }
     public static void Initizlize_Player(string name)//처음 게임 시작할 때
     {
-        PlayerInfo Info = new PlayerInfo();
+        PlayerInfo Info = new PlayerInfo(true);
         Info.Set_Name(name);
         FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
         fileStream.Close();

@@ -12,8 +12,6 @@ public class StoreItem_Resume : StoreItem
     // Start is called before the first frame update
     protected override void Start()
     {
-        m_fCoolTime = 10f;
-        m_fTimer = 10f;
     }
 
     // Update is called once per frame

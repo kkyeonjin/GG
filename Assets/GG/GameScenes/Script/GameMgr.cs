@@ -40,6 +40,8 @@ public class GameMgr : MonoBehaviour
     private List<Tuple<string, Photon.Realtime.Player>> Ranking;
     private List<Photon.Realtime.Player> GameOut;
 
+    private bool m_bDeathCount = false;
+    private float m_fDeathTimer = 0f;
 
     void Awake()
     {
@@ -170,10 +172,7 @@ public class GameMgr : MonoBehaviour
     {
         m_LocalPlayer.GetComponentInChildren<ChangeAvatar>().Change_Avatar(iIndex);
     }
-    public void BroadCast_Death()//아이템 쓴 당사자가 부를 함수
-    {//이거는 바꿔야함 특정 타겟 지정해서 죽이도록 해야함
-        m_PV.RPC("MakeLocalPlayer_Die", RpcTarget.Others);
-    }
+    
     public void BroadCast_StartGame()
     {
         m_PV.RPC("Start_Game", RpcTarget.All);
@@ -183,11 +182,6 @@ public class GameMgr : MonoBehaviour
         m_PV.RPC("SomeOne_GoalIn", RpcTarget.All);
     }
 
-    [PunRPC]
-    void MakeLocalPlayer_Die()//죽을 플레이어들이 받을 함수
-    {
-        m_LocalPlayer.Immediate_Death();
-    }
     [PunRPC]
     void Start_Game()
     {
@@ -212,6 +206,16 @@ public class GameMgr : MonoBehaviour
             m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
         }
         Invoke("Show_ResultScreen", fCeremonyTime);
+    }
+    public void Trigger_Death()
+    {
+        m_fDeathTimer = 5f;
+        m_bDeathCount = true;
+    }
+    
+    void Kill_Player()
+    {
+        m_LocalPlayer.Apply_DeathItem();
     }
 
     public void Use_ResumeItem()//즉부 아이템 썻을 때
@@ -288,23 +292,30 @@ public class GameMgr : MonoBehaviour
         //임시로 키 만들어놓음
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (m_ItemSlot[0].Is_Usable() && (false == m_ItemSlot[0].Get_Activated()))
+            if (m_ItemSlot[0].Is_Usable())
             {
                 m_ItemSlot[0].Use_Item();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)&&(false == m_ItemSlot[1].Get_Activated()))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (m_ItemSlot[1].Is_Usable())
             {
                 m_ItemSlot[1].Use_Item();
             }
         }
-        //else if(Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    if (m_ItemSlot[2].Is_Usable())
-        //        m_ItemSlot[2].Use_Item();
-        //}
+
+        if(m_bDeathCount)
+        {
+            m_fDeathTimer -= Time.deltaTime;
+            if(m_fDeathTimer<=0f)
+            {
+                m_bDeathCount = false;
+                //죽여라
+                Kill_Player();
+            }
+        }
+     
     }
     
     public T Get_Instance<T>()

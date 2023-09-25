@@ -18,28 +18,28 @@ public class PlayerInfo
 
     public int[] ItemsInfo;
 
-    public PlayerInfo()
+    public PlayerInfo(bool first)
     {
 
-        //Level = 1;
-        //Exp = 0;
-        //ExpMax = 150;
-        //Money = 0;
+        Level = 1;
+        Exp = 0;
+        ExpMax = 150;
+        Money = 0;
 
-        //CurrCharacter = 0;
-        //AvailableCharacter = new bool[(int)Player.CHARACTER.END];
-        //AvailableCharacter[0] = true;
-        //for (int i = 1; i < (int)Player.CHARACTER.END; ++i)
-        //    AvailableCharacter[i] = false;
+        CurrCharacter = 0;
+        AvailableCharacter = new bool[(int)Player.CHARACTER.END];
+        AvailableCharacter[0] = true;
+        for (int i = 1; i < (int)Player.CHARACTER.END; ++i)
+            AvailableCharacter[i] = false;
 
-        //ItemsInfo = new int[(int)Item.ITEM.END];
-        //for (int i = 0; i < (int)Item.ITEM.END; ++i)
-        //    ItemsInfo[i] = 0;
+        ItemsInfo = new int[(int)StoreItem.ITEM.END];
+        for (int i = 0; i < (int)StoreItem.ITEM.END; ++i)
+            ItemsInfo[i] = 0;
 
-        //HoldingItems = new int[2, 2];
-        //for (int i = 0; i < 2; ++i)
-        //    for (int j = 0; j < 2; ++j)
-        //        HoldingItems[i,j] = -1;
+
+    }
+    public PlayerInfo()
+    {
 
     }
 

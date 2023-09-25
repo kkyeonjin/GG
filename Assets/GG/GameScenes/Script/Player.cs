@@ -56,14 +56,14 @@ public class Player : MonoBehaviour
 
         if (m_PV != null)
         {
-            
+            this.gameObject.layer = 16;
             if (m_PV.IsMine)
             {//멀티모드일때만 
 
                 GameMgr.Instance.Set_LocalPlayer(this);
                 GameMgr.Instance.Set_Camera();
-                
 
+                this.gameObject.layer = 17;
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
@@ -187,13 +187,10 @@ public class Player : MonoBehaviour
         Run();
 
         transform.LookAt(transform.position + m_vMoveVec);
-      
         m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
 
         Falling();
         Jump_Up();
-
-        Throw();
         
         PushLever();
         Entering_Code();
@@ -302,12 +299,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Throw()
-    {
-  
-        if (m_bIsGround && Input.GetKeyDown(KeyCode.C))
-            m_Animator.SetTrigger("Throw");
-    }
     private void Falling()
     {
         if(m_bIsJump == false && m_bIsGround == false)
@@ -435,13 +426,18 @@ public class Player : MonoBehaviour
         m_Status.Resume_Immediate();
     }
 
-    public void Immediate_Death()//죽는게 바로 옴 + 무적 상태를 카운터로 하는게 좋을 것 같다는 생각이 든다.
-    {//다른 플레이어가 이 함수를 실행해서 바로 죽는걸로
-        
-        if(!m_bInvincible)
-            m_Status.Set_Damage(m_Status.Get_MaxHP());
+    public void Immediate_Death()
+    {//다른 플레이어가 호출하게 됨
+        m_PV.RPC("Targeting_Death", m_PV.Owner);
     }
- 
+    
+    public void Apply_DeathItem()
+    {
+        if(!m_bAdrenaline)
+        {
+            m_Status.Set_Damage(m_Status.Get_MaxHP());
+        }
+    }
 
     public void Recover_Potion()
     {
@@ -450,12 +446,30 @@ public class Player : MonoBehaviour
     //일정 시간동안 유지. true false로 껐다 키는 기능으로
     public void Adrenaline(bool OnAdrenaline)//일단 달리기 빨라지는걸로
     {
-        m_bAdrenaline = OnAdrenaline;
+        m_PV.RPC("Setbool_Adrenaline", RpcTarget.All, OnAdrenaline);
     }
 
     public void Invincible(bool bInvincible)//무적 상태(그냥 상처만 안받는 상태인가?)
     {
-        m_bInvincible = bInvincible;
+        m_PV.RPC("Setbool_Invincible", RpcTarget.All, bInvincible);
+
+    }
+
+    [PunRPC]
+    void Setbool_Adrenaline(bool bAdrenaline)
+    {
+        m_bAdrenaline = bAdrenaline;
+        
+    }
+    [PunRPC]
+    void Setbool_Invincible(bool Adrenaline)
+    {
+        m_bInvincible = Adrenaline;
+    }
+    [PunRPC]
+    void Targeting_Death()
+    {
+
     }
 
 }

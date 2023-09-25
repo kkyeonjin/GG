@@ -4635,7 +4635,10 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.2
   m_eLerpType: 8
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!1 &748904299
 GameObject:
   m_ObjectHideFlags: 0
@@ -9131,7 +9134,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.4
   m_eLerpType: 8
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1504689703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11034,12 +11041,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230555a498fa5824b93d0cb91d6582a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fResultScreenTime: 10
+  fCeremonyTime: 5
+  ResultScreen: {fileID: 0}
+  GameScreen: {fileID: 0}
   m_LocalPlayer: {fileID: 0}
   m_LocalPlayerObj: {fileID: 0}
   m_bInGame: 0
   m_bMulti: 0
+  fDelayStartTime: 2
   m_PV: {fileID: 1889427165}
-  Ranking: []
 --- !u!4 &1889427164
 Transform:
   m_ObjectHideFlags: 0
@@ -12220,7 +12231,10 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.2
   m_eLerpType: 8
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!1 &2062509757
 GameObject:
   m_ObjectHideFlags: 0

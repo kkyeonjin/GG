@@ -45,7 +45,6 @@ public class StoreItem_Invincible : StoreItem
 
     public override void Use_Item()
     {
-       
         GameMgr.Instance.m_LocalPlayer.Invincible(true);
         m_bActivate = true;
         m_fDurationTimer = 0f;

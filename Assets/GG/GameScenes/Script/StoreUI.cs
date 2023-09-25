@@ -66,7 +66,7 @@ public class StoreUI : MonoBehaviour
 
     public void Select_No()
     {
-        SelectBuy.gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
         this.gameObject.SetActive(false);
         Panel.SetActive(false);
         m_iCharacterIndex = -1;

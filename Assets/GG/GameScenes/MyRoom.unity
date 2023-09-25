@@ -2078,7 +2078,11 @@ MonoBehaviour:
   m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 1075036393}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1075036393}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &92328688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14271,7 +14275,11 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -21093,7 +21101,11 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 2
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 0
@@ -23540,7 +23552,11 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 10
@@ -24117,7 +24133,10 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.2
   m_eLerpType: 8
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1336855196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24583,7 +24602,11 @@ MonoBehaviour:
   m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 1674142786}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1674142786}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1369150714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27400,7 +27423,11 @@ MonoBehaviour:
   m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 811562620}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 811562620}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1514515290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28487,7 +28514,11 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 0}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -30303,7 +30334,11 @@ MonoBehaviour:
   m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 316024300}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 316024300}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1707483452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30796,7 +30831,11 @@ MonoBehaviour:
   m_fTotalTime: 0.5
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 1977356271}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1977356271}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1739085327
 MonoBehaviour:
   m_ObjectHideFlags: 0

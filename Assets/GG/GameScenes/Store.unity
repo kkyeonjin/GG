@@ -872,7 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234264340}
   m_Layer: 0
-  m_Name: Characters
+  m_Name: CharacterStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,15 +885,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234264339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -410.4, y: -175.66667, z: -11.812622}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1832841341}
-  - {fileID: 1896920097}
-  m_Father: {fileID: 724102100}
-  m_RootOrder: 0
+  - {fileID: 1732027360}
+  - {fileID: 1067765090}
+  m_Father: {fileID: 261415014}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242709340
 GameObject:
@@ -991,7 +991,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 0
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 242709341}
   m_fTotalLength: 0
@@ -1034,7 +1037,7 @@ RectTransform:
   - {fileID: 563208439}
   - {fileID: 1584049921}
   - {fileID: 225691182}
-  - {fileID: 724102100}
+  - {fileID: 234264340}
   m_Father: {fileID: 29281697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1382,7 +1385,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1853926740}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1853926740}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &308448240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,7 +1786,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 0
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 347108317}
   m_fTotalLength: 0
@@ -1843,7 +1853,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 10
@@ -1945,7 +1958,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -2581,7 +2597,10 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.2
   m_eLerpType: 8
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!1 &567722273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,7 +3014,12 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1832841340}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1832841340}
+  - {fileID: 1732027359}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &649137549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,13 +3563,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724102099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -410.4, y: -175.66667, z: -11.812622}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_LocalPosition: {x: 344.40002, y: 276.5, z: -11.812622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 234264340}
-  m_Father: {fileID: 261415014}
-  m_RootOrder: 7
+  - {fileID: 1832841341}
+  - {fileID: 1896920097}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752438828
 GameObject:
@@ -4872,7 +4897,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -5146,7 +5174,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 0
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 996770184}
   m_fTotalLength: 0
@@ -5541,12 +5572,12 @@ GameObject:
   - component: {fileID: 1067765090}
   - component: {fileID: 1067765091}
   m_Layer: 5
-  m_Name: CharacterStatus
+  m_Name: OldWoman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1067765090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5565,7 +5596,7 @@ RectTransform:
   - {fileID: 945574416}
   - {fileID: 498283185}
   - {fileID: 1131578702}
-  m_Father: {fileID: 1896920097}
+  m_Father: {fileID: 234264340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5644,7 +5675,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1586228781}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1586228781}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1071454973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5969,7 +6004,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 567722273}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 567722273}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1072892824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6167,7 +6206,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 10
@@ -6307,7 +6349,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 0
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 1238571894}
   m_fTotalLength: 0
@@ -8072,7 +8117,12 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1896920096}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1067765089}
+  - {fileID: 1896920096}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1556348686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8414,7 +8464,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -8733,7 +8786,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1396284388}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1396284388}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1709004587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8908,12 +8965,12 @@ GameObject:
   - component: {fileID: 1732027360}
   - component: {fileID: 1732027361}
   m_Layer: 5
-  m_Name: CharacterStatus
+  m_Name: RedHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1732027360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8932,8 +8989,8 @@ RectTransform:
   - {fileID: 2016789890}
   - {fileID: 1633932042}
   - {fileID: 354085872}
-  m_Father: {fileID: 1832841341}
-  m_RootOrder: 1
+  m_Father: {fileID: 234264340}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9420,7 +9477,11 @@ MonoBehaviour:
   m_fTotalTime: 0.3
   m_fScale: 0.1
   m_eLerpType: 5
-  m_ConnectedModel: {fileID: 1051691947}
+  m_bGetPassTime: 0
+  m_ConnectedModel:
+  - {fileID: 1051691947}
+  m_fRatioDest: 0
+  m_fRatioSour: 1
 --- !u!114 &1801839852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9731,7 +9792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832841341}
   m_Layer: 0
-  m_Name: Boy
+  m_Name: RedHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9744,14 +9805,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832841340}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 904847106}
-  - {fileID: 1732027360}
-  m_Father: {fileID: 234264340}
+  m_Father: {fileID: 724102100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834886988
@@ -10359,14 +10419,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896920096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1900010845}
-  - {fileID: 1067765090}
-  m_Father: {fileID: 234264340}
+  m_Father: {fileID: 724102100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900010844 stripped
@@ -10874,7 +10933,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 11
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 0
   m_MyRectTransform: {fileID: 0}
   m_fTotalLength: 150
@@ -11014,7 +11076,10 @@ MonoBehaviour:
   m_fTotalTime: 1
   m_fScale: 0.1
   m_eLerpType: 0
-  m_ConnectedModel: {fileID: 0}
+  m_bGetPassTime: 0
+  m_ConnectedModel: []
+  m_fRatioDest: 0
+  m_fRatioSour: 1
   m_bIsFloating: 1
   m_MyRectTransform: {fileID: 2081122876}
   m_fTotalLength: 0

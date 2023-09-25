@@ -15,7 +15,7 @@ public class UIEffect : MonoBehaviour
 
     public bool m_bGetPassTime;
 
-    public GameObject m_ConnectedModel;
+    public GameObject[] m_ConnectedModel;
 
     public float m_fRatioDest= 0f;
     public float m_fRatioSour= 1f;
@@ -77,16 +77,22 @@ public class UIEffect : MonoBehaviour
     {
         Lerp_Increasing();
 
-        if (m_ConnectedModel != null)
-            m_ConnectedModel.SetActive(true);
+        if (m_ConnectedModel.Length  >0)
+        {
+            foreach(GameObject it in m_ConnectedModel)
+                it.SetActive(true);
+        }
     }
 
     public void MousePointer_Out()
     {
         Lerp_Decreasing();
 
-        if (m_ConnectedModel != null)
-            m_ConnectedModel.SetActive(false);
+        if (m_ConnectedModel.Length > 0)
+        {
+            foreach (GameObject it in m_ConnectedModel)
+                it.SetActive(false);
+        }
     }
     public void Set_Ratio(float fRatio)
     {
