@@ -185,13 +185,10 @@ public class Player : MonoBehaviour
         Crouch();
         Get_KeyInput();
         Run();
-        //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
-        transform.LookAt(transform.position + m_vMoveVec);
-        //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
-        //m_Rigidbody.AddForce(Physics.gravity);
-        m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
-        m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
+        transform.LookAt(transform.position + m_vMoveVec);
+      
+        m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
 
         Falling();
         Jump_Up();
