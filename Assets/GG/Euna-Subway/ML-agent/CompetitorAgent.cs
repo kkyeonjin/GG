@@ -8,6 +8,7 @@ using System;
 
 public class CompetitorAgent : Agent
 {
+    /// euna
     /// <summary>
     /// Variable : Status / Move / Environment / Avoid / Hide / Item 총 6부문별로 구분
     /// </summary>

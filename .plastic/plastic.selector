@@ -1,0 +1,4 @@
+repository "euna@pnltoen_Benefit@cloud"
+  path "/"
+    smartbranch "/main/euna01" 
+     
