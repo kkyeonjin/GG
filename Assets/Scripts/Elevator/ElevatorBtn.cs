@@ -6,7 +6,7 @@ public class ElevatorBtn : MonoBehaviour
 {
 
     public Animator Left, Right;
-    public GameObject ElevRoom;
+    public GameObject ElevRoom, BackWall;
 
     // Start is called before the first frame update
     public void DoorOpen()
@@ -35,10 +35,12 @@ public class ElevatorBtn : MonoBehaviour
     public void RoomSet()
     {
         ElevRoom.SetActive(true);
+        BackWall.SetActive(false);
     }
 
     public void RoomDelete()
     {
         ElevRoom.SetActive(false);
+        BackWall.SetActive(true);
     }
 }

@@ -17,12 +17,10 @@ TagManager:
   - stair
   - Falling
   - Item
-  - cup
-  - tv
-  - plant
   - Elevator
   - Fire
   - Button
+  - Door
   layers:
   - Default
   - TransparentFX

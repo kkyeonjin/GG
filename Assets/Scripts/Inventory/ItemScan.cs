@@ -45,19 +45,19 @@ public class ItemScan : MonoBehaviour
             else if (hitInfo.transform.gameObject.CompareTag("Button"))
             {
                 pressE.gameObject.SetActive(true);
-             //   ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
-             //   ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("Open");
                     hitInfo.transform.gameObject.GetComponent<ElevatorBtn>().DoorOpen();
-                 //   ElevL = hitInfo.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
-                 //   ElevR = hitInfo.transform.gameObject.transform.GetChild(1).GetComponent<Animator>();
 
-                 //   ElevL.SetBool("Open", true);
-                 //   ElevR.SetBool("Open", true);
-
+                }
+            }
+            else if (hitInfo.transform.gameObject.CompareTag("Door"))
+            {
+                pressE.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<DoorCtr>().DoorAnimOn();
                 }
             }
         }

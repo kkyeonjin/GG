@@ -9,7 +9,7 @@ public class FireParticle : MonoBehaviour
     void Start()
     {
         //localPosition -> 부모에 대한 상대적인 위치값 
-        transform.localPosition = new Vector3(Random.Range(-1.85f, -0.4f), -1.6f, Random.Range(-1.5f, -0.5f));
+        transform.localPosition = new Vector3(Random.Range(-1.45f, -0.2f), -1.6f, Random.Range(-1.5f, -0.3f));
     }
 
     // Update is called once per frame
