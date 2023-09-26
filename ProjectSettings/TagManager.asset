@@ -21,6 +21,7 @@ TagManager:
   - Fire
   - Button
   - Door
+  - BagObject
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - Fire
   - Elevator
   - Scannable
-  - 
+  - Bag
   - 
   - 
   - 
