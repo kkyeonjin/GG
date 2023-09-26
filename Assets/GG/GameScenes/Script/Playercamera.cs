@@ -55,7 +55,6 @@ public class Playercamera : MonoBehaviour
             transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position/* + m_vOffset.z * transform.forward + m_vOffset.y * transform.up*/;
 
             Vector3 ray_Dir = m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
-            Debug.Log("ray_target : " + ray_Dir);
 
             RaycastHit hitinfo;
             Physics.Raycast(transform.position, ray_Dir, out hitinfo, m_fCamDist);

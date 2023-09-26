@@ -469,7 +469,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     void Targeting_Death()
     {
-
+        GameMgr.Instance.Trigger_Death();
     }
 
 }

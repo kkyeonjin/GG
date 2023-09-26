@@ -31,13 +31,15 @@ public class StoreItem_Death : StoreItem
             RaycastHit Info;
             int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
 
-            if (Physics.Raycast(vOrigin, vDir, out Info, 10f, layer))
+            if (Physics.Raycast(vOrigin, vDir, out Info, 100f, layer))
             {
                 //가운데 타게팅 하이라이팅 되는 기능 추가
                 if (Input.GetMouseButtonDown(0))
                 {
                     Info.collider.gameObject.GetComponent<Player>().Immediate_Death();
                     Utilized();
+                    Debug.Log("아이템 사용함");
+
                 }
             }
             
@@ -54,6 +56,9 @@ public class StoreItem_Death : StoreItem
 
     private void Utilized()
     {
+        m_bActivate = false;
+        m_Effect.Activate_Item(m_bActivate);
+
         base.Use_Item();
     }
 }

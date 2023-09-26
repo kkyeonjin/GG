@@ -9135,8 +9135,7 @@ MonoBehaviour:
   m_fScale: 0.4
   m_eLerpType: 8
   m_bGetPassTime: 0
-  m_ConnectedModel:
-  - {fileID: 0}
+  m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
 --- !u!114 &1504689703

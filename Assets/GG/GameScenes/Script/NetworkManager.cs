@@ -11,7 +11,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private static NetworkManager m_Instance = null;
 
     public const int m_iMaxPlayer = 8;
-    private string PlayerName = "HiHi";
     public string m_szPlayerPrefab = "Local_Player";
 
     public GameObject StartButton { get; set; }
@@ -58,7 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public string Get_Playername()
     {
-        return PlayerName;
+        return PhotonNetwork.LocalPlayer.NickName;
     }
     //////////////////////////////////////////////////////////////
     public void Set_StartButton(GameObject button)
@@ -79,7 +78,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("서버접속완료");
-        PhotonNetwork.LocalPlayer.NickName = PlayerName;//플레이어 이름 임의로
+        PhotonNetwork.LocalPlayer.NickName = InfoHandler.Instance.Get_Name();//플레이어 이름 임의로
         JoinLobby();
     }
 
