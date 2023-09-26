@@ -1452,7 +1452,8 @@ MonoBehaviour:
   m_fScale: 0
   m_eLerpType: 0
   m_bGetPassTime: 0
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
 --- !u!1 &350509565
@@ -4019,7 +4020,8 @@ MonoBehaviour:
   m_fScale: 0
   m_eLerpType: 0
   m_bGetPassTime: 0
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
 --- !u!1 &835508207
@@ -5473,7 +5475,8 @@ MonoBehaviour:
   m_fScale: 0.1
   m_eLerpType: 0
   m_bGetPassTime: 0
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
@@ -10658,7 +10661,8 @@ MonoBehaviour:
   m_fScale: 0
   m_eLerpType: 0
   m_bGetPassTime: 1
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
 --- !u!114 &1145624548
@@ -11034,7 +11038,8 @@ MonoBehaviour:
   m_fScale: 0.1
   m_eLerpType: 0
   m_bGetPassTime: 0
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
@@ -18974,7 +18979,8 @@ MonoBehaviour:
   m_fScale: 0.1
   m_eLerpType: 0
   m_bGetPassTime: 0
-  m_ConnectedModel: {fileID: 0}
+  m_ConnectedModel:
+  - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
   m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}

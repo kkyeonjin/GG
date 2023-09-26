@@ -232,8 +232,8 @@ public class Player : MonoBehaviour
 
         if (m_bIsJump == true && m_bIsGround == false)
         {//+: y+방향, -: y-방향
-            m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude*Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
+            //m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude*Time.deltaTime;
+            m_Rigidbody.MovePosition(Vector3.up * m_fJumpForce*Time.deltaTime);
         }
     }
     private void Crouch()
