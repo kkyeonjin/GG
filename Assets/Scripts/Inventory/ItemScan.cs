@@ -60,6 +60,23 @@ public class ItemScan : MonoBehaviour
                     hitInfo.transform.gameObject.GetComponent<DoorCtr>().DoorAnimOn();
                 }
             }
+            else if (hitInfo.transform.gameObject.CompareTag("HidingTable"))
+            {
+                pressE.gameObject.SetActive(true);
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    //숨는 애니메이션
+                    //미션 성공 여부 bool 변수 true로 바꿔주기
+                }
+            }
+            else if(hitInfo.transform.gameObject.CompareTag("FalseTable"))
+            {
+                pressE.gameObject.SetActive(true);
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    //숨는 애니메이션
+                }
+            }
         }
         else
         {

@@ -22,6 +22,8 @@ TagManager:
   - Button
   - Door
   - BagObject
+  - HidingTable
+  - FalseTable
   layers:
   - Default
   - TransparentFX
