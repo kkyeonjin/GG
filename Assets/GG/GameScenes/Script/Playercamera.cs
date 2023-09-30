@@ -12,15 +12,15 @@ public class Playercamera : MonoBehaviour
 
     private float m_fXRotate, m_fYRotate;
     private float m_XTotalRot, m_YTotalrot;
+    private float m_fCamDist;
+    private Vector3 m_vDir;
 
     private delegate void CamFunc();
     private CamFunc m_CameraFunc;
 
-    //Quaternion tempRot;
-
-
     void Start()
     {
+
         if (null == m_CamTransform)//single mode
         {
             m_CameraFunc = new CamFunc(SingleMode);
@@ -29,9 +29,11 @@ public class Playercamera : MonoBehaviour
             transform.forward = m_TargetTransform.forward;
         }
         else
+        {
             m_CameraFunc = new CamFunc(MultiMode);
-
-        //tempRot = transform.localRotation;
+            m_fCamDist = Mathf.Sqrt(m_vOffset.y * m_vOffset.y + m_vOffset.z * m_vOffset.z);
+            m_vDir = new Vector3(0, m_vOffset.y, m_vOffset.z).normalized;
+        }
     }
 
     // Update is called once per frame
@@ -39,29 +41,35 @@ public class Playercamera : MonoBehaviour
     {
         Get_MouseMovement();
         m_CameraFunc();
-
-        /*
-        Quaternion newRot = transform.localRotation;
-        if (tempRot == newRot) return;
-        else
-        {
-            Debug.Log(newRot);
-            tempRot = newRot;
-        }
-        */
     }
 
     private void MultiMode()
     {
-        
+
         if (m_CamTransform.Follow != null)
         {
             m_TargetTransform = m_CamTransform.Follow;
         }
         if (m_TargetTransform != null)
         {
-            transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position + m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
+            transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position/* + m_vOffset.z * transform.forward + m_vOffset.y * transform.up*/;
 
+            Vector3 ray_Dir = m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
+
+            RaycastHit hitinfo;
+            Physics.Raycast(transform.position, ray_Dir, out hitinfo, m_fCamDist);
+
+            if (hitinfo.point != Vector3.zero)//레이케스트 성공시
+            {
+                //point로 옮긴다.
+                transform.position = hitinfo.point;
+                //카메라 보정
+                transform.Translate(m_vDir * -1 * 3f);
+            }
+            else
+            {
+                transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position + m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
+            }
         }
     }
 

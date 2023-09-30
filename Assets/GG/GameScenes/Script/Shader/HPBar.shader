@@ -7,7 +7,7 @@ Shader "UI/HPBar"
     SubShader
     {
         // No culling or depth
-        Cull Off ZWrite Off ZTest Always
+        Cull Off ZWrite On ZTest Less
 
         Pass
         {
@@ -39,6 +39,7 @@ Shader "UI/HPBar"
 
             sampler2D _MainTex;
             half fRatio;
+            float4 vColor;
 
 
             fixed4 frag (v2f i) : SV_Target
@@ -47,6 +48,8 @@ Shader "UI/HPBar"
                 
                 if (1.f - i.uv.x > fRatio)
                     discard;
+
+                col *= vColor;
 
                 return col;
             }

@@ -13,10 +13,11 @@ public class SelectStageUI : MonoBehaviour
     public TextMeshProUGUI SelectedStage;
     public Image mapImage;
     public Sprite subway, apart;
-    
+    public SelectStageUI SelectingButton;
     // Start is called before the first frame update
 
     private int m_iStageIndex = 0;
+
     void Start()
     {
        
@@ -25,17 +26,30 @@ public class SelectStageUI : MonoBehaviour
     public void Multi_StartGame()
     {
         //NetworkManager.Instance.StartGame("Multi_Subway");
-        m_PV.RPC("StartGame", RpcTarget.All);
+        string SceneName = "";
+        m_iStageIndex = SelectingButton.Get_Index();
+        switch (m_iStageIndex)
+        {
+            case 0:
+                SceneName = "Multi_Subway";
+                break;
+        }
+        m_PV.RPC("StartGame", RpcTarget.All, SceneName);
     }
 
-    public void Game_Start()
+    public void Game_Start()//single mode
     {
         SceneManager.LoadScene(SelectedStage.text);
     }
 
-    public void Exit_Stage()
+    public void Exit_Stage()//싱글모드
     {
         SceneManager.LoadScene("Lobby");
+    }
+
+    public void Multi_ExitStage()//멀티 스테이지 나가기
+    {
+        m_PV.RPC("BacktoLobby", RpcTarget.All);
     }
 
     public void Change_Stage()
@@ -44,22 +58,41 @@ public class SelectStageUI : MonoBehaviour
         switch(m_iStageIndex)
         {
             case 0:
-                SelectedStage.text = "Multi_Subway";//잠깐 멀티로
+                SelectedStage.text = "Apartment";//잠깐 멀티로
                 mapImage.sprite = subway;
 
-                break;
-            case 1:
-                SelectedStage.text = "Apartment";
-                mapImage.sprite = apart;
                 break;
         }
         //SelectedStage.text = sz_SelectedStage;
     }
+    public void ChangeStage_Multi()
+    {
+        m_iStageIndex = (m_iStageIndex + 1) % 1;
+        switch (m_iStageIndex)
+        {
+            case 0:
+                SelectedStage.text = "Subway";//잠깐 멀티로
+               // mapImage.sprite = subway;
 
+                break;
+        }
+    }
+    public int Get_Index()
+    {
+        return m_iStageIndex;
+    }
     //멀티 게임 임시
     [PunRPC]
-    void StartGame()
+    void StartGame(string SceneName)
     {
-        NetworkManager.Instance.StartGame("Multi_Subway");
+        
+        NetworkManager.Instance.StartGame(SceneName);
     }
+    [PunRPC]
+    void BacktoLobby()
+    {
+        NetworkManager.Instance.StartGame("MultiLobby");
+    }
+
+
 }

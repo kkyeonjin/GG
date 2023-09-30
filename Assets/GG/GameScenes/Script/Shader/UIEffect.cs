@@ -6,63 +6,103 @@ using UnityEngine.UI;
 public class UIEffect : MonoBehaviour
 {
     public Image m_Image;
-    public Color m_Color;
     public Material m_Material;
+    public Color m_Color;
+    public Color m_vOriginColor;
+    public float m_fTotalTime = 1f;
+    public float m_fScale = 0.1f;
+    public EasingUtility.EASING_TYPE m_eLerpType;
 
-    public GameObject m_ConnectedModel;
+    public bool m_bGetPassTime;
 
-    private float m_fRatio = 0f;
-    private Vector4 m_vColor;
-    private Vector4 m_vOriginColor;
+    public GameObject[] m_ConnectedModel;
 
-    private float m_fValue = 0.35f;
-    private float m_fDestValue = 0f;
-    private float m_fSourValue = 1f;
-    
+    public float m_fRatioDest= 0f;
+    public float m_fRatioSour= 1f;
+    protected float m_fPassedTime = 0f;
+    protected float m_fOriginScale = 1f;
+
+    protected float m_fCurrRatio = 0f;
 
 
-    
-    void Start()
+    void Awake()
     {
-        m_vColor.x = m_Color.r;
-        m_vColor.y = m_Color.g;
-        m_vColor.z = m_Color.b;
-        m_vColor.w = m_Color.a;
 
-        m_vOriginColor = new Vector4(0.6f, 0.6f, 0.6f, 0.6f);
         m_Image.material = Instantiate(m_Material);
-        m_fSourValue = 0f;
+        //m_fRatioSour = 0f;
+
+        m_fOriginScale = m_Image.transform.localScale.x;
 
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
+        if(m_bGetPassTime == false)
+            m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
+
+        m_fCurrRatio = EasingUtility.LerpToType(m_fRatioSour,m_fRatioDest, m_fPassedTime, m_fTotalTime,m_eLerpType);
+
+
+        m_Image.transform.localScale = new Vector3(m_fOriginScale + m_fCurrRatio * m_fScale, m_fOriginScale + m_fCurrRatio * m_fScale, m_fOriginScale);
         
-        m_fRatio = Mathf.Lerp(m_fSourValue, m_fDestValue, m_fValue);
-        m_fSourValue = m_fRatio;
-        
-        m_Image.material.SetFloat("g_fLerpRatio", m_fRatio);
-        m_Image.material.SetVector("g_vColor", m_vColor);
+        m_Image.material.SetFloat("g_fLerpRatio", m_fCurrRatio);
+        m_Image.material.SetVector("g_vColor", m_Color);
         m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
        
-        m_Image.transform.localScale = new Vector3(1f + m_fRatio*0.1f, 1f + m_fRatio*0.1f, 1f);
     }
 
     private void OnPreRender()
     {
         
     }
+    public void Lerp_Increasing()
+    {
+        m_fPassedTime = 0f;
+
+        m_fRatioDest = 1f;
+        m_fRatioSour = m_fCurrRatio;
+
+    }
+
+    public void Lerp_Decreasing()
+    {
+        m_fPassedTime = 0f;
+
+        m_fRatioDest = 0f;
+        m_fRatioSour = m_fCurrRatio;
+    }
 
     public void MousePointer_In()
     {
-        m_fDestValue = 1f;
-        m_ConnectedModel.SetActive(true);
+        Lerp_Increasing();
+
+        if (m_ConnectedModel.Length  >0)
+        {
+            foreach(GameObject it in m_ConnectedModel)
+                it.SetActive(true);
+        }
     }
 
     public void MousePointer_Out()
     {
-        m_fDestValue = 0f;
-        m_ConnectedModel.SetActive(false);
+        Lerp_Decreasing();
+
+        if (m_ConnectedModel.Length > 0)
+        {
+            foreach (GameObject it in m_ConnectedModel)
+                it.SetActive(false);
+        }
+    }
+    public void Set_Ratio(float fRatio)
+    {
+        m_fRatioSour = m_fCurrRatio;
+        m_fRatioDest = fRatio;
+        m_fPassedTime = 0f;
+    }
+
+    public void Get_PassedTime(float fTime)
+    {
+        m_fPassedTime = fTime;
     }
 }

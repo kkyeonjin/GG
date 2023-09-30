@@ -5,7 +5,7 @@ using Photon.Pun;
 public class CharacterStatus : MonoBehaviour
 {
     public Player m_Target;
-    public EventUI m_EventUI;
+
     public float m_fSPRecover;
     public PhotonView m_PV;
 
@@ -13,6 +13,7 @@ public class CharacterStatus : MonoBehaviour
     public float m_fMaxStamina;
 
     private bool m_bIsUsable = true;
+    private bool m_bDie = false;
     private float m_fHP;
     private float m_fStamina;
 
@@ -27,6 +28,17 @@ public class CharacterStatus : MonoBehaviour
         Recover_Stamina();
     }
 
+    public void Change_Status(float fHP, float fStamina)
+    {
+        m_fMaxHP = m_fHP = fHP;
+        m_fMaxStamina = m_fStamina = fStamina;
+    }
+  
+    public void Resume_Immediate()
+    {
+        m_PV.RPC("Resume_Status", RpcTarget.All);
+        m_bDie = false;
+    }
     public float Get_HP()
     {
         return m_fHP;
@@ -55,10 +67,15 @@ public class CharacterStatus : MonoBehaviour
             if (0f >= m_fHP)
             {
                 m_fHP = 0;
-                m_Target.Set_Dead();
-                m_EventUI.Activate_and_Over();
+                m_bDie = true;
+                m_Target.Player_Die();
+               //GameMgr 등에서 리스폰 창 불러오게
             }
         }
+    }
+    public bool is_Dead()
+    {
+        return m_bDie;
     }
     public bool Is_Usable()
     {
@@ -87,6 +104,7 @@ public class CharacterStatus : MonoBehaviour
             }
         }
     }
+
     private void Recover_Stamina()
     {
         m_fStamina += m_fSPRecover*Time.deltaTime;
@@ -97,6 +115,12 @@ public class CharacterStatus : MonoBehaviour
             m_fStamina = m_fMaxStamina;
     }
 
+    public void PV_Reset()
+    {
+        m_PV.RPC("Reset_Status", RpcTarget.All);
+        m_bDie = false;
+    }
+
     [PunRPC]
     void Update_Damage(float fDamage)
     {
@@ -104,10 +128,11 @@ public class CharacterStatus : MonoBehaviour
         if (0f >= m_fHP)
         {
             m_fHP = 0;
-            m_Target.Set_Dead();
-            m_EventUI.Activate_and_Over();
+            m_bDie = true;
+            m_Target.Player_Die();
         }
     }
+    [PunRPC]
     void Update_HP(float fHP)
     {
         m_fHP += fHP;
@@ -115,5 +140,17 @@ public class CharacterStatus : MonoBehaviour
         {
             m_fHP = m_fMaxHP;
         }
+    }
+    [PunRPC]
+    void Reset_Status()
+    {
+        m_fHP = m_fMaxHP;
+        m_fStamina = m_fMaxStamina;
+    }
+    [PunRPC]
+    void Resume_Status()
+    {
+        m_fHP = m_fMaxHP * 0.5f;
+        m_fStamina = m_fMaxStamina;
     }
 }
