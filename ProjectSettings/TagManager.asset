@@ -16,11 +16,12 @@ TagManager:
   - stair
   - Falling
   - Checkpoint
+  - Block
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - checkpoint
   - Water
   - UI
   - Player
@@ -31,7 +32,7 @@ TagManager:
   - Wall
   - stair
   - point
-  - 
+  - pp
   - 
   - 
   - 

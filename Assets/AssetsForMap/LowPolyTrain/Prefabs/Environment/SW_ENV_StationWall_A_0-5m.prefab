@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8312915285369793429}
   - component: {fileID: 2333393488255276908}
   - component: {fileID: 3613400953372199504}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_StationWall_A_0-5m
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4061462978421613488}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6687112675852778420}
   - component: {fileID: 1148959860293666637}
   - component: {fileID: 1044249358604330405}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_RailTunnelWall_B_02_05m
   m_TagString: Wall
   m_Icon: {fileID: 0}

@@ -1,0 +1,110 @@
+{
+    "competitor": {
+        "checkpoints": [
+            {
+                "steps": 10499974,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-10499974.onnx",
+                "reward": 558.6477422714233,
+                "creation_time": 1695881322.4594576,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-10499974.pt"
+                ]
+            },
+            {
+                "steps": 10999946,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-10999946.onnx",
+                "reward": 513.3790425387295,
+                "creation_time": 1695883170.2187443,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-10999946.pt"
+                ]
+            },
+            {
+                "steps": 11499905,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-11499905.onnx",
+                "reward": 540.8477025118741,
+                "creation_time": 1695885009.0621667,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-11499905.pt"
+                ]
+            },
+            {
+                "steps": 11999972,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-11999972.onnx",
+                "reward": 581.7685317993164,
+                "creation_time": 1695886844.1248782,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-11999972.pt"
+                ]
+            },
+            {
+                "steps": 12499939,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12499939.onnx",
+                "reward": 538.6069218919084,
+                "creation_time": 1695888669.323805,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12499939.pt"
+                ]
+            },
+            {
+                "steps": 12939411,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12939411.onnx",
+                "reward": null,
+                "creation_time": 1695890979.124636,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12939411.pt"
+                ]
+            },
+            {
+                "steps": 12999945,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12999945.onnx",
+                "reward": 486.8720327635943,
+                "creation_time": 1695891436.1611881,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-12999945.pt"
+                ]
+            },
+            {
+                "steps": 13499973,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-13499973.onnx",
+                "reward": 521.4548734029134,
+                "creation_time": 1695894260.9252968,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-13499973.pt"
+                ]
+            },
+            {
+                "steps": 13999982,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-13999982.onnx",
+                "reward": 501.5804148250156,
+                "creation_time": 1695896302.2835793,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-13999982.pt"
+                ]
+            },
+            {
+                "steps": 14461738,
+                "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-14461738.onnx",
+                "reward": 417.4627583367484,
+                "creation_time": 1695899598.8358443,
+                "auxillary_file_paths": [
+                    "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-14461738.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 14461738,
+            "file_path": "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor.onnx",
+            "reward": 417.4627583367484,
+            "creation_time": 1695899598.8358443,
+            "auxillary_file_paths": [
+                "results\\_created_block_bigger_gradual_reward_increased_length_continuous_dynamics_Added_checkpoint_ontriggerenter_Renaming_sensor_beta_0.003_increased_rewards_corrected_blocker\\competitor\\competitor-14461738.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "2.0.1+cu117"
+    }
+}

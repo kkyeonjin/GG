@@ -1,4 +1,3 @@
-repository "euna@pnltoen_Benefit@cloud"
+rep "euna@pnltoen_Benefit@cloud"
   path "/"
-    smartbranch "/main/euna01" 
-     
+    smartbranch "/main/Woojin1"

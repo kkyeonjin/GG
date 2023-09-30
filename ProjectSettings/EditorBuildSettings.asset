@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/GG/GameScenes/MenuUI.unity
     guid: 5731b5b67ae5531418285fd80c83ce18
-  - enabled: 1
+  - enabled: 0
     path: Assets/GG/GameScenes/Lobby.unity
     guid: 68a98b9e9020e0a43945fa2bd87fe38d
-  - enabled: 1
+  - enabled: 0
     path: Assets/GG/GameScenes/Apartment.unity
     guid: aa5bad571b34ffa44b84968a72cc5dab
   - enabled: 1
     path: Assets/GG/Euna-Subway/ML-agent/Experiment/subway.unity
     guid: dbc7fa3698e52774e8be070425b6afa4
-  - enabled: 1
+  - enabled: 0
     path: Assets/GG/GameScenes/RoomCode.unity
-    guid: 1a74d40fb9e0eea449d2390e76b24994
-  - enabled: 1
+    guid: c73f86af3cfb6444fa482fb2d69c87a3
+  - enabled: 0
     path: Assets/GG/GameScenes/MultiLobby.unity
-    guid: 5047e2a660d840849b8ee8dba0064053
-  - enabled: 1
+    guid: 60bfd882a179ec24f8ee1f9802a6c3ab
+  - enabled: 0
     path: Assets/GG/GameScenes/Multi_Subway.unity
-    guid: a90dcb8871791654791573493a40c3ed
-  - enabled: 1
+    guid: b669d1ddc029fc14093db98295d45884
+  - enabled: 0
     path: Assets/GG/GameScenes/Store.unity
     guid: d3388285511a613438a90ade6a036a49
-  - enabled: 1
+  - enabled: 0
     path: Assets/GG/GameScenes/MyRoom.unity
-    guid: 112f6309000e3e24caff90fd0ea0c728
+    guid: b1af43293a64d2b4aa8a4322c9f0cf5b
   m_configObjects: {}

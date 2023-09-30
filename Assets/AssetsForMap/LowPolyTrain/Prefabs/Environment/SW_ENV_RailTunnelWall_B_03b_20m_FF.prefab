@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8684770898324292903}
   - component: {fileID: 3150840189825251806}
   - component: {fileID: 8068579011481938958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_RailTunnelWall_B_03b_20m_FF
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3712899557426515202}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -95,5 +95,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 4.2500024, z: 0.64875674}
-  m_Center: {x: 10, y: 2.1249988, z: -0.17562188}
+  m_Size: {x: 19.999996, y: 4.2500024, z: 1.0276532}
+  m_Center: {x: 10, y: 2.1249988, z: -0.36507016}

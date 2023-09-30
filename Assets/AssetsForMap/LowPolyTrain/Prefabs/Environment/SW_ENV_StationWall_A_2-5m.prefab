@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2096401653629628218}
   - component: {fileID: 5632704993194234819}
   - component: {fileID: 8106496591030161081}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_StationWall_A_2-5m
   m_TagString: Wall
   m_Icon: {fileID: 0}

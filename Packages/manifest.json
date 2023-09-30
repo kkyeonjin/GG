@@ -7,7 +7,7 @@
     "com.unity.ide.visualstudio": "2.0.18",
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.inputsystem": "1.5.1",
-    "com.unity.ml-agents": "file:C:/Users/CSE_123/Downloads/ml-agents-release_20/com.unity.ml-agents",
+    "com.unity.ml-agents": "2.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.postprocessing": "3.2.2",
     "com.unity.progrids": "3.0.3-preview.6",
