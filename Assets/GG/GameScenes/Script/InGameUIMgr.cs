@@ -128,7 +128,7 @@ public class InGameUIMgr : MonoBehaviour
     void Respawn_CoolTime()
     {
         m_fRespawnPassTime -= Time.deltaTime;
-        Debug.Log(m_fRespawnPassTime);
+        //Debug.Log(m_fRespawnPassTime);
 
         RespawnTimeBar.Get_PassedTime(m_fRespawnPassTime);
 
