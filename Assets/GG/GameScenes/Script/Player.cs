@@ -150,10 +150,8 @@ public class Player : MonoBehaviour
 
         if (false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
             m_Animator.SetBool("IsRun", m_bIsRun);
-
-
-
     }
+
     public void Player_Die()
     {//아 그냥 플레이어 멀티 스크립트 관련 게임 오브젝트 따로 파서 플레이어 child로 넣어줄껄
         m_Animator.SetTrigger("Death");

@@ -29049,12 +29049,17 @@ PrefabInstance:
     - target: {fileID: 802668056538480365, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
         type: 3}
       propertyPath: m_fSpeed
-      value: 7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 802668056538480365, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
         type: 3}
       propertyPath: m_fJumpScale
-      value: 1.5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 802668056538480366, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 802668056538480367, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
         type: 3}
