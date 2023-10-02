@@ -73,6 +73,7 @@ MonoBehaviour:
   - Setbool_Adrenaline
   - Setbool_Invincible
   - Targeting_Death
+  - Next_Phase
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
