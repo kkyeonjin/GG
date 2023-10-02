@@ -232,10 +232,11 @@ public class Player : MonoBehaviour
 
         if (m_bIsJump == true && m_bIsGround == false)
         {//+: y+방향, -: y-방향
-            //m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude*Time.deltaTime;
-            Vector3 JumpPosition = Vector3.up * m_fJumpForce * Time.deltaTime;
-            m_Rigidbody.MovePosition(JumpPosition);
-            Debug.Log(JumpPosition);
+            m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
+            //Vector3 JumpPosition = transform.position + Vector3.up * m_fJumpForce * Time.deltaTime;
+            //m_Rigidbody.MovePosition(JumpPosition);
+            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
+            //Debug.Log(JumpPosition);
             //m_Rigidbody.MovePosition(Vector3.up * m_fJumpForce * Time.deltaTime);
         }
     }
