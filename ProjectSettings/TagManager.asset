@@ -17,6 +17,9 @@ TagManager:
   - Falling
   - Checkpoint
   - Block
+  - ground
+  - Train
+  - Interactive
   layers:
   - Default
   - TransparentFX

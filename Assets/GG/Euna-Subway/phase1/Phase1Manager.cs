@@ -6,16 +6,16 @@ public class Phase1Manager : MonoBehaviour
 {
     //카메라 전환
     public Camera initCam;
-    public Camera plyaerCam;
+    public Camera playerCam;
 
-    //게임 phase 관리
-    int currentPhase; //현재 구간 숫자
+    public GameObject Train1;
+    public GameObject Train2;
 
     //phase별 랜덤 지진 이벤트 관리
 
     /// <summary>
-    /// - 시작 7초 동안 지하철 덜컹이며 운행
-    /// - 시작 7초 이후 지진 시작 + 재난 알림 문자음 사운드 + Order, HP 등 활성화
+    /// - 시작 10초 동안 지하철 덜컹이며 운행
+    /// - 시작 10초 이후 지진 시작 + 재난 알림 문자음 사운드 + Order, HP 등 활성화
     /// (1) Holding Bar : 사운드 3초 이내에 hold 후 10초 동안 유지
     /// 
     /// - holding 종료 후 5초 동안 지진 잠잠해지면서 멈춤
@@ -29,28 +29,52 @@ public class Phase1Manager : MonoBehaviour
     /// 
     public enum ClearCondtion
     {
+        call,
         lever, //비상핸들 돌리기
-        cock, //비상콕크 돌리기
         collision, //npc와 충돌 
     }
-
+    private bool AllClear = false;
 
     private void Awake()
     {
-
     }
 
-    public GameObject B2;
+
 
     private void Start()
     {
-        //B2.GetComponent<subwayRunning>();
+        //게임 시작 3초 뒤 지하철 출발
+
+
+        //10초 뒤 지진 시작
+        StartCoroutine("generateQuake");
+        StartCoroutine("stopQuake");
+
+        //30초 뒤 운행 중지 (자동)
     }
 
     private void Update()
     {
+        if (AllClear)
+        {
+            //게임 종료 후 대기 
 
+        }
     }
 
-    
+    public GameObject B2;
+    IEnumerator generateQuake() {
+        yield return new WaitForSeconds(10f);
+
+        //재난 문자 알림음
+        Earthquake.isQuake = true;
+        B2.GetComponent<Earthquake>().t1 = Train1.transform;
+        B2.GetComponent<Earthquake>().t2 = Train2.transform;
+    }
+
+    IEnumerator stopQuake()
+    {
+        yield return new WaitForSeconds(15f);
+        Earthquake.isQuake = false;
+    }
 }

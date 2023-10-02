@@ -43,7 +43,7 @@ public class HoldingBar : MonoBehaviour
         {   
             Player = collision.gameObject;
             isInRange = true;
-            //Debug.Log("in Range");
+            Debug.Log("in Range");
         }
     }
 
@@ -52,7 +52,7 @@ public class HoldingBar : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            //Debug.Log("out of Range");
+            Debug.Log("out of Range");
         }
     }
 }

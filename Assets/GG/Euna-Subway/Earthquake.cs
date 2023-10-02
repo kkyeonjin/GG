@@ -1,45 +1,125 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Earthquake : MonoBehaviour
 {
-    public float shakeForce = 10f;          // 흔들림에 가해질 힘의 크기
-    public float shakeDuration = 1.0f;      // 흔들림 지속 시간
-    public float shakeFrequency = 0.1f;     // 흔들림 주파수
+    public static bool isQuake = false;
+    //How strong is the earthquake?
+    public float magnitude; //Not the same magnitude people talk about in an actual earthquakes
+    public float slowDownFactor = 0.1f;
 
-    private Rigidbody rb;
     private Vector3 originalPosition;
-    private Quaternion originalRotation;
+
+    Vector2 randomPos;
+
+    Vector3 moveVecR;
+    float randomY;
+    float randomX;
+    float randomZ;
+
+    public static Vector3 moveVecR_q;
+
+    public Transform t1;
+    public Transform t2;
+
+    private void Awake()
+    {
+        //bodies = FindObjectsOfType<Rigidbody>(); // 모든 Rigidbody 찾기
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
-        StartCoroutine(ShakeRoutine());
+        originalPosition = transform.localPosition;
+        magnitude = Random.Range(1, 8);
+        Debug.Log(magnitude);
     }
 
-    private IEnumerator ShakeRoutine()
+    void FixedUpdate()
     {
-        while (true)
+        if (isQuake)
         {
-            float elapsedTime = 0f;
-            while (elapsedTime < shakeDuration)
-            {
-                Vector3 randomForce = Random.insideUnitSphere * shakeForce;
-                rb.AddForce(randomForce);
-
-                float rotationAmount = Mathf.Sin(elapsedTime * shakeFrequency) * shakeForce * 0.1f;
-                transform.rotation = originalRotation * Quaternion.Euler(0f, 0f, rotationAmount);
-
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            rb.velocity = Vector3.zero;
-            transform.rotation = originalRotation;
-
-            yield return new WaitForSeconds(Random.Range(0.5f, 3f)); // Wait before next shake
+            eachQuake(t1);
+            eachQuake(t2);
         }
     }
+
+    public void quake() {
+        //Debug.Log(transform.localPosition);
+        randomPos = Random.insideUnitCircle * magnitude * 50;
+
+        randomY = Random.Range(-1f, 1f) * magnitude * 50;
+
+        randomX = Mathf.Lerp(transform.localPosition.x, randomPos.x, Time.deltaTime * slowDownFactor);
+        randomZ = Mathf.Lerp(transform.localPosition.z, randomPos.x, Time.deltaTime * slowDownFactor);
+
+        randomY = Mathf.Lerp(transform.localPosition.y, randomY, Time.deltaTime * slowDownFactor * 0.1f);
+
+        //Vector3 moveVec = new Vector3(randomX * 0.6f, randomY * 0.6f, randomZ * 0.6f);
+        moveVecR = new Vector3(randomX * 1.2f, randomY * 1.2f, randomZ * 1.2f);
+
+        //transform.localPosition = originalPosition + moveVec;
+        /*
+        foreach(Rigidbody body in bodies)
+        {
+            body.transform.rotation = Quaternion.Euler(moveVecR);
+        }
+        */
+        transform.rotation = Quaternion.Euler(moveVecR);
+
+    }
+
+
+    public void eachQuake(Transform t)
+    {
+        Debug.Log(t + " quake");
+        randomPos = Random.insideUnitCircle * magnitude * 50;
+
+        randomY = Random.Range(-1f, 1f) * magnitude * 50;
+
+        randomX = Mathf.Lerp(transform.localPosition.x, randomPos.x, Time.deltaTime * slowDownFactor);
+        randomZ = Mathf.Lerp(transform.localPosition.z, randomPos.x, Time.deltaTime * slowDownFactor);
+
+        randomY = Mathf.Lerp(transform.localPosition.y, randomY, Time.deltaTime * slowDownFactor * 0.1f);
+        moveVecR = new Vector3(randomX * 1.2f, randomY * 1.2f, randomZ * 1.2f);
+
+        t.rotation = Quaternion.Euler(moveVecR);
+    }
+
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.collider.CompareTag("Player"))
+        {
+            Vector3 movePVecR = new Vector3(randomX * 1.8f, randomY * 1.8f, randomZ * 1.8f);
+
+            collision.gameObject.transform.rotation = Quaternion.Euler(movePVecR);
+            //collision.gameObject.transform.Find("Camera").transform.rotation = Quaternion.Euler(movePVecR);
+            Debug.Log("Player On EQ");
+        }
+        
+
+        
+        if (collision.rigidbody != null)
+        {
+            moveVecR_q = moveVecR * 50;
+            //Debug.Log(moveVecR_q);
+            //Debug.Log(collision.gameObject.name);
+            collision.rigidbody.AddForce(moveVecR_q);
+        }
+        */
+
+    /*
+    if (collision.collider.CompareTag("Player"))
+    {
+        GameObject player = collision.gameObject;
+        //Debug.Log("Player Found");
+        GameObject subCam = player.transform.Find("Cams").Find("SubCamera").gameObject;
+
+
+    }
+
+}
+ */
 }

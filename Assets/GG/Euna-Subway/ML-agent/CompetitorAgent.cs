@@ -54,6 +54,7 @@ public class CompetitorAgent : Agent
     private bool frozen = false;
     /// 지면 상에 있는지 여부 <see cref="Player.m_bIsGround"/>
     private bool isGround;
+
     /// 달리기 중 여부 <see cref="Player.m_bIsRun"/>
     private bool isRun;
     /// 점프 중인지 여부 <see cref="Player.m_bIsJump"/>
@@ -301,7 +302,7 @@ public class CompetitorAgent : Agent
         dir += transform.forward;
 
         //DiscreteAction[0] 앞으로 이동 여부 2
-        
+
         /*switch (actionForward)
         {
             //Heuristic 테스트 외에는 case 0 삭제 
@@ -314,6 +315,7 @@ public class CompetitorAgent : Agent
                 dir += transform.forward;
                 break;
         }*/
+
 
         //DiscreteAction[1] 이동 방향 (좌:0 우:1)
         var actionDir = actions.DiscreteActions[0];
@@ -350,14 +352,15 @@ public class CompetitorAgent : Agent
             case 0:
                 currentSpeed = walkSpeed;
                 Recover_Stamina();
+                animator.SetBool("IsRun", !isRun);
                 //Debug.Log("walk");
                 break;
             case 1:
                 if (staminaIsUsable)
                 {
-                    animator.SetBool("IsSprint", isRun);
                     currentSpeed = runSpeed;
                     Use_Stamina();
+                    animator.SetBool("IsSprint", isRun);
                     //Debug.Log("Run");
                 }
                 else
@@ -393,8 +396,9 @@ public class CompetitorAgent : Agent
         {
             agentRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJump = true;
-            animator.SetBool("isJump", isJump);
             isGround = false;
+            animator.SetBool("isJump", isJump);
+            animator.SetTrigger("Jump");
             animator.SetBool("isGround", isGround);
         }
 
