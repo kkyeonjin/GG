@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GG/GameScenes/StartFirst.unity.meta
 guid: 619e07f37ec519549be0f53bf4915f33
+========
+guid: 5047e2a660d840849b8ee8dba0064053
+>>>>>>>> kyeonjin:Assets/GG/GameScenes/MultiLobby.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

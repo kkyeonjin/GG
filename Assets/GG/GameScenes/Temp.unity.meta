@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GG/GameScenes/Temp.unity.meta
 guid: cff448c13d4d8b746808c204a58ddae4
+========
+guid: 112f6309000e3e24caff90fd0ea0c728
+>>>>>>>> kyeonjin:Assets/GG/GameScenes/MyRoom.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
