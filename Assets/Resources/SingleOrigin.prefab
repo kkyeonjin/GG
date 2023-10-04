@@ -3166,7 +3166,7 @@ Transform:
   m_GameObject: {fileID: 802668056538480375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -94, y: 239, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 802668057356862489}
@@ -3268,7 +3268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 802668056538480365}
-  m_EventUI: {fileID: 0}
   m_fSPRecover: 10
   m_PV: {fileID: 0}
   m_fMaxHP: 100
