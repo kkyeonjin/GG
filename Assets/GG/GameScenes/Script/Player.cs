@@ -25,10 +25,22 @@ public class Player : MonoBehaviour
     private bool m_bIsRun = false;
     private bool m_bIsSprint = false;
     private bool m_bIsJump = false;
-    private bool m_bIsGround = false;
+    private bool m_bIsGround = true;
     private bool m_bIsCrouch = false;
+    private bool m_bStartPush = false;
+    private bool m_bIsPushing = false;
 
-    private bool m_bInteract_Column= false;
+    private float m_fTotalSpeed;
+    private float m_fJumpForce;
+
+    private CharacterStatus m_Status;
+    public Transform m_CameraTransform;
+
+    private delegate void MoveFunc();
+
+    private MoveFunc m_Moving;
+
+    private bool m_bInteract_Column = false;
     private bool m_bInteract_Lever = false;
     private bool m_bInteract_EnterCode = false;
 
@@ -39,41 +51,29 @@ public class Player : MonoBehaviour
     private bool m_bAdrenaline = false;
     private bool m_bInvincible = false;
 
-    private float m_fTotalSpeed;
-    private float m_fJumpForce;
-
-    private CharacterStatus m_Status;
-    public Transform m_CameraTransform;
-
-    private delegate void MoveFunc();
-    private MoveFunc m_Moving;
-
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_Animator = GetComponentInChildren<Animator>();
 
         if (m_PV != null)
         {
-            this.gameObject.layer = 16;
             if (m_PV.IsMine)
-            {//멀티모드일때만 
-
-                GameMgr.Instance.Set_LocalPlayer(this);
+            {
+                GameMgr.Instance.m_LocalPlayerObj = this.gameObject;
+                GameMgr.Instance.m_LocalPlayer = this;
                 GameMgr.Instance.Set_Camera();
-
-                this.gameObject.layer = 17;
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
         }
         else
         {
-            
+            m_Animator = GetComponentInChildren<Animator>();
             m_Moving = new MoveFunc(Move);
         }
 
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -93,6 +93,7 @@ public class Player : MonoBehaviour
         m_Status.Change_Status(Input.Get_HP(), Input.Get_Stamina());
     }
 
+
     public void Set_Camera(CinemachineVirtualCamera In_Camera)
     {
         if (m_PV.IsMine)
@@ -104,12 +105,21 @@ public class Player : MonoBehaviour
     }
     private void Get_KeyInput()
     {
-
-        if (m_bIsCrouch || m_bHolding)
+        if (m_bIsCrouch)
             return;
 
         m_vMoveVec = Vector3.zero;
         m_bIsRun = false;
+        m_bIsPushing = false;
+
+        /*
+        if (newGshake.isShake)
+        {
+            Debug.Log("Gshake");
+            m_vMoveVec -= newGshake.moveVecR_q;
+            
+        }
+        */
 
         Vector3 CamFoward = m_CameraTransform.forward;
         Vector3 vRight = Vector3.Cross(Vector3.up, CamFoward);
@@ -119,23 +129,24 @@ public class Player : MonoBehaviour
         {
             m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
-            m_bIsRun = true;      
+            m_bIsRun = true;
+            m_bIsPushing = true;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
         {
             m_vMoveVec -= CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        if (Input.GetKey(KeyCode.D))
+        if (false == m_bStartPush && Input.GetKey(KeyCode.D))
         {
             m_vMoveVec += m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (false == m_bStartPush && Input.GetKey(KeyCode.A))
         {
             m_vMoveVec -= m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
@@ -147,9 +158,16 @@ public class Player : MonoBehaviour
         Vector3 vPlayerRight = Vector3.Cross(Vector3.up, m_vMoveVec);
         m_vMoveVec = Vector3.Cross(vPlayerRight, Vector3.up).normalized;
 
+        if (m_bStartPush)
+        {
+            m_Animator.SetBool("IsPushing", m_bIsPushing);
+        }
 
-        if (false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
+        if (m_bStartPush == false && false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
             m_Animator.SetBool("IsRun", m_bIsRun);
+
+
+
     }
 
     public void Player_Die()
@@ -159,10 +177,12 @@ public class Player : MonoBehaviour
 
         if (m_PV != null)
         {
-            if(m_PV.IsMine)
+            if (m_PV.IsMine)
                 InGameUIMgr.Instance.Activate_RewpawnUI();
         }
     }
+
+
     private void Move_MultiMode()
     {
         if (m_PV.IsMine)
@@ -171,28 +191,45 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.T))
             {
-                if(!m_Status.is_Dead())
-                    m_Status.Set_Damage(1f);
+                m_Status.Set_Damage(1f);
             }
         }
     }
     private void Move()
     {
         m_fTotalSpeed = 0f;
+        if (m_bIsGround)
+        {
+            Crouch();
+            Get_KeyInput();
+            Run();
+            //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
+            transform.LookAt(transform.position + m_vMoveVec);
+            //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
+            //m_Rigidbody.AddForce(Physics.gravity);
+            m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
-        Crouch();
-        Get_KeyInput();
-        Run();
+            m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-        transform.LookAt(transform.position + m_vMoveVec);
-        m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
-
-        Falling();
+            Throw();
+            PushLever();
+            Picking_Up();
+            Pushing();
+        }
         Jump_Up();
-        
-        PushLever();
-        Entering_Code();
-        Holding();
+
+        //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
+        //    {
+        //        m_Rigidbody.velocity = new Vector3(Mathf.Sign(m_Rigidbody.velocity.x) * m_fTotalSpeed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
+        //    }
+        //    else if (Mathf.Abs(m_Rigidbody.velocity.z) > m_fTotalSpeed)
+        //    {
+        //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y, Mathf.Sign(m_Rigidbody.velocity.z) * m_fTotalSpeed);
+        //    }
+        //    else if (m_Rigidbody.velocity.y > m_fTotalSpeed)
+        //    {
+        //        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, Mathf.Sign(m_Rigidbody.velocity.y) * m_fTotalSpeed, m_Rigidbody.velocity.z);
+        //    }
     }
 
 
@@ -207,14 +244,16 @@ public class Player : MonoBehaviour
                 m_fTotalSpeed *= 1.5f;
                 m_Status.Use_Stamina(25f);
             }
+            if (false == m_bIsJump && m_bIsGround)
+                m_Animator.SetBool("IsSprint", m_bIsSprint);
         }
-        if (false == m_bIsJump && m_bIsGround)
-            m_Animator.SetBool("IsSprint", m_bIsSprint);
+
+
     }
 
     private void Jump_Up()//바닥 ground와 충돌하면 down으로 이어지게. 지금은 임시로 jump 하나만 작동하도록
     {
-        if (m_bHolding == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
+        if (m_bStartPush == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
         {
             if (m_bIsGround && !m_bIsJump && m_Status.Is_Usable())
             {
@@ -231,11 +270,7 @@ public class Player : MonoBehaviour
         if (m_bIsJump == true && m_bIsGround == false)
         {//+: y+방향, -: y-방향
             m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
-            //Vector3 JumpPosition = transform.position + Vector3.up * m_fJumpForce * Time.deltaTime;
-            //m_Rigidbody.MovePosition(JumpPosition);
-            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
-            //Debug.Log(JumpPosition);
-            //m_Rigidbody.MovePosition(Vector3.up * m_fJumpForce * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce, transform.position.z);
         }
     }
     private void Crouch()
@@ -256,57 +291,43 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void Entering_Code()
-    {
-        if(m_bInteract_EnterCode)
-        {
-            if(m_bIsGround && Input.GetKeyDown(KeyCode.E))
-            {
-                Curr_InteractiveObj.Interacting(this.gameObject);
-                m_Animator.SetTrigger("EnteringCode");
-            }
-        }
-    }
     private void PushLever()
     {
-        if (m_bInteract_Lever)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (m_bIsGround && Input.GetKeyDown(KeyCode.E))
-            {
-                Curr_InteractiveObj.Interacting(this.gameObject);
-                m_Animator.SetTrigger("PushLever");
-            }
+            m_Animator.SetTrigger("PushLever");
         }
     }
 
-    private void Holding()
+    private void Pushing()
     {
-        if (m_bInteract_Column)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-
-            if (m_bIsGround && Input.GetKey(KeyCode.E))
+            if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
             {
-                if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
-                {
-                    Curr_InteractiveObj.Interacting(this.gameObject);
-                    m_bHolding = true;
-                    m_Animator.SetBool("Holding", m_bHolding);
-                }
+                m_bStartPush = true;
+                m_Animator.SetBool("StartPush", m_bStartPush);
             }
-            else if (Input.GetKeyUp(KeyCode.E))
-            {
-                m_bHolding = false;
-                m_Animator.SetBool("Holding", m_bHolding);
-            }
+        }
+        else if (Input.GetKeyUp(KeyCode.R))
+        {
+            m_bStartPush = false;
+            m_bIsPushing = false;
+            m_Animator.SetBool("IsPushing", m_bIsPushing);
+            m_Animator.SetBool("StartPush", m_bStartPush);
         }
     }
 
-    private void Falling()
+    private void Throw()
     {
-        if(m_bIsJump == false && m_bIsGround == false)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y - Physics.gravity.magnitude * Time.deltaTime*Time.deltaTime, transform.position.z);
-        }
+        if (Input.GetKeyDown(KeyCode.F))
+            m_Animator.SetTrigger("Throw");
+    }
+
+    private void Picking_Up()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            m_Animator.SetTrigger("PickingUp");
     }
 
 
@@ -318,66 +339,38 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))//낙하물 충돌
         {
-            if (m_bInvincible == false)
-            {
-                float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
-                m_Status.Set_Damage(fDamage);
-            }
+            float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
+            m_Status.Set_Damage(fDamage);
         }
         else if (collision.gameObject.CompareTag("Goal"))
         {
             m_ClearUI.Activate_and_Over();
         }
-        else if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
             m_bIsGround = true;
-            //collision.gameObject
-            if (m_Animator != null)
-            {
-                m_Animator.SetBool("IsJump", m_bIsJump);
-                m_Animator.SetBool("IsGround", m_bIsGround);
-            }
-        }
-
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {//땅에 닿아서 착지 애니메이션으로 이동
-            m_bIsGround = true;
+            m_Animator.SetBool("IsJump", m_bIsJump);
             m_Animator.SetBool("IsGround", m_bIsGround);
+            ///Debug.Log("on " + collision.gameObject.name);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {//땅에 닿아서 착지 애니메이션으로 이동
-            m_bIsGround = false;
-            if (m_bIsJump == false)
-            {
-                m_Animator.SetTrigger("Falling");
-                m_Animator.SetBool("IsGround", m_bIsGround);
-            }
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("EndPoint"))
+        if (other.gameObject.CompareTag("EndPoint"))
         {
             Player_GoalIn();
         }
-        else if(other.gameObject.CompareTag("MiddleGoal"))
+        else if (other.gameObject.CompareTag("MiddleGoal"))
         {
             Player_NextPhase();
         }
-        else if(other.gameObject.CompareTag("Interactive"))
+        else if (other.gameObject.CompareTag("Interactive"))
         {
             Curr_InteractiveObj = other.gameObject.GetComponent<Interactive>();
-            if(Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
+            if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
                 m_bInteract_Lever = true;
             if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
                 m_bInteract_Column = true;
@@ -401,7 +394,7 @@ public class Player : MonoBehaviour
 
     public void Player_GoalIn()
     {
-        if(m_PV == null)
+        if (m_PV == null)
             SingleGameMgr.Instance.Player_GoalIn();
         else
             GameMgr.Instance.Player_GoalIn(m_PV.IsMine);
@@ -409,13 +402,13 @@ public class Player : MonoBehaviour
     }
     public void Player_NextPhase()
     {
-        if(m_PV.IsMine)
+        if (m_PV.IsMine)
             GameMgr.Instance.Player_NextPhase();
     }
 
     public void Resume(Vector3 vResumePoint)//거점 부활 햇을 때
     {
-        m_Animator.SetBool("IsAlive",true);
+        m_Animator.SetBool("IsAlive", true);
         m_Status.PV_Reset();
         transform.position = vResumePoint;
         //아이템 리셋은 X
@@ -432,10 +425,10 @@ public class Player : MonoBehaviour
     {//다른 플레이어가 호출하게 됨
         m_PV.RPC("Targeting_Death", m_PV.Owner);
     }
-    
+
     public void Apply_DeathItem()
     {
-        if(!m_bAdrenaline)
+        if (!m_bAdrenaline)
         {
             m_Status.Set_Damage(m_Status.Get_MaxHP());
         }
@@ -461,7 +454,7 @@ public class Player : MonoBehaviour
     void Setbool_Adrenaline(bool bAdrenaline)
     {
         m_bAdrenaline = bAdrenaline;
-        
+
     }
     [PunRPC]
     void Setbool_Invincible(bool Adrenaline)
@@ -473,5 +466,4 @@ public class Player : MonoBehaviour
     {
         GameMgr.Instance.Trigger_Death();
     }
-
 }

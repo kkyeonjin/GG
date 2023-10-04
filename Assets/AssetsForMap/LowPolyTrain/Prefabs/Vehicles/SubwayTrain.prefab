@@ -15888,6 +15888,7 @@ Transform:
   - {fileID: 2265843443191958813}
   - {fileID: 1791892834296932501}
   - {fileID: 6208444322135797910}
+  - {fileID: 4163118148815206571}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46765,6 +46766,151 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7054535751824690753, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
     type: 3}
   m_PrefabInstance: {fileID: 2391517574401205170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2588840122409935069
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1820427059939351404}
+    m_Modifications:
+    - target: {fileID: 726806190751621647, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986333195185637162, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19200003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19200003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6631855
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000029802315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7484551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 96.913
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276711160388960678, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611524688794889805, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053107597915174458, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329730008800317806, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127902623128549573, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770683760631001627, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerOnSubway
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770683760631001627, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184117779431168421, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825191188866147881, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107782807728119667, guid: f9f62f2d8d359054e81e4d40c85a138f,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9f62f2d8d359054e81e4d40c85a138f, type: 3}
+--- !u!4 &4163118148815206571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1885659719542593654, guid: f9f62f2d8d359054e81e4d40c85a138f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2588840122409935069}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2638146115609602150
 PrefabInstance:
