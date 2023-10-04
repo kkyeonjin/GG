@@ -16,7 +16,6 @@ public class PuzzleMgr : MonoBehaviour
     {
         if (instance == null) instance = this;
         else if (instance != null) return;
-        DontDestroyOnLoad(gameObject);
 
         passedPuzzle[2] = 1;
     }
