@@ -27,8 +27,6 @@ public class Player : MonoBehaviour
     private bool m_bIsJump = false;
     private bool m_bIsGround = true;
     private bool m_bIsCrouch = false;
-    private bool m_bStartPush = false;
-    private bool m_bIsPushing = false;
 
     private float m_fTotalSpeed;
     private float m_fJumpForce;
@@ -110,7 +108,6 @@ public class Player : MonoBehaviour
 
         m_vMoveVec = Vector3.zero;
         m_bIsRun = false;
-        m_bIsPushing = false;
 
         /*
         if (newGshake.isShake)
@@ -130,23 +127,22 @@ public class Player : MonoBehaviour
             m_vMoveVec += CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
-            m_bIsPushing = true;
         }
-        else if (false == m_bStartPush && Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             m_vMoveVec -= CamFoward;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        if (false == m_bStartPush && Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             m_vMoveVec += m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
             m_bIsRun = true;
 
         }
-        else if (false == m_bStartPush && Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             m_vMoveVec -= m_CameraTransform.right;
             m_fTotalSpeed = m_fSpeed;
@@ -158,12 +154,7 @@ public class Player : MonoBehaviour
         Vector3 vPlayerRight = Vector3.Cross(Vector3.up, m_vMoveVec);
         m_vMoveVec = Vector3.Cross(vPlayerRight, Vector3.up).normalized;
 
-        if (m_bStartPush)
-        {
-            m_Animator.SetBool("IsPushing", m_bIsPushing);
-        }
-
-        if (m_bStartPush == false && false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
+        if (false == m_bIsJump && m_bIsGround == true)//점프하는 중 & 채공 중 & 미는 중이라면 run 애니메이션 재생 안되게
             m_Animator.SetBool("IsRun", m_bIsRun);
 
 
@@ -214,7 +205,6 @@ public class Player : MonoBehaviour
             Throw();
             PushLever();
             Picking_Up();
-            Pushing();
         }
         Jump_Up();
 
@@ -253,7 +243,7 @@ public class Player : MonoBehaviour
 
     private void Jump_Up()//바닥 ground와 충돌하면 down으로 이어지게. 지금은 임시로 jump 하나만 작동하도록
     {
-        if (m_bStartPush == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
+        if (m_bHolding == false && !m_bIsCrouch && Input.GetKeyDown(KeyCode.Space))
         {
             if (m_bIsGround && !m_bIsJump && m_Status.Is_Usable())
             {
@@ -270,7 +260,7 @@ public class Player : MonoBehaviour
         if (m_bIsJump == true && m_bIsGround == false)
         {//+: y+방향, -: y-방향
             m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
         }
     }
     private void Crouch()
@@ -296,25 +286,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             m_Animator.SetTrigger("PushLever");
-        }
-    }
-
-    private void Pushing()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (!m_bIsCrouch && m_bIsGround && !m_bIsJump)
-            {
-                m_bStartPush = true;
-                m_Animator.SetBool("StartPush", m_bStartPush);
-            }
-        }
-        else if (Input.GetKeyUp(KeyCode.R))
-        {
-            m_bStartPush = false;
-            m_bIsPushing = false;
-            m_Animator.SetBool("IsPushing", m_bIsPushing);
-            m_Animator.SetBool("StartPush", m_bStartPush);
         }
     }
 
