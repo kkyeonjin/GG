@@ -68,6 +68,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.Instantiate(m_szPlayerPrefab, vStartPoint, Quaternion.identity);
     }
+    public void Instantiate_Player(GameObject vStartPoint)
+    {
+        PhotonNetwork.Instantiate(m_szPlayerPrefab, vStartPoint.transform.position, Quaternion.identity);
+    }
 
     public void ConnectToServer()
     {
