@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
             m_Moving = new MoveFunc(Move);
         }
 
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
