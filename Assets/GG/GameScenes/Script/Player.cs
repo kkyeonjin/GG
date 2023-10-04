@@ -77,6 +77,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.T))
+        {
+            m_Status.Set_Damage(1f);
+        }
         m_Moving();
     }
 
@@ -180,10 +184,6 @@ public class Player : MonoBehaviour
         {
             Move();
 
-            if (Input.GetKey(KeyCode.T))
-            {
-                m_Status.Set_Damage(1f);
-            }
         }
     }
     private void Move()

@@ -69,6 +69,7 @@ public class CharacterStatus : MonoBehaviour
                 m_fHP = 0;
                 m_bDie = true;
                 m_Target.Player_Die();
+                SingleGameMgr.Instance.Game_Over();
                //GameMgr 등에서 리스폰 창 불러오게
             }
         }
