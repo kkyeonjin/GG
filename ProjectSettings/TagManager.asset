@@ -20,6 +20,13 @@ TagManager:
   - ground
   - Train
   - Interactive
+  - Button
+  - Fire
+  - UISelectItem
+  - UIHoldingItem
+  - FollowCam
+  - EndPoint
+  - MiddleGoal
   layers:
   - Default
   - TransparentFX

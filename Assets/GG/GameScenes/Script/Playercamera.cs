@@ -68,7 +68,7 @@ public class Playercamera : MonoBehaviour
                 //point로 옮긴다.
                 transform.position = hitinfo.point;
                 //카메라 보정
-                transform.Translate(m_vDir * -1 * 3f);
+                transform.Translate(m_vDir * -0.5f);
             }
             else
             {
