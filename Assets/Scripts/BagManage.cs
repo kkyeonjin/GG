@@ -23,10 +23,12 @@ public class BagManage : MonoBehaviour
         if(totalWeight == 131)
         {
             phoneIcon.gameObject.SetActive(true);
+            PuzzleMgr.instance.passedPuzzle[1] = 0;
         }
         else
         {
             phoneIcon.gameObject.SetActive(false);
+            PuzzleMgr.instance.passedPuzzle[1] = 1;
         }
 
     }

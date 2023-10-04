@@ -5,26 +5,16 @@ using TMPro;
 
 public class Dial : MonoBehaviour
 {
-
     public TMP_Text dialText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject callPanel;
+    public TMP_Text callText;
 
     public void callBtn()
     {
         if(dialText.text == "131")
         {
             Debug.Log("correct");
+            CallText();
         }
 
         else
@@ -41,6 +31,19 @@ public class Dial : MonoBehaviour
         {
             dialText.text += num;
         }
+    }
+
+    public void CallText()
+    {
+        callPanel.SetActive(true);
+        int temp = PuzzleMgr.instance.passedPuzzle[0] + PuzzleMgr.instance.passedPuzzle[1] + PuzzleMgr.instance.passedPuzzle[2];
+        callText.text = "인근 && 지역에 규모5.3의 지진이 발생했습니다.\n대비 완료까지 " + temp + "단계 남았습니다.";
+        Invoke("CallClose", 3.0f);
+    }
+
+    public void CallClose()
+    {
+        callPanel.SetActive(false);
     }
 
 }

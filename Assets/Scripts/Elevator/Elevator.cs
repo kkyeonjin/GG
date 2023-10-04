@@ -5,13 +5,23 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     public static bool isRide;
+    public static bool isdying;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Ride");
-            isRide = true;  
+            //Debug.Log("Ride");
+            isRide = true;
+            other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(150);
+
+            /*
+            Invoke("Die", 2.0f);
+            if (isdying)
+            {
+                other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(150);
+            }
+            */
         }
     }
 
@@ -23,4 +33,10 @@ public class Elevator : MonoBehaviour
             isRide = false;
         }
     }
+
+    public void Die()
+    {
+        isdying = true;
+    }
+
 }
