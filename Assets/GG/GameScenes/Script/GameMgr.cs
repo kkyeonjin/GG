@@ -21,6 +21,7 @@ public class GameMgr : MonoBehaviour
     public GameObject m_LocalPlayerObj;
     public bool m_bInGame = false;
     public bool m_bMulti = false;
+    public bool m_bPhase1 = true;
 
     public float fDelayStartTime = 2f;
 
@@ -123,8 +124,8 @@ public class GameMgr : MonoBehaviour
 
             Ranking = new List<Tuple<string, Photon.Realtime.Player>>();
             GameOut = new List<Photon.Realtime.Player>();
-
-            Invoke("BroadCast_StartGame", fDelayStartTime);
+            if(m_bPhase1 == false)
+                Invoke("BroadCast_StartGame", fDelayStartTime);
         }
     }
 
