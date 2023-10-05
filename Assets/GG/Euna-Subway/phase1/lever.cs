@@ -2,14 +2,44 @@ using Cinemachine;
 using UnityEngine;
 
 
-public class lever : MonoBehaviour
+public class Lever : MonoBehaviour
 {
     private int clickCount = 0;
-    private const float rotOffset = 3;
+    public const float rotOffset = 3;
     private const float clearCount = 90 / rotOffset;
 
+    private float leverXRot;
+
+    private void Start()
+    {
+        leverXRot = transform.localEulerAngles.x;   
+    }
+
+    public void turn_lever()
+    {
+        leverXRot -= rotOffset;
+        transform.localEulerAngles = new Vector3(leverXRot, 0f, 0f);
+        Debug.Log(transform.localEulerAngles);
+    }
+
+    public void add_clickCount()
+    {
+        clickCount++;
+    }
+
+    public void check_ifClear()
+    {
+        if (clickCount >= clearCount)
+        {
+            Phase1Manager.clearCondition[2] = true;
+            Debug.Log(Phase1Manager.clearCondition[2]);
+        }
+    }
+           
+    /*
     private void Update()
     {
+ 
         if (EmergencyLever.leverCamActivated)
         {
             if (Input.GetMouseButtonDown(0))
@@ -25,17 +55,23 @@ public class lever : MonoBehaviour
                     //Debug.Log(hit.collider.name);
                     if (hit.collider.name == "LeverPoint")
                     {
-                        clickCount++;
-                        leverXRot -= rotOffset;
-                        transform.localEulerAngles = new Vector3(leverXRot, 0f, 0f);
-                        Debug.Log(transform.localEulerAngles);
+                        //clickCount++;
+                        add_clickCount();
 
-                        if (clickCount >= clearCount)
-                        {
-                            Phase1Manager.clearCondition[2] = true;
-                            Debug.Log(Phase1Manager.clearCondition[2]);
-                            //closeCam.gameObject.SetActive(false);
-                        }
+                        //leverXRot -= rotOffset;
+                        //transform.localEulerAngles = new Vector3(leverXRot, 0f, 0f);
+                        //Debug.Log(transform.localEulerAngles);
+                        turn_lever();
+
+                        
+                        //if (clickCount >= clearCount)
+                        //{
+                        //    Phase1Manager.clearCondition[2] = true;
+                        //    Debug.Log(Phase1Manager.clearCondition[2]);
+                        //    closeCam.gameObject.SetActive(false);
+                        //}
+                        
+                        check_ifClear();
                     }
 
                 }
@@ -43,4 +79,5 @@ public class lever : MonoBehaviour
         }
         
     }
+    */
 }

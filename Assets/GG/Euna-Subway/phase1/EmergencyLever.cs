@@ -16,10 +16,12 @@ public class EmergencyLever : MonoBehaviour
 
     private void Awake()
     {
+        /*
         if (closeCam = transform.Find("LeverCam").GetComponent<CinemachineVirtualCamera>())
         {
-            Debug.Log("lever cam set");
+            Debug.Log("Lever cam set");
         };
+        */
     }
 
     private void Start()

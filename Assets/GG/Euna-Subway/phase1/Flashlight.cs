@@ -32,6 +32,8 @@ public class Flashlight : MonoBehaviour
                         hit.collider.gameObject.GetComponent<SubwayItems>().ItemPick();
                         Debug.Log("Pick flashlight");
                         hit.collider.gameObject.SetActive(false);
+
+                        Phase1Manager.clearCondition[1] = true;
                     }
 
                 }

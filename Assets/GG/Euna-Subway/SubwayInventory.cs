@@ -6,14 +6,13 @@ using System.Linq;
 
 public class SubwayInventory : MonoBehaviour
 {
-
     public static SubwayInventory instance;
     public List<SubwayItems> invScripts = new List<SubwayItems>(new SubwayItems[3]);
     public List<Image> invIcons = new List<Image>(new Image[3]);
     public int activeNum = 0; // 활성화 인벤토리 인덱스
     public int activeItem; // 활성화 아이템 고유번호
 
-    
+
     private void Awake()
     {
         if (instance == null)
@@ -38,7 +37,7 @@ public class SubwayInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             prevNum = activeNum;
-            if(prevNum != 2)
+            if (prevNum != 2)
             {
                 activeNum++;
             }
@@ -48,14 +47,14 @@ public class SubwayInventory : MonoBehaviour
             }
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
             invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            if(invScripts[activeNum] != null)
+            if (invScripts[activeNum] != null)
             {
                 activeItem = invScripts[activeNum].itemNum;
             }
         }
         else
         {
-            if(invScripts[activeNum] != null)
+            if (invScripts[activeNum] != null)
             {
                 activeItem = invScripts[activeNum].itemNum;
             }
@@ -68,8 +67,8 @@ public class SubwayInventory : MonoBehaviour
 
     public void ReArrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
-        
-        if( invScripts[activeNum].disposable )
+
+        if (invScripts[activeNum].disposable)
         {
             switch (activeNum)
             {
@@ -100,12 +99,12 @@ public class SubwayInventory : MonoBehaviour
 
             }
         }
-        
+
     }
 
     public void ItemUse()
     {
-        if(activeItem != 0 )
+        if (activeItem != 0)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -123,8 +122,37 @@ public class SubwayInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        closeCam();
         ItemChange();
         //ReArrange();
         ItemUse();
+    }
+
+    private void closeCam()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Click");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit))
+            {
+                if(hit.collider.name == "LeverPoint" && EmergencyLever.leverCamActivated)
+                {
+                    Debug.Log("hit lever");
+                    Lever lever = hit.collider.gameObject.GetComponent<Lever>();
+                    lever.add_clickCount();
+                    lever.turn_lever();
+                    lever.check_ifClear();
+                    return;
+                }
+                if(hit.collider.name == "Flashlight")
+                {
+
+                    return;
+                }
+            }
+        }
     }
 }
