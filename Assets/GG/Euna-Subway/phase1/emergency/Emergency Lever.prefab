@@ -671,9 +671,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8105400017950475413}
-  - component: {fileID: 1917468667219742146}
+  - component: {fileID: 8755790764398428003}
   m_Layer: 0
-  m_Name: Bar
+  m_Name: LeverBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ Transform:
   m_Father: {fileID: 1989018955440786885}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1917468667219742146
+--- !u!114 &8755790764398428003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5476779459302432629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d86f408b34a514ebaac0a2939b7d10, type: 3}
+  m_Script: {fileID: 11500000, guid: 62c6b7115daf3ed4481f61bfd02ad2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5760538104770545793

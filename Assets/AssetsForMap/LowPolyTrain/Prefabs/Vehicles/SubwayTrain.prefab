@@ -50276,7 +50276,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8987847479851076181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8360868000144548314
+--- !u!114 &8494727483554521004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50285,14 +50285,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8987126972871870489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ef6c1cfaab7a04f8b6d07966d74e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ef897a835cde4b4a9d7ddcecd80a2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  ItemInfo: {fileID: 0}
-  itemNum: 0
-  disposable: 0
-  remainder: 0
 --- !u!1001 &9133440940007274146
 PrefabInstance:
   m_ObjectHideFlags: 0

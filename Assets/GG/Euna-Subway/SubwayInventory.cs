@@ -128,28 +128,32 @@ public class SubwayInventory : MonoBehaviour
         ItemUse();
     }
 
+    //Phase1 비상 레버 & 플래시 closeCam 사용시
     private void closeCam()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Click");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit))
             {
+                Debug.Log("click " + hit.collider.name);
                 if(hit.collider.name == "LeverPoint" && EmergencyLever.leverCamActivated)
                 {
                     Debug.Log("hit lever");
-                    Lever lever = hit.collider.gameObject.GetComponent<Lever>();
+                    LeverBar lever = hit.collider.gameObject.GetComponentInParent<LeverBar>();
+                    
                     lever.add_clickCount();
                     lever.turn_lever();
                     lever.check_ifClear();
                     return;
                 }
-                if(hit.collider.name == "Flashlight")
-                {
 
+                if(hit.collider.name == "Flashlight" && FlashlightArea.flashCamActivated)
+                {
+                    Flashlight flashlight = hit.collider.gameObject.GetComponent<Flashlight>();
+                    flashlight.pickUp();
                     return;
                 }
             }
