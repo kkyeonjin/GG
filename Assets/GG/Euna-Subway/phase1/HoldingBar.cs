@@ -16,27 +16,41 @@ public class HoldingBar : MonoBehaviour
         holdingPosition = this.gameObject.transform.Find("HoldingPosition").transform;
     }
 
-    private void Update()
+    private void Get_KeyInput()
     {
-        if (!isInRange && !isHolding)
-        {
-            return;
-        }
-
-        if (isInRange && Input.GetKey(KeyCode.R))
+        if (!isInRange) return;
+        else if (Input.GetKey(KeyCode.R)) 
         {
             isHolding = true;
-            //lockOrderGage = true;
-            //Debug.Log("Holding");
-            return;
+            Debug.Log("holding bar");
         }
         else
         {
             isHolding = false;
-            //Debug.Log("Unhold");
         }
+    }
 
-        
+    private void Update()
+    {
+        if(Player == null) return;
+        Get_KeyInput();
+        Player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+
+        /*
+        if (isHolding)
+        {
+            Player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+            //lockOrderGage = true;
+            Debug.Log("Holding");
+            return;
+        }
+        else
+        {
+            Player.GetComponentInChildren<Animator>().SetBool("Holding", false);
+            Debug.Log("Unhold");
+        }
+        */
+
     }
 
     private void OnTriggerStay(Collider collision)
@@ -47,14 +61,14 @@ public class HoldingBar : MonoBehaviour
             isInRange = true;
             Debug.Log("in Range");
 
-            
-            if(Input.GetKey(KeyCode.R)) 
+            /*
+            if (isHolding)
             {
-                Debug.Log("holding bar");
                 collision.transform.position = holdingPosition.position;
                 collision.transform.rotation = holdingPosition.rotation;
             }
-            
+            */
+
         }
     }
 
