@@ -8,7 +8,7 @@ public class SubwayInventory : MonoBehaviour
 {
     public static SubwayInventory instance;
     public List<SubwayItems> invScripts = new List<SubwayItems>(new SubwayItems[3]);
-    public List<Image> invIcons = new List<Image>(new Image[3]);
+    public List<Image> invIcons;
     public int activeNum = 0; // 활성화 인벤토리 인덱스
     public int activeItem; // 활성화 아이템 고유번호
 
@@ -27,6 +27,9 @@ public class SubwayInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        invScripts = new List<SubwayItems>(new SubwayItems[3]);
+        
+        int a = 10;
         activeNum = 2;
     }
 
