@@ -6,6 +6,7 @@ using TMPro;
 
 public class ItemScan : MonoBehaviour
 {
+    public GameObject HidingCam, MainCam;
     //public TMP_Text pressText;
     //Item 용도 설명 UI
     public Image ItemInfo;
@@ -13,6 +14,11 @@ public class ItemScan : MonoBehaviour
 
     //Press E UI
     public TMP_Text pressE;
+
+    //HideCam
+    public GameObject backbtn;
+    public GameObject msgPop;
+    public GameObject msg;
 
     [SerializeField]
     float range;
@@ -65,7 +71,20 @@ public class ItemScan : MonoBehaviour
                 pressE.gameObject.SetActive(true);
                 if(Input.GetKeyDown(KeyCode.E))
                 {
-                    //숨는 애니메이션
+                    //MainCam.gameObject.SetActive(false);
+                    HidingCam.gameObject.SetActive(true);
+                    PuzzleMgr.instance.passedPuzzle[2] = 0;
+                    Invoke("MsgPop", 2.0f);
+                    backbtn.SetActive(true);
+                    msg.SetActive(true);
+
+                    /*
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        HidingCam.gameObject.SetActive(false);
+                        MainCam.gameObject.SetActive(true);
+                        PuzzleMgr.instance.passedPuzzle[2] = false;
+                    }*/
                     //미션 성공 여부 bool 변수 true로 바꿔주기
                 }
             }
@@ -83,5 +102,16 @@ public class ItemScan : MonoBehaviour
             ItemInfo.gameObject.SetActive(false);
             pressE.gameObject.SetActive(false);
         }
+    }
+
+    public void MsgPop()
+    {
+        msgPop.SetActive(true);
+        Invoke("MsgClose", 4.0f);
+    }
+
+    public void MsgClose()
+    {
+        msgPop.SetActive(false);
     }
 }

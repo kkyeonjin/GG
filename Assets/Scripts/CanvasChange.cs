@@ -6,8 +6,8 @@ public class CanvasChange : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject canvasCamera;
-    public GameObject canvas;
-    public bool canvasOn;
+    public GameObject Puzzlecanvas, Maincanvas;
+    public bool canvasOn; 
     void Start()
     {
         
@@ -23,7 +23,8 @@ public class CanvasChange : MonoBehaviour
     {
         canvasOn = !canvasOn;
         canvasCamera.SetActive(canvasOn);
-        canvas.SetActive(canvasOn);
+        Puzzlecanvas.SetActive(canvasOn);
+        Maincanvas.SetActive(!canvasOn);
 
     }
 }

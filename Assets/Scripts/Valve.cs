@@ -6,6 +6,9 @@ public class Valve : MonoBehaviour
 {
     public GameObject valve;
     public int count;
+    public int answer;
+    public int index;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +73,7 @@ public class Valve : MonoBehaviour
                 break;
             case 10:
                 valveVector.x = 120;
-                Debug.Log("Correct");
+                //Debug.Log("Correct");
                 break;
             case 11:
                 valveVector.x = 150;
@@ -79,6 +82,15 @@ public class Valve : MonoBehaviour
         valveVector.y = 0;
         valveVector.z = 90;
         valve.transform.localEulerAngles = valveVector;
+
+        if(count == answer)
+        {
+            PuzzleMgr.instance.valvePuzzle[index] = true;
+        }
+        else
+        {
+            PuzzleMgr.instance.valvePuzzle[index] = false;
+        }
         //valve.transform.rotation = Quaternion.Euler(valveVector);
         //Debug.Log(valveVector.x);
 

@@ -346,6 +346,10 @@ public class Player : MonoBehaviour
             if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
                 m_bInteract_Column = true;
         }
+        else if(other.gameObject.CompareTag("Train"))
+        {
+            this.gameObject.transform.parent = other.gameObject.transform;
+        }
     }
 
     private void OnTriggerExit(Collider other)

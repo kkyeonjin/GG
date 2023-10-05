@@ -21,6 +21,7 @@ public class InitializeMap : MonoBehaviour
         {
             int idx = Random.Range(0, StartPoints.Count);
             Load_LocalPlayer(StartPoints[idx].transform.position);
+            StartPoints.RemoveAt(idx);
             //NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
             Initialize_Players_InMap();
         }
