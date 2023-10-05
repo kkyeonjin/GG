@@ -29,6 +29,8 @@ public class SingleGameMgr : MonoBehaviour
     public TextMeshProUGUI Exp;
     public TextMeshProUGUI Record;
 
+    public GameObject GameOver;
+
     private bool m_bPlayerGoalIn = false;
 
     void Awake()
@@ -92,6 +94,12 @@ public class SingleGameMgr : MonoBehaviour
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
+    public void Game_Over()
+    {
+        GameOver.SetActive(true);
+        Invoke("BackToLobby", 5f);
+
+    }
     public void Reward_Player()//게임 끝난후 로비로 돌아감
     {
         //사용한 아이템 개수 Info에 업데이트
@@ -109,7 +117,6 @@ public class SingleGameMgr : MonoBehaviour
 
     void BackToLobby()
     {
-      
         SceneManager.LoadScene("Lobby");
     }
 
