@@ -5,6 +5,7 @@ using UnityEngine;
 public class Earthquake : MonoBehaviour
 {
     public static bool isQuake = false;
+    public static bool isQuakeStop = false;
     //How strong is the earthquake?
     public float magnitude; //Not the same magnitude people talk about in an actual earthquakes
     public float slowDownFactor = 0.1f;

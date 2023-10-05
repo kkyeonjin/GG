@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Phase1Manager : MonoBehaviour
 {
-    //카메라 전환
-    public Camera initCam;
-    public Camera playerCam;
+    public static bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
     public GameObject Train1;
     public GameObject Train2;
@@ -29,10 +27,13 @@ public class Phase1Manager : MonoBehaviour
     /// 
     public enum ClearCondtion
     {
-        call,
+        OrderGage,
         lever, //비상핸들 돌리기
         collision, //npc와 충돌 
     }
+
+
+
     private bool AllClear = false;
 
     private void Awake()
@@ -68,6 +69,7 @@ public class Phase1Manager : MonoBehaviour
 
         //재난 문자 알림음
         Earthquake.isQuake = true;
+        Debug.Log("isQuake" + Earthquake.isQuake);
         B2.GetComponent<Earthquake>().t1 = Train1.transform;
         B2.GetComponent<Earthquake>().t2 = Train2.transform;
     }
@@ -76,5 +78,6 @@ public class Phase1Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         Earthquake.isQuake = false;
+        Earthquake.isQuakeStop = true;
     }
 }

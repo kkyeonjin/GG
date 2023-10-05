@@ -1,43 +1,56 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using Cinemachine;
 
 public class EmergencyLever : MonoBehaviour
 {
+    private CinemachineVirtualCamera closeCam;
+    public static bool leverCamActivated = false;
+    public GameObject cover;
+
     public GameObject leftDoor;
     public GameObject rightDoor;
-    public GameObject cover;
-    private Camera leverCam;
     float doorOffset = 0.65f; //문 열림시 z축 포지션 변화. left는 +, right는 -
     bool open = false;
 
     private void Awake()
     {
-        leverCam = GetComponentInChildren<Camera>();
+        if (closeCam = transform.Find("LeverCam").GetComponent<CinemachineVirtualCamera>())
+        {
+            Debug.Log("lever cam set");
+        };
+    }
+
+    private void Start()
+    {
+
     }
 
     private void Update()
     {
-        if (Earthquake.isQuake)
-        {
-            
-        }
+
     }
 
-    void turnHandle()
-    {
-        //핸들 돌리는 방향 맞추기 (퀴즈? 현재 지진 강도에 맞춰서 레버 돌리기 시계처럼)
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        //상호작용 E
-        if (other.CompareTag("Player"))
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Earthquake.isQuakeStop)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            //상호작용 E
+            if (other.CompareTag("Player"))
             {
-                //카메라 전환 (PlayerCam -> leverCam)
-                leverCam.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //카메라 전환 (PlayerCam -> closeCam)
+                    closeCam.gameObject.SetActive(true);
+                    leverCamActivated = true;
+                }
             }
         }
     }
@@ -46,8 +59,9 @@ public class EmergencyLever : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //카메라 전환 (leverCam-> PlayerCam)
-            leverCam.gameObject.SetActive(false);
+            //카메라 전환 (closeCam-> PlayerCam)
+            closeCam.gameObject.SetActive(false);
+            leverCamActivated = false;
         }
     }
 

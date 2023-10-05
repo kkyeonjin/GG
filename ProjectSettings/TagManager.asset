@@ -28,6 +28,9 @@ TagManager:
   - HidingTable
   - EndPoint
   - MiddleGoal
+  - ground
+  - FollowCamera
+  - Lever
   layers:
   - Default
   - TransparentFX

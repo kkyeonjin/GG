@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HoldingBar : MonoBehaviour
 {
+    private Transform holdingPosition;
     bool isInRange = false;
     public bool isHolding = false;
     GameObject Player;
@@ -12,6 +13,7 @@ public class HoldingBar : MonoBehaviour
     private void Start()
     {
         //StartCoroutine(Holding());
+        holdingPosition = this.gameObject.transform.Find("HoldingPosition").transform;
     }
 
     private void Update()
@@ -37,17 +39,28 @@ public class HoldingBar : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {   
             Player = collision.gameObject;
             isInRange = true;
             Debug.Log("in Range");
+
+            
+            if(Input.GetKey(KeyCode.R)) 
+            {
+                Debug.Log("holding bar");
+                collision.transform.position = holdingPosition.position;
+                collision.transform.rotation = holdingPosition.rotation;
+            }
+            
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+
+
+    private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
