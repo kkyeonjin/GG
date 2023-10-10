@@ -29,6 +29,8 @@ public class MyRoomMgr : MonoBehaviour
 
     public IconEffect[] m_StatusBar;
 
+    public GameObject ManualUI;
+    public GameObject ItemUI;
 
     private int m_CurrAvatar;
     private MyRoomUI m_CurrCharacterUI;

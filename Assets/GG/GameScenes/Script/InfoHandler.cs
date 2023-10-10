@@ -244,6 +244,20 @@ public class InfoHandler : MonoBehaviour
         return m_Playerinfo.Get_Item_Num(iIndex);
     }
 
+    public void Unlock_Manual(PlayerInfo.HOUSE manual)//집 수칙
+    {
+        m_Playerinfo.Unlock_Manual(manual);
+    }
+    public void Unlock_Manual(PlayerInfo.SUBWAY manual)//지하철 수칙
+    {
+        m_Playerinfo.Unlock_Manual(manual);
+
+    }
+    public bool[,] Get_UnlockedManual()
+    {
+        return m_Playerinfo.Get_UnlockedManual();
+    }
+
     public void Save_Info()
     {
         //json 파일 부분만 수정하는 방법이 뭐냐 대체
@@ -257,10 +271,5 @@ public class InfoHandler : MonoBehaviour
 
         //fileStream.Write(data, 0, data.Length);
         //fileStream.Close();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
