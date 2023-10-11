@@ -31,6 +31,15 @@ public class MyRoomMgr : MonoBehaviour
 
     public GameObject ManualUI;
     public GameObject ItemUI;
+    private GameObject CurrUI;
+
+    //Manual
+    public GameObject HouseManuslObj;
+    public GameObject SubwayManuslObj;
+    public TextMeshProUGUI HouseManual;
+    public TextMeshProUGUI SubwayManual;
+    private string[,] ManualString;
+
 
     private int m_CurrAvatar;
     private MyRoomUI m_CurrCharacterUI;
@@ -65,6 +74,25 @@ public class MyRoomMgr : MonoBehaviour
             }
         }
 
+        CurrUI = ItemUI;
+
+        ManualString = new string[2, 8];
+
+        ManualString[0, 0] = "TABLE";
+        ManualString[0, 1] = "GAS";
+        ManualString[0, 2] = "FIRE";
+        ManualString[0, 3] = "PACKING";
+        ManualString[0, 4] = "ELEVATOR";
+
+        ManualString[1, 0] = "COLUMN";
+        ManualString[1, 1] = "TRAINSTOP";
+        ManualString[1, 2] = "BLACKOUT";
+        ManualString[1, 3] = "LEVER";
+        ManualString[1, 4] = "DISTANCE";
+        ManualString[1, 5] = "ELEVATOR";
+        ManualString[1, 6] = "ON_ELEVATOR";
+        ManualString[1, 7] = "ESCAPE";
+        
         Show_PlayerInfo();
         Show_CurrStatus();
     }
@@ -112,4 +140,68 @@ public class MyRoomMgr : MonoBehaviour
         m_PlayerMoney.text = "" + InfoHandler.Instance.Get_Money();
     }
 
+    public void Active_ManualUI()
+    {
+        Initialize_Manual();
+        CurrUI.SetActive(false);
+        ManualUI.SetActive(true);
+        CurrUI = ManualUI;
+    }
+
+    public void Active_ItemUI()
+    {
+        CurrUI.SetActive(false);
+        ItemUI.SetActive(true);
+        CurrUI = ItemUI;
+    }
+
+    public void HouseManual_On()
+    {
+        HouseManuslObj.SetActive(true);
+        SubwayManuslObj.SetActive(false);
+    }
+
+    public void SubwayManual_On()
+    {
+        HouseManuslObj.SetActive(false);
+        SubwayManuslObj.SetActive(true);
+    }
+
+    public void Initialize_Manual()
+    {
+        bool[,] Manual = InfoHandler.Instance.Get_UnlockedManual();
+
+        string Text = "";
+        //House
+        for(int i=0;i<(int)PlayerInfo.HOUSE.END;++i)
+        {
+            Text += i + ". ";
+            if (Manual[0, i] == true)
+            {
+                Text += ManualString[0, i];
+            }
+            else
+                Text += "???.";
+
+            Text += '\n';
+
+        }
+        HouseManual.text = Text;
+        Text = "";
+        for (int i = 0; i < (int)PlayerInfo.SUBWAY.END; ++i)
+        {
+            Text += i + ". ";
+            if (Manual[1, i] == true)
+            {
+                Text += ManualString[1, i];
+            }
+            else
+                Text += "???.";
+
+            Text += '\n';
+
+        }
+        SubwayManual.text = Text;
+
+    }
 }
