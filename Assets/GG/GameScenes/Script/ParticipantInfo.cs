@@ -84,6 +84,8 @@ public class ParticipantInfo : MonoBehaviour
             }
             else
             {
+                Temp = MasterClient.color; Temp.a = 0f;
+                MasterClient.color = Temp;
                 bIsReady = isReady;
 
                 if (bIsReady)
