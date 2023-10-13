@@ -58,8 +58,7 @@ public class Player : MonoBehaviour
         {
             if (m_PV.IsMine)
             {
-                GameMgr.Instance.m_LocalPlayerObj = this.gameObject;
-                GameMgr.Instance.m_LocalPlayer = this;
+                GameMgr.Instance.Set_LocalPlayer(this);
                 GameMgr.Instance.Set_Camera();
             }
             m_Moving = new MoveFunc(Move_MultiMode);
@@ -358,6 +357,10 @@ public class Player : MonoBehaviour
             m_bInteract_Lever = false;
             m_bInteract_Column = false;
             Curr_InteractiveObj = null;
+        }
+        else if (other.gameObject.CompareTag("Train"))
+        {
+            this.gameObject.transform.parent = null;
         }
     }
 

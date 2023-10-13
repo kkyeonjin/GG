@@ -24,6 +24,8 @@ public class GameMgr : MonoBehaviour
 
     public float fDelayStartTime = 2f;
 
+    public CinemachineVirtualCamera FollowCamera;
+
     private bool m_bSomeOneFirst = false;
     private bool m_bIamTheFirst = false;
     private bool m_bLocalPlayerGoalIn = false;
@@ -161,10 +163,7 @@ public class GameMgr : MonoBehaviour
     }
     public void Set_Camera()
     {
-
-        CinemachineVirtualCamera Temp = FindObjectOfType<CinemachineVirtualCamera>();
-        if (null != Temp && null != m_LocalPlayer)
-            m_LocalPlayer.Set_Camera(Temp);
+        m_LocalPlayer.Set_Camera(FollowCamera);
     }
 
     public void Change_Avatar(int iIndex)

@@ -12,7 +12,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public const int m_iMaxPlayer = 8;
     public string m_szPlayerPrefab = "Local_Player";
-
+    public string m_szAIPrefab = "AI";
     public GameObject StartButton { get; set; }
 
 
@@ -72,7 +72,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.Instantiate(m_szPlayerPrefab, vStartPoint.transform.position, Quaternion.identity);
     }
-
+    public void Instanctiate_AIPlayer(Vector3 vStartPoint)
+    {
+        PhotonNetwork.Instantiate(m_szAIPrefab, vStartPoint, Quaternion.identity);
+    }
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
