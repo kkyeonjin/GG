@@ -10,13 +10,19 @@ public class SubwayItem_EHpPotion : SubwayItem
         Debug.Log("HP potion");
     }
 
+    protected override void Start()
+    {
+        itemType = ItemType.ENFORCEMENT;
+    }
+
     ~SubwayItem_EHpPotion()
     {
         Debug.Log("~HP potion");
     }
 
-    public override void Use_Item()
+    public override void Item_effect()
     {
+        base.Item_effect();
         GameMgr.Instance.m_LocalPlayer.HpPotion(healRatio);
 
         //CharacterStatus.cs¿¡ Set_HP Ãß°¡

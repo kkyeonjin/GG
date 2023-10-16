@@ -15,7 +15,7 @@ public class SubwayItem_EStaminaPotion : SubwayItem
         Debug.Log("~Stamina potion");
     }
 
-    public override void Use_Item()
+    public override void Item_effect()
     {
         GameMgr.Instance.m_LocalPlayer.StaminaPotion(healRatio);
 

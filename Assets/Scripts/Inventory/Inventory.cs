@@ -69,7 +69,7 @@ public class Inventory : MonoBehaviour
             switch (activeNum)
             {
                 case 0:
-                    //icon rearrange
+                    //itemImage rearrange
                     invIcons[0].sprite = invIcons[1].sprite;
                     invIcons[1].sprite = invIcons[2].sprite;
                     invIcons[2].sprite = null;
@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
                     invScripts[2] = null;
                     break;
                 case 1:
-                    //icon rearrange
+                    //itemImage rearrange
                     invIcons[1].sprite = invIcons[2].sprite;
                     invIcons[2].sprite = null;
                     //inventory rearrange
@@ -87,7 +87,7 @@ public class Inventory : MonoBehaviour
                     invScripts[2] = null;
                     break;
                 default:
-                    //icon rearrange
+                    //itemImage rearrange
                     invIcons[activeNum].sprite = null;
                     //inventory rearrange
                     invScripts[activeNum] = null;
@@ -119,7 +119,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         ItemChange();
-        //ReArrange();
+        //Inv_itemRearrange();
         ItemUse();
     }
 }

@@ -4,45 +4,95 @@ using UnityEngine;
 [System.Serializable]
 public class SubwayItem : MonoBehaviour
 {
+    public ItemType itemType;
     public enum ItemType
     {
         // 자기 강화
         ENFORCEMENT,
         /*
-        HP, //HP 회복
-        STAMINA, //스태미나 회복 (Max의 30%p 증가)
-        ORDER, //질서게이지 회복
+        (1) HP, //HP 회복
+        (2) STAMINA, //스태미나 회복 (Max의 30%p 증가)
+        (3) ORDER, //질서게이지 회복
         */
 
         // 상대 방해
         INTERRUPT
-        /*,
-        KNOCKDOWN, //넘어뜨리기 (Max HP의 15%p 감소)
-        SLOWDOWN, //달리기 속도 반감 5초
-        SLOWDOWNALL //(꼴등용) 전체 플레이어 달리기 속도 반감 5초
+        /*
+        (4) KNOCKDOWN, //넘어뜨리기 (Max HP의 15%p 감소)
+        (5) SLOWDOWN, //달리기 속도 반감 5초
+        (*) SLOWDOWNALL //(꼴등용) 전체 플레이어 달리기 속도 반감 5초
         */
     }
 
-    public ItemType itemType;
-    public string itemName;
-    public Sprite itemImage;
+    public Sprite itemImage; // 획득 시 인벤토리 창에 띄울 아이콘
 
-    public virtual void Use_Item()
+    public int itemNum; // 아이템 고유 번호 부여(1부터)
+    public bool used; //사용 완료 여부
+
+    private Renderer pRenderer; //아이템 파티클 material
+
+    protected virtual void Start()
     {
-        // return false; //아이템 사용 성공 여부
+        pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>();
     }
 
-    public void Vanish()
+    public bool Item_pick()
     {
-        StartCoroutine("vanishParticle");
+        for (int i = 0; i < 3; i++)
+        {
+            if (SubwayInventory.instance.invScripts[i] == null)
+            {
+                Debug.Log("SubwayItem Pick");
+                SubwayInventory.instance.invScripts[i] = this;
+                SubwayInventory.instance.invIcons[i].sprite = itemImage;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public virtual void Item_effect()
+    {
+        used = true;
+        if(itemType == ItemType.ENFORCEMENT) //강화형 아이템 -> 즉발
+        {
+            //즉발
+
+        }
+        else //Interrupt형 아이템 -> 조준 후 투척
+        {
+            //손에 쥐기
+            GameMgr.Instance.m_LocalPlayer.GetComponent<SubwayItem_OnHand>().Item_Grab(itemNum);
+            
+            //조준
+            GameMgr.Instance.m_LocalPlayer.m_bIsThrow = true;
+        }
+
+        Destroy(this.gameObject);
+    }
+
+    public void Item_vanish()
+    {
+        StartCoroutine("particleFadeOut");
         Destroy(this.gameObject.GetComponent<SphereCollider>());
         this.transform.Find("icon").gameObject.SetActive(false);
         this.transform.Find("Sphere").gameObject.SetActive(false);
     }
 
-    IEnumerator vanishParticle()
+    IEnumerator particleFadeOut() //파티클 잔상 서서히 없어지는 효과
     {
-        yield return new WaitForSeconds(0.8f);
+        int i = 20;
+        while (i > 0) 
+        {
+            i--;
+            float f = i / 10.0f;
+            Color c = pRenderer.material.color;
+            c.a = f;
+            pRenderer.material.color = c;
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        //yield return new WaitForSeconds(0.8f);
         this.transform.Find("Particle System").gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }
@@ -52,9 +102,9 @@ public class SubwayItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (GetComponent<SubwayItems>().ItemPick())
+            if (Item_pick())
             {
-                Vanish();
+                Item_vanish();
             };
         }
     }

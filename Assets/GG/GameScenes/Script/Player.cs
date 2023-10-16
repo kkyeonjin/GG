@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private bool m_bIsJump = false;
     private bool m_bIsGround = true;
     private bool m_bIsCrouch = false;
+    public bool m_bIsThrow = false;
 
     private float m_fTotalSpeed;
     private float m_fJumpForce;
@@ -201,7 +202,8 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-            //ThrowItem();
+            if(m_bIsThrow) ThrowItem();
+
             PushLever();
             Picking_Up();
         }
@@ -462,8 +464,8 @@ public class Player : MonoBehaviour
         //if (!isAiming) return;
         
        ///아이템 호출
-        GameObject item;
-        //Rigidbody itemRb = item.GetComponent<Rigidbody>();
+        GameObject grabbedItem = this.GetComponent<SubwayItem_OnHand>().Get_grabbedItem();
+        Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
 
        ///Raycast 조준
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -488,6 +490,7 @@ public class Player : MonoBehaviour
         //itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
         m_Animator.SetTrigger("Throw");
 
+        m_bIsThrow = false;
 
     }
 

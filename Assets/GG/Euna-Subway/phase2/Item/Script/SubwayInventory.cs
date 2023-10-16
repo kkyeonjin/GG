@@ -7,10 +7,10 @@ using System.Linq;
 public class SubwayInventory : MonoBehaviour
 {
     public static SubwayInventory instance;
-    public List<SubwayItems> invScripts = new List<SubwayItems>(new SubwayItems[3]);
-    public List<Image> invIcons;
-    public int activeNum = 0; // 활성화 인벤토리 인덱스
-    public int activeItem; // 활성화 아이템 고유번호
+    public List<SubwayItem> invScripts = new List<SubwayItem>(new SubwayItem[3]);
+    public List<Image> invIcons = new List<Image>(new Image[3]);
+    public int selectedNum = 0; // 활성화 인벤토리 인덱스
+    public int selectedItem; // 활성화 아이템 고유번호
 
 
     private void Awake()
@@ -26,57 +26,62 @@ public class SubwayInventory : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        invScripts = new List<SubwayItems>(new SubwayItems[3]);
-        
-        int a = 10;
-        activeNum = 2;
+    {        
+        selectedNum = 2;
     }
 
-    public void ItemChange() // 활성화 아이템 변경
+    void Update()
+    {
+        closeCam();
+        Inv_selectItem();
+        //Inv_itemRearrange();
+        Inv_itemUse();
+    }
+
+    public void Inv_selectItem() // 활성화 아이템 변경
     {
         int prevNum;
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            prevNum = activeNum;
+            prevNum = selectedNum;
             if (prevNum != 2)
             {
-                activeNum++;
+                selectedNum++;
             }
             else
             {
-                activeNum = 0;
+                selectedNum = 0;
             }
             invIcons[prevNum].GetComponent<Outline>().enabled = false;
-            invIcons[activeNum].GetComponent<Outline>().enabled = true;
-            if (invScripts[activeNum] != null)
+            invIcons[selectedNum].GetComponent<Outline>().enabled = true;
+            if (invScripts[selectedNum] != null)
             {
-                activeItem = invScripts[activeNum].itemNum;
+                selectedItem = invScripts[selectedNum].itemNum;
             }
         }
         else
         {
-            if (invScripts[activeNum] != null)
+            if (invScripts[selectedNum] != null)
             {
-                activeItem = invScripts[activeNum].itemNum;
+                selectedItem = invScripts[selectedNum].itemNum;
             }
             else
             {
-                activeItem = 0;
+                selectedItem = 0;
             }
         }
     }
 
-    public void ReArrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
+    public void Inv_itemRearrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
 
-        if (invScripts[activeNum].disposable)
+        if (invScripts[selectedNum].used)
         {
-            switch (activeNum)
+            switch (selectedNum)
             {
                 case 0:
-                    //icon rearrange
+                    //itemImage rearrange
                     invIcons[0].sprite = invIcons[1].sprite;
                     invIcons[1].sprite = invIcons[2].sprite;
                     invIcons[2].sprite = null;
@@ -86,7 +91,7 @@ public class SubwayInventory : MonoBehaviour
                     invScripts[2] = null;
                     break;
                 case 1:
-                    //icon rearrange
+                    //itemImage rearrange
                     invIcons[1].sprite = invIcons[2].sprite;
                     invIcons[2].sprite = null;
                     //inventory rearrange
@@ -94,10 +99,10 @@ public class SubwayInventory : MonoBehaviour
                     invScripts[2] = null;
                     break;
                 default:
-                    //icon rearrange
-                    invIcons[activeNum].sprite = null;
+                    //itemImage rearrange
+                    invIcons[selectedNum].sprite = null;
                     //inventory rearrange
-                    invScripts[activeNum] = null;
+                    invScripts[selectedNum] = null;
                     break;
 
             }
@@ -105,30 +110,17 @@ public class SubwayInventory : MonoBehaviour
 
     }
 
-    public void ItemUse()
+    public void Inv_itemUse()
     {
-        if (activeItem != 0)
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (selectedItem != 0)
             {
                 //아이템 별로 switch문 작성해서...
-                invScripts[activeNum].ItemUse();
-                ReArrange();
-            }
-            else if (Input.GetKeyUp(KeyCode.C))
-            {
-                invScripts[activeNum].ItemPause();
+                invScripts[selectedNum].Item_effect();
+                Inv_itemRearrange();
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        closeCam();
-        ItemChange();
-        //ReArrange();
-        ItemUse();
     }
 
     //Phase1 비상 레버 & 플래시 closeCam 사용시
