@@ -22,7 +22,7 @@ namespace TMPro.Examples
 
             m_textMeshPro.autoSizeTextContainer = true;
 
-            // Load the Font Asset to be used.
+            // Load the Font Asset to be isUsed.
             //m_FontAsset = Resources.Load("Fonts & Materials/LiberationSans SDF", typeof(TMP_FontAsset)) as TMP_FontAsset;
             //m_textMeshPro.font = m_FontAsset;
 

@@ -48,7 +48,7 @@ namespace Photon.Chat.Demo
 
         public string UserName { get; set; }
 
-        private string selectedChannelName; // mainly used for GUI/input
+        private string selectedChannelName; // mainly isUsed for GUI/input
 
         public ChatClient chatClient;
 
@@ -425,7 +425,7 @@ namespace Photon.Chat.Demo
         public void OnChatStateChange(ChatState state)
         {
             // use OnConnected() and OnDisconnected()
-            // this method might become more useful in the future, when more complex states are being used.
+            // this method might become more useful in the future, when more complex states are being isUsed.
 
             this.StateText.text = state.ToString();
         }

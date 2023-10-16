@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     private bool m_bAdrenaline = false;
     private bool m_bInvincible = false;
 
+    public GameObject OnHand;
+
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -202,7 +204,7 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-            if(m_bIsThrow) ThrowItem();
+            if(m_bIsThrow) Item_throw();
 
             PushLever();
             Picking_Up();
@@ -453,21 +455,23 @@ public class Player : MonoBehaviour
 
     public float throwForce = 1f;
 
-    public void ThrowItem()
+    public void Item_throw()
     {
         /*
          * 아이템 오브젝트 호출 로직
-         * (1) tab & ctrl로 아이템 선택하면 손에 구체 소환(?)
+         * (1) tab & c로 아이템 선택하면 손에 구체 소환(?)
          * (2) 마우스 좌클릭 누른 상태로 조준
          * (3) 마우스 클릭 떼면 투척
          */
         //if (!isAiming) return;
-        
-       ///아이템 호출
-        GameObject grabbedItem = this.GetComponent<SubwayItem_OnHand>().Get_grabbedItem();
+
+
+
+        /// (1) Grab Item 호출
+        GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
         Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
 
-       ///Raycast 조준
+       /// (2) Raycast 조준
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
         float rayLength = 500f;

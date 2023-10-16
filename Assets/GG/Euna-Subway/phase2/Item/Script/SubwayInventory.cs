@@ -76,7 +76,7 @@ public class SubwayInventory : MonoBehaviour
     public void Inv_itemRearrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
 
-        if (invScripts[selectedNum].used)
+        if (invScripts[selectedNum].Get_isUsed())
         {
             switch (selectedNum)
             {

@@ -24267,6 +24267,7 @@ MonoBehaviour:
   m_PV: {fileID: 0}
   m_bIsThrow: 0
   m_CameraTransform: {fileID: 6970903653746613885}
+  OnHand: {fileID: 6367747024822640409}
   throwForce: 1
 --- !u!136 &6379740359223369172
 CapsuleCollider:
@@ -24294,10 +24295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec9ffb5112e06246a01b992a07cb3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrabbableItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &6784700526944786125
 GameObject:
   m_ObjectHideFlags: 0

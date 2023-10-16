@@ -27,7 +27,7 @@ public class SubwayItem : MonoBehaviour
     public Sprite itemImage; // 획득 시 인벤토리 창에 띄울 아이콘
 
     public int itemNum; // 아이템 고유 번호 부여(1부터)
-    public bool used; //사용 완료 여부
+    private bool isUsed; //사용 완료 여부
 
     private Renderer pRenderer; //아이템 파티클 material
 
@@ -51,24 +51,70 @@ public class SubwayItem : MonoBehaviour
         return false;
     }
 
+    //trigger sphere 반경에 들어가면 아이템 자동 pick up
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Item_pick())
+            {
+                Item_vanish();
+            };
+        }
+    }
+
+    public bool Get_isUsed()
+    {
+        return isUsed;
+    }
+
+    public void Set_isUsed(bool isUsed)
+    {
+        this.isUsed = isUsed;
+    }
+
     public virtual void Item_effect()
     {
-        used = true;
-        if(itemType == ItemType.ENFORCEMENT) //강화형 아이템 -> 즉발
+        isUsed = true;
+        if(this.itemType == ItemType.ENFORCEMENT) //강화형 아이템 -> 즉발
         {
             //즉발
 
         }
         else //Interrupt형 아이템 -> 조준 후 투척
         {
-            //손에 쥐기
-            GameMgr.Instance.m_LocalPlayer.GetComponent<SubwayItem_OnHand>().Item_Grab(itemNum);
+            //Grab Item
+            Item_grab();
             
             //조준
             GameMgr.Instance.m_LocalPlayer.m_bIsThrow = true;
         }
 
         Destroy(this.gameObject);
+    }
+
+    public void Item_grab()
+    {
+        int idx = 0;
+        switch (this.itemNum)
+        {
+            case 4: //KnockDown
+                idx = 0;
+                break;
+            case 5: //SlowDown
+                idx = 1;
+                break;
+            case 7: //Death(상점 아이템)
+                idx = 2;
+                break;
+
+            default:
+                break;
+        }
+        GameObject onHandPos = GameMgr.Instance.m_LocalPlayer.GetComponent<Player>().OnHand;
+
+        GameObject grabbedItem = Instantiate(SubwayItemMgr.Instance.GrabbableItems[idx], onHandPos.transform.position, Quaternion.identity);
+        grabbedItem.transform.SetParent(onHandPos.transform);
     }
 
     public void Item_vanish()
@@ -97,15 +143,4 @@ public class SubwayItem : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    //trigger sphere 반경에 들어가면 아이템 자동 pick up
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (Item_pick())
-            {
-                Item_vanish();
-            };
-        }
-    }
 }

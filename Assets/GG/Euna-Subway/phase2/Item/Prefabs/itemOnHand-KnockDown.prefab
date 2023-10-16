@@ -194,9 +194,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403073318457805753}
-  - component: {fileID: 8887962159944729247}
   - component: {fileID: 598248805506479523}
   - component: {fileID: 8862576567469413444}
+  - component: {fileID: 8442360582045094062}
   m_Layer: 0
   m_Name: itemOnHand-KnockDown
   m_TagString: Untagged
@@ -226,22 +226,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.117, y: 0.188}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8887962159944729247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748655925550843305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df66faecb18e3cb4587114cfa5be8892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 1
-  itemImage: {fileID: 21300000, guid: 1cc2125ef5ed32b43b10be73eea3243b, type: 3}
-  itemNum: 4
-  used: 0
 --- !u!135 &598248805506479523
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -271,3 +255,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8442360582045094062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748655925550843305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d91f973f155b4aa018c3e004d6437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
+  itemImage: {fileID: 21300000, guid: 1cc2125ef5ed32b43b10be73eea3243b, type: 3}
+  itemNum: 4
+  used: 0
