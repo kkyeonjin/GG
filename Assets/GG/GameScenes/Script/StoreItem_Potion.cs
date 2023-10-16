@@ -7,7 +7,7 @@ public class StoreItem_Potion: StoreItem
 
     public StoreItem_Potion() : base()
     {
-        m_eIndex = ITEM.POSTION;
+        m_eIndex = ITEM.POTION;
         Debug.Log("Potion!");
 
     }
@@ -18,7 +18,7 @@ public class StoreItem_Potion: StoreItem
     // Start is called before the first frame update
     protected override void Start()
     {
-        m_eIndex = ITEM.POSTION;
+        m_eIndex = ITEM.POTION;
     }
 
     // Update is called once per frame

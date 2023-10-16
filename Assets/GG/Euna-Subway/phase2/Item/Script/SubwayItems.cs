@@ -9,9 +9,8 @@ public class SubwayItems : MonoBehaviour
     public bool disposable;
     public int remainder;
 
-    // Start is called before the first frame update
 
-    public void ItemPick()
+    public bool ItemPick()
     {
         for (int i = 0; i < 3; i++)
         {
@@ -20,10 +19,10 @@ public class SubwayItems : MonoBehaviour
                 Debug.Log("SubwayItem Pick");
                 SubwayInventory.instance.invScripts[i] = this.gameObject.GetComponent<SubwayItems>();
                 SubwayInventory.instance.invIcons[i].sprite = icon;
-
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public void ItemUse()

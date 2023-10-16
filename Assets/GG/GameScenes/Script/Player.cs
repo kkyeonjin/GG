@@ -201,7 +201,7 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-            Throw();
+            //ThrowItem();
             PushLever();
             Picking_Up();
         }
@@ -288,11 +288,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
     private void Throw()
     {
         if (Input.GetKeyDown(KeyCode.F))
             m_Animator.SetTrigger("Throw");
     }
+    */
 
     private void Picking_Up()
     {
@@ -387,8 +389,11 @@ public class Player : MonoBehaviour
         transform.position = vResumePoint;
         //아이템 리셋은 X
     }
-    //아이템 관련
-    //즉부, 즉사, 무적, 포션, 아드레날린
+
+    /// <summary>
+    /// 상점아이템 관련
+    /// 즉부, 즉사, 무적, 포션, 아드레날린
+    /// </summary>
     public void Immediate_Resume()//GameMgr에서 실행 하면 해당 함수 불러서 체력 등 다시 세팅
     {
         m_Animator.SetBool("IsAlive", true);
@@ -423,6 +428,69 @@ public class Player : MonoBehaviour
         m_PV.RPC("Setbool_Invincible", RpcTarget.All, bInvincible);
 
     }
+
+    /// <summary>
+    /// 지하철 맵 파밍 아이템 관련
+    /// </summary>
+    
+    public void HpPotion(float ratio)
+    {
+        m_Status.Recover_HP(m_Status.Get_MaxHP() * ratio);
+    }
+
+    public void StaminaPotion(float ratio)
+    {
+        m_Status.Recover_Stamina_byItem(m_Status.Get_MaxStamina() * ratio);
+    }
+
+    public void SlowDown(float slowSpeed)
+    {
+        //5초동안 속도 반감 
+        m_fSpeed = slowSpeed;
+    }
+
+    public float throwForce = 1f;
+
+    public void ThrowItem()
+    {
+        /*
+         * 아이템 오브젝트 호출 로직
+         * (1) tab & ctrl로 아이템 선택하면 손에 구체 소환(?)
+         * (2) 마우스 좌클릭 누른 상태로 조준
+         * (3) 마우스 클릭 떼면 투척
+         */
+        //if (!isAiming) return;
+        
+       ///아이템 호출
+        GameObject item;
+        //Rigidbody itemRb = item.GetComponent<Rigidbody>();
+
+       ///Raycast 조준
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+        float rayLength = 500f;
+        //int floorMask = LayerMask.GetMask("Ground");
+        Vector3 throwAngle;
+
+        if(Physics.Raycast(ray, out rayHit, rayLength))
+        {
+            Debug.DrawRay(this.transform.position, rayHit.point, Color.red);
+
+            throwAngle = rayHit.point - this.transform.position;
+        }
+        else //RaycastHit false면 그냥 플레이어 앞에 떨어짐
+        {
+            throwAngle = transform.forward * 50f;
+        }
+
+       ///던지기
+        throwAngle.y = 25f;
+        //itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
+        m_Animator.SetTrigger("Throw");
+
+
+    }
+
 
     [PunRPC]
     void Setbool_Adrenaline(bool bAdrenaline)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StoreItem : MonoBehaviour
 {
-    public enum ITEM { RESUME, DEATH, ADRENALINE, POSTION, INVINCIBLE, END };
+    public enum ITEM { RESUME, DEATH, ADRENALINE, POTION, INVINCIBLE, END };
 
     private int m_iNum;
     protected ITEM m_eIndex;

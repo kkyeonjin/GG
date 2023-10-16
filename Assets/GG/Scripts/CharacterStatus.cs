@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using static System.Net.WebRequestMethods;
+
 public class CharacterStatus : MonoBehaviour
 {
     public Player m_Target;
@@ -116,6 +118,20 @@ public class CharacterStatus : MonoBehaviour
             m_fStamina = m_fMaxStamina;
     }
 
+    public void Recover_Stamina_byItem(float fStamina)
+    {
+        if (m_PV != null)
+            m_PV.RPC("Update_Stamina", RpcTarget.All, fStamina);
+        else
+        {
+            m_fStamina += fStamina;
+            if (m_fStamina > m_fMaxStamina)
+            {
+                m_fStamina = m_fMaxStamina;
+            }
+        }
+    }
+
     public void PV_Reset()
     {
         m_PV.RPC("Reset_Status", RpcTarget.All);
@@ -140,6 +156,15 @@ public class CharacterStatus : MonoBehaviour
         if (m_fHP > m_fMaxHP)
         {
             m_fHP = m_fMaxHP;
+        }
+    }
+    [PunRPC]
+    void Update_Stamina(float fStamina)
+    {
+        m_fStamina += fStamina;
+        if (m_fStamina > m_fMaxStamina)
+        {
+            m_fStamina = m_fMaxStamina;
         }
     }
     [PunRPC]
