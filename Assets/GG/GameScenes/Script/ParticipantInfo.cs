@@ -12,7 +12,6 @@ public class ParticipantInfo : MonoBehaviour
     public TextMeshProUGUI PlayerLevel;
     public TextMeshProUGUI PlayerName;
     public Image MasterClient;
-    public Image SlotBackground;
     public Image ReadyImage;
 
     private bool bIsEmpty = true;
@@ -22,9 +21,6 @@ public class ParticipantInfo : MonoBehaviour
     {
         Color Temp = MasterClient.color; Temp.a = 0f;
         MasterClient.color = Temp;
-
-        Temp = SlotBackground.color; Temp.a = 0f;
-        SlotBackground.color = Temp;
 
         Temp = ReadyImage.color; Temp.a = 0f;
         ReadyImage.color = Temp;
@@ -62,8 +58,6 @@ public class ParticipantInfo : MonoBehaviour
         bIsEmpty = isEmpty;
         if (bIsEmpty)
         {
-            Temp = SlotBackground.color; Temp.a = 0f;
-            SlotBackground.color = Temp;
             Temp = MasterClient.color; Temp.a = 0f;
             MasterClient.color = Temp;
             Temp = ReadyImage.color; Temp.a = 0f;
@@ -71,9 +65,6 @@ public class ParticipantInfo : MonoBehaviour
         }
         else
         {
-            Temp = SlotBackground.color; Temp.a = 0.5f;
-            SlotBackground.color = Temp;
-
             if (bMasterClient == true)
             {
                 Temp = MasterClient.color; Temp.a = 1f;
@@ -84,6 +75,8 @@ public class ParticipantInfo : MonoBehaviour
             }
             else
             {
+                Temp = MasterClient.color; Temp.a = 0f;
+                MasterClient.color = Temp;
                 bIsReady = isReady;
 
                 if (bIsReady)

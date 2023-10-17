@@ -18,6 +18,11 @@ public class PlayerInfo
 
     public int[] ItemsInfo;
 
+    public enum STAGE { HOUSE, SUBWAY, END };
+    public enum HOUSE { TABLE, GAS, FIRE, PACKING, ELEVATOR, END };
+    public enum SUBWAY { COLUMN, TRAINSTOP, BLACKOUT, LEVER, DISTANCE, ELEVATOR, ON_ELEVATOR, ESCAPE , END};
+
+    public bool[,] Manual;
     public PlayerInfo(bool first)
     {
 
@@ -35,6 +40,8 @@ public class PlayerInfo
         ItemsInfo = new int[(int)StoreItem.ITEM.END];
         for (int i = 0; i < (int)StoreItem.ITEM.END; ++i)
             ItemsInfo[i] = 0;
+
+        Manual = new bool[(int)STAGE.END,(int)SUBWAY.END];
 
 
     }
@@ -113,4 +120,18 @@ public class PlayerInfo
         return ItemsInfo[iIndex];
     }
 
+    //Manual System
+    public void Unlock_Manual(HOUSE manual)//집 수칙
+    {
+        Manual[(int)STAGE.HOUSE, (int)manual] = true;
+    }
+    public void Unlock_Manual(SUBWAY manual)//지하철 수칙
+    {
+        Manual[(int)STAGE.SUBWAY, (int)manual] = true;
+    }
+
+    public bool[,] Get_UnlockedManual()
+    {
+        return Manual;
+    }
 }

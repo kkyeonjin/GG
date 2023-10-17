@@ -33,8 +33,9 @@ public class InitializeMap : MonoBehaviour
 
         Photon.Realtime.Player[] Playerlist = PhotonNetwork.PlayerListOthers;
         int iLength = Playerlist.Length;
+        int i = 0;
 
-        for (int i = 0; i < iLength; ++i)
+        for ( i= 0; i < iLength; ++i)
         {
             int idx = Random.Range(0, StartPoints.Count);
 
@@ -42,6 +43,21 @@ public class InitializeMap : MonoBehaviour
             StartPoints.RemoveAt(idx);
         }
 
+        for(;i<8;++i)
+        {
+            int idx = Random.Range(0, StartPoints.Count);
+            Load_AIPlayer(StartPoints[idx].transform.position);
+            StartPoints.RemoveAt(idx);
+        }
+
+    }
+
+    //版里 AI绰 MasterClient啊 积己秦林扁
+    void Load_AIPlayer(Vector3 StartPoint)
+    {
+        Debug.Log("积己!");
+        NetworkManager.Instance.Instanctiate_AIPlayer(StartPoint);
+        GameMgr.Instance.Set_ResumePoint(StartPoint);
     }
 
     [PunRPC]
