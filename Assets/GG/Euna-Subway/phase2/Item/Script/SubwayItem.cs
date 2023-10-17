@@ -33,7 +33,10 @@ public class SubwayItem : MonoBehaviour
 
     protected virtual void Start()
     {
-        pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>();
+        if (pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>())
+        {
+            Debug.Log("item renderer set");
+        }
     }
 
     public bool Item_pick()
@@ -42,7 +45,7 @@ public class SubwayItem : MonoBehaviour
         {
             if (SubwayInventory.instance.invScripts[i] == null)
             {
-                Debug.Log("SubwayItem Pick");
+                Debug.Log("Pick " + this.gameObject.name);
                 SubwayInventory.instance.invScripts[i] = this;
                 SubwayInventory.instance.invIcons[i].sprite = itemImage;
                 return true;
@@ -63,58 +66,24 @@ public class SubwayItem : MonoBehaviour
         }
     }
 
-    public bool Get_isUsed()
+    public bool Get_isUsed() //Inventory.rearrange()에서 참조
     {
         return isUsed;
     }
 
+    /*
     public void Set_isUsed(bool isUsed)
     {
         this.isUsed = isUsed;
     }
+    */
 
     public virtual void Item_effect()
     {
         isUsed = true;
-        if(this.itemType == ItemType.ENFORCEMENT) //강화형 아이템 -> 즉발
-        {
-            //즉발
 
-        }
-        else //Interrupt형 아이템 -> 조준 후 투척
-        {
-            //Grab Item
-            Item_grab();
-            
-            //조준
-            GameMgr.Instance.m_LocalPlayer.m_bIsThrow = true;
-        }
-
-        Destroy(this.gameObject);
-    }
-
-    public void Item_grab()
-    {
-        int idx = 0;
-        switch (this.itemNum)
-        {
-            case 4: //KnockDown
-                idx = 0;
-                break;
-            case 5: //SlowDown
-                idx = 1;
-                break;
-            case 7: //Death(상점 아이템)
-                idx = 2;
-                break;
-
-            default:
-                break;
-        }
-        GameObject onHandPos = GameMgr.Instance.m_LocalPlayer.GetComponent<Player>().OnHand;
-
-        GameObject grabbedItem = Instantiate(SubwayItemMgr.Instance.GrabbableItems[idx], onHandPos.transform.position, Quaternion.identity);
-        grabbedItem.transform.SetParent(onHandPos.transform);
+        //E형 아이템 상속 함수 
+        //I형 아이템 상속 함수
     }
 
     public void Item_vanish()

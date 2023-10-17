@@ -34,7 +34,6 @@ public class SubwayInventory : MonoBehaviour
     {
         closeCam();
         Inv_selectItem();
-        //Inv_itemRearrange();
         Inv_itemUse();
     }
 
@@ -116,7 +115,6 @@ public class SubwayInventory : MonoBehaviour
         {
             if (selectedItem != 0)
             {
-                //아이템 별로 switch문 작성해서...
                 invScripts[selectedNum].Item_effect();
                 Inv_itemRearrange();
             }

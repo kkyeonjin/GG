@@ -204,10 +204,10 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-            if(m_bIsThrow) Item_throw();
+            if(m_bIsThrow) Item_aim();
 
             PushLever();
-            Picking_Up();
+            //Picking_Up();
         }
         Jump_Up();
 
@@ -300,12 +300,13 @@ public class Player : MonoBehaviour
     }
     */
 
+    /*
     private void Picking_Up()
     {
         if (Input.GetKeyDown(KeyCode.C))
             m_Animator.SetTrigger("PickingUp");
     }
-
+    */
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -440,11 +441,18 @@ public class Player : MonoBehaviour
     public void HpPotion(float ratio)
     {
         m_Status.Recover_HP(m_Status.Get_MaxHP() * ratio);
+        Debug.Log("recover HP : " + m_Status.Get_HP());
     }
 
     public void StaminaPotion(float ratio)
     {
         m_Status.Recover_Stamina_byItem(m_Status.Get_MaxStamina() * ratio);
+        Debug.Log("recover Stamina : " + m_Status.Get_Stamina());
+    }
+
+    public void KnockDown(float ratio)
+    {
+        m_Status.Set_Damage(m_Status.Get_MaxHP() * ratio);
     }
 
     public void SlowDown(float slowSpeed)
@@ -453,49 +461,63 @@ public class Player : MonoBehaviour
         m_fSpeed = slowSpeed;
     }
 
+
+    /// <summary>
+    /// 아이템 던지기 로직
+    /// * Item_aim()
+    ///  (1) tab & c로 아이템 선택하면 손에 구체 소환 - SubwayItem.Item_effect();
+    ///  (2) 마우스 좌클릭 누른 상태로 조준 - Player.Item_aim();
+    ///  (3) 마우스 클릭 떼면 투척 - Player.Item_throw();
+    /// </summary>
+
     public float throwForce = 1f;
 
-    public void Item_throw()
+    public void Item_aim() //m_bisThrow true일 때만 호출
     {
-        /*
-         * 아이템 오브젝트 호출 로직
-         * (1) tab & c로 아이템 선택하면 손에 구체 소환(?)
-         * (2) 마우스 좌클릭 누른 상태로 조준
-         * (3) 마우스 클릭 떼면 투척
-         */
-        //if (!isAiming) return;
-
-
-
-        /// (1) Grab Item 호출
-        GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
-        Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
-
-       /// (2) Raycast 조준
+        /// Raycast 조준 (마우스 클릭으로 투척 벡터 설정)
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
         float rayLength = 500f;
         //int floorMask = LayerMask.GetMask("Ground");
         Vector3 throwAngle;
 
-        if(Physics.Raycast(ray, out rayHit, rayLength))
+        if (Physics.Raycast(ray, out rayHit, rayLength))
         {
             Debug.DrawRay(this.transform.position, rayHit.point, Color.red);
 
             throwAngle = rayHit.point - this.transform.position;
+            Debug.Log("Aim at " + throwAngle);
         }
         else //RaycastHit false면 그냥 플레이어 앞에 떨어짐
         {
             throwAngle = transform.forward * 50f;
+            Debug.Log("Aim fail");
         }
 
-       ///던지기
+
+        /// 투척
+        if (throwAngle != null && Input.GetMouseButtonDown(0))
+        {
+            Item_throw(throwAngle);
+        }
+    }
+
+    public void Item_throw(Vector3 throwAngle)
+    {
+        /// (2) grabbed 아이템 호출 & 종속관계 분리
+        GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
+        Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
+        OnHand.transform.DetachChildren();
+
+       /// (3)) 던지기
         throwAngle.y = 25f;
-        //itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
+        itemRb.isKinematic = true;
+        itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
+        grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true);
         m_Animator.SetTrigger("Throw");
+        Debug.Log("Throw Item");
 
         m_bIsThrow = false;
-
     }
 
 
