@@ -81,6 +81,11 @@ Shader "Universal Render Pipeline/UI/ItemIconEffect"
         // a pass is executed.
         Tags { "RenderType" = "Transparent" "RenderPipeline" = "UniversalRenderPipeline" }
 
+        Blend SrcAlpha OneMinusSrcAlpha
+        Cull Off 
+        ZWrite Off 
+        ZTest Always
+
         Pass
         {
             // The HLSL code block. Unity SRP uses the HLSL language.

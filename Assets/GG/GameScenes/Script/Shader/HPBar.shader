@@ -67,6 +67,11 @@ Shader "Universal Render Pipeline/UI/HPBar"
          SubShader
     {
          Tags { "RenderType" = "Transparent" "RenderPipeline" = "UniversalRenderPipeline" }
+         
+         Blend SrcAlpha OneMinusSrcAlpha
+         Cull Off 
+         ZWrite On 
+         ZTest Less
 
         Pass
         {
