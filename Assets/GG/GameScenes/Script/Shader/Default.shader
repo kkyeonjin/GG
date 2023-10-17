@@ -1,4 +1,4 @@
-Shader "UI/DefaultShader"
+Shader "Universal Render Pipeline/Unlit/DefaultShader"
 {
     Properties
     {
