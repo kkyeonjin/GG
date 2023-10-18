@@ -44,6 +44,7 @@ public class Earthquake : MonoBehaviour
     void FixedUpdate()
     {
         if (isQuakeTest) isQuake = true; else isQuake = false;
+
         if (isQuake)
         {
             eachQuake(t1);

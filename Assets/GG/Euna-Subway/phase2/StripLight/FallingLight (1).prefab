@@ -561,6 +561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StripLight - Light
       objectReference: {fileID: 0}
+    - target: {fileID: 7713613365711551071, guid: 8522954bdae184b72b980cb30e8e7a3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8728529302705321582, guid: 8522954bdae184b72b980cb30e8e7a3f,
         type: 3}
       propertyPath: m_Name
