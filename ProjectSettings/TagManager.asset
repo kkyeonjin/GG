@@ -31,6 +31,7 @@ TagManager:
   - ground
   - FollowCamera
   - Lever
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -51,7 +52,7 @@ TagManager:
   - MazeWall
   - PlayerPoint
   - Scannable
-  - 
+  - Falling
   - 
   - 
   - 

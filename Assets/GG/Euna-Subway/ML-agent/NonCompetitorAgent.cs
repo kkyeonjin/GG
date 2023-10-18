@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using Unity.Sentis;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
@@ -71,6 +72,21 @@ public class NonCompetitorAgent : Agent
     public List<GameObject> _agents;
     public List<float> cal_agents;
 
+    //구간별 모델
+    //public ModelAsset OnRailBrain;
+    string m_OnRail = "OnRail";
+    string m_OnPlatform = "OnPlatform";
+
+
+    public void ResetMap()
+    {
+        for(int i=0;i< Phase2Manager.Instance.fallingObject.Count;i++)
+        {
+            Phase2Manager.Instance.fallingObject[i].position = Phase2Manager.Instance.fallingObjectPos[i];
+            Phase2Manager.Instance.fallingObject[i].rotation = Phase2Manager.Instance.fallingObjectRot[i];
+        }
+    }
+
 
     public void Set_Dead()
     {
@@ -111,6 +127,9 @@ public class NonCompetitorAgent : Agent
         //Move 초기화
         agentRb.velocity = Vector3.zero;
         agentRb.angularVelocity = Vector3.zero;
+
+        //낙하물 초기화 
+        ResetMap();
     }
 
     public void OnTriggerEnter(Collider col)
@@ -134,6 +153,13 @@ public class NonCompetitorAgent : Agent
             Debug.Log("Hit Block Trigger");
             EndEpisode();
         }
+
+        /*
+        if (col.CompareTag("Platform"))
+        {
+            SetModel(m_OnPlatform, OnPlatformBrain);
+        }
+        */
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -282,6 +308,7 @@ public class NonCompetitorAgent : Agent
         //이동 (MovePosition 적용)
         agentRb.MovePosition(transform.position + dir * currentSpeed * Time.deltaTime);
 
+        /*
         //DiscreteAction[2] 점프 여부 2
         var actionJump = actions.DiscreteActions[2];
         if (actionJump == 1 && !isJump)
@@ -294,6 +321,7 @@ public class NonCompetitorAgent : Agent
             animator.SetTrigger("Jump");
             animator.SetBool("isGround", isGround);
         }
+        */
     }
 
 
@@ -317,11 +345,13 @@ public class NonCompetitorAgent : Agent
             action[1] = 1;
         }
 
+        /*
         //2. 점프
         if (Input.GetKeyDown(KeyCode.Space))
         {
             action[2] = 1;
         }
+        */
     }
 
     void _calDistance()
