@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Earthquake : MonoBehaviour
 {
+    public bool isQuakeTest = true;
+
     public static bool isQuake = false;
     public static bool isQuakeStop = false;
     //How strong is the earthquake?
@@ -33,11 +35,15 @@ public class Earthquake : MonoBehaviour
     {
         originalPosition = transform.localPosition;
         magnitude = Random.Range(1, 8);
+        
+        //phase2 테스트용 추후 isQuake static 수정
+        isQuake = true;
         Debug.Log(magnitude);
     }
 
     void FixedUpdate()
     {
+        if (isQuakeTest) isQuake = true; else isQuake = false;
         if (isQuake)
         {
             eachQuake(t1);
