@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5593130732318996855}
   - component: {fileID: 2207401187319891342}
   - component: {fileID: 2741542565403402225}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SW_ENV_Escalator_5Step
   m_TagString: stair
   m_Icon: {fileID: 0}

@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1889100253630182735}
   - component: {fileID: 1805687507612905426}
+  - component: {fileID: 1083775681810429647}
   - component: {fileID: 4019953649500421302}
-  m_Layer: 0
+  - component: {fileID: 5059068864891994983}
+  m_Layer: 19
   m_Name: FallingLight (1)
   m_TagString: Falling
   m_Icon: {fileID: 0}
@@ -52,6 +54,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1083775681810429647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971842124772530123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.897703, y: 4.356105, z: 5.9857597}
+  m_Center: {x: 0.16908503, y: -1.6780522, z: -0.059482574}
 --- !u!153 &4019953649500421302
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -148,6 +163,18 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5059068864891994983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971842124772530123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cec9448a76a17f419d9b3ef7117f728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4066697058673855762
 GameObject:
   m_ObjectHideFlags: 0

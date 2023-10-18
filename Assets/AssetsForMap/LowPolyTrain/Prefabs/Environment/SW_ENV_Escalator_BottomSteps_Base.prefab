@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2714876886971929844}
   - component: {fileID: 8543793922691475469}
   - component: {fileID: 5102066179831672560}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SW_ENV_Escalator_BottomSteps_Base
   m_TagString: stair
   m_Icon: {fileID: 0}
@@ -32,7 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4676487599737711921}
-  - {fileID: 7277027140192425539}
   - {fileID: 5130343590700923170}
   - {fileID: 9161636456753363311}
   m_Father: {fileID: 0}
@@ -185,8 +184,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
       propertyPath: m_TagString
-      value: Wall
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -308,12 +311,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
       propertyPath: m_TagString
-      value: Wall
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdd639e21c264364a3a64326f299ffa, type: 3}
       propertyPath: m_LocalScale.x
@@ -360,7 +367,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6410355762004913858}
+    m_TransformParent: {fileID: 5130343590700923170}
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: f457e546f800041d0b1aa978c9ed3849,
         type: 3}
@@ -438,12 +445,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_TagString
-      value: Bunker
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -451,12 +478,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a1abcc20a760a4848b4b80d8375ccf2d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
---- !u!4 &7277027140192425539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849,
-    type: 3}
-  m_PrefabInstance: {fileID: 7277027140192554179}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7277027140192455267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f457e546f800041d0b1aa978c9ed3849,
@@ -565,12 +586,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_TagString
-      value: Wall
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f457e546f800041d0b1aa978c9ed3849, type: 3}
       propertyPath: m_LocalScale.x

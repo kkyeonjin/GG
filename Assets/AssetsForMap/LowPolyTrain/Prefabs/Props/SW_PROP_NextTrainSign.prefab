@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8594537997137195960}
   - component: {fileID: 4389534781789856548}
   - component: {fileID: 2260136641532778045}
+  - component: {fileID: 2064158863857107546}
+  - component: {fileID: 3943880911416832186}
   - component: {fileID: 45850339749347286}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: SW_PROP_NextTrainSign
   m_TagString: Falling
   m_Icon: {fileID: 0}
@@ -38,6 +40,7 @@ Transform:
   - {fileID: 2755795605048941775}
   - {fileID: 3822410024860003913}
   - {fileID: 6141218624735815119}
+  - {fileID: 2230351564925992620}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -120,6 +123,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2064158863857107546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8032513848250959716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cec9448a76a17f419d9b3ef7117f728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3943880911416832186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8032513848250959716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.596195, y: 3.145886, z: 4.1690035}
+  m_Center: {x: 0.07535076, y: -2.3720806, z: 0.0093951225}
 --- !u!153 &45850339749347286
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -216,6 +244,51 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &9141621240447107930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2230351564925992620}
+  - component: {fileID: 2578520097298848263}
+  m_Layer: 0
+  m_Name: Fall Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2230351564925992620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141621240447107930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6422802746875934071}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2578520097298848263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141621240447107930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.596195, y: 3.145886, z: 4.1690035}
+  m_Center: {x: 0.07535076, y: -2.3720806, z: 0.0093951225}
 --- !u!1001 &654961221817967095
 PrefabInstance:
   m_ObjectHideFlags: 0
