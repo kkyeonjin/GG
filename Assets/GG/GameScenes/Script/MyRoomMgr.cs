@@ -130,9 +130,11 @@ public class MyRoomMgr : MonoBehaviour
         string text = "Lv. " + InfoHandler.Instance.Get_Level();
         m_PlayerInfo.text = text;
 
-        float ExpRatio = InfoHandler.Instance.Get_Exp() / InfoHandler.Instance.Get_ExpMax();
-        string Exptext = ExpRatio.ToString("F1") + "%";
-        m_PlayerExp.text = Exptext;
+        float EXP = (float)InfoHandler.Instance.Get_Exp();
+        float EXPMax = (float)InfoHandler.Instance.Get_ExpMax();
+        int ExpRatio = (int)(EXP / EXPMax * 100);
+        
+        m_PlayerExp.text ="" + ExpRatio + "%";
 
         m_PlayerExpImage.Set_TotalLength(InfoHandler.Instance.Get_ExpMax());
         m_PlayerExpImage.Set_LengthRatio(InfoHandler.Instance.Get_Exp());
