@@ -3331,7 +3331,7 @@ PrefabInstance:
     - target: {fileID: 7539522403796415603, guid: cfd52433c2081db47b83623fd9394d6f,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7539522403796415603, guid: cfd52433c2081db47b83623fd9394d6f,
         type: 3}
@@ -3717,12 +3717,22 @@ PrefabInstance:
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}
