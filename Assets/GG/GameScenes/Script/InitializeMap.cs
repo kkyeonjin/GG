@@ -8,6 +8,7 @@ public class InitializeMap : MonoBehaviour
     public List<GameObject> StartPoints;
 
     public PhotonView m_PV;
+    public bool Phase2 = false;
 
 
     // Start is called before the first frame update
@@ -43,11 +44,14 @@ public class InitializeMap : MonoBehaviour
             StartPoints.RemoveAt(idx);
         }
 
-        for(;i<8;++i)
+        if (Phase2)
         {
-            int idx = Random.Range(0, StartPoints.Count);
-            Load_AIPlayer(StartPoints[idx].transform.position);
-            StartPoints.RemoveAt(idx);
+            for (; i < 8; ++i)
+            {
+                int idx = Random.Range(0, StartPoints.Count);
+                Load_AIPlayer(StartPoints[idx].transform.position);
+                StartPoints.RemoveAt(idx);
+            }
         }
 
     }
