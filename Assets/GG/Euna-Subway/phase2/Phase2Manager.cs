@@ -8,6 +8,7 @@ public class Phase2Manager : MonoBehaviour
 
     public GameObject PlatformTrigger;
 
+    public bool resetFallings = false;
 
     //½Â°­Àå ³«ÇÏ¹° °ü¸®
     public GameObject fallingObjects;
@@ -25,6 +26,24 @@ public class Phase2Manager : MonoBehaviour
             fallingObject.Add(fallObj);
             fallingObjectPos.Add(fallObj.position);
             fallingObjectRot.Add(fallObj.rotation);
+        }
+    }
+
+    public void ResetMap()
+    {
+        for (int i = 0; i < fallingObject.Count; i++)
+        {
+            fallingObject[i].position = fallingObjectPos[i];
+            fallingObject[i].rotation = fallingObjectRot[i];
+        }
+        resetFallings = false;
+    }
+
+    private void Update()
+    {
+        if (resetFallings)
+        {
+            ResetMap();
         }
     }
 

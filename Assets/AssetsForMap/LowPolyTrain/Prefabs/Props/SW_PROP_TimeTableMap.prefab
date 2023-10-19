@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1107580140478101082}
   - component: {fileID: 6656992249730206371}
   - component: {fileID: 2487917256870924846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SW_PROP_TimeTableMap
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

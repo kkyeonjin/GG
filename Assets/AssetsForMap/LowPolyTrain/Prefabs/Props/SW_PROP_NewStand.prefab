@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6772934367734314067}
   - component: {fileID: 1063626347342809258}
   - component: {fileID: 1073469956071854681}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SW_PROP_NewStand
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

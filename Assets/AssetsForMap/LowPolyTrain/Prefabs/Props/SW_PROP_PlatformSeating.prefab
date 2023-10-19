@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1209628404124408358}
   - component: {fileID: 6218985012765958383}
   - component: {fileID: 4128876955379127211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SW_PROP_PlatformSeating
   m_TagString: Bunker
   m_Icon: {fileID: 0}

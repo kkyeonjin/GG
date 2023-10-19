@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4362538827817449993}
   - component: {fileID: 6615566484494284532}
   - component: {fileID: 5939655609680459064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_StationStair_Opening_B02_FF
   m_TagString: Wall
   m_Icon: {fileID: 0}

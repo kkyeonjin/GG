@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Unity.Sentis;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
-using System;
+using Unity.Barracuda;
 
 public class NonCompetitorAgent : Agent
 {
@@ -73,20 +72,10 @@ public class NonCompetitorAgent : Agent
     public List<float> cal_agents;
 
     //구간별 모델
-    //public ModelAsset OnRailBrain;
+    public NNModel OnRailBrain;
     string m_OnRail = "OnRail";
+    public NNModel OnPlatformBrain;
     string m_OnPlatform = "OnPlatform";
-
-
-    public void ResetMap()
-    {
-        for(int i=0;i< Phase2Manager.Instance.fallingObject.Count;i++)
-        {
-            Phase2Manager.Instance.fallingObject[i].position = Phase2Manager.Instance.fallingObjectPos[i];
-            Phase2Manager.Instance.fallingObject[i].rotation = Phase2Manager.Instance.fallingObjectRot[i];
-        }
-    }
-
 
     public void Set_Dead()
     {
@@ -129,7 +118,10 @@ public class NonCompetitorAgent : Agent
         agentRb.angularVelocity = Vector3.zero;
 
         //낙하물 초기화 
-        ResetMap();
+        Phase2Manager.Instance.ResetMap();
+
+        //모델 OnRail로 변경
+        SetModel(m_OnRail, OnRailBrain);
     }
 
     public void OnTriggerEnter(Collider col)
@@ -154,12 +146,12 @@ public class NonCompetitorAgent : Agent
             EndEpisode();
         }
 
-        /*
+        
         if (col.CompareTag("Platform"))
         {
-            SetModel(m_OnPlatform, OnPlatformBrain);
+            SetModel(m_OnPlatform, OnRailBrain);
         }
-        */
+
     }
 
     public void OnCollisionEnter(Collision collision)

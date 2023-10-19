@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1888739996938552020}
   - component: {fileID: 5263210903655136813}
   - component: {fileID: 1469784827059415436}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_ENV_PillarTiled_Variant01
   m_TagString: Wall
   m_Icon: {fileID: 0}

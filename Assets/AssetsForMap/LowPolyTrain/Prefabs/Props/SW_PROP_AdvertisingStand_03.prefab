@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2817735139524584141}
   - component: {fileID: 8369397046732676660}
   - component: {fileID: -8029517952871706026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SW_PROP_AdvertisingStand_03
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
