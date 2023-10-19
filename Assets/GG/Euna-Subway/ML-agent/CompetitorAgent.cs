@@ -94,7 +94,10 @@ public class CompetitorAgent : Agent
     {
         //m_PV.RPC("Damaging", RpcTarget.All, fDamage);
     }
-
+    public void Set_Animator(Animator In_Anamator)
+    {
+        animator = In_Anamator;
+    }
     /*
     public bool Is_Usable()
     {
@@ -149,7 +152,7 @@ public class CompetitorAgent : Agent
 
     public void Set_Dead()
     {
-        agentAnimator.SetTrigger("Death");
+        animator.SetTrigger("Death");
         this.gameObject.SetActive(true);
     }
 

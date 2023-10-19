@@ -23254,7 +23254,10 @@ MonoBehaviour:
   m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 6539228445917966001}
+  m_bIsThrow: 0
   m_CameraTransform: {fileID: 0}
+  OnHand: {fileID: 0}
+  throwForce: 1
 --- !u!136 &6539228445917966007
 CapsuleCollider:
   m_ObjectHideFlags: 0
