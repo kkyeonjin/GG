@@ -69,16 +69,19 @@ public class InfoHandler : MonoBehaviour
 
         //File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json", jsondata);
 
-        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
-    
-         byte[] data = new byte[fileStream.Length];
-         fileStream.Read(data, 0, data.Length);
+        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Open, FileAccess.Read);
 
-         string jsondata = Encoding.UTF8.GetString(data);
-         Debug.Log(jsondata);
-         fileStream.Close();
+        string loadJson = File.ReadAllText(Application.dataPath + "/PlayerInfo.json");
+        m_Playerinfo = JsonUtility.FromJson<PlayerInfo>(loadJson);
 
-         m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
+        //byte[] data = new byte[fileStream.Length];
+        // fileStream.Read(data, 0, data.Length);
+
+        // string jsondata = Encoding.UTF8.GetString(data);
+        // Debug.Log(jsondata);
+        // fileStream.Close();
+
+        // m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
 
          Debug.Log(m_Playerinfo.Get_Level());
      
@@ -87,13 +90,17 @@ public class InfoHandler : MonoBehaviour
     {
         PlayerInfo Info = new PlayerInfo(true);
         Info.Set_Name(name);
-        FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
-        fileStream.Close();
-        string jsondata = JsonConvert.SerializeObject(Info);
-        Debug.Log(jsondata);
-        byte[] data = Encoding.UTF8.GetBytes(jsondata);
 
-        File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json", jsondata);
+        string json = JsonUtility.ToJson(Info, true);
+
+        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
+        //fileStream.Close();
+        //string jsondata = JsonConvert.SerializeObject(Info);
+        //Debug.Log(jsondata);
+        //byte[] data = Encoding.UTF8.GetBytes(jsondata);
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
+
+        Debug.LogError("Player Info 저장!!!");
     }
     public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴
     {
@@ -263,11 +270,16 @@ public class InfoHandler : MonoBehaviour
         //json 파일 부분만 수정하는 방법이 뭐냐 대체
         //json생성(FileMode.Create) & 저장(FileAccess.Write)
         //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.dataPath, "PlayerInfo"), FileMode.Create, FileAccess.Write);
-        string jsondata = JsonConvert.SerializeObject(m_Playerinfo);
-        Debug.Log(jsondata);
-        byte[] data = Encoding.UTF8.GetBytes(jsondata);
-    
-        File.WriteAllText(Application.streamingAssetsPath + "/PlayerInfo.json",jsondata);
+        //string jsondata = JsonConvert.SerializeObject(m_Playerinfo);
+        //Debug.Log(jsondata);
+        //byte[] data = Encoding.UTF8.GetBytes(jsondata);
+
+        string json = JsonUtility.ToJson(m_Playerinfo, true);
+
+        
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
+
+        Debug.LogError("Player Info 저장!!!");
 
         //fileStream.Write(data, 0, data.Length);
         //fileStream.Close();
