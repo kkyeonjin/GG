@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.barracuda": "https://github.com/Unity-Technologies/barracuda-release.git",
+    "com.unity.barracuda": "3.0.0",
     "com.unity.cinemachine": "2.8.9",
     "com.unity.formats.fbx": "4.1.3",
     "com.unity.ide.rider": "3.0.20",
