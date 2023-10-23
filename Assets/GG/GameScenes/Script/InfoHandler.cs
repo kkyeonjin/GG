@@ -103,8 +103,14 @@ public class InfoHandler : MonoBehaviour
         //string jsondata = JsonConvert.SerializeObject(Info);
         //Debug.Log(jsondata);
         //byte[] data = Encoding.UTF8.GetBytes(jsondata);
+<<<<<<< Updated upstream
         //File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
         Debug.LogError("Player Info 저장!!!");
+=======
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
+
+        Debug.LogError("player Info 저장!!!");
+>>>>>>> Stashed changes
     }
     public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴
     {
@@ -283,7 +289,7 @@ public class InfoHandler : MonoBehaviour
         
         File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
 
-        Debug.LogError("Player Info 저장!!!");
+        Debug.LogError("player Info 저장!!!");
 
         //fileStream.Write(data, 0, data.Length);
         //fileStream.Close();

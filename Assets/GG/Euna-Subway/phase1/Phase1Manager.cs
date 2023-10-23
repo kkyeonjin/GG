@@ -82,9 +82,13 @@ public class Phase1Manager : MonoBehaviour
     {
         if (GameMgr.Instance.m_LocalPlayer.Get_Order() > 0f)
         {
+<<<<<<< Updated upstream
             InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
+=======
+            InfoHandler.Instance.Unlock_Manual(PlayerInfo.SUBWAY.COLUMN);
+            Debug.Log("Column 해금");
+>>>>>>> Stashed changes
             //UI 이펙트
-
         }
     }
 }
