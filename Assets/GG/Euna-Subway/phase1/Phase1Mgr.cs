@@ -5,7 +5,7 @@ using UnityEngine;
 public class Phase1Mgr : MonoBehaviour
 {
     public static Phase1Mgr m_Instance = null;
-    public static bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
+    public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
     //기둥 관련
     public bool isHoldingBar = false;
@@ -32,39 +32,63 @@ public class Phase1Mgr : MonoBehaviour
     /// 
     /// </summary>
 
-    public enum ClearCondtion
-    {
-        OrderGage,
-        lever, //비상핸들 돌리기
-        collision, //npc와 충돌 
-    }
-
     private bool AllClear = false;
-
 
 
     private void Start()
     {
         //게임 시작 3초 뒤 지하철 출발
-
+        //StartCoroutine("runTrain");
 
         //10초 뒤 지진 시작
         StartCoroutine("generateQuake");
-        StartCoroutine("stopQuake");
 
         //30초 뒤 운행 중지 (자동)
+        StartCoroutine("stopQuake");
     }
 
     private void Update()
     {
+        if ()
+        {
+
+        }
+
+        if (InGameUIMgr.Instance.m_bGoalCountDown)
+        {
+            Debug.Log("Goal Count Down!");
+        }
         if (AllClear)
         {
             //게임 종료 후 대기 
+            Debug.Log("Clear!");
+        }
+    }
 
+    void Check_Column()
+    {
+        if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
+        {
+            InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
+            Debug.Log("Column 해금");
+            //UI 이펙트
+
+        }
+        else
+        {
+            //Game Over
+            GameMgr.Instance.Game_Over();
+            Debug.Log("Order Gage run out");
         }
     }
 
     public GameObject B2;
+
+    IEnumerator runTrain()
+    {
+        yield return new WaitForSeconds(3.5f);
+    }
+
     IEnumerator generateQuake() {
         yield return new WaitForSeconds(10f);
 
@@ -83,21 +107,6 @@ public class Phase1Mgr : MonoBehaviour
         Check_Column();
     }
 
-    void Check_Column()
-    {
-        if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
-        {
-            InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
-            Debug.Log("Column 해금");
-            //UI 이펙트
-
-        }
-        else
-        {
-            //Game Over
-            GameMgr.Instance.Game_Over();
-        }
-    }
 
 
     //싱글톤 

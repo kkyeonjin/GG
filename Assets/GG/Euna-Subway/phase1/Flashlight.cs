@@ -8,6 +8,6 @@ public class Flashlight : MonoBehaviour
         Debug.Log("Pick up flashlight");
         GetComponent<SubwayItem>().Item_pick();
 
-        Phase1Mgr.clearCondition[1] = true;
+        Phase1Mgr.Instance.clearCondition[1] = true;
     }
 }

@@ -17,7 +17,7 @@ public class InGameUIMgr : MonoBehaviour
     public Vector3[] m_RankSlotPos;
     private int m_iRankSlotIndex=0;
 
-    //플레이어 죽엇을 때 뜨는 UI들
+    //플레이어 죽었을 때 뜨는 UI들
     public GameObject RespawnUI;
     public ItemSlotEffect ResumeSlot;
     public UIEffect RespawnTimeBar;
@@ -27,14 +27,19 @@ public class InGameUIMgr : MonoBehaviour
     //최종 랭킹 
     public RankSlot[] m_ResultRankSlots;
 
-    public int iGoalTimerSec = 15;
-    public TextMeshProUGUI GoalTimer;
-    public float m_fGoalTime =0f;
-    private bool m_bGameOver = false;
-    //1등 골인 후 타이머
+    //Phase 제한 시간 타이머
     public TextMeshProUGUI GeneralTimer;
-    public int iGeneralTimerMin = 3;
+    public int iGeneralTimerMin = 2;
     public int iGeneralTimerSec = 0;
+
+    //최초 플레이어 골인 후 타이머
+    public TextMeshProUGUI GoalTimer;
+    public bool m_bGoalCountDown = false; //최초 플레이어 골인 여부
+    public int iGoalTimerSec = 15; //최초 플레이어 골인 이후 카운트다운
+    public float m_fGoalTime = 0f; //골인 이후 경과 시간 누적 변수
+
+
+    
     //일반 타이머
     
     delegate void Calc_Timer();
@@ -176,7 +181,7 @@ public class InGameUIMgr : MonoBehaviour
         m_fGoalTime -= Time.deltaTime;
         if(m_fGoalTime <=0f)
         {
-            m_bGameOver = true;
+            m_bGoalCountDown = true;
             Timer -= Calculate_GoalTimer;
         }
         int Min = Mathf.Max(0, (int)m_fGoalTime / 60);
@@ -199,7 +204,7 @@ public class InGameUIMgr : MonoBehaviour
         int Min = Mathf.Max(0, (int)m_fPassTime / 60);
         int Sec = Mathf.Max(0, (int)m_fPassTime % 60);
 
-        if (m_fPassTime <= 0f || m_bGameOver)
+        if (m_fPassTime <= 0f || m_bGoalCountDown)
         {
             GameMgr.Instance.Game_Over();
             GeneralTimer.text = "--:--";

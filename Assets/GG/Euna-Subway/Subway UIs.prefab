@@ -10015,6 +10015,7 @@ GameObject:
   - component: {fileID: 5704723613294337317}
   - component: {fileID: 5704723613294337319}
   - component: {fileID: 5704723613294337318}
+  - component: {fileID: 8355931496820183273}
   m_Layer: 5
   m_Name: Subway Inventory
   m_TagString: Untagged
@@ -10074,6 +10075,21 @@ MonoBehaviour:
   - {fileID: 5704723613674530025}
   selectedNum: 0
   selectedItem: 0
+  orderGage: {fileID: 8355931496820183273}
+--- !u!114 &8355931496820183273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704723613294337316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb7e80f001b7584fb94ccb666bd919f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PV: {fileID: 0}
+  m_fMaxOrder: 100
 --- !u!1 &5704723613300107414
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,8 +40,8 @@ public class LeverBar : MonoBehaviour
         if (!leverClear && clickCount >= clearCount)
         {
             leverClear = true;
-            Phase1Mgr.clearCondition[2] = true;
-            Debug.Log(Phase1Mgr.clearCondition[2]);
+            Phase1Mgr.Instance.clearCondition[2] = true;
+            Debug.Log(Phase1Mgr.Instance.clearCondition[2]);
         }
     }
            

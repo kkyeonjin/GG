@@ -42,7 +42,8 @@ public class HoldingBar : MonoBehaviour
             //지진 중 player가 붙잡고 있지 않으면 
             if (!isHolding)
             {
-                
+                SubwayInventory.instance.orderGage.Cut_Order();
+                Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
             }
         }
 
@@ -71,16 +72,11 @@ public class HoldingBar : MonoBehaviour
             isInRange = true;
             Debug.Log("in Range");
 
-
-
-            /*
             if (isHolding)
             {
                 collision.transform.position = holdingPosition.position;
                 collision.transform.rotation = holdingPosition.rotation;
             }
-            */
-
         }
     }
 
