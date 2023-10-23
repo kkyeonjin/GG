@@ -3666,6 +3666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}
+      propertyPath: ShapeModule.angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
+        type: 3}
       propertyPath: ShapeModule.length
       value: 4
       objectReference: {fileID: 0}
@@ -3717,7 +3722,7 @@ PrefabInstance:
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 1.25
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 198034498684821496, guid: ae2926f3b1160484e82d00eeae13cd9f,
         type: 3}

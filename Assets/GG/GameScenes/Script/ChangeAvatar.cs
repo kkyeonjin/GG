@@ -51,8 +51,11 @@ public class ChangeAvatar : MonoBehaviour
             m_arrAvatar[i].SetActive(false);
         }
 
-        if(m_PV != null)
-            m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
+        if (m_PV != null)
+        {
+            if(m_PV.IsMine)
+                m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
+        }
         else
         {
             m_ActiveAvatar.SetActive(false);
