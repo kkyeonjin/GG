@@ -8,7 +8,7 @@ public class OrderGage : MonoBehaviour
     public PhotonView m_PV;
 
     public float m_fMaxOrder = 100;
-    public float m_fCOrder = 10;
+    public float m_fCOrder = 3;
     private float m_fOrder;
 
     public float Get_Order()

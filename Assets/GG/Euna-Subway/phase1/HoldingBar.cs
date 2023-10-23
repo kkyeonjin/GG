@@ -84,7 +84,7 @@ public class HoldingBar : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
             Debug.Log("out of Range");

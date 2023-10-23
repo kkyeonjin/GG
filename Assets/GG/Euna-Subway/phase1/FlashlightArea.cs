@@ -48,7 +48,7 @@ public class FlashlightArea : MonoBehaviour
         if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
-            if (other.CompareTag("player"))
+            if (other.CompareTag("Player"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -63,7 +63,7 @@ public class FlashlightArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
             closeCam.gameObject.SetActive(false);

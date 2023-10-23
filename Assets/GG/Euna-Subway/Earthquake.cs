@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Earthquake : MonoBehaviour
 {
-    public bool isQuakeTest = true;
+    public bool isQuakeTest = false;
 
     public bool isQuake = false;
     public bool isQuakeStop = false;

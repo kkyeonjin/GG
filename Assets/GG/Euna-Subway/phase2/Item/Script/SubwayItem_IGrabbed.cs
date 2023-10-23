@@ -18,7 +18,7 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         //플레이어 타격 시 
         if (isThrown) 
         { 
-            if (other.transform.CompareTag("player"))
+            if (other.transform.CompareTag("Player"))
             {
                 targetPlayer = other.gameObject.GetComponent<Player>();
 
