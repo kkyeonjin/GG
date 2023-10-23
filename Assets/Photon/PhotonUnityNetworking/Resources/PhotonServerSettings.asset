@@ -76,6 +76,7 @@ MonoBehaviour:
   - Next_Phase
   - Update_Stamina
   - Update_Order
+  - Start_NextPhase
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

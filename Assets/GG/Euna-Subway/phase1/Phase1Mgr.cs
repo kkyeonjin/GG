@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Phase1Mgr : MonoBehaviour
     //대응 수칙
     public GameObject PopUpScreen;
     public List<GameObject> PopUps = new List<GameObject>();
+
+    public PhotonView m_PV;
 
     //phase별 랜덤 지진 이벤트 관리
 
@@ -61,6 +64,7 @@ public class Phase1Mgr : MonoBehaviour
         if (clearCondition[0] && clearCondition[1] && clearCondition[2])
         {
             //게임 종료 후 대기 
+            m_PV.RPC("Start_NextPhase", RpcTarget.All);
             Debug.Log("Clear!");
         }
     }
@@ -150,5 +154,11 @@ public class Phase1Mgr : MonoBehaviour
         {
             PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
         }
+    }
+
+    [PunRPC]
+    void Start_NextPhase()
+    {
+        NetworkManager.Instance.StartGame("Multi_Subway_Phase2");
     }
 }
