@@ -66,7 +66,7 @@ public class HoldingBar : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {   
             player = collision.gameObject.GetComponent<Player>();
             isInRange = true;

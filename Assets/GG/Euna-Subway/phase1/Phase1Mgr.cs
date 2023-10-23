@@ -49,10 +49,6 @@ public class Phase1Mgr : MonoBehaviour
 
     private void Update()
     {
-        if ()
-        {
-
-        }
 
         if (InGameUIMgr.Instance.m_bGoalCountDown)
         {

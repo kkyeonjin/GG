@@ -18,7 +18,7 @@ public class FallTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         //진도 4 이상일 때만 물체 추락
-        if((collider.gameObject.CompareTag("AI") || collider.gameObject.CompareTag("player")))
+        if((collider.gameObject.CompareTag("AI") || collider.gameObject.CompareTag("Player")))
         {
             this.gameObject.GetComponent<ConfigurableJoint>().xMotion = ConfigurableJointMotion.Free;
 
