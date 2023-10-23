@@ -9,7 +9,7 @@ public class ElevatorCtr : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "player")
         {
             ElevRoom.SetActive(true);
             BackWall.SetActive(false);
@@ -18,7 +18,7 @@ public class ElevatorCtr : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "player")
         {
             ElevRoom.SetActive(false);
             BackWall.SetActive(true);

@@ -45,7 +45,7 @@ public class EmergencyLever : MonoBehaviour
         if (Earthquake.isQuakeStop || Earthquake.isQuake)
         {
             //상호작용 E
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("player"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -59,7 +59,7 @@ public class EmergencyLever : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
             closeCam.gameObject.SetActive(false);

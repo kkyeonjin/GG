@@ -71,7 +71,7 @@ public class SingleGameMgr : MonoBehaviour
 
     public void Player_GoalIn()//½Ì±Û ¸ðµå
     {
-        Debug.Log("Player GoalIn!");
+        Debug.Log("player GoalIn!");
         m_bPlayerGoalIn = true;
         Invoke("Show_ResultScreen", fCeremonyTime);
 

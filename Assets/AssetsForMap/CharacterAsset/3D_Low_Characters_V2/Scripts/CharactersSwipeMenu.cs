@@ -40,7 +40,7 @@ namespace PuxxeStudio{
 		Toggle hideGroundToggle;
 		bool showPersonalObjects = true;
 		bool showGround = true;
-		[Header("Player - Auto Find")]
+		[Header("player - Auto Find")]
 		[SerializeField]
 		bool hideOthersCharacters = true;   
 		public PlayerControllDemo playerControllDemo;

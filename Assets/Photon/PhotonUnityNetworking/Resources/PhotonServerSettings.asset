@@ -75,6 +75,7 @@ MonoBehaviour:
   - Targeting_Death
   - Next_Phase
   - Update_Stamina
+  - Update_Order
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

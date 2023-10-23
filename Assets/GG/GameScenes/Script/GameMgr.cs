@@ -142,7 +142,7 @@ public class GameMgr : MonoBehaviour
 
     public void Player_GoalIn()//싱글 모드
     {
-        Debug.Log("Player GoalIn!");
+        Debug.Log("player GoalIn!");
 
         Invoke("Show_ResultScreen", fCeremonyTime);
 

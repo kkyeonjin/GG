@@ -53,7 +53,7 @@ public class SubwayItem_I : SubwayItem
                 return;
         }
 
-        //Player 손에 아이템 오브젝트 소환
+        //player 손에 아이템 오브젝트 소환
         GameObject onHandPos = GameMgr.Instance.m_LocalPlayer.GetComponent<Player>().OnHand;
         GameObject grabbedItem = Instantiate(SubwayItemMgr.Instance.GrabbableItems[idx], onHandPos.transform.position, Quaternion.identity);
         grabbedItem.transform.SetParent(onHandPos.transform);

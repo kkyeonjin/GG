@@ -31,7 +31,7 @@ public class NonCompetitorAgent : Agent
     private Animator agentAnimator;
 
     /// 이동속도 <see cref="Player.m_fSpeed"/>
-    public float currentSpeed = 3f; //Player.m_fspeed
+    public float currentSpeed = 3f; //player.m_fspeed
     public const float walkSpeed = 3f;
     public const float runSpeed = walkSpeed * 1.5f;
 
@@ -368,7 +368,7 @@ public class NonCompetitorAgent : Agent
 
     // 반경 내 Human (AI & Players)
     public CompetitorAgent[] closeAIs;
-    public Player[] closePlayers;
+    public player[] closePlayers;
 
     // 반경 내 장애물 (Fall & Obstacle)
     //public GameObject closeFall;

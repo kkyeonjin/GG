@@ -57,7 +57,7 @@ public class SubwayItem : MonoBehaviour
     //trigger sphere 반경에 들어가면 아이템 자동 pick up
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             if (Item_pick())
             {

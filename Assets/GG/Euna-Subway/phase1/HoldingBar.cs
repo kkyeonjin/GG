@@ -7,8 +7,8 @@ public class HoldingBar : MonoBehaviour
     private Transform holdingPosition;
     bool isInRange = false;
     public bool isHolding = false;
-    GameObject Player;
-    //bool lockOrderGage = false;
+    Player player;
+    bool lockOrderGage = false;
 
     private void Start()
     {
@@ -32,21 +32,21 @@ public class HoldingBar : MonoBehaviour
 
     private void Update()
     {
-        if(Player == null) return;
+        if(player == null) return;
         Get_KeyInput();
-        Player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+        player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
 
         /*
         if (isHolding)
         {
-            Player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+            player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
             //lockOrderGage = true;
             Debug.Log("Holding");
             return;
         }
         else
         {
-            Player.GetComponentInChildren<Animator>().SetBool("Holding", false);
+            player.GetComponentInChildren<Animator>().SetBool("Holding", false);
             Debug.Log("Unhold");
         }
         */
@@ -55,9 +55,9 @@ public class HoldingBar : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
         {   
-            Player = collision.gameObject;
+            player = collision.gameObject.GetComponent<Player>();
             isInRange = true;
             Debug.Log("in Range");
 
@@ -76,7 +76,7 @@ public class HoldingBar : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
         {
             isInRange = false;
             Debug.Log("out of Range");
