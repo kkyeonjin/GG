@@ -88,6 +88,7 @@ public class InfoHandler : MonoBehaviour
         // m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
 
          Debug.Log(m_Playerinfo.Get_Level());
+        Debug.Log(loadJson);
      
     }
     public static void Initizlize_Player(string name)//처음 게임 시작할 때
@@ -103,7 +104,7 @@ public class InfoHandler : MonoBehaviour
         //string jsondata = JsonConvert.SerializeObject(Info);
         //Debug.Log(jsondata);
         //byte[] data = Encoding.UTF8.GetBytes(jsondata);
-        //File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
         Debug.LogError("Player Info 저장!!!");
         File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
 
