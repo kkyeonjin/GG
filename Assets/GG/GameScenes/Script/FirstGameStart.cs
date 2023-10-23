@@ -12,7 +12,7 @@ public class FirstGameStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(System.IO.File.Exists(Application.dataPath + "PlayerInfo.jason"))
+        if(System.IO.File.Exists(Application.dataPath + "/PlayerInfo.json"))
         {
             SceneManager.LoadScene("MenuUI");
         }

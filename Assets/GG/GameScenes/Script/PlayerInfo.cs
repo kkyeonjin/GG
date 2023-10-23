@@ -17,12 +17,8 @@ public class PlayerInfo
     public bool[] AvailableCharacter;
 
     public int[] ItemsInfo;
-
-    public enum STAGE { HOUSE, SUBWAY, END };
-    public enum HOUSE { TABLE, GAS, FIRE, PACKING, ELEVATOR, END };
-    public enum SUBWAY { COLUMN, TRAINSTOP, BLACKOUT, LEVER, DISTANCE, ELEVATOR, ON_ELEVATOR, ESCAPE , END};
-
     public bool[,] Manual;
+
     public PlayerInfo(bool first)
     {
 
@@ -41,7 +37,10 @@ public class PlayerInfo
         for (int i = 0; i < (int)StoreItem.ITEM.END; ++i)
             ItemsInfo[i] = 0;
 
-        Manual = new bool[(int)STAGE.END,(int)SUBWAY.END];
+        Manual = new bool[(int)InfoHandler.STAGE.END,(int)InfoHandler.SUBWAY.END];
+        for (int i = 0; i < (int)InfoHandler.STAGE.SUBWAY; ++i)
+            for (int j = 0; j < (int)InfoHandler.SUBWAY.END - 1; ++j)
+                Manual[i, j] = false;
 
 
     }
@@ -121,13 +120,13 @@ public class PlayerInfo
     }
 
     //Manual System
-    public void Unlock_Manual(HOUSE manual)//집 수칙
+    public void Unlock_Manual(InfoHandler.HOUSE manual)//집 수칙
     {
-        Manual[(int)STAGE.HOUSE, (int)manual] = true;
+        Manual[(int)InfoHandler.STAGE.HOUSE, (int)manual] = true;
     }
-    public void Unlock_Manual(SUBWAY manual)//지하철 수칙
+    public void Unlock_Manual(InfoHandler.SUBWAY manual)//지하철 수칙
     {
-        Manual[(int)STAGE.SUBWAY, (int)manual] = true;
+        Manual[(int)InfoHandler.STAGE.SUBWAY, (int)manual] = true;
     }
 
     public bool[,] Get_UnlockedManual()

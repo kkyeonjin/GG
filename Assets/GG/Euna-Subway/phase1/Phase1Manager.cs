@@ -82,7 +82,7 @@ public class Phase1Manager : MonoBehaviour
     {
         if (GameMgr.Instance.m_LocalPlayer.Get_Order() > 0f)
         {
-            InfoHandler.Instance.Unlock_Manual(PlayerInfo.SUBWAY.COLUMN);
+            InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             //UI ¿Ã∆Â∆Æ
 
         }
