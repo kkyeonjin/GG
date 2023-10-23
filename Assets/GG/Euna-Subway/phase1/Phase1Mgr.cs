@@ -7,6 +7,10 @@ public class Phase1Mgr : MonoBehaviour
     public static Phase1Mgr m_Instance = null;
     public static bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
+    //기둥 관련
+    public bool isHoldingBar = false;
+    public List<HoldingBar> holdingBars;
+
     public GameObject Train1;
     public GameObject Train2;
 
@@ -81,11 +85,12 @@ public class Phase1Mgr : MonoBehaviour
 
     void Check_Column()
     {
-        if (SubwayInventory.instance. > 0f)
+        if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
         {
             InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             Debug.Log("Column 해금");
             //UI 이펙트
+
         }
         else
         {

@@ -6,7 +6,7 @@ public class HoldingBar : MonoBehaviour
 {
     private Transform holdingPosition;
     bool isInRange = false;
-    public bool isHolding = false;
+    public bool isHolding = false; //애니메이션용 불리언
     Player player;
     bool lockOrderGage = false;
 
@@ -16,32 +16,33 @@ public class HoldingBar : MonoBehaviour
         holdingPosition = this.gameObject.transform.Find("HoldingPosition").transform;
     }
 
-    private void Get_KeyInput()
+    private void holdBar()
     {
         if (!isInRange) return;
         else if (Input.GetKey(KeyCode.R)) 
         {
+            Phase1Mgr.Instance.isHoldingBar = true;
             isHolding = true;
             Debug.Log("holding bar");
         }
         else
         {
+            Phase1Mgr.Instance.isHoldingBar = false;
             isHolding = false;
         }
     }
 
     private void Update()
-    {
-        if(player == null) return;
-        Get_KeyInput();
+    {        
+        holdBar();
         player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
 
-        //지진 중 player가 붙잡고 있어야 함.
         if (Phase1Mgr.Instance.earthquake.isQuake)
         {
-            if(player == null || !isHolding)
+            //지진 중 player가 붙잡고 있지 않으면 
+            if (!isHolding)
             {
-
+                
             }
         }
 

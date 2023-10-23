@@ -2,7 +2,7 @@ using Photon.Pun.Demo.Cockpit;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phase1AIcontorller
+public class Phase1AIcontroller
 {
     List<Animator> animators;
     public Animator Sitting;
@@ -25,11 +25,12 @@ public class Phase1AIcontorller
         //2. 지진 발생 : 붙잡기 
 
         //3. 
-        if(Earthquake.isQuake && !Earthquake.isQuakeStop)
+
+        if(Phase1Mgr.Instance.earthquake.isQuake && !Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             ChangeAnimator("isQuake");
         }
-        if(!Earthquake.isQuake && Earthquake.isQuakeStop)
+        if(Phase1Mgr.Instance.earthquake.isQuake && Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             ChangeAnimator("isQuakeStop");
         }

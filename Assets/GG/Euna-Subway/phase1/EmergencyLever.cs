@@ -42,7 +42,7 @@ public class EmergencyLever : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Earthquake.isQuakeStop || Earthquake.isQuake)
+        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
             if (other.CompareTag("player"))

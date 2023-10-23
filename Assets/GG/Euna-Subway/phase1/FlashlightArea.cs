@@ -14,8 +14,6 @@ public class FlashlightArea : MonoBehaviour
         };
     }
 
-
-
     /*
     private void Update()
     {
@@ -38,16 +36,16 @@ public class FlashlightArea : MonoBehaviour
 
                         Phase1Mgr.clearCondition[1] = true;
                     }
-
                 }
             }
         }
     }
     */
 
+
     private void OnTriggerStay(Collider other)
     {
-        if (Earthquake.isQuake || Earthquake.isQuakeStop)
+        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
             if (other.CompareTag("player"))

@@ -8,8 +8,12 @@ public class InitializeMap : MonoBehaviour
     public List<GameObject> StartPoints;
 
     public PhotonView m_PV;
-    public bool Phase2 = false;
 
+    //Phase 1 ¿­Â÷
+    public List<GameObject> trainsInside;
+
+    //Phase 2
+    public bool Phase2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +30,6 @@ public class InitializeMap : MonoBehaviour
             //NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
             Initialize_Players_InMap();
         }
-
     }
 
     public void Initialize_Players_InMap()

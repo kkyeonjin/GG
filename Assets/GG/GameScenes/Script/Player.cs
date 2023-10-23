@@ -456,8 +456,8 @@ public class Player : MonoBehaviour
 
     public void OrderPotion(float ratio)
     {
-        m_Status.Recover_Order(m_Status.Get_MaxOrder() * ratio);
-        Debug.Log("recover Order : " + m_Status.Get_Order());
+        SubwayInventory.instance.orderGage.Recover_Order(SubwayInventory.instance.orderGage.Get_MaxOrder() * ratio);
+        Debug.Log("recover Order : " + SubwayInventory.instance.orderGage.Get_Order());
     }
 
     public void KnockDown(float ratio)
