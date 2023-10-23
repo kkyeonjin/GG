@@ -58,11 +58,10 @@ public class Phase1Mgr : MonoBehaviour
         {
             Debug.Log("Goal Count Down!");
         }
-        if (AllClear)
+        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
         {
             //게임 종료 후 대기 
             Debug.Log("Clear!");
-
         }
     }
 
@@ -79,7 +78,7 @@ public class Phase1Mgr : MonoBehaviour
         else
         {
             //Game Over
-            GameMgr.Instance.Game_Over();
+            //GameMgr.Instance.Game_Over();
             Debug.Log("Order Gage run out");
         }
     }
