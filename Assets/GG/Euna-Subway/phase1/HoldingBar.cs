@@ -19,23 +19,25 @@ public class HoldingBar : MonoBehaviour
     private void holdBar()
     {
         if (!isInRange) return;
-        else if (Input.GetKey(KeyCode.R)) 
+        else if (Input.GetKeyDown(KeyCode.R)) 
         {
             Phase1Mgr.Instance.isHoldingBar = true;
             isHolding = true;
             Debug.Log("holding bar");
+            player.SetAnimation("Holding", isHolding);
         }
-        else
+        else if(Input.GetKeyUp(KeyCode.R))
         {
             Phase1Mgr.Instance.isHoldingBar = false;
             isHolding = false;
+            player.SetAnimation("Holding", isHolding);
         }
     }
 
     private void Update()
     {        
         holdBar();
-        player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+        
 
         if (Phase1Mgr.Instance.earthquake.isQuake)
         {

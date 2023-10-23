@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
 
             if(m_bIsThrow) Item_aim();
 
-            PushLever();
+            //PushLever();
             //Picking_Up();
         }
         Jump_Up();
@@ -332,8 +332,14 @@ public class Player : MonoBehaviour
             ///Debug.Log("on " + collision.gameObject.name);
         }
     }
-
-
+    public void SetAnimation(string parameter, bool flag)
+    {
+        m_Animator.SetBool(parameter, flag);
+    }
+    public void SetAnimation_Trigger(string parameter)
+    {
+        m_Animator.SetTrigger(parameter);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("EndPoint"))
@@ -349,8 +355,8 @@ public class Player : MonoBehaviour
             Curr_InteractiveObj = other.gameObject.GetComponent<Interactive>();
             if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
                 m_bInteract_Lever = true;
-            if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
-                m_bInteract_Column = true;
+            //if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
+            //    m_bInteract_Column = true;
         }
         else if(other.gameObject.CompareTag("Train"))
         {
@@ -363,7 +369,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Interactive"))
         {
             m_bInteract_Lever = false;
-            m_bInteract_Column = false;
+            //m_bInteract_Column = false;
             Curr_InteractiveObj = null;
         }
         else if (other.gameObject.CompareTag("Train"))
