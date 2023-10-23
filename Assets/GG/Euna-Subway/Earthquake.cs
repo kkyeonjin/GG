@@ -37,7 +37,7 @@ public class Earthquake : MonoBehaviour
         magnitude = Random.Range(1, 8);
         
         //phase2 테스트용 추후 isQuake static 수정
-        isQuake = true;
+        //isQuake = true;
         Debug.Log(magnitude);
     }
 
