@@ -5,6 +5,9 @@ using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
+    public float quakeStartTime = 6f;
+    public float quakeStopTime = 13f;
+
     public static Phase1Mgr m_Instance = null;
     public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
@@ -15,6 +18,7 @@ public class Phase1Mgr : MonoBehaviour
     public GameObject Train1;
     public GameObject Train2;
 
+    //지진
     public Earthquake earthquake;
 
     //대응 수칙
@@ -95,18 +99,18 @@ public class Phase1Mgr : MonoBehaviour
     }
 
     IEnumerator generateQuake() {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(quakeStartTime);
 
         //재난 문자 알림음
         earthquake.isQuake = true;
         Debug.Log("isQuake" + earthquake.isQuake);
-        B2.GetComponent<Earthquake>().t1 = Train1.transform;
-        B2.GetComponent<Earthquake>().t2 = Train2.transform;
+        //B2.GetComponent<Earthquake>().t1 = Train1.transform;
+        //B2.GetComponent<Earthquake>().t2 = Train2.transform;
     }
 
     IEnumerator stopQuake()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(quakeStopTime);
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
         Check_Column();
