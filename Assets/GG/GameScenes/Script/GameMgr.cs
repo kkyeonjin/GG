@@ -157,12 +157,14 @@ public class GameMgr : MonoBehaviour
     {
         m_LocalPlayer = LocalPlayer;
         m_LocalPlayerObj = LocalPlayer.gameObject;
+
         if (m_bInGame)
             InGameUIMgr.Instance.Set_PlayerStatus(m_LocalPlayer);
     }
     public void Set_Camera()
     {
         m_LocalPlayer.Set_Camera(FollowCamera);
+        FollowCamera.Follow = m_LocalPlayer.transform;
     }
 
     public void Change_Avatar(int iIndex)
