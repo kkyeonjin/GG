@@ -16,6 +16,10 @@ public class Phase1Mgr : MonoBehaviour
 
     public Earthquake earthquake;
 
+    //대응 수칙
+    public GameObject PopUpScreen;
+    public List<GameObject> PopUps = new List<GameObject>();
+
     //phase별 랜덤 지진 이벤트 관리
 
     /// <summary>
@@ -65,10 +69,11 @@ public class Phase1Mgr : MonoBehaviour
     {
         if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
         {
-            InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             Debug.Log("Column 해금");
+            //마이룸 수칙 해금
+            InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             //UI 이펙트
-
+            PopUp(PopUps[0]);
         }
         else
         {
@@ -103,6 +108,13 @@ public class Phase1Mgr : MonoBehaviour
         Check_Column();
     }
 
+    IEnumerator PopUp(GameObject popup)
+    {
+        popup.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        popup.SetActive(false);
+    }
+
 
 
     //싱글톤 
@@ -131,6 +143,12 @@ public class Phase1Mgr : MonoBehaviour
             {
                 m_Instance = this;
             }
+        }
+
+        //Popups 받아오기
+        for(int i =0;i<4;i++) 
+        {
+            PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
         }
     }
 }
