@@ -138,7 +138,7 @@ Shader "Universal Render Pipeline/UI/StatBarEffect"
     {
         half4 col = tex2D(_MainTex, i.uv);
 
-        col = g_vColor;
+        //col = g_vColor;
         if (i.uv.x > g_fLerpRatio)
         {
             col = g_vOriginColor;

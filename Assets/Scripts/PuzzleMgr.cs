@@ -22,7 +22,7 @@ public class PuzzleMgr : MonoBehaviour
     }
     public void Manual1Unlock()
     {
-        InfoHandler.Instance.Unlock_Manual(PlayerInfo.HOUSE.GAS);
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.GAS);
         manual1.SetActive(true);
         Invoke("Manual1Close", 2f);
     }
@@ -34,7 +34,7 @@ public class PuzzleMgr : MonoBehaviour
 
     public void Manual2Unlock()
     {
-        InfoHandler.Instance.Unlock_Manual(PlayerInfo.HOUSE.PACKING);
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.PACKING);
         manual2.SetActive(true);
         Invoke("Manual2Close", 2f);
     }
@@ -46,7 +46,7 @@ public class PuzzleMgr : MonoBehaviour
 
     public void Manual3Unlock()
     {
-        InfoHandler.Instance.Unlock_Manual(PlayerInfo.HOUSE.TABLE);
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.TABLE);
         Invoke("Manual3Open", 1f);
         Invoke("Manual3Close", 2f);
     }
