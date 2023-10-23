@@ -13,6 +13,7 @@ public class SubwayInventory : MonoBehaviour
     public int selectedNum = 0; // 활성화 인벤토리 인덱스
     public int selectedItem; // 활성화 아이템 고유번호
 
+    public OrderGage orderGage;
 
     private void Awake()
     {

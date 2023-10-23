@@ -36,7 +36,7 @@ public class FlashlightArea : MonoBehaviour
                         Debug.Log("Pick flashlight");
                         hit.collider.gameObject.SetActive(false);
 
-                        Phase1Manager.clearCondition[1] = true;
+                        Phase1Mgr.clearCondition[1] = true;
                     }
 
                 }

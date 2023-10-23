@@ -118,7 +118,7 @@ public class NonCompetitorAgent : Agent
         agentRb.angularVelocity = Vector3.zero;
 
         //낙하물 초기화 
-        Phase2Manager.Instance.ResetMap();
+        Phase2Mgr.Instance.ResetMap();
 
         //모델 OnRail로 변경
         SetModel(m_OnRail, OnRailBrain);

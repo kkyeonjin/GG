@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
 
     public GameObject OnHand;
 
+
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -457,11 +458,6 @@ public class Player : MonoBehaviour
     {
         m_Status.Recover_Order(m_Status.Get_MaxOrder() * ratio);
         Debug.Log("recover Order : " + m_Status.Get_Order());
-    }
-
-    public float Get_Order()
-    {
-        return m_Status.Get_Order();
     }
 
     public void KnockDown(float ratio)

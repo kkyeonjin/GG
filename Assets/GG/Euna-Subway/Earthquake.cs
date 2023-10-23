@@ -6,8 +6,8 @@ public class Earthquake : MonoBehaviour
 {
     public bool isQuakeTest = true;
 
-    public static bool isQuake = false;
-    public static bool isQuakeStop = false;
+    public bool isQuake = false;
+    public bool isQuakeStop = false;
     //How strong is the earthquake?
     public float magnitude; //Not the same magnitude people talk about in an actual earthquakes
     public float slowDownFactor = 0.1f;
@@ -49,6 +49,21 @@ public class Earthquake : MonoBehaviour
         {
             eachQuake(t1);
             eachQuake(t2);
+        }
+    }
+
+    public void switchQuake()
+    {
+        //지진 발생
+        if(!isQuake && !isQuakeStop)
+        {
+            isQuake = true;
+        }
+        //지진 중단
+        else if(isQuake && !isQuakeStop)
+        {
+            isQuake = false;
+            isQuakeStop = true;
         }
     }
 

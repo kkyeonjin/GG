@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phase1Manager : MonoBehaviour
+public class Phase1Mgr : MonoBehaviour
 {
+    public static Phase1Mgr m_Instance = null;
     public static bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
     public GameObject Train1;
     public GameObject Train2;
+
+    public Earthquake earthquake;
 
     //phase별 랜덤 지진 이벤트 관리
 
@@ -19,12 +22,12 @@ public class Phase1Manager : MonoBehaviour
     /// - holding 종료 후 5초 동안 지진 잠잠해지면서 멈춤
     /// - 안내 방송 사운드 (열차에서 나와서 대피) but 문 안열림
     /// 
-    /// (1.5) Emergency Call : 비상전화로 문 안열림 보고. 안내 sound
+    /// (2) 비상 손전등 픽업
     /// 
-    /// (2) 열차 문 비상 개방 : 비상 콕크 
+    /// (3) 열차 문 비상 개방 : 비상 레버 회전
     /// 
     /// </summary>
-    /// 
+
     public enum ClearCondtion
     {
         OrderGage,
@@ -34,9 +37,7 @@ public class Phase1Manager : MonoBehaviour
 
     private bool AllClear = false;
 
-    private void Awake()
-    {
-    }
+
 
     private void Start()
     {
@@ -64,8 +65,8 @@ public class Phase1Manager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         //재난 문자 알림음
-        Earthquake.isQuake = true;
-        Debug.Log("isQuake" + Earthquake.isQuake);
+        earthquake.isQuake = true;
+        Debug.Log("isQuake" + earthquake.isQuake);
         B2.GetComponent<Earthquake>().t1 = Train1.transform;
         B2.GetComponent<Earthquake>().t2 = Train2.transform;
     }
@@ -73,22 +74,53 @@ public class Phase1Manager : MonoBehaviour
     IEnumerator stopQuake()
     {
         yield return new WaitForSeconds(15f);
-        Earthquake.isQuake = false;
-        Earthquake.isQuakeStop = true;
-        Manual_Column();
+        earthquake.isQuake = false;
+        earthquake.isQuakeStop = true;
+        Check_Column();
     }
 
-    void Manual_Column()
+    void Check_Column()
     {
-        if (GameMgr.Instance.m_LocalPlayer.Get_Order() > 0f)
+        if (SubwayInventory.instance. > 0f)
         {
-<<<<<<< Updated upstream
             InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
-=======
-            InfoHandler.Instance.Unlock_Manual(PlayerInfo.SUBWAY.COLUMN);
             Debug.Log("Column 해금");
->>>>>>> Stashed changes
             //UI 이펙트
+        }
+        else
+        {
+            //Game Over
+            GameMgr.Instance.Game_Over();
+        }
+    }
+
+
+    //싱글톤 
+    public static Phase1Mgr Instance
+    {
+        get
+        {
+            if (null == m_Instance)
+            {
+                return null;
+            }
+            return m_Instance;
+        }
+    }
+    private void Awake()
+    {
+        var duplicated = FindObjectsOfType<GameMgr>();
+
+        if (duplicated.Length > 1)
+        {//이미 생성해서 플레이어 있음
+            Destroy(this.gameObject);
+        }
+        else
+        {//처음 생성
+            if (null == m_Instance)
+            {
+                m_Instance = this;
+            }
         }
     }
 }

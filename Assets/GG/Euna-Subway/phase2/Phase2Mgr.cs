@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phase2Manager : MonoBehaviour
+public class Phase2Mgr : MonoBehaviour
 {
-    public static Phase2Manager Instance = null;
+    public static Phase2Mgr Instance = null;
 
     public GameObject PlatformTrigger;
 
@@ -15,6 +15,8 @@ public class Phase2Manager : MonoBehaviour
     public List<Transform> fallingObject;
     public List<Vector3> fallingObjectPos;
     public List<Quaternion> fallingObjectRot;
+
+    public Earthquake earthquake;
 
     private void Awake()
     {

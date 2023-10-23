@@ -36,6 +36,15 @@ public class HoldingBar : MonoBehaviour
         Get_KeyInput();
         player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
 
+        //지진 중 player가 붙잡고 있어야 함.
+        if (Phase1Mgr.Instance.earthquake.isQuake)
+        {
+            if(player == null || !isHolding)
+            {
+
+            }
+        }
+
         /*
         if (isHolding)
         {
@@ -60,6 +69,8 @@ public class HoldingBar : MonoBehaviour
             player = collision.gameObject.GetComponent<Player>();
             isInRange = true;
             Debug.Log("in Range");
+
+
 
             /*
             if (isHolding)
