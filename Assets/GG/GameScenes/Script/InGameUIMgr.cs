@@ -17,13 +17,7 @@ public class InGameUIMgr : MonoBehaviour
     public Vector3[] m_RankSlotPos;
     private int m_iRankSlotIndex=0;
 
-<<<<<<< Updated upstream
     //플레이어 죽었을 때 뜨는 UI들
-=======
-    public bool m_bIsPhase2 = false;
-
-    //플레이어 죽엇을 때 뜨는 UI들
->>>>>>> Stashed changes
     public GameObject RespawnUI;
     public ItemSlotEffect ResumeSlot;
     public UIEffect RespawnTimeBar;
@@ -89,8 +83,7 @@ public class InGameUIMgr : MonoBehaviour
     void Start()
     {
         Timer = Empty;
-        if(m_bIsPhase2) 
-            Reset_Ranking();
+        Reset_Ranking();
     }
 
     // Update is called once per frame
@@ -100,7 +93,7 @@ public class InGameUIMgr : MonoBehaviour
     }
     public void Set_PlayerStatus(Player LocalPlayer)
     {
-        m_StatusUI.m_PlayerStatus =LocalPlayer.gameObject.GetComponentInChildren<CharacterStatus>();
+        m_StatusUI.m_PlayerStatus =LocalPlayer.GetComponentInChildren<CharacterStatus>();
 
     }
     public void Set_Item(int iIndex, StoreItem iInput)
