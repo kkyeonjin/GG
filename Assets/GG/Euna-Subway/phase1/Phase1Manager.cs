@@ -32,15 +32,11 @@ public class Phase1Manager : MonoBehaviour
         collision, //npc와 충돌 
     }
 
-
-
     private bool AllClear = false;
 
     private void Awake()
     {
     }
-
-
 
     private void Start()
     {
@@ -79,5 +75,16 @@ public class Phase1Manager : MonoBehaviour
         yield return new WaitForSeconds(15f);
         Earthquake.isQuake = false;
         Earthquake.isQuakeStop = true;
+        Manual_Column();
+    }
+
+    void Manual_Column()
+    {
+        if (GameMgr.Instance.m_LocalPlayer.Get_Order() > 0f)
+        {
+            InfoHandler.Instance.Unlock_Manual(PlayerInfo.SUBWAY.COLUMN);
+            //UI 이펙트
+
+        }
     }
 }

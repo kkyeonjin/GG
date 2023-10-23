@@ -453,6 +453,17 @@ public class Player : MonoBehaviour
         Debug.Log("recover Stamina : " + m_Status.Get_Stamina());
     }
 
+    public void OrderPotion(float ratio)
+    {
+        m_Status.Recover_Order(m_Status.Get_MaxOrder() * ratio);
+        Debug.Log("recover Order : " + m_Status.Get_Order());
+    }
+
+    public float Get_Order()
+    {
+        return m_Status.Get_Order();
+    }
+
     public void KnockDown(float ratio)
     {
         m_Status.Set_Damage(m_Status.Get_MaxHP() * ratio);

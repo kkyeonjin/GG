@@ -19,6 +19,10 @@ public class CharacterStatus : MonoBehaviour
     private float m_fHP;
     private float m_fStamina;
 
+    //질서 게이지 추가
+    public float m_fMaxOrder = 100;
+    private float m_fOrder;
+
     void Start()
     {
         m_fHP = m_fMaxHP;
@@ -59,6 +63,16 @@ public class CharacterStatus : MonoBehaviour
         return m_fMaxStamina;
     }
 
+    //질서 게이지
+    public float Get_Order()
+    {
+        return m_fOrder;
+    }
+    public float Get_MaxOrder()
+    {
+        return m_fMaxOrder;
+    }
+
     public void Set_Damage(float fDamage)
     {
         if (m_PV != null)
@@ -93,6 +107,17 @@ public class CharacterStatus : MonoBehaviour
             m_bIsUsable = false;
         }
     }
+    private void Recover_Stamina()
+    {
+        m_fStamina += m_fSPRecover * Time.deltaTime;
+        if (m_fStamina > 10f)
+            m_bIsUsable = true;
+
+        if (m_fStamina > m_fMaxStamina)
+            m_fStamina = m_fMaxStamina;
+    }
+
+    //아이템 관련
 
     public void Recover_HP(float fHP)
     {
@@ -108,16 +133,6 @@ public class CharacterStatus : MonoBehaviour
         }
     }
 
-    private void Recover_Stamina()
-    {
-        m_fStamina += m_fSPRecover*Time.deltaTime;
-        if (m_fStamina > 10f)
-            m_bIsUsable = true;
-
-        if (m_fStamina > m_fMaxStamina)
-            m_fStamina = m_fMaxStamina;
-    }
-
     public void Recover_Stamina_byItem(float fStamina)
     {
         if (m_PV != null)
@@ -129,6 +144,19 @@ public class CharacterStatus : MonoBehaviour
             {
                 m_fStamina = m_fMaxStamina;
             }
+        }
+    }
+
+    public void Recover_Order(float fOrder)
+    {
+        if(m_PV != null)
+        {
+            m_PV.RPC("Update_Order", RpcTarget.All, fOrder);
+        }
+        m_fOrder += fOrder;
+        if(m_fOrder > m_fMaxOrder)
+        {
+            m_fOrder = m_fMaxOrder;
         }
     }
 
@@ -167,6 +195,16 @@ public class CharacterStatus : MonoBehaviour
             m_fStamina = m_fMaxStamina;
         }
     }
+    [PunRPC]
+    void Update_Order(float fOrder)
+    {
+        m_fOrder += fOrder;
+        if (m_fOrder > m_fMaxOrder)
+        {
+            m_fOrder = m_fMaxOrder;
+        }
+    }
+
     [PunRPC]
     void Reset_Status()
     {
