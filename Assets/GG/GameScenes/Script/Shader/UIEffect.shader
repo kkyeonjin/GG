@@ -148,12 +148,12 @@ Shader "Universal Render Pipeline/UI/UIEffect"
     {
         // Defining the color variable and returning it.
         half4 col = tex2D(_MainTex, i.uv);
-        if (col.a < 0.5f)
-            discard;
+        //if (col.a < 0.5f)
+        //    discard;
            
-        half4 LerpColor = lerp(g_vOriginColor,g_vColor,g_fLerpRatio);
+        //half4 LerpColor = lerp(g_vOriginColor,g_vColor,g_fLerpRatio);
 
-        col.rgb *= LerpColor;
+        //col.rgb *= LerpColor;
         return col;
     }
     ENDHLSL
