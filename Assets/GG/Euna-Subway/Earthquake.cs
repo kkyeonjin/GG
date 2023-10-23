@@ -6,8 +6,8 @@ public class Earthquake : MonoBehaviour
 {
     public bool isQuakeTest = true;
 
-    public static bool isQuake = false;
-    public static bool isQuakeStop = false;
+    public bool isQuake = false;
+    public bool isQuakeStop = false;
     //How strong is the earthquake?
     public float magnitude; //Not the same magnitude people talk about in an actual earthquakes
     public float slowDownFactor = 0.1f;
@@ -49,6 +49,21 @@ public class Earthquake : MonoBehaviour
         {
             eachQuake(t1);
             eachQuake(t2);
+        }
+    }
+
+    public void switchQuake()
+    {
+        //지진 발생
+        if(!isQuake && !isQuakeStop)
+        {
+            isQuake = true;
+        }
+        //지진 중단
+        else if(isQuake && !isQuakeStop)
+        {
+            isQuake = false;
+            isQuakeStop = true;
         }
     }
 
@@ -98,13 +113,13 @@ public class Earthquake : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("player"))
         {
             Vector3 movePVecR = new Vector3(randomX * 1.8f, randomY * 1.8f, randomZ * 1.8f);
 
             collision.gameObject.transform.rotation = Quaternion.Euler(movePVecR);
             //collision.gameObject.transform.Find("Camera").transform.rotation = Quaternion.Euler(movePVecR);
-            Debug.Log("Player On EQ");
+            Debug.Log("player On EQ");
         }
         
 
@@ -119,10 +134,10 @@ public class Earthquake : MonoBehaviour
         */
 
     /*
-    if (collision.collider.CompareTag("Player"))
+    if (collision.collider.CompareTag("player"))
     {
         GameObject player = collision.gameObject;
-        //Debug.Log("Player Found");
+        //Debug.Log("player Found");
         GameObject subCam = player.transform.Find("Cams").Find("SubCamera").gameObject;
 
 

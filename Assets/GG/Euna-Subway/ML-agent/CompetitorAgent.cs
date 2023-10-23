@@ -42,7 +42,7 @@ public class CompetitorAgent : Agent
     private Animator agentAnimator;
 
     /// 이동속도 <see cref="Player.m_fSpeed"/>
-    public float currentSpeed = 5f; //Player.m_fspeed
+    public float currentSpeed = 5f; //player.m_fspeed
     public const float walkSpeed = 5f;
     public const float runSpeed = walkSpeed * 1.5f;
 

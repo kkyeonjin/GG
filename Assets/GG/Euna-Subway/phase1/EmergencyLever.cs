@@ -42,10 +42,10 @@ public class EmergencyLever : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Earthquake.isQuakeStop || Earthquake.isQuake)
+        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("player"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -59,7 +59,7 @@ public class EmergencyLever : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
             closeCam.gameObject.SetActive(false);

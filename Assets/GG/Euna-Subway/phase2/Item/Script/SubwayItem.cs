@@ -7,6 +7,9 @@ public class SubwayItem : MonoBehaviour
     public ItemType itemType;
     public enum ItemType
     {
+        // 손전등
+        FLASHLIGHT, 
+
         // 자기 강화
         ENFORCEMENT,
         /*
@@ -33,7 +36,7 @@ public class SubwayItem : MonoBehaviour
 
     protected virtual void Start()
     {
-        if (pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>())
+        if ((this.itemType != SubwayItem.ItemType.FLASHLIGHT) && (pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>()))
         {
             Debug.Log("item renderer set");
         }
@@ -57,7 +60,7 @@ public class SubwayItem : MonoBehaviour
     //trigger sphere 반경에 들어가면 아이템 자동 pick up
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             if (Item_pick())
             {

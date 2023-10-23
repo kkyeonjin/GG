@@ -29,7 +29,7 @@ public class GoalPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
         {
             if (m_iTop3 < 3)
             {

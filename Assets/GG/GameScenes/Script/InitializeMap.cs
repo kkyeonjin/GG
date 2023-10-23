@@ -8,8 +8,12 @@ public class InitializeMap : MonoBehaviour
     public List<GameObject> StartPoints;
 
     public PhotonView m_PV;
-    public bool Phase2 = false;
 
+    //Phase 1 열차
+    public List<GameObject> trainsInside;
+
+    //Phase 2
+    public bool Phase2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +25,12 @@ public class InitializeMap : MonoBehaviour
         if (PhotonNetwork.IsMasterClient == true)
         {
             int idx = Random.Range(0, StartPoints.Count);
-            Load_LocalPlayer(StartPoints[idx].transform.position);
+            Load_LocalPlayer(StartPoints[idx].transform.position,idx);
             StartPoints.RemoveAt(idx);
+       
             //NetworkManager.Instance.Initialize_Players_InMap(StartPoints);
             Initialize_Players_InMap();
         }
-
     }
 
     public void Initialize_Players_InMap()
@@ -40,7 +44,7 @@ public class InitializeMap : MonoBehaviour
         {
             int idx = Random.Range(0, StartPoints.Count);
 
-            m_PV.RPC("Load_LocalPlayer", Playerlist[i], StartPoints[idx].transform.position);
+            m_PV.RPC("Load_LocalPlayer", Playerlist[i], StartPoints[idx].transform.position,idx);
             StartPoints.RemoveAt(idx);
         }
 
@@ -65,11 +69,15 @@ public class InitializeMap : MonoBehaviour
     }
 
     [PunRPC]
-    void Load_LocalPlayer(Vector3 StartPoint)
+    void Load_LocalPlayer(Vector3 StartPoint,int idx)
     {
         Debug.Log("생성!");
         NetworkManager.Instance.Instantiate_Player(StartPoint);
         GameMgr.Instance.Set_ResumePoint(StartPoint);
+        if (Phase2 == false)
+        {
+            trainsInside[idx].SetActive(true);
+        }
     }
     
 

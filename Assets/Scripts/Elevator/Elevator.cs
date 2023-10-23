@@ -9,7 +9,7 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "player")
         {
             //Debug.Log("Ride");
             isRide = true;
@@ -27,7 +27,7 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "player")
         {
             Debug.Log("off");
             isRide = false;

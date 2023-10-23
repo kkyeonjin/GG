@@ -10,6 +10,7 @@ public class CameraShake : MonoBehaviour
     public CinemachineVirtualCamera VirtualCamera;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
 
+
     // Use this for initialization
     void Start()
     {
@@ -25,7 +26,7 @@ public class CameraShake : MonoBehaviour
         // If the Cinemachine componet is not set, avoid update
         if (VirtualCamera != null && virtualCameraNoise != null)
         {
-            if (Earthquake.isQuake)
+            if (Phase1Mgr.Instance.earthquake.isQuake || Phase2Mgr.Instance.earthquake.isQuake)
             {
                 Debug.Log("camera is shaking");
                 virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;

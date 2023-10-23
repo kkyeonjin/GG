@@ -4,7 +4,7 @@ public class TagChanger : MonoBehaviour
 {
     public void PlayerTagChanger()
     {
-        this.tag = "Player";
+        this.tag = "player";
     }
     public void UntaggedTagChanger()
     {

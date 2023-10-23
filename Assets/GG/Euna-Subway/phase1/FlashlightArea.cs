@@ -14,8 +14,6 @@ public class FlashlightArea : MonoBehaviour
         };
     }
 
-
-
     /*
     private void Update()
     {
@@ -36,21 +34,21 @@ public class FlashlightArea : MonoBehaviour
                         Debug.Log("Pick flashlight");
                         hit.collider.gameObject.SetActive(false);
 
-                        Phase1Manager.clearCondition[1] = true;
+                        Phase1Mgr.clearCondition[1] = true;
                     }
-
                 }
             }
         }
     }
     */
 
+
     private void OnTriggerStay(Collider other)
     {
-        if (Earthquake.isQuake || Earthquake.isQuakeStop)
+        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("player"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -65,7 +63,7 @@ public class FlashlightArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
             closeCam.gameObject.SetActive(false);

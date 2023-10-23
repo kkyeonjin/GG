@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
 
     public GameObject OnHand;
 
+
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -455,13 +456,8 @@ public class Player : MonoBehaviour
 
     public void OrderPotion(float ratio)
     {
-        m_Status.Recover_Order(m_Status.Get_MaxOrder() * ratio);
-        Debug.Log("recover Order : " + m_Status.Get_Order());
-    }
-
-    public float Get_Order()
-    {
-        return m_Status.Get_Order();
+        SubwayInventory.instance.orderGage.Recover_Order(SubwayInventory.instance.orderGage.Get_MaxOrder() * ratio);
+        Debug.Log("recover Order : " + SubwayInventory.instance.orderGage.Get_Order());
     }
 
     public void KnockDown(float ratio)
@@ -480,8 +476,8 @@ public class Player : MonoBehaviour
     /// 아이템 던지기 로직
     /// * Item_aim()
     ///  (1) tab & c로 아이템 선택하면 손에 구체 소환 - SubwayItem.Item_effect();
-    ///  (2) 마우스 좌클릭 누른 상태로 조준 - Player.Item_aim();
-    ///  (3) 마우스 클릭 떼면 투척 - Player.Item_throw();
+    ///  (2) 마우스 좌클릭 누른 상태로 조준 - player.Item_aim();
+    ///  (3) 마우스 클릭 떼면 투척 - player.Item_throw();
     /// </summary>
 
     public float throwForce = 1f;
