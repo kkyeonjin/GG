@@ -19,6 +19,7 @@ public class ItemScan : MonoBehaviour
     public GameObject backbtn;
     public GameObject msgPop;
     public GameObject msg;
+    public GameObject mainCan, hideCan;
 
     [SerializeField]
     float range;
@@ -73,19 +74,10 @@ public class ItemScan : MonoBehaviour
                 {
                     //MainCam.gameObject.SetActive(false);
                     HidingCam.gameObject.SetActive(true);
-                    PuzzleMgr.instance.passedPuzzle[2] = 0;
-                    Invoke("MsgPop", 2.0f);
-                    backbtn.SetActive(true);
-                    msg.SetActive(true);
-
-                    /*
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        HidingCam.gameObject.SetActive(false);
-                        MainCam.gameObject.SetActive(true);
-                        PuzzleMgr.instance.passedPuzzle[2] = false;
-                    }*/
-                    //미션 성공 여부 bool 변수 true로 바꿔주기
+                    mainCan.SetActive(false);
+                    hideCan.SetActive(true);
+                    HidingPuzzle.instance.HidePuzzle();
+                    
                 }
             }
             else if(hitInfo.transform.gameObject.CompareTag("FalseTable"))
@@ -102,16 +94,5 @@ public class ItemScan : MonoBehaviour
             ItemInfo.gameObject.SetActive(false);
             pressE.gameObject.SetActive(false);
         }
-    }
-
-    public void MsgPop()
-    {
-        msgPop.SetActive(true);
-        Invoke("MsgClose", 4.0f);
-    }
-
-    public void MsgClose()
-    {
-        msgPop.SetActive(false);
     }
 }
