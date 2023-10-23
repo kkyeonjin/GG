@@ -88,6 +88,7 @@ public class InfoHandler : MonoBehaviour
         // m_Playerinfo = JsonConvert.DeserializeObject<PlayerInfo>(jsondata);
 
          Debug.Log(m_Playerinfo.Get_Level());
+        Debug.Log(loadJson);
      
     }
     public static void Initizlize_Player(string name)//처음 게임 시작할 때
@@ -103,7 +104,7 @@ public class InfoHandler : MonoBehaviour
         //string jsondata = JsonConvert.SerializeObject(Info);
         //Debug.Log(jsondata);
         //byte[] data = Encoding.UTF8.GetBytes(jsondata);
-        //File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
+        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
         Debug.LogError("Player Info 저장!!!");
     }
     public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴

@@ -17,7 +17,8 @@ public class PlayerInfo
     public bool[] AvailableCharacter;
 
     public int[] ItemsInfo;
-    public bool[,] Manual;
+    public bool[] HouseManual;
+    public bool[] SubwayManual;
 
     public PlayerInfo(bool first)
     {
@@ -37,10 +38,13 @@ public class PlayerInfo
         for (int i = 0; i < (int)StoreItem.ITEM.END; ++i)
             ItemsInfo[i] = 0;
 
-        Manual = new bool[(int)InfoHandler.STAGE.END,(int)InfoHandler.SUBWAY.END];
-        for (int i = 0; i < (int)InfoHandler.STAGE.SUBWAY; ++i)
-            for (int j = 0; j < (int)InfoHandler.SUBWAY.END - 1; ++j)
-                Manual[i, j] = false;
+        HouseManual = new bool[(int)InfoHandler.SUBWAY.END];
+        for (int i = 0; i < (int)InfoHandler.SUBWAY.END -1; ++i)
+            HouseManual[i] = false;
+
+        SubwayManual = new bool[(int)InfoHandler.SUBWAY.END];
+        for (int i = 0; i < (int)InfoHandler.SUBWAY.END - 1; ++i)
+            SubwayManual[i] = false;
 
 
     }
@@ -122,15 +126,23 @@ public class PlayerInfo
     //Manual System
     public void Unlock_Manual(InfoHandler.HOUSE manual)//집 수칙
     {
-        Manual[(int)InfoHandler.STAGE.HOUSE, (int)manual] = true;
+        HouseManual[(int)manual] = true;
     }
     public void Unlock_Manual(InfoHandler.SUBWAY manual)//지하철 수칙
     {
-        Manual[(int)InfoHandler.STAGE.SUBWAY, (int)manual] = true;
+        SubwayManual[(int)manual] = true;
     }
 
     public bool[,] Get_UnlockedManual()
     {
+        bool[,] Manual = new bool[(int)InfoHandler.STAGE.END, (int)InfoHandler.SUBWAY.END];
+
+        for (int i = 0; i < (int)InfoHandler.SUBWAY.END - 1; ++i)
+            Manual[0, i] = HouseManual[i];
+
+        for (int i = 0; i < (int)InfoHandler.SUBWAY.END - 1; ++i)
+            Manual[1, i] = SubwayManual[i];
+
         return Manual;
     }
 }
