@@ -102,6 +102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SubwayTrain (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6976185137561736888, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
 --- !u!4 &4385168914219845319 stripped
@@ -217,6 +222,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6976185137561736888, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7200871945859375138, guid: d6aa52a07f736452bafe2b772224e9ea,
         type: 3}
       propertyPath: m_Center.y
@@ -308,6 +318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SubwayTrain (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6976185137561736888, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
 --- !u!4 &3049823365523450849 stripped
@@ -382,6 +397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SubwayTrain (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976185137561736888, guid: d6aa52a07f736452bafe2b772224e9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6aa52a07f736452bafe2b772224e9ea, type: 3}
