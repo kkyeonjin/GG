@@ -10,6 +10,8 @@ public class StatusUI : MonoBehaviour
 
     public UIEffect m_HPUI;
     public UIEffect m_StaminaUI;
+    public UIEffect m_OrderUI;
+    public bool subway = false;
 
     void Start()
     {
@@ -31,6 +33,14 @@ public class StatusUI : MonoBehaviour
             fRatio = (float)fStamina / (float)fMaxStamina;
 
             m_StaminaUI.Set_Ratio(fRatio);
+
+            if (subway)
+            {
+                int fMaxOrder = (int)m_PlayerStatus.Get_MaxOrder();
+                int fOrder = (int)m_PlayerStatus.Get_Order();
+                float fORatio = (float) fOrder / (float)fMaxOrder;
+                m_HPUI.Set_Ratio(fORatio);
+            }
         }
     }
 }

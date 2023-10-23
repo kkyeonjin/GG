@@ -20,6 +20,10 @@ public class InfoHandler : MonoBehaviour
     private int[] m_SlotIndex;
     private int[,] m_HoldingItem;
 
+    public enum STAGE { HOUSE, SUBWAY, END };
+    public enum HOUSE { TABLE, GAS, FIRE, PACKING, ELEVATOR, END };
+    public enum SUBWAY { COLUMN, TRAINSTOP, BLACKOUT, LEVER, DISTANCE, ELEVATOR, ON_ELEVATOR, ESCAPE, END };
+
     void Awake()
     {
         var duplicated = FindObjectsOfType<InfoHandler>();
@@ -92,14 +96,14 @@ public class InfoHandler : MonoBehaviour
         Info.Set_Name(name);
 
         string json = JsonUtility.ToJson(Info, true);
-
-        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.streamingAssetsPath, "PlayerInfo"), FileMode.Create);
+        Debug.Log(json);
+        //File.CreateText(Application.dataPath + "/PlayerInfo.json");
+        //FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", Application.dataPath, "PlayerInfo"), FileMode.Create);
         //fileStream.Close();
         //string jsondata = JsonConvert.SerializeObject(Info);
         //Debug.Log(jsondata);
         //byte[] data = Encoding.UTF8.GetBytes(jsondata);
-        File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
-
+        //File.WriteAllText(Application.dataPath + "/PlayerInfo.json", json);
         Debug.LogError("Player Info 저장!!!");
     }
     public void Reload_HoldingSlots()//게임 끝나고 미리 장착했던 아이템 다시 불러옴
@@ -251,11 +255,11 @@ public class InfoHandler : MonoBehaviour
         return m_Playerinfo.Get_Item_Num(iIndex);
     }
 
-    public void Unlock_Manual(PlayerInfo.HOUSE manual)//집 수칙
+    public void Unlock_Manual(HOUSE manual)//집 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
     }
-    public void Unlock_Manual(PlayerInfo.SUBWAY manual)//지하철 수칙
+    public void Unlock_Manual(SUBWAY manual)//지하철 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
 

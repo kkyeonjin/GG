@@ -175,7 +175,7 @@ public class MyRoomMgr : MonoBehaviour
 
         string Text = "";
         //House
-        for(int i=0;i<(int)PlayerInfo.HOUSE.END;++i)
+        for(int i=0;i<(int)InfoHandler.HOUSE.END;++i)
         {
             Text += i + ". ";
             if (Manual[0, i] == true)
@@ -190,7 +190,7 @@ public class MyRoomMgr : MonoBehaviour
         }
         HouseManual.text = Text;
         Text = "";
-        for (int i = 0; i < (int)PlayerInfo.SUBWAY.END; ++i)
+        for (int i = 0; i < (int)InfoHandler.SUBWAY.END; ++i)
         {
             Text += i + ". ";
             if (Manual[1, i] == true)

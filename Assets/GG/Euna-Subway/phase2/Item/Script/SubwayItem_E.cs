@@ -6,7 +6,7 @@ public class SubwayItem_E : SubwayItem
 
     private void Awake()
     {
-        this.itemType = SubwayItem.ItemType.ENFORCEMENT;
+        this.itemType = ItemType.ENFORCEMENT;
     }
 
     public override void Item_effect()

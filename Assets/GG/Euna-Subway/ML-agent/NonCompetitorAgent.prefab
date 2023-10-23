@@ -9481,8 +9481,10 @@ MonoBehaviour:
   trainingMode: 1
   _agents: []
   cal_agents: []
-  OnRailBrain: {fileID: 0}
-  OnPlatformBrain: {fileID: 0}
+  OnRailBrain: {fileID: 5022602860645237092, guid: c623d2512dd6e1843901e63ba3f0d17e,
+    type: 3}
+  OnPlatformBrain: {fileID: 5022602860645237092, guid: 41ca2856485b6f549a729037265a020f,
+    type: 3}
 --- !u!114 &2873026823015074307
 MonoBehaviour:
   m_ObjectHideFlags: 0
