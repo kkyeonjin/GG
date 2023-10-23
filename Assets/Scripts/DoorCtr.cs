@@ -7,16 +7,40 @@ public class DoorCtr : MonoBehaviour
     // Start is called before the first frame update
     public Animator Door;
     public bool isOpen = false;
+    public int doorNum; //1: 거실-안방 2: 안방-서재
+    public bool canOpen;
+
 
     public void DoorAnimOn()
     {
-        if(isOpen)
+        DoorCheck();
+        if (canOpen)
         {
-            DoorClose();
+            if (isOpen)
+            {
+                DoorClose();
+            }
+            else
+            {
+                DoorOpen();
+            }
         }
-        else
+    }
+    public void DoorCheck()
+    {
+        if (doorNum == 1)
         {
-            DoorOpen(); 
+            if (PuzzleMgr.instance.passedPuzzle[0] == 0)
+            {
+                canOpen = true;
+            }
+        }
+        else if (doorNum == 2)
+        {
+            if (PuzzleMgr.instance.passedPuzzle[1] == 0)
+            {
+                canOpen = true;
+            }
         }
     }
 
