@@ -13,6 +13,10 @@ public class PuzzleMgr : MonoBehaviour
     public Material[] mat = new Material[2];
     public GameObject manual1, manual2, manual3;
 
+    public GameObject[] ManualImg;
+    private GameObject CurManualImg;
+
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -25,6 +29,8 @@ public class PuzzleMgr : MonoBehaviour
         InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.GAS);
         manual1.SetActive(true);
         Invoke("Manual1Close", 2f);
+
+        Active_ManualUI((int)InfoHandler.HOUSE.GAS);
     }
 
     public void Manual1Close()
@@ -37,6 +43,9 @@ public class PuzzleMgr : MonoBehaviour
         InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.PACKING);
         manual2.SetActive(true);
         Invoke("Manual2Close", 2f);
+
+        Active_ManualUI((int)InfoHandler.HOUSE.PACKING);
+
     }
 
     public void Manual2Close()
@@ -49,6 +58,9 @@ public class PuzzleMgr : MonoBehaviour
         InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.TABLE);
         Invoke("Manual3Open", 1f);
         Invoke("Manual3Close", 2f);
+
+        Active_ManualUI((int)InfoHandler.HOUSE.TABLE);
+
     }
 
     public void Manual3Open()
@@ -81,5 +93,18 @@ public class PuzzleMgr : MonoBehaviour
             book.SetActive(false);
             passedPuzzle[0] = 1;
         }
+    }
+    
+    void Active_ManualUI(int idx)
+    {
+        CurManualImg = ManualImg[idx];
+        CurManualImg.SetActive(true);
+
+        Invoke("DeAvtivate_ManualUI", 3f);
+    }
+
+    void DeAvtivate_ManualUI()
+    {
+        CurManualImg.SetActive(false);
     }
 }
