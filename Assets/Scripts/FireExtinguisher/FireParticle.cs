@@ -23,7 +23,7 @@ public class FireParticle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(10);
         }

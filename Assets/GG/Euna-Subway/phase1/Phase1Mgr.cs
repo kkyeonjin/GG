@@ -62,6 +62,7 @@ public class Phase1Mgr : MonoBehaviour
         {
             //게임 종료 후 대기 
             Debug.Log("Clear!");
+
         }
     }
 
