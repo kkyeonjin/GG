@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeverBar : MonoBehaviour
 {
     private int clickCount = 0;
-    public const float rotOffset = 3;
+    public const float rotOffset = 10;
     private const float clearCount = 90 / rotOffset;
 
     private float leverXRot;
@@ -42,6 +42,7 @@ public class LeverBar : MonoBehaviour
             leverClear = true;
             Phase1Mgr.Instance.clearCondition[2] = true;
             Debug.Log(Phase1Mgr.Instance.clearCondition[2]);
+            this.gameObject.GetComponentInParent<EmergencyLever>().doorOpen();
         }
     }
            

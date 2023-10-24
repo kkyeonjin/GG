@@ -8,7 +8,7 @@ public class OrderGage : MonoBehaviour
     public PhotonView m_PV;
 
     public float m_fMaxOrder = 100;
-    public float m_fCOrder = 10;
+    public float m_fCOrder = 3;
     private float m_fOrder;
 
     public float Get_Order()
@@ -35,11 +35,13 @@ public class OrderGage : MonoBehaviour
 
     public void Cut_Order() //HoldingBar 관련
     {
-        m_fOrder -= m_fCOrder * Time.deltaTime;
+        m_fOrder = Mathf.Max(0f, m_fOrder - m_fCOrder * Time.deltaTime);
+        /*
         if(m_fOrder <= 0f)
         {
             Phase1Mgr.Instance.clearCondition[0] = false;
         }
+        */
     }
 
     public void Set_Order() //Emergency Lever 관련 -> 실패 시 1/4 로 Set 

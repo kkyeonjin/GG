@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
+    public float quakeStartTime = 6f;
+    public float quakeStopTime = 13f;
+
     public static Phase1Mgr m_Instance = null;
     public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
@@ -14,11 +18,16 @@ public class Phase1Mgr : MonoBehaviour
     public GameObject Train1;
     public GameObject Train2;
 
+    //지진
     public Earthquake earthquake;
 
     //대응 수칙
     public GameObject PopUpScreen;
     public List<GameObject> PopUps = new List<GameObject>();
+    public GameObject currentPopup;
+
+    public PhotonView m_PV;
+    private bool m_bNextPhase = true;
 
     //phase별 랜덤 지진 이벤트 관리
 
@@ -53,34 +62,40 @@ public class Phase1Mgr : MonoBehaviour
 
     private void Update()
     {
-
         if (InGameUIMgr.Instance.m_bGoalCountDown)
         {
             Debug.Log("Goal Count Down!");
         }
-        if (AllClear)
+        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
         {
             //게임 종료 후 대기 
+            
+            if (m_bNextPhase)
+            {
+                m_PV.RPC("Start_NextPhase", RpcTarget.All);
+                m_bNextPhase = false;
+            }
             Debug.Log("Clear!");
         }
+        Debug.Log("clear 0 1 2 : " + clearCondition[0] + clearCondition[1] + clearCondition[2]);
     }
 
-    void Check_Column()
+    public void Check_Column()
     {
-        if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
-        {
+        //if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
+        //{
             Debug.Log("Column 해금");
             //마이룸 수칙 해금
             InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             //UI 이펙트
             PopUp(PopUps[0]);
-        }
-        else
-        {
+        //}
+        //else
+        //{
             //Game Over
-            GameMgr.Instance.Game_Over();
-            Debug.Log("Order Gage run out");
-        }
+            //GameMgr.Instance.Game_Over();
+            //Debug.Log("Order Gage run out");
+        //}
     }
 
     public GameObject B2;
@@ -91,31 +106,36 @@ public class Phase1Mgr : MonoBehaviour
     }
 
     IEnumerator generateQuake() {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(quakeStartTime);
 
         //재난 문자 알림음
         earthquake.isQuake = true;
         Debug.Log("isQuake" + earthquake.isQuake);
-        B2.GetComponent<Earthquake>().t1 = Train1.transform;
-        B2.GetComponent<Earthquake>().t2 = Train2.transform;
+        //B2.GetComponent<Earthquake>().t1 = Train1.transform;
+        //B2.GetComponent<Earthquake>().t2 = Train2.transform;
     }
 
     IEnumerator stopQuake()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(quakeStopTime);
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
-        Check_Column();
+        //Check_Column();
+
+        PopUp(PopUps[1]);
     }
 
-    IEnumerator PopUp(GameObject popup)
+    public void PopUp(GameObject popup)
     {
+        currentPopup = popup;
         popup.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        popup.SetActive(false);
+        Invoke("dePopUp", 3f);
     }
 
-
+    public void dePopUp() 
+    {
+        currentPopup.SetActive(false);
+    }
 
     //싱글톤 
     public static Phase1Mgr Instance
@@ -150,5 +170,11 @@ public class Phase1Mgr : MonoBehaviour
         {
             PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
         }
+    }
+
+    [PunRPC]
+    void Start_NextPhase()
+    {
+        NetworkManager.Instance.StartGame("Multi_Subway_Phase2");
     }
 }

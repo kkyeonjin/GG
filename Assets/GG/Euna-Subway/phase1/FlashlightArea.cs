@@ -48,12 +48,16 @@ public class FlashlightArea : MonoBehaviour
         if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
-            if (other.CompareTag("player"))
+            if (other.CompareTag("Player"))
             {
+                Debug.Log("Player In FlashLight Area");
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //카메라 전환 (PlayerCam -> closeCam)
+                    GameMgr.Instance.FollowCamera.gameObject.SetActive(false);
                     closeCam.gameObject.SetActive(true);
+                    
                     flashCamActivated = true;
                     Debug.Log("flash cam activated");
                 }
@@ -63,10 +67,12 @@ public class FlashlightArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
+
             closeCam.gameObject.SetActive(false);
+            GameMgr.Instance.FollowCamera.gameObject.SetActive(true);
             flashCamActivated = false;
             Debug.Log("flash cam deactivated");
 

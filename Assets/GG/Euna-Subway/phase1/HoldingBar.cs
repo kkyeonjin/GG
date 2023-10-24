@@ -19,23 +19,26 @@ public class HoldingBar : MonoBehaviour
     private void holdBar()
     {
         if (!isInRange) return;
-        else if (Input.GetKey(KeyCode.R)) 
+        else if (Input.GetKeyDown(KeyCode.R)) 
         {
             Phase1Mgr.Instance.isHoldingBar = true;
             isHolding = true;
             Debug.Log("holding bar");
+            player.SetAnimation("Holding", isHolding);
+            Phase1Mgr.Instance.Check_Column();
         }
-        else
+        else if(Input.GetKeyUp(KeyCode.R))
         {
             Phase1Mgr.Instance.isHoldingBar = false;
             isHolding = false;
+            player.SetAnimation("Holding", isHolding);
         }
     }
 
     private void Update()
     {        
         holdBar();
-        player.GetComponentInChildren<Animator>().SetBool("Holding", isHolding);
+        
 
         if (Phase1Mgr.Instance.earthquake.isQuake)
         {
@@ -43,7 +46,7 @@ public class HoldingBar : MonoBehaviour
             if (!isHolding)
             {
                 SubwayInventory.instance.orderGage.Cut_Order();
-                Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
+                //Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
             }
         }
 
@@ -84,7 +87,7 @@ public class HoldingBar : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
             Debug.Log("out of Range");

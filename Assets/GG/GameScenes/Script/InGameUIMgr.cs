@@ -29,7 +29,7 @@ public class InGameUIMgr : MonoBehaviour
 
     //Phase 제한 시간 타이머
     public TextMeshProUGUI GeneralTimer;
-    public int iGeneralTimerMin = 2;
+    public int iGeneralTimerMin = 1;
     public int iGeneralTimerSec = 0;
 
     //최초 플레이어 골인 후 타이머

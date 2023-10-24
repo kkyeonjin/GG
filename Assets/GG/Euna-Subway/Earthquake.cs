@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Earthquake : MonoBehaviour
 {
-    public bool isQuakeTest = true;
+    public bool isQuakeTest = false;
 
     public bool isQuake = false;
     public bool isQuakeStop = false;
@@ -23,8 +23,8 @@ public class Earthquake : MonoBehaviour
 
     public static Vector3 moveVecR_q;
 
-    public Transform t1;
-    public Transform t2;
+    //public Transform t1;
+    //public Transform t2;
 
     private void Awake()
     {
@@ -37,33 +37,20 @@ public class Earthquake : MonoBehaviour
         magnitude = Random.Range(1, 8);
         
         //phase2 테스트용 추후 isQuake static 수정
-        isQuake = true;
+        //isQuake = true;
         Debug.Log(magnitude);
     }
 
     void FixedUpdate()
     {
-        if (isQuakeTest) isQuake = true; else isQuake = false;
+        //if (isQuakeTest) isQuake = true; else isQuake = false;
 
         if (isQuake)
         {
-            eachQuake(t1);
-            eachQuake(t2);
-        }
-    }
-
-    public void switchQuake()
-    {
-        //지진 발생
-        if(!isQuake && !isQuakeStop)
-        {
-            isQuake = true;
-        }
-        //지진 중단
-        else if(isQuake && !isQuakeStop)
-        {
-            isQuake = false;
-            isQuakeStop = true;
+            Debug.Log("quake!");
+            //eachQuake(t1);
+            //eachQuake(t2);
+            quake();
         }
     }
 
