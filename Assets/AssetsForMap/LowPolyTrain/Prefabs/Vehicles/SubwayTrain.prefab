@@ -17578,7 +17578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3932013714869868377
 Transform:
   m_ObjectHideFlags: 0
@@ -17587,7 +17587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641657245711625214}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.12799978, y: 0, z: 1.0750008}
+  m_LocalPosition: {x: 0.12799978, y: 0.017, z: 0.536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35659,8 +35659,6 @@ MonoBehaviour:
   isQuakeStop: 0
   magnitude: 5
   slowDownFactor: 0.1
-  t1: {fileID: 0}
-  t2: {fileID: 0}
 --- !u!1 &7208853905680262133
 GameObject:
   m_ObjectHideFlags: 0
@@ -36671,7 +36669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7371270637920555215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36689,8 +36687,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7596969, y: 0.57392114, z: 0.45007733}
-  m_Center: {x: 0.062465664, y: -0.17651886, z: 0.20273219}
+  m_Size: {x: 0.6864357, y: 0.5739212, z: 0.7477379}
+  m_Center: {x: 0.0990963, y: -0.17651886, z: 0.3515625}
 --- !u!1 &7381309547680509266
 GameObject:
   m_ObjectHideFlags: 0
@@ -45521,6 +45519,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 310837681746288961}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1091113008696747892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 310837681746288961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &450089637871031729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45977,6 +45981,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a31ab2c17cf41e9a94cd2310c9c885, type: 3}
+--- !u!1 &1858047475377608776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 1350276060383010429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1858047475377898600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
@@ -46162,6 +46172,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a31ab2c17cf41e9a94cd2310c9c885, type: 3}
+--- !u!1 &1791892834296640693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 1416995268472599168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1791892834296932501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
@@ -46620,6 +46636,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 9182144993574902436}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 1091113008696747892}
     - target: {fileID: 7054535751824690753, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: m_RootOrder
@@ -46886,6 +46912,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 4464207709865537910}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 6235791134148636067}
     - target: {fileID: 6157364577476445624, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: leftDoor
@@ -46981,6 +47017,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 1791892834296640693}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 6208444322136091830}
     - target: {fileID: 7054535751824690753, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: m_RootOrder
@@ -47338,6 +47384,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a31ab2c17cf41e9a94cd2310c9c885, type: 3}
+--- !u!1 &3183998769137072166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 2836122878659034643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3183998769137296390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
@@ -47551,6 +47603,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 6952364511343992807}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 8133209121167194694}
     - target: {fileID: 6157364577476445624, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: leftDoor
@@ -47891,7 +47953,7 @@ PrefabInstance:
     - target: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
         type: 3}
@@ -47911,7 +47973,7 @@ PrefabInstance:
     - target: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.662391
+      value: 4.6623898
       objectReference: {fileID: 0}
     - target: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
         type: 3}
@@ -47984,6 +48046,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 3183998769137072166}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 1858047475377608776}
     - target: {fileID: 7054535751824690753, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: m_RootOrder
@@ -49176,6 +49248,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a31ab2c17cf41e9a94cd2310c9c885, type: 3}
+--- !u!1 &6306657113032101771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 6697283119468136894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6306657113032594347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
@@ -49262,6 +49340,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6727344359705666727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6208331610029138578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 6727344359705666727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6727510938549758595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49339,6 +49423,12 @@ PrefabInstance:
 --- !u!4 &6208444322135797910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 6727510938549758595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6208444322136091830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
     type: 3}
   m_PrefabInstance: {fileID: 6727510938549758595}
   m_PrefabAsset: {fileID: 0}
@@ -49828,6 +49918,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a31ab2c17cf41e9a94cd2310c9c885, type: 3}
+--- !u!1 &9182144993574902436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825347001593251381, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
+    type: 3}
+  m_PrefabInstance: {fileID: 8365911852597615761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9182144993575192196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825347001592961557, guid: 48a31ab2c17cf41e9a94cd2310c9c885,
@@ -49846,6 +49942,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emergency Lever (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 6306657113032101771}
+    - target: {fileID: 5441650288576090297, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
+        type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 6208331610029138578}
     - target: {fileID: 6157364577476445624, guid: 10d4901e20db94f4a9ba4f2c3e3e9963,
         type: 3}
       propertyPath: leftDoor

@@ -72,7 +72,7 @@ public class EmergencyLever : MonoBehaviour
         
     }
 
-    void doorOpen()
+    public void doorOpen()
     {
 
         leftDoor.transform.localPosition += new Vector3(0f, 0f, doorOffset);

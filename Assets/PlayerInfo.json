@@ -1,26 +1,26 @@
 {
     "Name": "hihi",
     "Level": 1,
-    "Exp": 0,
+    "Exp": 47,
     "ExpMax": 150,
-    "Money": 0,
+    "Money": 300,
     "CurrCharacter": 0,
     "AvailableCharacter": [
+        true,
         true,
         false,
         false,
         false,
         false,
+        true,
         false,
-        false,
-        false,
-        false
+        true
     ],
     "ItemsInfo": [
+        1,
         0,
-        0,
-        0,
-        0,
+        1,
+        1,
         0
     ],
     "HouseManual": [
@@ -34,7 +34,7 @@
         false
     ],
     "SubwayManual": [
-        false,
+        true,
         false,
         false,
         false,

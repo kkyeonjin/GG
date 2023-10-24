@@ -25,6 +25,7 @@ public class HoldingBar : MonoBehaviour
             isHolding = true;
             Debug.Log("holding bar");
             player.SetAnimation("Holding", isHolding);
+            Phase1Mgr.Instance.Check_Column();
         }
         else if(Input.GetKeyUp(KeyCode.R))
         {
@@ -45,7 +46,7 @@ public class HoldingBar : MonoBehaviour
             if (!isHolding)
             {
                 SubwayInventory.instance.orderGage.Cut_Order();
-                Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
+                //Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
             }
         }
 

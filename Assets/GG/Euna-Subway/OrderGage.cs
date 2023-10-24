@@ -35,11 +35,13 @@ public class OrderGage : MonoBehaviour
 
     public void Cut_Order() //HoldingBar 관련
     {
-        m_fOrder -= m_fCOrder * Time.deltaTime;
+        m_fOrder = Mathf.Max(0f, m_fOrder - m_fCOrder * Time.deltaTime);
+        /*
         if(m_fOrder <= 0f)
         {
             Phase1Mgr.Instance.clearCondition[0] = false;
         }
+        */
     }
 
     public void Set_Order() //Emergency Lever 관련 -> 실패 시 1/4 로 Set 
