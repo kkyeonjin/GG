@@ -6,7 +6,7 @@ using Photon.Pun;
 public class Phase1Mgr : MonoBehaviour
 {
     public float quakeStartTime = 6f;
-    public float quakeStopTime = 13f;
+    public float quakeStopTime = 20f;
 
     public static Phase1Mgr m_Instance = null;
     public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
@@ -117,6 +117,7 @@ public class Phase1Mgr : MonoBehaviour
 
     IEnumerator stopQuake()
     {
+        Debug.Log("Quake stop");
         yield return new WaitForSeconds(quakeStopTime);
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
