@@ -14,6 +14,7 @@ public class MazeDFS : MonoBehaviour
     public int startPos = 0;
     public GameObject[] space;
     public Vector2 offset;
+    public int height;
     public List<SpaceState> rooms;
     public List<SpaceState> roomsForElev;
 
@@ -37,7 +38,7 @@ public class MazeDFS : MonoBehaviour
                 if(currentCell.visited)
                 {
                     int randomRoom = Random.Range(0, space.Length);
-                    var newRoom = Instantiate(space[randomRoom], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<SpaceState>();
+                    var newRoom = Instantiate(space[randomRoom], new Vector3(i * offset.x, height, -j * offset.y), Quaternion.identity, transform).GetComponent<SpaceState>();
                     newRoom.UpdateRoom(currentCell.status);
 
                     newRoom.name += " " + i + " - " + j;
@@ -45,11 +46,18 @@ public class MazeDFS : MonoBehaviour
                     if(i == 0 && j == 0)
                     {
                         newRoom.walls[0].SetActive(false);
+                        if(height == -10 || height == -30)
+                        {
+                            newRoom.endPoint.SetActive(true);
+                        }
                     }
                     else if(i == 6 && j == 6)
                     {
                         newRoom.walls[1].SetActive(false);
-                        newRoom.endPoint.SetActive(true);
+                        if(height == 0 || height == -20)
+                        {
+                            newRoom.endPoint.SetActive(true);
+                        }
                     }
 
                     rooms.Add(newRoom);
