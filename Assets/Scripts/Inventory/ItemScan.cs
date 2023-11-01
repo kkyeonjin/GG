@@ -88,6 +88,14 @@ public class ItemScan : MonoBehaviour
                     //숨는 애니메이션
                 }
             }
+            else if(hitInfo.transform.gameObject.CompareTag("Puzzle"))
+            {
+                pressE.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<CanvasChange>().PuzzleOn();
+                }
+            }
         }
         else
         {

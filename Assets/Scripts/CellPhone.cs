@@ -7,6 +7,11 @@ public class CellPhone : MonoBehaviour
 {
     public GameObject cellphone;
 
+    private void Update()
+    {
+        PhoneKey();
+    }
+
     public void Click()
     {
         if(cellphone.activeSelf)
@@ -16,6 +21,21 @@ public class CellPhone : MonoBehaviour
         else
         {
             cellphone.SetActive(true);
+        }
+    }
+
+    public void PhoneKey()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(cellphone.activeSelf)
+            {
+                cellphone.SetActive(false);
+            }
+            else
+            {
+                cellphone.SetActive(true);
+            }
         }
     }
 }

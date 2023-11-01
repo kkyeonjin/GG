@@ -32,6 +32,7 @@ TagManager:
   - FollowCamera
   - Lever
   - Platform
+  - Puzzle
   layers:
   - Default
   - TransparentFX

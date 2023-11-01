@@ -19,7 +19,7 @@ public class CanvasChange : MonoBehaviour
         
     }
 
-    public void OnMouseDown()
+    public void PuzzleOn()
     {
         canvasOn = !canvasOn;
         canvasCamera.SetActive(canvasOn);
