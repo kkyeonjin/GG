@@ -294,6 +294,7 @@ public class GameMgr : MonoBehaviour
             if (m_ItemSlot[0].Is_Usable())
             {
                 m_ItemSlot[0].Use_Item();
+                InfoHandler.Instance.Use_HoldingItem(m_ItemSlot[0].Get_ItemIndex());
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -301,6 +302,7 @@ public class GameMgr : MonoBehaviour
             if (m_ItemSlot[1].Is_Usable())
             {
                 m_ItemSlot[1].Use_Item();
+                InfoHandler.Instance.Use_HoldingItem(m_ItemSlot[1].Get_ItemIndex());
             }
         }
 

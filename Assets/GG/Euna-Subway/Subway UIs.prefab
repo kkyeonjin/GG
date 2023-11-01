@@ -3308,7 +3308,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
-  m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
+  m_MaskingImage: {fileID: 21300000, guid: 87d26de8382bba745b33791c230b933b, type: 3}
   ActivateParticle: {fileID: 5704723614193375354}
   m_IconImage: {fileID: 5704723612768546816}
   m_bInstantiateMaterial: 1
@@ -12185,7 +12185,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_fRatioDest: 0
   m_fRatioSour: 1
-  m_MaskingImage: {fileID: 21300000, guid: e0947012cb3ee74429108de67fba0718, type: 3}
+  m_MaskingImage: {fileID: 21300000, guid: 87d26de8382bba745b33791c230b933b, type: 3}
   ActivateParticle: {fileID: 5704723613210458432}
   m_IconImage: {fileID: 5704723614163325686}
   m_bInstantiateMaterial: 1

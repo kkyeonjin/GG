@@ -35,12 +35,10 @@ public class StoreItem_Invincible : StoreItem
                 GameMgr.Instance.m_LocalPlayer.Invincible(false);
                 m_bActivate = false;
                 StartUpdate_Cooltime();
+                Debug.LogError("Duration ³¡");
             } 
         }
-        else 
-        { 
-            base.Update();
-        }
+        
     }
 
     public override void Use_Item()

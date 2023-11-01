@@ -72,7 +72,7 @@ public class StoreItem : MonoBehaviour
             return;
 
         m_bUsable = false;
-        //m_Effect.Item_effect();
+        m_Effect.Use_Item();
     }
 
     public virtual void On_Item()

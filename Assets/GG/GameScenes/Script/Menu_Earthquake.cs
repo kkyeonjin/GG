@@ -114,8 +114,8 @@ public class Menu_Earthquake : MonoBehaviour
         {
             int random = Random.Range(1, 9);
             LitIntensity1 = random % 3 == 0 ? 0f : 2f;
-            random = Random.Range(1, 9);
-            LitIntensity2 = random % 3 == 0 ? 0f : 2f;
+            //random = Random.Range(1, 9);
+            //LitIntensity2 = random % 3 == 0 ? 0f : 2f;
 
             Timer = 0f;
 
@@ -129,7 +129,7 @@ public class Menu_Earthquake : MonoBehaviour
             }
         }
         ControlLights[0].intensity = Mathf.Lerp(ControlLights[0].intensity, LitIntensity1 ,0.3f);
-        ControlLights[1].intensity = Mathf.Lerp(ControlLights[1].intensity, LitIntensity2, 0.3f);
+        //ControlLights[1].intensity = Mathf.Lerp(ControlLights[1].intensity, LitIntensity2, 0.3f);
 
     }
 
