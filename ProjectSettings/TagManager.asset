@@ -32,6 +32,7 @@ TagManager:
   - FollowCamera
   - Lever
   - Platform
+  - Puzzle
   layers:
   - Default
   - TransparentFX
@@ -54,7 +55,7 @@ TagManager:
   - Scannable
   - Falling
   - AI
-  - 
+  - Ground
   - 
   - 
   - 

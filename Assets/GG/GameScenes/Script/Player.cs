@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
     public GameObject OnHand;
 
 
+    //싱글모드 경사로
+    private RaycastHit slopeHit;
+    private int groundlayer;
+    private float maxSlopeAngle = 45f;
     void Start()
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
@@ -71,7 +75,8 @@ public class Player : MonoBehaviour
         else
         {
             m_Animator = GetComponentInChildren<Animator>();
-            m_Moving = new MoveFunc(Move);
+            m_Moving = new MoveFunc(Move_SingleMode);
+            groundlayer = 1 << LayerMask.NameToLayer("Ground");
         }
 
     }
@@ -188,6 +193,27 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    private void Move_SingleMode()
+    {
+        Move();
+        if (IsOnSlope())
+        {
+
+        }
+    }
+
+    private bool IsOnSlope()
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if(Physics.Raycast(ray, out slopeHit, 1f, groundlayer))
+        {
+            var angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle != 0f && angle < maxSlopeAngle;
+        }
+        return false;
+    }
+
     private void Move()
     {
         m_fTotalSpeed = 0f;
@@ -204,7 +230,12 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
 
-            if(m_bIsThrow) Item_aim();
+            bool isOnslope = IsOnSlope();
+            Vector3 gravity = isOnslope ? Vector3.zero : Physics.gravity;
+            m_Rigidbody.velocity = (isOnslope ? Vector3.ProjectOnPlane(m_vMoveVec, slopeHit.normal).normalized : m_vMoveVec) * m_fTotalSpeed + gravity;
+                
+
+            if (m_bIsThrow) Item_aim();
 
             //PushLever();
             //Picking_Up();

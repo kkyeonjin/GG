@@ -123,6 +123,9 @@ public class Phase1Mgr : MonoBehaviour
         earthquake.isQuakeStop = true;
         //Check_Column();
 
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.TRAINSTOP);
+
+
         PopUp(PopUps[1]);
     }
 

@@ -117,7 +117,7 @@ public class InfoHandler : MonoBehaviour
         {
             if (m_SlotIndex[i] > -1)
             {
-                if (Get_Item_Num(m_HoldingItem[i, 0]) != (int)StoreItem.ITEM.END)
+                if (Get_Item_Num(m_HoldingItem[i, 0]) > 0)
                 {
                     m_HoldingItemUI[i].Set_Image(Get_ItemIcon(m_HoldingItem[i, 0]));
                     m_HoldingItemUI[i].Have_Items(true);
@@ -155,8 +155,11 @@ public class InfoHandler : MonoBehaviour
             if (m_HoldingItem[i, 0] == (int)StoreItem.ITEM.END)
             {
                 m_HoldingItem[i, 0] = iInput.Get_Index();//아이템 타입 enum저장
+                m_HoldingItem[i, 1] = 1;//아이템 타입 enum저장
+
                 m_HoldingItemUI[i].Set_Image(iInput.Get_Image());
                 m_HoldingItemUI[i].Have_Items(true);
+                
                 m_SlotIndex[i] = iInput.Get_SlotIndex();
                 //개수 설정
                 return true;
@@ -185,6 +188,11 @@ public class InfoHandler : MonoBehaviour
         m_SlotIndex[1] = -1;
     }
 
+    public void Use_HoldingItem(int iIndex)
+    {
+        m_Playerinfo.Use_Item(iIndex);
+        Save_Info();
+    }
     public int[,] Get_HoldingItem()
     {
         return m_HoldingItem;
@@ -263,10 +271,12 @@ public class InfoHandler : MonoBehaviour
     public void Unlock_Manual(HOUSE manual)//집 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
+        Save_Info();
     }
     public void Unlock_Manual(SUBWAY manual)//지하철 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
+        Save_Info();
 
     }
     public bool[,] Get_UnlockedManual()

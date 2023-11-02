@@ -2002,7 +2002,7 @@ GameObject:
   - component: {fileID: 7166381844495734664}
   - component: {fileID: 7166381844495734671}
   - component: {fileID: 7166381844495734670}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}

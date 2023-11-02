@@ -3208,7 +3208,10 @@ MonoBehaviour:
   m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 0}
+  m_bIsThrow: 0
   m_CameraTransform: {fileID: 6994683440620249578}
+  OnHand: {fileID: 0}
+  throwForce: 1
 --- !u!136 &802668056538480364
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18110,7 +18113,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5021770285775706724}
   - component: {fileID: 5021770285775706722}
-  - component: {fileID: 5021770285775706749}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -18165,28 +18167,6 @@ MonoBehaviour:
   m_Avatar9: {fileID: 7677921559441721672}
   m_PV: {fileID: 0}
   m_OwnPlayer: {fileID: 802668056538480365}
---- !u!114 &5021770285775706749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021770285775706727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &5039959323992802857
 GameObject:
   m_ObjectHideFlags: 0

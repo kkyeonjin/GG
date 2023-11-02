@@ -17,6 +17,7 @@ public class PlayerInfo
     public bool[] AvailableCharacter;
 
     public int[] ItemsInfo;
+
     public bool[] HouseManual;
     public bool[] SubwayManual;
 
@@ -117,7 +118,10 @@ public class PlayerInfo
     {
         ItemsInfo[iIndex] += iNum;
     }
-
+    public void Use_Item(int iIndex)
+    {
+        ItemsInfo[iIndex] -= 1;
+    }
     public int Get_Item_Num(int iIndex)
     {
         return ItemsInfo[iIndex];
