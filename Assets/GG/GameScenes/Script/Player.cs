@@ -255,7 +255,7 @@ public class Player : MonoBehaviour
                 m_Animator.SetBool("IsJump", m_bIsJump);
                 m_Animator.SetTrigger("Jump");
                 m_Animator.SetBool("IsGround", m_bIsGround);
-                //m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
+                m_Rigidbody.AddForce(Vector3.up * m_fJumpScale, ForceMode.Impulse);
                 m_fJumpForce = m_fJumpScale;
             }
         }
@@ -493,7 +493,7 @@ public class Player : MonoBehaviour
         /// Raycast 조준 (마우스 클릭으로 투척 벡터 설정)
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
-        float rayLength = 500f;
+        float rayLength = 50f;
         //int floorMask = LayerMask.GetMask("Ground");
         Vector3 throwAngle;
 
