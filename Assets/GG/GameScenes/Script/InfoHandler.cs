@@ -271,10 +271,12 @@ public class InfoHandler : MonoBehaviour
     public void Unlock_Manual(HOUSE manual)//집 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
+        Save_Info();
     }
     public void Unlock_Manual(SUBWAY manual)//지하철 수칙
     {
         m_Playerinfo.Unlock_Manual(manual);
+        Save_Info();
 
     }
     public bool[,] Get_UnlockedManual()
