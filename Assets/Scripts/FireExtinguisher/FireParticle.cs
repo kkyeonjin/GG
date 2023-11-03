@@ -20,12 +20,4 @@ public class FireParticle : MonoBehaviour
             this.gameObject.GetComponent<Collider>().enabled = false;
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(10);
-        }
-    }
 }

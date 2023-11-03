@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FireCollider : MonoBehaviour
 {
-    ParticleSystem fire;
-    // Start is called before the first frame update
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        fire = this.gameObject.GetComponentInChildren<ParticleSystem>();
+        if(other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(5);
+        }
     }
 }
