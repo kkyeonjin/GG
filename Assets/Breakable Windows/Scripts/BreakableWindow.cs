@@ -236,6 +236,7 @@ public class BreakableWindow : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+        /*
         if (useCollision == true)
         {
             if (health > 0)
@@ -248,6 +249,7 @@ public class BreakableWindow : MonoBehaviour {
                 }
             }
             else breakWindow();
-        }        
+        }
+        */
     }
 }
