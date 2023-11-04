@@ -1602,6 +1602,65 @@ Transform:
   m_Father: {fileID: 7166381844882111677}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6085320893065360040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4078077171758789933}
+  - component: {fileID: 9098790113182680933}
+  - component: {fileID: 8975186958806228709}
+  m_Layer: 0
+  m_Name: MapChangePoint
+  m_TagString: MapChangePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4078077171758789933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085320893065360040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8, y: -0.8201612, z: -1.06}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7166381844882111677}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9098790113182680933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085320893065360040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.280669, y: 1, z: 5.354794}
+  m_Center: {x: -0.3224883, y: 0, z: 0.82100797}
+--- !u!114 &8975186958806228709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085320893065360040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e10fcdcdc9a6a458b25d0ac387a2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor: 0
 --- !u!1 &6312780600114464040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,6 +2197,7 @@ Transform:
   - {fileID: 2244238938607151681}
   - {fileID: 4731951896980340439}
   - {fileID: 60454536777951141}
+  - {fileID: 4078077171758789933}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2164,6 +2224,7 @@ MonoBehaviour:
   - {fileID: 2670624076615255095}
   - {fileID: 4457371009486230740}
   endPoint: {fileID: 8957447450620952634}
+  mapChangePoint: {fileID: 6085320893065360040}
   wallCount: 0
 --- !u!1 &7166381844954273273
 GameObject:

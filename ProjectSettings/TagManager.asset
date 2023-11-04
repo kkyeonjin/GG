@@ -33,6 +33,7 @@ TagManager:
   - Lever
   - Platform
   - Puzzle
+  - MapChangePoint
   layers:
   - Default
   - TransparentFX
