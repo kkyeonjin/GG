@@ -5,8 +5,12 @@ using UnityEngine;
 public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
-    //public int remainder = 40; 
 
+    private void Awake()
+    {
+        FireParticle = GameObject.Find("SingleOrigin").transform.GetChild(2).transform.GetChild(0).gameObject;
+        //public int remainder = 40; 
+    }
     public void Jet()
     {
         FireParticle.SetActive(true);

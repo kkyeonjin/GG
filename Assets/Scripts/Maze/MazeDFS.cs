@@ -25,6 +25,7 @@ public class MazeDFS : MonoBehaviour
     {
         MazeGenerator();
         ElevatorSet();
+        FireExSet();
     }
 
     void GenerateDungeon()
@@ -114,6 +115,12 @@ public class MazeDFS : MonoBehaviour
 
     }
 
+    void FireExSet()
+    {
+        int select = Random.Range(4, rooms.Count);
+        //Debug.Log(select);
+        rooms[select].fireEx.SetActive(true);
+    }
     void MazeGenerator()
     {
         board = new List<Cell>();

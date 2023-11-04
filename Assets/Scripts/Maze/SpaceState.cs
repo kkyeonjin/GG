@@ -8,6 +8,7 @@ public class SpaceState : MonoBehaviour
     public GameObject[] eleDoors;
     public GameObject endPoint;
     public GameObject mapChangePoint;
+    public GameObject fireEx;
     public int wallCount = 0;
 
     
