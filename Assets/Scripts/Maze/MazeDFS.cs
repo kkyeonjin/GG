@@ -85,7 +85,7 @@ public class MazeDFS : MonoBehaviour
         }
 
         int select = Random.Range(4, roomsForElev.Count);
-        Debug.Log(select);
+        //Debug.Log(select);
         roomsForElev[select].DoorUpdate();
       //rooms[select].DoorUpdate();
 

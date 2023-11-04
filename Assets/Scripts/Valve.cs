@@ -24,6 +24,7 @@ public class Valve : MonoBehaviour
     public void OnMouseDown()
     {
         Spin();
+        PuzzleMgr.instance.SwitchLight();
     }
 
     public void Spin()

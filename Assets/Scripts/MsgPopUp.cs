@@ -20,6 +20,7 @@ public class MsgPopUp : MonoBehaviour
     public void MsgPop()
     {
         msgPop.SetActive(true);
+        PuzzleMgr.instance.TimerStart();
         Invoke("MsgClose", 4.0f);
     }
 

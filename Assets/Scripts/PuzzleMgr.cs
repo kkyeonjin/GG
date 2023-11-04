@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class PuzzleMgr : MonoBehaviour
 {
@@ -16,6 +19,10 @@ public class PuzzleMgr : MonoBehaviour
     public GameObject[] ManualImg;
     private GameObject CurManualImg;
 
+    public float time;
+    private float curTime;
+    public TMP_Text timeText;
+    private float minute, second;
 
     private void Awake()
     {
@@ -73,7 +80,7 @@ public class PuzzleMgr : MonoBehaviour
         manual3.SetActive(false);
     }
 
-    private void Update()
+    public void SwitchLight()
     {
         if (valvePuzzle[0] && valvePuzzle[1])
         {
@@ -94,7 +101,6 @@ public class PuzzleMgr : MonoBehaviour
             passedPuzzle[0] = 1;
         }
     }
-    
     void Active_ManualUI(int idx)
     {
         CurManualImg = ManualImg[idx];
@@ -106,5 +112,29 @@ public class PuzzleMgr : MonoBehaviour
     void DeAvtivate_ManualUI()
     {
         CurManualImg.SetActive(false);
+    }
+
+    public void TimerStart()
+    {
+        StartCoroutine(TimerStartCouroutine());
+    }
+    IEnumerator TimerStartCouroutine()
+    {
+        curTime = time;
+        while (curTime > 0)
+        {
+            curTime -= Time.deltaTime;
+            minute = (int)curTime / 60;
+            second = (int)curTime % 60;
+            timeText.text = minute.ToString("00") + ":" + second.ToString("00");
+            yield return null;
+
+            if (curTime <= 0)
+            {
+                Debug.Log("시간 종료");
+                curTime = 0;
+                yield break;
+            }
+        }
     }
 }

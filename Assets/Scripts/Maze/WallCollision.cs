@@ -14,7 +14,7 @@ public class WallCollision : MonoBehaviour
             {
                 if (collider.tag == "Wall")
                 {
-                Debug.Log("walldelete");
+                //Debug.Log("walldelete");
               collider.gameObject.SetActive(false);
                     //Destroy(collider.gameObject);
                     return;

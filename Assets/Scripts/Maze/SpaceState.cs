@@ -39,7 +39,7 @@ public class SpaceState : MonoBehaviour
             if (walls[i].activeSelf == true)
             {
                 eleDoors[i].SetActive(true);
-                Debug.Log(i);
+                //Debug.Log(i);
                 // walls[i].SetActive(false);
                 break;
             }      
