@@ -6,7 +6,6 @@ using TMPro;
 
 public class ItemScan : MonoBehaviour
 {
-    public GameObject HidingCam, MainCam;
     //public TMP_Text pressText;
     //Item 용도 설명 UI
     public Image ItemInfo;
@@ -21,6 +20,7 @@ public class ItemScan : MonoBehaviour
     public GameObject msgPop;
     public GameObject msg;
     public GameObject mainCan, hideCan;
+    public GameObject HidingCam1, HidingCam2, HidingCam3, MainCam;
 
     [SerializeField]
     float range;
@@ -81,7 +81,9 @@ public class ItemScan : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     //MainCam.gameObject.SetActive(false);
-                    HidingCam.gameObject.SetActive(true);
+                    HidingCam1.gameObject.SetActive(true);
+                    PuzzleMgr.instance.activeCam[0] = false;
+                    PuzzleMgr.instance.activeCam[1] = true;
                     mainCan.SetActive(false);
                     hideCan.SetActive(true);
                     HidingPuzzle.instance.HidePuzzle();
@@ -93,7 +95,22 @@ public class ItemScan : MonoBehaviour
                 AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //숨는 애니메이션
+                    if(hitInfo.transform.gameObject.name == "Table_04_C1")
+                    {
+                        HidingCam2.gameObject.SetActive(true);
+                        PuzzleMgr.instance.activeCam[0] = false;
+                        PuzzleMgr.instance.activeCam[2] = true;
+                        mainCan.SetActive(false);
+                        hideCan.SetActive(true);
+                    }
+                    else if(hitInfo.transform.gameObject.name == "PC_Table2_C2")
+                    {
+                        HidingCam3.gameObject.SetActive(true);
+                        PuzzleMgr.instance.activeCam[0] = false;
+                        PuzzleMgr.instance.activeCam[3] = true;
+                        mainCan.SetActive(false);
+                        hideCan.SetActive(true);
+                    }
                 }
             }
             else if(hitInfo.transform.gameObject.CompareTag("Puzzle"))

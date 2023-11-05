@@ -11,6 +11,7 @@ public class PuzzleMgr : MonoBehaviour
     public static PuzzleMgr instance;
     public int[] passedPuzzle = new int[3] { 1, 1, 1 };
     public bool[] valvePuzzle = new bool[2] { false, false };
+    public bool[] activeCam = new bool[4] { false, false, false, false };
     public GameObject light1, light2;
     public GameObject book;
     public Material[] mat = new Material[2];
@@ -29,7 +30,7 @@ public class PuzzleMgr : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != null) return;
 
-        passedPuzzle[2] = 1;
+        activeCam[0] = true;
     }
     public void Manual1Unlock()
     {
@@ -131,8 +132,21 @@ public class PuzzleMgr : MonoBehaviour
 
             if (curTime <= 0)
             {
-                Debug.Log("시간 종료");
+                Shake.instance.FIrstShake();
+                //Shake.instance.EarthQuake();
+
+                if (passedPuzzle[0] == 0 && passedPuzzle[1] == 0 && passedPuzzle[2] == 0)
+                {
+                    HidingPuzzle.instance.MsgPop();
+                    Shake.instance.EarthQuake();
+                }
+                else
+                {
+                    //사망하는 코드
+                }
+                    Debug.Log("시간 종료");
                 curTime = 0;
+
                 yield break;
             }
         }

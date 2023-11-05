@@ -14058,7 +14058,7 @@ GameObject:
   - component: {fileID: 214520040}
   - component: {fileID: 214520039}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: Goal_Correct
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
