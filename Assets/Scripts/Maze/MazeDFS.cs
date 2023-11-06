@@ -47,18 +47,19 @@ public class MazeDFS : MonoBehaviour
                     if(i == 0 && j == 0)
                     {
                         newRoom.walls[0].SetActive(false);
-                        if(height == -10 || height == -20)
+                        if(height == -10)
                         {
                             newRoom.mapChangePoint.SetActive(true);
-                            if(height == -10)
-                            {
-                                newRoom.mapChangePoint.GetComponent<MapChange>().floor = 3;
-                            }
-                            else
-                            {
-                                newRoom.mapChangePoint.GetComponent<MapChange>().floor = 2;
-                            }
-                            //newRoom.endPoint.SetActive(true);
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 3;
+                        }
+                        else if(height == -20)
+                        {
+                            newRoom.mapChangePoint.SetActive(true);
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 2;
+                        }
+                        else if(height == -30)
+                        {
+                            newRoom.phaseChangePoint.SetActive(true);
                         }
                     }
                     else if(i == 6 && j == 6)

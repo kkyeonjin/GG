@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GG/Euna-Subway/phase2/Multi_Subway_Phase2.unity
     guid: c20ea0873fddc7047a19c7b7d3635a46
+  - enabled: 1
+    path: Assets/GG/GameScenes/Apartment_Phase3.unity
+    guid: f550fb39f0abce043a396dd095219a85
   m_configObjects: {}
