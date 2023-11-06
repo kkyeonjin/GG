@@ -110,6 +110,10 @@ public class SingleGameMgr : MonoBehaviour
 
     }
 
+    public void Cursor_Locked()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Show_ResultScreen()
     {
         GameScreen.SetActive(false);

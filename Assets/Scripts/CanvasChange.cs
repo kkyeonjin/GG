@@ -22,6 +22,7 @@ public class CanvasChange : MonoBehaviour
     public void PuzzleOn()
     {
         canvasOn = !canvasOn;
+        Cursor.lockState = canvasOn ? CursorLockMode.None : CursorLockMode.Locked;
         canvasCamera.SetActive(canvasOn);
         Puzzlecanvas.SetActive(canvasOn);
         Maincanvas.SetActive(!canvasOn);
