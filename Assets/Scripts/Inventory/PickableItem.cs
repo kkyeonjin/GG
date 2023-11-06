@@ -32,6 +32,8 @@ public class PickableItem : MonoBehaviour
     {
         switch(itemNum)
         {
+            case 3:
+                break;
             case 4:
                 this.gameObject.GetComponent<FireEX>().Jet();
                 break;
@@ -44,6 +46,8 @@ public class PickableItem : MonoBehaviour
     {
         switch(itemNum)
         {
+            case 3:
+                break;
             case 4:
                 this.gameObject.GetComponent<FireEX>().Pause();
                 break;
