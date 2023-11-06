@@ -43,13 +43,16 @@ public class Shake : MonoBehaviour
             cam = HideCam3;
         }
 
+        Debug.Log("FirstShake");
         Invoke("StartShake", 1f);
     }
 
     public void EarthQuake()
     {
+        StopCoroutine(ShakeCoroutine());
         cam = MainCam;
-        InvokeRepeating("StartShake", 1f, 10f);
+        Debug.Log("EarthQuake");
+        InvokeRepeating("StartShake2", 10f, 10f);
         
     }
 
@@ -58,6 +61,13 @@ public class Shake : MonoBehaviour
         shakeTime = Random.Range(2f, 5f);
         shakeAmount = Random.Range(3f, 8f);
         StartCoroutine(ShakeCoroutine());
+    }
+
+    public void StartShake2()
+    {
+        shakeTime = Random.Range(2f, 5f);
+        shakeAmount = Random.Range(3f, 8f);
+        StartCoroutine(ShakeCoroutine2());
     }
 
     IEnumerator ShakeCoroutine()
@@ -75,6 +85,24 @@ public class Shake : MonoBehaviour
             elapsedTime += Time.deltaTime;
         }
 
-        cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime * shakeSpeed);
+        cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
+    }
+
+    IEnumerator ShakeCoroutine2()
+    {
+        Vector3 originPosition = cam.localPosition;
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < shakeTime)
+        {
+            Vector3 randomPoint = originPosition + Random.insideUnitSphere * shakeAmount;
+            cam.localPosition = Vector3.Lerp(cam.localPosition, randomPoint, Time.deltaTime * shakeSpeed);
+
+            yield return null;
+
+            elapsedTime += Time.deltaTime;
+        }
+
+        cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
     }
 }

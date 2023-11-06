@@ -71,7 +71,8 @@ public class ItemScan : MonoBehaviour
                 AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hitInfo.transform.gameObject.GetComponent<DoorCtr>().DoorAnimOn();
+                    hitInfo.transform.gameObject.GetComponent<DoorCtr>().DoorTimerStart();
+                    hitInfo.transform.gameObject.GetComponent<DoorCtr>().CountUp();
                 }
             }
             else if (hitInfo.transform.gameObject.CompareTag("HidingTable"))
