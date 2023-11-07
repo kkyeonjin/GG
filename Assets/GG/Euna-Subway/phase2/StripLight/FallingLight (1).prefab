@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1083775681810429647}
   - component: {fileID: 4019953649500421302}
   - component: {fileID: 5059068864891994983}
+  - component: {fileID: 5211287279217434107}
   m_Layer: 19
   m_Name: FallingLight (1)
   m_TagString: Falling
@@ -175,6 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cec9448a76a17f419d9b3ef7117f728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5211287279217434107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971842124772530123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33403edf7bd08b34497703ff7b659813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fDamage: 10
 --- !u!1 &4066697058673855762
 GameObject:
   m_ObjectHideFlags: 0

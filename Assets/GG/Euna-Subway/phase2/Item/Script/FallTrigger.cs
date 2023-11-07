@@ -7,13 +7,7 @@ public class FallTrigger : MonoBehaviour
     //public GameObject[] FallObject;
     // Start is called before the first frame update
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            this.gameObject.tag = "Obstacle";
-        }
-    }
+
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -21,7 +15,7 @@ public class FallTrigger : MonoBehaviour
         if((collider.gameObject.CompareTag("AI") || collider.gameObject.CompareTag("Player")))
         {
             this.gameObject.GetComponent<ConfigurableJoint>().xMotion = ConfigurableJointMotion.Free;
-
+            this.GetComponent<BoxCollider>().gameObject.SetActive(false);
             /*
             //Debug.Log("Falling Trigger!");
             foreach(GameObject obj in FallObject)

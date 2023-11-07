@@ -209,7 +209,9 @@ public class Player : MonoBehaviour
         if(Physics.Raycast(ray, out slopeHit, 1f, groundlayer))
         {
             var angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-            return angle != 0f && angle < maxSlopeAngle;
+            bool onSlope = angle != 0f && angle < maxSlopeAngle;
+            Debug.Log("On Slope : " + onSlope);
+            return onSlope;
         }
         return false;
     }
@@ -226,9 +228,12 @@ public class Player : MonoBehaviour
             transform.LookAt(transform.position + m_vMoveVec);
             //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
             //m_Rigidbody.AddForce(Physics.gravity);
+            /*
             m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
             m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
+            */
+            m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
 
             bool isOnslope = IsOnSlope();
             Vector3 gravity = isOnslope ? Vector3.zero : Physics.gravity;
@@ -517,8 +522,10 @@ public class Player : MonoBehaviour
     ///  (3) 마우스 클릭 떼면 투척 - player.Item_throw();
     /// </summary>
 
+
     public float throwForce = 1f;
 
+    
     public void Item_aim() //m_bisThrow true일 때만 호출
     {
         /// Raycast 조준 (마우스 클릭으로 투척 벡터 설정)
@@ -549,6 +556,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    
     public void Item_throw(Vector3 throwAngle)
     {
         /// (2) grabbed 아이템 호출 & 종속관계 분리
@@ -558,7 +566,7 @@ public class Player : MonoBehaviour
 
        /// (3)) 던지기
         throwAngle.y = 25f;
-        itemRb.isKinematic = true;
+        itemRb.isKinematic = false;
         itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
         grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true);
         m_Animator.SetTrigger("Throw");
@@ -566,6 +574,8 @@ public class Player : MonoBehaviour
 
         m_bIsThrow = false;
     }
+    
+    
 
 
     [PunRPC]

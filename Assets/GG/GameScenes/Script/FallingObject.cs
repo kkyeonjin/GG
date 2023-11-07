@@ -37,4 +37,12 @@ public class FallingObject : MonoBehaviour
             return m_fDamage;
         //}
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //낙하물 땅에 떨어지면 장애물 태그로 전환
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            this.gameObject.tag = "Obstacle";
+        }
+    }
 }
