@@ -5,7 +5,6 @@ using UnityEngine;
 public class FireEXParticle : MonoBehaviour
 {
     public ParticleSystem fire, smoke;
-    ParticleSystem.Particle[] fireParticle;
     public int count;
 
     // Start is called before the first frame update

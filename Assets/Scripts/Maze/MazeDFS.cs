@@ -25,6 +25,7 @@ public class MazeDFS : MonoBehaviour
     {
         MazeGenerator();
         ElevatorSet();
+        FireExSet();
     }
 
     void GenerateDungeon()
@@ -46,18 +47,42 @@ public class MazeDFS : MonoBehaviour
                     if(i == 0 && j == 0)
                     {
                         newRoom.walls[0].SetActive(false);
-                        if(height == -10 || height == -30)
+                        if(height == -10)
                         {
-                            newRoom.endPoint.SetActive(true);
+                            newRoom.mapChangePoint.SetActive(true);
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 3;
+                        }
+                        else if(height == -20)
+                        {
+                            newRoom.mapChangePoint.SetActive(true);
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 2;
+                        }
+                        else if(height == -30)
+                        {
+                            newRoom.phaseChangePoint.SetActive(true);
                         }
                     }
                     else if(i == 6 && j == 6)
                     {
                         newRoom.walls[1].SetActive(false);
-                        if(height == 0 || height == -20)
+                        newRoom.mapChangePoint.SetActive(true);
+                        if (height == 0)
                         {
-                            newRoom.endPoint.SetActive(true);
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 4;
                         }
+                        else if(height == -10)
+                        {
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 3;
+                        }
+                        else if(height == -20)
+                        {
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 2;
+                        }
+                        else if(height == -30)
+                        {
+                            newRoom.mapChangePoint.GetComponent<MapChange>().floor = 1;
+                        }
+                            //newRoom.endPoint.SetActive(true);
                     }
 
                     rooms.Add(newRoom);
@@ -91,6 +116,12 @@ public class MazeDFS : MonoBehaviour
 
     }
 
+    void FireExSet()
+    {
+        int select = Random.Range(4, rooms.Count);
+        //Debug.Log(select);
+        rooms[select].fireEx.SetActive(true);
+    }
     void MazeGenerator()
     {
         board = new List<Cell>();

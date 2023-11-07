@@ -19,21 +19,18 @@ public class HidingPuzzle : MonoBehaviour
     }
     public void HidePuzzle()
     {
-        Debug.Log("Start");
-        if(PuzzleMgr.instance.passedPuzzle[0] == 0 && PuzzleMgr.instance.passedPuzzle[1] == 0 && isFirst == false )
-        {
-            isFirst = true;
-            PuzzleMgr.instance.Manual3Unlock();
-            PuzzleMgr.instance.passedPuzzle[2] = 0;
-            Invoke("MsgPop", 4f);
-            msg.SetActive(true);
+        //PuzzleMgr.instance.Manual3Unlock();
+        PuzzleMgr.instance.passedPuzzle[2] = 0;
+    }
 
-            this.gameObject.GetComponent<Shake>().FIrstShake();
-        }
+    public void False()
+    {
+
     }
 
     public void MsgPop()
     {
+        Debug.Log("msgPop");
         msgPop.SetActive(true);
         Invoke("MsgClose", 4.0f);
     }
