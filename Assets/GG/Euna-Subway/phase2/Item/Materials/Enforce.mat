@@ -10,9 +10,10 @@ Material:
   m_Name: Enforce
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
+  - _EMISSION
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -97,7 +98,7 @@ Material:
     - _Glossiness: 0.93
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _Metallic: 0.22
+    - _Metallic: 1
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -115,9 +116,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.5137255, g: 1, b: 0.9689114, a: 0.49019608}
-    - _Color: {r: 0.5137254, g: 1, b: 0.96891135, a: 0.49019608}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.5137255, g: 0.9855538, b: 1, a: 0.38431373}
+    - _Color: {r: 0.5137254, g: 0.9855538, b: 1, a: 0.38431373}
+    - _EmissionColor: {r: 0.32549024, g: 0.9576859, b: 1, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
 --- !u!114 &3190490573035977362
