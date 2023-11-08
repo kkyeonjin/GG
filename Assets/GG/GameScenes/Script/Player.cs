@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -361,6 +362,7 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("FallObjects"))
         {
+            //if(SceneManager.GetActiveScene().name == "Apartment_Phase3")
             if(Cushion.instance.isUsing)
             {
                 m_Status.Set_Damage(2);

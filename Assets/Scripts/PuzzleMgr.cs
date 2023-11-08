@@ -161,7 +161,7 @@ public class PuzzleMgr : MonoBehaviour
                 }
                 else
                 {
-                    Player.GetComponent<CharacterStatus>().Set_Damage(10);
+                    Player.GetComponent<CharacterStatus>().Set_Damage(Player.GetComponent<CharacterStatus>().Get_MaxHP());
                 }
                     Debug.Log("시간 종료");
                 Timer.SetActive(false);

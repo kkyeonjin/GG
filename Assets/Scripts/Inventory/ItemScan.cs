@@ -82,6 +82,7 @@ public class ItemScan : MonoBehaviour
                 AimColor.a = 1f;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    Cursor.lockState = CursorLockMode.None;
                     //MainCam.gameObject.SetActive(false);
                     HidingCam1.gameObject.SetActive(true);
                     PuzzleMgr.instance.activeCam[0] = false;
