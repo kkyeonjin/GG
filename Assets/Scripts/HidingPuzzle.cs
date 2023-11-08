@@ -9,6 +9,7 @@ public class HidingPuzzle : MonoBehaviour
     // Start is called before the first frame update
     public GameObject msgPop;
     public GameObject msg;
+    public GameObject msgList1, msgList2;
 
     //public GameObject msg;
     public bool isFirst = false;
@@ -32,6 +33,9 @@ public class HidingPuzzle : MonoBehaviour
     {
         Debug.Log("msgPop");
         msgPop.SetActive(true);
+        msg.SetActive(true);
+        msgList1.SetActive(false);
+        msgList2.SetActive(true);
         Invoke("MsgClose", 4.0f);
     }
 

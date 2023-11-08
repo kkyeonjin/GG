@@ -49,7 +49,8 @@ public class ItemScan : MonoBehaviour
                 {
                     hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
                     hitInfo.transform.gameObject.transform.SetParent(pickedItem.transform);
-                    hitInfo.transform.gameObject.SetActive(false);
+                    hitInfo.transform.gameObject.layer = 25;
+                    //hitInfo.transform.gameObject.SetActive(false);
                     
                     
                 }

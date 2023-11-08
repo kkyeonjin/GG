@@ -9,6 +9,7 @@ public class SpaceState : MonoBehaviour
     public GameObject endPoint;
     public GameObject mapChangePoint;
     public GameObject phaseChangePoint;
+    public GameObject fallingTriger;
     public GameObject fireEx;
     public int wallCount = 0;
 

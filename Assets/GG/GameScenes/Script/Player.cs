@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
         {
             var angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             bool onSlope = angle != 0f && angle < maxSlopeAngle;
-            Debug.Log("On Slope : " + onSlope);
+            //Debug.Log("On Slope : " + onSlope);
             return onSlope;
         }
         return false;
@@ -358,6 +358,18 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.CompareTag("Goal"))
         {
             m_ClearUI.Activate_and_Over();
+        }
+        else if(collision.gameObject.CompareTag("FallObjects"))
+        {
+            if(Cushion.instance.isUsing)
+            {
+                m_Status.Set_Damage(2);
+            }
+            else
+            {
+                m_Status.Set_Damage(5);
+            }
+
         }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동

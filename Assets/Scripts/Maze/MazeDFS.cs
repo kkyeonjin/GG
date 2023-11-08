@@ -44,6 +44,12 @@ public class MazeDFS : MonoBehaviour
 
                     newRoom.name += " " + i + " - " + j;
 
+                    int[] temp = { 0, 0, 0, 1 };
+                    int pick = temp[Random.Range(0, temp.Length)];
+                    if(pick == 1)
+                    {
+                        newRoom.fallingTriger.SetActive(true);
+                    }
                     if(i == 0 && j == 0)
                     {
                         newRoom.walls[0].SetActive(false);

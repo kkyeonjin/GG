@@ -33,6 +33,7 @@ public class PickableItem : MonoBehaviour
         switch(itemNum)
         {
             case 3:
+                this.gameObject.GetComponent<Cushion>().UseCushion();
                 break;
             case 4:
                 this.gameObject.GetComponent<FireEX>().Jet();
@@ -47,6 +48,7 @@ public class PickableItem : MonoBehaviour
         switch(itemNum)
         {
             case 3:
+                this.gameObject.GetComponent<Cushion>().Pause();
                 break;
             case 4:
                 this.gameObject.GetComponent<FireEX>().Pause();
