@@ -119,6 +119,7 @@ public class SubwayInventory : MonoBehaviour
             {
                 invScripts[selectedNum].Item_effect();
                 Inv_itemRearrange();
+                selectedItem = 0;
             }
         }
     }

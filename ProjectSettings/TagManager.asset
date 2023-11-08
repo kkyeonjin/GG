@@ -35,6 +35,10 @@ TagManager:
   - Puzzle
   - MapChangePoint
   - FallObjects
+  - UISelectItem
+  - UIHoldingItem
+  - FollowCam
+  - OtherPlayer
   layers:
   - Default
   - TransparentFX
