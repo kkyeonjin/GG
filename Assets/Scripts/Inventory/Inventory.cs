@@ -64,16 +64,17 @@ public class Inventory : MonoBehaviour
 
     public void ReArrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
-        
+        Debug.Log("rearrange");
         if( invScripts[activeNum].disposable )
         {
+            Debug.Log("start");
             switch (activeNum)
             {
                 case 0:
                     //itemImage rearrange
                     invIcons[0].sprite = invIcons[1].sprite;
                     invIcons[1].sprite = invIcons[2].sprite;
-                    invIcons[2].sprite = blank;
+                    invIcons[2].sprite = null;
                     //inventory rearrange
                     invScripts[0] = invScripts[1];
                     invScripts[1] = invScripts[2];
@@ -82,14 +83,14 @@ public class Inventory : MonoBehaviour
                 case 1:
                     //itemImage rearrange
                     invIcons[1].sprite = invIcons[2].sprite;
-                    invIcons[2].sprite = blank;
+                    invIcons[2].sprite = null;
                     //inventory rearrange
                     invScripts[1] = invScripts[2];
                     invScripts[2] = null;
                     break;
                 default:
                     //itemImage rearrange
-                    invIcons[activeNum].sprite = blank;
+                    invIcons[activeNum].sprite = null;
                     //inventory rearrange
                     invScripts[activeNum] = null;
                     break;

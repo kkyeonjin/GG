@@ -34,6 +34,7 @@ TagManager:
   - Platform
   - Puzzle
   - MapChangePoint
+  - FallObjects
   layers:
   - Default
   - TransparentFX

@@ -359,6 +359,18 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
+        else if(collision.gameObject.CompareTag("FallObjects"))
+        {
+            if(Cushion.instance.isUsing)
+            {
+                m_Status.Set_Damage(2);
+            }
+            else
+            {
+                m_Status.Set_Damage(5);
+            }
+
+        }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;

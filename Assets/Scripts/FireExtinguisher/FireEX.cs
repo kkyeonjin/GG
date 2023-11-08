@@ -30,6 +30,7 @@ public class FireEX : MonoBehaviour
         this.gameObject.GetComponent<PickableItem>().remainder--;
     }
 
+    
     private void Update()
     {
         if (this.gameObject.GetComponent<PickableItem>().remainder == 0 && Inventory.instance.invScripts[Inventory.instance.activeNum] != null)
@@ -40,4 +41,5 @@ public class FireEX : MonoBehaviour
             
         }
     }
+    
 }

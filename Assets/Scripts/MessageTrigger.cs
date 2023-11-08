@@ -7,10 +7,11 @@ public class MessageTrigger : MonoBehaviour
     public int triggerNum;
     public GameObject FakeMsgPopUp, FakeMsg;
     public GameObject MomMsgPopUp, MomMsg;
+    public bool isSent;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && isSent == false)
         {
             if(triggerNum == 1)
             {
@@ -22,6 +23,7 @@ public class MessageTrigger : MonoBehaviour
                 MomMsgPopUp.SetActive(true);
                 MomMsg.SetActive(true);
             }
+            isSent = true;
         }
     }
 }

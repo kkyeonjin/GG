@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class Cushion : MonoBehaviour
 {
-    public GameObject usingCushionUI;
+    public static Cushion instance;
+
     public bool isUsing;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else if (instance != null) return;
+    }
+
     // Start is called before the first frame update
     public void CushionDamage()
     {
@@ -24,5 +32,18 @@ public class Cushion : MonoBehaviour
         isUsing = true;
     }
 
+    
+    private void Update()
+    {
+        if (this.gameObject.GetComponent<PickableItem>().remainder == 0 && Inventory.instance.invScripts[Inventory.instance.activeNum] != null)
+        {
+            Pause();
+            Inventory.instance.invScripts[Inventory.instance.activeNum].disposable = true;
+            Inventory.instance.ReArrange();
+
+        }
+    }
+    
+    
 
 }
