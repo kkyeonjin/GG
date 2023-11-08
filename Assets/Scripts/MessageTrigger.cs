@@ -11,19 +11,31 @@ public class MessageTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && isSent == false)
+        if (other.gameObject.CompareTag("Player") && isSent == false)
         {
-            if(triggerNum == 1)
+            if (triggerNum == 1)
             {
                 FakeMsgPopUp.SetActive(true);
                 FakeMsg.SetActive(true);
+                Invoke("FakePopUpClose", 2f);
             }
-            if(triggerNum == 2)
+            if (triggerNum == 2)
             {
                 MomMsgPopUp.SetActive(true);
                 MomMsg.SetActive(true);
+                Invoke("MomPopUpClose", 3f);
             }
             isSent = true;
         }
+    }
+
+    public void FakePopUpClose()
+    {
+        FakeMsgPopUp.SetActive(false);
+    }
+
+    public void MomPopUpClose()
+    {
+        MomMsgPopUp.SetActive(false);
     }
 }

@@ -25,6 +25,9 @@ public class PuzzleMgr : MonoBehaviour
     private float curTime;
     public TMP_Text timeText;
     private float minute, second;
+    public GameObject Timer;
+
+    public GameObject Player;
 
     private void Awake()
     {
@@ -132,6 +135,7 @@ public class PuzzleMgr : MonoBehaviour
 
     public void TimerStart()
     {
+        Timer.SetActive(true);
         StartCoroutine(TimerStartCouroutine());
     }
     IEnumerator TimerStartCouroutine()
@@ -157,9 +161,10 @@ public class PuzzleMgr : MonoBehaviour
                 }
                 else
                 {
-                    //사망하는 코드
+                    Player.GetComponent<CharacterStatus>().Set_Damage(10);
                 }
                     Debug.Log("시간 종료");
+                Timer.SetActive(false);
                 curTime = 0;
                 playingPhase = 2;
                 yield break;

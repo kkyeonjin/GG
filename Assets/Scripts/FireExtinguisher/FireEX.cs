@@ -5,16 +5,19 @@ using UnityEngine;
 public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
+    AudioSource FireExSound;
 
     private void Awake()
     {
         FireParticle = GameObject.Find("SingleOrigin").transform.GetChild(2).transform.GetChild(0).gameObject;
+        FireExSound = this.GetComponent<AudioSource>();
         //public int remainder = 40; 
     }
     public void Jet()
     {
         FireParticle.SetActive(true);
         FireParticle.GetComponent<ParticleSystem>().Play();
+        FireExSound.Play();
         InvokeRepeating("Using", 1f, 1f);
     }
 
@@ -23,6 +26,7 @@ public class FireEX : MonoBehaviour
         CancelInvoke("Using");
         FireParticle.SetActive(false);
         FireParticle.GetComponent<ParticleSystem>().Stop();
+        FireExSound.Pause();
     }
 
     public void Using()
