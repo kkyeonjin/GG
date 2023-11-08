@@ -535,36 +535,37 @@ public class Player : MonoBehaviour
     /// </summary>
 
 
-    public float throwForce = 1f;
+    public float throwForce = 50f;
 
     
     public void Item_aim() //m_bisThrow true일 때만 호출
     {
         /// Raycast 조준 (마우스 클릭으로 투척 벡터 설정)
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit rayHit;
-        float rayLength = 500f;
-        //int floorMask = LayerMask.GetMask("Ground");
-        Vector3 throwAngle;
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
-        if (Physics.Raycast(ray, out rayHit, rayLength))
+        RaycastHit rayHit;
+        float rayLength = 5f;
+        //int floorMask = LayerMask.GetMask("Ground");
+        Vector3 throwDir;
+
+        if (Physics.Raycast(ray, out rayHit, rayLength))//layermask
         {
             Debug.DrawRay(this.transform.position, rayHit.point, Color.red);
 
-            throwAngle = rayHit.point - this.transform.position;
-            Debug.Log("Aim at " + throwAngle);
+            throwDir = rayHit.point - this.transform.position;
+            Debug.Log("Aim Dir " + throwDir);
         }
         else //RaycastHit false면 그냥 플레이어 앞에 떨어짐
         {
-            throwAngle = transform.forward * 50f;
+            throwDir = transform.forward;
             Debug.Log("Aim fail");
         }
 
 
         /// 투척
-        if (throwAngle != null && Input.GetMouseButtonDown(0))
+        if (throwDir != null && Input.GetMouseButtonDown(0))
         {
-            Item_throw(throwAngle);
+            Item_throw(throwDir);
         }
     }
 
@@ -574,12 +575,18 @@ public class Player : MonoBehaviour
         /// (2) grabbed 아이템 호출 & 종속관계 분리
         GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
         Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
-        OnHand.transform.DetachChildren();
+        Collider itemCollider = grabbedItem.GetComponent<Collider>();
 
-       /// (3)) 던지기
+        itemCollider.isTrigger = false;
+
+        OnHand.transform.DetachChildren();
+        grabbedItem.transform.position = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
+
+        /// (3)) 던지기
         throwAngle.y = 25f;
+
         itemRb.isKinematic = false;
-        itemRb.AddForce(throwAngle * throwForce, ForceMode.Impulse);
+        itemRb.AddForce(throwAngle.normalized * throwForce, ForceMode.Impulse);
         grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true);
         m_Animator.SetTrigger("Throw");
         Debug.Log("Throw Item");

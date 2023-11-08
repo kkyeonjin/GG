@@ -11,7 +11,7 @@ public class SubwayItemSpawnArea : MonoBehaviour
         Transform[] spawnPoint = GetComponentsInChildren<Transform>();
         foreach(Transform t in spawnPoint)
         {
-            spawnPoints.Add(t);
+            //spawnPoints.Add(t);
         }
     }
 
