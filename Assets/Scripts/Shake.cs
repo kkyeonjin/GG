@@ -52,6 +52,7 @@ public class Shake : MonoBehaviour
         StopCoroutine(ShakeCoroutine());
         cam = MainCam;
         Debug.Log("EarthQuake");
+        StartShake2();
         InvokeRepeating("StartShake2", 10f, 10f);
         
     }

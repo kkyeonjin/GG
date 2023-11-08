@@ -5484,35 +5484,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &34168959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34168956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cead645c1800fdb489b800dee4a4f5db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemInfo: {fileID: 0}
-  pickedItem: {fileID: 0}
-  pressE: {fileID: 0}
-  AimPointUI: {fileID: 0}
-  backbtn: {fileID: 0}
-  msgPop: {fileID: 0}
-  msg: {fileID: 0}
-  mainCan: {fileID: 0}
-  hideCan: {fileID: 0}
-  HidingCam1: {fileID: 0}
-  HidingCam2: {fileID: 0}
-  HidingCam3: {fileID: 0}
-  MainCam: {fileID: 34168956}
-  range: 5
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 262144
 --- !u!114 &34168960
 MonoBehaviour:
   m_ObjectHideFlags: 0
