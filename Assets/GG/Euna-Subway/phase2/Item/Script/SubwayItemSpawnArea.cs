@@ -1,18 +1,18 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
 public class SubwayItemSpawnArea : MonoBehaviour
 {
-    private Dictionary<Transform, GameObject> spawnPoints = new Dictionary<Transform, GameObject>();
+    private spawnPoint[] spawnPoints;
     public GameObject itemOnField; //필드 아이템 프리팹
 
     private void Awake()
     {
         Transform[] spawnPoint = GetComponentsInChildren<Transform>();
-        foreach(Transform t in spawnPoint)
-        {
-            spawnPoints.Add(t);
-        }
+
     }
 
     private void Start()
@@ -31,4 +31,9 @@ public class SubwayItemSpawnArea : MonoBehaviour
     {
 
     }
+}
+
+public class spawnPoint
+{
+    public Transform[] t;
 }
