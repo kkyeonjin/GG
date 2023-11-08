@@ -1278,6 +1278,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3824941085323619605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496074549549444552}
+  - component: {fileID: 4528978786639839934}
+  m_Layer: 0
+  m_Name: FallingTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &496074549549444552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824941085323619605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.92, y: -0.8201612, z: -0.92}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7166381844882111677}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4528978786639839934
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824941085323619605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2203274, y: 1, z: 5.2492466}
+  m_Center: {x: -0.1250782, y: 0, z: -0.018419147}
 --- !u!1 &3981628130276067035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2282,7 @@ Transform:
   - {fileID: 5417745076085505320}
   - {fileID: 792273935874635273}
   - {fileID: 4704385909368492208}
+  - {fileID: 496074549549444552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2265,6 +2311,7 @@ MonoBehaviour:
   endPoint: {fileID: 4275459965950232448}
   mapChangePoint: {fileID: 8983821028644548224}
   phaseChangePoint: {fileID: 8238991378501546818}
+  fallingTriger: {fileID: 3824941085323619605}
   fireEx: {fileID: 792273935874665001}
   wallCount: 0
 --- !u!1 &7166381844954273273

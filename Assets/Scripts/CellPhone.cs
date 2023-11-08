@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class CellPhone : MonoBehaviour
 {
@@ -30,10 +30,12 @@ public class CellPhone : MonoBehaviour
         {
             if(cellphone.activeSelf)
             {
+                Cursor.lockState = CursorLockMode.Locked;
                 cellphone.SetActive(false);
             }
             else
             {
+                Cursor.lockState = CursorLockMode.None;
                 cellphone.SetActive(true);
             }
         }

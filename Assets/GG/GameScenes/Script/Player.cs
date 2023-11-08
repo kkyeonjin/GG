@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
         {
             var angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             bool onSlope = angle != 0f && angle < maxSlopeAngle;
-            Debug.Log("On Slope : " + onSlope);
+            //Debug.Log("On Slope : " + onSlope);
             return onSlope;
         }
         return false;

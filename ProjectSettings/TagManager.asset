@@ -58,9 +58,9 @@ TagManager:
   - AI
   - Ground
   - Fire
-  - 
-  - 
-  - 
+  - FallObjects
+  - Celling
+  - PickedItem
   - 
   - 
   - 
