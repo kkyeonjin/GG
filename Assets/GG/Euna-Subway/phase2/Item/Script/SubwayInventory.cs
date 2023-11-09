@@ -15,7 +15,9 @@ public class SubwayInventory : MonoBehaviour
 
     public OrderGage orderGage;
 
-    public Image AimPoint; 
+    public Image AimMark;
+    public GameObject Aim;
+
 
     private void Awake()
     {
@@ -43,12 +45,31 @@ public class SubwayInventory : MonoBehaviour
     
     public void Active_AimPoint(bool bActive)
     {
-        AimPoint.gameObject.SetActive(bActive);
+        Aim.gameObject.SetActive(bActive);
+        if(bActive)
+        {
+            AimMark.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
+            Color color = AimMark.color;
+            color.a = 50f / 255f;
+            AimMark.color = color;
+        }
     }
 
     public void On_Targeted(bool bTarget)
     {
-        AimPoint.color = bTarget ? Color.red : Color.green;
+        Color color = AimMark.color;
+        color.a = bTarget ? 170f / 255f : 50f / 255f;
+        AimMark.color = color;
+
+        if (bTarget)
+        {
+            AimMark.transform.localScale = Vector3.Lerp(AimMark.transform.localScale, new Vector3(0.8f, 0.8f, 1f), 0.5f);
+        } 
+        else
+        {
+            AimMark.transform.localScale = Vector3.Lerp(AimMark.transform.localScale, new Vector3(1.3f, 1.3f, 1f), 0.5f);
+
+        }
     }
 
     public float Get_OrderGauge()
