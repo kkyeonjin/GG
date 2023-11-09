@@ -29,6 +29,9 @@ public class PuzzleMgr : MonoBehaviour
 
     public GameObject Player;
 
+    public List<GameObject> objs2Off = new List<GameObject>(new GameObject[8]);
+    public List<GameObject> objs2On = new List<GameObject>(new GameObject[2]);
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -140,6 +143,17 @@ public class PuzzleMgr : MonoBehaviour
         Timer.SetActive(true);
         StartCoroutine(TimerStartCouroutine());
     }
+
+    public void Back2Main()
+    {
+        for (int i = 0; i < objs2Off.Count; i++)
+        {
+            objs2Off[i].SetActive(false);
+        }
+        objs2On[0].SetActive(true);
+        objs2On[1].SetActive(true);
+    }
+
     IEnumerator TimerStartCouroutine()
     {
         curTime = time;
@@ -162,8 +176,9 @@ public class PuzzleMgr : MonoBehaviour
                     //Shake.instance.EarthQuake();
                 }
           
-                    Debug.Log("시간 종료");
+                Debug.Log("시간 종료");
                 Timer.SetActive(false);
+                Back2Main();
                 curTime = 0;
                 playingPhase = 2;
                 yield break;

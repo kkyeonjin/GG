@@ -6,7 +6,7 @@ public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
     AudioSource FireExSound;
-    int remainder;
+    float remainder;
 
     private void Awake()
     {
@@ -35,6 +35,8 @@ public class FireEX : MonoBehaviour
     {
         this.gameObject.GetComponent<PickableItem>().remainder--;
         Inventory.instance.remainderBar[Inventory.instance.activeNum].fillAmount = this.gameObject.GetComponent<PickableItem>().remainder / remainder;
+       Debug.Log(this.gameObject.GetComponent<PickableItem>().remainder);
+       //ebug.Log(this.gameObject.GetComponent<PickableItem>().remainder / remainder);
     }
 
     

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Cushion : MonoBehaviour
 {
     public static Cushion instance;
-    int remainder;
+    float remainder;
 
     public bool isUsing;
 

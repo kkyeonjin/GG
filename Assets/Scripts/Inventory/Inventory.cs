@@ -74,7 +74,7 @@ public class Inventory : MonoBehaviour
                     //itemImage rearrange
                     invIcons[0].sprite = invIcons[1].sprite;
                     invIcons[1].sprite = invIcons[2].sprite;
-                    invIcons[2].sprite = null;
+                    invIcons[2].sprite = blank;
                     //inventory rearrange
                     invScripts[0] = invScripts[1];
                     invScripts[1] = invScripts[2];
@@ -83,14 +83,14 @@ public class Inventory : MonoBehaviour
                 case 1:
                     //itemImage rearrange
                     invIcons[1].sprite = invIcons[2].sprite;
-                    invIcons[2].sprite = null;
+                    invIcons[2].sprite = blank;
                     //inventory rearrange
                     invScripts[1] = invScripts[2];
                     invScripts[2] = null;
                     break;
                 default:
                     //itemImage rearrange
-                    invIcons[activeNum].sprite = null;
+                    invIcons[activeNum].sprite = blank;
                     //inventory rearrange
                     invScripts[activeNum] = null;
                     break;

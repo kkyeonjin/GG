@@ -366,6 +366,7 @@ public class Player : MonoBehaviour
             //if(SceneManager.GetActiveScene().name == "Apartment_Phase3")
             if (Cushion.instance.isUsing)
             {
+                Cushion.instance.CushionDamage();
                 m_Status.Set_Damage(2);
             }
             else
