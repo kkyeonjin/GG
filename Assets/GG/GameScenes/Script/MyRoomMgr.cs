@@ -78,20 +78,20 @@ public class MyRoomMgr : MonoBehaviour
 
         ManualString = new string[2, 8];
 
-        ManualString[0, 0] = "TABLE";
-        ManualString[0, 1] = "GAS";
-        ManualString[0, 2] = "FIRE";
-        ManualString[0, 3] = "PACKING";
-        ManualString[0, 4] = "ELEVATOR";
+        ManualString[0, 0] = "탁자 아래와 같이 집 안에서 대피할 수 있는 안전한 대피 공간을 미리 파악해 둡니다.";
+        ManualString[0, 1] = "가스를 미리 점검하고 차단합니다.";
+        ManualString[0, 2] = "지진 발생 시 화재가 발생할 수 있으니 소화기를 준비해 두고, 사용방법을 알아 둡니다.";
+        ManualString[0, 3] = "지진에 대비하여 비상용품과 가방을 준비해둡니다.";
+        ManualString[0, 4] = "지진 시 엘리베이터를 타면 안됩니다.";
 
-        ManualString[1, 0] = "COLUMN";
-        ManualString[1, 1] = "TRAINSTOP";
-        ManualString[1, 2] = "BLACKOUT";
-        ManualString[1, 3] = "LEVER";
-        ManualString[1, 4] = "DISTANCE";
-        ManualString[1, 5] = "ELEVATOR";
-        ManualString[1, 6] = "ON_ELEVATOR";
-        ManualString[1, 7] = "ESCAPE";
+        ManualString[1, 0] = "열차 내에 있을 때 지진이 발생하면 기둥이나 손잡이를 꽉 잡아서 멎을 때까지 최대한 넘어지지 않도록 합니다.";
+        ManualString[1, 1] = "지진의 진도가 5 이상이면 지하철의 운행이 일시적으로 정지됩니다.";
+        ManualString[1, 2] = "지진으로 인해 정전이 발생할 수 있습니다. 정전을 대비하여 열차 칸마다 비상 손전등이 비치되어 있습니다.";
+        ManualString[1, 3] = "정전으로 인해 열차 문의 개폐가 작동하지 않는다면 열차 문 옆에 있는 비상 레버, 콕크 등을 이용하여 수동 개방할 수 있습니다.";
+        ManualString[1, 4] = "인파에 의한 사고를 방지하기 위해 주변 사람들과 거리를 유지하며 침착하게 이동합니다.";
+        ManualString[1, 5] = "엘리베이터를 이용하지 않고 계단으로 걸어서 대피합니다.";
+        ManualString[1, 6] = "엘리베이터 탑승 중 지진 발생 시 재빨리 층 버튼들을 눌러서 아무 층에나 멈춰 세우도록 합니다.";
+        ManualString[1, 7] = "흔들림이 멎으면 지상으로 대피합니다.";
         
         Show_PlayerInfo();
         Show_CurrStatus();

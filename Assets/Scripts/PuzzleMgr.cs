@@ -13,6 +13,7 @@ public class PuzzleMgr : MonoBehaviour
     public bool[] valvePuzzle = new bool[2] { false, false };
     public bool[] activeCam = new bool[4] { false, false, false, false };
     public int playingPhase;
+    public bool inElevator;
     public GameObject light1, light2;
     public GameObject book;
     public Material[] mat = new Material[2];

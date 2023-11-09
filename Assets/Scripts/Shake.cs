@@ -89,6 +89,11 @@ public class Shake : MonoBehaviour
             CharacterStatus playerStatus = SingleGameMgr.Instance.m_LocalPlayer.GetComponentInChildren<CharacterStatus>();
             playerStatus.Set_Damage(playerStatus.Get_MaxHP());
         }
+        if(PuzzleMgr.instance.inElevator)
+        {
+            CharacterStatus playerStatus = SingleGameMgr.Instance.m_LocalPlayer.GetComponentInChildren<CharacterStatus>();
+            playerStatus.Set_Damage(playerStatus.Get_MaxHP());
+        }
         cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
         
     }

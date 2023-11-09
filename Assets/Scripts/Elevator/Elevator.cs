@@ -13,15 +13,11 @@ public class Elevator : MonoBehaviour
         {
             //Debug.Log("Ride");
             isRide = true;
-            other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(other.gameObject.GetComponentInChildren<CharacterStatus>().Get_MaxHP());
-
-            /*
-            Invoke("Die", 2.0f);
-            if (isdying)
-            {
-                other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(150);
-            }
-            */
+            PuzzleMgr.instance.inElevator = true;
+            Shake.instance.FIrstShake();
+            PuzzleMgr.instance.MakeObstacle();
+            //other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(other.gameObject.GetComponentInChildren<CharacterStatus>().Get_MaxHP());
+            
         }
     }
 
