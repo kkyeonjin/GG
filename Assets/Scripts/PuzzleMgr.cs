@@ -204,8 +204,6 @@ public class PuzzleMgr : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Destroy(SingleGameMgr.Instance.m_LocalPlayerObj);
-        Destroy(SingleGameMgr.Instance.Canvas);
-        Destroy(SingleGameMgr.Instance.gameObject);
+        SingleGameMgr.Instance.Check_Destroy();
     }
 }

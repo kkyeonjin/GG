@@ -34,6 +34,8 @@ public class SingleGameMgr : MonoBehaviour
 
     private bool m_bPlayerGoalIn = false;
 
+    private bool m_bIsGameOver = false;
+
     void Awake()
     {
 
@@ -101,9 +103,21 @@ public class SingleGameMgr : MonoBehaviour
     public void Game_Over()
     {
         GameOver.SetActive(true);
+        m_bIsGameOver = true;
         Invoke("BackToLobby", 5f);
 
     }
+
+    public void Check_Destroy()
+    {
+        if(m_bIsGameOver)
+        {
+            Destroy(m_LocalPlayerObj);
+            Destroy(Canvas);
+            Destroy(this.gameObject);
+        }
+    }
+
     public void Reward_Player()//게임 끝난후 로비로 돌아감
     {
         //사용한 아이템 개수 Info에 업데이트
