@@ -556,11 +556,14 @@ public class Player : MonoBehaviour
 
             throwDir = rayHit.point - this.transform.position;
             Debug.Log("Aim Dir " + throwDir);
+            SubwayInventory.instance.On_Targeted(true);
         }
         else //RaycastHit false면 그냥 플레이어 앞에 떨어짐
         {
             throwDir = transform.forward;
             Debug.Log("Aim fail");
+            SubwayInventory.instance.On_Targeted(false);
+
         }
 
 
@@ -592,6 +595,8 @@ public class Player : MonoBehaviour
         grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true);
         m_Animator.SetTrigger("Throw");
         Debug.Log("Throw Item");
+
+        SubwayInventory.instance.Active_AimPoint(false);
 
         m_bIsThrow = false;
     }

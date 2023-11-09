@@ -15,6 +15,8 @@ public class SubwayInventory : MonoBehaviour
 
     public OrderGage orderGage;
 
+    public Image AimPoint; 
+
     private void Awake()
     {
         if (instance == null)
@@ -37,6 +39,16 @@ public class SubwayInventory : MonoBehaviour
         closeCam();
         Inv_selectItem();
         Inv_itemUse();
+    }
+    
+    public void Active_AimPoint(bool bActive)
+    {
+        AimPoint.gameObject.SetActive(bActive);
+    }
+
+    public void On_Targeted(bool bTarget)
+    {
+        AimPoint.color = bTarget ? Color.red : Color.green;
     }
 
     public void Inv_selectItem() // 활성화 아이템 변경
