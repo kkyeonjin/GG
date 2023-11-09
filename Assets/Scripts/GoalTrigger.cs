@@ -21,7 +21,7 @@ public class GoalTrigger : MonoBehaviour
             {
                 Debug.Log("Trigger1Enter");
                 Shake_Phase3.instance.FIrstShake();
-                //HospitalFall();
+                HospitalFall();
             }
             else if (triggerNum == 2)
             {
@@ -56,7 +56,7 @@ public class GoalTrigger : MonoBehaviour
             if (time <= timeSpent)
             {
                 Debug.Log("buildingFell");
-                SingleGameMgr.Instance.m_LocalPlayer.GetComponent<CharacterStatus>().Set_Damage(SingleGameMgr.Instance.m_LocalPlayer.GetComponent<CharacterStatus>().Get_MaxHP());
+                //SingleGameMgr.Instance.m_LocalPlayer.GetComponent<CharacterStatus>().Set_Damage(SingleGameMgr.Instance.m_LocalPlayer.GetComponent<CharacterStatus>().Get_MaxHP());
                 yield break;
             }
 

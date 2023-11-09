@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using System.Diagnostics.Eventing.Reader;
 
 public class Player : MonoBehaviour
 {
@@ -360,10 +361,10 @@ public class Player : MonoBehaviour
         {
             m_ClearUI.Activate_and_Over();
         }
-        else if(collision.gameObject.CompareTag("FallObjects"))
+        else if (collision.gameObject.CompareTag("FallObjects"))
         {
             //if(SceneManager.GetActiveScene().name == "Apartment_Phase3")
-            if(Cushion.instance.isUsing)
+            if (Cushion.instance.isUsing)
             {
                 m_Status.Set_Damage(2);
             }
@@ -371,8 +372,12 @@ public class Player : MonoBehaviour
             {
                 m_Status.Set_Damage(5);
             }
-
         }
+        else if(collision.gameObject.CompareTag("Building"))
+        {
+            m_Status.Set_Damage(m_Status.Get_MaxHP());
+        }
+
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
