@@ -5,22 +5,6 @@ using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
-    /// <summary>
-    /// - 시작 10초 동안 지하철 덜컹이며 운행
-    /// - 시작 10초 이후 지진 시작 + 재난 알림 문자음 사운드 + Order, HP 등 활성화
-    /// (1) Holding Bar : 사운드 3초 이내에 hold 후 10초 동안 유지
-    /// 
-    /// - holding 종료 후 5초 동안 지진 잠잠해지면서 멈춤
-    /// - 안내 방송 사운드 (열차에서 나와서 대피) but 문 안열림
-    /// 
-    /// (2) 비상 손전등 픽업
-    /// 
-    /// (3) 열차 문 비상 개방 : 비상 레버 회전
-    /// 
-    /// </summary>
-    
-
-    //Phase 1 Clear Condition 3개
     public enum phase1CC
     {
         HoldBar,
@@ -49,14 +33,31 @@ public class Phase1Mgr : MonoBehaviour
     public List<GameObject> PopUps = new List<GameObject>();
     public GameObject currentPopup;
 
-    //Photon
     public PhotonView m_PV;
     private bool m_bNextPhase = true;
 
-    //사운드
+    [Space(20)]
+    //백그라운드 사운드
+    public AudioSource audioSrcTrain;
     public AudioClip emergencyAlarm;
-    public AudioClip subwayWhiteNoise;
+    public AudioClip earthquakeNoise;
     public AudioClip phase1BGM;
+
+
+    /// <summary>
+    /// - 시작 10초 동안 지하철 덜컹이며 운행
+    /// - 시작 10초 이후 지진 시작 + 재난 알림 문자음 사운드 + Order, HP 등 활성화
+    /// (1) Holding Bar : 사운드 3초 이내에 hold 후 10초 동안 유지
+    /// 
+    /// - holding 종료 후 5초 동안 지진 잠잠해지면서 멈춤
+    /// - 안내 방송 사운드 (열차에서 나와서 대피) but 문 안열림
+    /// 
+    /// (2) 비상 손전등 픽업
+    /// 
+    /// (3) 열차 문 비상 개방 : 비상 레버 회전
+    /// 
+    /// </summary>
+
 
     private void Start()
     {
@@ -90,8 +91,6 @@ public class Phase1Mgr : MonoBehaviour
         //}
     }
 
-    public GameObject B2;
-
     IEnumerator runTrain()
     {
         yield return new WaitForSeconds(3.5f);
@@ -103,7 +102,8 @@ public class Phase1Mgr : MonoBehaviour
         //재난 문자 알림음
         earthquake.isQuake = true;
         camearShake.shakeCamera();
-        if (!playerIsHoldingBar)
+        
+        if(!playerIsHoldingBar)
         {
             SubwayInventory.instance.orderGage.Cut_Order();
         }
@@ -166,8 +166,6 @@ public class Phase1Mgr : MonoBehaviour
                 m_Instance = this;
             }
         }
-
-        DontDestroyOnLoad(this.gameObject);
 
         //Popups 받아오기
         //for(int i =0;i<4;i++) 

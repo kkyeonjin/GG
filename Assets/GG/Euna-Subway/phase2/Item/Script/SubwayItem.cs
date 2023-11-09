@@ -8,7 +8,7 @@ public class SubwayItem : MonoBehaviour
     public enum ItemType
     {
         // 손전등
-        FLASHLIGHT, 
+        FLASHLIGHT,
 
         // 자기 강화
         ENFORCEMENT,
@@ -33,6 +33,15 @@ public class SubwayItem : MonoBehaviour
 
     private Renderer pRenderer; //아이템 파티클 material
 
+    [Space(10)]
+    protected AudioSource itemAudioSrc;
+    public AudioClip itemPickUpSound;
+
+    private void Awake()
+    {
+        itemAudioSrc = this.GetComponent<AudioSource>();
+    }
+
     protected virtual void Start()
     {
         if ((this.itemType != SubwayItem.ItemType.FLASHLIGHT) && (pRenderer = this.transform.Find("Particle System").GetComponent<Renderer>()))
@@ -53,6 +62,10 @@ public class SubwayItem : MonoBehaviour
                 return true;
             }
         }
+
+        itemAudioSrc.clip = itemPickUpSound;
+        itemAudioSrc.Play();
+
         return false;
     }
 

@@ -6,7 +6,6 @@ public class SubwayItemMgr : MonoBehaviour
     public static SubwayItemMgr m_Instance = null;
     private void Awake()
     {
-        //概聪历 教臂沛 积己
         var duplicated = FindObjectsOfType<SubwayItemMgr>();
 
         if (duplicated.Length > 1)
@@ -21,7 +20,7 @@ public class SubwayItemMgr : MonoBehaviour
             }
         }
     }
-    
+
     public static SubwayItemMgr Instance
     {
         get
