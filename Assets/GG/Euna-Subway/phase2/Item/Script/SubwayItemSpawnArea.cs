@@ -6,34 +6,32 @@ using UnityEngine;
 [System.Serializable]
 public class SubwayItemSpawnArea : MonoBehaviour
 {
-    private spawnPoint[] spawnPoints;
-    public GameObject itemOnField; //필드 아이템 프리팹
+    public Transform[] spawnPoints;
 
     private void Awake()
     {
-        Transform[] spawnPoint = GetComponentsInChildren<Transform>();
+       spawnPoints = GetComponentsInChildren<Transform>();
+    }
 
+    public void Spawn_Itmes()
+    {
+        int n;
+        for (int i = 1; i< spawnPoints.Length; i++)
+        {
+            n = UnityEngine.Random.Range(0, SubwayItemMgr.Instance.subItemList.Count);
+            GameObject newItem = Instantiate(SubwayItemMgr.Instance.subItemList[n].gameObject);
+            newItem.transform.position = spawnPoints[i].transform.position;
+        }
     }
 
     private void Start()
     {
-        //spawnItem();
+        Spawn_Itmes();
     }
 
-    //아이템 랜덤 스폰
-    private void spawnItem (int idx)
-    {
-        
-    }
-
-    //아이템 먹힌 자리 확인 후 랜덤 스폰 실행
+    //아이템 먹힌 자리 채우기
     private void checkBlank()
     {
 
     }
-}
-
-public class spawnPoint
-{
-    public Transform[] t;
 }

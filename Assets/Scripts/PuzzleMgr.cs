@@ -48,7 +48,7 @@ public class PuzzleMgr : MonoBehaviour
 
     private void Update()
     {
-       // Test();
+        // Test();
     }
 
     public void Manual1Unlock()
@@ -69,11 +69,12 @@ public class PuzzleMgr : MonoBehaviour
     {
         obstacle.gameObject.transform.localPosition = new Vector3(Player.transform.localPosition.x, Player.transform.localPosition.y + 7f, Player.transform.localPosition.z);
         obstacle.SetActive(true);
+        Invoke("ObjDestroy", 7f);
     }
 
     public void Test()
     {
-        if(Input.GetKeyUp(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.V))
         {
             Shake.instance.EarthQuake();
         }
@@ -189,18 +190,18 @@ public class PuzzleMgr : MonoBehaviour
             {
                 Shake.instance.FIrstShake();
                 //Shake.instance.EarthQuake();
-                
+
                 if (passedPuzzle[0] == 0 && passedPuzzle[1] == 0 && passedPuzzle[2] == 0)
                 {
                     HidingPuzzle.instance.MsgPop();
                     //Shake.instance.EarthQuake();
                 }
-          
+
                 Debug.Log("시간 종료");
                 Timer.SetActive(false);
                 if (activeCam[1] == true || activeCam[2] == true || activeCam[3] == true)
                 {
-                    
+
                 }
                 else
                 {
@@ -216,5 +217,10 @@ public class PuzzleMgr : MonoBehaviour
     private void OnDestroy()
     {
         SingleGameMgr.Instance.Check_Destroy();
+    }
+
+    public void ObjDestroy()
+    {
+        Destroy(obstacle);
     }
 }

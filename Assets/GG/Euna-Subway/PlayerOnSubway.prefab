@@ -24206,7 +24206,6 @@ GameObject:
   - component: {fileID: 6442546472573574845}
   - component: {fileID: 4140219178820019928}
   - component: {fileID: 6379740359223369172}
-  - component: {fileID: 1997960653404793870}
   m_Layer: 6
   m_Name: PlayerOnSubway
   m_TagString: Player
@@ -24283,18 +24282,6 @@ CapsuleCollider:
   m_Height: 5.7
   m_Direction: 1
   m_Center: {x: 0, y: 2.8, z: 0}
---- !u!114 &1997960653404793870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6770683760631001627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec9ffb5112e06246a01b992a07cb3d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6784700526944786125
 GameObject:
   m_ObjectHideFlags: 0
@@ -24904,7 +24891,6 @@ MonoBehaviour:
   itemType: 1
   itemImage: {fileID: 21300000, guid: 1cc2125ef5ed32b43b10be73eea3243b, type: 3}
   itemNum: 4
-  used: 0
 --- !u!135 &1288860633296268158
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30028,7 +30014,6 @@ MonoBehaviour:
   itemType: 1
   itemImage: {fileID: 21300000, guid: 3b88e2c8c19468541823d2ad4ba4edba, type: 3}
   itemNum: 5
-  used: 0
 --- !u!135 &37305707850735372
 SphereCollider:
   m_ObjectHideFlags: 0
