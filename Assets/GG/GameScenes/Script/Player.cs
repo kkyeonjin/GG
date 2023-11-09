@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
     public GameObject OnHand;
 
+    private PlayerEffect m_Effect;
 
     //싱글모드 경사로
     private RaycastHit slopeHit;
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
             {
                 GameMgr.Instance.Set_LocalPlayer(this);
                 GameMgr.Instance.Set_Camera();
+                m_Effect = GetComponentInChildren<PlayerEffect>();
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
@@ -357,15 +359,12 @@ public class Player : MonoBehaviour
             float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
             m_Status.Set_Damage(fDamage);
         }
-        else if (collision.gameObject.CompareTag("Goal"))
-        {
-            m_ClearUI.Activate_and_Over();
-        }
         else if (collision.gameObject.CompareTag("FallObjects"))
         {
             //if(SceneManager.GetActiveScene().name == "Apartment_Phase3")
             if (Cushion.instance.isUsing)
             {
+                Cushion.instance.CushionDamage();
                 m_Status.Set_Damage(2);
             }
             else
@@ -481,16 +480,20 @@ public class Player : MonoBehaviour
         m_PV.RPC("Targeting_Death", m_PV.Owner);
     }
 
-    public void Apply_DeathItem()
+    public bool Apply_DeathItem()
     {
         if (!m_bAdrenaline)
         {
+            m_Effect.Stop_Particle(PlayerEffect.Effect.Death);
             m_Status.Set_Damage(m_Status.Get_MaxHP());
+            return true;
         }
+        return false;
     }
 
     public void Recover_Potion()
     {
+        m_Effect.Play_Particle(PlayerEffect.Effect.Recover);
         m_Status.Recover_HP(m_Status.Get_MaxHP());
     }
     //일정 시간동안 유지. true false로 껐다 키는 기능으로
@@ -619,16 +622,33 @@ public class Player : MonoBehaviour
     void Setbool_Adrenaline(bool bAdrenaline)
     {
         m_bAdrenaline = bAdrenaline;
-
+        if(m_bAdrenaline)
+        {
+            m_Effect.Play_Particle(PlayerEffect.Effect.Adrenaline);
+        }
+        else
+        {
+            m_Effect.Stop_Particle(PlayerEffect.Effect.Adrenaline);
+        }
     }
     [PunRPC]
     void Setbool_Invincible(bool Adrenaline)
     {
         m_bInvincible = Adrenaline;
+        if (m_bInvincible)
+        {
+            m_Effect.Play_Particle(PlayerEffect.Effect.Invincible);
+        }
+        else
+        {
+            m_Effect.Stop_Particle(PlayerEffect.Effect.Invincible);
+        }
     }
     [PunRPC]
     void Targeting_Death()
     {
+        //이펙트 시작
+        m_Effect.Play_Particle(PlayerEffect.Effect.Invincible);
         GameMgr.Instance.Trigger_Death();
     }
 }

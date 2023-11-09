@@ -9,11 +9,11 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "player")
+        if(other.gameObject.tag == "Player")
         {
             //Debug.Log("Ride");
             isRide = true;
-            other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(150);
+            other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(other.gameObject.GetComponentInChildren<CharacterStatus>().Get_MaxHP());
 
             /*
             Invoke("Die", 2.0f);

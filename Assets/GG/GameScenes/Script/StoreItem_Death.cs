@@ -30,13 +30,14 @@ public class StoreItem_Death : StoreItem
             Vector3 vDir = Camera.main.transform.forward;
             RaycastHit Info;
             int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
-
+            SubwayInventory.instance.Active_AimPoint(true);
             if (Physics.Raycast(vOrigin, vDir, out Info, 100f, layer))
             {
                 //가운데 타게팅 하이라이팅 되는 기능 추가
                 if (Input.GetMouseButtonDown(0))
                 {
                     Info.collider.gameObject.GetComponent<Player>().Immediate_Death();
+                    SubwayInventory.instance.Active_AimPoint(false);
                     Utilized();
                     Debug.Log("아이템 사용함");
 

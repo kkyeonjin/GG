@@ -6,11 +6,13 @@ public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
     AudioSource FireExSound;
+    float remainder;
 
     private void Awake()
     {
         FireParticle = GameObject.Find("SingleOrigin").transform.GetChild(2).transform.GetChild(0).gameObject;
         FireExSound = this.GetComponent<AudioSource>();
+        remainder = this.gameObject.GetComponent<PickableItem>().remainder;
         //public int remainder = 40; 
     }
     public void Jet()
@@ -32,6 +34,9 @@ public class FireEX : MonoBehaviour
     public void Using()
     {
         this.gameObject.GetComponent<PickableItem>().remainder--;
+        Inventory.instance.remainderBar[Inventory.instance.activeNum].fillAmount = this.gameObject.GetComponent<PickableItem>().remainder / remainder;
+       Debug.Log(this.gameObject.GetComponent<PickableItem>().remainder);
+       //ebug.Log(this.gameObject.GetComponent<PickableItem>().remainder / remainder);
     }
 
     
