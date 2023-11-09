@@ -35,6 +35,7 @@ public class OrderGage : MonoBehaviour
 
     public void Cut_Order() //HoldingBar ฐüทร
     {
+        Debug.Log("Cut Order");
         m_fOrder = Mathf.Max(0f, m_fOrder - m_fCOrder * Time.deltaTime);
         /*
         if(m_fOrder <= 0f)

@@ -386,6 +386,12 @@ public class Player : MonoBehaviour
             m_Animator.SetBool("IsGround", m_bIsGround);
             ///Debug.Log("on " + collision.gameObject.name);
         }
+
+        //지하철 AI와 충돌 시 질서 게이지 감소
+        if (collision.gameObject.CompareTag("AI"))
+        {
+            SubwayInventory.instance.orderGage.Cut_Order();
+        }
     }
     public void SetAnimation(string parameter, bool flag)
     {
