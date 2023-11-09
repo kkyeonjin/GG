@@ -34,6 +34,8 @@ public class PuzzleMgr : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != null) return;
 
+        //DontDestroyOnLoad(this);
+
         activeCam[0] = true;
         playingPhase = 1;
     }
@@ -159,10 +161,7 @@ public class PuzzleMgr : MonoBehaviour
                     HidingPuzzle.instance.MsgPop();
                     //Shake.instance.EarthQuake();
                 }
-                else
-                {
-                    Player.GetComponent<CharacterStatus>().Set_Damage(Player.GetComponent<CharacterStatus>().Get_MaxHP());
-                }
+          
                     Debug.Log("시간 종료");
                 Timer.SetActive(false);
                 curTime = 0;

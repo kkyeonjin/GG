@@ -125,6 +125,14 @@ public class ItemScan : MonoBehaviour
                     hitInfo.transform.gameObject.GetComponent<CanvasChange>().PuzzleOn();
                 }
             }
+            else if(hitInfo.transform.gameObject.CompareTag("ElectricSwitch"))
+            {
+                pressE.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<ElectricSwitch>().TurnOff();
+                }
+            }
         }
         else
         {

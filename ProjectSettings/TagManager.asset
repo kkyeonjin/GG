@@ -39,6 +39,8 @@ TagManager:
   - UIHoldingItem
   - FollowCam
   - OtherPlayer
+  - ElectricSwitch
+  - Building
   layers:
   - Default
   - TransparentFX

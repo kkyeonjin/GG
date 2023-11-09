@@ -84,8 +84,13 @@ public class Shake : MonoBehaviour
 
             elapsedTime += Time.deltaTime;
         }
-
+        if (PuzzleMgr.instance.passedPuzzle[0] != 0 || PuzzleMgr.instance.passedPuzzle[1] != 0 || PuzzleMgr.instance.passedPuzzle[2] != 0)
+        {
+            CharacterStatus playerStatus = SingleGameMgr.Instance.m_LocalPlayer.GetComponentInChildren<CharacterStatus>();
+            playerStatus.Set_Damage(playerStatus.Get_MaxHP());
+        }
         cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
+        
     }
 
     IEnumerator ShakeCoroutine2()

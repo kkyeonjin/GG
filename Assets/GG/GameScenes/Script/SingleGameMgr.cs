@@ -30,6 +30,7 @@ public class SingleGameMgr : MonoBehaviour
     public TextMeshProUGUI Record;
 
     public GameObject GameOver;
+    public GameObject Canvas;
 
     private bool m_bPlayerGoalIn = false;
 
@@ -124,6 +125,9 @@ public class SingleGameMgr : MonoBehaviour
 
     void BackToLobby()
     {
+        Destroy(Canvas);
+        Destroy(m_LocalPlayerObj);
+        Destroy(this.gameObject);
         SceneManager.LoadScene("Lobby");
     }
 
