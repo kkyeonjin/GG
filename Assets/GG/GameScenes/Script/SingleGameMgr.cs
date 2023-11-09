@@ -108,7 +108,34 @@ public class SingleGameMgr : MonoBehaviour
     {
         //사용한 아이템 개수 Info에 업데이트
         //보상 등 여기서 주면 될듯
+        if(m_fPassedTime <= 180f)
+        {
+            InfoHandler.Instance.Set_Exp(100);
+            InfoHandler.Instance.Set_Money(50);
+        }
+        else if(m_fPassedTime <= 240f)
+        {
+            InfoHandler.Instance.Set_Exp(80);
+            InfoHandler.Instance.Set_Money(40);
+        }
+        else if (m_fPassedTime <= 300f)
+        {
+            InfoHandler.Instance.Set_Exp(70);
+            InfoHandler.Instance.Set_Money(30);
+        }
+        else if (m_fPassedTime <= 360f)
+        {
+            InfoHandler.Instance.Set_Exp(60);
+            InfoHandler.Instance.Set_Money(20);
 
+        }
+        else
+        {
+            InfoHandler.Instance.Set_Exp(50);
+            InfoHandler.Instance.Set_Money(10);
+        }
+
+        InfoHandler.Instance.Save_Info();
     }
 
     public void Cursor_Locked()
