@@ -113,6 +113,17 @@ public class PuzzleMgr : MonoBehaviour
         manual3.SetActive(false);
     }
 
+    public void Manual4Unlock()
+    {
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.FIRE);
+        Active_ManualUI((int)InfoHandler.HOUSE.FIRE);
+    }
+
+    public void Manual5Unlock()
+    {
+        InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.ELEVATOR);
+        Active_ManualUI((int)InfoHandler.HOUSE.ELEVATOR);
+    }
     public void SwitchLight()
     {
         if (valvePuzzle[0] && valvePuzzle[1])

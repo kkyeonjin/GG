@@ -5,6 +5,7 @@ using UnityEngine;
 public class MsgPopUp : MonoBehaviour
 {
     public GameObject msgPop;
+    public AudioSource msgSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class MsgPopUp : MonoBehaviour
     public void MsgPop()
     {
         msgPop.SetActive(true);
+        msgSound.Play();
         PuzzleMgr.instance.TimerStart();
         Invoke("MsgClose", 4.0f);
     }
@@ -27,6 +29,7 @@ public class MsgPopUp : MonoBehaviour
     public void MsgClose()
     {
         msgPop.SetActive(false);
+        msgSound.Pause();
     }
 
 }

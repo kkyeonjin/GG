@@ -12,6 +12,8 @@ public class Shake : MonoBehaviour
     public Transform HideCam1, HideCam2, HideCam3, MainCam;
     Transform cam;
 
+    public AudioSource EarthquakeSound;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -74,7 +76,7 @@ public class Shake : MonoBehaviour
     {
         Vector3 originPosition = cam.localPosition;
         float elapsedTime = 0.0f;
-
+        EarthquakeSound.Play();
         while (elapsedTime < shakeTime)
         {
             Vector3 randomPoint = originPosition + Random.insideUnitSphere * shakeAmount;
@@ -94,12 +96,14 @@ public class Shake : MonoBehaviour
             CharacterStatus playerStatus = SingleGameMgr.Instance.m_LocalPlayer.GetComponentInChildren<CharacterStatus>();
             playerStatus.Set_Damage(playerStatus.Get_MaxHP());
         }
+        EarthquakeSound.Pause();
         cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
         
     }
 
     IEnumerator ShakeCoroutine2()
     {
+        EarthquakeSound.Play();
         Vector3 originPosition = cam.localPosition;
         //float elapsedTime = 0.0f;
 

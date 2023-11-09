@@ -14,6 +14,7 @@ public class Elevator : MonoBehaviour
             //Debug.Log("Ride");
             isRide = true;
             PuzzleMgr.instance.inElevator = true;
+            PuzzleMgr.instance.Manual5Unlock();
             Shake.instance.FIrstShake();
             PuzzleMgr.instance.MakeObstacle();
             //other.gameObject.GetComponentInChildren<CharacterStatus>().Set_Damage(other.gameObject.GetComponentInChildren<CharacterStatus>().Get_MaxHP());

@@ -12,6 +12,8 @@ public class Shake_Phase3 : MonoBehaviour
     public Transform MainCam;
     Transform cam;
 
+    public AudioSource quakeSound;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class Shake_Phase3 : MonoBehaviour
     {
         Vector3 originPosition = cam.localPosition;
         float elapsedTime = 0.0f;
+        quakeSound.Play();
 
         while (elapsedTime < shakeTime)
         {
@@ -73,6 +76,7 @@ public class Shake_Phase3 : MonoBehaviour
             elapsedTime += Time.deltaTime;
         }
 
+        quakeSound.Pause();
         cam.localPosition = Vector3.Lerp(cam.localPosition, originPosition, Time.deltaTime); // * shakeSpeed);
     }
 

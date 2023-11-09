@@ -27,6 +27,10 @@ public class PickableItem : MonoBehaviour
                 break;
             }
         }
+        if(itemNum == 4)
+        {
+            PuzzleMgr.instance.Manual4Unlock();
+        }
     }
 
     public void RemainderBar()
