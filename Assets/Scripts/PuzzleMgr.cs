@@ -34,6 +34,8 @@ public class PuzzleMgr : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != null) return;
 
+        //DontDestroyOnLoad(this);
+
         activeCam[0] = true;
         playingPhase = 1;
     }

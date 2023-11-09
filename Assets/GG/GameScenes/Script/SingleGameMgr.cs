@@ -30,6 +30,7 @@ public class SingleGameMgr : MonoBehaviour
     public TextMeshProUGUI Record;
 
     public GameObject GameOver;
+    public GameObject Canvas;
 
     private bool m_bPlayerGoalIn = false;
 
