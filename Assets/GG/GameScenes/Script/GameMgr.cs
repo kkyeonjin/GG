@@ -44,6 +44,7 @@ public class GameMgr : MonoBehaviour
 
     private bool m_bDeathCount = false;
     private float m_fDeathTimer = 0f;
+    public GameObject DeathUI;
     int iRank = -1;
 
     void Awake()
@@ -212,11 +213,15 @@ public class GameMgr : MonoBehaviour
     {
         m_fDeathTimer = 5f;
         m_bDeathCount = true;
+        DeathUI.SetActive(true);
     }
     
     void Kill_Player()
     {
-        m_LocalPlayer.Apply_DeathItem();
+        if(m_LocalPlayer.Apply_DeathItem() == false)//막았음
+        {
+            //대충 막는 이펙트
+        }
     }
 
     public void Use_ResumeItem()//즉부 아이템 썻을 때
@@ -316,6 +321,7 @@ public class GameMgr : MonoBehaviour
             if(m_fDeathTimer<=0f)
             {
                 m_bDeathCount = false;
+                DeathUI.SetActive(false);
                 //죽여라
                 Kill_Player();
             }
