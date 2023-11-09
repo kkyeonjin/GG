@@ -19,6 +19,7 @@ public class UIEffect : MonoBehaviour
 
     public float m_fRatioDest= 0f;
     public float m_fRatioSour= 1f;
+    public bool m_bUseShader = true;
     protected float m_fPassedTime = 0f;
     protected float m_fOriginScale = 1f;
 
@@ -27,8 +28,8 @@ public class UIEffect : MonoBehaviour
 
     void Awake()
     {
-
-        m_Image.material = Instantiate(m_Material);
+        if(m_bUseShader)
+            m_Image.material = Instantiate(m_Material);
         //m_fRatioSour = 0f;
 
         m_fOriginScale = m_Image.transform.localScale.x;
@@ -45,11 +46,17 @@ public class UIEffect : MonoBehaviour
 
 
         m_Image.transform.localScale = new Vector3(m_fOriginScale + m_fCurrRatio * m_fScale, m_fOriginScale + m_fCurrRatio * m_fScale, m_fOriginScale);
-        
-        m_Image.material.SetFloat("g_fLerpRatio", m_fCurrRatio);
-        m_Image.material.SetVector("g_vColor", m_Color);
-        m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
-       
+
+        if (m_bUseShader)
+        {
+            m_Image.material.SetFloat("g_fLerpRatio", m_fCurrRatio);
+            m_Image.material.SetVector("g_vColor", m_Color);
+            m_Image.material.SetVector("g_vOriginColor", m_vOriginColor);
+        }
+        else 
+        {
+            m_Image.fillAmount = m_fCurrRatio;
+        }
     }
 
     private void OnPreRender()

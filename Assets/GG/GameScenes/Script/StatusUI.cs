@@ -34,11 +34,13 @@ public class StatusUI : MonoBehaviour
 
             m_StaminaUI.Set_Ratio(fRatio);
 
-            if (subway)
+            if (subway == true)
             {
                 int fMaxOrder = (int)SubwayInventory.instance.orderGage.Get_MaxOrder();
                 int fOrder = (int)SubwayInventory.instance.orderGage.Get_Order();
                 float fORatio = (float) fOrder / (float)fMaxOrder;
+
+                Debug.Log("Order Ratio: " + fORatio);
                 m_OrderUI.Set_Ratio(fORatio);
             }
         }

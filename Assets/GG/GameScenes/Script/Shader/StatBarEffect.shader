@@ -141,7 +141,7 @@ Shader "Universal Render Pipeline/UI/StatBarEffect"
         //col = g_vColor;
         if (i.uv.x > g_fLerpRatio)
         {
-            col = g_vOriginColor;
+            discard;
         }
 
         return col;

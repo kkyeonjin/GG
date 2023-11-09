@@ -7,7 +7,7 @@ public class AvatarStatus : MonoBehaviour
     public float m_fHP;
     public float m_fStamina;
     public float m_fSpeed;
-
+    public GameObject OnHand;
     public float Get_HP()
     {
         return m_fHP;
@@ -19,5 +19,9 @@ public class AvatarStatus : MonoBehaviour
     public float Get_Speed()
     {
         return m_fSpeed;
+    }
+    public GameObject Get_Hand()
+    {
+        return OnHand;
     }
 }

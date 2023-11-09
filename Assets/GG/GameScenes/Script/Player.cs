@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.T))
         {
             m_Status.Set_Damage(1f);
+            Debug.Log("Player HP :" + m_Status.Get_HP());
         }
         m_Moving();
     }
@@ -104,6 +105,7 @@ public class Player : MonoBehaviour
     {
         m_fSpeed = Input.Get_Speed();
         m_Status.Change_Status(Input.Get_HP(), Input.Get_Stamina());
+        OnHand = Input.Get_Hand();
     }
 
 
