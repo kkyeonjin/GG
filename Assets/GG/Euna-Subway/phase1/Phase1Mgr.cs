@@ -5,14 +5,20 @@ using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
+    public enum phase1CC
+    {
+        HoldBar,
+        Flashlight,
+        Lever
+    }
     public float quakeStartTime = 6f;
     public float quakeStopTime = 20f;
 
     public static Phase1Mgr m_Instance = null;
-    public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
+    public bool[] clearCondition = new bool[3] { false, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
     //기둥 관련
-    public bool isHoldingBar = false;
+    public bool playerIsHoldingBar = false;
     public List<HoldingBar> holdingBars;
 
     public GameObject Train1;
@@ -45,8 +51,6 @@ public class Phase1Mgr : MonoBehaviour
     /// 
     /// </summary>
 
-    private bool AllClear = false;
-
 
     private void Start()
     {
@@ -66,18 +70,6 @@ public class Phase1Mgr : MonoBehaviour
         {
             Debug.Log("Goal Count Down!");
         }
-        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
-        {
-            //게임 종료 후 대기 
-            
-            if (m_bNextPhase)
-            {
-                m_PV.RPC("Start_NextPhase", RpcTarget.All);
-                m_bNextPhase = false;
-            }
-            Debug.Log("Clear!");
-        }
-        Debug.Log("clear 0 1 2 : " + clearCondition[0] + clearCondition[1] + clearCondition[2]);
     }
 
     public void Check_Column()
@@ -174,6 +166,35 @@ public class Phase1Mgr : MonoBehaviour
         //{
         //    PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
         //}
+    }
+
+    public void Check_Condition(phase1CC cleared)
+    {
+        switch (cleared)
+        {
+            case phase1CC.HoldBar:
+                clearCondition[0] = true;
+                break;
+            case phase1CC.Flashlight:
+                clearCondition[1] = true;
+                break;
+            case phase1CC.Lever:
+                clearCondition[2] = true;
+                break;
+            default:
+                break;
+
+        }
+
+        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
+        {
+            if (m_bNextPhase)
+            {
+                m_PV.RPC("Start_NextPhase", RpcTarget.All);
+                m_bNextPhase = false;
+            }
+            Debug.Log("Clear!");
+        }
     }
 
     [PunRPC]
