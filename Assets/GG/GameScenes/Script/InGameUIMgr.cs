@@ -34,7 +34,7 @@ public class InGameUIMgr : MonoBehaviour
 
     //최초 플레이어 골인 후 타이머
     public TextMeshProUGUI GoalTimer;
-    public bool m_bGoalCountDown = false; //최초 플레이어 골인 여부
+    private bool m_bGoalCountDown = false; //최초 플레이어 골인 여부
     public int iGoalTimerSec = 15; //최초 플레이어 골인 이후 카운트다운
     public float m_fGoalTime = 0f; //골인 이후 경과 시간 누적 변수
 
