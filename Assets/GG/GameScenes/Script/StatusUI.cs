@@ -39,7 +39,7 @@ public class StatusUI : MonoBehaviour
                 int fMaxOrder = (int)SubwayInventory.instance.orderGage.Get_MaxOrder();
                 int fOrder = (int)SubwayInventory.instance.orderGage.Get_Order();
                 float fORatio = (float) fOrder / (float)fMaxOrder;
-                m_HPUI.Set_Ratio(fORatio);
+                m_OrderUI.Set_Ratio(fORatio);
             }
         }
     }
