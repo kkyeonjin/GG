@@ -26,6 +26,7 @@ public class Phase1Mgr : MonoBehaviour
 
     //지진
     public Earthquake earthquake;
+    public CameraShake camearShake;
 
     //대응 수칙
     public GameObject PopUpScreen;
@@ -62,14 +63,8 @@ public class Phase1Mgr : MonoBehaviour
 
         //30초 뒤 운행 중지 (자동)
         StartCoroutine("stopQuake");
-    }
 
-    private void Update()
-    {
-        if (InGameUIMgr.Instance.m_bGoalCountDown)
-        {
-            Debug.Log("Goal Count Down!");
-        }
+        camearShake.earthquake = earthquake;
     }
 
     public void Check_Column()
@@ -102,6 +97,7 @@ public class Phase1Mgr : MonoBehaviour
 
         //재난 문자 알림음
         earthquake.isQuake = true;
+        camearShake.shakeCamera();
         Debug.Log("isQuake" + earthquake.isQuake);
         //B2.GetComponent<Earthquake>().t1 = Train1.transform;
         //B2.GetComponent<Earthquake>().t2 = Train2.transform;
@@ -109,10 +105,11 @@ public class Phase1Mgr : MonoBehaviour
 
     IEnumerator stopQuake()
     {
-        Debug.Log("Quake stop");
         yield return new WaitForSeconds(quakeStopTime);
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
+        camearShake.shakeCameraStop();
+        Debug.Log("Quake stop");
         //Check_Column();
 
         InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.TRAINSTOP);
