@@ -27,8 +27,8 @@ public class SelectStageUI : MonoBehaviour
     {
         //NetworkManager.Instance.StartGame("Multi_Subway");
         string SceneName = "";
-        m_iStageIndex = SelectingButton.Get_Index();
-        switch (m_iStageIndex)
+        //m_iStageIndex = SelectingButton.Get_Index();
+        switch (0)
         {
             case 0:
                 SceneName = "Multi_Subway";
