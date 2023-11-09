@@ -51,6 +51,10 @@ public class SubwayInventory : MonoBehaviour
         AimPoint.color = bTarget ? Color.red : Color.green;
     }
 
+    public float Get_OrderGauge()
+    {
+        return orderGage.Get_Order();
+    }
     public void Inv_selectItem() // 활성화 아이템 변경
     {
         int prevNum;

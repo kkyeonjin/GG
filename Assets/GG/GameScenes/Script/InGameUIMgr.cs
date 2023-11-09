@@ -49,6 +49,8 @@ public class InGameUIMgr : MonoBehaviour
 
     private bool m_bStopUpdating = false;
 
+    public bool m_bPhase2 = false;
+
     void Awake()
     {
 
@@ -118,6 +120,11 @@ public class InGameUIMgr : MonoBehaviour
         return GeneralTimer.text;
     }
 
+    public float Get_Record_Time()
+    {
+        return m_fPassTime;
+    }
+
     public void Activate_RewpawnUI()
     {
         m_fRespawnPassTime = m_fRespawnTime;
@@ -158,14 +165,21 @@ public class InGameUIMgr : MonoBehaviour
     {
 
     }
-     
+
     public void Start_Game()
     {
         GeneralTimer.gameObject.SetActive(true);
 
-        m_fPassTime = 60 * iGeneralTimerMin + iGeneralTimerSec;
-
-        Timer = Calculate_Time;
+        if (m_bPhase2)
+        {
+            Timer = Calculate_Time_Phase2;
+            m_fPassTime = 0f;
+        }
+        else
+        {
+            Timer = Calculate_Time_Phase1;
+            m_fPassTime = 60 * iGeneralTimerMin + iGeneralTimerSec;
+        }
     }
 
     public void Start_GoalTimer()
@@ -198,7 +212,7 @@ public class InGameUIMgr : MonoBehaviour
         GoalTimer.gameObject.SetActive(false); 
     }
 
-    void Calculate_Time()
+    void Calculate_Time_Phase1()
     {
         m_fPassTime -= Time.deltaTime;
         int Min = Mathf.Max(0, (int)m_fPassTime / 60);
@@ -213,6 +227,28 @@ public class InGameUIMgr : MonoBehaviour
        
         if (m_bStopUpdating == false)
         {
+            string szMin = string.Format("{0:D2}", Min);
+            string szSec = string.Format("{0:D2}", Sec);
+            GeneralTimer.text = szMin + ":" + szSec;
+        }
+    }
+
+    void Calculate_Time_Phase2()
+    {
+        
+        if (m_bGoalCountDown)
+        {
+            GameMgr.Instance.Game_Over();
+            GeneralTimer.text = "--:--";
+            Timer = Empty;
+        }
+
+        if (m_bStopUpdating == false)
+        {
+            m_fPassTime += Time.deltaTime;
+            int Min = Mathf.Max(0, (int)m_fPassTime / 60);
+            int Sec = Mathf.Max(0, (int)m_fPassTime % 60);
+
             string szMin = string.Format("{0:D2}", Min);
             string szSec = string.Format("{0:D2}", Sec);
             GeneralTimer.text = szMin + ":" + szSec;

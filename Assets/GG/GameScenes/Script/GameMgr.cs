@@ -44,6 +44,7 @@ public class GameMgr : MonoBehaviour
 
     private bool m_bDeathCount = false;
     private float m_fDeathTimer = 0f;
+    int iRank = -1;
 
     void Awake()
     {
@@ -204,6 +205,7 @@ public class GameMgr : MonoBehaviour
         {
             m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
         }
+
         Invoke("Show_ResultScreen", fCeremonyTime);
     }
     public void Trigger_Death()
@@ -239,7 +241,9 @@ public class GameMgr : MonoBehaviour
         if (IsMine)
         {
             InGameUIMgr.Instance.Player_GoalIn();
+            iRank = Ranking.Count + 1;
             m_PV.RPC("Add_RankingList", RpcTarget.All, PhotonNetwork.LocalPlayer, InGameUIMgr.Instance.Get_Record());
+            
             m_bLocalPlayerGoalIn = true;
 
             if (m_bSomeOneFirst == false)
@@ -333,6 +337,53 @@ public class GameMgr : MonoBehaviour
     {
         //사용한 아이템 개수 Info에 업데이트
         //보상 등 여기서 주면 될듯
+        if(m_bLocalPlayerGoalIn)
+        {
+            int Exp = 5;
+
+            switch(iRank)
+            {
+                case 1:
+                    Exp = 100;
+                    InfoHandler.Instance.Set_Money(50);
+                    break;
+                case 2:
+                    Exp = 80;
+                    InfoHandler.Instance.Set_Money(45);
+                    break;
+                case 3:
+                    Exp = 70;
+                    InfoHandler.Instance.Set_Money(40);
+                    break;
+                case 4:
+                    Exp = 60;
+                    InfoHandler.Instance.Set_Money(35);
+                    break;
+                case 5:
+                    Exp = 50;
+                    InfoHandler.Instance.Set_Money(30);
+                    break;
+                case 6:
+                    Exp = 40;
+                    InfoHandler.Instance.Set_Money(25);
+                    break;
+                case 7:
+                    Exp = 30;
+                    InfoHandler.Instance.Set_Money(20);
+                    break;
+                case 8:
+                    Exp = 10;
+                    InfoHandler.Instance.Set_Money(15);
+                    break;
+                default:
+                    Exp = 5;
+                    InfoHandler.Instance.Set_Money(10);
+                    break;
+            }
+
+            Exp = (int)((float)Exp * 0.01f * SubwayInventory.instance.Get_OrderGauge());
+            InfoHandler.Instance.Set_Exp(Exp);
+        }
 
     }
     
