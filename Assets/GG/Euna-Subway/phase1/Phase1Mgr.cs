@@ -170,10 +170,10 @@ public class Phase1Mgr : MonoBehaviour
         }
 
         //Popups 받아오기
-        for(int i =0;i<4;i++) 
-        {
-            PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
-        }
+        //for(int i =0;i<4;i++) 
+        //{
+        //    PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
+        //}
     }
 
     [PunRPC]
