@@ -125,6 +125,9 @@ public class SingleGameMgr : MonoBehaviour
 
     void BackToLobby()
     {
+        Destroy(Canvas);
+        Destroy(m_LocalPlayerObj);
+        Destroy(this.gameObject);
         SceneManager.LoadScene("Lobby");
     }
 
