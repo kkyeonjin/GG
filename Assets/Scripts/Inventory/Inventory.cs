@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
     public int activeNum = 0; // 활성화 인벤토리 인덱스
     public int activeItem; // 활성화 아이템 고유번호
     public Sprite blank;
+    public List<Image> remainderBar = new List<Image>(new Image[3]);
 
     
     private void Awake()
@@ -61,7 +62,6 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
     public void ReArrange() // 아이템 사용 시 아이콘, 인벤토리 리스트 재정렬
     {
         Debug.Log("rearrange");
