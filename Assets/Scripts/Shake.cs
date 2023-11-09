@@ -58,7 +58,7 @@ public class Shake : MonoBehaviour
 
     public void StartShake()
     {
-        shakeTime = 5f;
+        shakeTime = 3f;
         shakeAmount = 6f;
         StartCoroutine(ShakeCoroutine());
     }

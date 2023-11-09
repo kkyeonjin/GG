@@ -12,7 +12,7 @@ public class ItemScan : MonoBehaviour
     public GameObject pickedItem;
 
     //Press E UI
-    public TMP_Text pressE;
+    public GameObject pressE;
     public Image AimPointUI;
 
     //HideCam

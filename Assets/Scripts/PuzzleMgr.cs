@@ -32,6 +32,8 @@ public class PuzzleMgr : MonoBehaviour
     public List<GameObject> objs2Off = new List<GameObject>(new GameObject[8]);
     public List<GameObject> objs2On = new List<GameObject>(new GameObject[2]);
 
+    public GameObject obstacle;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -60,6 +62,12 @@ public class PuzzleMgr : MonoBehaviour
     public void Manual1Close()
     {
         manual1.SetActive(false);
+    }
+
+    public void MakeObstacle()
+    {
+        obstacle.gameObject.transform.localPosition = new Vector3(Player.transform.localPosition.x, Player.transform.localPosition.y + 7f, Player.transform.localPosition.z);
+        obstacle.SetActive(true);
     }
 
     public void Test()
@@ -178,11 +186,25 @@ public class PuzzleMgr : MonoBehaviour
           
                 Debug.Log("시간 종료");
                 Timer.SetActive(false);
-                Back2Main();
+                if (activeCam[1] == true || activeCam[2] == true || activeCam[3] == true)
+                {
+                    
+                }
+                else
+                {
+                    Back2Main();
+                }
+                MakeObstacle();
                 curTime = 0;
                 playingPhase = 2;
                 yield break;
             }
         }
+    }
+    private void OnDestroy()
+    {
+        Destroy(SingleGameMgr.Instance.m_LocalPlayerObj);
+        Destroy(SingleGameMgr.Instance.Canvas);
+        Destroy(SingleGameMgr.Instance.gameObject);
     }
 }
