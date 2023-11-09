@@ -12,6 +12,8 @@ public class HidingPuzzle : MonoBehaviour
     public GameObject msg;
     public GameObject msgList1, msgList2;
 
+    public AudioSource msgAudio;
+
     //public GameObject msg;
     public bool isFirst = false;
     private void Awake()
@@ -33,6 +35,7 @@ public class HidingPuzzle : MonoBehaviour
     public void MsgPop()
     {
         Debug.Log("msgPop");
+        msgAudio.Play();
         msgPop.SetActive(true);
         msg.SetActive(true);
         msgList1.SetActive(false);
@@ -42,6 +45,7 @@ public class HidingPuzzle : MonoBehaviour
 
     public void MsgClose()
     {
+        msgAudio.Pause();
         msgPop.SetActive(false);
     }
 }
