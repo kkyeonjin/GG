@@ -42,7 +42,7 @@ public class SingleGameMgr : MonoBehaviour
         var duplicated = FindObjectsOfType<SingleGameMgr>();
 
         if (duplicated.Length > 1)
-        {//이미 생성해서 플레이어 있음
+        {
             Destroy(this.gameObject);
         }
         else

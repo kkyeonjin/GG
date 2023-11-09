@@ -19,7 +19,7 @@ public class StoreItem_Invincible : StoreItem
     protected override void Start()
     {
         m_eIndex = ITEM.INVINCIBLE;
-        m_fDuration = 5f;
+        m_fDuration = 10f;
         m_fDurationTimer = 0f;
     }
 

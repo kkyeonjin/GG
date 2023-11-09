@@ -19,7 +19,7 @@ public class StoreItem_Adrenaline : StoreItem
     protected override void Start()
     {
         m_eIndex = ITEM.ADRENALINE;
-        m_fDuration = 1f;
+        m_fDuration = 10f;
         m_fDurationTimer = 0f;
     }
 

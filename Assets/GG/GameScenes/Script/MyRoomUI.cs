@@ -9,9 +9,9 @@ public class MyRoomUI : MonoBehaviour
 
     public int m_iCharacterIndex;
     public Button MyButton;
+    public Image ButtonImage;
 
     private bool m_bIsSelected = false;
-    private Image ButtonImage;
 
 
     private void Start()
@@ -19,14 +19,22 @@ public class MyRoomUI : MonoBehaviour
         if (m_iCharacterIndex > -1)
         {
             if (false == InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex))
-                MyButton.interactable = false;
-            else if (InfoHandler.Instance.Get_CurrCharacter() == m_iCharacterIndex)
             {
-                m_Manager.Set_CurrAvatarUI(this);
-                m_bIsSelected = true;
+                MyButton.interactable = false;
+                ButtonImage.color = new Color(0.8f, 0.8f, 0.8f);
             }
-            ButtonImage = MyButton.image;
-            Avatar_Selected(m_bIsSelected);
+            else
+            {
+                Color color = MyButton.image.color;
+                color.a = 0f;
+                MyButton.image.color = color;
+                if (InfoHandler.Instance.Get_CurrCharacter() == m_iCharacterIndex)
+                {
+                    m_Manager.Set_CurrAvatarUI(this);
+                    m_bIsSelected = true;
+                }
+                Avatar_Selected(m_bIsSelected);
+            }
         }
     }
 
@@ -49,7 +57,7 @@ public class MyRoomUI : MonoBehaviour
         }
         else
         {
-            ButtonImage.color = new Color(0.75f, 0.75f, 0.75f);
+            ButtonImage.color = new Color(0.8f, 0.8f, 0.8f);
         }
     }
 
