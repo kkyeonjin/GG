@@ -31,6 +31,7 @@ public class MyRoomMgr : MonoBehaviour
 
     public GameObject ManualUI;
     public GameObject ItemUI;
+    public GameObject AvatarUI;
     private GameObject CurrUI;
 
     //Manual
@@ -74,7 +75,7 @@ public class MyRoomMgr : MonoBehaviour
             }
         }
 
-        CurrUI = ItemUI;
+        CurrUI = AvatarUI;
 
         ManualString = new string[2, 8];
 
@@ -155,6 +156,13 @@ public class MyRoomMgr : MonoBehaviour
         CurrUI.SetActive(false);
         ItemUI.SetActive(true);
         CurrUI = ItemUI;
+    }
+
+    public void Active_AvatarUI()
+    {
+        CurrUI.SetActive(false);
+        AvatarUI.SetActive(true);
+        CurrUI = AvatarUI;
     }
 
     public void HouseManual_On()
