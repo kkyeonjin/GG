@@ -41,11 +41,6 @@ public class Phase2Mgr : MonoBehaviour
         resetFallings = false;
     }
 
-    //Phase 1 -> 2 넘어올 때 SubwayInventory의 inventory & Ordergage 초기화
-    private void ResetInventory()
-    {
-
-    }
 
     private void Update()
     {

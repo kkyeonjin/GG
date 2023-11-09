@@ -15,8 +15,8 @@ public class UIButton : MonoBehaviour
     public GameObject m_ConnectedUI;
 
     public ScreenTransition TransitionImg;
+    public Image ButtonImage;
 
-    private Image ButtonImage;
     private bool m_bIsSelected = false;
 
     public 
@@ -27,14 +27,23 @@ public class UIButton : MonoBehaviour
 
         if (m_iCharacterIndex > -1)
         {
-            ButtonImage = MyButton.image;
+            //ButtonImage = MyButton.image;
             if (false == InfoHandler.Instance.Is_Character_Available(m_iCharacterIndex))
-                MyButton.interactable = false;
-            else if (InfoHandler.Instance.Get_CurrCharacter() == m_iCharacterIndex)
             {
-                m_bIsSelected = true;
+                MyButton.interactable = false;
+                ButtonImage.color = new Color(0.9f, 0.9f, 0.9f);
             }
-            Avatar_Selected(m_bIsSelected);
+            else
+            {
+                Color color = MyButton.image.color;
+                color.a = 0f;
+                MyButton.image.color = color;
+                if (InfoHandler.Instance.Get_CurrCharacter() == m_iCharacterIndex)
+                {
+                    m_bIsSelected = true;
+                }
+                Avatar_Selected(m_bIsSelected);
+            }
         }
     }
 
@@ -60,7 +69,7 @@ public class UIButton : MonoBehaviour
         }
         else
         {
-            ButtonImage.color = new Color(0.75f, 0.75f, 0.75f);
+            ButtonImage.color = new Color(0.6f, 0.6f, 0.6f);
         }
     }
     public void Change_Avatar()

@@ -23,7 +23,6 @@ public class SubwayItem : MonoBehaviour
         /*
         (4) KNOCKDOWN, //넘어뜨리기 (Max HP의 15%p 감소)
         (5) SLOWDOWN, //달리기 속도 반감 5초
-        (*) SLOWDOWNALL //(꼴등용) 전체 플레이어 달리기 속도 반감 5초
         */
     }
 

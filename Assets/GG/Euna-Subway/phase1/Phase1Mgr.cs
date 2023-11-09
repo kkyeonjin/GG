@@ -5,14 +5,20 @@ using Photon.Pun;
 
 public class Phase1Mgr : MonoBehaviour
 {
+    public enum phase1CC
+    {
+        HoldBar,
+        Flashlight,
+        Lever
+    }
     public float quakeStartTime = 6f;
     public float quakeStopTime = 20f;
 
     public static Phase1Mgr m_Instance = null;
-    public bool[] clearCondition = new bool[3] { true, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
+    public bool[] clearCondition = new bool[3] { false, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
 
     //기둥 관련
-    public bool isHoldingBar = false;
+    public bool playerIsHoldingBar = false;
     public List<HoldingBar> holdingBars;
 
     public GameObject Train1;
@@ -20,6 +26,7 @@ public class Phase1Mgr : MonoBehaviour
 
     //지진
     public Earthquake earthquake;
+    public CameraShake camearShake;
 
     //대응 수칙
     public GameObject PopUpScreen;
@@ -45,8 +52,6 @@ public class Phase1Mgr : MonoBehaviour
     /// 
     /// </summary>
 
-    private bool AllClear = false;
-
 
     private void Start()
     {
@@ -58,26 +63,8 @@ public class Phase1Mgr : MonoBehaviour
 
         //30초 뒤 운행 중지 (자동)
         StartCoroutine("stopQuake");
-    }
 
-    private void Update()
-    {
-        if (InGameUIMgr.Instance.m_bGoalCountDown)
-        {
-            Debug.Log("Goal Count Down!");
-        }
-        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
-        {
-            //게임 종료 후 대기 
-            
-            if (m_bNextPhase)
-            {
-                m_PV.RPC("Start_NextPhase", RpcTarget.All);
-                m_bNextPhase = false;
-            }
-            Debug.Log("Clear!");
-        }
-        Debug.Log("clear 0 1 2 : " + clearCondition[0] + clearCondition[1] + clearCondition[2]);
+        camearShake.earthquake = earthquake;
     }
 
     public void Check_Column()
@@ -110,6 +97,7 @@ public class Phase1Mgr : MonoBehaviour
 
         //재난 문자 알림음
         earthquake.isQuake = true;
+        camearShake.shakeCamera();
         Debug.Log("isQuake" + earthquake.isQuake);
         //B2.GetComponent<Earthquake>().t1 = Train1.transform;
         //B2.GetComponent<Earthquake>().t2 = Train2.transform;
@@ -117,10 +105,11 @@ public class Phase1Mgr : MonoBehaviour
 
     IEnumerator stopQuake()
     {
-        Debug.Log("Quake stop");
         yield return new WaitForSeconds(quakeStopTime);
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
+        camearShake.shakeCameraStop();
+        Debug.Log("Quake stop");
         //Check_Column();
 
         InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.TRAINSTOP);
@@ -174,6 +163,35 @@ public class Phase1Mgr : MonoBehaviour
         //{
         //    PopUps.Add(PopUpScreen.transform.GetChild(i).gameObject);        
         //}
+    }
+
+    public void Check_Condition(phase1CC cleared)
+    {
+        switch (cleared)
+        {
+            case phase1CC.HoldBar:
+                clearCondition[0] = true;
+                break;
+            case phase1CC.Flashlight:
+                clearCondition[1] = true;
+                break;
+            case phase1CC.Lever:
+                clearCondition[2] = true;
+                break;
+            default:
+                break;
+
+        }
+
+        if (clearCondition[0] && clearCondition[1] && clearCondition[2])
+        {
+            if (m_bNextPhase)
+            {
+                m_PV.RPC("Start_NextPhase", RpcTarget.All);
+                m_bNextPhase = false;
+            }
+            Debug.Log("Clear!");
+        }
     }
 
     [PunRPC]
