@@ -61,6 +61,8 @@ public class SubwayItem_I : SubwayItem
         //조준 및 투척 준비
         GameMgr.Instance.m_LocalPlayer.m_bIsThrow = true;
 
+        SubwayInventory.instance.Active_AimPoint(true);
+
         Debug.Log("grab "+this.gameObject.name);
     }
 }
