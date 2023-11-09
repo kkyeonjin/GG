@@ -47,7 +47,7 @@ public class Earthquake : MonoBehaviour
 
         if (isQuake)
         {
-            Debug.Log("quake!");
+            //Debug.Log("quake!");
             //eachQuake(t1);
             //eachQuake(t2);
             quake();

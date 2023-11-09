@@ -30,7 +30,6 @@ public class StoreItem_Death : StoreItem
             Vector3 vDir = Camera.main.transform.forward;
             RaycastHit Info;
             int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
-            SubwayInventory.instance.Active_AimPoint(true);
             if (Physics.Raycast(vOrigin, vDir, out Info, 100f, layer))
             {
                 //가운데 타게팅 하이라이팅 되는 기능 추가
@@ -51,6 +50,7 @@ public class StoreItem_Death : StoreItem
     public override void Use_Item()
     {
         m_bActivate = !m_bActivate;
+        SubwayInventory.instance.Active_AimPoint(m_bActivate);
         //GameMgr.Instance.Casting_Death();
         m_Effect.Activate_Item(m_bActivate);
     }
