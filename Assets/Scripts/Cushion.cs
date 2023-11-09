@@ -6,6 +6,7 @@ using UnityEngine;
 public class Cushion : MonoBehaviour
 {
     public static Cushion instance;
+    float remainder;
 
     public bool isUsing;
 
@@ -13,6 +14,8 @@ public class Cushion : MonoBehaviour
     {
         if (instance == null) instance = this;
         else if (instance != null) return;
+
+        remainder = this.gameObject.GetComponent<PickableItem>().remainder;
     }
 
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class Cushion : MonoBehaviour
         if(isUsing)
         {
             this.gameObject.GetComponent<PickableItem>().remainder -= 1;
+            Inventory.instance.remainderBar[Inventory.instance.activeNum].fillAmount = this.gameObject.GetComponent<PickableItem>().remainder / remainder;
         }
     }
     public void Pause()
