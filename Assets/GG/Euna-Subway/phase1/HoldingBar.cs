@@ -53,11 +53,6 @@ public class HoldingBar : MonoBehaviour
                 collision.transform.position = holdingPosition.position;
                 collision.transform.rotation = holdingPosition.rotation;
             }
-            else  //지진 중 player가 기둥을 붙잡고 있지 않으면 OrderGage 깎음
-            {
-                SubwayInventory.instance.orderGage.Cut_Order();
-                //Debug.Log("Order Gage : " + SubwayInventory.instance.orderGage.Get_Order());
-            }
         }
     }
 
