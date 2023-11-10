@@ -37,8 +37,9 @@ public class SubwayItem : MonoBehaviour
     protected AudioSource itemAudioSrc;
     public AudioClip itemPickUpSound;
 
-    private void Awake()
+    protected virtual void Awake()
     {
+
         itemAudioSrc = this.gameObject.GetComponent<AudioSource>();
     }
 
@@ -59,12 +60,13 @@ public class SubwayItem : MonoBehaviour
                 Debug.Log("Pick " + this.gameObject.name);
                 SubwayInventory.instance.invScripts[i] = this;
                 SubwayInventory.instance.invIcons[i].sprite = itemImage;
+
+                itemAudioSrc.clip = itemPickUpSound;
+                itemAudioSrc.Play();
                 return true;
             }
         }
 
-        itemAudioSrc.clip = itemPickUpSound;
-        itemAudioSrc.Play();
 
         return false;
     }

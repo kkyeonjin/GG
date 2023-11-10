@@ -4,7 +4,7 @@ public class SubwayItem_I : SubwayItem
 {
     protected Player targetPlayer;
 
-    public AudioClip itemEquipSound;
+    public AudioClip itemGrabSound;
     public AudioClip itemThrowSound;
     public AudioClip itemHitSound;
 
@@ -63,6 +63,8 @@ public class SubwayItem_I : SubwayItem
         GameObject onHandPos = GameMgr.Instance.m_LocalPlayer.GetComponent<Player>().OnHand;
         GameObject grabbedItem = Instantiate(SubwayItemMgr.Instance.GrabbableItems[idx], onHandPos.transform.position, Quaternion.identity);
         grabbedItem.transform.SetParent(onHandPos.transform);
+        itemAudioSrc.clip = itemGrabSound;
+        itemAudioSrc.Play();
 
         //조준 및 투척 준비
         GameMgr.Instance.m_LocalPlayer.m_bIsThrow = true;

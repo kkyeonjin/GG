@@ -116,6 +116,7 @@ public class PuzzleMgr : MonoBehaviour
 
     public void Manual4Unlock()
     {
+        
         InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.FIRE);
         Active_ManualUI((int)InfoHandler.HOUSE.FIRE);
     }

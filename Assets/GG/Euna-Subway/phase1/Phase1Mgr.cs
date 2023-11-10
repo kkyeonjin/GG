@@ -11,8 +11,8 @@ public class Phase1Mgr : MonoBehaviour
         Flashlight,
         Lever
     }
-    public float quakeStartTime = 6f;
-    public float quakeStopTime = 20f;
+    public float quakeStartTime = 10f;
+    public float quakeStopTime = 30f;
 
     public static Phase1Mgr m_Instance = null;
     public bool[] clearCondition = new bool[3] { false, false, false }; //오더게이지 0 이상 , 비상 손전등 , 비상 레버
@@ -20,6 +20,7 @@ public class Phase1Mgr : MonoBehaviour
     //기둥 관련
     public bool playerIsHoldingBar = false;
     public List<HoldingBar> holdingBars;
+    private bool holdingbarCleared = false;
 
     public GameObject Train1;
     public GameObject Train2;
@@ -32,6 +33,14 @@ public class Phase1Mgr : MonoBehaviour
     public GameObject PopUpScreen;
     public List<GameObject> PopUps = new List<GameObject>();
     public GameObject currentPopup;
+
+    //사운드
+    public AudioSource subwayNoise;
+    public AudioSource emergencyAlarm;
+    public AudioSource earthquakeNoise;
+
+    //조명
+    public List<GameObject> TrainLights;
 
     public PhotonView m_PV;
     private bool m_bNextPhase = true;
@@ -65,29 +74,35 @@ public class Phase1Mgr : MonoBehaviour
         StartCoroutine("stopQuake");
 
         camearShake.earthquake = earthquake;
+        subwayNoise.Play();
+    }
+
+    private void Update()
+    {
+        if (earthquake.isQuake)
+        {
+            Check_Column();
+        }
     }
 
     public void Check_Column()
     {
-        //if (SubwayInventory.instance.orderGage.Get_Order() > 0f)
-        //{
-            Debug.Log("Column 해금");
+        if (!playerIsHoldingBar)
+        {
+            SubwayInventory.instance.orderGage.Cut_Order();
+        }
+        else if (!holdingbarCleared)
+        {
+            holdingbarCleared = true;
+            Check_Clear(phase1CC.HoldBar);
             //마이룸 수칙 해금
             InfoHandler.Instance.Unlock_Manual(InfoHandler.SUBWAY.COLUMN);
             //UI 이펙트
             PopUp(PopUps[0]);
-        //}
-        //else
-        //{
-            //Game Over
-            //GameMgr.Instance.Game_Over();
-            //Debug.Log("Order Gage run out");
-        //}
-    }
+            Debug.Log("Column 해금");
+        }
+        else return;
 
-    IEnumerator runTrain()
-    {
-        yield return new WaitForSeconds(3.5f);
     }
 
     IEnumerator generateQuake() {
@@ -96,11 +111,8 @@ public class Phase1Mgr : MonoBehaviour
         //재난 문자 알림음
         earthquake.isQuake = true;
         camearShake.shakeCamera();        
-        if(!playerIsHoldingBar)
-        {
-            SubwayInventory.instance.orderGage.Cut_Order();
-        }
-
+        earthquakeNoise.Play();
+        emergencyAlarm.Play();
         //B2.GetComponent<Earthquake>().t1 = Train1.transform;
         //B2.GetComponent<Earthquake>().t2 = Train2.transform;
     }
@@ -111,6 +123,9 @@ public class Phase1Mgr : MonoBehaviour
         earthquake.isQuake = false;
         earthquake.isQuakeStop = true;
         camearShake.shakeCameraStop();
+        earthquakeNoise.Stop();
+        subwayNoise.Stop();
+        BlackOut();
         Debug.Log("Quake stop");
         //Check_Column();
 
@@ -167,7 +182,7 @@ public class Phase1Mgr : MonoBehaviour
         //}
     }
 
-    public void Check_Condition(phase1CC cleared)
+    public void Check_Clear(phase1CC cleared)
     {
         switch (cleared)
         {
@@ -196,6 +211,13 @@ public class Phase1Mgr : MonoBehaviour
         }
     }
 
+    private void BlackOut()
+    {
+        foreach (GameObject light in TrainLights)
+        {
+            light.gameObject.SetActive(false);
+        }
+    }
 
 
     [PunRPC]

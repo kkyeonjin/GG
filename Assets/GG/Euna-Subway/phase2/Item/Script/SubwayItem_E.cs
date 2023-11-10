@@ -8,8 +8,9 @@ public class SubwayItem_E : SubwayItem
     public float recoverRatio = 0.3f;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         this.itemType = ItemType.ENFORCEMENT;
     }
 

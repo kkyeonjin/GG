@@ -16,7 +16,11 @@ public class TrainAIController : MonoBehaviour
     private void Awake()
     {
         SittingPassengers_Animators = SittingPassengers.GetComponentsInChildren<Animator>();
-        StandingPassengers_Animators = StandingPassengers.GetComponentsInChildren<Animator>();
+        foreach(Animator anim in SittingPassengers_Animators)
+        {
+            anim.SetBool("ScaredStop", true);
+        }
+        //StandingPassengers_Animators = StandingPassengers.GetComponentsInChildren<Animator>();
     }
     private void Update()
     {
@@ -39,10 +43,12 @@ public class TrainAIController : MonoBehaviour
         {
             anim.SetTrigger(triggerString);
         }
+        /*
         foreach (Animator anim in StandingPassengers_Animators)
         {
             anim.SetTrigger(triggerString);
         }
+        */
     }
     /*
     //List<Animator> animators;

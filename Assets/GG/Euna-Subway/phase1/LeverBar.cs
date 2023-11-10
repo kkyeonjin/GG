@@ -40,7 +40,8 @@ public class LeverBar : MonoBehaviour
         if (!leverClear && clickCount >= clearCount)
         {
             leverClear = true;
-            Phase1Mgr.Instance.Check_Condition(Phase1Mgr.phase1CC.Lever);
+            Phase1Mgr.Instance.Check_Clear(Phase1Mgr.phase1CC.Lever);
+            Phase1Mgr.Instance.PopUp(Phase1Mgr.Instance.PopUps[3]);
             Debug.Log(Phase1Mgr.Instance.clearCondition[2]);
             this.gameObject.GetComponentInParent<EmergencyLever>().doorOpen();
         }

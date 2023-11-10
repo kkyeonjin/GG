@@ -18,6 +18,8 @@ public class SubwayInventory : MonoBehaviour
     public Image AimMark;
     public GameObject Aim;
 
+    public AudioSource audioSrc;
+    public AudioClip tabSound;
 
     private void Awake()
     {
@@ -96,6 +98,7 @@ public class SubwayInventory : MonoBehaviour
             if (invScripts[selectedNum] != null)
             {
                 selectedItem = invScripts[selectedNum].itemNum;
+                audioSrc.Play();
             }
         }
         else

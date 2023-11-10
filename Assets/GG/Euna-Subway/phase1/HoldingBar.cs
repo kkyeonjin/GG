@@ -16,7 +16,6 @@ public class HoldingBar : MonoBehaviour
         //StartCoroutine(Holding());
         holdingPosition = this.gameObject.transform.Find("HoldingPosition").transform;
     }
-
     private void holdBar()
     {
         if (Input.GetKeyDown(KeyCode.R)) 
@@ -25,7 +24,7 @@ public class HoldingBar : MonoBehaviour
             isHolding = true;
             Debug.Log("holding bar");
             player.SetAnimation("Holding", isHolding);
-            Phase1Mgr.Instance.Check_Condition(Phase1Mgr.phase1CC.HoldBar);
+            //Phase1Mgr.Instance.Check_Clear(Phase1Mgr.phase1CC.HoldBar);
         }
         else if(Input.GetKeyUp(KeyCode.R))
         {

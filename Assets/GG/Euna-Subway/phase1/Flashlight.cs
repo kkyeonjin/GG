@@ -7,7 +7,7 @@ public class Flashlight : MonoBehaviour
         this.gameObject.SetActive(false);
         Debug.Log("Pick up flashlight");
         GetComponent<SubwayItem>().Item_pick();
-
-        Phase1Mgr.Instance.Check_Condition(Phase1Mgr.phase1CC.Flashlight);
+        Phase1Mgr.Instance.PopUp(Phase1Mgr.Instance.PopUps[2]);
+        Phase1Mgr.Instance.Check_Clear(Phase1Mgr.phase1CC.Flashlight);
     }
 }

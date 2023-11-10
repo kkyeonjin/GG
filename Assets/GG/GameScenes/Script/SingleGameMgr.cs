@@ -35,6 +35,7 @@ public class SingleGameMgr : MonoBehaviour
     private bool m_bPlayerGoalIn = false;
 
     private bool m_bIsGameOver = false;
+    private bool m_bExit = false;
 
     void Awake()
     {
@@ -107,10 +108,13 @@ public class SingleGameMgr : MonoBehaviour
         Invoke("BackToLobby", 5f);
 
     }
-
+    public void ExitStage()
+    {
+        m_bExit = true;
+    }
     public void Check_Destroy()
     {
-        if(m_bIsGameOver)
+        if(m_bIsGameOver || m_bExit)
         {
             Destroy(m_LocalPlayerObj);
             Destroy(Canvas);

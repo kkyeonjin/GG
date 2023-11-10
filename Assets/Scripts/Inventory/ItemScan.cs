@@ -41,18 +41,18 @@ public class ItemScan : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.CompareTag("Item"))
             {
-                ItemInfo.sprite = hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemInfo;
+                PickableItem hitPickableItem = hitInfo.transform.gameObject.GetComponent<PickableItem>();
+                ItemInfo.sprite = hitPickableItem.ItemInfo;
                 ItemInfo.gameObject.SetActive(true);
                 AimColor.a = 1f;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hitInfo.transform.gameObject.GetComponent<PickableItem>().ItemPick();
+                    hitPickableItem.ItemPick();
+
                     hitInfo.transform.gameObject.transform.SetParent(pickedItem.transform);
                     hitInfo.transform.gameObject.layer = 25;
                     hitInfo.transform.gameObject.SetActive(false);
-                    
-                    
                 }
             }
             else if (hitInfo.transform.gameObject.CompareTag("Button"))

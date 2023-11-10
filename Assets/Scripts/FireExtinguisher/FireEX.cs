@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireEX : MonoBehaviour
 {
     public GameObject FireParticle;
+    private ParticleSystem FireParticleSys;
     AudioSource FireExSound;
     float remainder;
 
@@ -13,12 +14,18 @@ public class FireEX : MonoBehaviour
         FireParticle = GameObject.Find("SingleOrigin").transform.GetChild(2).transform.GetChild(0).gameObject;
         FireExSound = this.GetComponent<AudioSource>();
         remainder = this.gameObject.GetComponent<PickableItem>().remainder;
+        FireParticle.SetActive(true);
+        FireParticleSys = FireParticle.GetComponent<ParticleSystem>();
         //public int remainder = 40; 
+    }
+    private void Start()
+    {
+        FireParticleSys.Stop();
     }
     public void Jet()
     {
-        FireParticle.SetActive(true);
-        FireParticle.GetComponent<ParticleSystem>().Play();
+        
+        FireParticleSys.Play();
         FireExSound.Play();
         InvokeRepeating("Using", 1f, 1f);
     }
@@ -26,8 +33,7 @@ public class FireEX : MonoBehaviour
     public void Pause()
     {
         CancelInvoke("Using");
-        FireParticle.SetActive(false);
-        FireParticle.GetComponent<ParticleSystem>().Stop();
+        FireParticleSys.Stop();
         FireExSound.Pause();
     }
 

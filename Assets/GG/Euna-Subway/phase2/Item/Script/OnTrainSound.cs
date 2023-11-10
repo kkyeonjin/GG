@@ -15,5 +15,12 @@ public class OnTrainSound : MonoBehaviour
         audioSrcTrain.clip = subwayNoise;
     }
 
+    private void Start()
+    {
+        audioSrcTrain.Play();
+    }
+
+
+
 
 }
