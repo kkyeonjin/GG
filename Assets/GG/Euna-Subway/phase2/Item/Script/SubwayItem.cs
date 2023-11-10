@@ -39,7 +39,7 @@ public class SubwayItem : MonoBehaviour
 
     private void Awake()
     {
-        itemAudioSrc = this.GetComponent<AudioSource>();
+        itemAudioSrc = this.gameObject.GetComponent<AudioSource>();
     }
 
     protected virtual void Start()

@@ -36,12 +36,6 @@ public class Phase1Mgr : MonoBehaviour
     public PhotonView m_PV;
     private bool m_bNextPhase = true;
 
-    [Space(20)]
-    //백그라운드 사운드
-    public AudioSource audioSrcTrain;
-    public AudioClip emergencyAlarm;
-    public AudioClip earthquakeNoise;
-    public AudioClip phase1BGM;
 
 
     /// <summary>
@@ -101,8 +95,7 @@ public class Phase1Mgr : MonoBehaviour
 
         //재난 문자 알림음
         earthquake.isQuake = true;
-        camearShake.shakeCamera();
-        
+        camearShake.shakeCamera();        
         if(!playerIsHoldingBar)
         {
             SubwayInventory.instance.orderGage.Cut_Order();
@@ -202,6 +195,8 @@ public class Phase1Mgr : MonoBehaviour
             Debug.Log("Clear!");
         }
     }
+
+
 
     [PunRPC]
     void Start_NextPhase()
