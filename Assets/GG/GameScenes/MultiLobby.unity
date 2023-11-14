@@ -9408,12 +9408,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 1}
   m_fTotalTime: 0.3
-  m_fScale: 0.2
+  m_fScale: 0.1
   m_eLerpType: 8
   m_bGetPassTime: 0
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!1001 &724051390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18137,12 +18138,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 1}
   m_fTotalTime: 0.3
-  m_fScale: 0.4
+  m_fScale: 0.2
   m_eLerpType: 8
   m_bGetPassTime: 0
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!114 &1504689703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23035,12 +23037,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 1}
   m_fTotalTime: 0.3
-  m_fScale: 0.2
+  m_fScale: 0.1
   m_eLerpType: 8
   m_bGetPassTime: 0
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!1 &2062509757
 GameObject:
   m_ObjectHideFlags: 0
