@@ -7,13 +7,21 @@ using UnityEngine.UI;
 public class PhaseChangeTrigger : MonoBehaviour
 {
     public RawImage minimap;
+    public GameObject mapBackground;
+    public GameObject pp;
+    public GameObject Timer;
+
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+
+    public void GoToNextPhase()
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(!Timer.activeSelf)
         {
-            minimap.color = Color.white;
             SceneManager.LoadScene("Apartment_Phase3");
+            minimap.color = Color.white;
+            mapBackground.gameObject.SetActive(true);
+            pp.transform.localScale = new Vector3(15, 0.1f, 15);
+            //SceneManager.LoadScene("Apartment_Phase3");
         }
     }
 }

@@ -10,7 +10,7 @@ public class FireEXParticle : MonoBehaviour
     // Start is called before the first frame update
     private void OnParticleCollision(GameObject other)
     {
-        
+        //Debug.Log("Oncollision");
         int t = other.gameObject.GetComponent<FireParticle>().count++;
         fire = other.gameObject.GetComponentInChildren<ParticleSystem>();
         smoke = other.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
