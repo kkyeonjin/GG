@@ -21,6 +21,7 @@ public class GameMgr : MonoBehaviour
     public GameObject m_LocalPlayerObj;
     public bool m_bInGame = false;
     public bool m_bMulti = false;
+    public bool m_bIsPhase1 = false;
 
     public float fDelayStartTime = 2f;
 
@@ -29,6 +30,7 @@ public class GameMgr : MonoBehaviour
     private bool m_bSomeOneFirst = false;
     private bool m_bIamTheFirst = false;
     private bool m_bLocalPlayerGoalIn = false;
+
 
     private Vector3 vResumePoint;
 
@@ -159,6 +161,9 @@ public class GameMgr : MonoBehaviour
     {
         m_LocalPlayer = LocalPlayer;
         m_LocalPlayerObj = LocalPlayer.gameObject;
+
+        if (m_bIsPhase1)
+            m_LocalPlayer.Off_Jump();
 
         if (m_bInGame)
             InGameUIMgr.Instance.Set_PlayerStatus(m_LocalPlayer);

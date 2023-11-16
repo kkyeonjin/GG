@@ -735,6 +735,7 @@ MonoBehaviour:
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!114 &366223311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -829, y: -422}
+  m_AnchoredPosition: {x: -829, y: -332}
   m_SizeDelta: {x: 149, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404684788
@@ -957,6 +958,7 @@ MonoBehaviour:
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!114 &404684793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,7 +1483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -474, y: -417}
+  m_AnchoredPosition: {x: -474, y: -327}
   m_SizeDelta: {x: 149, y: 179}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946773794
@@ -1613,12 +1615,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 0}
   m_fTotalTime: 0.3
-  m_fScale: 0.4
+  m_fScale: 0.2
   m_eLerpType: 8
   m_bGetPassTime: 0
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!114 &946773799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,7 +3209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -653, y: -422}
+  m_AnchoredPosition: {x: -653, y: -332}
   m_SizeDelta: {x: 137, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736692077
@@ -3344,6 +3347,7 @@ MonoBehaviour:
   m_ConnectedModel: []
   m_fRatioDest: 0
   m_fRatioSour: 1
+  m_bUseShader: 1
 --- !u!114 &1736692082
 MonoBehaviour:
   m_ObjectHideFlags: 0
