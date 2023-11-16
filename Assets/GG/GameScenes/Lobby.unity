@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_vOriginColor: {r: 1, g: 1, b: 1, a: 0}
   m_fTotalTime: 0.3
-  m_fScale: 0.4
+  m_fScale: 0.2
   m_eLerpType: 8
   m_bGetPassTime: 0
   m_ConnectedModel: []

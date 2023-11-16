@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4128876955379127211}
   m_Layer: 7
   m_Name: SW_PROP_PlatformSeating
-  m_TagString: Bunker
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
