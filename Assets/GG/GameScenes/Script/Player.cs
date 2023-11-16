@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     private bool m_bIsCrouch = false;
     public bool m_bIsThrow = false;
 
+    private bool m_bJumpAvailable = true;
+
     private float m_fTotalSpeed;
     private float m_fJumpForce;
 
@@ -72,6 +74,9 @@ public class Player : MonoBehaviour
                 GameMgr.Instance.Set_LocalPlayer(this);
                 GameMgr.Instance.Set_Camera();
                 m_Effect = GetComponentInChildren<PlayerEffect>();
+
+                m_bJumpAvailable = GameMgr.Instance.m_bInGame;
+                    
             }
             m_Moving = new MoveFunc(Move_MultiMode);
 
@@ -84,7 +89,12 @@ public class Player : MonoBehaviour
         }
 
     }
-  
+    
+    public void Off_Jump()
+    {
+        m_bJumpAvailable = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -251,7 +261,9 @@ public class Player : MonoBehaviour
             //PushLever();
             //Picking_Up();
         }
-        Jump_Up();
+
+        if(m_bJumpAvailable)
+            Jump_Up();
 
         //    if (Mathf.Abs(m_Rigidbody.velocity.x) > m_fTotalSpeed)
         //    {
