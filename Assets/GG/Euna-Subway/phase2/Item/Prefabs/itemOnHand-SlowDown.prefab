@@ -284,4 +284,7 @@ MonoBehaviour:
   itemType: 1
   itemImage: {fileID: 21300000, guid: 3b88e2c8c19468541823d2ad4ba4edba, type: 3}
   itemNum: 5
+  itemPickUpSound: {fileID: 8300000, guid: 92b058fa2195828459d126e70dd1ff33, type: 3}
+  itemGrabSound: {fileID: 8300000, guid: eb74dd183e1f7344193f98cca3b5cf44, type: 3}
+  itemThrowSound: {fileID: 8300000, guid: 3157049cde931504e83e63f42bf15e26, type: 3}
   damageRatio: 0.15

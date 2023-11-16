@@ -267,6 +267,7 @@ public class CompetitorAgent : Agent
     }
 
     //RaycastSensors로부터 수집되지 않는 정보를 수집함
+    /*
     public override void CollectObservations(VectorSensor sensor)
     {
         //Goal 지점까지의 거리 (DeltaReward)
@@ -277,6 +278,7 @@ public class CompetitorAgent : Agent
         }
         //
     }
+    */
 
     //Revised (9.24.)
     public override void OnActionReceived(ActionBuffers actions)
@@ -300,7 +302,7 @@ public class CompetitorAgent : Agent
 
 
         //관측
-        _calDistance();
+        //_calDistance();
 
         var moveVec = Vector3.zero;
 
@@ -461,16 +463,6 @@ public class CompetitorAgent : Agent
     //public GameObject closeFall;
     //public GameObject closeObstacle;
 
-
-    //5. Hide
-    // 지진 이벤트 발생 여부
-    public bool eventOccured;
-
-    // 가장 가까이 있는 bunker
-    private Bunker nearestBunker;
-
-    // bunker에 숨는 중인지 여부
-    private bool isHide;
 
     //6. Item
 }

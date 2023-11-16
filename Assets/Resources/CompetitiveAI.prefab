@@ -13128,7 +13128,6 @@ MonoBehaviour:
   - 0
   closeAIs: []
   closePlayers: []
-  eventOccured: 0
 --- !u!114 &3540255746405550441
 MonoBehaviour:
   m_ObjectHideFlags: 0

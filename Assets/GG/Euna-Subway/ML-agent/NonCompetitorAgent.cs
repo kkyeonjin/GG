@@ -211,6 +211,7 @@ public class NonCompetitorAgent : Agent
     }
 
     //RaycastSensors로부터 수집되지 않는 정보를 수집함
+    /*
     public override void CollectObservations(VectorSensor sensor)
     {
         //Goal 지점까지의 거리 (DeltaReward)
@@ -221,6 +222,8 @@ public class NonCompetitorAgent : Agent
         }
         //
     }
+    */
+
 
     //Revised (9.24.)
     public override void OnActionReceived(ActionBuffers actions)
@@ -243,7 +246,7 @@ public class NonCompetitorAgent : Agent
         
 
         //관측
-        _calDistance();
+        //_calDistance();
 
         //actionMove 호출할 때마다 패널티를 부여하여
         //action을 줄이도록 (즉 에피소드를 빠르게 클리어하도록) 유도
