@@ -239,7 +239,7 @@ public class CompetitorAgent : Agent
         //훈련 관련
         Collider col = collision.collider;
 
-        if (col.CompareTag("Wall"))
+        if (col.CompareTag("Wall") || col.CompareTag("Block"))
         {
             SetReward(-30f);
             Debug.Log("Wall");
@@ -253,7 +253,8 @@ public class CompetitorAgent : Agent
 
         if (col.CompareTag("Falling"))
         {
-
+            AddReward(-3f);
+            currentHP -= 10;
         }
        
     }
