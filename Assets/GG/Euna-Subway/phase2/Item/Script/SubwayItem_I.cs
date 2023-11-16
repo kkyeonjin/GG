@@ -6,7 +6,6 @@ public class SubwayItem_I : SubwayItem
 
     public AudioClip itemGrabSound;
     public AudioClip itemThrowSound;
-    public AudioClip itemHitSound;
 
     [Space(10)]
     public float damageRatio = 0.15f;
