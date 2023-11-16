@@ -1,10 +1,10 @@
 {
-    "Name": "HIHI",
+    "Name": "LetsGG",
     "Level": 1,
     "Exp": 300,
     "ExpMax": 150,
-    "Money": 950,
-    "CurrCharacter": 3,
+    "Money": 650,
+    "CurrCharacter": 0,
     "AvailableCharacter": [
         true,
         false,
@@ -18,8 +18,8 @@
     ],
     "ItemsInfo": [
         5,
-        -2,
-        1,
+        0,
+        2,
         0,
         1
     ],
