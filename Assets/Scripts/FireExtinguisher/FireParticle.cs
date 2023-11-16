@@ -17,6 +17,7 @@ public class FireParticle : MonoBehaviour
     {
         if(count >= 140)
         {
+            //Debug.Log("colliderDelete");
             this.gameObject.transform.GetChild(2).GetComponent<Collider>().enabled = false;
         }
     }

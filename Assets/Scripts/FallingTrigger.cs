@@ -12,6 +12,17 @@ public class FallingTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             fallObj.SetActive(true);
+            Invoke("ChangeTag", 1.5f);
+        }
+    }
+
+    public void ChangeTag()
+    {
+        Transform[] allChildren = fallObj.GetComponentsInChildren<Transform>();
+        foreach (Transform child in allChildren)
+        {
+            child.gameObject.tag = "Untagged";
+            Debug.Log(child.name);
         }
     }
 }

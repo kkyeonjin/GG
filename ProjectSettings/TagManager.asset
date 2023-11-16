@@ -41,6 +41,8 @@ TagManager:
   - OtherPlayer
   - ElectricSwitch
   - Building
+  - DoorToOut
+  - Book
   layers:
   - Default
   - TransparentFX
