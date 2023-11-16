@@ -4,7 +4,7 @@
     "Exp": 0,
     "ExpMax": 150,
     "Money": 0,
-    "CurrCharacter": 2,
+    "CurrCharacter": 3,
     "AvailableCharacter": [
         true,
         false,
@@ -17,9 +17,9 @@
         false
     ],
     "ItemsInfo": [
-        5,
         1,
-        1,
+        0,
+        0,
         0,
         1
     ],
