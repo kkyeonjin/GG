@@ -25,9 +25,7 @@ public class SingleGameMgr : MonoBehaviour
 
     public float fDelayStartTime = 2f;
 
-    public TextMeshProUGUI Money;
-    public TextMeshProUGUI Exp;
-    public TextMeshProUGUI Record;
+    public RewardUI rewardui;
 
     public GameObject GameOver;
     public GameObject Canvas;
@@ -82,12 +80,7 @@ public class SingleGameMgr : MonoBehaviour
         m_bPlayerGoalIn = true;
         Invoke("Show_ResultScreen", fCeremonyTime);
 
-        int Min = Mathf.Max(0, (int)m_fPassedTime / 60);
-        int Sec = Mathf.Max(0, (int)m_fPassedTime % 60);
-
-        string szMin = string.Format("{0:D2}", Min);
-        string szSec = string.Format("{0:D2}", Sec);
-        Record.text = szMin + ":" + szSec;
+        Reward_Player();
 
     }
    
@@ -126,34 +119,50 @@ public class SingleGameMgr : MonoBehaviour
     {
         //사용한 아이템 개수 Info에 업데이트
         //보상 등 여기서 주면 될듯
-        if(m_fPassedTime <= 180f)
+        float money;
+        float exp;
+
+        if (m_fPassedTime <= 180f)
         {
+            money = 50;
+            exp = 100;
             InfoHandler.Instance.Set_Exp(100);
             InfoHandler.Instance.Set_Money(50);
         }
         else if(m_fPassedTime <= 240f)
         {
+            money = 40;
+            exp = 80;
             InfoHandler.Instance.Set_Exp(80);
             InfoHandler.Instance.Set_Money(40);
         }
         else if (m_fPassedTime <= 300f)
         {
+            money = 30;
+            exp = 70;
             InfoHandler.Instance.Set_Exp(70);
             InfoHandler.Instance.Set_Money(30);
         }
         else if (m_fPassedTime <= 360f)
         {
+            money = 20;
+            exp = 60;
             InfoHandler.Instance.Set_Exp(60);
             InfoHandler.Instance.Set_Money(20);
 
         }
         else
         {
+            money = 10;
+            exp = 50;
             InfoHandler.Instance.Set_Exp(50);
             InfoHandler.Instance.Set_Money(10);
         }
 
         InfoHandler.Instance.Save_Info();
+
+        rewardui.Get_Reward(money, exp, m_fPassedTime);
+        
     }
 
     public void Cursor_Locked()

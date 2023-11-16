@@ -73,6 +73,7 @@ public class ChangeAvatar : MonoBehaviour
 
     void Update()
     {
+        if (m_PV == null) return;
         if (m_bFirst)
         {
             if (m_PV.IsMine)

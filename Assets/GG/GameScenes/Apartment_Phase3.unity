@@ -6837,8 +6837,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4730377, y: 1, z: 4.537384}
-  m_Center: {x: 0.37093353, y: 0, z: 0.73306274}
+  m_Size: {x: 25.711548, y: 1, z: 42.852108}
+  m_Center: {x: 13.753204, y: 0, z: 22.0922}
 --- !u!4 &214520040
 Transform:
   m_ObjectHideFlags: 0
@@ -23611,6 +23611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Football
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102328871697128828, guid: 4efe44562cd7aae4d94c22ed8fea881e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3102328871697351004, guid: 4efe44562cd7aae4d94c22ed8fea881e,
         type: 3}
