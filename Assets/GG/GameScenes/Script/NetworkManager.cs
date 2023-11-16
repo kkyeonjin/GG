@@ -76,6 +76,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.Instantiate(m_szAIPrefab, vStartPoint, Quaternion.identity);
     }
+    public void Instanctiate_AIPlayer(Vector3 vStartPoint, Transform HierarchyObj)
+    {
+        PhotonNetwork.Instantiate(m_szAIPrefab, vStartPoint, Quaternion.identity).transform.parent = HierarchyObj.transform;
+    }
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();

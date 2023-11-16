@@ -14,6 +14,7 @@ public class InitializeMap : MonoBehaviour
 
     //Phase 2
     public bool Phase2 = false;
+    public GameObject HierarchyObj;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class InitializeMap : MonoBehaviour
     void Load_AIPlayer(Vector3 StartPoint)
     {
         Debug.Log("»ý¼º!");
-        NetworkManager.Instance.Instanctiate_AIPlayer(StartPoint);
+        NetworkManager.Instance.Instanctiate_AIPlayer(StartPoint, HierarchyObj.transform);
         GameMgr.Instance.Set_ResumePoint(StartPoint);
     }
 

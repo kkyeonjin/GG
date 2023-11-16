@@ -31,6 +31,7 @@ public class GameMgr : MonoBehaviour
     private bool m_bIamTheFirst = false;
     private bool m_bLocalPlayerGoalIn = false;
 
+    public RewardUI rewardui;
 
     private Vector3 vResumePoint;
 
@@ -351,49 +352,68 @@ public class GameMgr : MonoBehaviour
         if(m_bLocalPlayerGoalIn)
         {
             int Exp = 5;
-
+            int Gold = 10;
             switch(iRank)
             {
                 case 1:
                     Exp = 100;
+                    Gold = 50;
                     InfoHandler.Instance.Set_Money(50);
                     break;
                 case 2:
                     Exp = 80;
+                    Gold = 45;
+
                     InfoHandler.Instance.Set_Money(45);
                     break;
                 case 3:
                     Exp = 70;
+                    Gold = 40;
+
                     InfoHandler.Instance.Set_Money(40);
                     break;
                 case 4:
                     Exp = 60;
+                    Gold = 35;
+
                     InfoHandler.Instance.Set_Money(35);
                     break;
                 case 5:
                     Exp = 50;
+                    Gold = 30;
+
                     InfoHandler.Instance.Set_Money(30);
                     break;
                 case 6:
                     Exp = 40;
+                    Gold = 25;
+
                     InfoHandler.Instance.Set_Money(25);
                     break;
                 case 7:
                     Exp = 30;
+                    Gold = 20;
+
                     InfoHandler.Instance.Set_Money(20);
                     break;
                 case 8:
                     Exp = 10;
+                    Gold = 15;
+
                     InfoHandler.Instance.Set_Money(15);
                     break;
                 default:
                     Exp = 5;
+                    Gold = 10;
+
                     InfoHandler.Instance.Set_Money(10);
                     break;
             }
 
             Exp = (int)((float)Exp * 0.01f * SubwayInventory.instance.Get_OrderGauge());
             InfoHandler.Instance.Set_Exp(Exp);
+
+            rewardui.Get_Reward(Gold, Exp);
         }
 
     }
@@ -402,6 +422,8 @@ public class GameMgr : MonoBehaviour
     {
         GameScreen.SetActive(false);
         ResultScreen.SetActive(true);
+        Reward_Player();
+
         InGameUIMgr.Instance.ResultRanking(Ranking, GameOut);
         Invoke("BackToLobby", fResultScreenTime);
     }
