@@ -40,9 +40,9 @@ public class RewardUI : MonoBehaviour
     void Update()
     {
         if(fSourGold < fDestGold)
-            fSourGold = Mathf.Max(fDestGold , fSourGold+(int)(100f*Time.deltaTime));
+            fSourGold = Mathf.Min(fDestGold , fSourGold+(70f*Time.deltaTime));
         if(fSourExp < fDestExp)
-            fSourExp = Mathf.Max(fDestExp, fSourExp + (int)(100f * Time.deltaTime));
+            fSourExp = Mathf.Min(fDestExp, fSourExp + (70f * Time.deltaTime));
 
         Gold.text = "" + (int)fSourGold;
         Exp.text = "" + (int)fSourExp;
