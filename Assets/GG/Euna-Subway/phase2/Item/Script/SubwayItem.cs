@@ -76,10 +76,13 @@ public class SubwayItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Item_pick())
+            if (other.gameObject.GetComponent<Player>().Is_MyPlayer())
             {
-                Item_vanish();
-            };
+                if (Item_pick())
+                {
+                    Item_vanish();
+                }
+            }
         }
 
         else if (other.CompareTag("CompAI"))
