@@ -29,6 +29,8 @@ public class Phase2Mgr : MonoBehaviour
             fallingObjectPos.Add(fallObj.position);
             fallingObjectRot.Add(fallObj.rotation);
         }
+
+        
     }
 
     public void ResetMap()
