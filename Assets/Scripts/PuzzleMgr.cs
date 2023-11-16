@@ -116,7 +116,7 @@ public class PuzzleMgr : MonoBehaviour
 
     public void Manual4Unlock()
     {
-        
+
         InfoHandler.Instance.Unlock_Manual(InfoHandler.HOUSE.FIRE);
         Active_ManualUI((int)InfoHandler.HOUSE.FIRE);
     }
@@ -222,6 +222,15 @@ public class PuzzleMgr : MonoBehaviour
 
     public void ObjDestroy()
     {
-        Destroy(obstacle);
+        obstacle.SetActive(false);
+        //Destroy(obstacle);
+    }
+
+    public void TurnActiveCam()
+    {
+        activeCam[0] = true;
+        activeCam[1] = false;
+        activeCam[2] = false;
+        activeCam[3] = false;
     }
 }

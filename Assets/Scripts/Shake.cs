@@ -51,10 +51,13 @@ public class Shake : MonoBehaviour
 
     public void EarthQuake()
     {
-        StopCoroutine(ShakeCoroutine());
-        cam = MainCam;
-        Debug.Log("EarthQuake");
-        InvokeRepeating("StartShake2", 3f, 8f);
+        if (PuzzleMgr.instance.passedPuzzle[0] == 0 && PuzzleMgr.instance.passedPuzzle[1] == 0 && PuzzleMgr.instance.passedPuzzle[2] ==0 )
+        {
+            StopCoroutine(ShakeCoroutine());
+            cam = MainCam;
+            Debug.Log("EarthQuake");
+            InvokeRepeating("StartShake2", 3f, 8f);
+        }
         
     }
 
@@ -79,6 +82,7 @@ public class Shake : MonoBehaviour
         EarthquakeSound.Play();
         while (elapsedTime < shakeTime)
         {
+            Debug.Log(cam == Camera.main.transform);
             Vector3 randomPoint = originPosition + Random.insideUnitSphere * shakeAmount;
             cam.localPosition = Vector3.Lerp(cam.localPosition, randomPoint, Time.deltaTime * shakeSpeed);
 
