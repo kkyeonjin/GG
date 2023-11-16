@@ -76,11 +76,21 @@ public class ItemScan : MonoBehaviour
                     hitInfo.transform.gameObject.GetComponent<DoorCtr>().CountUp();
                 }
             }
+            else if (hitInfo.transform.gameObject.CompareTag("DoorToOut"))
+            {
+                pressE.gameObject.SetActive(true);
+                AimColor.a = 1f;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<PhaseChangeTrigger>().GoToNextPhase();
+                }
+
+            }
             else if (hitInfo.transform.gameObject.CompareTag("HidingTable"))
             {
                 pressE.gameObject.SetActive(true);
                 AimColor.a = 1f;
-                if(Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     Cursor.lockState = CursorLockMode.None;
                     //MainCam.gameObject.SetActive(false);
@@ -92,13 +102,13 @@ public class ItemScan : MonoBehaviour
                     HidingPuzzle.instance.HidePuzzle();
                 }
             }
-            else if(hitInfo.transform.gameObject.CompareTag("FalseTable"))
+            else if (hitInfo.transform.gameObject.CompareTag("FalseTable"))
             {
                 pressE.gameObject.SetActive(true);
                 AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if(hitInfo.transform.gameObject.name == "Table_04_C1")
+                    if (hitInfo.transform.gameObject.name == "Table_04_C1")
                     {
                         HidingCam2.gameObject.SetActive(true);
                         PuzzleMgr.instance.activeCam[0] = false;
@@ -106,7 +116,7 @@ public class ItemScan : MonoBehaviour
                         mainCan.SetActive(false);
                         hideCan.SetActive(true);
                     }
-                    else if(hitInfo.transform.gameObject.name == "PC_Table2_C2")
+                    else if (hitInfo.transform.gameObject.name == "PC_Table2_C2")
                     {
                         HidingCam3.gameObject.SetActive(true);
                         PuzzleMgr.instance.activeCam[0] = false;
@@ -116,7 +126,7 @@ public class ItemScan : MonoBehaviour
                     }
                 }
             }
-            else if(hitInfo.transform.gameObject.CompareTag("Puzzle"))
+            else if (hitInfo.transform.gameObject.CompareTag("Puzzle"))
             {
                 pressE.gameObject.SetActive(true);
                 AimColor.a = 1f;
@@ -125,7 +135,12 @@ public class ItemScan : MonoBehaviour
                     hitInfo.transform.gameObject.GetComponent<CanvasChange>().PuzzleOn();
                 }
             }
-            else if(hitInfo.transform.gameObject.CompareTag("ElectricSwitch"))
+            else if (hitInfo.transform.gameObject.CompareTag("Book"))
+            {
+                pressE.gameObject.SetActive(true);
+                AimColor.a = 1f;
+            }
+            else if (hitInfo.transform.gameObject.CompareTag("ElectricSwitch"))
             {
                 pressE.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
