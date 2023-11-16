@@ -30,8 +30,9 @@ public class StoreItem_Death : StoreItem
             Vector3 vDir = Camera.main.transform.forward;
             RaycastHit Info;
             //int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
-            if (Physics.Raycast(vOrigin, vDir, out Info, 500f))
+            if (Physics.Raycast(vOrigin, vDir, out Info, 100f))
             {
+                Debug.Log("Targeted: " + Info.collider.tag);
                 SubwayInventory.instance.On_Targeted(true);
                 //가운데 타게팅 하이라이팅 되는 기능 추가
                 if (Input.GetMouseButtonDown(0))
