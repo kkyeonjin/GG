@@ -81,6 +81,12 @@ public class SubwayItem : MonoBehaviour
                 Item_vanish();
             };
         }
+
+        else if (other.CompareTag("CompAI"))
+        {
+            Item_vanish();
+        }
+
     }
 
     public bool Get_isUsed() //Inventory.rearrange()에서 참조
