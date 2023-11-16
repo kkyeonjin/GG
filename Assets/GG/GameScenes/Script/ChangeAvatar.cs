@@ -18,7 +18,9 @@ public class ChangeAvatar : MonoBehaviour
     private GameObject[] m_arrAvatar;
 
     private GameObject m_ActiveAvatar;
-    
+
+
+    private bool m_bFirst = true;
 
     public PhotonView m_PV;  
     public Player m_OwnPlayer;
@@ -41,7 +43,7 @@ public class ChangeAvatar : MonoBehaviour
         m_arrAvatar[7] = m_Avatar8;
         m_arrAvatar[8] = m_Avatar9;
 
-        int CurrIndex = InfoHandler.Instance.Get_CurrCharacter();
+        
 
         
         m_ActiveAvatar = m_arrAvatar[0];
@@ -53,16 +55,16 @@ public class ChangeAvatar : MonoBehaviour
 
         if (m_PV != null)
         {
-            if(m_PV.IsMine)
-                m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
+
         }
         else
         {
+            int CurrIndex = InfoHandler.Instance.Get_CurrCharacter();
             m_ActiveAvatar.SetActive(false);
             m_ActiveAvatar = m_arrAvatar[CurrIndex];
             m_ActiveAvatar.SetActive(true);
 
-            //InfoHandler.Instance.Set_CurrCharacter(CurrIndex);
+            InfoHandler.Instance.Set_CurrCharacter(CurrIndex);
 
             m_OwnPlayer.Change_Animator(m_ActiveAvatar.GetComponent<Animator>());
             m_OwnPlayer.Change_Status(m_ActiveAvatar.GetComponent<AvatarStatus>());
@@ -71,7 +73,15 @@ public class ChangeAvatar : MonoBehaviour
 
     void Update()
     {
-
+        if (m_bFirst)
+        {
+            if (m_PV.IsMine)
+            {
+                int CurrIndex = InfoHandler.Instance.Get_CurrCharacter();
+                Change_Avatar(CurrIndex);
+            }
+            m_bFirst = false;
+        }
     }
 
     [PunRPC]
