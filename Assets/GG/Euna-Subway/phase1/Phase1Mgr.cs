@@ -204,11 +204,16 @@ public class Phase1Mgr : MonoBehaviour
         {
             if (m_bNextPhase)
             {
-                m_PV.RPC("Start_NextPhase", RpcTarget.All);
+                Invoke("Change_Phase", 3f);
                 m_bNextPhase = false;
             }
             Debug.Log("Clear!");
         }
+    }
+
+    void Change_Phase()
+    {
+        m_PV.RPC("Start_NextPhase", RpcTarget.All);
     }
 
     private void BlackOut()
