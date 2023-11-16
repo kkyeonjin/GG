@@ -3,8 +3,8 @@
     "Level": 1,
     "Exp": 0,
     "ExpMax": 150,
-    "Money": 200,
-    "CurrCharacter": 3,
+    "Money": 0,
+    "CurrCharacter": 2,
     "AvailableCharacter": [
         true,
         false,
@@ -19,9 +19,9 @@
     "ItemsInfo": [
         5,
         1,
+        1,
         0,
-        0,
-        0
+        1
     ],
     "HouseManual": [
         false,
