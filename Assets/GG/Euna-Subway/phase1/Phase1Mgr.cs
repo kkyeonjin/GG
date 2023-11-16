@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
+
 
 public class Phase1Mgr : MonoBehaviour
 {
@@ -40,7 +43,9 @@ public class Phase1Mgr : MonoBehaviour
     public AudioSource earthquakeNoise;
 
     //Α¶Έν
-    public List<GameObject> TrainLights;
+    public Light TrainLights;
+
+
 
     public PhotonView m_PV;
     private bool m_bNextPhase = true;
@@ -218,10 +223,9 @@ public class Phase1Mgr : MonoBehaviour
 
     private void BlackOut()
     {
-        foreach (GameObject light in TrainLights)
-        {
-            light.gameObject.SetActive(false);
-        }
+
+        TrainLights.intensity = 0;
+        //
     }
 
 

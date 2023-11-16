@@ -21969,7 +21969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4627928404895650103
 Transform:
   m_ObjectHideFlags: 0
@@ -40059,6 +40059,7 @@ MonoBehaviour:
   m_PV: {fileID: 0}
   trainsInside: []
   Phase2: 0
+  HierarchyObj: {fileID: 0}
 --- !u!1 &7947397168008433969
 GameObject:
   m_ObjectHideFlags: 0

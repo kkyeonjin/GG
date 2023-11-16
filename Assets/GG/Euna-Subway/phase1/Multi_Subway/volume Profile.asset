@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1.7
   contrast:
     m_OverrideState: 1
-    m_Value: 20.5
+    m_Value: 0
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -41,51 +41,9 @@ MonoBehaviour:
   m_Name: volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 547490730177463069}
   - {fileID: -1723795019440730275}
   - {fileID: 7065406652146459718}
   - {fileID: 747140322124668721}
---- !u!114 &547490730177463069
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 0
-  threshold:
-    m_OverrideState: 1
-    m_Value: 0.47
-  intensity:
-    m_OverrideState: 1
-    m_Value: 3.13
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.5
-  clamp:
-    m_OverrideState: 1
-    m_Value: 65472
-  tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-  highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 0
-  skipIterations:
-    m_OverrideState: 0
-    m_Value: 5
-  dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
-    dimension: 1
-  dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &747140322124668721
 MonoBehaviour:
   m_ObjectHideFlags: 3
