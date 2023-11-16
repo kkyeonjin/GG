@@ -29,8 +29,8 @@ public class StoreItem_Death : StoreItem
             Vector3 vOrigin = Camera.main.transform.position;
             Vector3 vDir = Camera.main.transform.forward;
             RaycastHit Info;
-            //int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
-            if (Physics.Raycast(vOrigin, vDir, out Info, 100f))
+            int layer = 1 << LayerMask.NameToLayer("OtherPlayer");
+            if (Physics.Raycast(vOrigin, vDir, out Info, 100f,layer))
             {
                 Debug.Log("Targeted: " + Info.collider.tag);
                 SubwayInventory.instance.On_Targeted(true);
