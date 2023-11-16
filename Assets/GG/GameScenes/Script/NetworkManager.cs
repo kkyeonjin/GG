@@ -12,7 +12,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public const int m_iMaxPlayer = 8;
     public string m_szPlayerPrefab = "Local_Player";
-    public string m_szAIPrefab = "AI";
+    public string m_szAIPrefab = "CompetitiveAI";
     public GameObject StartButton { get; set; }
 
 
