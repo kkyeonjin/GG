@@ -199,20 +199,20 @@ public class CompetitorAgent : Agent
         {
             AddReward(100f);
             Debug.Log("Goal");
-            //EndEpisode();
+            EndEpisode();
         }
 
         if (col.CompareTag("Checkpoint"))
         {
             AddReward(10f);
-            Debug.Log("Get the reward");
+            Debug.Log("get" + col.gameObject.name);
         }
 
         if (col.CompareTag("Block"))
         {
             SetReward(-30f);
-            Debug.Log("Hitted the Block");
-            //EndEpisode();
+            Debug.Log("Hit the Block");
+            EndEpisode();
         }
     }
 
@@ -223,6 +223,7 @@ public class CompetitorAgent : Agent
         {
             agentRb.AddForce(transform.forward * currentSpeed * 0.4f, ForceMode.VelocityChange);
             AddReward(5f);
+            Debug.Log("On stair");
         }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {
@@ -242,7 +243,7 @@ public class CompetitorAgent : Agent
         if (col.CompareTag("Wall") || col.CompareTag("Block"))
         {
             SetReward(-30f);
-            Debug.Log("Wall");
+            EndEpisode();
             //EndEpisode();
         }
 
@@ -255,6 +256,12 @@ public class CompetitorAgent : Agent
         {
             AddReward(-3f);
             currentHP -= 10;
+
+            if (currentHP <= 0)
+            {
+                SetReward(-30f);
+                EndEpisode();
+            }
         }
        
     }
@@ -389,6 +396,7 @@ public class CompetitorAgent : Agent
         
         //애니메이터?? 다시 확인
         //animator.SetBool("IsRun", agentRb.velocity != Vector3.zero);
+
     }
 
 
