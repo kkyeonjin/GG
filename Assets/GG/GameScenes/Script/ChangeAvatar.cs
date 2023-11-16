@@ -43,18 +43,15 @@ public class ChangeAvatar : MonoBehaviour
 
         int CurrIndex = InfoHandler.Instance.Get_CurrCharacter();
 
-        
-        m_ActiveAvatar = m_arrAvatar[0];
-        m_ActiveAvatar.SetActive(true);
-        for(int i=1;i<9;++i)
+       
+        for(int i=0;i<9;++i)
         {
             m_arrAvatar[i].SetActive(false);
         }
 
         if (m_PV != null)
         {
-            if(m_PV.IsMine)
-                m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
+            m_PV.RPC("Changing", RpcTarget.All, CurrIndex);
         }
         else
         {

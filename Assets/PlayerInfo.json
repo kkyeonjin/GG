@@ -4,7 +4,7 @@
     "Exp": 0,
     "ExpMax": 150,
     "Money": 200,
-    "CurrCharacter": 2,
+    "CurrCharacter": 3,
     "AvailableCharacter": [
         true,
         false,
@@ -21,7 +21,7 @@
         1,
         0,
         0,
-        1
+        0
     ],
     "HouseManual": [
         false,

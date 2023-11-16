@@ -76,8 +76,10 @@ public class Player : MonoBehaviour
                 m_Effect = GetComponentInChildren<PlayerEffect>();
 
                 m_bJumpAvailable = GameMgr.Instance.m_bInGame;
-                    
+                this.gameObject.layer = LayerMask.NameToLayer("Player");
             }
+            else
+                this.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
             m_Moving = new MoveFunc(Move_MultiMode);
 
         }
