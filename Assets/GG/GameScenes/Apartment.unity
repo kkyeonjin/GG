@@ -4819,7 +4819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &105126724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8073,6 +8073,18 @@ MonoBehaviour:
       - m_Target: {fileID: 30802413}
         m_TargetAssemblyTypeName: SingleGameMgr, Assembly-CSharp
         m_MethodName: Cursor_Locked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1914809800}
+        m_TargetAssemblyTypeName: PuzzleMgr, Assembly-CSharp
+        m_MethodName: TurnActiveCam
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32558,7 +32570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &704306147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64224,7 +64236,7 @@ PrefabInstance:
     - target: {fileID: 802668056538480365, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
         type: 3}
       propertyPath: m_fSpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 802668056538480365, guid: f7cf9b08dbb4e684cbce5522cbb197a2,
         type: 3}

@@ -1,9 +1,9 @@
 {
     "Name": "HIHI",
     "Level": 1,
-    "Exp": 0,
+    "Exp": 70,
     "ExpMax": 150,
-    "Money": 800,
+    "Money": 830,
     "CurrCharacter": 3,
     "AvailableCharacter": [
         true,
@@ -27,8 +27,8 @@
         false,
         true,
         true,
-        false,
-        false,
+        true,
+        true,
         false,
         false,
         false

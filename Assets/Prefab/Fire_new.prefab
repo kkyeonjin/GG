@@ -311,6 +311,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimap: {fileID: 0}
+  mapBackground: {fileID: 0}
+  pp: {fileID: 0}
+  Timer: {fileID: 0}
 --- !u!1 &1084499362513517828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7284810543329485687
 Transform:
   m_ObjectHideFlags: 0
@@ -2672,7 +2675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7166381844633415139
 Transform:
   m_ObjectHideFlags: 0
@@ -2857,7 +2860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7166381844954273221
 Transform:
   m_ObjectHideFlags: 0
@@ -2966,7 +2969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7166381845301152961
 Transform:
   m_ObjectHideFlags: 0

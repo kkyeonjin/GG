@@ -22,7 +22,7 @@ public class FallingTrigger : MonoBehaviour
         foreach (Transform child in allChildren)
         {
             child.gameObject.tag = "Untagged";
-            Debug.Log(child.name);
+            //Debug.Log(child.name);
         }
     }
 }
