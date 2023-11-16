@@ -664,7 +664,7 @@ public class Player : MonoBehaviour
     void Targeting_Death()
     {
         //이펙트 시작
-        m_Effect.Play_Particle(PlayerEffect.Effect.Invincible);
+        m_Effect.Play_Particle(PlayerEffect.Effect.Death);
         GameMgr.Instance.Trigger_Death();
     }
 }
