@@ -84,10 +84,12 @@ public class Phase1Mgr : MonoBehaviour
 
     private void Update()
     {
+        PassPhase1();
         if (earthquake.isQuake)
         {
             Check_Column();
         }
+       
     }
 
     public void Check_Column()
@@ -226,6 +228,14 @@ public class Phase1Mgr : MonoBehaviour
 
         TrainLights.intensity = 0;
         //
+    }
+
+    void PassPhase1()
+    {
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            Start_NextPhase();
+        }
     }
 
 

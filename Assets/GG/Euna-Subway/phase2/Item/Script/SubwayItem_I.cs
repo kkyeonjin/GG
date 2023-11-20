@@ -11,7 +11,7 @@ public class SubwayItem_I : SubwayItem
     public float damageRatio = 0.15f;
 
 
-    private void Awake()
+    protected override void Awake()
     {
         this.itemType = SubwayItem.ItemType.INTERRUPT;
     }

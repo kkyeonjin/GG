@@ -9,7 +9,7 @@ public class HoldingBar : MonoBehaviour
     public bool isHolding = false; //애니메이션용 불리언
     Player player;
 
-    public Image holdingBarUI;
+    public GameObject PressE;
 
     private void Start()
     {
@@ -18,32 +18,48 @@ public class HoldingBar : MonoBehaviour
     }
     private void holdBar()
     {
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKey(KeyCode.E))
         {
-            Phase1Mgr.Instance.playerIsHoldingBar = true;
+            PressE.SetActive(false);
+
             isHolding = true;
-            Debug.Log("holding bar");
             player.SetAnimation("Holding", isHolding);
-            //Phase1Mgr.Instance.Check_Clear(Phase1Mgr.phase1CC.HoldBar);
+
+            Debug.Log("holding bar");
+            if (Phase1Mgr.Instance.earthquake.isQuake)
+            {
+                Phase1Mgr.Instance.playerIsHoldingBar = true;
+                //Phase1Mgr.Instance.Check_Clear(Phase1Mgr.phase1CC.HoldBar);
+            }
         }
-        else if(Input.GetKeyUp(KeyCode.R))
+
+        else
         {
-            Phase1Mgr.Instance.playerIsHoldingBar = false;
             isHolding = false;
             player.SetAnimation("Holding", isHolding);
+
+            if (Phase1Mgr.Instance.earthquake.isQuake)
+            {
+                Phase1Mgr.Instance.playerIsHoldingBar = false;
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PressE.SetActive(true);
         }
     }
 
-
     private void OnTriggerStay(Collider collision)
     {
-        if (!Phase1Mgr.Instance.earthquake.isQuake) return;
-
         //지진 중 기둥 Trigger 발동
         if (collision.gameObject.CompareTag("Player"))
         {   
             player = collision.gameObject.GetComponent<Player>();
-            holdingBarUI.gameObject.SetActive(true);
 
             holdBar();
 
@@ -62,7 +78,7 @@ public class HoldingBar : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            holdingBarUI.gameObject.SetActive(false);
+            PressE.SetActive(false);
         }
     }
 }

@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class EmergencyLever : MonoBehaviour
 {
-    private CinemachineVirtualCamera closeCam;
+    public CinemachineVirtualCamera closeCam;
     public static bool leverCamActivated = false;
     public GameObject cover;
 
@@ -13,6 +13,8 @@ public class EmergencyLever : MonoBehaviour
     public GameObject rightDoor;
     float doorOffset = 0.65f; //문 열림시 z축 포지션 변화. left는 +, right는 -
     bool open = false;
+
+    public GameObject PressE;
 
     private void Awake()
     {
@@ -37,20 +39,25 @@ public class EmergencyLever : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.CompareTag("Player"))
+        {
+            PressE.SetActive(true);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
+        if (Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
             if (other.CompareTag("Player"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //카메라 전환 (PlayerCam -> closeCam)
+                    PressE.SetActive(false);
+                    GameMgr.Instance.FollowCamera.gameObject.SetActive(false);
                     closeCam.gameObject.SetActive(true);
+                    
                     leverCamActivated = true;
                 }
             }
@@ -61,15 +68,12 @@ public class EmergencyLever : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //카메라 전환 (closeCam-> PlayerCam)
+            PressE.SetActive(false);
+            GameMgr.Instance.FollowCamera.gameObject.SetActive(true);
             closeCam.gameObject.SetActive(false);
+
             leverCamActivated = false;
         }
-    }
-
-    void coverOpen()
-    {
-        
     }
 
     public void doorOpen()

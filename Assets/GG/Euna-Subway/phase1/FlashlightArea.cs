@@ -6,6 +6,8 @@ public class FlashlightArea : MonoBehaviour
     private CinemachineVirtualCamera closeCam;
     public static bool flashCamActivated = false;
 
+    public GameObject PressE;
+
     private void Awake()
     {
         if (closeCam = transform.Find("FlashCam").GetComponent<CinemachineVirtualCamera>())
@@ -42,10 +44,17 @@ public class FlashlightArea : MonoBehaviour
     }
     */
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PressE.SetActive(true);
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        if (Phase1Mgr.Instance.earthquake.isQuake || Phase1Mgr.Instance.earthquake.isQuakeStop)
+        if (Phase1Mgr.Instance.earthquake.isQuakeStop)
         {
             //상호작용 E
             if (other.CompareTag("Player"))
@@ -55,11 +64,11 @@ public class FlashlightArea : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //카메라 전환 (PlayerCam -> closeCam)
+                    PressE.SetActive(false);
                     GameMgr.Instance.FollowCamera.gameObject.SetActive(false);
                     closeCam.gameObject.SetActive(true);
                     
                     flashCamActivated = true;
-                    Debug.Log("flash cam activated");
                 }
             }
         }
@@ -70,12 +79,10 @@ public class FlashlightArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //카메라 전환 (closeCam-> PlayerCam)
-
             closeCam.gameObject.SetActive(false);
             GameMgr.Instance.FollowCamera.gameObject.SetActive(true);
             flashCamActivated = false;
-            Debug.Log("flash cam deactivated");
-
+            PressE.SetActive(false);
         }
     }
 }
