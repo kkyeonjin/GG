@@ -609,22 +609,17 @@ public class Player : MonoBehaviour
     {
         /// (2) grabbed 아이템 호출 & 종속관계 분리
         GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
-        Rigidbody itemRb = grabbedItem.GetComponent<Rigidbody>();
-        Collider itemCollider = grabbedItem.GetComponent<Collider>();
 
-        itemCollider.isTrigger = false;
 
         OnHand.transform.DetachChildren();
         grabbedItem.transform.position = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
-
+        Debug.LogError("Item Angle: " + throwAngle);
         /// (3)) 던지기
-        throwAngle.y = 25f;
+        throwAngle.y = 0.4f;
 
-        itemRb.isKinematic = false;
-        itemRb.AddForce(throwAngle.normalized * throwForce, ForceMode.Impulse);
-        grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true);
+        grabbedItem.GetComponent<SubwayItem_IGrabbed>().Set_isThrown(true, throwAngle);
         m_Animator.SetTrigger("Throw");
-        Debug.Log("Throw Item");
+        
 
         SubwayInventory.instance.Active_AimPoint(false);
 
