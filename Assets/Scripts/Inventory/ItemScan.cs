@@ -143,9 +143,19 @@ public class ItemScan : MonoBehaviour
             else if (hitInfo.transform.gameObject.CompareTag("ElectricSwitch"))
             {
                 pressE.gameObject.SetActive(true);
+                AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hitInfo.transform.gameObject.GetComponent<ElectricSwitch>().TurnOff();
+                }
+            }
+            else if (hitInfo.transform.gameObject.CompareTag("TV"))
+            {
+                pressE.gameObject.SetActive(true);
+                AimColor.a = 1f;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hitInfo.transform.gameObject.GetComponent<TV>().NewsPopUp();
                 }
             }
         }

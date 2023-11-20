@@ -16506,11 +16506,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8707920bf84278142a259fe57a77c023, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6db6ae14a76447c419aa46e3732b66af, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -21723,8 +21723,10 @@ MonoBehaviour:
   m_LocalPlayerObj: {fileID: 0}
   m_bInGame: 0
   m_bMulti: 0
+  m_bIsPhase1: 0
   fDelayStartTime: 2
   FollowCamera: {fileID: 802444112}
+  rewardui: {fileID: 0}
   m_PV: {fileID: 1889427165}
   DeathUI: {fileID: 0}
 --- !u!4 &1889427164
