@@ -10,11 +10,10 @@ public class FallTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        //진도 4 이상일 때만 물체 추락
-        if((collider.gameObject.CompareTag("AI") || collider.gameObject.CompareTag("CompAI") || collider.gameObject.CompareTag("Player")))
+        if(collider.gameObject.CompareTag("Player"))
         {
             this.gameObject.GetComponent<ConfigurableJoint>().xMotion = ConfigurableJointMotion.Free;
-            this.GetComponent<BoxCollider>().gameObject.SetActive(false);
+            this.GetComponent<BoxCollider>().enabled = false;
             /*
             //Debug.Log("Falling Trigger!");
             foreach(GameObject obj in FallObject)

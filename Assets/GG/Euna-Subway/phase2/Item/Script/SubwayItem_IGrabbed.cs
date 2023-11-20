@@ -30,11 +30,11 @@ public class SubwayItem_IGrabbed : SubwayItem_I
                 Player collided= other.gameObject.GetComponent<Player>();
                 if(!collided.Is_MyPlayer())
                 {
-                    targetPlayer = collided;
-                    base.Item_effect();
+                    targetPlayer = collided; 
                 }
-            }
+            base.Item_effect();
             Destroy(this.gameObject);
+            }
         }
     }
 }

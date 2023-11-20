@@ -44,12 +44,4 @@ public class Phase2Mgr : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (resetFallings)
-        {
-            ResetMap();
-        }
-    }
-
 }

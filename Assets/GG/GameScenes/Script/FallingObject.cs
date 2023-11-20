@@ -42,7 +42,7 @@ public class FallingObject : MonoBehaviour
         //낙하물 땅에 떨어지면 장애물 태그로 전환
         if (collision.gameObject.CompareTag("Ground"))
         {
-            this.gameObject.tag = "Obstacle";
+            this.gameObject.tag = "Untagged";
         }
     }
 }

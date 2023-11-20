@@ -27,7 +27,8 @@ public class SubwayItem_E : SubwayItem
                 GameMgr.Instance.m_LocalPlayer.StaminaPotion(recoverRatio);
                 break;
             case 3: //OrderGage Potion
-                SubwayInventory.instance.orderGage.Recover_Order(recoverRatio);
+                //SubwayInventory.instance.orderGage.Recover_Order(recoverRatio);
+                GameMgr.Instance.m_LocalPlayer.OrderPotion(recoverRatio);
                 break;
             default:
                 return;

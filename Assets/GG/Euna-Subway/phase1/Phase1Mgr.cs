@@ -96,7 +96,7 @@ public class Phase1Mgr : MonoBehaviour
     {
         if (!playerIsHoldingBar)
         {
-            SubwayInventory.instance.orderGage.Cut_Order();
+            SubwayInventory.instance.orderGage.Cut_Order("bar");
         }
         else if (!holdingbarCleared)
         {

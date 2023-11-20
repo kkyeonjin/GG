@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4019953649500421302}
   - component: {fileID: 5059068864891994983}
   - component: {fileID: 5211287279217434107}
-  m_Layer: 19
+  m_Layer: 9
   m_Name: FallingLight (1)
   m_TagString: Falling
   m_Icon: {fileID: 0}
@@ -532,6 +532,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889100253630182735}
     m_Modifications:
+    - target: {fileID: 104975166968754521, guid: 8522954bdae184b72b980cb30e8e7a3f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.32951522
+      objectReference: {fileID: 0}
+    - target: {fileID: 104975166968754521, guid: 8522954bdae184b72b980cb30e8e7a3f,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.51878357
+      objectReference: {fileID: 0}
+    - target: {fileID: 104975166968754521, guid: 8522954bdae184b72b980cb30e8e7a3f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.06917703
+      objectReference: {fileID: 0}
+    - target: {fileID: 104975166968754521, guid: 8522954bdae184b72b980cb30e8e7a3f,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.00042533875
+      objectReference: {fileID: 0}
     - target: {fileID: 5727082287951004797, guid: 8522954bdae184b72b980cb30e8e7a3f,
         type: 3}
       propertyPath: m_RootOrder
