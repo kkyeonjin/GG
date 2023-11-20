@@ -108,6 +108,7 @@ public class ItemScan : MonoBehaviour
                 AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    Cursor.lockState = CursorLockMode.None;
                     if (hitInfo.transform.gameObject.name == "Table_04_C1")
                     {
                         HidingCam2.gameObject.SetActive(true);
