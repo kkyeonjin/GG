@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6769451443157685246}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5773290006022741330}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4986185564072594736}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3381422662507304121}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5069066054727122923}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885545686365791520}
   - component: {fileID: 8877453677256695267}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoe.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546246300463257918}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5211882628151718405}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3091311918458009430}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 107211147657817014}
   - component: {fileID: 107211147657817008}
   - component: {fileID: 107211147657817011}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Local_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 107211149028839747}
   - component: {fileID: 107211149028839744}
   - component: {fileID: 107211149028839745}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2169269854136494322}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6483841367371361155}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8949199939567453848}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1965032312465682276}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8266535327503454546}
   - component: {fileID: 884463725278879978}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635008921080448505}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7949380358563921528}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2218037790422912536}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3852928582917248989}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5642157441592428847}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 227413612884402809}
   - component: {fileID: 227413612884402808}
   - component: {fileID: 227413612884402810}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_002_boy_white_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137756682703744173}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,7 +1249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256349229504647307}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5336849541245981728}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620709086333135581}
   - component: {fileID: 6398357965405587955}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 840054332612393054}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4823772417594377277}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,7 +1527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727643360807892710}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6724631334749032533}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1591,7 +1591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5461602140019308216}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1623,7 +1623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2300417705169392818}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1655,7 +1655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6488787530573871256}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1691,7 +1691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240221477060726809}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,7 +1723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3582441481114120594}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9015103161279388905}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1786,7 +1786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7148790711780057593}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1818,7 +1818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569215552679816029}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,7 +1851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5076898305596568858}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7618334290389999263}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1915,7 +1915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497678679378051691}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8005203766751232879}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4052665481763161345}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5842850786519349195}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2044,7 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3033017048337381340}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484569958693876214}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,7 +2110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454179063457400856}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1138534050110862183}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2174,7 +2174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275503153077664926}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403163089727705923}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2237,7 +2237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1405333539928141280}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3508035460571586940}
   - component: {fileID: 4397720245705995823}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: spike.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2419,7 +2419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242439384067260083}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2452,7 +2452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5966655045552995043}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4106251152565767278}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2521,7 +2521,7 @@ GameObject:
   - component: {fileID: 161692840672790317}
   - component: {fileID: 161692840672790318}
   - component: {fileID: 161692840672790313}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_018_alien_et_man_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4630265001813912526}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992598449578925739}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028002323804677321}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2774,7 +2774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752484087894005860}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2808,7 +2808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8888415652089873720}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2840,7 +2840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5510030071710391529}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3314567530434974000}
   - component: {fileID: 172284735784452287}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3022,7 +3022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340618148539336004}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3054,7 +3054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8180091671663067031}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3086,7 +3086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992732559640962768}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3117,7 +3117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4757523864645651947}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3149,7 +3149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235988523514788296}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3182,7 +3182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2362526090310197898}
   - component: {fileID: 6605739294035641291}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3332,7 +3332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1302569585749875037}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8964296192269193245}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3396,7 +3396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3793270371058165375}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3428,7 +3428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204469625500448513}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3459,7 +3459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7309817337317610327}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3491,7 +3491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461565881948706588}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3524,7 +3524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6757536328820837698}
   - component: {fileID: 3392012090298934794}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: bag_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,7 +3673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8064483964422529498}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3705,7 +3705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5866077869624520832}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,7 +3737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6667379320553012780}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3771,7 +3771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8117847629746480614}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3805,7 +3805,7 @@ GameObject:
   - component: {fileID: 7765694372181455799}
   - component: {fileID: 2177488862178250292}
   - component: {fileID: 7380949766657314727}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8615,7 +8615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787489358967807775}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8651,7 +8651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5487223834148555508}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8683,7 +8683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885079107021891207}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8717,7 +8717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4803098571465451082}
   - component: {fileID: 3655121822058006247}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8867,7 +8867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7869655672200888076}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8899,7 +8899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668923017193952822}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8931,7 +8931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4610604906310256456}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8963,7 +8963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4347625545772758968}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8995,7 +8995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2325332896484460594}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9028,7 +9028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4939982332842196077}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9060,7 +9060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7118024797455375622}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9091,7 +9091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3697360246434804449}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9123,7 +9123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744553696050976827}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9156,7 +9156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2647592400045667637}
   - component: {fileID: 4668418682935719772}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9305,7 +9305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 179305087164672173}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9339,7 +9339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7023056896504002033}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9372,7 +9372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8172746072688868978}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9404,7 +9404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2203678167750784397}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9436,7 +9436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6221890907850419232}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9468,7 +9468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2302385900266466674}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9499,7 +9499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6530009677350343064}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9531,7 +9531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3262342952678119459}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9564,7 +9564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7159409225473806812}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9595,7 +9595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3317161242034288545}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9628,7 +9628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6336706391430156905}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9660,7 +9660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8605908808757195989}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9692,7 +9692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 222834886213110321}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9724,7 +9724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798501783660180195}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9756,7 +9756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882221446549476931}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,7 +9789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5528811340747959087}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9825,7 +9825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5251978773340277290}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9858,7 +9858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5921964325869592630}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10417,7 +10417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573147565119039}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10550,7 +10550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573147671639520}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11912,7 +11912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148430621305}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12369,7 +12369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148595781024}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12571,7 +12571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148616781597}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12911,7 +12911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148692590296}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12947,7 +12947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148714982660}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13588,7 +13588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148925123143}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13624,7 +13624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394573148935076820}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ItemOnHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14786,7 +14786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1833605707694870138}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14819,7 +14819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8304391490930382286}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14852,7 +14852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729914422646952866}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8280596333127754431}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14916,7 +14916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489173890898715376}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14949,7 +14949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4993989391966495463}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14982,7 +14982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6736548640512615695}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15014,7 +15014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6818801931997088932}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15046,7 +15046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8712031165656296911}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15077,7 +15077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5861920531376946361}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15108,7 +15108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6788836658388068942}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15140,7 +15140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774294345496059758}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15171,7 +15171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8485598138719847844}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15203,7 +15203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6633692931718948649}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15236,7 +15236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6640538517647745124}
   - component: {fileID: 7472296741688547650}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15385,7 +15385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 872055724167672735}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15417,7 +15417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4520845460201366138}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15451,7 +15451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3739367853628581728}
   - component: {fileID: 773798018334766168}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15601,7 +15601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7092626017521695455}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15633,7 +15633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151699271511058674}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15665,7 +15665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 44573502662172099}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15696,7 +15696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8896916104434923925}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15728,7 +15728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6411574677063965336}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15760,7 +15760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958521744770884314}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15791,7 +15791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8486429354183725331}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15823,7 +15823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091422536474054373}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15857,7 +15857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5424420029520363593}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15889,7 +15889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2583358020873954010}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15921,7 +15921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762166821157559092}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15954,7 +15954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3071850082810711159}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15987,7 +15987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2794182664841678505}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16019,7 +16019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744431638140494}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16051,7 +16051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2387916123515962097}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16083,7 +16083,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8521687574542096745}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16114,7 +16114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6794668843169988876}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16146,7 +16146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7200371819797229976}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16179,7 +16179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2201343206507844570}
   - component: {fileID: 5520841367340645136}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16329,7 +16329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9024115697605036859}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16361,7 +16361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8133337014663885887}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16396,7 +16396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5924717016521617370}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16428,7 +16428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6080967479584963046}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16460,7 +16460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8147487011647187373}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16492,7 +16492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035718874111924675}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16524,7 +16524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5020487654692032966}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16556,7 +16556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5700567541556813065}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16589,7 +16589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4177400071633984709}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16621,7 +16621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8749769577544051232}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16654,7 +16654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045788569128307596}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16686,7 +16686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7142627348541017464}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16717,7 +16717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2815988624943097805}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16749,7 +16749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558802762234778268}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16780,7 +16780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8744943803317957229}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16812,7 +16812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617738887252678319}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16844,7 +16844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6426931391430868065}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16876,7 +16876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8330176429489639524}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16907,7 +16907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7358571827266926161}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16940,7 +16940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3110475719994424125}
   - component: {fileID: 3538306943245384790}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: hair.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17090,7 +17090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6061438063062185469}
   - component: {fileID: 2598326915541751120}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17239,7 +17239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392142486538670057}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17274,7 +17274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7436291220732881952}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17306,7 +17306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7921686123870344847}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17338,7 +17338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073149189124934611}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17372,7 +17372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7441450483097881166}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17404,7 +17404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300584922435884787}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17436,7 +17436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2993666094411013428}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17468,7 +17468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6539519500478091102}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17500,7 +17500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3130520768144620831}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17532,7 +17532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8053217081401930402}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17567,7 +17567,7 @@ GameObject:
   - component: {fileID: 1613904921934238209}
   - component: {fileID: 1613904921934238210}
   - component: {fileID: 1613904921934238269}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_005_boy_white_punk_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17728,7 +17728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1280039893323957871}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17759,7 +17759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2455273444105237960}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17792,7 +17792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8837145130771848988}
   - component: {fileID: 1800140092389242231}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: beard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17941,7 +17941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 452725093382671473}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17973,7 +17973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5627742946973521754}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18006,7 +18006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845677813181363196}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18038,7 +18038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1192243060565355106}
   - component: {fileID: 3890872510780216989}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18188,7 +18188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778021300772020781}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18219,7 +18219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3814278280892882324}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18251,7 +18251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5901006120871364209}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18283,7 +18283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7510980351526962481}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18315,7 +18315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5428687923151408}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18347,7 +18347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4621777446498879569}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18383,7 +18383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835893949348405456}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18415,7 +18415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8154469791901238907}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18447,7 +18447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4934630557586975060}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18480,7 +18480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579589377810279684}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18513,7 +18513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6744289702788024247}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18545,7 +18545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2890377382025093653}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18578,7 +18578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7311938270915057986}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18610,7 +18610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5540551556900979652}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18641,7 +18641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3575315889308926234}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18674,7 +18674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769754364928908798}
   - component: {fileID: 3750556021587141684}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18823,7 +18823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1685777018162016149}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18854,7 +18854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3064802893135599753}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18887,7 +18887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920148434577811931}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18920,7 +18920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4151580921021675976}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18952,7 +18952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6964450495593425693}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18984,7 +18984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5722866091796037784}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19016,7 +19016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9170398803743878722}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19048,7 +19048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8263253970528837870}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19082,7 +19082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2208385842293940860}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19115,7 +19115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7458062425670234252}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19147,7 +19147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8883660629296961087}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19179,7 +19179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3747723779239917637}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19212,7 +19212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2649817492158988765}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19248,7 +19248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4775990250481678178}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19279,7 +19279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285666805782026634}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19311,7 +19311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332623452244224378}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19343,7 +19343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4042679206309711903}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19376,7 +19376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003438877752938617}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19408,7 +19408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7970216109596344211}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19440,7 +19440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5209105136786896914}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19471,7 +19471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7836890820875799079}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19503,7 +19503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2397692728975146818}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19535,7 +19535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463484793406408066}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19567,7 +19567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3996056416653072097}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19599,7 +19599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4050813475939636293}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19630,7 +19630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8929027194447484308}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19662,7 +19662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8504329332309580600}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19696,7 +19696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7964094141711592450}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19728,7 +19728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29468803315144737}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19760,7 +19760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6936487272803154305}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19792,7 +19792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594280748484790974}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19825,7 +19825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7192248967367178130}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19857,7 +19857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8799817688240896191}
   - component: {fileID: 9036670318777214464}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20007,7 +20007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4443659711056065314}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20039,7 +20039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3001553323601947121}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20071,7 +20071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150998953787948281}
   - component: {fileID: 9027227251060381924}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20220,7 +20220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422139758556047630}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20252,7 +20252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3506928788899054483}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20286,7 +20286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3651593728217866691}
   - component: {fileID: 3920298419981627213}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoe.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20435,7 +20435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5996445123408478763}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20467,7 +20467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5999344113046266949}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20499,7 +20499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4318189691239298463}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20535,7 +20535,7 @@ GameObject:
   - component: {fileID: 2967274063927259115}
   - component: {fileID: 2967274063927259112}
   - component: {fileID: 2042859531755667957}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20650,7 +20650,7 @@ GameObject:
   - component: {fileID: 2967274064993316535}
   - component: {fileID: 2967274064993316533}
   - component: {fileID: 2967274064993316531}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20779,7 +20779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4689094583073790799}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20810,7 +20810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1591536856516189123}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20842,7 +20842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4186975190229032324}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20875,7 +20875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5281070495734875857}
   - component: {fileID: 323643872400707187}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21025,7 +21025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3492555789512224662}
   - component: {fileID: 7282791940751145871}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21174,7 +21174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105248491683352699}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21205,7 +21205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7843802611695721215}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21237,7 +21237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4383732150160478952}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21269,7 +21269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585517931695872749}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21301,7 +21301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6247558921221448588}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21333,7 +21333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824337699878131694}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21365,7 +21365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3586846798994066032}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21397,7 +21397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5878899853175195219}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21428,7 +21428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3545070061073109084}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21460,7 +21460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988292385575763830}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21492,7 +21492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3278272769752698587}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21525,7 +21525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4547319828587137870}
   - component: {fileID: 4599193940127313562}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: glasses.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21674,7 +21674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3104268560468490455}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21705,7 +21705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8975809961184238705}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21738,7 +21738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737179275117520847}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21770,7 +21770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6313533056878164477}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21802,7 +21802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4961786509940415028}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21838,7 +21838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749303064420519347}
   - component: {fileID: 3229975778261215674}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21988,7 +21988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 174798349661959504}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22021,7 +22021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3646491430594808091}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22053,7 +22053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1351024476029755413}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22085,7 +22085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915462593199237438}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22119,7 +22119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4352295785974220436}
   - component: {fileID: 4154251220099012940}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22268,7 +22268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7717426779041272818}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22300,7 +22300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2111635872044727028}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22332,7 +22332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3104138788863951020}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22364,7 +22364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3014958172541056269}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22396,7 +22396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7869381099062448746}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22428,7 +22428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2227029459675613700}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22460,7 +22460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8633550848050001217}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22496,7 +22496,7 @@ GameObject:
   - component: {fileID: 2660505912266496214}
   - component: {fileID: 2660505912266496215}
   - component: {fileID: 2660505912266496209}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_021_astronaut_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22653,7 +22653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5916114109571553370}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22685,7 +22685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2542885065230830916}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22716,7 +22716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2909211555160941219}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22753,7 +22753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8978704672704617185}
   - component: {fileID: 2988004402117560049}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22903,7 +22903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8572002735007410742}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22935,7 +22935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9209621902020860083}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22967,7 +22967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3163811517726816953}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22999,7 +22999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 572489178125098230}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23031,7 +23031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7928703175263491731}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23067,7 +23067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5797293220384942}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23099,7 +23099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7104984447523092147}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23131,7 +23131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3201125115292860777}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23162,7 +23162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8659683402849315876}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23194,7 +23194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5291417677218747532}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23226,7 +23226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6041944316982576078}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23259,7 +23259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6025101793917133792}
   - component: {fileID: 2018317010731403451}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: hair.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23408,7 +23408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8614206747293557438}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23439,7 +23439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045900871449550738}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23472,7 +23472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2432609406181885270}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23504,7 +23504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4749456863861156960}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23535,7 +23535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332304544475448316}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23568,7 +23568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4466559183647177949}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23599,7 +23599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9142826104438562034}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23631,7 +23631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760681167771892861}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23663,7 +23663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5889620590643292882}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23695,7 +23695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8152348944724806766}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23727,7 +23727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2721825547581789238}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23759,7 +23759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8157946629559362363}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23791,7 +23791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581886048780857803}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23824,7 +23824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 233864430410267321}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23855,7 +23855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2512910764029982762}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23887,7 +23887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7578539194591473711}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23919,7 +23919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7177682461097557216}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23952,7 +23952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7683671252231122245}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23988,7 +23988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547304135344766252}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24020,7 +24020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8582382675915367075}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24052,7 +24052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4527123471042104741}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24084,7 +24084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5737461028831095953}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24115,7 +24115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7926228932329096584}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24147,7 +24147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6570887450003117492}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24179,7 +24179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3298517204905667812}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24211,7 +24211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6120740070607054037}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24242,7 +24242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8891985415562994533}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24274,7 +24274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6742323600718432324}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24306,7 +24306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4116783777940648821}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24337,7 +24337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6842332818605763325}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24372,7 +24372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6852931076362809741}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24403,7 +24403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8811394007972243236}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24436,7 +24436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3315470714098013319}
   - component: {fileID: 5543111962070800700}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: pants.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24585,7 +24585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4990267759539935158}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24616,7 +24616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2599313571925784390}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24648,7 +24648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2755889922223783559}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24679,7 +24679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7551327848861993309}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24712,7 +24712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2189087608704561891}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24744,7 +24744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6624347648507531217}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24776,7 +24776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2349209797444031094}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24808,7 +24808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 327307852345643701}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24841,7 +24841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9068422780463242576}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24872,7 +24872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6338827322892966012}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24905,7 +24905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067027817676667922}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24938,7 +24938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4012191548869083955}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24969,7 +24969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6370533180895446955}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25000,7 +25000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4533186388789326100}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25036,7 +25036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5687529672247221046}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25068,7 +25068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862594209952737603}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25100,7 +25100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7088945693845450558}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25133,7 +25133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599394369425086899}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25165,7 +25165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3179084558163917866}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25196,7 +25196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8900006853316067805}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25228,7 +25228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3742630927653645166}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25261,7 +25261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8109561968291140198}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25293,7 +25293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5939486997430847875}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25328,7 +25328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1106150188822676275}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25360,7 +25360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2954147312164228537}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25394,7 +25394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5473229637412573413}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25427,7 +25427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3753523570126753945}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25459,7 +25459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8996679686516869428}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25491,7 +25491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4562096918156334464}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25523,7 +25523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3184399190108665392}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25555,7 +25555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740513964272234304}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25589,7 +25589,7 @@ GameObject:
   - component: {fileID: 8834044005973038141}
   - component: {fileID: 2475017439670200247}
   - component: {fileID: 5139058250429578633}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Invincible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30399,7 +30399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127807728842717642}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30432,7 +30432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7694680439398828798}
   - component: {fileID: 306355682882444}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoes.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30581,7 +30581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6865705583466918919}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30613,7 +30613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2847430612482687979}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30645,7 +30645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3988488545263538360}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30677,7 +30677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7406579981313840360}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30710,7 +30710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6145387761453092451}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30741,7 +30741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3332893459619645608}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30773,7 +30773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6863730879667855536}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30805,7 +30805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5041628948065957874}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30837,7 +30837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3194941752984417903}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30871,7 +30871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5718826709421632307}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30903,7 +30903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8894815085264679808}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30936,7 +30936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523611693178368797}
   - component: {fileID: 1952891393832703922}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoe.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31085,7 +31085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679328524165051106}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31117,7 +31117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3429369032947854296}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31149,7 +31149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3512449269204020047}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31182,7 +31182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2641821134624306390}
   - component: {fileID: 5280376349754488604}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: pants.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31331,7 +31331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8368664921713977776}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31363,7 +31363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8409613216907874138}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31395,7 +31395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246009736834138818}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31427,7 +31427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6899263791305225255}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31460,7 +31460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5029891266737410943}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31491,7 +31491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3783551258316157515}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31524,7 +31524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2922249138389501892}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31556,7 +31556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7169216189101051841}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31588,7 +31588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2852154012492124938}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31620,7 +31620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2925310050710687206}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31652,7 +31652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 663690566016905395}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31684,7 +31684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2335065305509772922}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31717,7 +31717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2502803841517969580}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31750,7 +31750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2642593026595119580}
   - component: {fileID: 8654853481058512532}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31901,7 +31901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4542870107047386206}
   - component: {fileID: 3407627375560653380}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32050,7 +32050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7436819948734668190}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32082,7 +32082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6768249373539674763}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32115,7 +32115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5051355679928482557}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32147,7 +32147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6153207859667720525}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32179,7 +32179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4545357440266723851}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32211,7 +32211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6367194136362305974}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32243,7 +32243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711327292052733211}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32275,7 +32275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9087940965820396439}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32307,7 +32307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824713773110023830}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32339,7 +32339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5623908451667214277}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32372,7 +32372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6007453378508062202}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32405,7 +32405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383209970805952905}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32437,7 +32437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2277874198412934037}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32470,7 +32470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6626131541714915569}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32502,7 +32502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8869943527935598994}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32534,7 +32534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7580362482703733583}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32566,7 +32566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4790384051608543549}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32597,7 +32597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4483825889126414458}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32629,7 +32629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7178016094988543560}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32661,7 +32661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8106795882236086638}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32693,7 +32693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1580952979092366673}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32727,7 +32727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1738275996525816829}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32759,7 +32759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8613609669891085294}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32791,7 +32791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6036700180764685943}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32822,7 +32822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8367765650466366238}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32854,7 +32854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3546268327074845035}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32886,7 +32886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4697772676430019401}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32922,7 +32922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5342513098404861102}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32953,7 +32953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4643452307198227594}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32986,7 +32986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123333258683911621}
   - component: {fileID: 864661907556746745}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33040,7 +33040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806342417286660395}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33076,7 +33076,7 @@ GameObject:
   - component: {fileID: 5100779089077803622}
   - component: {fileID: 5100779089077803623}
   - component: {fileID: 5100779089077803617}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_016_wizard_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33235,7 +33235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2891525944619209249}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33267,7 +33267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3152426994298406523}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33298,7 +33298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 83031327117467039}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33330,7 +33330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5326471671596008498}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33362,7 +33362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3893517270428845134}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33394,7 +33394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6125846963190896914}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33429,7 +33429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5445279524110340026}
   - component: {fileID: 3107644799705182467}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoe.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33578,7 +33578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6864290152748750891}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33610,7 +33610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7326029506019700785}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33643,7 +33643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475958314980177870}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33675,7 +33675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2795652749652214047}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33707,7 +33707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 705092576873706231}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33740,7 +33740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683711035892218350}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33776,7 +33776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3838781704464506341}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33808,7 +33808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6299740937706369935}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33840,7 +33840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9134010855538339346}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33871,7 +33871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5114131305238886696}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33902,7 +33902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5684473383652573763}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33933,7 +33933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2470578218907189785}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33965,7 +33965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5097505084130965456}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34000,7 +34000,7 @@ GameObject:
   - component: {fileID: 4691582736352011194}
   - component: {fileID: 4691582736352011195}
   - component: {fileID: 4691582736352011189}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_010_woman_old_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34159,7 +34159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1308108101633675221}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34191,7 +34191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4088320790199075613}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34223,7 +34223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7655836602465431798}
   - component: {fileID: 3061494287746006126}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: pants.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34372,7 +34372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036905145489209021}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34405,7 +34405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7291705768158212335}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34438,7 +34438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075818698070223206}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34470,7 +34470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3343052888113373327}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34502,7 +34502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473715244109051424}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34534,7 +34534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 408830906147771341}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34566,7 +34566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6780898243249639179}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34598,7 +34598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5341997413162961764}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34630,7 +34630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2478576912085498569}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34662,7 +34662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2444863864826018197}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34693,7 +34693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5869373889993443829}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34727,7 +34727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7638715691442533421}
   - component: {fileID: 7610699350359422809}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: brinco.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34876,7 +34876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8821159371710322116}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34907,7 +34907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6416659810243543572}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34940,7 +34940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8658497408087299755}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34973,7 +34973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502341783428845819}
   - component: {fileID: 4311657292759657940}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: glasses.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35122,7 +35122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224489392652535897}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35154,7 +35154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6066585691547807972}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35186,7 +35186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8163358962616802940}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35218,7 +35218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661208125642301547}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35251,7 +35251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5826222288641994003}
   - component: {fileID: 3034043435297899297}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35400,7 +35400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7032612778321300281}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35433,7 +35433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3777379887911962516}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35465,7 +35465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569822211230987752}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35498,7 +35498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2279632055820327615}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35532,7 +35532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318945365724271635}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35566,7 +35566,7 @@ GameObject:
   - component: {fileID: 5760012489221312318}
   - component: {fileID: 5760012489221312312}
   - component: {fileID: 5760012489221312319}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35651,7 +35651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4064030495362216656}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35683,7 +35683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6670655841641891609}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35714,7 +35714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6509933200793627369}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35747,7 +35747,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848767666747190969}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35780,7 +35780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509870110212784534}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35812,7 +35812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4055163184989303858}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35843,7 +35843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095310469595177627}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35879,7 +35879,7 @@ GameObject:
   - component: {fileID: 5800388862014458317}
   - component: {fileID: 5800388862014458318}
   - component: {fileID: 5800388862014458313}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_020_vampire_man_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36039,7 +36039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7451569637913738645}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36072,7 +36072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1363854225720973367}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36104,7 +36104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003551597490070976}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36135,7 +36135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2846386287705572060}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36167,7 +36167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462636597962081908}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36200,7 +36200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8017411831427757246}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36232,7 +36232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4850033764290310905}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36264,7 +36264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5328988678875581340}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36297,7 +36297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071430055009669794}
   - component: {fileID: 8638560136800742453}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: brincos.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36446,7 +36446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3054127545130151254}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36478,7 +36478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102500416403785946}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36511,7 +36511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3768386005778550854}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36543,7 +36543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8225108966681082003}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36575,7 +36575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2937432756441819438}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36606,7 +36606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1040389589240362384}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36638,7 +36638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5009114296145378709}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36670,7 +36670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5567076933043602246}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36702,7 +36702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6064963814185968038}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36734,7 +36734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708705183713299518}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36768,7 +36768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2473393625285857634}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36800,7 +36800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1548450732522555571}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36832,7 +36832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7365525699235420889}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36864,7 +36864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6751075003263537438}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36896,7 +36896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4252247771045367913}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36931,7 +36931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6110357287839920778}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36962,7 +36962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6689565819163855329}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36993,7 +36993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7187957038925039171}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37026,7 +37026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5181184456914290991}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37058,7 +37058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2789170958532635103}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37089,7 +37089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7063401769719801442}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37121,7 +37121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390832214012399588}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37152,7 +37152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415928038956053260}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37185,7 +37185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7541382402540167200}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37217,7 +37217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954285699884840320}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37249,7 +37249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770886331234000140}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37281,7 +37281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9050246862386628329}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37313,7 +37313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4701576331417177185}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37345,7 +37345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3950031773710659021}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37378,7 +37378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3200458771277402872}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37410,7 +37410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4002269192071881067}
   - component: {fileID: 505759568670050892}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: oxigen_tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37559,7 +37559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8542482737807590213}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37591,7 +37591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672228664783917868}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37627,7 +37627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3120877665413068583}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37659,7 +37659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 781866143171595846}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37691,7 +37691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695698762886612547}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37723,7 +37723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2127083681577461815}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37755,7 +37755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3213663529730960920}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37787,7 +37787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6043138273125791732}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37820,7 +37820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7616444198445879593}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37853,7 +37853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8375902010047884847}
   - component: {fileID: 4169660370000689543}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38002,7 +38002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4668182334189344437}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38035,7 +38035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7971280058500711708}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38067,7 +38067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3870326605222456505}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38098,7 +38098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247153972602582877}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38130,7 +38130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2030260171110676031}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38162,7 +38162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6332887836637540080}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38194,7 +38194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5245502899278360167}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38226,7 +38226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2882602247320497804}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38259,7 +38259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5407384406608540624}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38293,7 +38293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7219777972916274014}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38325,7 +38325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251700763411146335}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38357,7 +38357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5766191765282723079}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38390,7 +38390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5572994705361475384}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38423,7 +38423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677103606396247413}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38455,7 +38455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114033302732230999}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38488,7 +38488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8142927128668841367}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38520,7 +38520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6078721327218343258}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38551,7 +38551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1376677572709679226}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38583,7 +38583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4199824901178330803}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38616,7 +38616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1243889640232728014}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38648,7 +38648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2174214266474226489}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38680,7 +38680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663578263614456777}
   - component: {fileID: 2173675255154995744}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38829,7 +38829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4230854211041892900}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38861,7 +38861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5170889982889105986}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38894,7 +38894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862771893191577491}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38928,7 +38928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 438567578592805183}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38960,7 +38960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5029180941115850990}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38991,7 +38991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5325996032456083134}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39022,7 +39022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5435026567592391567}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39054,7 +39054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1351430225378599650}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39086,7 +39086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788709438817346826}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39119,7 +39119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3105785795717325218}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39151,7 +39151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4927286354910801251}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39183,7 +39183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217986382937795778}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39219,7 +39219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3818987280945631662}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39251,7 +39251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440394816986660159}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39282,7 +39282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6301663914156395554}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39315,7 +39315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7861737292165671679}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39347,7 +39347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3607335464789746408}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39379,7 +39379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7024781311665989665}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39412,7 +39412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717743152218150873}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39444,7 +39444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4094455536218501944}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39476,7 +39476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5504048370140763569}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39508,7 +39508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5002879604938090722}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39540,7 +39540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766929559072443881}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39572,7 +39572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2269383791508873536}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39604,7 +39604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235674879706175025}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39635,7 +39635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5832864225071646348}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39666,7 +39666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8295010917573043078}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39699,7 +39699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4373625232010513006}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39731,7 +39731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5787000373790108319}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39763,7 +39763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2829504692599920548}
   - component: {fileID: 8056034110919284735}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: body.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39913,7 +39913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4711528990595775288}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39944,7 +39944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1911170664484706543}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39975,7 +39975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7687090546642565543}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40007,7 +40007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6324290488243595336}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40040,7 +40040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7486004663357777230}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40076,7 +40076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8258102894313598690}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40108,7 +40108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395664349038815885}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40141,7 +40141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7253086932357384001}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40173,7 +40173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5976892747775048985}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40205,7 +40205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7800165900580557508}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40237,7 +40237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3792797728370318021}
   - component: {fileID: 9108619230047899137}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: cap.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40390,7 +40390,7 @@ GameObject:
   - component: {fileID: 6976693035925642256}
   - component: {fileID: 6976693035925642257}
   - component: {fileID: 6976693035925642253}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_019_zombie_man_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40547,7 +40547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5862497680181448169}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40579,7 +40579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3585155848862227719}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40612,7 +40612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687569905780169538}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40647,7 +40647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2334232189054358300}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40679,7 +40679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8696710751222780173}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40711,7 +40711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6758258631321223061}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40743,7 +40743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9074495222978631323}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40775,7 +40775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 886680329601606667}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40807,7 +40807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7233192486378792791}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40838,7 +40838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714877396906541442}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40870,7 +40870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5009908582324838434}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40902,7 +40902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1795750067662644861}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40934,7 +40934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6071061378239236870}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40965,7 +40965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9119410579057760177}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40997,7 +40997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7536292681667995922}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41029,7 +41029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3765024471443693747}
   - component: {fileID: 473051136951527263}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41179,7 +41179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857220608249101324}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41215,7 +41215,7 @@ GameObject:
   - component: {fileID: 7240585982729283522}
   - component: {fileID: 7240585982729283523}
   - component: {fileID: 7240585982729283581}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: char_003_boy_red_haired_FBX_RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41373,7 +41373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883392758747109945}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41404,7 +41404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8595802023879630066}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41436,7 +41436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5411888991527071277}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41469,7 +41469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2166372201863865651}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41501,7 +41501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5053550467941308056}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41534,7 +41534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3122396928878423393}
   - component: {fileID: 1025493472695863600}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: glasses01.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41683,7 +41683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073766760901691173}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41714,7 +41714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8180602421678052254}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41746,7 +41746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4212150668551445403}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41778,7 +41778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4514698862202940988}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41810,7 +41810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8738846534618361165}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41842,7 +41842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2480965204023314575}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41874,7 +41874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6974103241720831105}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41906,7 +41906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33276854664536858}
   - component: {fileID: 7942310708297195994}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: underwear.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42055,7 +42055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8278356380844469987}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42087,7 +42087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9214075487505718291}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42120,7 +42120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6421609766010258676}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42153,7 +42153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5119396490632134473}
   - component: {fileID: 1669917744440403355}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: tshirt.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42302,7 +42302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5153093085601058131}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42335,7 +42335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2446510800567792514}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42367,7 +42367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594117272994550031}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42399,7 +42399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4138974672450323640}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42433,7 +42433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3791928759009577492}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42465,7 +42465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2579039727101525733}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42497,7 +42497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3458592468973190764}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42529,7 +42529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3133059406525828939}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42561,7 +42561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8703454534682874124}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42594,7 +42594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7904358895357614752}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42630,7 +42630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2573771312611759527}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42663,7 +42663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7275243578983164039}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42694,7 +42694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6559927753429398023}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42726,7 +42726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5123240528769240461}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42759,7 +42759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6386242075353645815}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42791,7 +42791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8606271827061247903}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42824,7 +42824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8459469572828501299}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42855,7 +42855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 522294912362391442}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42886,7 +42886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3351087077000443620}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42917,7 +42917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7507982870806537279}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42949,7 +42949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7483063225168927231}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42982,7 +42982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3815995483354141138}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43014,7 +43014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8416123241807837374}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43046,7 +43046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2893644917025642548}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43078,7 +43078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8993514177729773676}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43110,7 +43110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2899304033310013281}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43142,7 +43142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2691546536658438228}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43174,7 +43174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4877648883282785883}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43207,7 +43207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1087278948525815316}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43238,7 +43238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8420863271787800671}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43270,7 +43270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 60672741441685365}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43304,7 +43304,7 @@ GameObject:
   - component: {fileID: 3343404516287576417}
   - component: {fileID: 2946984956693940607}
   - component: {fileID: 2463955019601778237}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Recover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48114,7 +48114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3446193946917696669}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48146,7 +48146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2818783410311065201}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48178,7 +48178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5269026611804734300}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48210,7 +48210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6402197475173574776}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48241,7 +48241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6049654385288078090}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48274,7 +48274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8342378913879192649}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48308,7 +48308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 733718647199602256}
   - component: {fileID: 2864217336227789064}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: panel_chester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48457,7 +48457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233784391086464214}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48488,7 +48488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9140561793751914574}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48519,7 +48519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7698174222573421213}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48551,7 +48551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210058914850450343}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48584,7 +48584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752658177433457810}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48615,7 +48615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5807202734182401327}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48647,7 +48647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7488690188575527526}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48679,7 +48679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3225164236432263212}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48711,7 +48711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7435957492031029289}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48743,7 +48743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8018946355676816890}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48774,7 +48774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5619703645458106824}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48807,7 +48807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3796081529557337645}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48838,7 +48838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741773681830916127}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48870,7 +48870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275778178763093552}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48902,7 +48902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4937558732940339045}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48934,7 +48934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7476554490259347580}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48965,7 +48965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7060774620891565893}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48997,7 +48997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374436656746512224}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49029,7 +49029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942446130235050382}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49060,7 +49060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2027859944901704746}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49092,7 +49092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4841708214285513789}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49124,7 +49124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5671146296660649546}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49156,7 +49156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1167003136426306439}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49188,7 +49188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7730006413028390432}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49221,7 +49221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7939677146849640634}
   - component: {fileID: 4157475087562579475}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: pants.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49372,7 +49372,7 @@ GameObject:
   - component: {fileID: 4617978852230191349}
   - component: {fileID: 698189734263787717}
   - component: {fileID: 4108506632407664836}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54182,7 +54182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8338536368321343586}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54218,7 +54218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4971984595674716357}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54250,7 +54250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469147512345383025}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54283,7 +54283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091881746419345461}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54315,7 +54315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4624124025571056819}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54347,7 +54347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5994361685427565461}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54379,7 +54379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3724271778899252916}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54413,7 +54413,7 @@ GameObject:
   - component: {fileID: 9176501173406325777}
   - component: {fileID: 4165609138374566289}
   - component: {fileID: 2521786369888000687}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Adrenaline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59223,7 +59223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2148623971856485998}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59258,7 +59258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8890901975155396377}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59290,7 +59290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324598553376657253}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59323,7 +59323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7461013937605808697}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59357,7 +59357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8223187389045576950}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59389,7 +59389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764750898652087856}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59421,7 +59421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9076505474481203510}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59454,7 +59454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1769329906058102780}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59486,7 +59486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7163966411374125994}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59517,7 +59517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8972748319666042094}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59550,7 +59550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4716080040421112831}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59583,7 +59583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3248532934150566078}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59616,7 +59616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115914824311424182}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59648,7 +59648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7990235143940982903}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59681,7 +59681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6896484103095625835}
   - component: {fileID: 5504206395714596603}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: shoe.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59830,7 +59830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7413055305651155109}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59862,7 +59862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8065933929389362678}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59894,7 +59894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3604952558319249661}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59926,7 +59926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1600810519261281229}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59958,7 +59958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4450423788290757671}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59990,7 +59990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5339719183463652764}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60022,7 +60022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2843897003214163632}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60055,7 +60055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6031265533130430507}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60087,7 +60087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2355079816361936126}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60119,7 +60119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735524793934448694}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60150,7 +60150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1612579999273342146}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60182,7 +60182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4352635142597993037}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60214,7 +60214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8526480648695508213}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60245,7 +60245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5651922771079838671}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60276,7 +60276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5614708122104404097}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60309,7 +60309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2725812170123064005}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60345,7 +60345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3236300163379602272}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60377,7 +60377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5489199524724242592}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60409,7 +60409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1967234386890302264}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60440,7 +60440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7096149094592506633}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60473,7 +60473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665372697754339248}
   - component: {fileID: 5116306182049157281}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: pants.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60622,7 +60622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361334375648384964}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60654,7 +60654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3752422555807710437}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60686,7 +60686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8173940025885690440}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60719,7 +60719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3165502527990164942}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60752,7 +60752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2218523410950813010}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60784,7 +60784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7672414132808569819}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60816,7 +60816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4512272329553054595}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60848,7 +60848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5165487680885716518}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60882,7 +60882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6163953180023224119}
   - component: {fileID: 8827676036889249044}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: spikes.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61031,7 +61031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7039239433031665}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61063,7 +61063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497762216702015468}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61094,7 +61094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4498350436475697630}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61126,7 +61126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7402068913001937871}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61158,7 +61158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6633457660648367697}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61190,7 +61190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2331606008230734674}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61222,7 +61222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7757522340312687447}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61254,7 +61254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6276566253737976829}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61286,7 +61286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8232683487522700080}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandIndex4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61317,7 +61317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3572535482849444722}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61349,7 +61349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4050977485120824659}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61380,7 +61380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046171017333703715}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61412,7 +61412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4297749847502449472}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61444,7 +61444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8285971533255841571}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightToe_End_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61475,7 +61475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4004080251815734217}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61507,7 +61507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7192415454744479364}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61538,7 +61538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607193160382327826}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61570,7 +61570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616061024051047152}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandRing4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61601,7 +61601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7823648623524742176}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61633,7 +61633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740015232869242691}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61665,7 +61665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7882842637143731259}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61697,7 +61697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5225308264834794358}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61729,7 +61729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2900368836141111478}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61762,7 +61762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5851851183794020068}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61795,7 +61795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900603178216722052}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61827,7 +61827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1694267167924810112}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: puxxerig:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
