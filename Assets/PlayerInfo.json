@@ -1,9 +1,9 @@
 {
     "Name": "LetsGG",
     "Level": 1,
-    "Exp": 300,
+    "Exp": 397,
     "ExpMax": 150,
-    "Money": 550,
+    "Money": 600,
     "CurrCharacter": 0,
     "AvailableCharacter": [
         true,
@@ -28,7 +28,7 @@
         true,
         true,
         false,
-        false,
+        true,
         false,
         false,
         false

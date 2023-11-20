@@ -31,12 +31,12 @@ public class CellPhone : MonoBehaviour
             if(cellphone.activeSelf)
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                cellphone.SetActive(false);
+              //  cellphone.SetActive(false);
             }
             else
             {
                 Cursor.lockState = CursorLockMode.None;
-                cellphone.SetActive(true);
+              //  cellphone.SetActive(true);
             }
         }
     }
