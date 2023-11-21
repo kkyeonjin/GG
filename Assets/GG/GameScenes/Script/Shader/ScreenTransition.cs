@@ -62,7 +62,7 @@ public class ScreenTransition : UIEffect
     }
     void Empty()
     {
-
+        LoadingIcon.transform.Rotate(Vector3.forward * -180f * Time.deltaTime);
     }
     public void StartScreen(Scene scene, LoadSceneMode mode)
     {
@@ -96,6 +96,8 @@ public class ScreenTransition : UIEffect
         m_Updating = LerpRatio;
         m_bEndScreen = true;
 
+        LoadingIcon.transform.rotation = Quaternion.identity;
+
         gameObject.SetActive(true);
     }
     public float Get_TransitionTime()
@@ -105,8 +107,15 @@ public class ScreenTransition : UIEffect
     void LerpRatio()
     {
         m_fPassedTime = Mathf.Min(m_fPassedTime + Time.deltaTime, m_fTotalTime);
-        m_Image.material.SetFloat("g_fRatio", EasingUtility.Linear(m_fRatioSour, m_fRatioDest, m_fPassedTime, m_fTotalTime));
-        
+
+        float Ratio = EasingUtility.LerpToType(m_fRatioSour, m_fRatioDest, m_fPassedTime, m_fTotalTime,m_eLerpType);
+
+        m_Image.material.SetFloat("g_fRatio", Ratio);
+
+        LoadingIcon.transform.localScale = new Vector3(Ratio, Ratio, 1f);
+        CakeIcon.transform.localScale = new Vector3(Ratio, Ratio, 1f);
+        LoadingIcon.transform.Rotate(Vector3.forward*-180f * Time.deltaTime);
+
         if (Mathf.Abs(m_fPassedTime - m_fTotalTime) < Mathf.Epsilon)
         {
             //m_PerformFunc();
