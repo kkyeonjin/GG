@@ -67,7 +67,8 @@ public class FlashlightArea : MonoBehaviour
                     PressE.SetActive(false);
                     GameMgr.Instance.FollowCamera.gameObject.SetActive(false);
                     closeCam.gameObject.SetActive(true);
-                    
+                    Cursor.lockState = CursorLockMode.None;
+
                     flashCamActivated = true;
                 }
             }
@@ -83,6 +84,7 @@ public class FlashlightArea : MonoBehaviour
             GameMgr.Instance.FollowCamera.gameObject.SetActive(true);
             flashCamActivated = false;
             PressE.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

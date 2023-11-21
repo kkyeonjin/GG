@@ -72,6 +72,9 @@ public class GameMgr : MonoBehaviour
     {
         if (m_bInGame && m_bMulti)
         {
+            //커서 락온
+            Cursor.lockState = CursorLockMode.Locked;
+
             //인게임일 때 아이템들 아이콘, 인스턴스 등 생성
             int[,] HoldingItem = InfoHandler.Instance.Get_HoldingItem();
             m_ItemSlot = new StoreItem[2];

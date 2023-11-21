@@ -57,7 +57,8 @@ public class EmergencyLever : MonoBehaviour
                     PressE.SetActive(false);
                     GameMgr.Instance.FollowCamera.gameObject.SetActive(false);
                     closeCam.gameObject.SetActive(true);
-                    
+                    Cursor.lockState = CursorLockMode.None;
+
                     leverCamActivated = true;
                 }
             }
@@ -71,6 +72,7 @@ public class EmergencyLever : MonoBehaviour
             PressE.SetActive(false);
             GameMgr.Instance.FollowCamera.gameObject.SetActive(true);
             closeCam.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
 
             leverCamActivated = false;
         }
