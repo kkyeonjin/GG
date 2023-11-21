@@ -62,6 +62,7 @@ Shader "Universal Render Pipeline/UI/HPBar"
     Properties
     {
          _MainTex("Texture", 2D) = "white" {}
+        _Color("Color",COLOR) = (1,1,1,1)
     }
 
          SubShader
@@ -106,7 +107,7 @@ Shader "Universal Render Pipeline/UI/HPBar"
 
     sampler2D _MainTex;
     half fRatio;
-    float4 vColor;
+    float4 _Color;
 
     // The vertex shader definition with properties defined in the Varyings 
     // structure. The type of the vert function must match the type (struct)
@@ -130,7 +131,7 @@ Shader "Universal Render Pipeline/UI/HPBar"
         if (1.f - i.uv.x > fRatio)
             discard;
 
-        col *= vColor;
+        col *= _Color;
         return col;
     }
     ENDHLSL

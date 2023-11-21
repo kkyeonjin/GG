@@ -7,6 +7,8 @@ public class ScreenTransition : UIEffect
 {
     public static ScreenTransition m_Instance;
 
+    public GameObject LoadingIcon;
+    public GameObject CakeIcon;
     public bool m_bStartScreen = true;
     bool m_bEndScreen;
 

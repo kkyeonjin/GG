@@ -211,6 +211,7 @@ public class GameMgr : MonoBehaviour
         if (m_bLocalPlayerGoalIn == false)
         {
             m_PV.RPC("GameOut_Player", RpcTarget.All, PhotonNetwork.LocalPlayer);
+            InGameUIMgr.Instance.Active_GameOver();
         }
 
         Invoke("Show_ResultScreen", fCeremonyTime);

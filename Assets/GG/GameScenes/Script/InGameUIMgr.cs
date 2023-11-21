@@ -38,6 +38,8 @@ public class InGameUIMgr : MonoBehaviour
     public int iGoalTimerSec = 15; //최초 플레이어 골인 이후 카운트다운
     public float m_fGoalTime = 0f; //골인 이후 경과 시간 누적 변수
 
+    public GameObject GoalInUI;
+    public GameObject GameOverUI;
 
     
     //일반 타이머
@@ -165,6 +167,10 @@ public class InGameUIMgr : MonoBehaviour
     {
 
     }
+    public void Active_GameOver()
+    {
+        GameOverUI.SetActive(true);
+    }
 
     public void Start_Game()
     {
@@ -209,7 +215,8 @@ public class InGameUIMgr : MonoBehaviour
     public void Player_GoalIn()
     {
         m_bStopUpdating = true;
-        GoalTimer.gameObject.SetActive(false); 
+        GoalTimer.gameObject.SetActive(false);
+        GoalInUI.SetActive(true);
     }
 
     void Calculate_Time_Phase1()
