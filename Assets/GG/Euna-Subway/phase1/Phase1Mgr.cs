@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
-
+using UnityEngine.SceneManagement;
 
 public class Phase1Mgr : MonoBehaviour
 {
@@ -49,7 +49,7 @@ public class Phase1Mgr : MonoBehaviour
 
     public PhotonView m_PV;
     private bool m_bNextPhase = true;
-
+    private ScreenTransition Transition;
 
 
     /// <summary>
@@ -80,6 +80,8 @@ public class Phase1Mgr : MonoBehaviour
 
         camearShake.earthquake = earthquake;
         subwayNoise.Play();
+
+        Transition = ScreenTransition.Instance;
     }
 
     private void Update()
@@ -242,6 +244,13 @@ public class Phase1Mgr : MonoBehaviour
     [PunRPC]
     void Start_NextPhase()
     {
+        Transition.EndScreen();
+        Invoke("Change_Scene", Transition.Get_TransitionTime());
+    }
+
+    private void Change_Scene()
+    {
         NetworkManager.Instance.StartGame("Multi_Subway_Phase2");
+        SceneManager.sceneLoaded += Transition.StartScreen;
     }
 }

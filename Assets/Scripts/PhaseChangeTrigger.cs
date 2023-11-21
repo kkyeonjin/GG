@@ -10,18 +10,29 @@ public class PhaseChangeTrigger : MonoBehaviour
     public GameObject mapBackground;
     public GameObject pp;
     public GameObject Timer;
-
+    ScreenTransition Transition;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        Transition = ScreenTransition.Instance;
+    }
     public void GoToNextPhase()
     {
         if(!Timer.activeSelf)
         {
-            SceneManager.LoadScene("Apartment_Phase3");
-            minimap.color = Color.white;
-            mapBackground.gameObject.SetActive(true);
-            pp.transform.localScale = new Vector3(15, 0.1f, 15);
+            Transition.EndScreen();
+            Invoke("ChangeScene", Transition.Get_TransitionTime());
             //SceneManager.LoadScene("Apartment_Phase3");
         }
+    }
+
+    private void ChangeScene()
+    {
+        SceneManager.LoadScene("Apartment_Phase3");
+        SceneManager.sceneLoaded += Transition.StartScreen;
+        minimap.color = Color.white;
+        mapBackground.gameObject.SetActive(true);
+        pp.transform.localScale = new Vector3(15, 0.1f, 15);
     }
 }
