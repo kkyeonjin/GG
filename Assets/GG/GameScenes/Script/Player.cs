@@ -579,8 +579,8 @@ public class Player : MonoBehaviour
         float rayLength = 5f;
         //int floorMask = LayerMask.GetMask("Ground");
         Vector3 throwDir;
-
-        if (Physics.Raycast(ray, out rayHit, rayLength))//layermask
+        LayerMask layer = LayerMask.NameToLayer("OtherPlayer");
+        if (Physics.Raycast(ray, out rayHit, rayLength,layer))//layermask
         {
             Debug.DrawRay(this.transform.position, rayHit.point, Color.red);
 
