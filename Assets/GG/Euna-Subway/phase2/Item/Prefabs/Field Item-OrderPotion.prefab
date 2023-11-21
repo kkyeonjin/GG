@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7364398088743180543}
   - component: {fileID: 8360358259040905149}
-  - component: {fileID: 6807845406181742542}
+  - component: {fileID: 2125712482587675152}
   - component: {fileID: 1312626968112054935}
-  - component: {fileID: 3666748001444362257}
-  - component: {fileID: 5447510306354311141}
+  - component: {fileID: 1362818050558974811}
+  - component: {fileID: 4500519166915007705}
   m_Layer: 0
-  m_Name: item-StaminaPotion
+  m_Name: Field Item-OrderPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874356397029512943}
   m_CullTransparentMesh: 1
---- !u!114 &6807845406181742542
+--- !u!114 &2125712482587675152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  itemImage: {fileID: 21300000, guid: 38d7c142104e3f14c98c85a0023728a6, type: 3}
-  itemNum: 2
+  itemImage: {fileID: 21300000, guid: cf339658f6e705b40b03d7696b576c4d, type: 3}
+  itemNum: 3
   itemPickUpSound: {fileID: 8300000, guid: 92b058fa2195828459d126e70dd1ff33, type: 3}
   itemEffectSound: {fileID: 8300000, guid: 693f4fe8e30ab1741b6161fb0f4bc8ac, type: 3}
   recoverRatio: 0.3
@@ -85,7 +85,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   offset: 0.2
   rotateSpeed: 50
---- !u!135 &3666748001444362257
+--- !u!135 &1362818050558974811
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &5447510306354311141
+--- !u!82 &4500519166915007705
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,7 +422,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.6862745}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5077,7 +5077,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a0449512d29b8774cbea750c930d2284, type: 2}
+  - {fileID: 2100000, guid: 5e58f952411a4d243937164395aa3df9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5166,7 +5166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5df92d4e81e91794cac5039c75d701f9, type: 2}
+  - {fileID: 2100000, guid: d350110862199224bb7173d5bdcad3b8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

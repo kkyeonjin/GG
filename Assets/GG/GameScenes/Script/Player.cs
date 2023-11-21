@@ -77,9 +77,15 @@ public class Player : MonoBehaviour
 
                 m_bJumpAvailable = GameMgr.Instance.m_bInGame;
                 this.gameObject.layer = LayerMask.NameToLayer("Player");
+                this.gameObject.tag = "Player";
             }
             else
+            {
                 this.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+                this.gameObject.tag = "OtherPlayer";
+            }
+
+
             m_Moving = new MoveFunc(Move_MultiMode);
 
         }
@@ -596,7 +602,6 @@ public class Player : MonoBehaviour
 
         }
 
-
         /// 투척
         if (throwDir != null && Input.GetMouseButtonDown(0))
         {
@@ -609,7 +614,6 @@ public class Player : MonoBehaviour
     {
         /// (2) grabbed 아이템 호출 & 종속관계 분리
         GameObject grabbedItem = OnHand.transform.GetChild(0).gameObject;
-
 
         OnHand.transform.DetachChildren();
         grabbedItem.transform.position = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);

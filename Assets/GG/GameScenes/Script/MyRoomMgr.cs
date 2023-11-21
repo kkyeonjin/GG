@@ -90,10 +90,12 @@ public class MyRoomMgr : MonoBehaviour
         ManualString[1, 2] = "지진으로 인해 정전이 발생할 수 있습니다. 정전을 대비하여 열차 칸마다 비상 손전등이 비치되어 있습니다.\n";
         ManualString[1, 3] = "정전으로 인해 열차 문의 개폐가 작동하지 않는다면 열차 문 옆에 있는 비상 레버, 콕크 등을 이용하여 수동 개방할 수 있습니다.\n";
         ManualString[1, 4] = "인파에 의한 사고를 방지하기 위해 주변 사람들과 거리를 유지하며 침착하게 이동합니다.\n";
-        ManualString[1, 5] = "엘리베이터를 이용하지 않고 계단으로 걸어서 대피합니다.\n";
-        ManualString[1, 6] = "엘리베이터 탑승 중 지진 발생 시 재빨리 층 버튼들을 눌러서 아무 층에나 멈춰 세우도록 합니다.\n";
-        ManualString[1, 7] = "흔들림이 멎으면 지상으로 대피합니다.\n";
-        
+        ManualString[1, 5] = "흔들림이 멎으면 지상으로 대피합니다.\n";
+
+        //ManualString[1, 5] = "엘리베이터를 이용하지 않고 계단으로 걸어서 대피합니다.\n";
+        //ManualString[1, 6] = "엘리베이터 탑승 중 지진 발생 시 재빨리 층 버튼들을 눌러서 아무 층에나 멈춰 세우도록 합니다.\n";
+        //ManualString[1, 7] = "흔들림이 멎으면 지상으로 대피합니다.\n";
+
         Show_PlayerInfo();
         Show_CurrStatus();
     }
@@ -198,7 +200,9 @@ public class MyRoomMgr : MonoBehaviour
         }
         HouseManual.text = Text;
         Text = "";
-        for (int i = 0; i < (int)InfoHandler.SUBWAY.END; ++i)
+
+        //for (int i = 0; i < (int)InfoHandler.SUBWAY.END; ++i)
+        for (int i = 0; i < 5; ++i)
         {
             Text += i + ". ";
             if (Manual[1, i] == true)

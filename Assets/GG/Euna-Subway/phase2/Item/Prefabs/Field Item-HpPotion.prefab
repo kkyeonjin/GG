@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1904546975764108211}
   - component: {fileID: 8678909259386609709}
   m_Layer: 0
-  m_Name: item-HpPotion
+  m_Name: Field Item-HpPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

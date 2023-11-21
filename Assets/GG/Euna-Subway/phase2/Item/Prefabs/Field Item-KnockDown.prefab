@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364398088743180543}
-  - component: {fileID: 864729043487188687}
   - component: {fileID: 1312626968112054935}
   - component: {fileID: 9008965802826147557}
   - component: {fileID: 7948442437956699745}
+  - component: {fileID: 149707028292278161}
   m_Layer: 0
-  m_Name: item-KnockDown
+  m_Name: Field Item-KnockDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,26 +43,6 @@ RectTransform:
   m_AnchoredPosition: {x: -127.39, y: -0.207}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &864729043487188687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874356397029512943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc41a6cfff38e28459bf1174cc530eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 1
-  itemImage: {fileID: 21300000, guid: 1cc2125ef5ed32b43b10be73eea3243b, type: 3}
-  itemNum: 4
-  itemPickUpSound: {fileID: 8300000, guid: 92b058fa2195828459d126e70dd1ff33, type: 3}
-  itemGrabSound: {fileID: 8300000, guid: eb74dd183e1f7344193f98cca3b5cf44, type: 3}
-  itemThrowSound: {fileID: 8300000, guid: 3157049cde931504e83e63f42bf15e26, type: 3}
-  itemHitSound: {fileID: 0}
-  damageRatio: 0.15
 --- !u!114 &1312626968112054935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +167,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &149707028292278161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874356397029512943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df66faecb18e3cb4587114cfa5be8892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemImage: {fileID: 21300000, guid: 1cc2125ef5ed32b43b10be73eea3243b, type: 3}
+  itemNum: 4
+  itemPickUpSound: {fileID: 8300000, guid: 92b058fa2195828459d126e70dd1ff33, type: 3}
 --- !u!1 &2164604705112471819
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,16 +21,17 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         //플레이어 타격 시 
         if (isThrown) 
         {
-            if (other.transform.CompareTag("Player"))
+            if (other.transform.CompareTag("OtherPlayer"))
             {
                 Player collided= other.gameObject.GetComponent<Player>();
                 if(!collided.Is_MyPlayer())
                 {
-                    targetPlayer = collided; 
+                    targetPlayer = collided;
+                    base.Item_effect();
                 }
-            base.Item_effect();
-            Destroy(this.gameObject);
+
             }
+            Destroy(this.gameObject);
         }
     }
 }
