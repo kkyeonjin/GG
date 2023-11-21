@@ -243,33 +243,31 @@ public class Player : MonoBehaviour
     private void Move()
     {
         m_fTotalSpeed = 0f;
-        if (m_bIsGround)
-        {
-            Crouch();
-            Get_KeyInput();
-            Run();
-            //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
-            transform.LookAt(transform.position + m_vMoveVec);
-            //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
-            //m_Rigidbody.AddForce(Physics.gravity);
-            /*
-            m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
 
-            m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
-            */
-            m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
-
-            bool isOnslope = IsOnSlope();
-            Vector3 gravity = isOnslope ? Vector3.zero : Physics.gravity;
-            m_Rigidbody.velocity = (isOnslope ? Vector3.ProjectOnPlane(m_vMoveVec, slopeHit.normal).normalized : m_vMoveVec) * m_fTotalSpeed + gravity;
-                
-
-            if (m_bIsThrow) Item_aim();
-
-            //PushLever();
-            //Picking_Up();
-        }
-
+        Crouch();
+        Get_KeyInput();
+        Run();
+        //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
+        transform.LookAt(transform.position + m_vMoveVec);
+        //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
+        //m_Rigidbody.AddForce(Physics.gravity);
+        /*
+        m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
+ 
+        m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
+        */
+        m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
+ 
+        bool isOnslope = IsOnSlope();
+        Vector3 gravity = isOnslope ? Vector3.zero : Physics.gravity;
+        m_Rigidbody.velocity = (isOnslope ? Vector3.ProjectOnPlane(m_vMoveVec, slopeHit.normal).normalized : m_vMoveVec) * m_fTotalSpeed + gravity;
+            
+ 
+        if (m_bIsThrow) Item_aim();
+ 
+        //PushLever();
+        //Picking_Up();
+ 
         if(m_bJumpAvailable)
             Jump_Up();
 
