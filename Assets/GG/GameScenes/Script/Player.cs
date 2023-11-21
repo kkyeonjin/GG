@@ -398,6 +398,7 @@ public class Player : MonoBehaviour
             float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
             m_Status.Set_Damage(fDamage);
         }
+
         else if (collision.gameObject.CompareTag("FallObjects"))
         {
             //if(SceneManager.GetActiveScene().name == "Apartment_Phase3")
@@ -411,9 +412,17 @@ public class Player : MonoBehaviour
                 m_Status.Set_Damage(5);
             }
         }
+
         else if(collision.gameObject.CompareTag("Building"))
         {
             m_Status.Set_Damage(m_Status.Get_MaxHP());
+        }
+
+        //지하철 낙하물
+        else if (collision.gameObject.CompareTag("Falling"))
+        {
+            float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
+            m_Status.Set_Damage(fDamage);
         }
 
         //지하철 AI와 충돌 시 질서 게이지 감소
