@@ -15,10 +15,6 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         Debug.Log("Throw Item");
         Debug.LogError("Item Speed: " + rb.velocity.magnitude);
     }
-    protected override void Start()
-    {
-
-    }
 
     private void OnCollisionEnter(Collision other)
     {

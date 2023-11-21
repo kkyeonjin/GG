@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class SubwayItem_I : SubwayItem
+public class SubwayItem_I : MonoBehaviour
 {
+    private bool isUsed = false;
     protected Player targetPlayer;
+    public int itemNum; //4: KnockDown 5: SlowDown
 
     //public AudioClip itemGrabSound;
     //public AudioClip itemThrowSound;
@@ -11,14 +13,14 @@ public class SubwayItem_I : SubwayItem
     public float damageRatio = 0.15f;
 
 
-    protected override void Awake()
+    private void Awake()
     {
-        this.itemType = SubwayItem.ItemType.INTERRUPT;
+        //this.itemType = SubwayItem.ItemType.INTERRUPT;
     }
 
-    public override void Item_effect()
+    public void Item_effect()
     {
-        base.Item_effect(); //isUsed 전환
+        //base.Item_effect(); //isUsed 전환
         Item_grab();
         if (targetPlayer != null)
         {
