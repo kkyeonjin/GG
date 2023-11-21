@@ -368,13 +368,32 @@ public class Player : MonoBehaviour
     }
     */
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
+        {
+            m_bIsJump = false;
+            m_bIsGround = true;
+            m_Animator.SetBool("IsJump", m_bIsJump);
+            m_Animator.SetBool("IsGround", m_bIsGround);
+
+            if (collision.gameObject.CompareTag("stair"))
+            {
+                m_Rigidbody.AddForce(transform.forward * m_fTotalSpeed * 0.4f, ForceMode.VelocityChange);
+            }
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         if (collision.gameObject.CompareTag("stair"))
         {
             m_Rigidbody.AddForce(transform.forward * m_fTotalSpeed * 0.4f, ForceMode.VelocityChange);
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))//낙하물 충돌
+
+        else        */
+        if (collision.gameObject.CompareTag("Obstacle"))//낙하물 충돌
         {
             float fDamage = collision.gameObject.GetComponent<FallingObject>().Get_Damage();
             m_Status.Set_Damage(fDamage);
@@ -397,6 +416,13 @@ public class Player : MonoBehaviour
             m_Status.Set_Damage(m_Status.Get_MaxHP());
         }
 
+        //지하철 AI와 충돌 시 질서 게이지 감소
+        if (collision.gameObject.CompareTag("AI"))
+        {
+            SubwayInventory.instance.orderGage.Cut_Order("AI");
+        }
+
+        
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("stair"))
         {//땅에 닿아서 착지 애니메이션으로 이동
             m_bIsJump = false;
@@ -405,13 +431,9 @@ public class Player : MonoBehaviour
             m_Animator.SetBool("IsGround", m_bIsGround);
             ///Debug.Log("on " + collision.gameObject.name);
         }
-
-        //지하철 AI와 충돌 시 질서 게이지 감소
-        if (collision.gameObject.CompareTag("AI"))
-        {
-            SubwayInventory.instance.orderGage.Cut_Order("AI");
-        }
+        
     }
+
     public void SetAnimation(string parameter, bool flag)
     {
         m_Animator.SetBool(parameter, flag);
