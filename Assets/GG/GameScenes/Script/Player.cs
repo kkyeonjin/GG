@@ -582,7 +582,7 @@ public class Player : MonoBehaviour
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
         RaycastHit rayHit;
-        float rayLength = 5f;
+        float rayLength = 50f;
         //int floorMask = LayerMask.GetMask("Ground");
         Vector3 throwDir;
         LayerMask layer = LayerMask.NameToLayer("OtherPlayer");
