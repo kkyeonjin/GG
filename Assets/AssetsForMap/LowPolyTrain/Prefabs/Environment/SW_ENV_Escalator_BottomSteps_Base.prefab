@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5102066179831672560}
   m_Layer: 12
   m_Name: SW_ENV_Escalator_BottomSteps_Base
-  m_TagString: stair
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
