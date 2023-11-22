@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class SubwayItem_IGrabbed : SubwayItem_I
 {
+    public GameObject Collider;
+    public GameObject Icon;
+    public ParticleSystem particle;
+
     private bool isThrown = false;
+
+    private void Start()
+    {
+        particle.Stop();
+    }
 
     public void Set_isThrown(bool thrown, Vector3 throwDir)
     {
@@ -22,6 +31,11 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         Destroy(this.gameObject);
     }
 
+    private void Stop_Effect()
+    {
+        particle.Stop();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         Debug.LogError("아이템 다시 돌아옴" + other.gameObject.tag);
@@ -37,7 +51,10 @@ public class SubwayItem_IGrabbed : SubwayItem_I
                     base.Item_effect();
                 }
 
-                Destroy(this.gameObject);
+                Collider.SetActive(false);
+                Icon.SetActive(false);
+                particle.Play();
+                Invoke("Stop_Effect", 0.2f);
             }
         }
     }

@@ -221,10 +221,7 @@ public class Player : MonoBehaviour
     private void Move_SingleMode()
     {
         Move();
-        if (IsOnSlope())
-        {
-
-        }
+    
     }
 
     private bool IsOnSlope()
