@@ -14,10 +14,17 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         rb.AddForce(throwDir.normalized*10f, ForceMode.Impulse);
         Debug.Log("Throw Item");
         Debug.LogError("Item Speed: " + rb.velocity.magnitude);
+        Invoke("Destroy_AfterTimer", 10f);
+    }
+
+    private void Destroy_AfterTimer()
+    {
+        Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.LogError("아이템 다시 돌아옴" + other.gameObject.tag);
         //플레이어 타격 시 
         if (isThrown) 
         {
@@ -30,8 +37,8 @@ public class SubwayItem_IGrabbed : SubwayItem_I
                     base.Item_effect();
                 }
 
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
         }
     }
 }
