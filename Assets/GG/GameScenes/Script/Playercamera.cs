@@ -18,7 +18,6 @@ public class Playercamera : MonoBehaviour
     private delegate void CamFunc();
     private CamFunc m_CameraFunc;
 
-    RaycastHit hitinfo;
 
     void Start()
     {
@@ -38,14 +37,6 @@ public class Playercamera : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-       if(m_TargetTransform != null)
-        {
-            Vector3 ray_Dir = m_vOffset.z * transform.forward + m_vOffset.y * transform.up;//얘 여기에 놓으면 튐
-            Physics.Raycast(m_TargetTransform.position + new Vector3(0f, m_vOffset.y, 0f), ray_Dir, out hitinfo, m_fCamDist);
-        }
-    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -62,18 +53,8 @@ public class Playercamera : MonoBehaviour
         }
         if (m_TargetTransform != null)
         {
-            transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position/* + m_vOffset.z * transform.forward + m_vOffset.y * transform.up*/;
-             if (hitinfo.point != Vector3.zero)//레이케스트 성공시
-            {
-                //point로 옮긴다.
-                transform.position = hitinfo.point;
-                //카메라 보정
-                transform.Translate(m_vDir * -0.5f);
-            }
-            else
-            {
-                transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position + m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
-            }
+            transform.position = new Vector3(0f, m_vOffset.y, 0f) + m_TargetTransform.position + m_vOffset.z * transform.forward + m_vOffset.y * transform.up;
+            
         }
     }
 

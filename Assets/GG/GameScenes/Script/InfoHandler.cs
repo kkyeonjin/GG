@@ -235,7 +235,27 @@ public class InfoHandler : MonoBehaviour
     public void Set_Exp(int iExp)
     {
         m_Playerinfo.Set_Exp(iExp);
+        Check_LevelUp();
     }
+
+    void Check_LevelUp()
+    {
+        int CurrExp = Get_Exp();
+        int ExpMax = Get_ExpMax();
+
+        if(CurrExp > ExpMax)
+        {
+            int iLevel = CurrExp / ExpMax;
+            int val = CurrExp % ExpMax;
+
+            m_Playerinfo.Set_Level(iLevel);
+            m_Playerinfo.Reset_Exp();
+            m_Playerinfo.Set_Exp(val);
+            m_Playerinfo.Set_ExpMax(ExpMax + 30);
+            Save_Info();
+        }
+    }
+
     public void Set_Money(int iMoney)
     {
         m_Playerinfo.Set_Money(iMoney);
