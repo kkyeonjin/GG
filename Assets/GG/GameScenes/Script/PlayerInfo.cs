@@ -127,6 +127,19 @@ public class PlayerInfo
         return ItemsInfo[iIndex];
     }
 
+    public void Set_Level(int level)
+    {
+        Level += level;
+    }
+    public void Reset_Exp()
+    {
+        Exp = 0;
+    }
+    public void Set_ExpMax(int Max)
+    {
+        ExpMax = Max;
+    }
+
     //Manual System
     public void Unlock_Manual(InfoHandler.HOUSE manual)//Áý ¼öÄ¢
     {
