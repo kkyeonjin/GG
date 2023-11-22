@@ -27,10 +27,24 @@ public class PhaseChangeTrigger : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.V))
+        {
+            SceneManager.LoadScene("Apartment_Phase3");
+        }
+    }
+
     private void ChangeScene()
     {
         SceneManager.LoadScene("Apartment_Phase3");
         SceneManager.sceneLoaded += Transition.StartScreen;
+        minimap.color = Color.white;
+        mapBackground.gameObject.SetActive(true);
+        pp.transform.localScale = new Vector3(15, 0.1f, 15);
+    }
+    public void Clear_Map()
+    {
         minimap.color = Color.white;
         mapBackground.gameObject.SetActive(true);
         pp.transform.localScale = new Vector3(15, 0.1f, 15);
