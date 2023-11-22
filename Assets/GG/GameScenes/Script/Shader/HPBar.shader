@@ -62,7 +62,7 @@ Shader "Universal Render Pipeline/UI/HPBar"
     Properties
     {
          _MainTex("Texture", 2D) = "white" {}
-        _Color("Color",COLOR) = (1,1,1,1)
+        _Color("Color",COLOR) = (255,0,0,1)
     }
 
          SubShader
@@ -131,7 +131,7 @@ Shader "Universal Render Pipeline/UI/HPBar"
         if (1.f - i.uv.x > fRatio)
             discard;
 
-        col *= _Color;
+        col = _Color;
         return col;
     }
     ENDHLSL

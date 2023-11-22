@@ -55,7 +55,8 @@ public class ChangeAvatar : MonoBehaviour
 
         if (m_PV != null)
         {
-
+            int CurrIndex = InfoHandler.Instance.Get_CurrCharacter();
+            Change_Avatar(CurrIndex);
         }
         else
         {

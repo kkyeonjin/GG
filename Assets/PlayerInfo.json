@@ -4,7 +4,7 @@
     "Exp": 50,
     "ExpMax": 180,
     "Money": 360,
-    "CurrCharacter": 3,
+    "CurrCharacter": 4,
     "AvailableCharacter": [
         true,
         false,
