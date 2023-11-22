@@ -5,6 +5,7 @@ using Photon.Pun;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 using System.Diagnostics.Eventing.Reader;
+using Unity.MLAgents;
 
 public class Player : MonoBehaviour
 {
@@ -247,14 +248,16 @@ public class Player : MonoBehaviour
         //transform.position += m_vMoveVec * m_fTotalSpeed * Time.deltaTime;
         transform.LookAt(transform.position + m_vMoveVec);
         //m_Rigidbody.AddForce(m_vMoveVec * m_fTotalSpeed, ForceMode.VelocityChange);
+        
         //m_Rigidbody.AddForce(Physics.gravity);
-        /*
-        m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
- 
-        m_Rigidbody.angularVelocity = new Vector3(0f, 0f, 0f);
-        */
+        
+        //m_Rigidbody.velocity = m_vMoveVec * m_fTotalSpeed;
+
+
         m_Rigidbody.MovePosition(transform.position + m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
- 
+        
+        //transform.Translate(m_vMoveVec * m_fTotalSpeed * Time.deltaTime);
+
         bool isOnslope = IsOnSlope();
         Vector3 gravity = isOnslope ? Vector3.zero : Physics.gravity;
         m_Rigidbody.velocity = (isOnslope ? Vector3.ProjectOnPlane(m_vMoveVec, slopeHit.normal).normalized : m_vMoveVec) * m_fTotalSpeed + gravity;
@@ -321,6 +324,9 @@ public class Player : MonoBehaviour
         {//+: y+방향, -: y-방향
             m_fJumpForce = m_fJumpForce - Physics.gravity.magnitude * Time.deltaTime;
             transform.position = new Vector3(transform.position.x, transform.position.y + m_fJumpForce * Time.deltaTime, transform.position.z);
+            
+            //m_Rigidbody.AddForce(Vector3.up * m_fJumpForce, ForceMode.Impulse);
+
         }
     }
     private void Crouch()
