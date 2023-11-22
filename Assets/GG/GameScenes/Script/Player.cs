@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
     {
         m_Status = GetComponentInChildren<CharacterStatus>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_Animator = GetComponentInChildren<Animator>();
 
         if (m_PV != null)
         {
@@ -92,7 +93,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            m_Animator = GetComponentInChildren<Animator>();
+            
             m_Moving = new MoveFunc(Move_SingleMode);
             groundlayer = 1 << LayerMask.NameToLayer("Ground");
         }
