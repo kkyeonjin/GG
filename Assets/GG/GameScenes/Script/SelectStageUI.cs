@@ -50,6 +50,7 @@ public class SelectStageUI : MonoBehaviour
     public void Multi_ExitStage()//멀티 스테이지 나가기
     {
         m_PV.RPC("BacktoLobby", RpcTarget.All);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Change_Stage()
