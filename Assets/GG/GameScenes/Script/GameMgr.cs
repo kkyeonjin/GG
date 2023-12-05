@@ -336,7 +336,22 @@ public class GameMgr : MonoBehaviour
                 Kill_Player();
             }
         }
-     
+
+
+        //커서 락온
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            //  cellphone.SetActive(false);
+
+            else if (Cursor.lockState == CursorLockMode.None)
+                Cursor.lockState = CursorLockMode.Locked;
+
+            // Cursor.lockState = CursorLockMode.None;
+            //  cellphone.SetActive(true);
+
+        }
     }
     
     public T Get_Instance<T>()

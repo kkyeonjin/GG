@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ItemScan : MonoBehaviour
 {
@@ -82,7 +83,8 @@ public class ItemScan : MonoBehaviour
                 AimColor.a = 1f;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hitInfo.transform.gameObject.GetComponent<PhaseChangeTrigger>().GoToNextPhase();
+                    SceneManager.LoadScene("Apartment_Phase3");
+                    hitInfo.transform.gameObject.GetComponent<PhaseChangeTrigger>().Clear_Map();
                 }
 
             }

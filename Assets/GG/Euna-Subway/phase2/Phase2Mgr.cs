@@ -32,7 +32,10 @@ public class Phase2Mgr : MonoBehaviour
 
         
     }
-
+    private void OnDestroy()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void ResetMap()
     {
         for (int i = 0; i < fallingObject.Count; i++)

@@ -1,10 +1,10 @@
 {
     "Name": "LetsGG",
     "Level": 3,
-    "Exp": 50,
+    "Exp": 74,
     "ExpMax": 180,
-    "Money": 360,
-    "CurrCharacter": 3,
+    "Money": 405,
+    "CurrCharacter": 0,
     "AvailableCharacter": [
         true,
         false,

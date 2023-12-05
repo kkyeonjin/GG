@@ -20,7 +20,7 @@ public class SubwayItem_IGrabbed : SubwayItem_I
         Rigidbody rb = GetComponent<Rigidbody>();
 
         rb.useGravity = true;
-        rb.AddForce(throwDir.normalized*10f, ForceMode.Impulse);
+        rb.AddForce(throwDir.normalized*20f, ForceMode.Impulse);
         Debug.Log("Throw Item");
         Debug.LogError("Item Speed: " + rb.velocity.magnitude);
         Invoke("Destroy_AfterTimer", 10f);
