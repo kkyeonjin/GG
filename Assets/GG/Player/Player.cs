@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
 
     public float m_fSpeed;
     public float m_fJumpScale = 100;
-    public EventUI m_ClearUI;
     public float m_fRotateSpeed = 250f;
     public PhotonView m_PV = null;
 
@@ -47,8 +46,6 @@ public class Player : MonoBehaviour
     private bool m_bInteract_Column = false;
     private bool m_bInteract_Lever = false;
     private bool m_bInteract_EnterCode = false;
-
-    private Interactive Curr_InteractiveObj;
 
     private bool m_bHolding = false;
 
@@ -465,14 +462,6 @@ public class Player : MonoBehaviour
         {
             Player_NextPhase();
         }
-        else if (other.gameObject.CompareTag("Interactive"))
-        {
-            Curr_InteractiveObj = other.gameObject.GetComponent<Interactive>();
-            if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.LEVER)
-                m_bInteract_Lever = true;
-            //if (Curr_InteractiveObj.Get_Type() == (int)Interactive.INTERACT.COLUMN)
-            //    m_bInteract_Column = true;
-        }
         else if(other.gameObject.CompareTag("Train"))
         {
             this.gameObject.transform.parent = other.gameObject.transform;
@@ -485,7 +474,6 @@ public class Player : MonoBehaviour
         {
             m_bInteract_Lever = false;
             //m_bInteract_Column = false;
-            Curr_InteractiveObj = null;
         }
         else if (other.gameObject.CompareTag("Train"))
         {
