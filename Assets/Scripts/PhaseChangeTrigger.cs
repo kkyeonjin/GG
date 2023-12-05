@@ -21,8 +21,8 @@ public class PhaseChangeTrigger : MonoBehaviour
     {
         if(!Timer.activeSelf)
         {
-            Transition.EndScreen();
-            Invoke("ChangeScene", Transition.Get_TransitionTime());
+            // Transition.EndScreen();
+            Invoke("ChangeScene", 0f);//Transition.Get_TransitionTime());
             //SceneManager.LoadScene("Apartment_Phase3");
         }
     }
@@ -30,7 +30,7 @@ public class PhaseChangeTrigger : MonoBehaviour
     private void ChangeScene()
     {
         SceneManager.LoadScene("Apartment_Phase3");
-        SceneManager.sceneLoaded += Transition.StartScreen;
+       // SceneManager.sceneLoaded += Transition.StartScreen;
         minimap.color = Color.white;
         mapBackground.gameObject.SetActive(true);
         pp.transform.localScale = new Vector3(15, 0.1f, 15);
