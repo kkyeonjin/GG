@@ -41,11 +41,14 @@
 
 ### How to build
  프로젝트 파일 다운로드 후 Unity(2021.3.24f)에서 GG폴더 열기 
- </br>→ Unity Editor에서 왼쪽 상단 File 메뉴
- </br>→ Build Settings
+ 
+ → Unity Editor에서 왼쪽 상단 File 메뉴
+ 
+ → Build Settings
    * Platform : Windows, Mac, Linux
    * Target Platform : Windows, Architecture Intel 64-bit
- </br>→ Build 
+
+ → Build 
 
 ### How to install
 별도 설치 방법 없음. 
