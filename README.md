@@ -50,9 +50,9 @@
 			/FallingObstacles : 낙하물 구현 
 			/Inventory : 인벤토리 
 			/Items : 아이템 관련 
-			/Phase1 : Phase1 구현에만 쓰는 
-			/Phase2 : Phase2 구현에만 쓰는 
-			/Phase3 : Phase3 구현에만 쓰는 
+			/Phase1 : Phase1 구현 
+			/Phase2 : Phase2 구현
+			/Phase3 : Phase3 구현
 ```
 </details>
 <details>
