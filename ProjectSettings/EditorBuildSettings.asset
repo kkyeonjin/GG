@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 68a98b9e9020e0a43945fa2bd87fe38d
   - enabled: 1
     path: Assets/GG/GameScenes/Apartment.unity
-    guid: 49cee52952c51704b8091daa6555b26f
+    guid: fb282b09cc0afc847a3e54732fc31bf5
   - enabled: 1
     path: Assets/GG/GameScenes/RoomCode.unity
     guid: c73f86af3cfb6444fa482fb2d69c87a3
@@ -30,12 +30,12 @@ EditorBuildSettings:
     path: Assets/GG/GameScenes/MyRoom.unity
     guid: b1af43293a64d2b4aa8a4322c9f0cf5b
   - enabled: 1
-    path: Assets/GG/Euna-Subway/phase1/Multi_Subway.unity
-    guid: 216bcdeae9b83304ea5c650806974735
-  - enabled: 1
-    path: Assets/GG/Euna-Subway/phase2/Multi_Subway_Phase2.unity
-    guid: c20ea0873fddc7047a19c7b7d3635a46
-  - enabled: 1
     path: Assets/GG/GameScenes/Apartment_Phase3.unity
     guid: f550fb39f0abce043a396dd095219a85
+  - enabled: 1
+    path: Assets/GG/GameScenes/Multi_Subway.unity
+    guid: 2a308d782dbba8c46bc2da9278103d15
+  - enabled: 1
+    path: Assets/GG/GameScenes/Multi_Subway_Phase2.unity
+    guid: cffd4e9908c8fdd4d9e8b64712af0263
   m_configObjects: {}

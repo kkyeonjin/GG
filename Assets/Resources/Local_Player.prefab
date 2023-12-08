@@ -477,7 +477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fSpeed: 55
   m_fJumpScale: 27
-  m_ClearUI: {fileID: 0}
   m_fRotateSpeed: 250
   m_PV: {fileID: 107211147657817008}
   m_bIsThrow: 0
