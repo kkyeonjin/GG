@@ -39,6 +39,50 @@
 ## <게임 구성도>
 ![구성도](https://github.com/kkyeonjin/GG/assets/88366217/b42c91b7-ee33-4eb6-8331-b5950f1e55d7)
 
+## 소스 코드 설명
+<details>
+ <summary>아파트 스테이지</summary> 
+ 
+```
+/Apartment/Script_APT - : 스크립트 폴더
+			/CellPhone : 핸드폰 기능 
+			/Earthquake : 지진 효과 구현 
+			/FallingObstacles : 낙하물 구현 
+			/Inventory : 인벤토리 
+			/Items : 아이템 관련 
+			/Phase1 : Phase1 구현에만 쓰는 
+			/Phase2 : Phase2 구현에만 쓰는 
+			/Phase3 : Phase3 구현에만 쓰는 
+```
+</details>
+<details>
+ <summary>지하철 스테이지</summary> 
+ 
+ ```
+ /Subway : 지하철 스테이지 구현
+		/UI - 지하철 스테이지 전용 질서게이지 & 플레이 중 UI 화면 구현 스크립트
+		/Quake - 지진 효과 구현
+		/Phase1 - phase 1 구현 
+		/Phase2 - phase 2 구현
+			/AI NPC - ML-agent 훈련 
+```
+</details>
+<details>
+ <summary>게임 시스템</summary> 
+
+ ```
+ /StartFirst - 게임을 처음 시작할 때, 유저 정보 생성
+	/Menu - 메뉴 배경 지진
+	/MyRoom - 마이룸에 있는 기능(유저 정보 불러오기)와 UI
+	/Store - 상점 기능과 UI
+	/MultiLobby - 멀티모드 게임 시작 대기실, 아바타와 아이템 세팅
+	/Player (Player & Avatar) - 플레이어 프리팹과 아바타, 인게임 status
+	/UI - 게임에 있는 UI 아이콘과 버튼에 적용되는 기능과 효과
+	/System - 네트워크, 유저 정보 저장/불러오기, 아이콘 효과 보간 함수 
+				/stage - 인게임 시작시 맵 전처리 및 골인 인게임 종료 관련 
+```
+</details>
+
 ### How to build
  프로젝트 파일 다운로드 후 Unity(2021.3.24f)에서 GG폴더 열기 
  
@@ -57,8 +101,12 @@
 빌드 후 생성되는 .exe 파일 실행
 이후 게임 플레이 테스트 방법은 제품설명서 - 조작법, 인게임 화면설명 시트 참고.
 
-## 게임 실행 파일 (.exe)
+## 게임 실행 파일
+[실행 파일 드라이브 링크](https://drive.google.com/file/d/17K4rk2zFffa5SvFFpc2VYUfSUtXV9r4B/view?usp=drive_link)
+
 ## 제품 설명서
+[제품 설명서 드라이브 링크](https://drive.google.com/file/d/13zIi7pGLxytdHb6VAR0C1D-LEyAgXW06/view?usp=drive_link)
+
 
 ## 참고한 오픈소스코드
 [Earthquake-Simulator](https://github.com/Habrador/Earthquake-Simulator)
