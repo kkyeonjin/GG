@@ -39,6 +39,19 @@
 ## <게임 구성도>
 ![구성도](https://github.com/kkyeonjin/GG/assets/88366217/b42c91b7-ee33-4eb6-8331-b5950f1e55d7)
 
+### How to build
+ 프로젝트 파일 다운로드 후 Unity(2021.3.24f)에서 GG폴더 열기 -> Unity Editor에서 왼쪽 상단 File 메뉴 -> Build Settings -> 
+ Platform : Windows, Mac, Linux -> Target Platform : Windows, Architecture Intel 64-bit -> Build 
+
+### How to install
+별도 설치 방법 없음. 
+
+### How to test
+빌드 후 생성되는 .exe 파일 실행
+이후 게임 플레이 테스트 방법은 제품설명서 - 조작법, 인게임 화면설명 시트 참고.
+
+## 게임 실행 파일 (.exe)
+## 제품 설명서
 
 ## 참고한 오픈소스코드
 [Earthquake-Simulator](https://github.com/Habrador/Earthquake-Simulator)
