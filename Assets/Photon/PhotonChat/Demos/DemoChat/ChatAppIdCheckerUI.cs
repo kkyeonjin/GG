@@ -16,7 +16,7 @@ using Photon.Pun;
 namespace Photon.Chat.Demo
 {
     /// <summary>
-    /// This is used in the Editor Splash to properly inform the developer about the chat AppId requirement.
+    /// This is isUsed in the Editor Splash to properly inform the developer about the chat AppId requirement.
     /// </summary>
     [ExecuteInEditMode]
     public class ChatAppIdCheckerUI : MonoBehaviour

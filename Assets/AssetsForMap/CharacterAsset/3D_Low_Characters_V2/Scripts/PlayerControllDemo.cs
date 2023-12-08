@@ -18,7 +18,7 @@ namespace PuxxeStudio{
 		[SerializeField]
 		public Animator animator;
 		[SerializeField]
-		Rigidbody rigidbody;
+		Rigidbody rb;
 		[SerializeField]
 		private float jumpForce = 7f;
 		bool isGrounded = false;
@@ -763,7 +763,7 @@ namespace PuxxeStudio{
 	string backActionName = "011_idle_1";
 	int backActionID = 11;
 	private void Awake(){
-		gameObject.transform.position = new Vector3(0, 5, 0);
+		//gameObject.transform.position = new Vector3(0, 5, 0);
 		FindComponents();
 		 actions[A_001_POSE_1] = A_001_POSE_1_ID;
 		 actions[A_002_POSE_2] = A_002_POSE_2_ID;
@@ -1136,7 +1136,7 @@ namespace PuxxeStudio{
 			UpdateAnimationAction();
 		}
 		public void FindComponents(){
-			rigidbody = GetComponent<Rigidbody>();
+			rb = GetComponent<Rigidbody>();
 			animator = GetComponent<Animator>();
 			if (animator == null){
 				animator = GetComponentInChildren<Animator>();
@@ -1144,7 +1144,7 @@ namespace PuxxeStudio{
 		}
 		public void Jump(){
 			if (isGrounded == true){
-				rigidbody.velocity = new Vector3(0f, jumpForce, 0f);
+				rb.velocity = new Vector3(0f, jumpForce, 0f);
 				isGrounded = false;
 				isJumping = true;
 				EnableDoubleJumping = true;
@@ -1152,7 +1152,7 @@ namespace PuxxeStudio{
 			}else{
 				if (EnableDoubleJumping == true){
 					if ((isJumping == true ) && isDoubleJumping == false){
-						rigidbody.velocity = new Vector3(0f, jumpForce * 1.5f, 0f);
+						rb.velocity = new Vector3(0f, jumpForce * 1.5f, 0f);
 						isDoubleJumping = true;
 						isFalling = false;
 					}
@@ -1160,7 +1160,7 @@ namespace PuxxeStudio{
 			}
 		}
 		public Vector3 GetRigidBoy_Velocity(){
-			return rigidbody.velocity;
+			return rb.velocity;
 		}
 		public void ActionNoLoopedReturnToIdle(bool value){
 			actionNoLoopedReturnToIdle = value;
@@ -1168,7 +1168,7 @@ namespace PuxxeStudio{
 		public void SetActionInt(int _actionID = -1){
 			ActionNoLoopedReturnToIdle(true);
 			if(_actionID==61){
-				gameObject.transform.position = new Vector3(0, 2.5f, 0);
+				//gameObject.transform.position = new Vector3(0, 2.5f, 0);
 			}	
 			StopCoroutine("ReturnToActionCoroutine");
 			actionID = _actionID;
@@ -1209,11 +1209,11 @@ namespace PuxxeStudio{
 			animator.speed = _speed;
 		}
 		private void UpdateAnimationAction(){
-			if (rigidbody==null){
-				Debug.LogWarning("rigidbody NOT FOUND!");
+			if (rb==null){
+				Debug.LogWarning("rb NOT FOUND!");
 				return;
 			}		
-			if (rigidbody.velocity.y > .1f){
+			if (rb.velocity.y > .1f){
 				if (actionID != (int)actions[A_041_JUMP_1] && isDoubleJumping == false){
 					actionID = (int)actions[A_041_JUMP_1];
 					SetActionInt(41);
@@ -1222,14 +1222,14 @@ namespace PuxxeStudio{
 					actionID = (int)actions[A_051_JUMP_SPIN_1];
 					SetActionInt(51);
 				}
-			}else if (rigidbody.velocity.y < -.1f && isFalling == false){
+			}else if (rb.velocity.y < -.1f && isFalling == false){
 				if (actionID != (int)actions[A_061_FALL_1]){
 					SetActionInt(61);
 					isJumping = false;
 					isFalling = true; 
 					isDoubleJumping = false;				
 				}
-			}else if(rigidbody.velocity.y == 0){
+			}else if(rb.velocity.y == 0){
 				if (actionID != (int)actions[A_071_LAND_1] && actionID == (int)actions[A_061_FALL_1]  ){
 					SetActionInt(71);
 					isJumping = false;

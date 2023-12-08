@@ -11,7 +11,7 @@ namespace TMPro.Examples
         private TextMeshPro m_textMeshPro;
         //private TMP_FontAsset m_FontAsset;
 
-        private const string label = "The <#0050FF>count is: </color>{0:2}";
+        private const string label = "The <#0050FF>clickCount is: </color>{0:2}";
         private float m_frame;
 
 
@@ -22,7 +22,7 @@ namespace TMPro.Examples
 
             m_textMeshPro.autoSizeTextContainer = true;
 
-            // Load the Font Asset to be used.
+            // Load the Font Asset to be isUsed.
             //m_FontAsset = Resources.Load("Fonts & Materials/LiberationSans SDF", typeof(TMP_FontAsset)) as TMP_FontAsset;
             //m_textMeshPro.font = m_FontAsset;
 

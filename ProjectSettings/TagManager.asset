@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - goal
-  - ground
   - stone
   - target
   - Ground
@@ -16,14 +15,43 @@ TagManager:
   - AI
   - stair
   - Falling
+  - Checkpoint
+  - Block
+  - Train
+  - Interactive
+  - Fire
+  - Button
+  - Door
+  - BagObject
+  - Item
+  - FalseTable
+  - HidingTable
+  - EndPoint
+  - MiddleGoal
+  - ground
+  - FollowCamera
+  - Lever
+  - Platform
+  - Puzzle
+  - MapChangePoint
+  - FallObjects
+  - UISelectItem
+  - UIHoldingItem
+  - FollowCam
+  - OtherPlayer
+  - ElectricSwitch
+  - Building
+  - DoorToOut
+  - Book
+  - TV
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - checkpoint
   - Water
   - UI
-  - 
+  - Player
   - bunker
   - invisible
   - Obstacle
@@ -31,19 +59,19 @@ TagManager:
   - Wall
   - stair
   - point
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - pp
+  - Bag
+  - MazeWall
+  - PlayerPoint
+  - Scannable
+  - Falling
+  - AI
+  - Ground
+  - Fire
+  - FallObjects
+  - Celling
+  - PickedItem
+  - OtherPlayer
   - 
   - 
   - 

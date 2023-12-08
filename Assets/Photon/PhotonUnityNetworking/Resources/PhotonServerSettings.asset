@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 
+    AppIdRealtime: 1b439405-bf1b-4f78-b65d-422d57bfb40e
     AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
@@ -28,12 +28,55 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: kr
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - ClickRpc
+  - DestroyRpc
+  - DestroySpaceship
+  - Fire
+  - RespawnSpaceship
+  - Changing
+  - StartGame
+  - Update_HPBar
+  - Update_Damage
+  - Reset_Status
+  - BackToLobby
+  - LoadLobby
+  - BacktoLobby
+  - Load_LocalPlayer
+  - Assign_SpawnPosition
+  - Update_SpawnPosSlot
+  - Add_SpawnPosIndex
+  - Remove_SpawnPosIndex
+  - Update_HP
+  - MakeLocalPlayer_Die
+  - Update_Slot
+  - Ready
+  - Player_Exit
+  - Player_Join
+  - Update_PlayerList
+  - Get_ListSlot_Index
+  - PlayerReady
+  - SomeOne_GoalIn
+  - Start_Game
+  - BacktoMultiLobby
+  - Resume_Status
+  - Receive_Record
+  - Increase_Count
+  - Update_RespawnPos
+  - Add_RankingList
+  - GameOut_Player
+  - Setbool_Adrenaline
+  - Setbool_Invincible
+  - Targeting_Death
+  - Next_Phase
+  - Update_Stamina
+  - Update_Order
+  - Start_NextPhase
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
-  DevRegionSetOnce: 0
+  ShowSettings: 1
+  DevRegionSetOnce: 1

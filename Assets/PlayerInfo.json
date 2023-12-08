@@ -1,0 +1,46 @@
+{
+    "Name": "LetsGG",
+    "Level": 3,
+    "Exp": 74,
+    "ExpMax": 180,
+    "Money": 405,
+    "CurrCharacter": 0,
+    "AvailableCharacter": [
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+    ],
+    "ItemsInfo": [
+        5,
+        0,
+        2,
+        0,
+        1
+    ],
+    "HouseManual": [
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+    ],
+    "SubwayManual": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}

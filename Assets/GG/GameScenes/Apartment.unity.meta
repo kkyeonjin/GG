@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: aa5bad571b34ffa44b84968a72cc5dab
+<<<<<<<< HEAD:Assets/GG/GameScenes/Multi_Subway_Phase2.unity.meta
+guid: fb282b09cc0afc847a3e54732fc31bf5
+========
+guid: 1685d20144fa3df40b6ff3b6c005b3b0
+>>>>>>>> kyeonjin:Assets/GG/GameScenes/Home.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
